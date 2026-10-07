@@ -131,8 +131,16 @@ prints to standard output and also writes `logs/study/divergence-final-rawclass.
 media-only 23 s outage before and after the client correction) and
 [`paper/fig1_reversal.pdf`](paper/fig1_reversal.pdf) is its output. The plotted values are
 constants in the script, transcribed from one run 1 trial and one run 2 trial named in its
-docstring. Run from this repository, the script first re-derives each value from those
-records and stops if any differs. It needs Python 3 with matplotlib:
+docstring. Run from this repository, the script first re-derives the plotted times from
+those records and stops if any differs by more than 0.01 s.
+
+That check reads the same record fields the constants were transcribed from, so it guards
+against a mistyped constant, not against a wrong choice of field. It agreed on its first
+run, with no constant or derivation adjusted. It covers times, not every plotted value: the
+rebuild bar is drawn at a minimum width for legibility and is not to scale (the measured
+rebuild took 0.43 s, from 28.85 to 29.28 s).
+
+The script needs Python 3 with matplotlib:
 
 ```bash
 python3 paper/fig1_reversal.py

@@ -9,8 +9,19 @@ from result.json (isolation), S.json (driver actions) and logs/study/divergence-
 (server reports, receiver audio). Times are seconds after isolation onset.
 
 When this script is run from the repository (paper/fig1_reversal.py), it first re-derives
-every plotted value from those records and stops if any differs from the constants by more
+the plotted times from those records and stops if any differs from the constants by more
 than 0.01 s. Run elsewhere, it skips that check and says so.
+
+What that check does and does not establish:
+- It reads the same record fields, with the same definitions, that the constants were
+  transcribed from. It guards against a mistyped or drifted constant. It cannot detect a
+  wrong choice of field, because the constant and the check would be wrong together.
+- It agreed on its first run; no constant and no part of the derivation was adjusted to
+  make it pass.
+- It covers times, not every plotted value. In particular the rebuild bar is drawn at a
+  minimum width for legibility and is NOT to scale: the check compares only the rebuild's
+  start. The measured rebuild took 0.43 s, from 28.85 to 29.28 s; at that width the bar
+  collides with the marker for the refused restart at 28.65 s.
 
 usage: python3 paper/fig1_reversal.py     (needs matplotlib; writes fig1_reversal.pdf beside itself)"""
 import matplotlib
