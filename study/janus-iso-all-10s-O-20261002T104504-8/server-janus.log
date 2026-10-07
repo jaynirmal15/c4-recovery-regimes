@@ -1,0 +1,135 @@
+2026-10-02T10:45:21.516295226Z [Fri Oct  2 10:45:21 2026] Creating new session: 512387068229752; 0xffff6c009aa0
+2026-10-02T10:45:21.518387243Z [Fri Oct  2 10:45:21 2026] Creating new handle in session 512387068229752: 2587277636467952; 0xffff6c009aa0 0xffff6c009c90
+2026-10-02T10:45:21.522186884Z [Fri Oct  2 10:45:21 2026] Destroying session 512387068229752; 0xffff6c009aa0
+2026-10-02T10:45:21.522202639Z [Fri Oct  2 10:45:21 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c009c90 0xffff6c03ffb0 0xffff6c009c90 0xffff580184c0
+2026-10-02T10:45:21.522249288Z [Fri Oct  2 10:45:21 2026] [2587277636467952] Handle and related resources freed; 0xffff6c009c90 0xffff6c009aa0
+2026-10-02T10:45:27.467304722Z [Fri Oct  2 10:45:27 2026] Creating new session: 3625260169422238; 0xffff6c009aa0
+2026-10-02T10:45:27.468734185Z [Fri Oct  2 10:45:27 2026] Creating new handle in session 3625260169422238: 6493866208707732; 0xffff6c009aa0 0xffff6c009c90
+2026-10-02T10:45:27.594239033Z [Fri Oct  2 10:45:27 2026] [6493866208707732] Creating ICE agent (ICE Full mode, controlled)
+2026-10-02T10:45:27.597157595Z [Fri Oct  2 10:45:27 2026] [33m[WARN][0m [6493866208707732] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:27.599066504Z [Fri Oct  2 10:45:27 2026] [33m[WARN][0m [6493866208707732] Error resolving mDNS address (47005e39-8c3d-430f-b7f3-3bd4bf5e0e22.local): Error resolving “47005e39-8c3d-430f-b7f3-3bd4bf5e0e22.local”: Name or service not known
+2026-10-02T10:45:27.621368908Z [Fri Oct  2 10:45:27 2026] [6493866208707732] The DTLS handshake has been completed
+2026-10-02T10:45:27.621405467Z [Fri Oct  2 10:45:27 2026] [janus.plugin.videoroom-0xffff58055f20] WebRTC media is now available
+2026-10-02T10:45:29.185991689Z [Fri Oct  2 10:45:29 2026] Creating new session: 6917632279619767; 0xffff6c004040
+2026-10-02T10:45:29.187187002Z [Fri Oct  2 10:45:29 2026] Creating new handle in session 6917632279619767: 5303437383109815; 0xffff6c004040 0xffff6c002e30
+2026-10-02T10:45:29.189893959Z [Fri Oct  2 10:45:29 2026] Creating new handle in session 6917632279619767: 2933001010148839; 0xffff6c004040 0xffff6c0357b0
+2026-10-02T10:45:29.195682467Z [Fri Oct  2 10:45:29 2026] [2933001010148839] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:45:29.212871344Z [Fri Oct  2 10:45:29 2026] [33m[WARN][0m [2933001010148839] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:29.218033051Z [Fri Oct  2 10:45:29 2026] [33m[WARN][0m [2933001010148839] Error resolving mDNS address (34553348-b5f5-4885-8c0b-949816c3b284.local): Error resolving “34553348-b5f5-4885-8c0b-949816c3b284.local”: Name or service not known
+2026-10-02T10:45:29.267211086Z [Fri Oct  2 10:45:29 2026] [2933001010148839] The DTLS handshake has been completed
+2026-10-02T10:45:29.267261373Z [Fri Oct  2 10:45:29 2026] [janus.plugin.videoroom-0xffff50005040] WebRTC media is now available
+2026-10-02T10:45:29.314996258Z [Fri Oct  2 10:45:29 2026] [5303437383109815] Creating ICE agent (ICE Full mode, controlled)
+2026-10-02T10:45:29.317130877Z [Fri Oct  2 10:45:29 2026] [33m[WARN][0m [5303437383109815] Error resolving mDNS address (34553348-b5f5-4885-8c0b-949816c3b284.local): Error resolving “34553348-b5f5-4885-8c0b-949816c3b284.local”: Name or service not known
+2026-10-02T10:45:29.317569874Z [Fri Oct  2 10:45:29 2026] [33m[WARN][0m [5303437383109815] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:29.343358569Z [Fri Oct  2 10:45:29 2026] [5303437383109815] The DTLS handshake has been completed
+2026-10-02T10:45:29.343392051Z [Fri Oct  2 10:45:29 2026] [janus.plugin.videoroom-0xffff58011a90] WebRTC media is now available
+2026-10-02T10:45:29.344499758Z [Fri Oct  2 10:45:29 2026] Creating new handle in session 3625260169422238: 7927941015699026; 0xffff6c009aa0 0xffff6c0091a0
+2026-10-02T10:45:29.345662647Z [Fri Oct  2 10:45:29 2026] [7927941015699026] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:45:29.360460774Z [Fri Oct  2 10:45:29 2026] [33m[WARN][0m [7927941015699026] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:29.361951979Z [Fri Oct  2 10:45:29 2026] [33m[WARN][0m [7927941015699026] Error resolving mDNS address (47005e39-8c3d-430f-b7f3-3bd4bf5e0e22.local): Error resolving “47005e39-8c3d-430f-b7f3-3bd4bf5e0e22.local”: Name or service not known
+2026-10-02T10:45:29.423742086Z [Fri Oct  2 10:45:29 2026] [7927941015699026] The DTLS handshake has been completed
+2026-10-02T10:45:29.423766581Z [Fri Oct  2 10:45:29 2026] [janus.plugin.videoroom-0xffff4c044b80] WebRTC media is now available
+2026-10-02T10:45:30.945364344Z [Fri Oct  2 10:45:30 2026] Creating new session: 4308475982797460; 0xffff5807e640
+2026-10-02T10:45:30.946555265Z [Fri Oct  2 10:45:30 2026] Creating new handle in session 4308475982797460: 2425526279762511; 0xffff5807e640 0xffff6c003050
+2026-10-02T10:45:30.949805219Z [Fri Oct  2 10:45:30 2026] Creating new handle in session 4308475982797460: 3696473614683701; 0xffff5807e640 0xffff6c02be80
+2026-10-02T10:45:30.950044167Z [Fri Oct  2 10:45:30 2026] Creating new handle in session 4308475982797460: 4916591872003967; 0xffff5807e640 0xffff6c04a760
+2026-10-02T10:45:30.955947272Z [Fri Oct  2 10:45:30 2026] [3696473614683701] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:45:30.956608880Z [Fri Oct  2 10:45:30 2026] [4916591872003967] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:45:30.982904336Z [Fri Oct  2 10:45:30 2026] [33m[WARN][0m [3696473614683701] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:30.984345249Z [Fri Oct  2 10:45:30 2026] [33m[WARN][0m [4916591872003967] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:31.007148960Z [Fri Oct  2 10:45:30 2026] [33m[WARN][0m [3696473614683701] Error resolving mDNS address (faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local): Error resolving “faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local”: Name or service not known
+2026-10-02T10:45:31.007176498Z [Fri Oct  2 10:45:30 2026] [33m[WARN][0m [4916591872003967] Error resolving mDNS address (faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local): Error resolving “faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local”: Name or service not known
+2026-10-02T10:45:31.048711194Z [Fri Oct  2 10:45:31 2026] [4916591872003967] The DTLS handshake has been completed
+2026-10-02T10:45:31.048734382Z [Fri Oct  2 10:45:31 2026] [janus.plugin.videoroom-0xffff50004750] WebRTC media is now available
+2026-10-02T10:45:31.049204106Z [Fri Oct  2 10:45:31 2026] [3696473614683701] The DTLS handshake has been completed
+2026-10-02T10:45:31.049216928Z [Fri Oct  2 10:45:31 2026] [janus.plugin.videoroom-0xffff500112f0] WebRTC media is now available
+2026-10-02T10:45:31.078828591Z [Fri Oct  2 10:45:31 2026] [2425526279762511] Creating ICE agent (ICE Full mode, controlled)
+2026-10-02T10:45:31.080104004Z [Fri Oct  2 10:45:31 2026] [33m[WARN][0m [2425526279762511] Error resolving mDNS address (faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local): Error resolving “faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local”: Name or service not known
+2026-10-02T10:45:31.081471776Z [Fri Oct  2 10:45:31 2026] [33m[WARN][0m [2425526279762511] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:31.109306430Z [Fri Oct  2 10:45:31 2026] [2425526279762511] The DTLS handshake has been completed
+2026-10-02T10:45:31.109329842Z [Fri Oct  2 10:45:31 2026] [janus.plugin.videoroom-0xffff6c000df0] WebRTC media is now available
+2026-10-02T10:45:31.110846327Z [Fri Oct  2 10:45:31 2026] Creating new handle in session 3625260169422238: 442690516667490; 0xffff6c009aa0 0xffff6c006dc0
+2026-10-02T10:45:31.110993128Z [Fri Oct  2 10:45:31 2026] Creating new handle in session 6917632279619767: 1711801259347459; 0xffff6c004040 0xffff6c0606b0
+2026-10-02T10:45:31.112650153Z [Fri Oct  2 10:45:31 2026] [1711801259347459] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:45:31.113193023Z [Fri Oct  2 10:45:31 2026] [442690516667490] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:45:31.133189610Z [Fri Oct  2 10:45:31 2026] [33m[WARN][0m [1711801259347459] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:31.133440094Z [Fri Oct  2 10:45:31 2026] [33m[WARN][0m [442690516667490] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:45:31.134421757Z [Fri Oct  2 10:45:31 2026] [33m[WARN][0m [1711801259347459] Error resolving mDNS address (34553348-b5f5-4885-8c0b-949816c3b284.local): Error resolving “34553348-b5f5-4885-8c0b-949816c3b284.local”: Name or service not known
+2026-10-02T10:45:31.135123591Z [Fri Oct  2 10:45:31 2026] [33m[WARN][0m [442690516667490] Error resolving mDNS address (47005e39-8c3d-430f-b7f3-3bd4bf5e0e22.local): Error resolving “47005e39-8c3d-430f-b7f3-3bd4bf5e0e22.local”: Name or service not known
+2026-10-02T10:45:31.189205725Z [Fri Oct  2 10:45:31 2026] [442690516667490] The DTLS handshake has been completed
+2026-10-02T10:45:31.189233410Z [Fri Oct  2 10:45:31 2026] [janus.plugin.videoroom-0xffff500740d0] WebRTC media is now available
+2026-10-02T10:45:31.189235312Z [Fri Oct  2 10:45:31 2026] [1711801259347459] The DTLS handshake has been completed
+2026-10-02T10:45:31.189236532Z [Fri Oct  2 10:45:31 2026] [janus.plugin.videoroom-0xffff4c051500] WebRTC media is now available
+2026-10-02T10:45:36.168297166Z [Fri Oct  2 10:45:36 2026] Creating new session: 6055843536812882; 0xffff50042e70
+2026-10-02T10:45:36.171131542Z [Fri Oct  2 10:45:36 2026] Creating new handle in session 6055843536812882: 6074967565356294; 0xffff50042e70 0xffff6c0327b0
+2026-10-02T10:46:02.985801579Z [Fri Oct  2 10:46:02 2026] [33m[WARN][0m [2425526279762511] Didn't receive audio for more than 1 second(s)...
+2026-10-02T10:46:12.129769594Z [Fri Oct  2 10:46:12 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c02be80 0xffff500112f0 0xffff6c02be80 0xffff6c0076d0
+2026-10-02T10:46:12.129875415Z [Fri Oct  2 10:46:12 2026] [janus.plugin.videoroom-0xffff500112f0] No WebRTC media anymore; 0xffff6c02be80 0xffff6c0076d0
+2026-10-02T10:46:12.130157182Z [Fri Oct  2 10:46:12 2026] [3696473614683701] WebRTC resources freed; 0xffff6c02be80 0xffff5807e640
+2026-10-02T10:46:12.130524625Z [Fri Oct  2 10:46:12 2026] [3696473614683701] Handle and related resources freed; 0xffff6c02be80 0xffff5807e640
+2026-10-02T10:46:12.132162825Z [Fri Oct  2 10:46:12 2026] Creating new handle in session 4308475982797460: 1792144051294643; 0xffff5807e640 0xffff6c032390
+2026-10-02T10:46:12.132373828Z [Fri Oct  2 10:46:12 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c04a760 0xffff50004750 0xffff6c04a760 0xffff5000e370
+2026-10-02T10:46:12.132613182Z [Fri Oct  2 10:46:12 2026] [janus.plugin.videoroom-0xffff50004750] No WebRTC media anymore; 0xffff6c04a760 0xffff5000e370
+2026-10-02T10:46:12.132991796Z [Fri Oct  2 10:46:12 2026] [4916591872003967] WebRTC resources freed; 0xffff6c04a760 0xffff5807e640
+2026-10-02T10:46:12.132999246Z [Fri Oct  2 10:46:12 2026] [4916591872003967] Handle and related resources freed; 0xffff6c04a760 0xffff5807e640
+2026-10-02T10:46:12.133455069Z [Fri Oct  2 10:46:12 2026] Creating new handle in session 4308475982797460: 2090164318929892; 0xffff5807e640 0xffff6c02be80
+2026-10-02T10:46:12.135591609Z [Fri Oct  2 10:46:12 2026] [1792144051294643] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:46:12.137828433Z [Fri Oct  2 10:46:12 2026] [2425526279762511] Negotiation update, checking what changed...
+2026-10-02T10:46:12.137908416Z [Fri Oct  2 10:46:12 2026] [2425526279762511] ICE restart detected
+2026-10-02T10:46:12.137984181Z [Fri Oct  2 10:46:12 2026] [2425526279762511] Restarting ICE...
+2026-10-02T10:46:12.138009011Z [Fri Oct  2 10:46:12 2026] [2090164318929892] Creating ICE agent (ICE Full mode, controlling)
+2026-10-02T10:46:12.157322847Z [Fri Oct  2 10:46:12 2026] [33m[WARN][0m [2425526279762511] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:46:12.157716327Z [Fri Oct  2 10:46:12 2026] [33m[WARN][0m [2090164318929892] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:46:12.158268073Z [Fri Oct  2 10:46:12 2026] [33m[WARN][0m [1792144051294643] Failed to add some remote candidates (added 0, expected 1)
+2026-10-02T10:46:12.164868641Z [Fri Oct  2 10:46:12 2026] [33m[WARN][0m [2090164318929892] Error resolving mDNS address (faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local): Error resolving “faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local”: Name or service not known
+2026-10-02T10:46:12.164977850Z [Fri Oct  2 10:46:12 2026] [33m[WARN][0m [1792144051294643] Error resolving mDNS address (faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local): Error resolving “faf7e6e1-beab-47f6-9a0c-e52c55f8d397.local”: Name or service not known
+2026-10-02T10:46:12.221019377Z [Fri Oct  2 10:46:12 2026] [1792144051294643] The DTLS handshake has been completed
+2026-10-02T10:46:12.221047656Z [Fri Oct  2 10:46:12 2026] [janus.plugin.videoroom-0xffff440022e0] WebRTC media is now available
+2026-10-02T10:46:12.221822872Z [Fri Oct  2 10:46:12 2026] [2090164318929892] The DTLS handshake has been completed
+2026-10-02T10:46:12.221838797Z [Fri Oct  2 10:46:12 2026] [janus.plugin.videoroom-0xffff50008bd0] WebRTC media is now available
+2026-10-02T10:46:12.685667355Z [Fri Oct  2 10:46:12 2026] [WSS-0xffff50004810] Destroying WebSocket client
+2026-10-02T10:47:02.911972201Z [Fri Oct  2 10:47:02 2026] Destroying session 6055843536812882; 0xffff50042e70
+2026-10-02T10:47:02.912003968Z [Fri Oct  2 10:47:02 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c0327b0 0xffff58018990 0xffff6c0327b0 0xffff58011070
+2026-10-02T10:47:02.912006881Z [Fri Oct  2 10:47:02 2026] [6074967565356294] Handle and related resources freed; 0xffff6c0327b0 0xffff50042e70
+2026-10-02T10:47:04.195593329Z [Fri Oct  2 10:47:04 2026] [janus.plugin.videoroom-0xffff500740d0] No WebRTC media anymore; 0xffff6c006dc0 0xffff50024630
+2026-10-02T10:47:04.195616792Z [Fri Oct  2 10:47:04 2026] [442690516667490] WebRTC resources freed; 0xffff6c006dc0 0xffff6c009aa0
+2026-10-02T10:47:04.195618805Z [Fri Oct  2 10:47:04 2026] [janus.plugin.videoroom-0xffff4c051500] No WebRTC media anymore; 0xffff6c0606b0 0xffff6c007b50
+2026-10-02T10:47:04.195627932Z [Fri Oct  2 10:47:04 2026] [1711801259347459] WebRTC resources freed; 0xffff6c0606b0 0xffff6c004040
+2026-10-02T10:47:04.198848293Z [Fri Oct  2 10:47:04 2026] Destroying session 4308475982797460; 0xffff5807e640
+2026-10-02T10:47:04.198888742Z [Fri Oct  2 10:47:04 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c032390 0xffff440022e0 0xffff6c032390 0xffff6c008a20
+2026-10-02T10:47:04.198891441Z [Fri Oct  2 10:47:04 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c003050 0xffff6c000df0 0xffff6c003050 0xffff500075e0
+2026-10-02T10:47:04.198906735Z [Fri Oct  2 10:47:04 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c02be80 0xffff50008bd0 0xffff6c02be80 0xffff6c034220
+2026-10-02T10:47:04.198958859Z [Fri Oct  2 10:47:04 2026] [janus.plugin.videoroom-0xffff50008bd0] No WebRTC media anymore; 0xffff6c02be80 0xffff6c034220
+2026-10-02T10:47:04.199031279Z [Fri Oct  2 10:47:04 2026] [janus.plugin.videoroom-0xffff6c000df0] No WebRTC media anymore; 0xffff6c003050 0xffff500075e0
+2026-10-02T10:47:04.199205226Z [Fri Oct  2 10:47:04 2026] [janus.plugin.videoroom-0xffff440022e0] No WebRTC media anymore; 0xffff6c032390 0xffff6c008a20
+2026-10-02T10:47:04.199693095Z [Fri Oct  2 10:47:04 2026] [2090164318929892] WebRTC resources freed; 0xffff6c02be80 0xffff5807e640
+2026-10-02T10:47:04.199818113Z [Fri Oct  2 10:47:04 2026] [2090164318929892] Handle and related resources freed; 0xffff6c02be80 0xffff5807e640
+2026-10-02T10:47:04.200351663Z [Fri Oct  2 10:47:04 2026] [2425526279762511] WebRTC resources freed; 0xffff6c003050 0xffff5807e640
+2026-10-02T10:47:04.200363939Z [Fri Oct  2 10:47:04 2026] [2425526279762511] Handle and related resources freed; 0xffff6c003050 0xffff5807e640
+2026-10-02T10:47:04.200539840Z [Fri Oct  2 10:47:04 2026] [1792144051294643] WebRTC resources freed; 0xffff6c032390 0xffff5807e640
+2026-10-02T10:47:04.200733069Z [Fri Oct  2 10:47:04 2026] [1792144051294643] Handle and related resources freed; 0xffff6c032390 0xffff5807e640
+2026-10-02T10:47:04.202673523Z [Fri Oct  2 10:47:04 2026] [WSS-0xffff500428b0] Destroying WebSocket client
+2026-10-02T10:47:05.435968225Z [Fri Oct  2 10:47:05 2026] [janus.plugin.videoroom-0xffff50005040] No WebRTC media anymore; 0xffff6c0357b0 0xffff6c00a410
+2026-10-02T10:47:05.436266837Z [Fri Oct  2 10:47:05 2026] [2933001010148839] WebRTC resources freed; 0xffff6c0357b0 0xffff6c004040
+2026-10-02T10:47:05.436875136Z [Fri Oct  2 10:47:05 2026] Destroying session 3625260169422238; 0xffff6c009aa0
+2026-10-02T10:47:05.436884377Z [Fri Oct  2 10:47:05 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c009c90 0xffff58055f20 0xffff6c009c90 0xffff6c065880
+2026-10-02T10:47:05.437031640Z [Fri Oct  2 10:47:05 2026] [janus.plugin.videoroom-0xffff58055f20] No WebRTC media anymore; 0xffff6c009c90 0xffff6c065880
+2026-10-02T10:47:05.437037978Z [Fri Oct  2 10:47:05 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c0091a0 0xffff4c044b80 0xffff6c0091a0 0xffff6c0014e0
+2026-10-02T10:47:05.437041045Z [Fri Oct  2 10:47:05 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c006dc0 0xffff500740d0 0xffff6c006dc0 0xffff50024630
+2026-10-02T10:47:05.437127368Z [Fri Oct  2 10:47:05 2026] [442690516667490] Handle and related resources freed; 0xffff6c006dc0 0xffff6c009aa0
+2026-10-02T10:47:05.437426729Z [Fri Oct  2 10:47:05 2026] [janus.plugin.videoroom-0xffff4c044b80] No WebRTC media anymore; 0xffff6c0091a0 0xffff6c0014e0
+2026-10-02T10:47:05.437992949Z [Fri Oct  2 10:47:05 2026] [6493866208707732] WebRTC resources freed; 0xffff6c009c90 0xffff6c009aa0
+2026-10-02T10:47:05.437999950Z [Fri Oct  2 10:47:05 2026] [6493866208707732] Handle and related resources freed; 0xffff6c009c90 0xffff6c009aa0
+2026-10-02T10:47:05.438281521Z [Fri Oct  2 10:47:05 2026] [7927941015699026] WebRTC resources freed; 0xffff6c0091a0 0xffff6c009aa0
+2026-10-02T10:47:05.438347291Z [Fri Oct  2 10:47:05 2026] [7927941015699026] Handle and related resources freed; 0xffff6c0091a0 0xffff6c009aa0
+2026-10-02T10:47:05.440381520Z [Fri Oct  2 10:47:05 2026] [WSS-0xffff500013f0] Destroying WebSocket client
+2026-10-02T10:47:06.678048762Z [Fri Oct  2 10:47:06 2026] Destroying session 6917632279619767; 0xffff6c004040
+2026-10-02T10:47:06.678073816Z [Fri Oct  2 10:47:06 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c0606b0 0xffff4c051500 0xffff6c0606b0 0xffff6c007b50
+2026-10-02T10:47:06.679124493Z [Fri Oct  2 10:47:06 2026] [1711801259347459] Handle and related resources freed; 0xffff6c0606b0 0xffff6c004040
+2026-10-02T10:47:06.679138049Z [Fri Oct  2 10:47:06 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c002e30 0xffff58011a90 0xffff6c002e30 0xffff6c00c620
+2026-10-02T10:47:06.679139606Z [Fri Oct  2 10:47:06 2026] Detaching handle from JANUS VideoRoom plugin; 0xffff6c0357b0 0xffff50005040 0xffff6c0357b0 0xffff6c00a410
+2026-10-02T10:47:06.679141294Z [Fri Oct  2 10:47:06 2026] [janus.plugin.videoroom-0xffff58011a90] No WebRTC media anymore; 0xffff6c002e30 0xffff6c00c620
+2026-10-02T10:47:06.679142897Z [Fri Oct  2 10:47:06 2026] [2933001010148839] Handle and related resources freed; 0xffff6c0357b0 0xffff6c004040
+2026-10-02T10:47:06.679144134Z [Fri Oct  2 10:47:06 2026] [5303437383109815] WebRTC resources freed; 0xffff6c002e30 0xffff6c004040
+2026-10-02T10:47:06.679145339Z [Fri Oct  2 10:47:06 2026] [5303437383109815] Handle and related resources freed; 0xffff6c002e30 0xffff6c004040
+2026-10-02T10:47:06.679934143Z [Fri Oct  2 10:47:06 2026] [WSS-0xffff50041c50] Destroying WebSocket client
