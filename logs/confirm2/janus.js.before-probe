@@ -1,0 +1,226 @@
+// Janus VideoRoom adapter: raw WebSocket API + browser RTCPeerConnection. No janus.js.
+// Timings mirror livekit-client v2.22.3 (STAGE-A-SPEC §1.5).
+'use strict';
+
+(() => {
+  const WS_TIMEOUT_MS = 15000; // mirrors livekit-client src/room/defaults.ts:52 websocketTimeout
+  const PC_TIMEOUT_MS = 15000; // mirrors src/room/defaults.ts:51 peerConnectionTimeout
+  const SETTLE_MS = 2000; //      mirrors src/room/RTCEngine.ts:111,1542 minReconnectWait
+  const REQ_TIMEOUT_MS = 15000;
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  let txnSeq = 0;
+
+  class JanusAdapter {
+    constructor(o) {
+      this.o = o; // {wsUrl, room, feedId, display, keepaliveMs, onTerminal, attribution}
+      this.ws = null; this.sid = null; this.pub = null; this.subs = new Map();
+      this.pending = new Map(); this.lastReplyAt = 0; this.ka = null; this.terminated = null;
+      this.joined = false;
+    }
+    stack() { return 'janus'; }
+    sessionId() { return this.sid ? String(this.sid) : null; }
+    isTerminated() { return !!this.terminated; }
+    isJoined() { return this.joined && !this.terminated; }
+
+    // ---- transport ----
+    #open() {
+      return new Promise((resolve, reject) => {
+        const ws = new WebSocket(this.o.wsUrl, 'janus-protocol');
+        const to = setTimeout(() => { try { ws.close(); } catch {} reject(new Error('ws open timeout')); }, WS_TIMEOUT_MS);
+        ws.onopen = () => { clearTimeout(to); resolve(ws); };
+        ws.onerror = () => { clearTimeout(to); reject(new Error('ws error')); };
+        ws.onmessage = (ev) => this.#onMessage(ws, JSON.parse(ev.data));
+        ws.onclose = () => C4X.log('janus_ws_close', { gen: ws._c4.gen, ws: ws._c4.id });
+      });
+    }
+    #send(body, { async = false, ws = this.ws, timeoutMs = REQ_TIMEOUT_MS } = {}) {
+      const transaction = `t${++txnSeq}`;
+      const msg = { ...body, transaction };
+      if (this.sid && msg.session_id === undefined && body.janus !== 'create') msg.session_id = this.sid;
+      return new Promise((resolve) => {
+        this.pending.set(transaction, { resolve, async });
+        setTimeout(() => { if (this.pending.delete(transaction)) resolve({ janus: 'c4_timeout' }); }, timeoutMs);
+        try { ws.send(JSON.stringify(msg)); } catch (e) { this.pending.delete(transaction); resolve({ janus: 'c4_send_error', error: String(e) }); }
+      });
+    }
+    #onMessage(ws, m) {
+      if (ws._c4.gen === C4X.generation) this.lastReplyAt = C4X.now();
+      const p = m.transaction && this.pending.get(m.transaction);
+      if (p) {
+        if (m.janus === 'ack' && p.async) return;
+        this.pending.delete(m.transaction); p.resolve(m); return;
+      }
+      if (ws._c4.gen !== C4X.generation) return; // abandoned generation: ignore
+      // A subscriber offer with no waiting request (our request timed out first, or Janus pushed a
+      // postponed one). It MUST be answered: until it is, Janus postpones every later restart
+      // for that handle without replying (janus_videoroom.c, `!subscriber->answered`).
+      if (m.jsep && m.jsep.type === 'offer') {
+        const s = [...this.subs.values()].find((x) => x.handle === m.sender && x.pc);
+        if (s) { C4X.log('janus_sub_late_offer', { sender: m.sender }); this.#answer(s, m.jsep).catch((e) => C4X.log('janus_sub_late_offer_failed', { e: String(e) })); return; }
+      }
+      const pd = m.plugindata && m.plugindata.data;
+      if (m.janus === 'timeout') { this.#terminal('timeout'); return; }
+      if (m.janus === 'hangup') { C4X.log('janus_hangup', { sender: m.sender, reason: m.reason }); this.#markHung(m.sender); return; }
+      if (['webrtcup', 'media', 'slowlink', 'detached'].includes(m.janus)) { C4X.log(`janus_${m.janus}`, { sender: m.sender, receiving: m.receiving }); return; }
+      if (m.janus === 'event' && pd) {
+        if (pd.leaving === 'ok' && pd.reason === 'kicked') { this.#terminal('kicked'); return; }
+        if (Array.isArray(pd.publishers)) for (const p2 of pd.publishers) this.#subscribe(p2.id, p2.display);
+        const gone = typeof pd.leaving === 'number' ? pd.leaving : typeof pd.unpublished === 'number' ? pd.unpublished : typeof pd.kicked === 'number' ? pd.kicked : null;
+        if (gone !== null && this.subs.has(gone)) { const s = this.subs.get(gone); this.subs.delete(gone); try { s.pc.close(); } catch {} C4X.log('janus_sub_dropped', { feed: gone }); }
+        if (this.onPluginEvent) this.onPluginEvent(m);
+      }
+    }
+    #terminal(reason) {
+      if (this.terminated) return;
+      this.terminated = { t: C4X.now(), reason }; C4X.log('janus_terminal', this.terminated);
+      this.o.onTerminal(this.terminated);
+    }
+    #markHung(handle) { if (this.pub && this.pub.handle === handle) this.pub.hung = true; for (const s of this.subs.values()) if (s.handle === handle) s.hung = true; }
+    #keepalive(on) {
+      clearInterval(this.ka); this.ka = null;
+      if (on) this.ka = setInterval(() => { if (this.ws && this.ws.readyState === 1) this.#send({ janus: 'keepalive' }); }, this.o.keepaliveMs);
+    }
+    async #gathered(pc) {
+      if (pc.iceGatheringState === 'complete') return;
+      await new Promise((r) => { const t = setTimeout(r, 5000); pc.addEventListener('icegatheringstatechange', () => { if (pc.iceGatheringState === 'complete') { clearTimeout(t); r(); } }); });
+    }
+    async #attach() { const r = await this.#send({ janus: 'attach', plugin: 'janus.plugin.videoroom' }); if (r.janus !== 'success') throw new Error(`attach ${JSON.stringify(r).slice(0, 200)}`); return r.data.id; }
+    #message(handle, body, jsep) { return this.#send({ janus: 'message', handle_id: handle, body, ...(jsep ? { jsep } : {}) }, { async: true }); }
+
+    // ---- session / publish / subscribe ----
+    async #newSession() {
+      this.ws = await this.#open();
+      const r = await this.#send({ janus: 'create' });
+      if (r.janus !== 'success') throw new Error(`create ${JSON.stringify(r).slice(0, 200)}`);
+      this.sid = r.data.id; this.lastReplyAt = C4X.now(); this.terminated = null; this.joined = false;
+      this.pub = { handle: await this.#attach(), pc: null, hung: false };
+      this.#keepalive(true);
+      C4X.log('janus_session', { sid: String(this.sid), gen: C4X.generation });
+    }
+    /** @returns {Promise<{ok:boolean, code?:number}>} */
+    async #joinAndPublish() {
+      const r = await this.#message(this.pub.handle, { request: 'join', ptype: 'publisher', room: this.o.room, id: this.o.feedId, display: this.o.display });
+      const d = r.plugindata && r.plugindata.data;
+      if (!d || d.error_code) { C4X.log('janus_join_refused', { code: d && d.error_code, error: d && d.error }); return { ok: false, code: d && d.error_code }; }
+      this.joined = true;
+      for (const p of d.publishers || []) this.#subscribe(p.id, p.display);
+      await this.#publish();
+      return { ok: true };
+    }
+    async #publish() {
+      const pc = new RTCPeerConnection({});
+      pc.addTrack(C4X.audio.freshTrack());
+      await pc.setLocalDescription(await pc.createOffer());
+      await this.#gathered(pc);
+      const r = await this.#message(this.pub.handle, { request: 'configure', audio: true, video: false }, pc.localDescription.toJSON());
+      if (!r.jsep) throw new Error(`publish: no answer ${JSON.stringify(r.plugindata || r).slice(0, 200)}`);
+      await pc.setRemoteDescription(r.jsep);
+      this.pub.pc = pc; this.pub.hung = false;
+    }
+    async #subscribe(feed, display) {
+      if (feed === this.o.feedId || this.subs.has(feed)) return;
+      const s = { handle: null, pc: null, display, hung: false };
+      this.subs.set(feed, s);
+      try {
+        s.handle = await this.#attach();
+        const r = await this.#message(s.handle, { request: 'join', ptype: 'subscriber', room: this.o.room, streams: [{ feed }] });
+        if (!r.jsep) throw new Error(`subscribe: no offer ${JSON.stringify(r.plugindata || r).slice(0, 200)}`);
+        s.pc = new RTCPeerConnection({});
+        s.pc.ontrack = (ev) => C4X.attachRemote(display, ev.track);
+        await this.#answer(s, r.jsep);
+        C4X.log('janus_subscribed', { feed, display });
+      } catch (e) { this.subs.delete(feed); C4X.log('janus_subscribe_failed', { feed, e: String(e) }); }
+    }
+    async #answer(s, offer) {
+      await s.pc.setRemoteDescription(offer);
+      await s.pc.setLocalDescription(await s.pc.createAnswer());
+      await this.#gathered(s.pc);
+      await this.#message(s.handle, { request: 'start' }, s.pc.localDescription.toJSON());
+    }
+
+    async join() { await C4X.initAudio(); await this.#newSession(); const j = await this.#joinAndPublish(); if (!j.ok) throw new Error(`join refused ${j.code}`); return { sessionId: this.sessionId() }; }
+
+    // ---- recovery actions (all attribution-checked) ----
+    async #iceRestartAll(claimed = false) {
+      this.o.attribution.check('janus.iceRestartAll', { gen: C4X.generation });
+      const t0 = C4X.now();
+      const feeds = [...this.subs.entries()].filter(([, s]) => s.handle); // subscriptions that must come back
+      const pubDone = (async () => {
+        if (!this.pub.pc || this.pub.hung || this.pub.pc.connectionState === 'closed') return this.#publish();
+        const pc = this.pub.pc;
+        await pc.setLocalDescription(await pc.createOffer({ iceRestart: true }));
+        await this.#gathered(pc);
+        const r = await this.#message(this.pub.handle, { request: 'configure', audio: true, video: false }, pc.localDescription.toJSON());
+        if (r.jsep) await pc.setRemoteDescription(r.jsep);
+      })().catch((e) => C4X.log('janus_pub_restart_failed', { e: String(e) }));
+      await Promise.all([pubDone, ...feeds.map(([feed, s]) => this.#restartSub(feed, s, claimed).catch((e) => C4X.log('janus_sub_restart_failed', { feed, e: String(e) })))]);
+      // wait for ICE (<= PC_TIMEOUT_MS), and never declare done before SETTLE_MS (mirrored)
+      const deadline = t0 + PC_TIMEOUT_MS;
+      const up = (pc) => pc && ['connected', 'completed'].includes(pc.iceConnectionState);
+      const all = () => up(this.pub.pc) && feeds.every(([feed]) => this.subs.has(feed) && up(this.subs.get(feed).pc));
+      while (C4X.now() < deadline && !all()) await sleep(100);
+      const left = t0 + SETTLE_MS - C4X.now(); if (left > 0) await sleep(left);
+      return all(); // every subscription that existed before must be back, not just the publisher
+    }
+    /** Restart one subscription inside the session.
+     *  Live socket: `configure restart:true` and answer the offer.
+     *  After a claim (or when Janus acks but sends no offer): server->client messages on the old
+     *  socket are lost, so an offer may be outstanding that we never saw; Janus then postpones
+     *  restarts forever. The only way out is a fresh handle: detach, attach, subscribe again. */
+    async #restartSub(feed, s, claimed) {
+      if (!claimed) {
+        const tReq = C4X.now();
+        const r = await this.#message(s.handle, { request: 'configure', restart: true });
+        if (r.jsep) { await this.#answer(s, r.jsep); return; }
+        C4X.log('janus_sub_restart_no_offer', { feed, reply: r.janus });
+        if (this.lastReplyAt < tReq) return; // socket silent: nothing more to try on it
+      }
+      C4X.log('janus_resubscribe', { feed, oldHandle: s.handle, claimed: !!claimed });
+      if (this.subs.get(feed) === s) this.subs.delete(feed);
+      this.#send({ janus: 'detach', handle_id: s.handle }); // best effort; not awaited
+      try { if (s.pc) s.pc.close(); } catch {}
+      await this.#subscribe(feed, s.display);
+    }
+
+    /** Transport restart within the session: ICE restart; if the WS is dead, claim first. */
+    async transportRestart() {
+      this.o.attribution.check('janus.transportRestart', { gen: C4X.generation });
+      if (this.terminated) return { ok: false, detail: 'terminated' };
+      const wsAlive = this.ws && this.ws.readyState === 1 && C4X.now() - this.lastReplyAt < 15000;
+      let claimed = null;
+      if (!wsAlive) {
+        try { if (this.ws) this.ws.close(); } catch {}
+        try { this.ws = await this.#open(); } catch (e) { return { ok: false, detail: `ws: ${e.message}` }; }
+        const r = await this.#send({ janus: 'claim', session_id: this.sid });
+        if (r.janus !== 'success') { const code = r.error && r.error.code; C4X.log('janus_claim_refused', { code }); return { ok: false, refused: code === 458 ? 'claim/458' : `claim/${code || r.janus}` }; }
+        claimed = true; this.lastReplyAt = C4X.now(); C4X.log('janus_claimed', { sid: String(this.sid) });
+      }
+      const ok = await this.#iceRestartAll(!!claimed);
+      return { ok, claimed: !!claimed, sessionId: this.sessionId(), sameSession: true };
+    }
+
+    /** Rebuild = abandon (DROP, no destroy) + new session joining with the SAME feed id. */
+    async rebuild() {
+      this.o.attribution.check('janus.rebuild', { gen: C4X.generation });
+      const oldSid = this.sessionId();
+      if (!this.rebuildSession) {
+        this.#keepalive(false);
+        await C4X.dropGeneration(C4X.generation);
+        C4X.generation += 1; this.subs = new Map(); this.pending = new Map();
+        try { await this.#newSession(); } catch (e) { return { ok: false, detail: String(e.message || e) }; }
+        this.rebuildSession = this.sessionId();
+      }
+      const j = await this.#joinAndPublish();
+      if (!j.ok) return { ok: false, refused: `join/${j.code}`, sessionId: this.sessionId(), oldSessionId: oldSid };
+      this.rebuildSession = null;
+      return { ok: true, sessionId: this.sessionId(), oldSessionId: oldSid };
+    }
+
+    /** TEST ONLY (spec §6.3): a recovery NOT made by the driver. Must be caught. */
+    async plantRogue() { C4X.log('rogue_planted', { stack: 'janus' }); await this.#iceRestartAll(); }
+
+    pcsHealthy() { return C4X.livePCs().every((r) => !['disconnected', 'failed', 'closed'].includes(r.pc.iceConnectionState)); }
+    async leave() { try { await this.#message(this.pub.handle, { request: 'leave' }); await this.#send({ janus: 'destroy' }); this.#keepalive(false); this.ws.close(); } catch {} }
+  }
+  window.JanusAdapter = JanusAdapter;
+})();

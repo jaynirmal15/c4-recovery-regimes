@@ -1,0 +1,11 @@
+namespace/c4-janus created
+secret/janus-admin created
+configmap/janus-config created
+deployment.apps/event-sink created
+service/event-sink created
+deployment.apps/janus created
+service/janus created
+apply_exit=0
+Waiting for deployment "janus" rollout to finish: 0 of 1 updated replicas are available...
+error: timed out waiting for the condition
+rollout_exit=1

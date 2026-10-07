@@ -1,0 +1,65 @@
+
+=== janus-iso-all-10s-I-20261001T045130-1  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 3682743215653906
+   actions: transport_restart@7.014s ok (8.966s)
+   isolation: all planned 10s actual 10s | detected@2.014s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.105s recovered_t=10.169s observersFreshAgain=[10.169,10.159] staleMs@obs=[10169,10159] subjectFreshFrom=[10.114,10.122]
+   server: [{"t":-31.339,"event":"session.created","session":"3682743215653906"},{"t":-31.336,"event":"joined"},{"t":-31.195,"event":"configured"},{"t":-31.159,"event":"published"},{"t":10.374,"event":"configured"},{"t":10.375,"event":"updated"},{"t":65.812,"event":"leaving"},{"t":65.815,"event":"session.destroyed","session":"3682743215653906"}]
+   O1 saw: [{"t":65.813,"event":"leaving","feed":101}]
+   O2 saw: [{"t":65.813,"event":"leaving","feed":101}]
+
+=== janus-iso-media-30s-O-20261001T045347-2  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 1838762700553120
+   actions: transport_restart@7.217s fail (15.045s) ; transport_restart@27.417s ok (2.725s)
+   isolation: media planned 30s actual 30s | detected@2.017s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.72s recovered_t=42.805s observersFreshAgain=[42.547,42.805] staleMs@obs=[39219,39221] subjectFreshFrom=[30.36,30.371]
+   server: []
+   O1 saw: [{"t":84.535,"event":"leaving","feed":101}]
+   O2 saw: [{"t":84.534,"event":"leaving","feed":101}]
+
+=== livekit-iso-all-10s-I-20261001T045627-1  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_f2DGmPkS2JL4
+   actions: transport_restart@7.087s ok (5.361s)
+   isolation: all planned 10s actual 10s | detected@1.887s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=6.191s recovered_t=16.261s observersFreshAgain=[15.752,16.261] staleMs@obs=[13440,13440] subjectFreshFrom=[11.038,11.038]
+   server: [{"t":-30.814,"event":"participant_joined","sid":"PA_f2DGmPkS2JL4","reason":null},{"t":-30.716,"event":"track_published","sid":"PA_f2DGmPkS2JL4","reason":null},{"t":66.127,"event":"track_unpublished","sid":"PA_f2DGmPkS2JL4","reason":null},{"t":66.134,"event":"participant_left","sid":"PA_f2DGmPkS2JL4","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.112,"sid":"PA_f2DGmPkS2JL4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.112,"sid":"PA_f2DGmPkS2JL4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-O-20261001T045842-2  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_8vwfSJEC4bXY -> PA_WNzy5w5mCGer
+   actions: transport_restart@6.997s ok (2.026s) ; transport_restart@14.197s ok (2.023s) ; transport_restart@21.397s resume did not complete (2.023s) ; transport_restart@28.597s RECONNECT/STATE_MISMATCH (0.007s) ; rebuild@28.797s ok (2.442s)
+   isolation: media planned 30s actual 30.01s | detected@1.997s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.033,"kind":"resume"}]
+   freshness: fromRestore=1.352s recovered_t=31.462s observersFreshAgain=[31.454,31.462] staleMs@obs=[31454,31462] subjectFreshFrom=[31.262,31.27]
+   server: [{"t":-29.683,"event":"participant_joined","sid":"PA_8vwfSJEC4bXY","reason":null},{"t":-29.602,"event":"track_published","sid":"PA_8vwfSJEC4bXY","reason":null},{"t":27.044,"event":"track_unpublished","sid":"PA_8vwfSJEC4bXY","reason":null},{"t":27.048,"event":"participant_left","sid":"PA_8vwfSJEC4bXY","reason":"CONNECTION_TIMEOUT"},{"t":31.151,"event":"participant_joined","sid":"PA_WNzy5w5mCGer","r
+   O1 saw: [{"t":27.034,"sid":"PA_8vwfSJEC4bXY","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":31.223,"sid":"PA_WNzy5w5mCGer","state":"ACTIVE","reason":null},{"t":84.084,"sid":"PA_WNzy5w5mCGer","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.034,"sid":"PA_8vwfSJEC4bXY","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":31.222,"sid":"PA_WNzy5w5mCGer","state":"ACTIVE","reason":null},{"t":84.081,"sid":"PA_WNzy5w5mCGer","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== SUMMARY
+   janus/isolation                  2/2 pass
+   livekit/isolation                2/2 pass
+   aborts logged: 0
+
+=== SHAKEDOWN CELLS (stack | arm | mode | D | regime | detect | recovered-from-restore | stale@obs | server | observers | actions)
+   janus    I all   10s | R1 transport restart   |  2.014 |   0.105 | [10169,10159]   | S-silent    | O-nothing        | TR@7.014+
+   janus    O media 30s | R1 transport restart   |  2.017 |   12.72 | [39219,39221]   | S-silent    | O-nothing        | TR@7.217- TR@27.417+
+   livekit  I all   10s | R1 transport restart   |  1.887 |   6.191 | [13440,13440]   | S-silent    | O-nothing        | TR@7.087+
+   livekit  O media 30s | R2 rebuild             |  1.997 |   1.352 | [31454,31462]   | S-replaced  | O-left+returned  | TR@6.997+ TR@14.197+ TR@21.397- TR@28.597!RECONNECT/STATE_MISMATCH RB@28.797+
+
+GATE: PASS

@@ -1,0 +1,540 @@
+2026-09-30T23:41:01.646078317Z {
+2026-09-30T23:41:01.646112826Z     "path": "/livekit-webhook",
+2026-09-30T23:41:01.646115926Z     "headers": {
+2026-09-30T23:41:01.646118633Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:01.646120885Z         "user-agent": "LiveKit",
+2026-09-30T23:41:01.646122599Z         "content-length": "569",
+2026-09-30T23:41:01.646124561Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5NjEsIm5iZiI6MTc5MDgxMTY2MSwiaWF0IjoxNzkwODExNjYxLCJzaGEyNTYiOiJPbkNVWk9BN0F6Zm03eUgwdkJOcDBCMHFBNDBjWk91dnJVbjEyaEpEdG1rPSJ9.p5m77GXNzP1-JzFqXgI7s545933U44WerYj_h5sLAsw",
+2026-09-30T23:41:01.646126106Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:01.646127860Z         "accept-encoding": "gzip"
+2026-09-30T23:41:01.646129260Z     },
+2026-09-30T23:41:01.646131081Z     "method": "POST",
+2026-09-30T23:41:01.646133040Z     "body": "{\"event\":\"room_started\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}]}, \"id\":\"EV_zdkg9oT3PMER\", \"createdAt\":\"1790811661\"}",
+2026-09-30T23:41:01.646134498Z     "fresh": false,
+2026-09-30T23:41:01.646135734Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:01.646136905Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:01.646138070Z     "ips": [],
+2026-09-30T23:41:01.646139250Z     "protocol": "http",
+2026-09-30T23:41:01.646140420Z     "query": {},
+2026-09-30T23:41:01.646141573Z     "subdomains": [
+2026-09-30T23:41:01.646142719Z         "svc",
+2026-09-30T23:41:01.646143825Z         "c4-livekit",
+2026-09-30T23:41:01.646144924Z         "event-sink"
+2026-09-30T23:41:01.646146027Z     ],
+2026-09-30T23:41:01.646147208Z     "xhr": false,
+2026-09-30T23:41:01.646148453Z     "os": {
+2026-09-30T23:41:01.646149612Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:01.646150777Z     },
+2026-09-30T23:41:01.646151867Z     "connection": {}
+2026-09-30T23:41:01.646153007Z }
+2026-09-30T23:41:01.646154769Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:01 +0000] "POST /livekit-webhook HTTP/1.1" 200 1533 "-" "LiveKit"
+2026-09-30T23:41:01.917748917Z {
+2026-09-30T23:41:01.917775684Z     "path": "/livekit-webhook",
+2026-09-30T23:41:01.917777578Z     "headers": {
+2026-09-30T23:41:01.917779200Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:01.917789816Z         "user-agent": "LiveKit",
+2026-09-30T23:41:01.917791064Z         "content-length": "878",
+2026-09-30T23:41:01.917792708Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5NjEsIm5iZiI6MTc5MDgxMTY2MSwiaWF0IjoxNzkwODExNjYxLCJzaGEyNTYiOiIwZUdnYlJ5Rno5L2hlYVNPNm00U0JCUVFaeDVOOXg1RWpzMkc0WGJLU2JnPSJ9.mPE8xXPka5thsJYgstQA1CxmxJCIcKXtrCAu36leLd0",
+2026-09-30T23:41:01.917794022Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:01.917795598Z         "accept-encoding": "gzip"
+2026-09-30T23:41:01.917796760Z     },
+2026-09-30T23:41:01.917798559Z     "method": "POST",
+2026-09-30T23:41:01.917802719Z     "body": "{\"event\":\"participant_joined\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}]}, \"participant\":{\"sid\":\"PA_KYtNsYC8w9Bk\", \"identity\":\"O1\", \"state\":\"ACTIVE\", \"joinedAt\":\"1790811661\", \"joinedAtMs\":\"1790811661631\", \"name\":\"O1\", \"version\":2, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_4NgLRWoGS8jt\", \"createdAt\":\"1790811661\"}",
+2026-09-30T23:41:01.917804141Z     "fresh": false,
+2026-09-30T23:41:01.917805249Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:01.917806363Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:01.917807502Z     "ips": [],
+2026-09-30T23:41:01.917808732Z     "protocol": "http",
+2026-09-30T23:41:01.917809813Z     "query": {},
+2026-09-30T23:41:01.917810922Z     "subdomains": [
+2026-09-30T23:41:01.917811984Z         "svc",
+2026-09-30T23:41:01.917813074Z         "c4-livekit",
+2026-09-30T23:41:01.917814188Z         "event-sink"
+2026-09-30T23:41:01.917815304Z     ],
+2026-09-30T23:41:01.917816452Z     "xhr": false,
+2026-09-30T23:41:01.917817755Z     "os": {
+2026-09-30T23:41:01.917819063Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:01.917820308Z     },
+2026-09-30T23:41:01.917821467Z     "connection": {}
+2026-09-30T23:41:01.917822604Z }
+2026-09-30T23:41:01.917855857Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:01 +0000] "POST /livekit-webhook HTTP/1.1" 200 1884 "-" "LiveKit"
+2026-09-30T23:41:01.997659387Z {
+2026-09-30T23:41:01.997692760Z     "path": "/livekit-webhook",
+2026-09-30T23:41:01.997694735Z     "headers": {
+2026-09-30T23:41:01.997696415Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:01.997697609Z         "user-agent": "LiveKit",
+2026-09-30T23:41:01.997698710Z         "content-length": "630",
+2026-09-30T23:41:01.997700438Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5NjEsIm5iZiI6MTc5MDgxMTY2MSwiaWF0IjoxNzkwODExNjYxLCJzaGEyNTYiOiJnWVNEVzNaZnA5dDVqL005WVJyRkQ1RWJLMm9KZlNkemhmbUYwZmNZdGEwPSJ9.QSlSOyMbAUHoJWxEXh8HVIJNvHkXfCrcOynBCTciaAY",
+2026-09-30T23:41:01.997701745Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:01.997703309Z         "accept-encoding": "gzip"
+2026-09-30T23:41:01.997704505Z     },
+2026-09-30T23:41:01.997706038Z     "method": "POST",
+2026-09-30T23:41:01.997707835Z     "body": "{\"event\":\"track_published\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_KYtNsYC8w9Bk\", \"identity\":\"O1\"}, \"track\":{\"sid\":\"TR_ANUecEMJPLx65\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"b8046d28-eb6e-4502-9be3-f264f3038a15\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811661985125\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_5XxHspJsdNdi\", \"createdAt\":\"1790811661\"}",
+2026-09-30T23:41:01.997714917Z     "fresh": false,
+2026-09-30T23:41:01.997716204Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:01.997717447Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:01.997718607Z     "ips": [],
+2026-09-30T23:41:01.997719737Z     "protocol": "http",
+2026-09-30T23:41:01.997720840Z     "query": {},
+2026-09-30T23:41:01.997721931Z     "subdomains": [
+2026-09-30T23:41:01.997723000Z         "svc",
+2026-09-30T23:41:01.997724100Z         "c4-livekit",
+2026-09-30T23:41:01.997725580Z         "event-sink"
+2026-09-30T23:41:01.997726727Z     ],
+2026-09-30T23:41:01.997727889Z     "xhr": false,
+2026-09-30T23:41:01.997729051Z     "os": {
+2026-09-30T23:41:01.997730212Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:01.997731381Z     },
+2026-09-30T23:41:01.997732490Z     "connection": {}
+2026-09-30T23:41:01.997733619Z }
+2026-09-30T23:41:01.997735230Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:01 +0000] "POST /livekit-webhook HTTP/1.1" 200 1606 "-" "LiveKit"
+2026-09-30T23:41:03.950331628Z {
+2026-09-30T23:41:03.950365924Z     "path": "/livekit-webhook",
+2026-09-30T23:41:03.950367972Z     "headers": {
+2026-09-30T23:41:03.950369623Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:03.950370980Z         "user-agent": "LiveKit",
+2026-09-30T23:41:03.950372114Z         "content-length": "878",
+2026-09-30T23:41:03.950373911Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5NjMsIm5iZiI6MTc5MDgxMTY2MywiaWF0IjoxNzkwODExNjYzLCJzaGEyNTYiOiJ2NzhJOEx0aVZzSDJJcEpNQkhJMEQ3SG5CRFpiWWpsck5GeklXeFAyU3FjPSJ9.TEeskl4L6fDMurrq91UTlCZCfKF4yxbWLh9FeWXPCa0",
+2026-09-30T23:41:03.950375324Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:03.950376909Z         "accept-encoding": "gzip"
+2026-09-30T23:41:03.950378067Z     },
+2026-09-30T23:41:03.950379726Z     "method": "POST",
+2026-09-30T23:41:03.950381492Z     "body": "{\"event\":\"participant_joined\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}]}, \"participant\":{\"sid\":\"PA_7XbZEhS94XCV\", \"identity\":\"O2\", \"state\":\"ACTIVE\", \"joinedAt\":\"1790811663\", \"joinedAtMs\":\"1790811663649\", \"name\":\"O2\", \"version\":2, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_zRZtdF5cMJdK\", \"createdAt\":\"1790811663\"}",
+2026-09-30T23:41:03.950382911Z     "fresh": false,
+2026-09-30T23:41:03.950384125Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:03.950396056Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:03.950397371Z     "ips": [],
+2026-09-30T23:41:03.950398461Z     "protocol": "http",
+2026-09-30T23:41:03.950399587Z     "query": {},
+2026-09-30T23:41:03.950400834Z     "subdomains": [
+2026-09-30T23:41:03.950401955Z         "svc",
+2026-09-30T23:41:03.950403085Z         "c4-livekit",
+2026-09-30T23:41:03.950404205Z         "event-sink"
+2026-09-30T23:41:03.950405306Z     ],
+2026-09-30T23:41:03.950406450Z     "xhr": false,
+2026-09-30T23:41:03.950407605Z     "os": {
+2026-09-30T23:41:03.950408772Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:03.950409926Z     },
+2026-09-30T23:41:03.950411337Z     "connection": {}
+2026-09-30T23:41:03.950412477Z }
+2026-09-30T23:41:03.950453479Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:03 +0000] "POST /livekit-webhook HTTP/1.1" 200 1884 "-" "LiveKit"
+2026-09-30T23:41:04.015286379Z {
+2026-09-30T23:41:04.015311736Z     "path": "/livekit-webhook",
+2026-09-30T23:41:04.015337261Z     "headers": {
+2026-09-30T23:41:04.015340434Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:04.015341672Z         "user-agent": "LiveKit",
+2026-09-30T23:41:04.015342811Z         "content-length": "630",
+2026-09-30T23:41:04.015344479Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5NjQsIm5iZiI6MTc5MDgxMTY2NCwiaWF0IjoxNzkwODExNjY0LCJzaGEyNTYiOiJzdmxKazlGWkp5UW5PaWRYQldWbkFKMmFueFBUdVVsOTJ4bHk0MndlcFQ0PSJ9.5pQGFIB8vMVxEb7BF55cqEeIiz54RxVMSj-Qv-p9ZKA",
+2026-09-30T23:41:04.015345883Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:04.015347638Z         "accept-encoding": "gzip"
+2026-09-30T23:41:04.015348804Z     },
+2026-09-30T23:41:04.015350286Z     "method": "POST",
+2026-09-30T23:41:04.015356804Z     "body": "{\"event\":\"track_published\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_7XbZEhS94XCV\", \"identity\":\"O2\"}, \"track\":{\"sid\":\"TR_AXDsEoYkDqEVr\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"f976b823-0260-42d2-93de-3c9580a6a02a\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811664006485\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_yJZ7MWXXHrFZ\", \"createdAt\":\"1790811664\"}",
+2026-09-30T23:41:04.015358277Z     "fresh": false,
+2026-09-30T23:41:04.015359439Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:04.015360583Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:04.015361843Z     "ips": [],
+2026-09-30T23:41:04.015362998Z     "protocol": "http",
+2026-09-30T23:41:04.015364145Z     "query": {},
+2026-09-30T23:41:04.015365270Z     "subdomains": [
+2026-09-30T23:41:04.015366481Z         "svc",
+2026-09-30T23:41:04.015367629Z         "c4-livekit",
+2026-09-30T23:41:04.015368748Z         "event-sink"
+2026-09-30T23:41:04.015369850Z     ],
+2026-09-30T23:41:04.015371036Z     "xhr": false,
+2026-09-30T23:41:04.015372243Z     "os": {
+2026-09-30T23:41:04.015373440Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:04.015374610Z     },
+2026-09-30T23:41:04.015375723Z     "connection": {}
+2026-09-30T23:41:04.015376917Z }
+2026-09-30T23:41:04.015410553Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:04 +0000] "POST /livekit-webhook HTTP/1.1" 200 1606 "-" "LiveKit"
+2026-09-30T23:41:05.932224988Z {
+2026-09-30T23:41:05.932257708Z     "path": "/livekit-webhook",
+2026-09-30T23:41:05.932259428Z     "headers": {
+2026-09-30T23:41:05.932260974Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:05.932262241Z         "user-agent": "LiveKit",
+2026-09-30T23:41:05.932263483Z         "content-length": "876",
+2026-09-30T23:41:05.932265283Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5NjUsIm5iZiI6MTc5MDgxMTY2NSwiaWF0IjoxNzkwODExNjY1LCJzaGEyNTYiOiJLQTl6TFcvakp6V1d0S1dtUWNGVmk1RE5NN0VsMHlzRHdtVzVtaTA3NGNrPSJ9.FTk1UzdvteEgHp72J4oEoadvgVbfs3Z2qMCKwRtyMFg",
+2026-09-30T23:41:05.932266567Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:05.932268108Z         "accept-encoding": "gzip"
+2026-09-30T23:41:05.932269259Z     },
+2026-09-30T23:41:05.932270670Z     "method": "POST",
+2026-09-30T23:41:05.932272445Z     "body": "{\"event\":\"participant_joined\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}]}, \"participant\":{\"sid\":\"PA_wfoPGhqJp5a5\", \"identity\":\"S\", \"state\":\"ACTIVE\", \"joinedAt\":\"1790811665\", \"joinedAtMs\":\"1790811665634\", \"name\":\"S\", \"version\":2, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_uVgzjG4mS7ZG\", \"createdAt\":\"1790811665\"}",
+2026-09-30T23:41:05.932273919Z     "fresh": false,
+2026-09-30T23:41:05.932275062Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:05.932276170Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:05.932277326Z     "ips": [],
+2026-09-30T23:41:05.932278457Z     "protocol": "http",
+2026-09-30T23:41:05.932279552Z     "query": {},
+2026-09-30T23:41:05.932280926Z     "subdomains": [
+2026-09-30T23:41:05.932282052Z         "svc",
+2026-09-30T23:41:05.932283166Z         "c4-livekit",
+2026-09-30T23:41:05.932284300Z         "event-sink"
+2026-09-30T23:41:05.932285476Z     ],
+2026-09-30T23:41:05.932286614Z     "xhr": false,
+2026-09-30T23:41:05.932287949Z     "os": {
+2026-09-30T23:41:05.932289098Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:05.932290238Z     },
+2026-09-30T23:41:05.932291380Z     "connection": {}
+2026-09-30T23:41:05.932292533Z }
+2026-09-30T23:41:05.932343204Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:05 +0000] "POST /livekit-webhook HTTP/1.1" 200 1882 "-" "LiveKit"
+2026-09-30T23:41:06.002985341Z {
+2026-09-30T23:41:06.003011224Z     "path": "/livekit-webhook",
+2026-09-30T23:41:06.003013209Z     "headers": {
+2026-09-30T23:41:06.003015010Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:06.003016503Z         "user-agent": "LiveKit",
+2026-09-30T23:41:06.003017716Z         "content-length": "629",
+2026-09-30T23:41:06.003019471Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5NjUsIm5iZiI6MTc5MDgxMTY2NSwiaWF0IjoxNzkwODExNjY1LCJzaGEyNTYiOiJpNEZiSk1OMTlCVjlKbkxmS05LQU5pc2RLS0Zmb3EvOE1xdCtqMHppWGhRPSJ9.80ujPNQrpuNCJbAHnGj9ntQQLqpTfMquqtI8joNdh1M",
+2026-09-30T23:41:06.003020904Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:06.003022539Z         "accept-encoding": "gzip"
+2026-09-30T23:41:06.003033433Z     },
+2026-09-30T23:41:06.003035170Z     "method": "POST",
+2026-09-30T23:41:06.003039237Z     "body": "{\"event\":\"track_published\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_wfoPGhqJp5a5\", \"identity\":\"S\"}, \"track\":{\"sid\":\"TR_An9hMX94NqzSw\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"8120dddd-13ce-4a22-ad63-9e178c30b483\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811665992969\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_EPTWLPheZSyo\", \"createdAt\":\"1790811665\"}",
+2026-09-30T23:41:06.003040707Z     "fresh": false,
+2026-09-30T23:41:06.003041913Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:06.003043026Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:06.003044140Z     "ips": [],
+2026-09-30T23:41:06.003045393Z     "protocol": "http",
+2026-09-30T23:41:06.003046471Z     "query": {},
+2026-09-30T23:41:06.003047698Z     "subdomains": [
+2026-09-30T23:41:06.003048777Z         "svc",
+2026-09-30T23:41:06.003049880Z         "c4-livekit",
+2026-09-30T23:41:06.003051026Z         "event-sink"
+2026-09-30T23:41:06.003052165Z     ],
+2026-09-30T23:41:06.003053340Z     "xhr": false,
+2026-09-30T23:41:06.003054513Z     "os": {
+2026-09-30T23:41:06.003055625Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:06.003056796Z     },
+2026-09-30T23:41:06.003057933Z     "connection": {}
+2026-09-30T23:41:06.003059027Z }
+2026-09-30T23:41:06.003110390Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:06 +0000] "POST /livekit-webhook HTTP/1.1" 200 1605 "-" "LiveKit"
+2026-09-30T23:41:37.972877578Z {
+2026-09-30T23:41:37.972915487Z     "path": "/livekit-webhook",
+2026-09-30T23:41:37.972917476Z     "headers": {
+2026-09-30T23:41:37.972919073Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:37.972920236Z         "user-agent": "LiveKit",
+2026-09-30T23:41:37.972921366Z         "content-length": "631",
+2026-09-30T23:41:37.972923206Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5OTcsIm5iZiI6MTc5MDgxMTY5NywiaWF0IjoxNzkwODExNjk3LCJzaGEyNTYiOiJOeGJZTVg5eTljWVZNeHlWdWdzaFhXblI4RFJ4OGFER1J3dmFCWmIxejhFPSJ9.u4uG2HVx-MuDe3jODtPd2CV7-lhkwejfCN6fJf-u-GM",
+2026-09-30T23:41:37.972924544Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:37.972926033Z         "accept-encoding": "gzip"
+2026-09-30T23:41:37.972927177Z     },
+2026-09-30T23:41:37.972928736Z     "method": "POST",
+2026-09-30T23:41:37.972932662Z     "body": "{\"event\":\"track_unpublished\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_wfoPGhqJp5a5\", \"identity\":\"S\"}, \"track\":{\"sid\":\"TR_An9hMX94NqzSw\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"8120dddd-13ce-4a22-ad63-9e178c30b483\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811665992969\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_xE8Lxr3zrXPf\", \"createdAt\":\"1790811697\"}",
+2026-09-30T23:41:37.972934153Z     "fresh": false,
+2026-09-30T23:41:37.972935331Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:37.972936516Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:37.972944662Z     "ips": [],
+2026-09-30T23:41:37.972945869Z     "protocol": "http",
+2026-09-30T23:41:37.972947046Z     "query": {},
+2026-09-30T23:41:37.972948479Z     "subdomains": [
+2026-09-30T23:41:37.972949664Z         "svc",
+2026-09-30T23:41:37.972950747Z         "c4-livekit",
+2026-09-30T23:41:37.972951851Z         "event-sink"
+2026-09-30T23:41:37.972952987Z     ],
+2026-09-30T23:41:37.972954140Z     "xhr": false,
+2026-09-30T23:41:37.972955385Z     "os": {
+2026-09-30T23:41:37.972956516Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:37.972957845Z     },
+2026-09-30T23:41:37.972959018Z     "connection": {}
+2026-09-30T23:41:37.972960411Z }
+2026-09-30T23:41:37.972976985Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:37 +0000] "POST /livekit-webhook HTTP/1.1" 200 1607 "-" "LiveKit"
+2026-09-30T23:41:37.983259861Z {
+2026-09-30T23:41:37.983285282Z     "path": "/livekit-webhook",
+2026-09-30T23:41:37.983423205Z     "headers": {
+2026-09-30T23:41:37.983427025Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:37.983429884Z         "user-agent": "LiveKit",
+2026-09-30T23:41:37.983432677Z         "content-length": "981",
+2026-09-30T23:41:37.983435487Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5OTcsIm5iZiI6MTc5MDgxMTY5NywiaWF0IjoxNzkwODExNjk3LCJzaGEyNTYiOiIrR2h6bnJobHNwRk1NRTdEeHdMajVzd2w4S0tYNEFDYXhHOVRtMmVPSTIwPSJ9.fq8e3-DZOn8slLRz--dnGFLRNYt-mrtolaI5VrW_EPk",
+2026-09-30T23:41:37.983437300Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:37.983439088Z         "accept-encoding": "gzip"
+2026-09-30T23:41:37.983440386Z     },
+2026-09-30T23:41:37.983442043Z     "method": "POST",
+2026-09-30T23:41:37.983445969Z     "body": "{\"event\":\"participant_left\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}], \"numParticipants\":2, \"numPublishers\":2}, \"participant\":{\"sid\":\"PA_wfoPGhqJp5a5\", \"identity\":\"S\", \"state\":\"DISCONNECTED\", \"joinedAt\":\"1790811665\", \"joinedAtMs\":\"1790811665634\", \"name\":\"S\", \"version\":5, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"isPublisher\":true, \"disconnectReason\":\"DUPLICATE_IDENTITY\", \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_FsK7KVEQ2yiY\", \"createdAt\":\"1790811697\"}",
+2026-09-30T23:41:37.983447483Z     "fresh": false,
+2026-09-30T23:41:37.983448693Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:37.983449839Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:37.983451006Z     "ips": [],
+2026-09-30T23:41:37.983452138Z     "protocol": "http",
+2026-09-30T23:41:37.983453261Z     "query": {},
+2026-09-30T23:41:37.983454381Z     "subdomains": [
+2026-09-30T23:41:37.983455475Z         "svc",
+2026-09-30T23:41:37.983456640Z         "c4-livekit",
+2026-09-30T23:41:37.983457790Z         "event-sink"
+2026-09-30T23:41:37.983458915Z     ],
+2026-09-30T23:41:37.983460168Z     "xhr": false,
+2026-09-30T23:41:37.983461345Z     "os": {
+2026-09-30T23:41:37.983462503Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:37.983463712Z     },
+2026-09-30T23:41:37.983471706Z     "connection": {}
+2026-09-30T23:41:37.983472904Z }
+2026-09-30T23:41:37.983488824Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:37 +0000] "POST /livekit-webhook HTTP/1.1" 200 1997 "-" "LiveKit"
+2026-09-30T23:41:38.045751420Z {
+2026-09-30T23:41:38.045777289Z     "path": "/livekit-webhook",
+2026-09-30T23:41:38.045779269Z     "headers": {
+2026-09-30T23:41:38.045780914Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:38.045782126Z         "user-agent": "LiveKit",
+2026-09-30T23:41:38.045783291Z         "content-length": "975",
+2026-09-30T23:41:38.045784960Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5OTgsIm5iZiI6MTc5MDgxMTY5OCwiaWF0IjoxNzkwODExNjk4LCJzaGEyNTYiOiIrTnEyRThYNDJBSld4czU3SEtSUDNDeGRRNnhWNnowbnM2RnE5SFRZdnk0PSJ9.0heRXs2IBz7VJ6v10H0DW21IvvT9xYuomXdcAt7fmgA",
+2026-09-30T23:41:38.045786317Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:38.045787733Z         "accept-encoding": "gzip"
+2026-09-30T23:41:38.045788860Z     },
+2026-09-30T23:41:38.045790403Z     "method": "POST",
+2026-09-30T23:41:38.045794604Z     "body": "{\"event\":\"participant_connection_aborted\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}], \"numParticipants\":2, \"numPublishers\":2}, \"participant\":{\"sid\":\"PA_52jHcsMJ39hF\", \"identity\":\"S\", \"state\":\"DISCONNECTED\", \"joinedAt\":\"1790811697\", \"joinedAtMs\":\"1790811697960\", \"name\":\"S\", \"version\":2, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"disconnectReason\":\"DUPLICATE_IDENTITY\", \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_GCiAs2LNB7wA\", \"createdAt\":\"1790811698\"}",
+2026-09-30T23:41:38.045796086Z     "fresh": false,
+2026-09-30T23:41:38.045797316Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:38.045798441Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:38.045799538Z     "ips": [],
+2026-09-30T23:41:38.045800918Z     "protocol": "http",
+2026-09-30T23:41:38.045802137Z     "query": {},
+2026-09-30T23:41:38.045803289Z     "subdomains": [
+2026-09-30T23:41:38.045804396Z         "svc",
+2026-09-30T23:41:38.045805464Z         "c4-livekit",
+2026-09-30T23:41:38.045806572Z         "event-sink"
+2026-09-30T23:41:38.045807770Z     ],
+2026-09-30T23:41:38.045808985Z     "xhr": false,
+2026-09-30T23:41:38.045810171Z     "os": {
+2026-09-30T23:41:38.045811363Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:38.045812591Z     },
+2026-09-30T23:41:38.045813797Z     "connection": {}
+2026-09-30T23:41:38.045814999Z }
+2026-09-30T23:41:38.045871917Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:38 +0000] "POST /livekit-webhook HTTP/1.1" 200 1989 "-" "LiveKit"
+2026-09-30T23:41:38.339130493Z {
+2026-09-30T23:41:38.339156462Z     "path": "/livekit-webhook",
+2026-09-30T23:41:38.339158144Z     "headers": {
+2026-09-30T23:41:38.339159752Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:38.339160935Z         "user-agent": "LiveKit",
+2026-09-30T23:41:38.339162060Z         "content-length": "916",
+2026-09-30T23:41:38.339163751Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5OTgsIm5iZiI6MTc5MDgxMTY5OCwiaWF0IjoxNzkwODExNjk4LCJzaGEyNTYiOiIyV3JKakVDTngrVDRlKzY1TWhxeVpEcUlTeVM2bGE1Und3V21UV05Ya2F3PSJ9._fBzaBqTtCfpfZLkeB4SRtKrrTikOzyT3EeIkziMIvM",
+2026-09-30T23:41:38.339179548Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:38.339181125Z         "accept-encoding": "gzip"
+2026-09-30T23:41:38.339182257Z     },
+2026-09-30T23:41:38.339183933Z     "method": "POST",
+2026-09-30T23:41:38.339186052Z     "body": "{\"event\":\"participant_joined\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}], \"numParticipants\":2, \"numPublishers\":2}, \"participant\":{\"sid\":\"PA_QGx2gsFkhU9w\", \"identity\":\"S\", \"state\":\"ACTIVE\", \"joinedAt\":\"1790811698\", \"joinedAtMs\":\"1790811698037\", \"name\":\"S\", \"version\":2, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_UBuMMN8udG57\", \"createdAt\":\"1790811698\"}",
+2026-09-30T23:41:38.339187423Z     "fresh": false,
+2026-09-30T23:41:38.339188671Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:38.339189840Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:38.339190975Z     "ips": [],
+2026-09-30T23:41:38.339192078Z     "protocol": "http",
+2026-09-30T23:41:38.339193179Z     "query": {},
+2026-09-30T23:41:38.339194314Z     "subdomains": [
+2026-09-30T23:41:38.339195448Z         "svc",
+2026-09-30T23:41:38.339196553Z         "c4-livekit",
+2026-09-30T23:41:38.339197660Z         "event-sink"
+2026-09-30T23:41:38.339198809Z     ],
+2026-09-30T23:41:38.339199979Z     "xhr": false,
+2026-09-30T23:41:38.339201158Z     "os": {
+2026-09-30T23:41:38.339205577Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:38.339206832Z     },
+2026-09-30T23:41:38.339207987Z     "connection": {}
+2026-09-30T23:41:38.339209114Z }
+2026-09-30T23:41:38.339216057Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:38 +0000] "POST /livekit-webhook HTTP/1.1" 200 1926 "-" "LiveKit"
+2026-09-30T23:41:38.413705287Z {
+2026-09-30T23:41:38.413730221Z     "path": "/livekit-webhook",
+2026-09-30T23:41:38.413732069Z     "headers": {
+2026-09-30T23:41:38.413746006Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:38.413747816Z         "user-agent": "LiveKit",
+2026-09-30T23:41:38.413749131Z         "content-length": "629",
+2026-09-30T23:41:38.413750999Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTE5OTgsIm5iZiI6MTc5MDgxMTY5OCwiaWF0IjoxNzkwODExNjk4LCJzaGEyNTYiOiJtejJ4eUpFeG9lOHhrNWN1ZUJIZUNtT1BybjVNUEpsVnBxSzdBYW5TOGt3PSJ9.IaifN-XE7ZJca842IqzNK-I4keobknWRLsyXIbDj61o",
+2026-09-30T23:41:38.413752299Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:38.413753841Z         "accept-encoding": "gzip"
+2026-09-30T23:41:38.413754979Z     },
+2026-09-30T23:41:38.413756755Z     "method": "POST",
+2026-09-30T23:41:38.413758481Z     "body": "{\"event\":\"track_published\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_QGx2gsFkhU9w\", \"identity\":\"S\"}, \"track\":{\"sid\":\"TR_AdFsTup775grQ\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"8120dddd-13ce-4a22-ad63-9e178c30b483\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811698403576\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_2Y3pXb3TzCfZ\", \"createdAt\":\"1790811698\"}",
+2026-09-30T23:41:38.413766409Z     "fresh": false,
+2026-09-30T23:41:38.413767628Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:38.413768789Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:38.413769958Z     "ips": [],
+2026-09-30T23:41:38.413771076Z     "protocol": "http",
+2026-09-30T23:41:38.413772224Z     "query": {},
+2026-09-30T23:41:38.413773351Z     "subdomains": [
+2026-09-30T23:41:38.413774468Z         "svc",
+2026-09-30T23:41:38.413775586Z         "c4-livekit",
+2026-09-30T23:41:38.413776724Z         "event-sink"
+2026-09-30T23:41:38.413777866Z     ],
+2026-09-30T23:41:38.413779040Z     "xhr": false,
+2026-09-30T23:41:38.413780244Z     "os": {
+2026-09-30T23:41:38.413781416Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:38.413782596Z     },
+2026-09-30T23:41:38.413783774Z     "connection": {}
+2026-09-30T23:41:38.413784887Z }
+2026-09-30T23:41:38.413791837Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:38 +0000] "POST /livekit-webhook HTTP/1.1" 200 1605 "-" "LiveKit"
+2026-09-30T23:41:54.825273382Z {
+2026-09-30T23:41:54.825352160Z     "path": "/livekit-webhook",
+2026-09-30T23:41:54.825357632Z     "headers": {
+2026-09-30T23:41:54.825360233Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:54.825362186Z         "user-agent": "LiveKit",
+2026-09-30T23:41:54.825363642Z         "content-length": "631",
+2026-09-30T23:41:54.825371236Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTIwMTQsIm5iZiI6MTc5MDgxMTcxNCwiaWF0IjoxNzkwODExNzE0LCJzaGEyNTYiOiJmcHp4VEVwQmsyaDBFeUREYzE3VEFUMld1RTBWeHZyTVVKNHlYR1FkK1ZvPSJ9.hgwW5D1BhbSlyv2dbBMIGsJQAgGK1tWXKAMZKjhqiHQ",
+2026-09-30T23:41:54.825372811Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:54.825374346Z         "accept-encoding": "gzip"
+2026-09-30T23:41:54.825375506Z     },
+2026-09-30T23:41:54.825377106Z     "method": "POST",
+2026-09-30T23:41:54.825380232Z     "body": "{\"event\":\"track_unpublished\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_QGx2gsFkhU9w\", \"identity\":\"S\"}, \"track\":{\"sid\":\"TR_AdFsTup775grQ\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"8120dddd-13ce-4a22-ad63-9e178c30b483\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811698403576\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_QjhY5VvrPeB2\", \"createdAt\":\"1790811714\"}",
+2026-09-30T23:41:54.825381547Z     "fresh": false,
+2026-09-30T23:41:54.825382697Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:54.825383848Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:54.825384967Z     "ips": [],
+2026-09-30T23:41:54.825386103Z     "protocol": "http",
+2026-09-30T23:41:54.825387209Z     "query": {},
+2026-09-30T23:41:54.825388328Z     "subdomains": [
+2026-09-30T23:41:54.825389419Z         "svc",
+2026-09-30T23:41:54.825390527Z         "c4-livekit",
+2026-09-30T23:41:54.825399600Z         "event-sink"
+2026-09-30T23:41:54.825400825Z     ],
+2026-09-30T23:41:54.825402208Z     "xhr": false,
+2026-09-30T23:41:54.825403403Z     "os": {
+2026-09-30T23:41:54.825404601Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:54.825405798Z     },
+2026-09-30T23:41:54.825406958Z     "connection": {}
+2026-09-30T23:41:54.825408122Z }
+2026-09-30T23:41:54.825429835Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:54 +0000] "POST /livekit-webhook HTTP/1.1" 200 1607 "-" "LiveKit"
+2026-09-30T23:41:54.832564781Z {
+2026-09-30T23:41:54.832579712Z     "path": "/livekit-webhook",
+2026-09-30T23:41:54.832581563Z     "headers": {
+2026-09-30T23:41:54.832583136Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:54.832584307Z         "user-agent": "LiveKit",
+2026-09-30T23:41:54.832585523Z         "content-length": "979",
+2026-09-30T23:41:54.832587417Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTIwMTQsIm5iZiI6MTc5MDgxMTcxNCwiaWF0IjoxNzkwODExNzE0LCJzaGEyNTYiOiJOSlpjcWFNcWt3ODRJTGFjbUhNVUo3L3BiaGNHTldzS1V4NUJvNlZ5OWNFPSJ9.zEP4I5dRywrKHdwjvjHp4Vbj6CBGzkBgNa2WqGeA-BQ",
+2026-09-30T23:41:54.832588776Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:54.832590438Z         "accept-encoding": "gzip"
+2026-09-30T23:41:54.832591606Z     },
+2026-09-30T23:41:54.832593192Z     "method": "POST",
+2026-09-30T23:41:54.832597354Z     "body": "{\"event\":\"participant_left\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}], \"numParticipants\":2, \"numPublishers\":2}, \"participant\":{\"sid\":\"PA_QGx2gsFkhU9w\", \"identity\":\"S\", \"state\":\"DISCONNECTED\", \"joinedAt\":\"1790811698\", \"joinedAtMs\":\"1790811698037\", \"name\":\"S\", \"version\":5, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"isPublisher\":true, \"disconnectReason\":\"CLIENT_INITIATED\", \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_rcSR3EbJ3xaQ\", \"createdAt\":\"1790811714\"}",
+2026-09-30T23:41:54.832599019Z     "fresh": false,
+2026-09-30T23:41:54.832600238Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:54.832601354Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:54.832602506Z     "ips": [],
+2026-09-30T23:41:54.832603680Z     "protocol": "http",
+2026-09-30T23:41:54.832605316Z     "query": {},
+2026-09-30T23:41:54.832606676Z     "subdomains": [
+2026-09-30T23:41:54.832607868Z         "svc",
+2026-09-30T23:41:54.832609130Z         "c4-livekit",
+2026-09-30T23:41:54.832610266Z         "event-sink"
+2026-09-30T23:41:54.832611383Z     ],
+2026-09-30T23:41:54.832612547Z     "xhr": false,
+2026-09-30T23:41:54.832613759Z     "os": {
+2026-09-30T23:41:54.832614887Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:54.832616271Z     },
+2026-09-30T23:41:54.832617386Z     "connection": {}
+2026-09-30T23:41:54.832618610Z }
+2026-09-30T23:41:54.832659956Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:54 +0000] "POST /livekit-webhook HTTP/1.1" 200 1995 "-" "LiveKit"
+2026-09-30T23:41:56.112572320Z {
+2026-09-30T23:41:56.112605113Z     "path": "/livekit-webhook",
+2026-09-30T23:41:56.112617722Z     "headers": {
+2026-09-30T23:41:56.112619562Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:56.112620937Z         "user-agent": "LiveKit",
+2026-09-30T23:41:56.112622059Z         "content-length": "632",
+2026-09-30T23:41:56.112623779Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTIwMTYsIm5iZiI6MTc5MDgxMTcxNiwiaWF0IjoxNzkwODExNzE2LCJzaGEyNTYiOiJvQlBRMWpnVjI0Y0pRalJjWVk4Rk4yYk01Y3c1eUJ1ZWFaQ1BEMnZ6QlYwPSJ9.gLgddxTIhygix6vnX9IUsS5mKer0zsVUj_ZPgLLjMvs",
+2026-09-30T23:41:56.112625048Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:56.112626533Z         "accept-encoding": "gzip"
+2026-09-30T23:41:56.112627675Z     },
+2026-09-30T23:41:56.112629221Z     "method": "POST",
+2026-09-30T23:41:56.112630955Z     "body": "{\"event\":\"track_unpublished\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_KYtNsYC8w9Bk\", \"identity\":\"O1\"}, \"track\":{\"sid\":\"TR_ANUecEMJPLx65\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"b8046d28-eb6e-4502-9be3-f264f3038a15\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811661985125\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_rpAypi67pg8B\", \"createdAt\":\"1790811716\"}",
+2026-09-30T23:41:56.112632281Z     "fresh": false,
+2026-09-30T23:41:56.112633990Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:56.112635170Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:56.112636308Z     "ips": [],
+2026-09-30T23:41:56.112637471Z     "protocol": "http",
+2026-09-30T23:41:56.112638768Z     "query": {},
+2026-09-30T23:41:56.112639886Z     "subdomains": [
+2026-09-30T23:41:56.112640999Z         "svc",
+2026-09-30T23:41:56.112642117Z         "c4-livekit",
+2026-09-30T23:41:56.112643227Z         "event-sink"
+2026-09-30T23:41:56.112644370Z     ],
+2026-09-30T23:41:56.112646067Z     "xhr": false,
+2026-09-30T23:41:56.112647316Z     "os": {
+2026-09-30T23:41:56.112648447Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:56.112649625Z     },
+2026-09-30T23:41:56.112650806Z     "connection": {}
+2026-09-30T23:41:56.112651932Z }
+2026-09-30T23:41:56.112659139Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:56 +0000] "POST /livekit-webhook HTTP/1.1" 200 1608 "-" "LiveKit"
+2026-09-30T23:41:56.119800168Z {
+2026-09-30T23:41:56.119824213Z     "path": "/livekit-webhook",
+2026-09-30T23:41:56.119826021Z     "headers": {
+2026-09-30T23:41:56.119827658Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:56.119828888Z         "user-agent": "LiveKit",
+2026-09-30T23:41:56.119830169Z         "content-length": "981",
+2026-09-30T23:41:56.119835632Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTIwMTYsIm5iZiI6MTc5MDgxMTcxNiwiaWF0IjoxNzkwODExNzE2LCJzaGEyNTYiOiJRMzR2cFJ4Smo4ZTJVOU85MHdaL2lSWEdra0gvLzg4ZTlhenFrUVlvOXBBPSJ9.L9ynPIFjSMpCzje4g7tdgfI3U0VQkm41bPoFSVhDnhU",
+2026-09-30T23:41:56.119837192Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:56.119838745Z         "accept-encoding": "gzip"
+2026-09-30T23:41:56.119839923Z     },
+2026-09-30T23:41:56.119841526Z     "method": "POST",
+2026-09-30T23:41:56.119843458Z     "body": "{\"event\":\"participant_left\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}], \"numParticipants\":2, \"numPublishers\":2}, \"participant\":{\"sid\":\"PA_KYtNsYC8w9Bk\", \"identity\":\"O1\", \"state\":\"DISCONNECTED\", \"joinedAt\":\"1790811661\", \"joinedAtMs\":\"1790811661631\", \"name\":\"O1\", \"version\":5, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"isPublisher\":true, \"disconnectReason\":\"CLIENT_INITIATED\", \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_F9E9xKTet2Rw\", \"createdAt\":\"1790811716\"}",
+2026-09-30T23:41:56.119849905Z     "fresh": false,
+2026-09-30T23:41:56.119851108Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:56.119852236Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:56.119853410Z     "ips": [],
+2026-09-30T23:41:56.119854576Z     "protocol": "http",
+2026-09-30T23:41:56.119855718Z     "query": {},
+2026-09-30T23:41:56.119856850Z     "subdomains": [
+2026-09-30T23:41:56.119857988Z         "svc",
+2026-09-30T23:41:56.119859063Z         "c4-livekit",
+2026-09-30T23:41:56.119860341Z         "event-sink"
+2026-09-30T23:41:56.119861445Z     ],
+2026-09-30T23:41:56.119862635Z     "xhr": false,
+2026-09-30T23:41:56.119863761Z     "os": {
+2026-09-30T23:41:56.119864879Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:56.119866063Z     },
+2026-09-30T23:41:56.119867233Z     "connection": {}
+2026-09-30T23:41:56.119868344Z }
+2026-09-30T23:41:56.119902158Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:56 +0000] "POST /livekit-webhook HTTP/1.1" 200 1997 "-" "LiveKit"
+2026-09-30T23:41:57.387802337Z {
+2026-09-30T23:41:57.387836210Z     "path": "/livekit-webhook",
+2026-09-30T23:41:57.387838655Z     "headers": {
+2026-09-30T23:41:57.387840840Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:57.387842440Z         "user-agent": "LiveKit",
+2026-09-30T23:41:57.387843650Z         "content-length": "632",
+2026-09-30T23:41:57.387845492Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTIwMTcsIm5iZiI6MTc5MDgxMTcxNywiaWF0IjoxNzkwODExNzE3LCJzaGEyNTYiOiJlOE1NS0UxdHdiU3RwOHJJZEQrMEdhNnp4Mkl4RjMyLyt0SU54VS94SmVnPSJ9.yIBxNtAjkQhRMAUgRiIoi_G3xBkO7eSEQyvQ2hMqV3U",
+2026-09-30T23:41:57.387846863Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:57.387848403Z         "accept-encoding": "gzip"
+2026-09-30T23:41:57.387849527Z     },
+2026-09-30T23:41:57.387851063Z     "method": "POST",
+2026-09-30T23:41:57.387857350Z     "body": "{\"event\":\"track_unpublished\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\"}, \"participant\":{\"sid\":\"PA_7XbZEhS94XCV\", \"identity\":\"O2\"}, \"track\":{\"sid\":\"TR_AXDsEoYkDqEVr\", \"name\":\"chirp\", \"disableDtx\":true, \"mimeType\":\"audio/opus\", \"mid\":\"7\", \"codecs\":[{\"mimeType\":\"audio/opus\", \"mid\":\"7\", \"cid\":\"f976b823-0260-42d2-93de-3c9580a6a02a\", \"videoLayerMode\":\"ONE_SPATIAL_LAYER_PER_STREAM\"}], \"disableRed\":true, \"stream\":\"unknown\", \"version\":{\"unixMicro\":\"1790811664006485\"}, \"audioFeatures\":[\"TF_STEREO\", \"TF_NO_DTX\"], \"backupCodecPolicy\":\"SIMULCAST\"}, \"id\":\"EV_YRb5XZ3u5Ccv\", \"createdAt\":\"1790811717\"}",
+2026-09-30T23:41:57.387858813Z     "fresh": false,
+2026-09-30T23:41:57.387859986Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:57.387871084Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:57.387872287Z     "ips": [],
+2026-09-30T23:41:57.387873694Z     "protocol": "http",
+2026-09-30T23:41:57.387874846Z     "query": {},
+2026-09-30T23:41:57.387875992Z     "subdomains": [
+2026-09-30T23:41:57.387877103Z         "svc",
+2026-09-30T23:41:57.387878196Z         "c4-livekit",
+2026-09-30T23:41:57.387879291Z         "event-sink"
+2026-09-30T23:41:57.387880422Z     ],
+2026-09-30T23:41:57.387881606Z     "xhr": false,
+2026-09-30T23:41:57.387882822Z     "os": {
+2026-09-30T23:41:57.387883941Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:57.387885144Z     },
+2026-09-30T23:41:57.387886269Z     "connection": {}
+2026-09-30T23:41:57.387887376Z }
+2026-09-30T23:41:57.387933474Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:57 +0000] "POST /livekit-webhook HTTP/1.1" 200 1608 "-" "LiveKit"
+2026-09-30T23:41:57.394756677Z {
+2026-09-30T23:41:57.394769978Z     "path": "/livekit-webhook",
+2026-09-30T23:41:57.394771472Z     "headers": {
+2026-09-30T23:41:57.394772969Z         "host": "event-sink.c4-livekit.svc.cluster.local:8080",
+2026-09-30T23:41:57.394774178Z         "user-agent": "LiveKit",
+2026-09-30T23:41:57.394775300Z         "content-length": "981",
+2026-09-30T23:41:57.394776958Z         "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUElhNDkzMmQ3ZjcxZDQiLCJleHAiOjE3OTA4MTIwMTcsIm5iZiI6MTc5MDgxMTcxNywiaWF0IjoxNzkwODExNzE3LCJzaGEyNTYiOiIvTG1Kb0tFTFU5MWJxUGZjbmdKbHpndUxJMS90bFM2Y3dYaFpaV1JTS0hrPSJ9.A7mdgUMVxVfvmJwtFU-y3shWVyEYcWRzPYGpDvrjxc8",
+2026-09-30T23:41:57.394778321Z         "content-type": "application/webhook+json",
+2026-09-30T23:41:57.394779753Z         "accept-encoding": "gzip"
+2026-09-30T23:41:57.394780904Z     },
+2026-09-30T23:41:57.394782441Z     "method": "POST",
+2026-09-30T23:41:57.394787443Z     "body": "{\"event\":\"participant_left\", \"room\":{\"sid\":\"RM_vLneQAawfGvD\", \"name\":\"c4-livekit-intruder-I-20260930T234047-1\", \"emptyTimeout\":300, \"departureTimeout\":20, \"creationTime\":\"1790811661\", \"creationTimeMs\":\"1790811661631\", \"turnPassword\":\"BxBA8kWz52xsWjjD8flDlxvVJea1zGFpIlBpJwnHXLI\", \"enabledCodecs\":[{\"mime\":\"audio/PCMU\"}, {\"mime\":\"audio/PCMA\"}, {\"mime\":\"audio/opus\"}, {\"mime\":\"audio/red\"}, {\"mime\":\"video/VP8\"}, {\"mime\":\"video/H264\"}, {\"mime\":\"video/VP9\"}, {\"mime\":\"video/AV1\"}, {\"mime\":\"video/H265\"}, {\"mime\":\"video/rtx\"}], \"numParticipants\":2, \"numPublishers\":2}, \"participant\":{\"sid\":\"PA_7XbZEhS94XCV\", \"identity\":\"O2\", \"state\":\"DISCONNECTED\", \"joinedAt\":\"1790811663\", \"joinedAtMs\":\"1790811663649\", \"name\":\"O2\", \"version\":5, \"permission\":{\"canSubscribe\":true, \"canPublish\":true, \"canPublishData\":true}, \"isPublisher\":true, \"disconnectReason\":\"CLIENT_INITIATED\", \"clientProtocol\":2, \"capabilities\":[\"CAP_COMPRESSION_DEFLATE_RAW\"]}, \"id\":\"EV_SFMLT8nkKNFE\", \"createdAt\":\"1790811717\"}",
+2026-09-30T23:41:57.394788921Z     "fresh": false,
+2026-09-30T23:41:57.394790086Z     "hostname": "event-sink.c4-livekit.svc.cluster.local",
+2026-09-30T23:41:57.394791287Z     "ip": "::ffff:10.42.23.86",
+2026-09-30T23:41:57.394792447Z     "ips": [],
+2026-09-30T23:41:57.394793567Z     "protocol": "http",
+2026-09-30T23:41:57.394794740Z     "query": {},
+2026-09-30T23:41:57.394795848Z     "subdomains": [
+2026-09-30T23:41:57.394796930Z         "svc",
+2026-09-30T23:41:57.394798017Z         "c4-livekit",
+2026-09-30T23:41:57.394799244Z         "event-sink"
+2026-09-30T23:41:57.394800354Z     ],
+2026-09-30T23:41:57.394801483Z     "xhr": false,
+2026-09-30T23:41:57.394802622Z     "os": {
+2026-09-30T23:41:57.394803883Z         "hostname": "event-sink-9599497c6-c68p9"
+2026-09-30T23:41:57.394813655Z     },
+2026-09-30T23:41:57.394814911Z     "connection": {}
+2026-09-30T23:41:57.394816039Z }
+2026-09-30T23:41:57.394852952Z ::ffff:10.42.23.86 - - [30/Sep/2026:23:41:57 +0000] "POST /livekit-webhook HTTP/1.1" 200 1997 "-" "LiveKit"

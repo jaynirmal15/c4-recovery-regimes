@@ -1,0 +1,48 @@
+
+janus all 10s R1  n=9  outage(first stale→fresh) 9.6..10.2 s
+  A_membership      reported 0/9  [nothing×9]  blindFrac 1.0
+  A_media           reported 9/9  [media receiving=false×9]  onsetDelay 1.4..2.8  blindFrac med 0.17 (0.1..0.3)  upErr -0.2..-0.0 (up reported 9/9)
+  B_obs_membership  reported 0/9  [nothing×9]  blindFrac 1.0
+  B_subject         reported 8/9  [media receiving=false×8, nothing×1]  onsetDelay 15.2..16.9  blindFrac med 1 (1.0..1.0)  upErr 5.1..6.7 (up reported 8/8)
+
+janus all 30s R1  n=8  outage(first stale→fresh) 30.0..36.0 s
+  A_membership      reported 0/8  [nothing×8]  blindFrac 1.0
+  A_media           reported 8/8  [media receiving=false×8]  onsetDelay 1.4..2.0  blindFrac med 0.05 (0.0..0.1)  upErr -0.2..-0.1 (up reported 8/8)
+  B_obs_membership  reported 0/8  [nothing×8]  blindFrac 1.0
+  B_subject         reported 4/8  [media receiving=false×4, nothing×4]  onsetDelay 30.2..64.4  blindFrac med 1 (0.8..1.0)  upErr -0.2..36.4 (up reported 4/4)
+
+janus media 10s R1  n=6  outage(first stale→fresh) 9.7..23.5 s
+  A_membership      reported 0/6  [nothing×6]  blindFrac 1.0
+  A_media           reported 6/6  [media receiving=false×6]  onsetDelay 1.5..2.8  blindFrac med 0.13 (0.1..0.2)  upErr -13.4..-0.1 (up reported 6/6)
+  B_obs_membership  reported 0/6  [nothing×6]  blindFrac 1.0
+  B_subject         reported 6/6  [media receiving=false×6]  onsetDelay 1.5..2.8  blindFrac med 0.13 (0.1..0.2)  upErr -13.4..-0.1 (up reported 6/6)
+
+janus media 30s R1  n=7  outage(first stale→fresh) 40.5..42.7 s
+  A_membership      reported 0/7  [nothing×7]  blindFrac 1.0
+  A_media           reported 7/7  [media receiving=false×7]  onsetDelay 1.0..2.7  blindFrac med 0.04 (0.0..0.1)  upErr -12.9..-10.9 (up reported 7/7)
+  B_obs_membership  reported 0/7  [nothing×7]  blindFrac 1.0
+  B_subject         reported 7/7  [media receiving=false×7]  onsetDelay 1.0..2.7  blindFrac med 0.04 (0.0..0.1)  upErr -12.9..-10.9 (up reported 7/7)
+
+livekit all 10s R1  n=7  outage(first stale→fresh) 13.7..22.3 s
+  A_membership      reported 0/7  [nothing×7]  blindFrac 1.0
+  B_obs_membership  reported 0/7  [nothing×7]  blindFrac 1.0
+  B_obs_quality     reported 7/7  [quality LOST×7]  onsetDelay 5.1..6.5  blindFrac med 0.34 (0.3..0.5)  upErr 3.9..24.6 (up reported 7/7)
+  B_subject         reported 0/7  [nothing×7]  blindFrac 1.0
+
+livekit all 30s R2  n=7  outage(first stale→fresh) 33.7..34.3 s
+  A_membership      reported 7/7  [track_unpublished×7]  onsetDelay 19.6..21.9  blindFrac med 0.6 (0.6..0.6)  upErr -0.6..-0.2 (up reported 7/7)
+  B_obs_membership  reported 7/7  [update DISCONNECTED/CONNECTION_TIMEOUT×7]  onsetDelay 19.6..21.9  blindFrac med 0.6 (0.6..0.6)  upErr -0.5..-0.1 (up reported 7/7)
+  B_obs_quality     reported 7/7  [quality LOST×7]  onsetDelay 5.6..9.6  blindFrac med 0.18 (0.2..0.3)  upErr -0.5..-0.1 (up reported 7/7)
+  B_subject         reported 7/7  [leave RECONNECT/STATE_MISMATCH×7]  onsetDelay 32.8..33.4  blindFrac med 0.98 (1.0..1.0)  upErr -0.9..-0.5 (up reported 7/7)
+
+livekit media 10s R1  n=7  outage(first stale→fresh) 15.4..23.0 s
+  A_membership      reported 0/7  [nothing×7]  blindFrac 1.0
+  B_obs_membership  reported 0/7  [nothing×7]  blindFrac 1.0
+  B_obs_quality     reported 7/7  [quality LOST×7]  onsetDelay 6.2..10.4  blindFrac med 0.41 (0.3..0.5)  upErr 3.3..10.9 (up reported 7/7)
+  B_subject         reported 0/7  [nothing×7]  blindFrac 1.0
+
+livekit media 30s R2  n=6  outage(first stale→fresh) 30.5..31.7 s
+  A_membership      reported 6/6  [track_unpublished×6]  onsetDelay 26.5..27.3  blindFrac med 0.86 (0.8..0.9)  upErr -0.6..-0.2 (up reported 6/6)
+  B_obs_membership  reported 6/6  [update DISCONNECTED/CONNECTION_TIMEOUT×6]  onsetDelay 26.5..27.3  blindFrac med 0.86 (0.8..0.9)  upErr -2.6..-0.5 (up reported 6/6)
+  B_obs_quality     reported 6/6  [quality LOST×6]  onsetDelay 5.7..6.4  blindFrac med 0.19 (0.2..0.2)  upErr -0.5..-0.1 (up reported 6/6)
+  B_subject         reported 6/6  [leave RESUME/CONNECTION_TIMEOUT×6]  onsetDelay 21.5..22.3  blindFrac med 0.7 (0.7..0.7)  upErr -2.8..-1.5 (up reported 6/6)

@@ -1,0 +1,19 @@
+stack   | mode  |  D  | arm | n | regime(s)            | fresh-from-restore s (range) | stale@obs s (median) | server      | observers        | actual D s
+janus   | all   | 10s | I   | 3 | R1×3                 | 0.1–0.2                      | 10.165               | S-silent    | O-nothing        | 10.0–10.0
+janus   | all   | 10s | O   | 3 | R1×3                 | 0.0–0.3                      | 9.856                | S-silent    | O-nothing        | 10.0–10.0
+janus   | all   | 30s | I   | 3 | R3×3                 | —                            | 152.19               | S-removed   | O-left           | 30.0–30.0
+janus   | all   | 30s | O   | 3 | R3×3                 | —                            | 151.315              | S-silent/S-removed | O-left           | 30.0–30.0
+janus   | media | 10s | I   | 3 | R1×3                 | 0.1–11.6                     | 9.728                | S-silent    | O-nothing        | 10.0–10.0
+janus   | media | 10s | O   | 3 | R1×3                 | 0.2–13.5                     | 18.432               | S-silent    | O-nothing        | 10.0–10.0
+janus   | media | 30s | I   | 3 | R1×3                 | 11.2–13.1                    | 38.516               | S-silent    | O-nothing        | 30.0–30.0
+janus   | media | 30s | O   | 3 | R1×3                 | 10.9–12.4                    | 38.452               | S-silent    | O-nothing        | 30.0–30.0
+livekit | all   | 10s | I   | 3 | R1×3                 | 4.1–7.5                      | 12.672               | S-silent    | O-nothing        | 10.0–10.0
+livekit | all   | 10s | O   | 3 | R1×3                 | 4.0–12.6                     | 15.232               | S-silent    | O-nothing        | 10.0–10.0
+livekit | all   | 30s | I   | 3 | R2×3                 | 4.2–4.6                      | 34.261               | S-replaced  | O-left+returned  | 30.0–30.0
+livekit | all   | 30s | O   | 3 | R2×3                 | 3.9–4.2                      | 33.792               | S-replaced  | O-left+returned  | 30.0–30.0
+livekit | media | 10s | I   | 3 | R1×3                 | 11.7–13.1                    | 19.456               | S-silent    | O-nothing        | 10.0–10.0
+livekit | media | 10s | O   | 3 | R1×3                 | 5.3–12.8                     | 19.712               | S-silent    | O-nothing        | 10.0–10.0
+livekit | media | 30s | I   | 3 | R2×3                 | 1.2–1.6                      | 31.707               | S-replaced  | O-left+returned  | 30.0–30.0
+livekit | media | 30s | O   | 3 | R2×3                 | 0.4–1.2                      | 30.848               | S-replaced  | O-left+returned  | 30.0–30.0
+
+valid 48/48; violations 0; detection s: 0.3–2.2; server requests seen (LiveKit): 6 trials

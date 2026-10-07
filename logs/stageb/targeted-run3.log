@@ -1,0 +1,92 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 0c37975f-cf09-3e7d-bbef-3f2e234a9054 submitted
+==> EKS update 0c37975f-cf09-3e7d-bbef-3f2e234a9054: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 2s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (25s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP     OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-17-157.ec2.internal   Ready    <none>   14s   v1.36.4-eks-f4fc4f1   10.42.17.157   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-29-33.ec2.internal    Ready    <none>   12s   v1.36.4-eks-f4fc4f1   10.42.29.33    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-4-84.ec2.internal     Ready    <none>   16s   v1.36.4-eks-f4fc4f1   10.42.4.84     <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-01T01:42:34Z
+deployment "janus" successfully rolled out
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[01:43:36.712] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790819016719.315}
+[01:43:38.061] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790819018069.4163}
+[01:43:39.300] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790819019309.7605}
+[01:43:49.143] ABORT janus-healthy_rebuild-I-20261001T014339-1: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+[01:43:58.990] ABORT janus-healthy_rebuild-I-20261001T014349-2: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+[01:44:09.097] ABORT janus-healthy_rebuild-I-20261001T014358-3: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+[01:44:18.779] ABORT janus-kick-I-20261001T014409-1: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+[01:44:30.599] ABORT janus-kick-I-20261001T014418-2: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+[01:44:40.806] ABORT janus-kick-I-20261001T014430-3: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+[01:44:50.738] ABORT janus-rogue-I-20261001T014440-1: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+[01:45:03.088] ABORT janus-healthy_rebuild-I-20261001T014453-1: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal; SFU under test pods: []
+{"selftest":"placement","aborted":true,"reasons":["idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0)","idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-wbk67@ip-10-42-17-157.ec2.internal","SFU under test pods: []"],"trialDirsBefore":0,"trialDirsAfter":0,"PASS":true}
+[01:47:09.478] switched to livekit
+[01:47:28.047] livekit-healthy_rebuild-I-20261001T014709-1 join_O1 {"sessionId":"PA_W7eYmWomGZEm"}
+[01:47:30.119] livekit-healthy_rebuild-I-20261001T014709-1 join_O2 {"sessionId":"PA_en2XWF9ht8kj"}
+[01:47:32.655] livekit-healthy_rebuild-I-20261001T014709-1 join_S {"sessionId":"PA_n7XTsPwzBckm"}
+[01:47:36.757] livekit-healthy_rebuild-I-20261001T014709-1 media_flowing {}
+[01:47:53.675] livekit-healthy_rebuild-I-20261001T014709-1 arm_O1 {"S":77.537841796875,"O2":67.7177734375}
+[01:47:55.139] livekit-healthy_rebuild-I-20261001T014709-1 arm_O2 {"S":61.86572265625,"O1":77.97900390625}
+[01:47:56.599] livekit-healthy_rebuild-I-20261001T014709-1 arm_S {"O1":73.0712890625,"O2":79.71728515625}
+[01:48:03.581] livekit-healthy_rebuild-I-20261001T014709-1 trigger {"kind":"rebuild","tStart":1790819283100.5,"sid0":"PA_n7XTsPwzBckm","tEnd":1790819283496.2002,"result":{"ok":true,"sessionId":"PA_kJDXsYGwQDjz","oldSessionId":"PA_n7XTsPwzBckm"},"sid1":"PA_kJDXsYGwQDj
+[01:50:03.624] livekit-healthy_rebuild-I-20261001T014709-1 VALID
+[01:50:20.718] livekit-healthy_rebuild-I-20261001T015003-2 join_O1 {"sessionId":"PA_Be3bDVY8VSUK"}
+[01:50:22.776] livekit-healthy_rebuild-I-20261001T015003-2 join_O2 {"sessionId":"PA_d9dU8WP6FS3t"}
+[01:50:24.889] livekit-healthy_rebuild-I-20261001T015003-2 join_S {"sessionId":"PA_ivhtz5QoinX6"}
+[01:50:28.915] livekit-healthy_rebuild-I-20261001T015003-2 media_flowing {}
+[01:50:46.112] livekit-healthy_rebuild-I-20261001T015003-2 arm_O1 {"S":68.945556640625,"O2":75.650146484375}
+[01:50:47.462] livekit-healthy_rebuild-I-20261001T015003-2 arm_O2 {"S":79.137451171875,"O1":65.43896484375}
+[01:50:48.897] livekit-healthy_rebuild-I-20261001T015003-2 arm_S {"O1":67.451904296875,"O2":71.720703125}
+[01:50:55.818] livekit-healthy_rebuild-I-20261001T015003-2 trigger {"kind":"rebuild","tStart":1790819455349.5,"sid0":"PA_ivhtz5QoinX6","tEnd":1790819455741.6,"result":{"ok":true,"sessionId":"PA_Z5enwufGwRwR","oldSessionId":"PA_ivhtz5QoinX6"},"sid1":"PA_Z5enwufGwRwR"}
+=== PARK 2026-10-01T01:52:13Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 239e440d-ad26-3f1d-8990-0b1d31e007c0 submitted
+==> EKS update 239e440d-ad26-3f1d-8990-0b1d31e007c0: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 2s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 35s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 68s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 102s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 135s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 167s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 201s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 234s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 267s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 299s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 333s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 368s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 402s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 435s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 469s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 504s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 537s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 571s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 605s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 638s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 671s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 704s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 737s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 771s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 804s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 837s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 870s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 903s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 937s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 970s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1004s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+client/runner/targeted-final.sh: line 5: 35176 Terminated: 15          node run.mjs targeted livekit healthy_rebuild 3 I
+=== JOB_DONE 2026-10-01T02:09:28Z

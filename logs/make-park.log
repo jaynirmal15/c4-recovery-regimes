@@ -1,0 +1,124 @@
+START 2026-09-29T06:04:19Z
+terraform -chdir=terraform apply -input=false -auto-approve -var node_group_desired_size=0
+[0m[1mdata.aws_ec2_instance_type_offerings.node: Reading...[0m[0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_partition.current[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_partition.current[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_caller_identity.current[0]: Reading...[0m[0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_service_principal.elasticloadbalancing[0]: Reading...[0m[0m
+[0m[1mdata.aws_availability_zones.available: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mdata.aws_partition.current: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...[0m[0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_service_principal.elasticloadbalancing[0]: Read complete after 0s [id=elasticloadbalancing.us-east-1.amazonaws.com][0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_partition.current[0]: Read complete after 0s [id=aws][0m
+[0m[1mdata.aws_partition.current: Read complete after 0s [id=aws][0m
+[0m[1mmodule.eks.data.aws_partition.current[0]: Read complete after 0s [id=aws][0m
+[0m[1maws_budgets_budget.monthly: Refreshing state... [id=<aws-account-id>:realtime-media-aws-lab-monthly][0m
+[0m[1mmodule.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2830595799][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296][0m
+[0m[1mmodule.eks.aws_cloudwatch_log_group.this[0]: Refreshing state... [id=/aws/eks/realtime-media-aws-lab/cluster][0m
+[0m[1mmodule.eks.aws_iam_role.this[0]: Refreshing state... [id=realtime-media-aws-lab-cluster-c38b57fc19a6e80b2c408e8d7c][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].aws_iam_role.this[0]: Refreshing state... [id=media-eks-node-group-826459fead9349d797523e67a4][0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_iam_policy_document.load_balancer_controller[0]: Reading...[0m[0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_iam_policy_document.load_balancer_controller[0]: Read complete after 0s [id=1541424006][0m
+[0m[1mmodule.eks.data.aws_caller_identity.current[0]: Read complete after 0s [id=<aws-account-id>][0m
+[0m[1mmodule.eks.data.aws_iam_session_context.current[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_iam_session_context.current[0]: Read complete after 0s [id=arn:aws:iam::<aws-account-id>:user/lab-admin][0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_iam_policy_document.this[0]: Reading...[0m[0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_iam_policy_document.this[0]: Read complete after 0s [id=1541424006][0m
+[0m[1mmodule.load_balancer_controller_irsa.aws_iam_policy.this[0]: Refreshing state... [id=arn:aws:iam::<aws-account-id>:policy/AWS_Load_Balancer_Controller-67fa2036f88ceb7d942b94b4dc][0m
+[0m[1mdata.aws_ec2_instance_type_offerings.node: Read complete after 0s [id=us-east-1][0m
+[0m[1mdata.aws_availability_zones.available: Read complete after 0s [id=us-east-1][0m
+[0m[1maws_vpc.this: Refreshing state... [id=vpc-09bcdeec9c7109b8f][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"]: Refreshing state... [id=media-eks-node-group-826459fead9349d797523e67a4/arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"]: Refreshing state... [id=media-eks-node-group-826459fead9349d797523e67a4/arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"]: Refreshing state... [id=media-eks-node-group-826459fead9349d797523e67a4/arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly][0m
+[0m[1mmodule.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"]: Refreshing state... [id=realtime-media-aws-lab-cluster-c38b57fc19a6e80b2c408e8d7c/arn:aws:iam::aws:policy/AmazonEKSClusterPolicy][0m
+[0m[1maws_internet_gateway.this: Refreshing state... [id=igw-00b2674255d470e28][0m
+[0m[1maws_route_table.public: Refreshing state... [id=rtb-03f6c65edbe73e00e][0m
+[0m[1maws_subnet.public["us-east-1b"]: Refreshing state... [id=subnet-071bd7aa7d7e8f787][0m
+[0m[1mmodule.eks.aws_security_group.node[0]: Refreshing state... [id=sg-0dfcea2db40845501][0m
+[0m[1maws_subnet.public["us-east-1a"]: Refreshing state... [id=subnet-08d6c8ed4908fb85a][0m
+[0m[1mmodule.eks.aws_security_group.cluster[0]: Refreshing state... [id=sg-0bb71e2d2a446ef2f][0m
+[0m[1maws_route.public_default: Refreshing state... [id=r-rtb-03f6c65edbe73e00e1080289494][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_kubelet"]: Refreshing state... [id=sgrule-1432649462][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"]: Refreshing state... [id=sgrule-1529414472][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"]: Refreshing state... [id=sgrule-106014573][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"]: Refreshing state... [id=sgrule-353213260][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"]: Refreshing state... [id=sgrule-3474178299][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["turn_control_tcp"]: Refreshing state... [id=sgrule-2236381123][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_10251_webhook"]: Refreshing state... [id=sgrule-1630350989][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"]: Refreshing state... [id=sgrule-4021135829][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["turn_relay_udp"]: Refreshing state... [id=sgrule-2833955481][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_443"]: Refreshing state... [id=sgrule-1485873116][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["egress_all"]: Refreshing state... [id=sgrule-3741850630][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["turn_control_udp"]: Refreshing state... [id=sgrule-4219704667][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["nodeport_udp"]: Refreshing state... [id=sgrule-2115143146][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_self_coredns_udp"]: Refreshing state... [id=sgrule-1274153530][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["nodeport_tcp_health"]: Refreshing state... [id=sgrule-3934331539][0m
+[0m[1mmodule.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"]: Refreshing state... [id=sgrule-1907140743][0m
+[0m[1mmodule.eks.aws_security_group_rule.cluster["ingress_nodes_443"]: Refreshing state... [id=sgrule-3635650836][0m
+[0m[1maws_route_table_association.public["us-east-1a"]: Refreshing state... [id=rtbassoc-0633791d826e1e221][0m
+[0m[1maws_route_table_association.public["us-east-1b"]: Refreshing state... [id=rtbassoc-03cfafd7c373418a9][0m
+[0m[1mmodule.eks.aws_eks_cluster.this[0]: Refreshing state... [id=realtime-media-aws-lab][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["managed-by"]: Refreshing state... [id=sg-011afd810dcdd48e3,managed-by][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["project"]: Refreshing state... [id=sg-011afd810dcdd48e3,project][0m
+[0m[1mmodule.eks.aws_ec2_tag.cluster_primary_security_group["sprint"]: Refreshing state... [id=sg-011afd810dcdd48e3,sprint][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Reading...[0m[0m
+[0m[1mmodule.eks.aws_eks_access_entry.this["cluster_creator"]: Refreshing state... [id=realtime-media-aws-lab:arn:aws:iam::<aws-account-id>:user/lab-admin][0m
+[0m[1mmodule.eks.time_sleep.this[0]: Refreshing state... [id=2026-09-29T05:24:42Z][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Reading...[0m[0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Reading...[0m[0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].module.user_data.null_resource.validate_cluster_service_cidr: Refreshing state... [id=7884601178980072905][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].data.aws_ssm_parameter.ami[0]: Reading...[0m[0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["coredns"]: Read complete after 0s [id=coredns][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].aws_launch_template.this[0]: Refreshing state... [id=lt-0c1379121fdf72c7f][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["vpc-cni"]: Read complete after 0s [id=vpc-cni][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["eks-pod-identity-agent"]: Read complete after 0s [id=eks-pod-identity-agent][0m
+[0m[1mmodule.eks.data.aws_eks_addon_version.this["kube-proxy"]: Read complete after 0s [id=kube-proxy][0m
+[0m[1mmodule.eks.aws_eks_addon.before_compute["vpc-cni"]: Refreshing state... [id=realtime-media-aws-lab:vpc-cni][0m
+[0m[1mmodule.eks.data.tls_certificate.this[0]: Read complete after 0s [id=b1b539daa206035ae3c3e28288b0681fa1b462f3][0m
+[0m[1mmodule.eks.aws_iam_openid_connect_provider.oidc_provider[0]: Refreshing state... [id=arn:aws:iam::<aws-account-id>:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/<eks-endpoint-id>][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].data.aws_ssm_parameter.ami[0]: Read complete after 0s [id=/aws/service/eks/optimized-ami/1.36/amazon-linux-2023/arm64/standard/recommended/release_version][0m
+[0m[1mmodule.eks.aws_eks_access_policy_association.this["cluster_creator_admin"]: Refreshing state... [id=realtime-media-aws-lab#arn:aws:iam::<aws-account-id>:user/lab-admin#arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy][0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_iam_policy_document.assume[0]: Reading...[0m[0m
+[0m[1mmodule.load_balancer_controller_irsa.data.aws_iam_policy_document.assume[0]: Read complete after 0s [id=3195312863][0m
+[0m[1mmodule.load_balancer_controller_irsa.aws_iam_role.this[0]: Refreshing state... [id=realtime-media-aws-lab-alb-controller-d22d73ba2f93d48c67d3f5556c][0m
+[0m[1mmodule.eks.module.eks_managed_node_group["media"].aws_eks_node_group.this[0]: Refreshing state... [id=realtime-media-aws-lab:media-d2d1bcd317a9f7e6ac1dd04994][0m
+[0m[1mmodule.eks.aws_eks_addon.this["kube-proxy"]: Refreshing state... [id=realtime-media-aws-lab:kube-proxy][0m
+[0m[1mmodule.eks.aws_eks_addon.this["eks-pod-identity-agent"]: Refreshing state... [id=realtime-media-aws-lab:eks-pod-identity-agent][0m
+[0m[1mmodule.eks.aws_eks_addon.this["coredns"]: Refreshing state... [id=realtime-media-aws-lab:coredns][0m
+[0m[1mmodule.load_balancer_controller_irsa.aws_iam_role_policy_attachment.this[0]: Refreshing state... [id=realtime-media-aws-lab-alb-controller-d22d73ba2f93d48c67d3f5556c/arn:aws:iam::<aws-account-id>:policy/AWS_Load_Balancer_Controller-67fa2036f88ceb7d942b94b4dc][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+[0m[1m[32m
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.[0m
+[0m[1m[32m
+Outputs:
+
+[0mavailability_zones = tolist([
+  "us-east-1a",
+  "us-east-1b",
+])
+budget_scope = "entire account"
+cluster_endpoint = "https://<eks-endpoint>"
+cluster_name = "realtime-media-aws-lab"
+cluster_version = "1.36"
+kubeconfig_command = "aws eks update-kubeconfig --region us-east-1 --name realtime-media-aws-lab"
+load_balancer_controller_role_arn = "arn:aws:iam::<aws-account-id>:role/realtime-media-aws-lab-alb-controller-d22d73ba2f93d48c67d3f5556c"
+node_instance_type = "c7g.large"
+node_security_group_id = "sg-0dfcea2db40845501"
+project_tag = "realtime-media-aws-lab"
+public_subnet_ids = [
+  "subnet-08d6c8ed4908fb85a",
+  "subnet-071bd7aa7d7e8f787",
+]
+region = "us-east-1"
+vpc_id = "vpc-09bcdeec9c7109b8f"
+END 2026-09-29T06:04:33Z
+MAKE_PARK_EXIT=0

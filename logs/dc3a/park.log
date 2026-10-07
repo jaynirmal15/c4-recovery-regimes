@@ -1,0 +1,43 @@
+START 2026-09-29T18:11:01Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 5872a975-7f67-30eb-9d06-fedf13c9ec86 submitted
+==> EKS update 5872a975-7f67-30eb-9d06-fedf13c9ec86: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 3s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 35s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 68s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 100s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 133s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 165s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 198s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 231s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 265s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 298s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 331s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 365s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 397s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 430s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 463s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 496s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 529s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 562s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 596s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 629s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 662s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 696s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 729s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 763s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 796s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 829s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 862s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 895s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 929s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 962s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (996s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+END 2026-09-29T18:28:04Z
+MAKE_PARK_EXIT=0

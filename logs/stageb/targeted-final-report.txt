@@ -1,0 +1,252 @@
+
+=== janus-healthy_rebuild-I-20261001T003041-1  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   Janus refused same feed id (436) before accepting
+   ok   observers saw leaving then publisher again
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: 2779656858643127 -> 7550150457716517
+   actions: rebuild@0s join/436 (0.019s) ; rebuild@5.191s join/436 (0.001s) ; rebuild@10.391s join/436 (0.004s) ; rebuild@15.591s join/436 (0.001s) ; rebuild@20.791s join/436 (0.001s) ; rebuild@25.991s join/436 (0.001s) ; rebuild@31.191s ok (0.135s)
+   freshness: recovered_t=31.567s observersFreshAgain=[31.567,31.566] staleMs@obs=[31567,31566] subjectFreshFrom=[31.41,31.41]
+   server: [{"t":-29.552,"event":"session.created","session":"2779656858643127"},{"t":-29.55,"event":"joined"},{"t":-29.412,"event":"configured"},{"t":-29.385,"event":"published"},{"t":0.003,"event":"unpublished"},{"t":0.016,"event":"session.created","session":"7550150457716517"},{"t":26.467,"event":"unpublished"},{"t":26.467,"event":"leaving"},{"t":26.467,"event":"session.timeout","session":"277965685864312
+   O1 saw: [{"t":0.004,"event":"unpublished","feed":101},{"t":26.468,"event":"leaving","feed":101},{"t":31.192,"event":"joining","feed":101},{"t":31.349,"event":"publisher","feed":101},{"t":99.75,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0.004,"event":"unpublished","feed":101},{"t":26.468,"event":"leaving","feed":101},{"t":31.192,"event":"joining","feed":101},{"t":31.35,"event":"publisher","feed":101},{"t":99.751,"event":"leaving","feed":101}]
+
+=== janus-healthy_rebuild-I-20261001T003330-2  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   Janus refused same feed id (436) before accepting
+   ok   observers saw leaving then publisher again
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: 2825311633402345 -> 4143096196549560
+   actions: rebuild@0s join/436 (0.019s) ; rebuild@5.206s join/436 (0.001s) ; rebuild@10.406s join/436 (0.001s) ; rebuild@15.606s join/436 (0.001s) ; rebuild@20.806s join/436 (0.001s) ; rebuild@26.006s join/436 (0.001s) ; rebuild@31.206s ok (0.128s)
+   freshness: recovered_t=31.581s observersFreshAgain=[31.575,31.581] staleMs@obs=[31575,31581] subjectFreshFrom=[31.424,31.424]
+   server: [{"t":-30.131,"event":"session.created","session":"2825311633402345"},{"t":-30.129,"event":"joined"},{"t":-29.997,"event":"configured"},{"t":-29.969,"event":"published"},{"t":0.002,"event":"unpublished"},{"t":0.016,"event":"session.created","session":"4143096196549560"},{"t":30.942,"event":"unpublished"},{"t":30.942,"event":"leaving"},{"t":30.942,"event":"session.timeout","session":"28253116334023
+   O1 saw: [{"t":0.003,"event":"unpublished","feed":101},{"t":30.943,"event":"leaving","feed":101},{"t":31.207,"event":"joining","feed":101},{"t":31.358,"event":"publisher","feed":101},{"t":100.865,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0.004,"event":"unpublished","feed":101},{"t":30.943,"event":"leaving","feed":101},{"t":31.207,"event":"joining","feed":101},{"t":31.358,"event":"publisher","feed":101},{"t":100.864,"event":"leaving","feed":101}]
+
+=== janus-healthy_rebuild-I-20261001T003619-3  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   Janus refused same feed id (436) before accepting
+   ok   observers saw leaving then publisher again
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: 777003983824742 -> 3522104731550237
+   actions: rebuild@0s join/436 (0.023s) ; rebuild@5.132s join/436 (0.001s) ; rebuild@10.332s join/436 (0.001s) ; rebuild@15.532s join/436 (0.001s) ; rebuild@20.732s join/436 (0.001s) ; rebuild@25.932s ok (0.132s)
+   freshness: recovered_t=26.561s observersFreshAgain=[26.559,26.561] staleMs@obs=[26559,26561] subjectFreshFrom=[26.164,26.164]
+   server: [{"t":-29.608,"event":"session.created","session":"777003983824742"},{"t":-29.606,"event":"joined"},{"t":-29.47,"event":"configured"},{"t":-29.439,"event":"published"},{"t":0.005,"event":"unpublished"},{"t":0.019,"event":"session.created","session":"3522104731550237"},{"t":25.424,"event":"unpublished"},{"t":25.424,"event":"session.timeout","session":"777003983824742"},{"t":25.425,"event":"leaving"
+   O1 saw: [{"t":0.007,"event":"unpublished","feed":101},{"t":25.426,"event":"leaving","feed":101},{"t":25.935,"event":"joining","feed":101},{"t":26.088,"event":"publisher","feed":101},{"t":101.201,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0.006,"event":"unpublished","feed":101},{"t":25.425,"event":"leaving","feed":101},{"t":25.935,"event":"joining","feed":101},{"t":26.087,"event":"publisher","feed":101},{"t":101.201,"event":"leaving","feed":101}]
+
+=== janus-kick-I-20261001T003908-1  FAIL
+   ok   trial valid
+   ok   kick delivered
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 5020010967336475 -> 1594681495812178
+   actions: rebuild@0s ok (0.167s)
+   terminals: [{"t":0,"reason":"kicked"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.245,0.245]
+   server: [{"t":-29.552,"event":"session.created","session":"5020010967336475"},{"t":-29.549,"event":"joined"},{"t":-29.425,"event":"configured"},{"t":-29.394,"event":"published"},{"t":-0.001,"event":"kicked"},{"t":0.019,"event":"session.created","session":"1594681495812178"},{"t":0.022,"event":"joined"},{"t":0.154,"event":"configured"},{"t":0.191,"event":"published"},{"t":25.61,"event":"session.timeout","s
+   O1 saw: [{"t":0,"event":"kicked","feed":101},{"t":0.022,"event":"joining","feed":101},{"t":0.192,"event":"publisher","feed":101},{"t":101.387,"event":"leaving","feed":101}]
+   O2 saw: [{"t":-0.001,"event":"kicked","feed":101},{"t":0.023,"event":"joining","feed":101},{"t":0.192,"event":"publisher","feed":101},{"t":101.387,"event":"leaving","feed":101}]
+
+=== janus-kick-I-20261001T004158-2  FAIL
+   ok   trial valid
+   ok   kick delivered
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 2057694027519908 -> 5909933916825794
+   actions: rebuild@0s ok (0.16s)
+   terminals: [{"t":0,"reason":"kicked"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.24,0.24]
+   server: []
+   O1 saw: [{"t":-0.001,"event":"kicked","feed":101},{"t":0.024,"event":"joining","feed":101},{"t":0.183,"event":"publisher","feed":101},{"t":99.49,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0,"event":"kicked","feed":101},{"t":0.024,"event":"joining","feed":101},{"t":0.183,"event":"publisher","feed":101},{"t":99.491,"event":"leaving","feed":101}]
+
+=== janus-kick-I-20261001T004446-3  FAIL
+   ok   trial valid
+   ok   kick delivered
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 7270613984276292 -> 7675930240306515
+   actions: rebuild@0s ok (0.156s)
+   terminals: [{"t":0,"reason":"kicked"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.243,0.243]
+   server: [{"t":-29.907,"event":"session.created","session":"7270613984276292"},{"t":-29.904,"event":"joined"},{"t":-29.769,"event":"configured"},{"t":-29.74,"event":"published"},{"t":-0.001,"event":"kicked"},{"t":0.017,"event":"session.created","session":"7675930240306515"},{"t":0.019,"event":"joined"},{"t":0.154,"event":"configured"},{"t":0.18,"event":"published"},{"t":26.376,"event":"session.timeout","se
+   O1 saw: [{"t":0,"event":"kicked","feed":101},{"t":0.02,"event":"joining","feed":101},{"t":0.18,"event":"publisher","feed":101},{"t":99.497,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0,"event":"kicked","feed":101},{"t":0.02,"event":"joining","feed":101},{"t":0.18,"event":"publisher","feed":101},{"t":99.497,"event":"leaving","feed":101}]
+
+=== janus-rogue-I-20261001T004733-1  PASS
+   ok   planted reconnect caught as violation
+   ok   trial marked INVALID
+   ok   invalidation cites the violation
+   regime: R0 continues | sessions: 1994881089898691
+   actions: none
+   violations: [{"t":0,"where":"janus.iceRestartAll"}]
+   freshness: recovered_t=0.066s observersFreshAgain=[0.062,0.066] staleMs@obs=[0,0] subjectFreshFrom=[0.019,0.019]
+   server: [{"t":-29.136,"event":"session.created","session":"1994881089898691"},{"t":-29.133,"event":"joined"},{"t":-28.991,"event":"configured"},{"t":-28.953,"event":"published"},{"t":0.003,"event":"configured"},{"t":0.003,"event":"updated"},{"t":101.9,"event":"leaving"},{"t":101.903,"event":"session.destroyed","session":"1994881089898691"}]
+   O1 saw: [{"t":101.901,"event":"leaving","feed":101}]
+   O2 saw: [{"t":101.9,"event":"leaving","feed":101}]
+   invalid: ["attribution violation(s): 1 (EXPECTED for the planted-rogue self-test)"]
+
+=== livekit-healthy_rebuild-I-20261001T005241-1  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   server evicted old sid DUPLICATE_IDENTITY
+   ok   observers saw S under the new sid
+   DIFF EXPECTATION(source reading): observers saw old sid DISCONNECTED(DUPLICATE_IDENTITY)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_ZSu4WRbH7Jyd -> PA_iaajh6FyqTe4
+   actions: rebuild@0s ok (0.393s)
+   freshness: recovered_t=0.646s observersFreshAgain=[0.637,0.646] staleMs@obs=[637,640] subjectFreshFrom=[0.549,0.421]
+   server: [{"t":-29.525,"event":"participant_joined","sid":"PA_ZSu4WRbH7Jyd","reason":null},{"t":-29.452,"event":"track_published","sid":"PA_ZSu4WRbH7Jyd","reason":null},{"t":0.044,"event":"track_unpublished","sid":"PA_ZSu4WRbH7Jyd","reason":null},{"t":0.054,"event":"participant_left","sid":"PA_ZSu4WRbH7Jyd","reason":"DUPLICATE_IDENTITY"},{"t":0.318,"event":"participant_joined","sid":"PA_iaajh6FyqTe4","reas
+   O1 saw: [{"t":0.379,"sid":"PA_iaajh6FyqTe4","state":"ACTIVE","reason":null},{"t":99.953,"sid":"PA_iaajh6FyqTe4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":0.38,"sid":"PA_iaajh6FyqTe4","state":"ACTIVE","reason":null},{"t":99.952,"sid":"PA_iaajh6FyqTe4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-healthy_rebuild-I-20261001T005526-2  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   server evicted old sid DUPLICATE_IDENTITY
+   ok   observers saw S under the new sid
+   DIFF EXPECTATION(source reading): observers saw old sid DISCONNECTED(DUPLICATE_IDENTITY)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_pUEju6uoutEa -> PA_ywJJqQpNuXUy
+   actions: rebuild@0s ok (0.392s)
+   freshness: recovered_t=0.624s observersFreshAgain=[0.615,0.624] staleMs@obs=[615,624] subjectFreshFrom=[0.416,0.426]
+   server: [{"t":-29.694,"event":"participant_joined","sid":"PA_pUEju6uoutEa","reason":null},{"t":-29.611,"event":"track_published","sid":"PA_pUEju6uoutEa","reason":null},{"t":0.041,"event":"track_unpublished","sid":"PA_pUEju6uoutEa","reason":null},{"t":0.05,"event":"participant_left","sid":"PA_pUEju6uoutEa","reason":"DUPLICATE_IDENTITY"},{"t":0.32,"event":"participant_joined","sid":"PA_ywJJqQpNuXUy","reason
+   O1 saw: [{"t":0.38,"sid":"PA_ywJJqQpNuXUy","state":"ACTIVE","reason":null},{"t":99.767,"sid":"PA_ywJJqQpNuXUy","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":0.379,"sid":"PA_ywJJqQpNuXUy","state":"ACTIVE","reason":null},{"t":99.766,"sid":"PA_ywJJqQpNuXUy","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-healthy_rebuild-I-20261001T005810-3  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   server evicted old sid DUPLICATE_IDENTITY
+   ok   observers saw S under the new sid
+   DIFF EXPECTATION(source reading): observers saw old sid DISCONNECTED(DUPLICATE_IDENTITY)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_qvzYt6bvQvGi -> PA_YiHK3XsC2Jwv
+   actions: rebuild@0s ok (0.407s)
+   freshness: recovered_t=0.685s observersFreshAgain=[0.685,0.682] staleMs@obs=[640,640] subjectFreshFrom=[0.439,0.439]
+   server: [{"t":-30.142,"event":"participant_joined","sid":"PA_qvzYt6bvQvGi","reason":null},{"t":-30.068,"event":"track_published","sid":"PA_qvzYt6bvQvGi","reason":null},{"t":0.06,"event":"track_unpublished","sid":"PA_qvzYt6bvQvGi","reason":null},{"t":0.067,"event":"participant_left","sid":"PA_qvzYt6bvQvGi","reason":"DUPLICATE_IDENTITY"},{"t":0.342,"event":"participant_joined","sid":"PA_YiHK3XsC2Jwv","reaso
+   O1 saw: [{"t":0.397,"sid":"PA_YiHK3XsC2Jwv","state":"ACTIVE","reason":null},{"t":99.961,"sid":"PA_YiHK3XsC2Jwv","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":0.395,"sid":"PA_YiHK3XsC2Jwv","state":"ACTIVE","reason":null},{"t":99.962,"sid":"PA_YiHK3XsC2Jwv","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-intruder-I-20261001T010930-1  PASS
+   ok   trial valid
+   ok   DISCONNECT delivered (DUPLICATE_IDENTITY)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   ok   intruder evicted in turn (raw frames)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_69LEb8aSmwsE -> PA_m7vp8Ny5zyx2
+   actions: rebuild@nulls ok (0.421s)
+   terminals: [{"t":null,"reason":"DUPLICATE_IDENTITY"}]
+   server: [{"t":null,"event":"participant_joined","sid":"PA_69LEb8aSmwsE","reason":null},{"t":null,"event":"track_published","sid":"PA_69LEb8aSmwsE","reason":null},{"t":null,"event":"track_unpublished","sid":"PA_69LEb8aSmwsE","reason":null},{"t":null,"event":"participant_left","sid":"PA_69LEb8aSmwsE","reason":"DUPLICATE_IDENTITY"},{"t":null,"event":"participant_connection_aborted","sid":"PA_9gMaho6v7b5Z","r
+   O1 saw: [{"t":null,"sid":"PA_69LEb8aSmwsE","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_m7vp8Ny5zyx2","state":"JOINED","reason":null},{"t":null,"sid":"PA_m7vp8Ny5zyx2","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_m7vp8Ny5zyx2","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":null,"sid":"PA_69LEb8aSmwsE","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_m7vp8Ny5zyx2","state":"JOINED","reason":null},{"t":null,"sid":"PA_m7vp8Ny5zyx2","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_m7vp8Ny5zyx2","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   intruder: {"terminals":[],"leaveFrames":[{"t":null,"action":"DISCONNECT","reason":"DUPLICATE_IDENTITY"}],"sessions":[]}
+
+=== livekit-intruder-I-20261001T011240-2  PASS
+   ok   trial valid
+   ok   DISCONNECT delivered (DUPLICATE_IDENTITY)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   ok   intruder evicted in turn (raw frames)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_wWwNinG7rxaF -> PA_tCfaVad5WsVv
+   actions: rebuild@nulls ok (0.425s)
+   terminals: [{"t":null,"reason":"DUPLICATE_IDENTITY"}]
+   server: [{"t":null,"event":"participant_joined","sid":"PA_wWwNinG7rxaF","reason":null},{"t":null,"event":"track_published","sid":"PA_wWwNinG7rxaF","reason":null},{"t":null,"event":"track_unpublished","sid":"PA_wWwNinG7rxaF","reason":null},{"t":null,"event":"participant_left","sid":"PA_wWwNinG7rxaF","reason":"DUPLICATE_IDENTITY"},{"t":null,"event":"participant_connection_aborted","sid":"PA_RPgnZmxDPrxh","r
+   O1 saw: [{"t":null,"sid":"PA_wWwNinG7rxaF","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_tCfaVad5WsVv","state":"JOINED","reason":null},{"t":null,"sid":"PA_tCfaVad5WsVv","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_tCfaVad5WsVv","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":null,"sid":"PA_wWwNinG7rxaF","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_tCfaVad5WsVv","state":"JOINED","reason":null},{"t":null,"sid":"PA_tCfaVad5WsVv","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_tCfaVad5WsVv","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   intruder: {"terminals":[],"leaveFrames":[{"t":null,"action":"DISCONNECT","reason":"DUPLICATE_IDENTITY"}],"sessions":[]}
+
+=== livekit-intruder-I-20261001T011553-3  PASS
+   ok   trial valid
+   ok   DISCONNECT delivered (DUPLICATE_IDENTITY)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   ok   intruder evicted in turn (raw frames)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_gCQwk9eEALxr -> PA_Ft7bHAvfeUfd
+   actions: rebuild@nulls ok (0.423s)
+   terminals: [{"t":null,"reason":"DUPLICATE_IDENTITY"}]
+   server: [{"t":null,"event":"participant_joined","sid":"PA_gCQwk9eEALxr","reason":null},{"t":null,"event":"track_published","sid":"PA_gCQwk9eEALxr","reason":null},{"t":null,"event":"track_unpublished","sid":"PA_gCQwk9eEALxr","reason":null},{"t":null,"event":"participant_left","sid":"PA_gCQwk9eEALxr","reason":"DUPLICATE_IDENTITY"},{"t":null,"event":"participant_connection_aborted","sid":"PA_9adCqrrhUEc6","r
+   O1 saw: [{"t":null,"sid":"PA_gCQwk9eEALxr","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_Ft7bHAvfeUfd","state":"JOINED","reason":null},{"t":null,"sid":"PA_Ft7bHAvfeUfd","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_Ft7bHAvfeUfd","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":null,"sid":"PA_gCQwk9eEALxr","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_Ft7bHAvfeUfd","state":"JOINED","reason":null},{"t":null,"sid":"PA_Ft7bHAvfeUfd","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_Ft7bHAvfeUfd","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   intruder: {"terminals":[],"leaveFrames":[{"t":null,"action":"DISCONNECT","reason":"DUPLICATE_IDENTITY"}],"sessions":[]}
+
+=== livekit-remove_participant-I-20261001T010055-1  FAIL
+   ok   trial valid
+   ok   DISCONNECT delivered (PARTICIPANT_REMOVED)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: PA_HRxCsjCH6AG6 -> PA_ZzsnNrDLFegv
+   actions: rebuild@0.002s ok (0.398s)
+   terminals: [{"t":0,"reason":"PARTICIPANT_REMOVED"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.43,0.43]
+   server: [{"t":-30.619,"event":"participant_joined","sid":"PA_HRxCsjCH6AG6","reason":null},{"t":-30.546,"event":"track_published","sid":"PA_HRxCsjCH6AG6","reason":null},{"t":-0.008,"event":"track_unpublished","sid":"PA_HRxCsjCH6AG6","reason":null},{"t":0,"event":"participant_left","sid":"PA_HRxCsjCH6AG6","reason":"PARTICIPANT_REMOVED"},{"t":0.319,"event":"participant_joined","sid":"PA_ZzsnNrDLFegv","reason
+   O1 saw: [{"t":-0.012,"sid":"PA_HRxCsjCH6AG6","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.386,"sid":"PA_ZzsnNrDLFegv","state":"ACTIVE","reason":null},{"t":101.322,"sid":"PA_ZzsnNrDLFegv","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":-0.013,"sid":"PA_HRxCsjCH6AG6","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.387,"sid":"PA_ZzsnNrDLFegv","state":"ACTIVE","reason":null},{"t":101.32,"sid":"PA_ZzsnNrDLFegv","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-remove_participant-I-20261001T010344-2  FAIL
+   ok   trial valid
+   ok   DISCONNECT delivered (PARTICIPANT_REMOVED)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: PA_MdwWv7c2kQ8i -> PA_c44dg7cufarF
+   actions: rebuild@0s ok (0.41s)
+   terminals: [{"t":0,"reason":"PARTICIPANT_REMOVED"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.412,0.412]
+   server: [{"t":-37.481,"event":"participant_joined","sid":"PA_MdwWv7c2kQ8i","reason":null},{"t":-37.392,"event":"track_published","sid":"PA_MdwWv7c2kQ8i","reason":null},{"t":-0.015,"event":"track_unpublished","sid":"PA_MdwWv7c2kQ8i","reason":null},{"t":-0.008,"event":"participant_left","sid":"PA_MdwWv7c2kQ8i","reason":"PARTICIPANT_REMOVED"},{"t":0.316,"event":"participant_joined","sid":"PA_c44dg7cufarF","r
+   O1 saw: [{"t":-0.021,"sid":"PA_MdwWv7c2kQ8i","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.389,"sid":"PA_c44dg7cufarF","state":"ACTIVE","reason":null},{"t":101.778,"sid":"PA_c44dg7cufarF","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":-0.022,"sid":"PA_MdwWv7c2kQ8i","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.39,"sid":"PA_c44dg7cufarF","state":"ACTIVE","reason":null},{"t":101.778,"sid":"PA_c44dg7cufarF","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-remove_participant-I-20261001T010640-3  FAIL
+   ok   trial valid
+   ok   DISCONNECT delivered (PARTICIPANT_REMOVED)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: PA_3Hqm5PSuoQcr -> PA_Y3QLQHAB3URc
+   actions: rebuild@0s ok (0.397s)
+   terminals: [{"t":0,"reason":"PARTICIPANT_REMOVED"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.421,0.421]
+   server: [{"t":-29.944,"event":"participant_joined","sid":"PA_3Hqm5PSuoQcr","reason":null},{"t":-29.875,"event":"track_published","sid":"PA_3Hqm5PSuoQcr","reason":null},{"t":-0.014,"event":"track_unpublished","sid":"PA_3Hqm5PSuoQcr","reason":null},{"t":-0.008,"event":"participant_left","sid":"PA_3Hqm5PSuoQcr","reason":"PARTICIPANT_REMOVED"},{"t":0.321,"event":"participant_joined","sid":"PA_Y3QLQHAB3URc","r
+   O1 saw: [{"t":-0.02,"sid":"PA_3Hqm5PSuoQcr","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.383,"sid":"PA_Y3QLQHAB3URc","state":"ACTIVE","reason":null},{"t":104.287,"sid":"PA_Y3QLQHAB3URc","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":-0.019,"sid":"PA_3Hqm5PSuoQcr","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.383,"sid":"PA_Y3QLQHAB3URc","state":"ACTIVE","reason":null},{"t":104.286,"sid":"PA_Y3QLQHAB3URc","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-rogue-I-20261001T011859-1  PASS
+   ok   planted reconnect caught as violation
+   ok   trial marked INVALID
+   ok   invalidation cites the violation
+   regime: R0 continues | sessions: PA_4aHbNBXbKaVf
+   actions: none
+   violations: [{"t":0,"where":"lk.engine.attemptReconnect"},{"t":0,"where":"lk.engine.resumeConnection"}]
+   freshness: recovered_t=0.839s observersFreshAgain=[0.839,0.727] staleMs@obs=[384,384] subjectFreshFrom=[0.741,0.741]
+   server: [{"t":-29.195,"event":"participant_joined","sid":"PA_4aHbNBXbKaVf","reason":null},{"t":-29.112,"event":"track_published","sid":"PA_4aHbNBXbKaVf","reason":null},{"t":102.125,"event":"track_unpublished","sid":"PA_4aHbNBXbKaVf","reason":null},{"t":102.132,"event":"participant_left","sid":"PA_4aHbNBXbKaVf","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":102.118,"sid":"PA_4aHbNBXbKaVf","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":102.121,"sid":"PA_4aHbNBXbKaVf","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   invalid: ["attribution violation(s): 2 (EXPECTED for the planted-rogue self-test)"]
+
+=== SUMMARY
+   janus/healthy_rebuild            3/3 pass
+   janus/kick                       0/3 pass
+   janus/rogue                      1/1 pass
+   livekit/healthy_rebuild          3/3 pass
+   livekit/intruder                 3/3 pass
+   livekit/remove_participant       0/3 pass
+   livekit/rogue                    1/1 pass
+   aborts logged: 2 -> janus-healthy_rebuild-I-20261001T005025-1: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-ps8v7@ip-10-42-24-159.ec2.internal; SFU-under-test node ip-10-42-24-159.ec2.internal holds a client or another SFU || livekit-healthy_rebuild-I-20261001T012207-1: idle SFU deployment c4-janus/janus has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-janus/janus-8577587875-wq4xb@ip-10-42-24-159.ec2.internal; SFU-under-test node ip-10-42-24-159.ec2.internal holds a client or another SFU

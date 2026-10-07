@@ -1,0 +1,125 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 871c9edb-de27-3d60-b6fd-fc6396a48d68 submitted
+==> EKS update 871c9edb-de27-3d60-b6fd-fc6396a48d68: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 0 instance(s) live, 2s elapsed
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 25s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (47s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-17-29.ec2.internal    Ready    <none>   29s   v1.36.4-eks-f4fc4f1   10.42.17.29    <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-21-227.ec2.internal   Ready    <none>   29s   v1.36.4-eks-f4fc4f1   10.42.21.227   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-6-238.ec2.internal    Ready    <none>   31s   v1.36.4-eks-f4fc4f1   10.42.6.238    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-01T19:18:01Z
+deployment "event-sink" successfully rolled out
+deployment "event-sink" successfully rolled out
+[19:18:08.782] switched to janus
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[19:19:05.729] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790882345797.2202}
+[19:19:07.011] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790882347079.4578}
+[19:19:08.321] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790882348390.1023}
+[19:19:27.162] janus-iso-all-30s-I-20261001T191908-1 janus_room {"videoroom":"created","room":63553,"permanent":false}
+[19:19:33.650] janus-iso-all-30s-I-20261001T191908-1 join_O1 {"sessionId":"5129797531014558"}
+[19:19:35.434] janus-iso-all-30s-I-20261001T191908-1 join_O2 {"sessionId":"2137269120692755"}
+[19:19:37.252] janus-iso-all-30s-I-20261001T191908-1 join_S {"sessionId":"8701029172872740"}
+[19:19:41.190] janus-iso-all-30s-I-20261001T191908-1 media_flowing {}
+[19:19:57.450] janus-iso-all-30s-I-20261001T191908-1 arm_O1 {"S":67.699951171875,"O2":75.06591796875}
+[19:19:58.807] janus-iso-all-30s-I-20261001T191908-1 arm_O2 {"S":65.465087890625,"O1":62.951904296875}
+[19:20:00.119] janus-iso-all-30s-I-20261001T191908-1 arm_S {"O1":59.8388671875,"O2":71.335205078125}
+[19:20:06.380] janus-iso-all-30s-I-20261001T191908-1 isolate_on {"mode":"all","durMs":30000,"onset":{"before":1790882406436.3777,"after":1790882406448.4722},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":null}
+[19:20:38.061] janus-iso-all-30s-I-20261001T191908-1 isolate_off {"mode":"all","durMs":30000,"onset":{"before":1790882406436.3777,"after":1790882406448.4722},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":{"before
+[19:21:47.687] janus-iso-all-30s-I-20261001T191908-1 VALID
+[19:22:04.983] janus-iso-all-30s-O-20261001T192147-1 janus_room {"videoroom":"created","room":6856,"permanent":false}
+[19:22:10.963] janus-iso-all-30s-O-20261001T192147-1 join_O1 {"sessionId":"1649783257107050"}
+[19:22:12.694] janus-iso-all-30s-O-20261001T192147-1 join_O2 {"sessionId":"7728255326790168"}
+[19:22:14.439] janus-iso-all-30s-O-20261001T192147-1 join_S {"sessionId":"5870096951479819"}
+[19:22:18.216] janus-iso-all-30s-O-20261001T192147-1 media_flowing {}
+[19:22:34.494] janus-iso-all-30s-O-20261001T192147-1 arm_O1 {"S":68.22607421875,"O2":72.896240234375}
+[19:22:35.812] janus-iso-all-30s-O-20261001T192147-1 arm_O2 {"S":63.489501953125,"O1":71.69775390625}
+[19:22:37.007] janus-iso-all-30s-O-20261001T192147-1 arm_S {"O1":73.4794921875,"O2":78.072021484375}
+[19:22:43.294] janus-iso-all-30s-O-20261001T192147-1 isolate_on {"mode":"all","durMs":30000,"onset":{"before":1790882563355.1519,"after":1790882563365.4072},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":null}
+[19:23:14.952] janus-iso-all-30s-O-20261001T192147-1 isolate_off {"mode":"all","durMs":30000,"onset":{"before":1790882563355.1519,"after":1790882563365.4072},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":{"before
+[19:24:24.963] janus-iso-all-30s-O-20261001T192147-1 VALID
+[19:24:42.760] janus-iso-all-30s-I-20261001T192425-1 janus_room {"videoroom":"created","room":68708,"permanent":false}
+[19:24:48.962] janus-iso-all-30s-I-20261001T192425-1 join_O1 {"sessionId":"2882523546404984"}
+[19:24:50.699] janus-iso-all-30s-I-20261001T192425-1 join_O2 {"sessionId":"7694351218093396"}
+[19:24:52.445] janus-iso-all-30s-I-20261001T192425-1 join_S {"sessionId":"8400222348412914"}
+[19:24:56.187] janus-iso-all-30s-I-20261001T192425-1 media_flowing {}
+[19:25:12.469] janus-iso-all-30s-I-20261001T192425-1 arm_O1 {"S":64.014892578125,"O2":63.1845703125}
+[19:25:13.730] janus-iso-all-30s-I-20261001T192425-1 arm_O2 {"S":68.40966796875,"O1":68.304443359375}
+[19:25:14.988] janus-iso-all-30s-I-20261001T192425-1 arm_S {"O1":68.822265625,"O2":58.133544921875}
+[19:25:21.265] janus-iso-all-30s-I-20261001T192425-1 isolate_on {"mode":"all","durMs":30000,"onset":{"before":1790882721325.7134,"after":1790882721337.1016},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":null}
+[19:25:52.978] janus-iso-all-30s-I-20261001T192425-1 isolate_off {"mode":"all","durMs":30000,"onset":{"before":1790882721325.7134,"after":1790882721337.1016},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":{"before
+[19:27:02.909] janus-iso-all-30s-I-20261001T192425-1 VALID
+[19:27:20.406] janus-iso-all-10s-I-20261001T192703-1 janus_room {"videoroom":"created","room":65391,"permanent":false}
+[19:27:26.448] janus-iso-all-10s-I-20261001T192703-1 join_O1 {"sessionId":"7302506723983273"}
+[19:27:28.190] janus-iso-all-10s-I-20261001T192703-1 join_O2 {"sessionId":"8155248463506547"}
+[19:27:30.028] janus-iso-all-10s-I-20261001T192703-1 join_S {"sessionId":"4368214754364959"}
+[19:27:33.996] janus-iso-all-10s-I-20261001T192703-1 media_flowing {}
+[19:27:50.668] janus-iso-all-10s-I-20261001T192703-1 arm_O1 {"S":65.59619140625,"O2":63.546875}
+[19:27:51.936] janus-iso-all-10s-I-20261001T192703-1 arm_O2 {"S":77.081787109375,"O1":66.47412109375}
+[19:27:53.162] janus-iso-all-10s-I-20261001T192703-1 arm_S {"O1":67.033203125,"O2":64.417724609375}
+[19:27:59.413] janus-iso-all-10s-I-20261001T192703-1 isolate_on {"mode":"all","durMs":10000,"onset":{"before":1790882879469.9814,"after":1790882879482.3882},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":null}
+[19:28:11.003] janus-iso-all-10s-I-20261001T192703-1 isolate_off {"mode":"all","durMs":10000,"onset":{"before":1790882879469.9814,"after":1790882879482.3882},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -j DROP","-A OUTPUT -d 10.42.23.1/32 -j DROP"],"restore":{"before
+[19:29:20.477] janus-iso-all-10s-I-20261001T192703-1 VALID
+[19:29:38.021] janus-iso-media-30s-I-20261001T192920-1 janus_room {"videoroom":"created","room":19631,"permanent":false}
+[19:29:44.180] janus-iso-media-30s-I-20261001T192920-1 join_O1 {"sessionId":"871476344178827"}
+[19:29:45.916] janus-iso-media-30s-I-20261001T192920-1 join_O2 {"sessionId":"8118734958940679"}
+[19:29:47.633] janus-iso-media-30s-I-20261001T192920-1 join_S {"sessionId":"8650842868440747"}
+[19:29:51.512] janus-iso-media-30s-I-20261001T192920-1 media_flowing {}
+[19:30:08.354] janus-iso-media-30s-I-20261001T192920-1 arm_O1 {"S":70.256591796875,"O2":55.454345703125}
+[19:30:09.647] janus-iso-media-30s-I-20261001T192920-1 arm_O2 {"S":82.314453125,"O1":69.650634765625}
+[19:30:10.891] janus-iso-media-30s-I-20261001T192920-1 arm_S {"O1":64.727783203125,"O2":57.40283203125}
+[19:30:17.199] janus-iso-media-30s-I-20261001T192920-1 isolate_on {"mode":"media","durMs":30000,"onset":{"before":1790883017264.0044,"after":1790883017275.1292},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -p udp -j DROP","-A OUTPUT -d 10.42.23.1/32 -p udp -j DROP"],"r
+[19:30:48.842] janus-iso-media-30s-I-20261001T192920-1 isolate_off {"mode":"media","durMs":30000,"onset":{"before":1790883017264.0044,"after":1790883017275.1292},"rulesDuring":["-A INPUT -s 10.42.23.1/32 -p udp -j DROP","-A OUTPUT -d 10.42.23.1/32 -p udp -j DROP"],"r
+[19:31:59.165] janus-iso-media-30s-I-20261001T192920-1 VALID
+=== CONFIRM3_DONE 2026-10-01T19:31:59Z
+=== PARK 2026-10-01T19:31:59Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 4a8cb279-9767-3a8c-ba40-b13e7672d522 submitted
+==> EKS update 4a8cb279-9767-3a8c-ba40-b13e7672d522: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 2s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 35s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 67s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 99s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 132s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 164s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 196s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 228s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 260s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 293s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 325s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 357s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 389s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 422s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 454s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 486s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 519s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 551s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 584s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 616s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 649s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 683s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 715s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 747s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 779s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 812s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 844s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 877s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 909s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 942s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 974s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1008s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-01T19:49:13Z

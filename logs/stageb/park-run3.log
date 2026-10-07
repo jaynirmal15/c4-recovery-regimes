@@ -1,0 +1,10 @@
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+
+An error occurred (ResourceInUseException) when calling the UpdateNodegroupConfig operation: Nodegroup cannot be updated as it is currently not in Active State
+make: *** [park] Error 254
+MAKE_PARK_EXIT=2

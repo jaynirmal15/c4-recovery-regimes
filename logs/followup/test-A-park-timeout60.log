@@ -1,0 +1,12 @@
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 2, live instances 2, k8s nodes 2 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 7a2607ee-84ff-3893-927d-e18e852012df submitted
+==> EKS update 7a2607ee-84ff-3893-927d-e18e852012df: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 2 instance(s) live, 2 k8s node(s), 3s elapsed
+==> waiting: 2 instance(s) live, 2 k8s node(s), 35s elapsed
+[fail] NOT PARKED after 68s: 2 instance(s) still live, 2 k8s node(s). The lab is still billing for nodes.
+make: *** [park] Error 1

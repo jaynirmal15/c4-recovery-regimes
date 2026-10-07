@@ -1,0 +1,45 @@
+# Final (parked) state snapshot, captured 2026-09-29T15:36:57Z
+# (the 06:22Z capture was blocked by tool-permission errors; the state has not been touched since the 06:05Z scale-to-zero)
+## cluster
+{
+    "status": "ACTIVE",
+    "version": "1.36"
+}
+## nodegroup
+{
+    "status": "ACTIVE",
+    "scaling": {
+        "minSize": 0,
+        "maxSize": 4,
+        "desiredSize": 0
+    }
+}
+## ASG
+[
+    {
+        "desired": 0,
+        "instances": 0
+    }
+]
+## kubectl nodes: 0
+## EC2 instances pending/running (all account, us-east-1)
+(end)
+## load balancers
+k8s-coturn-coturn-13a6f8bc3c	active	network	internet-facing
+## EBS volumes
+vol-012f01a044f8ca664	50	in-use	i-099dca965768db94a
+## helm
+NAME                        	NAMESPACE  	REVISION	UPDATED                             	STATUS  	CHART                             	APP VERSION
+aws-load-balancer-controller	kube-system	1       	2026-09-29 01:26:53.57219 -0400 EDT 	deployed	aws-load-balancer-controller-3.5.0	v3.5.0     
+livekit                     	c4-livekit 	1       	2026-09-29 01:30:05.183811 -0400 EDT	deployed	livekit-server-1.9.0              	v1.9.0     
+monitoring                  	monitoring 	1       	2026-09-29 01:27:36.239414 -0400 EDT	deployed	kube-prometheus-stack-88.6.2      	v0.93.1    
+## c4 pods
+NAME                                      READY   STATUS    RESTARTS   AGE   IP       NODE     NOMINATED NODE   READINESS GATES
+event-sink-9599497c6-j97wm                0/1     Pending   0          9h    <none>   <none>   <none>           <none>
+livekit-livekit-server-6bfb89666b-8cw4q   0/1     Pending   0          9h    <none>   <none>   <none>           <none>
+NAME                         READY   STATUS    RESTARTS   AGE   IP       NODE     NOMINATED NODE   READINESS GATES
+event-sink-fc88cdffc-jp247   0/1     Pending   0          9h    <none>   <none>   <none>           <none>
+janus-85db476f67-672f7       0/1     Pending   0          9h    <none>   <none>   <none>           <none>
+## coturn
+NAME                     READY   STATUS    RESTARTS   AGE
+coturn-d54bc877d-x56mp   0/1     Pending   0          9h

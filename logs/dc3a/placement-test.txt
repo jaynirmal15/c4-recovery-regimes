@@ -1,0 +1,17 @@
+# placement test 2026-09-29T18:10:00Z: coturn=ip-10-42-12-5 livekit=ip-10-42-21-105 janus=ip-10-42-30-16
+strict-1 Pending <none>
+strict-2 Pending <none>
+strict-3 Pending <none>
+trial-lk-1 Running ip-10-42-30-16.ec2.internal
+trial-lk-2 Running ip-10-42-30-16.ec2.internal
+trial-lk-3 Running ip-10-42-30-16.ec2.internal
+## strict-1 events
+FailedScheduling   0/3 nodes are available: 3 node(s) didn't match pod anti-affinity rules. no new claims to deallocate, preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.
+## after scaling idle Janus to 0 (18:10:14)
+c4-clients/trial-lk-1 Running
+c4-clients/trial-lk-2 Running
+c4-clients/trial-lk-3 Running
+kube-system/aws-node-m2jng Running
+kube-system/eks-pod-identity-agent-4kt8s Running
+kube-system/kube-proxy-6pjtm Running
+monitoring/monitoring-prometheus-node-exporter-thdx6 Running

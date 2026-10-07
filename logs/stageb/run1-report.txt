@@ -1,0 +1,270 @@
+
+=== janus-healthy_rebuild-I-20260930T234851-1  FAIL
+   ok   trial valid
+   FAIL rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   Janus refused same feed id (436) before accepting
+   FAIL observers saw leaving then publisher again
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 4863593586414886 -> 3742037730773882
+   actions: rebuild@0s join/436 (0.019s) ; transport_restart@7.286s publish: no answer {"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","error_code":424,"error":"Invalid request on unconfigured participant"}} (0.124s) ; transport_restart@12.486s publish: no answer {"janus":"error","session_id":3742037730773882,"transaction":"t23","error":{"code":490,"reason":"Error setting ICE locally"}} (0.125s) ; transport_restart@17.686s publish: no answer {"janus":"error","session_id":3742037730773882,"transaction":"t25","error":{"code":490,"reason":"Error setting ICE locally"}} (0.129s) ; transport_restart@22.886s publish: no answer {"janus":"error","session_id":3742037730773882,"transaction":"t27","error":{"code":490,"reason":"Error setting ICE locally"}} (0.132s) ; transport_restart@28.086s publish: no answer {"janus":"error","session_id":3742037730773882,"transaction":"t29","error":{"code":490,"reason":"Error setting ICE locally"}} (0.119s) ; rebuild@32.086s publish: no answer {"janus":"error","session_id":3742037730773882,"transaction":"t38","error":{"code":490,"reason":"Error setting ICE locally"}} (0.135s)
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[32.302,32.302]
+   server: [{"t":-30.846,"event":"session.created","session":"4863593586414886"},{"t":-30.844,"event":"joined"},{"t":-30.716,"event":"configured"},{"t":-30.689,"event":"published"},{"t":0.002,"event":"unpublished"},{"t":0.016,"event":"session.created","session":"3742037730773882"},{"t":29.721,"event":"unpublished"},{"t":29.721,"event":"leaving"},{"t":29.721,"event":"session.timeout","session":"48635935864148
+   O1 saw: [{"t":0.003,"event":"unpublished","feed":101},{"t":29.722,"event":"leaving","feed":101},{"t":32.087,"event":"joining","feed":101},{"t":100.989,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0.004,"event":"unpublished","feed":101},{"t":29.723,"event":"leaving","feed":101},{"t":32.087,"event":"joining","feed":101},{"t":100.989,"event":"leaving","feed":101}]
+
+=== janus-healthy_rebuild-I-20260930T235141-2  FAIL
+   ok   trial valid
+   FAIL rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   Janus refused same feed id (436) before accepting
+   FAIL observers saw leaving then publisher again
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 567211931323392 -> 8080160641635143
+   actions: rebuild@0s join/436 (0.018s) ; transport_restart@7.037s publish: no answer {"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","error_code":424,"error":"Invalid request on unconfigured participant"}} (0.126s) ; transport_restart@12.237s publish: no answer {"janus":"error","session_id":8080160641635143,"transaction":"t22","error":{"code":490,"reason":"Error setting ICE locally"}} (0.129s) ; transport_restart@17.437s publish: no answer {"janus":"error","session_id":8080160641635143,"transaction":"t24","error":{"code":490,"reason":"Error setting ICE locally"}} (0.132s) ; transport_restart@22.637s publish: no answer {"janus":"error","session_id":8080160641635143,"transaction":"t26","error":{"code":490,"reason":"Error setting ICE locally"}} (0.12s) ; transport_restart@27.837s publish: no answer {"janus":"error","session_id":8080160641635143,"transaction":"t28","error":{"code":490,"reason":"Error setting ICE locally"}} (0.122s) ; rebuild@32.037s publish: no answer {"janus":"error","session_id":8080160641635143,"transaction":"t37","error":{"code":490,"reason":"Error setting ICE locally"}} (0.126s)
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[32.26,32.132]
+   server: [{"t":-29.302,"event":"session.created","session":"567211931323392"},{"t":-29.3,"event":"joined"},{"t":-29.166,"event":"configured"},{"t":-29.137,"event":"published"},{"t":0.002,"event":"unpublished"},{"t":0.015,"event":"session.created","session":"8080160641635143"},{"t":26.303,"event":"session.timeout","session":"567211931323392"},{"t":26.304,"event":"unpublished"},{"t":26.304,"event":"leaving"}
+   O1 saw: [{"t":0.002,"event":"unpublished","feed":101},{"t":26.305,"event":"leaving","feed":101},{"t":32.038,"event":"joining","feed":101},{"t":103.508,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0.003,"event":"unpublished","feed":101},{"t":26.305,"event":"leaving","feed":101},{"t":32.038,"event":"joining","feed":101},{"t":103.509,"event":"leaving","feed":101}]
+
+=== janus-healthy_rebuild-I-20260930T235431-3  FAIL
+   ok   trial valid
+   FAIL rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   Janus refused same feed id (436) before accepting
+   FAIL observers saw leaving then publisher again
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 5980691287993851 -> 6640495495045922
+   actions: rebuild@0s join/436 (0.019s) ; transport_restart@7.042s publish: no answer {"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","error_code":424,"error":"Invalid request on unconfigured participant"}} (0.122s) ; transport_restart@12.241s publish: no answer {"janus":"error","session_id":6640495495045922,"transaction":"t22","error":{"code":490,"reason":"Error setting ICE locally"}} (0.125s) ; transport_restart@17.441s publish: no answer {"janus":"error","session_id":6640495495045922,"transaction":"t24","error":{"code":490,"reason":"Error setting ICE locally"}} (0.129s) ; transport_restart@22.641s publish: no answer {"janus":"error","session_id":6640495495045922,"transaction":"t26","error":{"code":490,"reason":"Error setting ICE locally"}} (0.132s) ; transport_restart@27.841s publish: no answer {"janus":"error","session_id":6640495495045922,"transaction":"t28","error":{"code":490,"reason":"Error setting ICE locally"}} (0.119s) ; rebuild@32.241s publish: no answer {"janus":"error","session_id":6640495495045922,"transaction":"t37","error":{"code":490,"reason":"Error setting ICE locally"}} (0.126s)
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[32.339,32.339]
+   server: [{"t":-29.089,"event":"session.created","session":"5980691287993851"},{"t":-29.086,"event":"joined"},{"t":-28.962,"event":"configured"},{"t":-28.934,"event":"published"},{"t":0.002,"event":"unpublished"},{"t":0.017,"event":"session.created","session":"6640495495045922"},{"t":26.351,"event":"unpublished"},{"t":26.351,"event":"leaving"},{"t":26.351,"event":"session.timeout","session":"59806912879938
+   O1 saw: [{"t":0.003,"event":"unpublished","feed":101},{"t":26.352,"event":"leaving","feed":101},{"t":32.242,"event":"joining","feed":101},{"t":99.323,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0.003,"event":"unpublished","feed":101},{"t":26.353,"event":"leaving","feed":101},{"t":32.242,"event":"joining","feed":101},{"t":99.325,"event":"leaving","feed":101}]
+
+=== janus-kick-I-20260930T235717-1  FAIL
+   ok   trial valid
+   ok   kick delivered
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 8168611641171235 -> 2542576267902459
+   actions: rebuild@0s ok (0.179s)
+   terminals: [{"t":0,"reason":"kicked"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.002,0.381]
+   server: [{"t":-29.665,"event":"session.created","session":"8168611641171235"},{"t":-29.663,"event":"joined"},{"t":-29.525,"event":"configured"},{"t":-29.499,"event":"published"},{"t":-0.001,"event":"kicked"},{"t":0.023,"event":"session.created","session":"2542576267902459"},{"t":0.027,"event":"joined"},{"t":0.176,"event":"configured"},{"t":0.202,"event":"published"},{"t":27.241,"event":"session.timeout","
+   O1 saw: [{"t":0,"event":"kicked","feed":101},{"t":0.03,"event":"joining","feed":101},{"t":0.202,"event":"publisher","feed":101},{"t":100.43,"event":"leaving","feed":101}]
+   O2 saw: [{"t":-0.001,"event":"kicked","feed":101},{"t":0.03,"event":"joining","feed":101},{"t":0.203,"event":"publisher","feed":101},{"t":100.43,"event":"leaving","feed":101}]
+
+=== janus-kick-I-20261001T000005-2  FAIL
+   ok   trial valid
+   ok   kick delivered
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 148377372951631 -> 6519973580797400
+   actions: rebuild@0s ok (0.147s)
+   terminals: [{"t":0,"reason":"kicked"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[328,317] subjectFreshFrom=[0.376,0.12]
+   server: [{"t":-29.241,"event":"session.created","session":"148377372951631"},{"t":-29.237,"event":"joined"},{"t":-29.105,"event":"configured"},{"t":-29.077,"event":"published"},{"t":-0.001,"event":"kicked"},{"t":0.019,"event":"session.created","session":"6519973580797400"},{"t":0.022,"event":"joined"},{"t":0.145,"event":"configured"},{"t":0.17,"event":"published"},{"t":27.676,"event":"session.timeout","se
+   O1 saw: [{"t":-0.001,"event":"kicked","feed":101},{"t":0.024,"event":"joining","feed":101},{"t":0.171,"event":"publisher","feed":101},{"t":100.278,"event":"leaving","feed":101}]
+   O2 saw: [{"t":0,"event":"kicked","feed":101},{"t":0.024,"event":"joining","feed":101},{"t":0.171,"event":"publisher","feed":101},{"t":100.28,"event":"leaving","feed":101}]
+
+=== janus-kick-I-20261001T000252-3  FAIL
+   ok   trial valid
+   ok   kick delivered
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: 2099750494956889 -> 8311871320930796
+   actions: rebuild@0s ok (0.163s)
+   terminals: [{"t":0,"reason":"kicked"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.114,0.242]
+   server: [{"t":26.644,"event":"session.timeout","session":"2099750494956889"},{"t":99.791,"event":"leaving"},{"t":99.796,"event":"session.destroyed","session":"8311871320930796"}]
+   O1 saw: [{"t":-0.001,"event":"kicked","feed":101},{"t":0.021,"event":"joining","feed":101},{"t":0.186,"event":"publisher","feed":101},{"t":99.792,"event":"leaving","feed":101}]
+   O2 saw: [{"t":-0.001,"event":"kicked","feed":101},{"t":0.02,"event":"joining","feed":101},{"t":0.186,"event":"publisher","feed":101},{"t":99.792,"event":"leaving","feed":101}]
+
+=== janus-rogue-I-20261001T000538-1  PASS
+   ok   planted reconnect caught as violation
+   ok   trial marked INVALID
+   ok   invalidation cites the violation
+   regime: R0 continues | sessions: 6035153699699343
+   actions: none
+   violations: [{"t":0.001,"where":"janus.iceRestartAll"}]
+   freshness: recovered_t=0.155s observersFreshAgain=[0.029,0.155] staleMs@obs=[0,0] subjectFreshFrom=[0.001,0.001]
+   server: [{"t":-28.899,"event":"session.created","session":"6035153699699343"},{"t":-28.896,"event":"joined"},{"t":-28.766,"event":"configured"},{"t":-28.736,"event":"published"},{"t":0.005,"event":"configured"},{"t":0.005,"event":"updated"},{"t":101.15,"event":"leaving"},{"t":101.151,"event":"session.destroyed","session":"6035153699699343"}]
+   O1 saw: [{"t":101.15,"event":"leaving","feed":101}]
+   O2 saw: [{"t":101.151,"event":"leaving","feed":101}]
+   invalid: ["attribution violation(s): 1 (EXPECTED for the planted-rogue self-test)"]
+
+=== livekit-healthy_rebuild-I-20260930T022048-1  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   server evicted old sid DUPLICATE_IDENTITY
+   ok   observers saw S under the new sid
+   DIFF EXPECTATION(source reading): observers saw old sid DISCONNECTED(DUPLICATE_IDENTITY)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_rvGo9GxZ3xgJ -> PA_GweThHAqvRXj
+   actions: rebuild@0s ok (0.386s)
+   freshness: recovered_t=0.656s observersFreshAgain=[0.656,0.651] staleMs@obs=[640,640] subjectFreshFrom=[0.419,0.419]
+   server: [{"t":-29.775,"event":"participant_joined","sid":"PA_rvGo9GxZ3xgJ","reason":null},{"t":-29.697,"event":"track_published","sid":"PA_rvGo9GxZ3xgJ","reason":null},{"t":0.037,"event":"track_unpublished","sid":"PA_rvGo9GxZ3xgJ","reason":null},{"t":0.045,"event":"participant_left","sid":"PA_rvGo9GxZ3xgJ","reason":"DUPLICATE_IDENTITY"},{"t":0.304,"event":"participant_joined","sid":"PA_GweThHAqvRXj","reas
+   O1 saw: [{"t":0.374,"sid":"PA_GweThHAqvRXj","state":"ACTIVE","reason":null},{"t":104.007,"sid":"PA_GweThHAqvRXj","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":0.375,"sid":"PA_GweThHAqvRXj","state":"ACTIVE","reason":null},{"t":104.009,"sid":"PA_GweThHAqvRXj","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-healthy_rebuild-I-20260930T022339-2  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   server evicted old sid DUPLICATE_IDENTITY
+   ok   observers saw S under the new sid
+   DIFF EXPECTATION(source reading): observers saw old sid DISCONNECTED(DUPLICATE_IDENTITY)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_nic2CPJSHgh5 -> PA_bPgsXmwYbQrM
+   actions: rebuild@0s ok (0.394s)
+   freshness: recovered_t=0.676s observersFreshAgain=[0.666,0.676] staleMs@obs=[640,640] subjectFreshFrom=[0.415,0.426]
+   server: [{"t":-30.52,"event":"participant_joined","sid":"PA_nic2CPJSHgh5","reason":null},{"t":-30.444,"event":"track_published","sid":"PA_nic2CPJSHgh5","reason":null},{"t":0.047,"event":"track_unpublished","sid":"PA_nic2CPJSHgh5","reason":null},{"t":0.054,"event":"participant_left","sid":"PA_nic2CPJSHgh5","reason":"DUPLICATE_IDENTITY"},{"t":0.307,"event":"participant_joined","sid":"PA_bPgsXmwYbQrM","reaso
+   O1 saw: [{"t":0.381,"sid":"PA_bPgsXmwYbQrM","state":"ACTIVE","reason":null},{"t":103.222,"sid":"PA_bPgsXmwYbQrM","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":0.382,"sid":"PA_bPgsXmwYbQrM","state":"ACTIVE","reason":null},{"t":103.223,"sid":"PA_bPgsXmwYbQrM","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-healthy_rebuild-I-20260930T022631-3  FAIL
+   FAIL trial valid
+   FAIL rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   FAIL server evicted old sid DUPLICATE_IDENTITY
+   FAIL observers saw S under the new sid
+   DIFF EXPECTATION(source reading): observers saw old sid DISCONNECTED(DUPLICATE_IDENTITY)
+   FAIL regime R2 rebuild
+   regime: R0 continues | sessions: 
+   actions: none
+   server: []
+   O1 saw: []
+   O2 saw: []
+   invalid: ["runner error: spawnSync kubectl ETIMEDOUT"]
+
+=== livekit-healthy_rebuild-I-20260930T232855-1  PASS
+   ok   trial valid
+   ok   rebuild action ok, new session
+   ok   no server-initiated terminal/request needed
+   ok   server evicted old sid DUPLICATE_IDENTITY
+   ok   observers saw S under the new sid
+   DIFF EXPECTATION(source reading): observers saw old sid DISCONNECTED(DUPLICATE_IDENTITY)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_Jv8ZH5RgfHFk -> PA_Arth7vSv3Wjg
+   actions: rebuild@0s ok (0.394s)
+   freshness: recovered_t=0.661s observersFreshAgain=[0.658,0.661] staleMs@obs=[658,661] subjectFreshFrom=[0.416,0.416]
+   server: [{"t":-34.548,"event":"participant_joined","sid":"PA_Jv8ZH5RgfHFk","reason":null},{"t":-34.468,"event":"track_published","sid":"PA_Jv8ZH5RgfHFk","reason":null},{"t":0.041,"event":"track_unpublished","sid":"PA_Jv8ZH5RgfHFk","reason":null},{"t":0.048,"event":"participant_left","sid":"PA_Jv8ZH5RgfHFk","reason":"DUPLICATE_IDENTITY"},{"t":0.31,"event":"participant_joined","sid":"PA_Arth7vSv3Wjg","reaso
+   O1 saw: [{"t":0.38,"sid":"PA_Arth7vSv3Wjg","state":"ACTIVE","reason":null},{"t":119.782,"sid":"PA_Arth7vSv3Wjg","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":0.379,"sid":"PA_Arth7vSv3Wjg","state":"ACTIVE","reason":null},{"t":119.782,"sid":"PA_Arth7vSv3Wjg","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-intruder-I-20260930T234047-1  FAIL
+   FAIL trial valid
+   ok   DISCONNECT delivered (DUPLICATE_IDENTITY)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   ok   intruder evicted in turn (raw frames)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_wfoPGhqJp5a5 -> PA_QGx2gsFkhU9w
+   actions: rebuild@nulls ok (0.458s)
+   terminals: [{"t":null,"reason":"DUPLICATE_IDENTITY"}]
+   server: [{"t":null,"event":"participant_joined","sid":"PA_wfoPGhqJp5a5","reason":null},{"t":null,"event":"track_published","sid":"PA_wfoPGhqJp5a5","reason":null},{"t":null,"event":"track_unpublished","sid":"PA_wfoPGhqJp5a5","reason":null},{"t":null,"event":"participant_left","sid":"PA_wfoPGhqJp5a5","reason":"DUPLICATE_IDENTITY"},{"t":null,"event":"participant_connection_aborted","sid":"PA_52jHcsMJ39hF","r
+   O1 saw: [{"t":null,"sid":"PA_wfoPGhqJp5a5","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_QGx2gsFkhU9w","state":"JOINED","reason":null},{"t":null,"sid":"PA_QGx2gsFkhU9w","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_QGx2gsFkhU9w","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":null,"sid":"PA_wfoPGhqJp5a5","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_QGx2gsFkhU9w","state":"JOINED","reason":null},{"t":null,"sid":"PA_QGx2gsFkhU9w","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_QGx2gsFkhU9w","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   intruder: {"terminals":[],"leaveFrames":[{"t":null,"action":"DISCONNECT","reason":"DUPLICATE_IDENTITY"}],"sessions":[]}
+   invalid: ["runner error: c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:39101/lk-sdk.js:1:153468)\n    at http://127.0.0.1:39101/lk-sdk.js:1:289942\n    at POST /join (/work/control.mjs:74:31)\n    at Server.<anonymous> (/work/control.mjs:95:25)"]
+
+=== livekit-intruder-I-20260930T234212-2  FAIL
+   FAIL trial valid
+   ok   DISCONNECT delivered (DUPLICATE_IDENTITY)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   ok   intruder evicted in turn (raw frames)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_z5zisLq7myVD -> PA_BQ9VMi5HXU2h
+   actions: rebuild@nulls ok (0.435s)
+   terminals: [{"t":null,"reason":"DUPLICATE_IDENTITY"}]
+   server: [{"t":null,"event":"participant_joined","sid":"PA_z5zisLq7myVD","reason":null},{"t":null,"event":"track_published","sid":"PA_z5zisLq7myVD","reason":null},{"t":null,"event":"track_unpublished","sid":"PA_z5zisLq7myVD","reason":null},{"t":null,"event":"participant_left","sid":"PA_z5zisLq7myVD","reason":"DUPLICATE_IDENTITY"},{"t":null,"event":"participant_connection_aborted","sid":"PA_kvwPYhQaiARK","r
+   O1 saw: [{"t":null,"sid":"PA_z5zisLq7myVD","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_BQ9VMi5HXU2h","state":"JOINED","reason":null},{"t":null,"sid":"PA_BQ9VMi5HXU2h","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_BQ9VMi5HXU2h","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":null,"sid":"PA_z5zisLq7myVD","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_BQ9VMi5HXU2h","state":"JOINED","reason":null},{"t":null,"sid":"PA_BQ9VMi5HXU2h","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_BQ9VMi5HXU2h","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   intruder: {"terminals":[],"leaveFrames":[{"t":null,"action":"DISCONNECT","reason":"DUPLICATE_IDENTITY"}],"sessions":[]}
+   invalid: ["runner error: c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:39101/lk-sdk.js:1:153468)\n    at http://127.0.0.1:39101/lk-sdk.js:1:289942\n    at POST /join (/work/control.mjs:74:31)\n    at Server.<anonymous> (/work/control.mjs:95:25)"]
+
+=== livekit-intruder-I-20260930T234338-3  FAIL
+   FAIL trial valid
+   ok   DISCONNECT delivered (DUPLICATE_IDENTITY)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   ok   intruder evicted in turn (raw frames)
+   ok   regime R2 rebuild
+   regime: R2 rebuild | sessions: PA_iBrz73t2Uinb -> PA_e5VFuuVMJo9o
+   actions: rebuild@nulls ok (0.425s)
+   terminals: [{"t":null,"reason":"DUPLICATE_IDENTITY"}]
+   server: [{"t":null,"event":"participant_joined","sid":"PA_iBrz73t2Uinb","reason":null},{"t":null,"event":"track_published","sid":"PA_iBrz73t2Uinb","reason":null},{"t":null,"event":"track_unpublished","sid":"PA_iBrz73t2Uinb","reason":null},{"t":null,"event":"participant_left","sid":"PA_iBrz73t2Uinb","reason":"DUPLICATE_IDENTITY"},{"t":null,"event":"participant_connection_aborted","sid":"PA_xNoowi6eJknp","r
+   O1 saw: [{"t":null,"sid":"PA_iBrz73t2Uinb","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_e5VFuuVMJo9o","state":"JOINED","reason":null},{"t":null,"sid":"PA_e5VFuuVMJo9o","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_e5VFuuVMJo9o","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":null,"sid":"PA_iBrz73t2Uinb","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_e5VFuuVMJo9o","state":"JOINED","reason":null},{"t":null,"sid":"PA_e5VFuuVMJo9o","state":"ACTIVE","reason":null},{"t":null,"sid":"PA_e5VFuuVMJo9o","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   intruder: {"terminals":[],"leaveFrames":[{"t":null,"action":"DISCONNECT","reason":"DUPLICATE_IDENTITY"}],"sessions":[]}
+   invalid: ["runner error: c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:39101/lk-sdk.js:1:153468)\n    at http://127.0.0.1:39101/lk-sdk.js:1:289942\n    at POST /join (/work/control.mjs:74:31)\n    at Server.<anonymous> (/work/control.mjs:95:25)"]
+
+=== livekit-remove_participant-I-20260930T233223-1  FAIL
+   ok   trial valid
+   ok   DISCONNECT delivered (PARTICIPANT_REMOVED)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: PA_Fq7g8AiXz9Py -> PA_8p5vCKD5Q6Q5
+   actions: rebuild@0s ok (0.404s)
+   terminals: [{"t":0,"reason":"PARTICIPANT_REMOVED"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.436,0.436]
+   server: [{"t":-33.284,"event":"participant_joined","sid":"PA_Fq7g8AiXz9Py","reason":null},{"t":-33.21,"event":"track_published","sid":"PA_Fq7g8AiXz9Py","reason":null},{"t":-0.009,"event":"track_unpublished","sid":"PA_Fq7g8AiXz9Py","reason":null},{"t":-0.002,"event":"participant_left","sid":"PA_Fq7g8AiXz9Py","reason":"PARTICIPANT_REMOVED"},{"t":0.326,"event":"participant_joined","sid":"PA_8p5vCKD5Q6Q5","re
+   O1 saw: [{"t":-0.014,"sid":"PA_Fq7g8AiXz9Py","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.177,"sid":"PA_8p5vCKD5Q6Q5","state":"JOINED","reason":null},{"t":0.394,"sid":"PA_8p5vCKD5Q6Q5","state":"ACTIVE","reason":null},{"t":100.373,"sid":"PA_8p5vCKD5Q6Q5","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":-0.012,"sid":"PA_Fq7g8AiXz9Py","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.177,"sid":"PA_8p5vCKD5Q6Q5","state":"JOINED","reason":null},{"t":0.39,"sid":"PA_8p5vCKD5Q6Q5","state":"ACTIVE","reason":null},{"t":100.374,"sid":"PA_8p5vCKD5Q6Q5","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-remove_participant-I-20260930T233521-2  FAIL
+   ok   trial valid
+   ok   DISCONNECT delivered (PARTICIPANT_REMOVED)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: PA_mSQc55WTo5t2 -> PA_F6mLFbwyPj3R
+   actions: rebuild@0s ok (0.407s)
+   terminals: [{"t":0,"reason":"PARTICIPANT_REMOVED"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.448,0.448]
+   server: [{"t":-28.778,"event":"participant_joined","sid":"PA_mSQc55WTo5t2","reason":null},{"t":-28.695,"event":"track_published","sid":"PA_mSQc55WTo5t2","reason":null},{"t":-0.014,"event":"track_unpublished","sid":"PA_mSQc55WTo5t2","reason":null},{"t":-0.007,"event":"participant_left","sid":"PA_mSQc55WTo5t2","reason":"PARTICIPANT_REMOVED"},{"t":0.346,"event":"participant_joined","sid":"PA_F6mLFbwyPj3R","r
+   O1 saw: [{"t":-0.02,"sid":"PA_mSQc55WTo5t2","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.4,"sid":"PA_F6mLFbwyPj3R","state":"ACTIVE","reason":null},{"t":99.172,"sid":"PA_F6mLFbwyPj3R","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":-0.02,"sid":"PA_mSQc55WTo5t2","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.4,"sid":"PA_F6mLFbwyPj3R","state":"ACTIVE","reason":null},{"t":99.171,"sid":"PA_F6mLFbwyPj3R","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-remove_participant-I-20260930T233804-3  FAIL
+   ok   trial valid
+   ok   DISCONNECT delivered (PARTICIPANT_REMOVED)
+   ok   driver went straight to rebuild
+   ok   rebuild ok, new session
+   FAIL regime R2 rebuild
+   regime: R3 never recovers | sessions: PA_Vd72YKGtbDma -> PA_3dCKfNrgCKLD
+   actions: rebuild@0s ok (0.393s)
+   terminals: [{"t":0,"reason":"PARTICIPANT_REMOVED"}]
+   freshness: recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[0,0] subjectFreshFrom=[0.416,0.416]
+   server: [{"t":-28.655,"event":"participant_joined","sid":"PA_Vd72YKGtbDma","reason":null},{"t":-28.566,"event":"track_published","sid":"PA_Vd72YKGtbDma","reason":null},{"t":-0.019,"event":"track_unpublished","sid":"PA_Vd72YKGtbDma","reason":null},{"t":-0.012,"event":"participant_left","sid":"PA_Vd72YKGtbDma","reason":"PARTICIPANT_REMOVED"},{"t":0.315,"event":"participant_joined","sid":"PA_3dCKfNrgCKLD","r
+   O1 saw: [{"t":-0.024,"sid":"PA_Vd72YKGtbDma","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.155,"sid":"PA_3dCKfNrgCKLD","state":"JOINED","reason":null},{"t":0.378,"sid":"PA_3dCKfNrgCKLD","state":"ACTIVE","reason":null},{"t":100.031,"sid":"PA_3dCKfNrgCKLD","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":-0.023,"sid":"PA_Vd72YKGtbDma","state":"DISCONNECTED","reason":"PARTICIPANT_REMOVED"},{"t":0.155,"sid":"PA_3dCKfNrgCKLD","state":"JOINED","reason":null},{"t":0.38,"sid":"PA_3dCKfNrgCKLD","state":"ACTIVE","reason":null},{"t":100.03,"sid":"PA_3dCKfNrgCKLD","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-rogue-I-20260930T234502-1  PASS
+   ok   planted reconnect caught as violation
+   ok   trial marked INVALID
+   ok   invalidation cites the violation
+   regime: R0 continues | sessions: PA_9BwKmkKSD7SS
+   actions: none
+   violations: [{"t":0,"where":"lk.engine.attemptReconnect"},{"t":0,"where":"lk.engine.resumeConnection"}]
+   freshness: recovered_t=0.91s observersFreshAgain=[0.91,0.906] staleMs@obs=[896,896] subjectFreshFrom=[0.928,0.8]
+   server: [{"t":-29.132,"event":"participant_joined","sid":"PA_9BwKmkKSD7SS","reason":null},{"t":-29.056,"event":"track_published","sid":"PA_9BwKmkKSD7SS","reason":null},{"t":101.98,"event":"track_unpublished","sid":"PA_9BwKmkKSD7SS","reason":null},{"t":101.987,"event":"participant_left","sid":"PA_9BwKmkKSD7SS","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":101.975,"sid":"PA_9BwKmkKSD7SS","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":101.972,"sid":"PA_9BwKmkKSD7SS","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   invalid: ["attribution violation(s): 2 (EXPECTED for the planted-rogue self-test)"]
+
+=== SUMMARY
+   janus/healthy_rebuild            0/3 pass
+   janus/kick                       0/3 pass
+   janus/rogue                      1/1 pass
+   livekit/healthy_rebuild          3/4 pass
+   livekit/intruder                 0/3 pass
+   livekit/remove_participant       0/3 pass
+   livekit/rogue                    1/1 pass
+   aborts logged: 1 -> janus-healthy_rebuild-I-20261001T000827-1: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-gnrpw@ip-10-42-25-141.ec2.internal; SFU-under-test node ip-10-42-25-141.ec2.internal holds a client or another SFU

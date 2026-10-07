@@ -1,0 +1,203 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 956851a4-0ccd-3c93-8d19-47e49df862ec submitted
+==> EKS update 956851a4-0ccd-3c93-8d19-47e49df862ec: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 3s elapsed
+==> waiting: 1/3 nodes Ready, 3 instance(s) live, 26s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (50s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-28-247.ec2.internal   Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.28.247   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-4-193.ec2.internal    Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.4.193    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-9-131.ec2.internal    Ready    <none>   36s   v1.36.4-eks-f4fc4f1   10.42.9.131    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-01T03:55:41Z
+[03:56:04.893] switched to janus
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[03:57:11.836] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790827031908.1274}
+[03:57:13.489] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790827033567.21}
+[03:57:15.669] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790827035746.508}
+[03:57:31.958] janus-healthy_rebuild-I-20261001T035715-1 janus_room {"videoroom":"created","room":77967,"permanent":false}
+[03:57:38.823] janus-healthy_rebuild-I-20261001T035715-1 join_O1 {"sessionId":"3359864756757806"}
+[03:57:40.737] janus-healthy_rebuild-I-20261001T035715-1 join_O2 {"sessionId":"6715127858030239"}
+[03:57:42.644] janus-healthy_rebuild-I-20261001T035715-1 join_S {"sessionId":"4846524058008093"}
+[03:57:47.087] janus-healthy_rebuild-I-20261001T035715-1 media_flowing {}
+[03:58:04.120] janus-healthy_rebuild-I-20261001T035715-1 arm_O1 {"S":68.16943359375,"O2":74.4375}
+[03:58:05.487] janus-healthy_rebuild-I-20261001T035715-1 arm_O2 {"S":73.427490234375,"O1":63.387939453125}
+[03:58:06.809] janus-healthy_rebuild-I-20261001T035715-1 arm_S {"O1":69.07177734375,"O2":71.16845703125}
+[03:58:13.328] janus-healthy_rebuild-I-20261001T035715-1 trigger {"kind":"rebuild","tStart":1790827093315.1,"sid0":"4846524058008093","tEnd":1790827093398.9001,"result":{"ok":false,"refused":"join/436","sessionId":"8064773533552540","oldSessionId":"4846524058008093
+[04:00:19.514] janus-healthy_rebuild-I-20261001T035715-1 VALID
+[04:00:34.483] janus-healthy_rebuild-I-20261001T040019-2 janus_room {"videoroom":"created","room":62163,"permanent":false}
+[04:00:40.905] janus-healthy_rebuild-I-20261001T040019-2 join_O1 {"sessionId":"2013029125503661"}
+[04:00:42.675] janus-healthy_rebuild-I-20261001T040019-2 join_O2 {"sessionId":"6584232091485634"}
+[04:00:44.507] janus-healthy_rebuild-I-20261001T040019-2 join_S {"sessionId":"2788184631312558"}
+[04:00:48.554] janus-healthy_rebuild-I-20261001T040019-2 media_flowing {}
+[04:01:05.894] janus-healthy_rebuild-I-20261001T040019-2 arm_O1 {"S":73.930419921875,"O2":68.346435546875}
+[04:01:07.302] janus-healthy_rebuild-I-20261001T040019-2 arm_O2 {"S":68.107177734375,"O1":74.41748046875}
+[04:01:08.819] janus-healthy_rebuild-I-20261001T040019-2 arm_S {"O1":66.947509765625,"O2":65.160400390625}
+[04:01:15.502] janus-healthy_rebuild-I-20261001T040019-2 trigger {"kind":"rebuild","tStart":1790827275490.5,"sid0":"2788184631312558","tEnd":1790827275576.5999,"result":{"ok":false,"refused":"join/436","sessionId":"2077429516695490","oldSessionId":"2788184631312558
+[04:03:19.587] janus-healthy_rebuild-I-20261001T040019-2 VALID
+[04:03:33.025] janus-healthy_rebuild-I-20261001T040319-3 janus_room {"videoroom":"created","room":90880,"permanent":false}
+[04:03:39.185] janus-healthy_rebuild-I-20261001T040319-3 join_O1 {"sessionId":"7482871967052506"}
+[04:03:41.038] janus-healthy_rebuild-I-20261001T040319-3 join_O2 {"sessionId":"4224881108302765"}
+[04:03:42.887] janus-healthy_rebuild-I-20261001T040319-3 join_S {"sessionId":"1240099813885686"}
+[04:03:46.812] janus-healthy_rebuild-I-20261001T040319-3 media_flowing {}
+[04:04:04.035] janus-healthy_rebuild-I-20261001T040319-3 arm_O1 {"S":70.859130859375,"O2":78.103759765625}
+[04:04:05.424] janus-healthy_rebuild-I-20261001T040319-3 arm_O2 {"S":62.184814453125,"O1":59.74755859375}
+[04:04:06.802] janus-healthy_rebuild-I-20261001T040319-3 arm_S {"O1":79.419677734375,"O2":73.34228515625}
+[04:04:13.251] janus-healthy_rebuild-I-20261001T040319-3 trigger {"kind":"rebuild","tStart":1790827453234.1,"sid0":"1240099813885686","tEnd":1790827453322.6,"result":{"ok":false,"refused":"join/436","sessionId":"5475222492737070","oldSessionId":"1240099813885686"},
+[04:06:12.673] janus-healthy_rebuild-I-20261001T040319-3 VALID
+[04:06:27.103] janus-kick-I-20261001T040612-1 janus_room {"videoroom":"created","room":85685,"permanent":false}
+[04:06:33.794] janus-kick-I-20261001T040612-1 join_O1 {"sessionId":"7788733814500277"}
+[04:06:35.967] janus-kick-I-20261001T040612-1 join_O2 {"sessionId":"6063411868880879"}
+[04:06:37.787] janus-kick-I-20261001T040612-1 join_S {"sessionId":"8059798050243433"}
+[04:06:41.815] janus-kick-I-20261001T040612-1 media_flowing {}
+[04:06:58.201] janus-kick-I-20261001T040612-1 arm_O1 {"S":78.222412109375,"O2":61.8984375}
+[04:06:59.532] janus-kick-I-20261001T040612-1 arm_O2 {"S":76.57080078125,"O1":63.8544921875}
+[04:07:00.858] janus-kick-I-20261001T040612-1 arm_S {"O1":74.608642578125,"O2":63.009521484375}
+[04:07:07.234] janus-kick-I-20261001T040612-1 trigger {"videoroom":"success"}
+[04:09:21.216] janus-kick-I-20261001T040612-1 VALID
+[04:09:34.501] janus-kick-I-20261001T040921-2 janus_room {"videoroom":"created","room":21619,"permanent":false}
+[04:09:41.400] janus-kick-I-20261001T040921-2 join_O1 {"sessionId":"8034857572667413"}
+[04:09:43.742] janus-kick-I-20261001T040921-2 join_O2 {"sessionId":"106515815796638"}
+[04:09:45.733] janus-kick-I-20261001T040921-2 join_S {"sessionId":"8206014492144342"}
+[04:09:51.600] janus-kick-I-20261001T040921-2 media_flowing {}
+[04:10:09.046] janus-kick-I-20261001T040921-2 arm_O1 {"S":65.389892578125,"O2":71.345947265625}
+[04:10:10.376] janus-kick-I-20261001T040921-2 arm_O2 {"S":75.35986328125,"O1":70.274169921875}
+[04:10:12.050] janus-kick-I-20261001T040921-2 arm_S {"O1":66.9365234375,"O2":69.479736328125}
+[04:10:18.732] janus-kick-I-20261001T040921-2 trigger {"videoroom":"success"}
+[04:12:24.270] janus-kick-I-20261001T040921-2 VALID
+[04:12:39.202] janus-kick-I-20261001T041224-3 janus_room {"videoroom":"created","room":32903,"permanent":false}
+[04:12:49.216] janus-kick-I-20261001T041224-3 join_O1 {"sessionId":"4638420702909536"}
+[04:12:51.476] janus-kick-I-20261001T041224-3 join_O2 {"sessionId":"3867382326981340"}
+[04:12:53.417] janus-kick-I-20261001T041224-3 join_S {"sessionId":"348291518117351"}
+[04:12:57.396] janus-kick-I-20261001T041224-3 media_flowing {}
+[04:13:18.654] janus-kick-I-20261001T041224-3 arm_O1 {"S":60.583984375,"O2":74.545654296875}
+[04:13:22.462] janus-kick-I-20261001T041224-3 arm_O2 {"S":71.4326171875,"O1":66.656494140625}
+[04:13:27.289] janus-kick-I-20261001T041224-3 arm_S {"O1":66.510986328125,"O2":66.23828125}
+[04:13:34.807] janus-kick-I-20261001T041224-3 trigger {"videoroom":"success"}
+[04:15:58.332] janus-kick-I-20261001T041224-3 VALID
+[04:16:03.560] switched to livekit
+[04:16:21.206] livekit-healthy_rebuild-I-20261001T041603-1 join_O1 {"sessionId":"PA_y2DUSkjfZnae"}
+[04:16:23.218] livekit-healthy_rebuild-I-20261001T041603-1 join_O2 {"sessionId":"PA_AhDwkmtDuQJZ"}
+[04:16:25.265] livekit-healthy_rebuild-I-20261001T041603-1 join_S {"sessionId":"PA_GbQBRbsnczRh"}
+[04:16:29.103] livekit-healthy_rebuild-I-20261001T041603-1 media_flowing {}
+[04:16:45.370] livekit-healthy_rebuild-I-20261001T041603-1 arm_O1 {"S":80.4814453125,"O2":69.040283203125}
+[04:16:46.956] livekit-healthy_rebuild-I-20261001T041603-1 arm_O2 {"S":74.160888671875,"O1":65.95556640625}
+[04:16:48.293] livekit-healthy_rebuild-I-20261001T041603-1 arm_S {"O1":57.570556640625,"O2":68.494873046875}
+[04:16:55.056] livekit-healthy_rebuild-I-20261001T041603-1 trigger {"kind":"rebuild","tStart":1790828214714.4001,"sid0":"PA_GbQBRbsnczRh","tEnd":1790828215133.3,"result":{"ok":true,"sessionId":"PA_W8uUWwqqMxY4","oldSessionId":"PA_GbQBRbsnczRh"},"sid1":"PA_W8uUWwqqMxY
+[04:18:55.024] livekit-healthy_rebuild-I-20261001T041603-1 VALID
+[04:19:11.975] livekit-healthy_rebuild-I-20261001T041855-2 join_O1 {"sessionId":"PA_6FsQHJGzvge2"}
+[04:19:14.021] livekit-healthy_rebuild-I-20261001T041855-2 join_O2 {"sessionId":"PA_rpgyrNaHoXPj"}
+[04:19:16.063] livekit-healthy_rebuild-I-20261001T041855-2 join_S {"sessionId":"PA_o5CrXrdbgADW"}
+[04:19:19.929] livekit-healthy_rebuild-I-20261001T041855-2 media_flowing {}
+[04:19:36.273] livekit-healthy_rebuild-I-20261001T041855-2 arm_O1 {"S":65.62744140625,"O2":86.366455078125}
+[04:19:37.659] livekit-healthy_rebuild-I-20261001T041855-2 arm_O2 {"S":64.079833984375,"O1":70.156494140625}
+[04:19:38.980] livekit-healthy_rebuild-I-20261001T041855-2 arm_S {"O1":79.911865234375,"O2":70.201171875}
+[04:19:45.763] livekit-healthy_rebuild-I-20261001T041855-2 trigger {"kind":"rebuild","tStart":1790828385371.7,"sid0":"PA_o5CrXrdbgADW","tEnd":1790828385800.6,"result":{"ok":true,"sessionId":"PA_XQ5c7TnudLQG","oldSessionId":"PA_o5CrXrdbgADW"},"sid1":"PA_XQ5c7TnudLQG"}
+[04:21:45.116] livekit-healthy_rebuild-I-20261001T041855-2 VALID
+[04:22:02.346] livekit-healthy_rebuild-I-20261001T042145-3 join_O1 {"sessionId":"PA_6yhrTCiHppgL"}
+[04:22:04.364] livekit-healthy_rebuild-I-20261001T042145-3 join_O2 {"sessionId":"PA_rfRbzttPMtTP"}
+[04:22:06.421] livekit-healthy_rebuild-I-20261001T042145-3 join_S {"sessionId":"PA_KytMvULkUkTY"}
+[04:22:10.487] livekit-healthy_rebuild-I-20261001T042145-3 media_flowing {}
+[04:22:27.728] livekit-healthy_rebuild-I-20261001T042145-3 arm_O1 {"S":71.33056640625,"O2":71.123779296875}
+[04:22:29.090] livekit-healthy_rebuild-I-20261001T042145-3 arm_O2 {"S":73.489013671875,"O1":78.933837890625}
+[04:22:30.413] livekit-healthy_rebuild-I-20261001T042145-3 arm_S {"O1":73.848388671875,"O2":83.530517578125}
+[04:22:37.197] livekit-healthy_rebuild-I-20261001T042145-3 trigger {"kind":"rebuild","tStart":1790828556852,"sid0":"PA_KytMvULkUkTY","tEnd":1790828557278.5,"result":{"ok":true,"sessionId":"PA_xruQ5nJZ3YX8","oldSessionId":"PA_KytMvULkUkTY"},"sid1":"PA_xruQ5nJZ3YX8"}
+[04:24:35.135] livekit-healthy_rebuild-I-20261001T042145-3 VALID
+[04:24:52.072] livekit-remove_participant-I-20261001T042435-1 join_O1 {"sessionId":"PA_YVhotdvj52uf"}
+[04:24:54.144] livekit-remove_participant-I-20261001T042435-1 join_O2 {"sessionId":"PA_hLUUoMePniYb"}
+[04:24:56.165] livekit-remove_participant-I-20261001T042435-1 join_S {"sessionId":"PA_sj3qMoMtgbxZ"}
+[04:25:00.083] livekit-remove_participant-I-20261001T042435-1 media_flowing {}
+[04:25:16.422] livekit-remove_participant-I-20261001T042435-1 arm_O1 {"S":67.39501953125,"O2":56.6044921875}
+[04:25:17.783] livekit-remove_participant-I-20261001T042435-1 arm_O2 {"S":51.509521484375,"O1":70.149658203125}
+[04:25:19.055] livekit-remove_participant-I-20261001T042435-1 arm_S {"O1":75.205810546875,"O2":76.675537109375}
+[04:25:25.336] livekit-remove_participant-I-20261001T042435-1 trigger {"status":200,"body":{}}
+[04:27:23.060] livekit-remove_participant-I-20261001T042435-1 VALID
+[04:27:39.673] livekit-remove_participant-I-20261001T042723-2 join_O1 {"sessionId":"PA_dcUU6VBTSrdC"}
+[04:27:41.719] livekit-remove_participant-I-20261001T042723-2 join_O2 {"sessionId":"PA_p27wSBJ2nhcj"}
+[04:27:43.841] livekit-remove_participant-I-20261001T042723-2 join_S {"sessionId":"PA_pq7tLDTkxsNB"}
+[04:27:47.689] livekit-remove_participant-I-20261001T042723-2 media_flowing {}
+[04:28:03.970] livekit-remove_participant-I-20261001T042723-2 arm_O1 {"S":68.850830078125,"O2":67.76171875}
+[04:28:05.278] livekit-remove_participant-I-20261001T042723-2 arm_O2 {"S":67.86767578125,"O1":73.367431640625}
+[04:28:06.584] livekit-remove_participant-I-20261001T042723-2 arm_S {"O1":78.599365234375,"O2":75.318115234375}
+[04:28:12.873] livekit-remove_participant-I-20261001T042723-2 trigger {"status":200,"body":{}}
+[04:30:12.117] livekit-remove_participant-I-20261001T042723-2 VALID
+[04:30:28.942] livekit-remove_participant-I-20261001T043012-3 join_O1 {"sessionId":"PA_RJ7GK8u35Vwh"}
+[04:30:30.940] livekit-remove_participant-I-20261001T043012-3 join_O2 {"sessionId":"PA_c6rQjo4dP5kB"}
+[04:30:33.066] livekit-remove_participant-I-20261001T043012-3 join_S {"sessionId":"PA_D3wLAz39dRVA"}
+[04:30:36.988] livekit-remove_participant-I-20261001T043012-3 media_flowing {}
+[04:30:53.286] livekit-remove_participant-I-20261001T043012-3 arm_O1 {"S":68.40380859375,"O2":72.630126953125}
+[04:30:54.565] livekit-remove_participant-I-20261001T043012-3 arm_O2 {"S":65.423095703125,"O1":75.834716796875}
+[04:30:55.847] livekit-remove_participant-I-20261001T043012-3 arm_S {"O1":66.3369140625,"O2":64.213134765625}
+[04:31:02.146] livekit-remove_participant-I-20261001T043012-3 trigger {"status":200,"body":{}}
+[04:32:59.593] livekit-remove_participant-I-20261001T043012-3 VALID
+[04:33:16.281] livekit-intruder-I-20261001T043259-1 join_O1 {"sessionId":"PA_jnRKzPNrgnCp"}
+[04:33:18.291] livekit-intruder-I-20261001T043259-1 join_O2 {"sessionId":"PA_eEiLymXcNwfu"}
+[04:33:20.345] livekit-intruder-I-20261001T043259-1 join_S {"sessionId":"PA_4WoUKmgc9nef"}
+[04:33:24.178] livekit-intruder-I-20261001T043259-1 media_flowing {}
+[04:33:41.018] livekit-intruder-I-20261001T043259-1 arm_O1 {"S":60.95947265625,"O2":62.853515625}
+[04:33:42.313] livekit-intruder-I-20261001T043259-1 arm_O2 {"S":63.811767578125,"O1":77.0595703125}
+[04:33:43.618] livekit-intruder-I-20261001T043259-1 arm_S {"O1":68.758544921875,"O2":70.118896484375}
+[04:34:06.867] livekit-intruder-I-20261001T043259-1 trigger {"intruderJoin":"failed","error":"c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:43179/lk-sdk.js:1:153468)\n    at http://127.0.0.
+[04:36:07.892] livekit-intruder-I-20261001T043259-1 VALID
+[04:36:24.729] livekit-intruder-I-20261001T043607-2 join_O1 {"sessionId":"PA_cAUUsw96HorE"}
+[04:36:26.727] livekit-intruder-I-20261001T043607-2 join_O2 {"sessionId":"PA_9db9xKQXyHtu"}
+[04:36:28.756] livekit-intruder-I-20261001T043607-2 join_S {"sessionId":"PA_JXvdU5uRq88m"}
+[04:36:32.718] livekit-intruder-I-20261001T043607-2 media_flowing {}
+[04:36:50.261] livekit-intruder-I-20261001T043607-2 arm_O1 {"S":64.6669921875,"O2":64.79052734375}
+[04:36:51.689] livekit-intruder-I-20261001T043607-2 arm_O2 {"S":65.578125,"O1":60.14990234375}
+[04:36:53.076] livekit-intruder-I-20261001T043607-2 arm_S {"O1":66.593017578125,"O2":73.47265625}
+[04:37:16.413] livekit-intruder-I-20261001T043607-2 trigger {"intruderJoin":"failed","error":"c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:43179/lk-sdk.js:1:153468)\n    at http://127.0.0.
+[04:39:17.155] livekit-intruder-I-20261001T043607-2 VALID
+[04:39:34.116] livekit-intruder-I-20261001T043917-3 join_O1 {"sessionId":"PA_jyNX4Nmms5wt"}
+[04:39:36.122] livekit-intruder-I-20261001T043917-3 join_O2 {"sessionId":"PA_uX9Qo5Hq5V8a"}
+[04:39:38.182] livekit-intruder-I-20261001T043917-3 join_S {"sessionId":"PA_Bqx6PfqZH9wC"}
+[04:39:42.087] livekit-intruder-I-20261001T043917-3 media_flowing {}
+[04:39:58.375] livekit-intruder-I-20261001T043917-3 arm_O1 {"S":63.77001953125,"O2":60.751220703125}
+[04:39:59.669] livekit-intruder-I-20261001T043917-3 arm_O2 {"S":70.173583984375,"O1":58.963134765625}
+[04:40:00.968] livekit-intruder-I-20261001T043917-3 arm_S {"O1":66.787109375,"O2":79.248779296875}
+[04:40:24.231] livekit-intruder-I-20261001T043917-3 trigger {"intruderJoin":"failed","error":"c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:43179/lk-sdk.js:1:153468)\n    at http://127.0.0.
+[04:42:24.729] livekit-intruder-I-20261001T043917-3 VALID
+=== TARGETED_DONE 2026-10-01T04:42:24Z
+[04:42:41.734] livekit-iso-all-10s-I-20261001T044224-1 join_O1 {"sessionId":"PA_ZK4rEy3Tt9mm"}
+[04:42:43.786] livekit-iso-all-10s-I-20261001T044224-1 join_O2 {"sessionId":"PA_Cy2nEsPPfZGT"}
+[04:42:45.839] livekit-iso-all-10s-I-20261001T044224-1 join_S {"sessionId":"PA_Pr7BmnqynzQZ"}
+[04:42:49.722] livekit-iso-all-10s-I-20261001T044224-1 media_flowing {}
+[04:43:06.081] livekit-iso-all-10s-I-20261001T044224-1 arm_O1 {"S":63.391357421875,"O2":72.22607421875}
+[04:43:07.494] livekit-iso-all-10s-I-20261001T044224-1 arm_O2 {"S":64.099853515625,"O1":58.412109375}
+[04:43:08.772] livekit-iso-all-10s-I-20261001T044224-1 arm_S {"O1":56.509521484375,"O2":55.2470703125}
+[04:43:15.052] livekit-iso-all-10s-I-20261001T044224-1 isolate_on {"mode":"all","on":true,"before":1790829795116.4531,"after":1790829795126.448,"rules":["-A INPUT -s 10.42.6.26/32 -j DROP","-A OUTPUT -d 10.42.6.26/32 -j DROP"]}
+[04:43:26.791] livekit-iso-all-10s-I-20261001T044224-1 isolate_off {"mode":"all","on":false,"before":1790829806740.534,"after":1790829806817.2651,"rules":[]}
+[04:44:37.245] livekit-iso-all-10s-I-20261001T044224-1 VALID
+[04:44:54.115] livekit-iso-media-30s-O-20261001T044437-2 join_O1 {"sessionId":"PA_LbSsG9FcyueE"}
+[04:44:56.311] livekit-iso-media-30s-O-20261001T044437-2 join_O2 {"sessionId":"PA_8M5eCPEcymk2"}
+[04:44:58.684] livekit-iso-media-30s-O-20261001T044437-2 join_S {"sessionId":"PA_eVyjRYAB7mLe"}
+[04:45:03.025] livekit-iso-media-30s-O-20261001T044437-2 media_flowing {}
+[04:45:19.355] livekit-iso-media-30s-O-20261001T044437-2 arm_O1 {"S":79.078369140625,"O2":70.5419921875}
+[04:45:20.652] livekit-iso-media-30s-O-20261001T044437-2 arm_O2 {"S":71.050537109375,"O1":66.46337890625}
+[04:45:21.943] livekit-iso-media-30s-O-20261001T044437-2 arm_S {"O1":66.557373046875,"O2":73.839599609375}
+[04:45:28.237] livekit-iso-media-30s-O-20261001T044437-2 isolate_on {"mode":"media","on":true,"before":1790829928289.2234,"after":1790829928313.4731,"rules":["-A INPUT -s 10.42.6.26/32 -p tcp -m tcp --sport 31881 -j DROP","-A INPUT -s 10.42.6.26/32 -p udp -j DROP","-A
+[04:45:59.265] livekit-iso-media-30s-O-20261001T044437-2 isolate_off {"mode":"media","on":false,"before":1790829959159.2,"after":1790829959277.2905,"rules":[]}
+[04:47:06.491] livekit-iso-media-30s-O-20261001T044437-2 VALID
+[04:47:29.291] switched to janus
+[04:47:42.900] janus-iso-all-10s-I-20261001T044729-1 janus_room {"videoroom":"created","room":46438,"permanent":false}
+[04:47:49.246] janus-iso-all-10s-I-20261001T044729-1 join_O1 {"sessionId":"8995215756945791"}
+[04:47:50.988] janus-iso-all-10s-I-20261001T044729-1 join_O2 {"sessionId":"3952375308296344"}
+[04:47:52.742] janus-iso-all-10s-I-20261001T044729-1 join_S {"sessionId":"7915309925529876"}
+[04:47:56.671] janus-iso-all-10s-I-20261001T044729-1 media_flowing {}
+[04:48:12.993] janus-iso-all-10s-I-20261001T044729-1 arm_O1 {"S":69.568359375,"O2":55.0244140625}
+[04:48:14.242] janus-iso-all-10s-I-20261001T044729-1 arm_O2 {"S":83.48291015625,"O1":78.510986328125}
+[04:48:15.536] janus-iso-all-10s-I-20261001T044729-1 arm_S {"O1":59.56494140625,"O2":62.946044921875}
+[04:48:21.820] janus-iso-all-10s-I-20261001T044729-1 isolate_on {"mode":"all","on":true,"before":1790830101890.6594,"after":1790830101900.8591,"rules":["-A INPUT -s 10.42.15.120/32 -j DROP","-A OUTPUT -d 10.42.15.120/32 -j DROP"]}
+[04:48:32.872] janus-iso-all-10s-I-20261001T044729-1 isolate_off {"mode":"all","on":false,"before":1790830112809.2144,"after":1790830112897.2954,"rules":[]}
+[04:49:44.835] janus-iso-all-10s-I-20261001T044729-1 VALID
+[04:49:57.608] janus-iso-media-30s-O-20261001T044944-2 janus_room {"videoroom":"created","room":49411,"permanent":false}
+[04:50:03.619] janus-iso-media-30s-O-20261001T044944-2 join_O1 {"sessionId":"1632813860332517"}
+[04:50:05.331] janus-iso-media-30s-O-20261001T044944-2 join_O2 {"sessionId":"1169323988624779"}
+[04:50:07.043] janus-iso-media-30s-O-20261001T044944-2 join_S {"sessionId":"3331534444601610"}
+[04:50:10.977] janus-iso-media-30s-O-20261001T044944-2 media_flowing {}

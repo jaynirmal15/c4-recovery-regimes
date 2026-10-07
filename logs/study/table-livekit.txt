@@ -1,0 +1,120 @@
+rows 110, analysed 110, excluded 0
+
+livekit all    2s n=5 | regimes R1×5 | disturbed 5/5 | outage 7.3..7.9 s | stale 4.9..6.8 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality GOOD×5] at 9.2..10.2 s; onsetDelay 9.2..9.9; blindFrac med 1; up 5/5 upErr 16.3..27.2
+   B_subject         0/5  nothing
+
+livekit all    5s n=5 | regimes R1×5 | disturbed 5/5 | outage 7.6..14.5 s | stale 6.4..12.0 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality POOR×4 quality GOOD×1] at 9.5..10.3 s; onsetDelay 9.1..9.8; blindFrac med 0.85; up 5/5 upErr 10.3..16.9
+   B_subject         0/5  nothing
+
+livekit all   10s n=5 | regimes R1×5 | disturbed 5/5 | outage 12.9..18.3 s | stale 10.4..16.1 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality LOST×5] at 8.8..10.1 s; onsetDelay 8.6..9.5; blindFrac med 0.63; up 5/5 upErr 10.3..16.5
+   B_subject         0/5  nothing
+
+livekit all   16s n=5 | regimes R1×5 | disturbed 5/5 | outage 21.1..22.2 s | stale 18.6..19.3 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality LOST×5] at 9.6..10.1 s; onsetDelay 9.5..10.1; blindFrac med 0.45; up 5/5 upErr 12.8..17.4
+   B_subject         0/5  nothing
+
+livekit all   19s n=10 | regimes R2×10 | disturbed 10/10 | outage 26.2..28.6 s | stale 26.2..28.6 s
+   A_membership      10/10  [track_unpublished×10] at 20.0..20.9 s; onsetDelay 19.6..20.9; blindFrac med 0.72; up 10/10 upErr -0.6..-0.2
+   A_state           10/10  [absent×10] at 20.2..21.0 s; onsetDelay 19.8..21.0; blindFrac med 0.73; up 10/10 upErr -0.1..0.8
+   B_obs_membership  10/10  [update DISCONNECTED/CONNECTION_TIMEOUT×10] at 20.0..20.9 s; onsetDelay 19.6..20.9; blindFrac med 0.72; up 10/10 upErr -0.7..-0.1
+   B_obs_quality     10/10  [quality LOST×10] at 9.5..10.3 s; onsetDelay 9.1..10.3; blindFrac med 0.35; up 10/10 upErr -0.5..-0.1
+   B_subject         10/10  [leave RECONNECT/STATE_MISMATCH×10] at 25.4..27.5 s; onsetDelay 25.4..27.4; blindFrac med 0.97; up 10/10 upErr -0.9..-0.5
+
+livekit all   21s n=10 | regimes R2×10 | disturbed 10/10 | outage 27.4..28.5 s | stale 27.4..28.5 s
+   A_membership      10/10  [track_unpublished×10] at 20.4..21.8 s; onsetDelay 20.0..21.8; blindFrac med 0.73; up 10/10 upErr -0.6..-0.2
+   A_state           10/10  [absent×10] at 20.6..22.3 s; onsetDelay 20.2..22.2; blindFrac med 0.74; up 10/10 upErr 0.1..0.7
+   B_obs_membership  10/10  [update DISCONNECTED/CONNECTION_TIMEOUT×10] at 20.4..21.8 s; onsetDelay 20.0..21.8; blindFrac med 0.73; up 10/10 upErr -0.6..-0.1
+   B_obs_quality     10/10  [quality LOST×10] at 8.3..10.3 s; onsetDelay 7.9..10.3; blindFrac med 0.34; up 10/10 upErr -0.5..-0.1
+   B_subject         10/10  [leave RECONNECT/STATE_MISMATCH×10] at 27.1..27.5 s; onsetDelay 26.7..27.4; blindFrac med 0.97; up 10/10 upErr -0.9..-0.5
+
+livekit all   23s n=10 | regimes R2×10 | disturbed 10/10 | outage 27.4..28.5 s | stale 27.4..28.5 s
+   A_membership      10/10  [track_unpublished×10] at 20.1..21.8 s; onsetDelay 20.0..21.4; blindFrac med 0.74; up 10/10 upErr -0.6..-0.2
+   A_state           10/10  [absent×10] at 20.2..21.9 s; onsetDelay 20.2..21.5; blindFrac med 0.74; up 10/10 upErr -0.4..0.9
+   B_obs_membership  10/10  [update DISCONNECTED/CONNECTION_TIMEOUT×10] at 20.1..21.8 s; onsetDelay 20.0..21.4; blindFrac med 0.74; up 10/10 upErr -0.8..-0.1
+   B_obs_quality     10/10  [quality LOST×10] at 8.7..10.3 s; onsetDelay 8.2..10.3; blindFrac med 0.33; up 10/10 upErr -0.5..-0.1
+   B_subject         10/10  [leave RECONNECT/STATE_MISMATCH×10] at 27.1..27.4 s; onsetDelay 26.7..27.3; blindFrac med 0.97; up 10/10 upErr -0.9..-0.5
+
+livekit all   26s n=5 | regimes R2×5 | disturbed 5/5 | outage 27.6..28.4 s | stale 27.6..28.4 s
+   A_membership      5/5  [track_unpublished×5] at 20.1..20.8 s; onsetDelay 20.1..20.8; blindFrac med 0.73; up 5/5 upErr -0.6..-0.2
+   A_state           5/5  [absent×5] at 20.2..20.9 s; onsetDelay 20.2..20.9; blindFrac med 0.74; up 5/5 upErr -0.5..0.8
+   B_obs_membership  5/5  [update DISCONNECTED/CONNECTION_TIMEOUT×5] at 20.1..20.8 s; onsetDelay 20.1..20.8; blindFrac med 0.73; up 5/5 upErr -0.5..-0.1
+   B_obs_quality     5/5  [quality LOST×5] at 9.4..10.2 s; onsetDelay 9.4..10.2; blindFrac med 0.36; up 5/5 upErr -0.5..-0.1
+   B_subject         5/5  [leave RECONNECT/STATE_MISMATCH×5] at 27.1..27.3 s; onsetDelay 26.8..27.3; blindFrac med 0.97; up 5/5 upErr -0.9..-0.5
+
+livekit all   30s n=5 | regimes R2×5 | disturbed 5/5 | outage 33.5..33.9 s | stale 33.5..33.9 s
+   A_membership      5/5  [track_unpublished×5] at 20.4..21.8 s; onsetDelay 20.0..21.5; blindFrac med 0.62; up 5/5 upErr -0.5..-0.2
+   A_state           5/5  [absent×5] at 20.5..22.1 s; onsetDelay 20.1..21.9; blindFrac med 0.62; up 5/5 upErr -0.0..0.2
+   B_obs_membership  5/5  [update DISCONNECTED/CONNECTION_TIMEOUT×5] at 20.4..21.8 s; onsetDelay 20.0..21.5; blindFrac med 0.62; up 5/5 upErr -0.5..-0.1
+   B_obs_quality     5/5  [quality LOST×5] at 8.8..10.3 s; onsetDelay 8.8..10.3; blindFrac med 0.28; up 5/5 upErr -0.4..-0.1
+   B_subject         5/5  [leave RECONNECT/STATE_MISMATCH×5] at 33.3..33.5 s; onsetDelay 32.8..33.3; blindFrac med 0.98; up 5/5 upErr -0.8..-0.5
+
+livekit media  2s n=5 | regimes R1×5 | disturbed 5/5 | outage 6.1..8.0 s | stale 5.3..7.3 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality GOOD×5] at 9.6..10.2 s; onsetDelay 9.0..10.1; blindFrac med 1; up 5/5 upErr 12.1..22.1
+   B_subject         0/5  nothing
+
+livekit media  5s n=5 | regimes R1×5 | disturbed 5/5 | outage 8.1..14.0 s | stale 7.4..11.7 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality GOOD×3 quality POOR×2] at 8.8..14.4 s; onsetDelay 8.8..14.4; blindFrac med 0.73; up 5/5 upErr 6.7..21.3
+   B_subject         0/5  nothing
+
+livekit media 10s n=5 | regimes R1×5 | disturbed 5/5 | outage 20.6..22.8 s | stale 18.6..19.6 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality LOST×5] at 9.7..10.2 s; onsetDelay 9.1..10.2; blindFrac med 0.46; up 5/5 upErr 6.9..8.9
+   B_subject         0/5  nothing
+
+livekit media 20s n=5 | regimes R1×5 | disturbed 5/5 | outage 23.9..33.4 s | stale 21.9..31.1 s
+   A_membership      0/5  nothing
+   A_state           0/5  nothing
+   B_obs_membership  0/5  nothing
+   B_obs_quality     5/5  [quality LOST×5] at 8.8..10.1 s; onsetDelay 8.6..10.1; blindFrac med 0.31; up 5/5 upErr 6.0..14.7
+   B_subject         0/5  nothing
+
+livekit media 23s n=5 | regimes R2×5 | disturbed 5/5 | outage 29.0..29.6 s | stale 29.0..29.6 s
+   A_membership      5/5  [track_unpublished×5] at 27.1..27.2 s; onsetDelay 26.6..27.1; blindFrac med 0.92; up 5/5 upErr -0.3..-0.2
+   A_state           5/5  [absent×5] at 27.2..27.9 s; onsetDelay 27.2..27.6; blindFrac med 0.94; up 5/5 upErr 0.0..0.8
+   B_obs_membership  5/5  [update DISCONNECTED/CONNECTION_TIMEOUT×5] at 27.1..27.2 s; onsetDelay 26.6..27.1; blindFrac med 0.92; up 5/5 upErr -0.3..-0.1
+   B_obs_quality     5/5  [quality LOST×5] at 9.5..10.3 s; onsetDelay 9.4..9.8; blindFrac med 0.33; up 5/5 upErr -0.3..-0.1
+   B_subject         5/5  [leave RESUME/CONNECTION_TIMEOUT×5] at 22.1..22.2 s; onsetDelay 21.6..22.1; blindFrac med 0.75; up 5/5 upErr -0.6..-0.5
+
+livekit media 26s n=10 | regimes R2×10 | disturbed 10/10 | outage 28.8..29.8 s | stale 28.8..29.8 s
+   A_membership      10/10  [track_unpublished×10] at 27.0..27.3 s; onsetDelay 26.5..27.3; blindFrac med 0.92; up 10/10 upErr -0.8..-0.2
+   A_state           10/10  [absent×10] at 27.7..28.0 s; onsetDelay 27.2..27.9; blindFrac med 0.94; up 10/10 upErr -0.1..0.5
+   B_obs_membership  10/10  [update DISCONNECTED/CONNECTION_TIMEOUT×10] at 27.0..27.3 s; onsetDelay 26.5..27.3; blindFrac med 0.92; up 10/10 upErr -0.8..-0.1
+   B_obs_quality     10/10  [quality LOST×10] at 9.4..10.2 s; onsetDelay 8.8..10.2; blindFrac med 0.33; up 10/10 upErr -0.7..-0.1
+   B_subject         10/10  [leave RESUME/CONNECTION_TIMEOUT×10] at 22.0..22.3 s; onsetDelay 21.5..22.3; blindFrac med 0.75; up 10/10 upErr -1.1..-0.5
+
+livekit media 28s n=10 | regimes R2×10 | disturbed 10/10 | outage 28.8..30.0 s | stale 28.8..30.0 s
+   A_membership      10/10  [track_unpublished×10] at 27.0..27.2 s; onsetDelay 26.5..27.2; blindFrac med 0.92; up 10/10 upErr -0.8..-0.2
+   A_state           10/10  [absent×10] at 27.6..27.9 s; onsetDelay 27.1..27.9; blindFrac med 0.94; up 10/10 upErr -0.3..0.5
+   B_obs_membership  10/10  [update DISCONNECTED/CONNECTION_TIMEOUT×10] at 27.0..27.2 s; onsetDelay 26.5..27.2; blindFrac med 0.92; up 10/10 upErr -0.8..-0.1
+   B_obs_quality     10/10  [quality LOST×10] at 9.0..10.2 s; onsetDelay 8.5..10.1; blindFrac med 0.33; up 10/10 upErr -0.8..-0.1
+   B_subject         10/10  [leave RESUME/CONNECTION_TIMEOUT×10] at 22.0..22.2 s; onsetDelay 21.4..22.2; blindFrac med 0.74; up 10/10 upErr -1.1..-0.5
+
+livekit media 30s n=5 | regimes R2×5 | disturbed 5/5 | outage 30.1..30.6 s | stale 30.1..30.6 s
+   A_membership      5/5  [track_unpublished×5] at 27.1..27.3 s; onsetDelay 26.6..27.3; blindFrac med 0.88; up 5/5 upErr -0.6..-0.2
+   A_state           5/5  [absent×5] at 27.7..28.2 s; onsetDelay 27.2..28.2; blindFrac med 0.9; up 5/5 upErr -0.2..0.7
+   B_obs_membership  5/5  [update DISCONNECTED/CONNECTION_TIMEOUT×5] at 27.1..27.3 s; onsetDelay 26.5..27.3; blindFrac med 0.88; up 5/5 upErr -0.6..-0.3
+   B_obs_quality     5/5  [quality LOST×5] at 9.1..10.1 s; onsetDelay 8.7..9.6; blindFrac med 0.31; up 5/5 upErr -0.5..-0.1
+   B_subject         5/5  [leave RESUME/CONNECTION_TIMEOUT×5] at 22.1..22.3 s; onsetDelay 21.5..22.3; blindFrac med 0.71; up 5/5 upErr -1.8..-1.5

@@ -1,0 +1,5 @@
+15:38:51Z followup: unpark via AWS CLI (per rule)
+15:46:43Z affinity applied; helm rev2 FAILED (ordering: old janus required-anti-affinity blocked new livekit pod; resolved when janus rolled); rev3 re-run
+16:06:41Z tests A-D done; placement verified after fresh unpark; final make park
+16:24:05Z final park VERIFIED (make park exit 0, 992s); evidence logs/followup/final-state-evidence.txt
+16:32:25Z lab fix committed+pushed f3ec48f; PLAN.md DC-3 recorded

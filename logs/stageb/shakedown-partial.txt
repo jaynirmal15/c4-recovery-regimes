@@ -1,0 +1,342 @@
+
+=== livekit-iso-all-10s-I-20261001T050117-1  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_rRWFQDrzrDRx
+   actions: transport_restart@7.043s ok (5.365s)
+   isolation: all planned 10s actual 10s | detected@2.043s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=7.55s recovered_t=17.635s observersFreshAgain=[17.635,17.382] staleMs@obs=[15331,15078] subjectFreshFrom=[11.123,10.995]
+   server: [{"t":-29.055,"event":"participant_joined","sid":"PA_rRWFQDrzrDRx","reason":null},{"t":-28.961,"event":"track_published","sid":"PA_rRWFQDrzrDRx","reason":null},{"t":66.571,"event":"track_unpublished","sid":"PA_rRWFQDrzrDRx","reason":null},{"t":66.58,"event":"participant_left","sid":"PA_rRWFQDrzrDRx","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.554,"sid":"PA_rRWFQDrzrDRx","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.556,"sid":"PA_rRWFQDrzrDRx","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-I-20261001T052007-9  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_zh6d5NDmU579
+   actions: transport_restart@6.922s ok (5.433s)
+   isolation: all planned 10s actual 10s | detected@1.922s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=4.091s recovered_t=14.157s observersFreshAgain=[14.157,14.028] staleMs@obs=[10368,10368] subjectFreshFrom=[10.972,10.972]
+   server: [{"t":-29.971,"event":"participant_joined","sid":"PA_zh6d5NDmU579","reason":null},{"t":-29.881,"event":"track_published","sid":"PA_zh6d5NDmU579","reason":null},{"t":66.47,"event":"track_unpublished","sid":"PA_zh6d5NDmU579","reason":null},{"t":66.484,"event":"participant_left","sid":"PA_zh6d5NDmU579","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.458,"sid":"PA_zh6d5NDmU579","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.459,"sid":"PA_zh6d5NDmU579","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-I-20261001T053857-17  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_ZMHs88ccyHQw
+   actions: transport_restart@5.279s ok (7.491s) ; transport_restart@18.879s ok (2.022s)
+   isolation: all planned 10s actual 10.01s | detected@0.279s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=6.152s recovered_t=16.223s observersFreshAgain=[16.223,16.101] staleMs@obs=[12672,12672] subjectFreshFrom=[11.388,11.388]
+   server: [{"t":-29.811,"event":"participant_joined","sid":"PA_ZMHs88ccyHQw","reason":null},{"t":-29.73,"event":"track_published","sid":"PA_ZMHs88ccyHQw","reason":null},{"t":69.193,"event":"track_unpublished","sid":"PA_ZMHs88ccyHQw","reason":null},{"t":69.206,"event":"participant_left","sid":"PA_ZMHs88ccyHQw","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":69.177,"sid":"PA_ZMHs88ccyHQw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":69.177,"sid":"PA_ZMHs88ccyHQw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-O-20261001T051044-5  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_FG9WYKWgZPm3
+   actions: transport_restart@7.143s ok (5.394s)
+   isolation: all planned 10s actual 10s | detected@2.143s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=8.524s recovered_t=18.6s observersFreshAgain=[18.598,18.6] staleMs@obs=[15104,15232] subjectFreshFrom=[11.194,11.194]
+   server: [{"t":-29.753,"event":"participant_joined","sid":"PA_FG9WYKWgZPm3","reason":null},{"t":-29.66,"event":"track_published","sid":"PA_FG9WYKWgZPm3","reason":null},{"t":66.544,"event":"track_unpublished","sid":"PA_FG9WYKWgZPm3","reason":null},{"t":66.552,"event":"participant_left","sid":"PA_FG9WYKWgZPm3","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.532,"sid":"PA_FG9WYKWgZPm3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.53,"sid":"PA_FG9WYKWgZPm3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-O-20261001T052936-13  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_6a6cC3XQmvVR
+   actions: transport_restart@6.988s ok (5.369s)
+   isolation: all planned 10s actual 10.01s | detected@1.988s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.625s recovered_t=22.695s observersFreshAgain=[22.695,22.57] staleMs@obs=[19200,18944] subjectFreshFrom=[11.074,10.946]
+   server: [{"t":-29.111,"event":"participant_joined","sid":"PA_6a6cC3XQmvVR","reason":null},{"t":-29.019,"event":"track_published","sid":"PA_6a6cC3XQmvVR","reason":null},{"t":65.801,"event":"track_unpublished","sid":"PA_6a6cC3XQmvVR","reason":null},{"t":65.806,"event":"participant_left","sid":"PA_6a6cC3XQmvVR","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":65.791,"sid":"PA_6a6cC3XQmvVR","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":65.793,"sid":"PA_6a6cC3XQmvVR","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-O-20261001T054828-21  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_S9HpzZcaUuFY
+   actions: transport_restart@6.891s ok (5.385s)
+   isolation: all planned 10s actual 10.01s | detected@1.891s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=3.975s recovered_t=14.042s observersFreshAgain=[14.034,14.042] staleMs@obs=[10706,10714] subjectFreshFrom=[10.948,10.948]
+   server: [{"t":-29.217,"event":"participant_joined","sid":"PA_S9HpzZcaUuFY","reason":null},{"t":-29.118,"event":"track_published","sid":"PA_S9HpzZcaUuFY","reason":null},{"t":66.437,"event":"track_unpublished","sid":"PA_S9HpzZcaUuFY","reason":null},{"t":66.447,"event":"participant_left","sid":"PA_S9HpzZcaUuFY","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.418,"sid":"PA_S9HpzZcaUuFY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.416,"sid":"PA_S9HpzZcaUuFY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-I-20261001T050330-2  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_AqBLkwrDm7to -> PA_EH2jPdZwgmXQ
+   actions: transport_restart@7.303s resume did not complete (15.005s) ; transport_restart@27.502s RECONNECT/STATE_MISMATCH (6.168s) ; rebuild@33.702s ok (0.419s)
+   isolation: all planned 30s actual 30.01s | detected@2.102s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.188s recovered_t=34.251s observersFreshAgain=[34.251,34.251] staleMs@obs=[33771,33781] subjectFreshFrom=[34.15,34.15]
+   server: [{"t":-29.189,"event":"participant_joined","sid":"PA_AqBLkwrDm7to","reason":null},{"t":-29.099,"event":"track_published","sid":"PA_AqBLkwrDm7to","reason":null},{"t":20.026,"event":"track_unpublished","sid":"PA_AqBLkwrDm7to","reason":null},{"t":20.031,"event":"participant_left","sid":"PA_AqBLkwrDm7to","reason":"CONNECTION_TIMEOUT"},{"t":34.046,"event":"participant_joined","sid":"PA_EH2jPdZwgmXQ","r
+   O1 saw: [{"t":20.018,"sid":"PA_AqBLkwrDm7to","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.103,"sid":"PA_EH2jPdZwgmXQ","state":"ACTIVE","reason":null},{"t":86.032,"sid":"PA_EH2jPdZwgmXQ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":20.018,"sid":"PA_AqBLkwrDm7to","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.104,"sid":"PA_EH2jPdZwgmXQ","state":"ACTIVE","reason":null},{"t":86.031,"sid":"PA_EH2jPdZwgmXQ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-I-20261001T052221-10  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_kEMUsniaeQ4z -> PA_o5ibrjK2TEni
+   actions: transport_restart@7.303s resume did not complete (15.005s) ; transport_restart@27.503s RECONNECT/STATE_MISMATCH (6.143s) ; rebuild@33.703s ok (0.415s)
+   isolation: all planned 30s actual 30.01s | detected@2.103s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.565s recovered_t=34.63s observersFreshAgain=[34.626,34.63] staleMs@obs=[34261,34261] subjectFreshFrom=[34.14,34.15]
+   server: [{"t":-29.201,"event":"participant_joined","sid":"PA_kEMUsniaeQ4z","reason":null},{"t":-29.105,"event":"track_published","sid":"PA_kEMUsniaeQ4z","reason":null},{"t":20.017,"event":"track_unpublished","sid":"PA_kEMUsniaeQ4z","reason":null},{"t":20.022,"event":"participant_left","sid":"PA_kEMUsniaeQ4z","reason":"CONNECTION_TIMEOUT"},{"t":34.041,"event":"participant_joined","sid":"PA_o5ibrjK2TEni","r
+   O1 saw: [{"t":20.007,"sid":"PA_kEMUsniaeQ4z","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.103,"sid":"PA_o5ibrjK2TEni","state":"ACTIVE","reason":null},{"t":86.24,"sid":"PA_o5ibrjK2TEni","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":20.008,"sid":"PA_kEMUsniaeQ4z","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.103,"sid":"PA_o5ibrjK2TEni","state":"ACTIVE","reason":null},{"t":86.24,"sid":"PA_o5ibrjK2TEni","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-I-20261001T054113-18  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_BGJEB37uD7Ej -> PA_YQcCEN8cWAT3
+   actions: transport_restart@7.006s resume did not complete (15.004s) ; transport_restart@27.206s RECONNECT/STATE_MISMATCH (6.158s) ; rebuild@33.406s ok (0.428s)
+   isolation: all planned 30s actual 30.01s | detected@2.006s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.233s recovered_t=34.306s observersFreshAgain=[34.301,34.306] staleMs@obs=[34256,34267] subjectFreshFrom=[33.855,33.983]
+   server: [{"t":-29.293,"event":"participant_joined","sid":"PA_BGJEB37uD7Ej","reason":null},{"t":-29.202,"event":"track_published","sid":"PA_BGJEB37uD7Ej","reason":null},{"t":21.937,"event":"track_unpublished","sid":"PA_BGJEB37uD7Ej","reason":null},{"t":21.954,"event":"participant_left","sid":"PA_BGJEB37uD7Ej","reason":"CONNECTION_TIMEOUT"},{"t":33.754,"event":"participant_joined","sid":"PA_YQcCEN8cWAT3","r
+   O1 saw: [{"t":21.915,"sid":"PA_BGJEB37uD7Ej","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.82,"sid":"PA_YQcCEN8cWAT3","state":"ACTIVE","reason":null},{"t":84.451,"sid":"PA_YQcCEN8cWAT3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":21.916,"sid":"PA_BGJEB37uD7Ej","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.821,"sid":"PA_YQcCEN8cWAT3","state":"ACTIVE","reason":null},{"t":84.451,"sid":"PA_YQcCEN8cWAT3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-O-20261001T051256-6  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_g2kDX2zm9ZkJ -> PA_AnWVJv28nUGa
+   actions: transport_restart@6.994s resume did not complete (15.005s) ; transport_restart@27.194s RECONNECT/STATE_MISMATCH (6.155s) ; rebuild@33.394s ok (0.427s)
+   isolation: all planned 30s actual 30s | detected@1.994s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=3.949s recovered_t=34.019s observersFreshAgain=[34.019,33.944] staleMs@obs=[34019,33944] subjectFreshFrom=[33.842,33.842]
+   server: [{"t":-29.303,"event":"participant_joined","sid":"PA_g2kDX2zm9ZkJ","reason":null},{"t":-29.209,"event":"track_published","sid":"PA_g2kDX2zm9ZkJ","reason":null},{"t":21.911,"event":"track_unpublished","sid":"PA_g2kDX2zm9ZkJ","reason":null},{"t":21.916,"event":"participant_left","sid":"PA_g2kDX2zm9ZkJ","reason":"CONNECTION_TIMEOUT"},{"t":33.725,"event":"participant_joined","sid":"PA_AnWVJv28nUGa","r
+   O1 saw: [{"t":21.902,"sid":"PA_g2kDX2zm9ZkJ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.801,"sid":"PA_AnWVJv28nUGa","state":"ACTIVE","reason":null},{"t":82.608,"sid":"PA_AnWVJv28nUGa","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":21.903,"sid":"PA_g2kDX2zm9ZkJ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.8,"sid":"PA_AnWVJv28nUGa","state":"ACTIVE","reason":null},{"t":82.607,"sid":"PA_AnWVJv28nUGa","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-O-20261001T053149-14  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_LQToCFgrobwF -> PA_FKbo6tGFTVzh
+   actions: transport_restart@6.885s resume did not complete (15.005s) ; transport_restart@27.084s RECONNECT/STATE_MISMATCH (6.193s) ; rebuild@33.284s ok (0.442s)
+   isolation: all planned 30s actual 30.01s | detected@1.884s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.162s recovered_t=34.231s observersFreshAgain=[34.229,34.231] staleMs@obs=[33792,33664] subjectFreshFrom=[33.732,33.732]
+   server: [{"t":-29.606,"event":"participant_joined","sid":"PA_LQToCFgrobwF","reason":null},{"t":-29.524,"event":"track_published","sid":"PA_LQToCFgrobwF","reason":null},{"t":21.614,"event":"track_unpublished","sid":"PA_LQToCFgrobwF","reason":null},{"t":21.619,"event":"participant_left","sid":"PA_LQToCFgrobwF","reason":"CONNECTION_TIMEOUT"},{"t":33.632,"event":"participant_joined","sid":"PA_FKbo6tGFTVzh","r
+   O1 saw: [{"t":21.599,"sid":"PA_LQToCFgrobwF","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.706,"sid":"PA_FKbo6tGFTVzh","state":"ACTIVE","reason":null},{"t":83.264,"sid":"PA_FKbo6tGFTVzh","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":21.6,"sid":"PA_LQToCFgrobwF","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.71,"sid":"PA_FKbo6tGFTVzh","state":"ACTIVE","reason":null},{"t":83.263,"sid":"PA_FKbo6tGFTVzh","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-O-20261001T055041-22  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_HnDt7vxPf9RT -> PA_BGiwkTNLStmf
+   actions: transport_restart@7.078s resume did not complete (15.005s) ; transport_restart@27.278s RECONNECT/STATE_MISMATCH (6.153s) ; rebuild@33.478s ok (0.429s)
+   isolation: all planned 30s actual 30.01s | detected@2.078s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.057s recovered_t=34.127s observersFreshAgain=[34.118,34.127] staleMs@obs=[33664,33664] subjectFreshFrom=[33.927,33.927]
+   server: [{"t":-30.613,"event":"participant_joined","sid":"PA_HnDt7vxPf9RT","reason":null},{"t":-30.528,"event":"track_published","sid":"PA_HnDt7vxPf9RT","reason":null},{"t":20.601,"event":"track_unpublished","sid":"PA_HnDt7vxPf9RT","reason":null},{"t":20.607,"event":"participant_left","sid":"PA_HnDt7vxPf9RT","reason":"CONNECTION_TIMEOUT"},{"t":33.825,"event":"participant_joined","sid":"PA_BGiwkTNLStmf","r
+   O1 saw: [{"t":20.595,"sid":"PA_HnDt7vxPf9RT","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.89,"sid":"PA_BGiwkTNLStmf","state":"ACTIVE","reason":null},{"t":83.327,"sid":"PA_BGiwkTNLStmf","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":20.596,"sid":"PA_HnDt7vxPf9RT","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.892,"sid":"PA_BGiwkTNLStmf","state":"ACTIVE","reason":null},{"t":83.326,"sid":"PA_BGiwkTNLStmf","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-I-20261001T050602-3  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_7nuWvYfkofX4
+   actions: transport_restart@6.975s ok (2.027s)
+   isolation: media planned 10s actual 10s | detected@1.975s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.29s recovered_t=22.405s observersFreshAgain=[22.286,22.405] staleMs@obs=[19968,20224] subjectFreshFrom=[10.395,10.395]
+   server: [{"t":-31.306,"event":"participant_joined","sid":"PA_7nuWvYfkofX4","reason":null},{"t":-31.231,"event":"track_published","sid":"PA_7nuWvYfkofX4","reason":null},{"t":63.347,"event":"track_unpublished","sid":"PA_7nuWvYfkofX4","reason":null},{"t":63.353,"event":"participant_left","sid":"PA_7nuWvYfkofX4","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":63.332,"sid":"PA_7nuWvYfkofX4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":63.331,"sid":"PA_7nuWvYfkofX4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-I-20261001T052453-11  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_s5AfSZm4Q4Fw
+   actions: transport_restart@7.092s ok (2.026s)
+   isolation: media planned 10s actual 10s | detected@2.092s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=11.738s recovered_t=21.859s observersFreshAgain=[21.859,21.848] staleMs@obs=[19171,19160] subjectFreshFrom=[10.611,10.483]
+   server: [{"t":-30.198,"event":"participant_joined","sid":"PA_s5AfSZm4Q4Fw","reason":null},{"t":-30.115,"event":"track_published","sid":"PA_s5AfSZm4Q4Fw","reason":null},{"t":62.695,"event":"track_unpublished","sid":"PA_s5AfSZm4Q4Fw","reason":null},{"t":62.704,"event":"participant_left","sid":"PA_s5AfSZm4Q4Fw","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":62.687,"sid":"PA_s5AfSZm4Q4Fw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":62.69,"sid":"PA_s5AfSZm4Q4Fw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-I-20261001T054344-19  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_axPKheMt4s7E
+   actions: transport_restart@7.076s ok (2.024s)
+   isolation: media planned 10s actual 10.01s | detected@2.075s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=13.078s recovered_t=23.181s observersFreshAgain=[23.181,22.933] staleMs@obs=[19328,19456] subjectFreshFrom=[10.527,10.527]
+   server: [{"t":-30.423,"event":"participant_joined","sid":"PA_axPKheMt4s7E","reason":null},{"t":-30.331,"event":"track_published","sid":"PA_axPKheMt4s7E","reason":null},{"t":66.221,"event":"track_unpublished","sid":"PA_axPKheMt4s7E","reason":null},{"t":66.23,"event":"participant_left","sid":"PA_axPKheMt4s7E","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.21,"sid":"PA_axPKheMt4s7E","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.211,"sid":"PA_axPKheMt4s7E","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-O-20261001T051526-7  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_ZAbJKbwDxvUm
+   actions: transport_restart@7.112s ok (2.027s)
+   isolation: media planned 10s actual 10s | detected@2.112s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.033s recovered_t=22.169s observersFreshAgain=[22.169,22.162] staleMs@obs=[19584,19712] subjectFreshFrom=[10.525,10.525]
+   server: [{"t":-29.392,"event":"participant_joined","sid":"PA_ZAbJKbwDxvUm","reason":null},{"t":-29.288,"event":"track_published","sid":"PA_ZAbJKbwDxvUm","reason":null},{"t":63.886,"event":"track_unpublished","sid":"PA_ZAbJKbwDxvUm","reason":null},{"t":63.894,"event":"participant_left","sid":"PA_ZAbJKbwDxvUm","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":63.875,"sid":"PA_ZAbJKbwDxvUm","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":63.88,"sid":"PA_ZAbJKbwDxvUm","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-O-20261001T053418-15  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_KSP6WJXvwTZP
+   actions: transport_restart@6.895s ok (2.024s)
+   isolation: media planned 10s actual 10s | detected@1.895s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=5.268s recovered_t=15.372s observersFreshAgain=[15.237,15.372] staleMs@obs=[12544,12672] subjectFreshFrom=[10.265,10.265]
+   server: [{"t":-29.399,"event":"participant_joined","sid":"PA_KSP6WJXvwTZP","reason":null},{"t":-29.311,"event":"track_published","sid":"PA_KSP6WJXvwTZP","reason":null},{"t":62.663,"event":"track_unpublished","sid":"PA_KSP6WJXvwTZP","reason":null},{"t":62.671,"event":"participant_left","sid":"PA_KSP6WJXvwTZP","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":62.654,"sid":"PA_KSP6WJXvwTZP","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":62.653,"sid":"PA_KSP6WJXvwTZP","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-O-20261001T055311-23  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_Hf5sqP7gZkRj
+   actions: transport_restart@7.144s ok (2.024s)
+   isolation: media planned 10s actual 10.01s | detected@2.144s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.832s recovered_t=22.973s observersFreshAgain=[22.973,22.967] staleMs@obs=[20029,20407] subjectFreshFrom=[10.567,10.567]
+   server: [{"t":-29.351,"event":"participant_joined","sid":"PA_Hf5sqP7gZkRj","reason":null},{"t":-29.264,"event":"track_published","sid":"PA_Hf5sqP7gZkRj","reason":null},{"t":62.675,"event":"track_unpublished","sid":"PA_Hf5sqP7gZkRj","reason":null},{"t":62.722,"event":"participant_left","sid":"PA_Hf5sqP7gZkRj","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":62.658,"sid":"PA_Hf5sqP7gZkRj","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":62.66,"sid":"PA_Hf5sqP7gZkRj","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-I-20261001T050814-4  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_7wKbGZcFPb73 -> PA_FBcjK3qfyuLN
+   actions: transport_restart@6.972s ok (2.024s) ; transport_restart@14.171s ok (2.037s) ; transport_restart@21.371s resume did not complete (2.023s) ; transport_restart@28.571s RECONNECT/STATE_MISMATCH (0.007s) ; rebuild@28.771s ok (2.416s)
+   isolation: media planned 30s actual 30.01s | detected@1.971s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.005,"kind":"resume"}]
+   freshness: fromRestore=1.199s recovered_t=31.313s observersFreshAgain=[31.313,31.294] staleMs@obs=[30837,30827] subjectFreshFrom=[31.192,31.192]
+   server: [{"t":-29.326,"event":"participant_joined","sid":"PA_7wKbGZcFPb73","reason":null},{"t":-29.229,"event":"track_published","sid":"PA_7wKbGZcFPb73","reason":null},{"t":27.017,"event":"track_unpublished","sid":"PA_7wKbGZcFPb73","reason":null},{"t":27.022,"event":"participant_left","sid":"PA_7wKbGZcFPb73","reason":"CONNECTION_TIMEOUT"},{"t":31.08,"event":"participant_joined","sid":"PA_FBcjK3qfyuLN","re
+   O1 saw: [{"t":27.007,"sid":"PA_7wKbGZcFPb73","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.281,"sid":"PA_FBcjK3qfyuLN","state":"JOINED","reason":null},{"t":31.153,"sid":"PA_FBcjK3qfyuLN","state":"ACTIVE","reason":null},{"t":83.314,"sid":"PA_FBcjK3qfyuLN","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.008,"sid":"PA_7wKbGZcFPb73","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.281,"sid":"PA_FBcjK3qfyuLN","state":"JOINED","reason":null},{"t":31.154,"sid":"PA_FBcjK3qfyuLN","state":"ACTIVE","reason":null},{"t":83.315,"sid":"PA_FBcjK3qfyuLN","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-I-20261001T052703-12  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_B5dXfDoa5dqf -> PA_gwgiFU4JJ2WM
+   actions: transport_restart@7.022s ok (2.026s) ; transport_restart@14.221s ok (2.021s) ; transport_restart@21.422s resume did not complete (2.022s) ; transport_restart@28.621s RECONNECT/STATE_MISMATCH (0.007s) ; rebuild@28.822s ok (2.454s)
+   isolation: media planned 30s actual 30s | detected@2.021s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.059,"kind":"resume"}]
+   freshness: fromRestore=1.633s recovered_t=31.752s observersFreshAgain=[31.752,31.752] staleMs@obs=[31744,31744] subjectFreshFrom=[31.296,31.306]
+   server: [{"t":-29.269,"event":"participant_joined","sid":"PA_B5dXfDoa5dqf","reason":null},{"t":-29.187,"event":"track_published","sid":"PA_B5dXfDoa5dqf","reason":null},{"t":27.071,"event":"track_unpublished","sid":"PA_B5dXfDoa5dqf","reason":null},{"t":27.077,"event":"participant_left","sid":"PA_B5dXfDoa5dqf","reason":"CONNECTION_TIMEOUT"},{"t":31.186,"event":"participant_joined","sid":"PA_gwgiFU4JJ2WM","r
+   O1 saw: [{"t":27.061,"sid":"PA_B5dXfDoa5dqf","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.099,"sid":"PA_gwgiFU4JJ2WM","state":"JOINED","reason":null},{"t":31.261,"sid":"PA_gwgiFU4JJ2WM","state":"ACTIVE","reason":null},{"t":84.162,"sid":"PA_gwgiFU4JJ2WM","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.062,"sid":"PA_B5dXfDoa5dqf","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.1,"sid":"PA_gwgiFU4JJ2WM","state":"JOINED","reason":null},{"t":31.261,"sid":"PA_gwgiFU4JJ2WM","state":"ACTIVE","reason":null},{"t":84.161,"sid":"PA_gwgiFU4JJ2WM","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-I-20261001T054557-20  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_JuLUBufC39Qg -> PA_F2uYM4vx6yoY
+   actions: transport_restart@7.065s ok (2.037s) ; transport_restart@14.265s ok (2.032s) ; transport_restart@21.465s resume did not complete (2.021s) ; transport_restart@28.665s RECONNECT/STATE_MISMATCH (0.008s) ; rebuild@28.865s ok (2.397s)
+   isolation: media planned 30s actual 30.01s | detected@2.065s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.108,"kind":"resume"}]
+   freshness: fromRestore=1.58s recovered_t=31.707s observersFreshAgain=[31.707,31.706] staleMs@obs=[31707,31706] subjectFreshFrom=[31.281,31.281]
+   server: [{"t":-29.834,"event":"participant_joined","sid":"PA_JuLUBufC39Qg","reason":null},{"t":-29.741,"event":"track_published","sid":"PA_JuLUBufC39Qg","reason":null},{"t":27.119,"event":"track_unpublished","sid":"PA_JuLUBufC39Qg","reason":null},{"t":27.123,"event":"participant_left","sid":"PA_JuLUBufC39Qg","reason":"CONNECTION_TIMEOUT"},{"t":31.167,"event":"participant_joined","sid":"PA_F2uYM4vx6yoY","r
+   O1 saw: [{"t":27.108,"sid":"PA_JuLUBufC39Qg","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":31.245,"sid":"PA_F2uYM4vx6yoY","state":"ACTIVE","reason":null},{"t":83.539,"sid":"PA_F2uYM4vx6yoY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.108,"sid":"PA_JuLUBufC39Qg","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":31.244,"sid":"PA_F2uYM4vx6yoY","state":"ACTIVE","reason":null},{"t":83.539,"sid":"PA_F2uYM4vx6yoY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-O-20261001T051737-8  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_KCpZjNY7m3MZ -> PA_68znZDXCexMS
+   actions: transport_restart@6.974s ok (2.025s) ; transport_restart@14.174s ok (2.022s) ; transport_restart@21.374s resume did not complete (2.021s) ; transport_restart@28.574s RECONNECT/STATE_MISMATCH (0.008s) ; rebuild@28.774s ok (2.403s)
+   isolation: media planned 30s actual 30s | detected@1.974s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.008,"kind":"resume"}]
+   freshness: fromRestore=1.212s recovered_t=31.336s observersFreshAgain=[31.336,31.327] staleMs@obs=[30848,30848] subjectFreshFrom=[31.206,31.206]
+   server: [{"t":-29.366,"event":"participant_joined","sid":"PA_KCpZjNY7m3MZ","reason":null},{"t":-29.243,"event":"track_published","sid":"PA_KCpZjNY7m3MZ","reason":null},{"t":27.017,"event":"track_unpublished","sid":"PA_KCpZjNY7m3MZ","reason":null},{"t":27.021,"event":"participant_left","sid":"PA_KCpZjNY7m3MZ","reason":"CONNECTION_TIMEOUT"},{"t":31.087,"event":"participant_joined","sid":"PA_68znZDXCexMS","r
+   O1 saw: [{"t":27.009,"sid":"PA_KCpZjNY7m3MZ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.345,"sid":"PA_68znZDXCexMS","state":"JOINED","reason":null},{"t":31.161,"sid":"PA_68znZDXCexMS","state":"ACTIVE","reason":null},{"t":83.618,"sid":"PA_68znZDXCexMS","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.008,"sid":"PA_KCpZjNY7m3MZ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.344,"sid":"PA_68znZDXCexMS","state":"JOINED","reason":null},{"t":31.164,"sid":"PA_68znZDXCexMS","state":"ACTIVE","reason":null},{"t":83.618,"sid":"PA_68znZDXCexMS","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-O-20261001T053627-16  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_yRX6FQfbLwJ2 -> PA_VJcBVoH6RnNt
+   actions: transport_restart@7.129s ok (2.026s) ; transport_restart@14.329s ok (2.021s) ; transport_restart@21.529s resume did not complete (2.022s) ; transport_restart@28.729s RECONNECT/STATE_MISMATCH (0.008s) ; rebuild@28.929s ok (1.352s)
+   isolation: media planned 30s actual 30.01s | detected@1.929s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.169,"kind":"resume"}]
+   freshness: fromRestore=0.398s recovered_t=30.537s observersFreshAgain=[30.504,30.537] staleMs@obs=[30464,30499] subjectFreshFrom=[30.297,30.308]
+   server: [{"t":-29.372,"event":"participant_joined","sid":"PA_yRX6FQfbLwJ2","reason":null},{"t":-29.276,"event":"track_published","sid":"PA_yRX6FQfbLwJ2","reason":null},{"t":27.179,"event":"track_unpublished","sid":"PA_yRX6FQfbLwJ2","reason":null},{"t":27.184,"event":"participant_left","sid":"PA_yRX6FQfbLwJ2","reason":"CONNECTION_TIMEOUT"},{"t":30.233,"event":"participant_joined","sid":"PA_VJcBVoH6RnNt","r
+   O1 saw: [{"t":27.171,"sid":"PA_yRX6FQfbLwJ2","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.334,"sid":"PA_VJcBVoH6RnNt","state":"JOINED","reason":null},{"t":30.265,"sid":"PA_VJcBVoH6RnNt","state":"ACTIVE","reason":null},{"t":83.792,"sid":"PA_VJcBVoH6RnNt","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.171,"sid":"PA_yRX6FQfbLwJ2","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.334,"sid":"PA_VJcBVoH6RnNt","state":"JOINED","reason":null},{"t":30.265,"sid":"PA_VJcBVoH6RnNt","state":"ACTIVE","reason":null},{"t":83.792,"sid":"PA_VJcBVoH6RnNt","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-O-20261001T055520-24  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_KYKZhFpdy2fe -> PA_uppz3GtjuuUZ
+   actions: transport_restart@7.009s ok (2.042s) ; transport_restart@14.209s ok (2.021s) ; transport_restart@21.409s resume did not complete (2.023s) ; transport_restart@28.609s RECONNECT/STATE_MISMATCH (0.007s) ; rebuild@28.809s ok (2.352s)
+   isolation: media planned 30s actual 30s | detected@2.009s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.248,"kind":"resume"}]
+   freshness: fromRestore=1.219s recovered_t=31.356s observersFreshAgain=[31.356,31.295] staleMs@obs=[31356,31295] subjectFreshFrom=[31.182,31.182]
+   server: [{"t":-29.289,"event":"participant_joined","sid":"PA_KYKZhFpdy2fe","reason":null},{"t":-29.198,"event":"track_published","sid":"PA_KYKZhFpdy2fe","reason":null},{"t":27.26,"event":"track_unpublished","sid":"PA_KYKZhFpdy2fe","reason":null},{"t":27.269,"event":"participant_left","sid":"PA_KYKZhFpdy2fe","reason":"CONNECTION_TIMEOUT"},{"t":31.099,"event":"participant_joined","sid":"PA_uppz3GtjuuUZ","re
+   O1 saw: [{"t":27.25,"sid":"PA_KYKZhFpdy2fe","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.385,"sid":"PA_uppz3GtjuuUZ","state":"JOINED","reason":null},{"t":31.145,"sid":"PA_uppz3GtjuuUZ","state":"ACTIVE","reason":null},{"t":83.67,"sid":"PA_uppz3GtjuuUZ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.252,"sid":"PA_KYKZhFpdy2fe","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.385,"sid":"PA_uppz3GtjuuUZ","state":"JOINED","reason":null},{"t":31.147,"sid":"PA_uppz3GtjuuUZ","state":"ACTIVE","reason":null},{"t":83.671,"sid":"PA_uppz3GtjuuUZ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== SUMMARY
+   livekit/isolation                24/24 pass
+   aborts logged: 0
+
+=== SHAKEDOWN CELLS (stack | arm | mode | D | regime | detect | recovered-from-restore | stale@obs | server | observers | actions)
+   livekit  I all   10s | R1 transport restart   |  2.043 |    7.55 | [15331,15078]   | S-silent    | O-nothing        | TR@7.043+
+   livekit  I all   10s | R1 transport restart   |  1.922 |   4.091 | [10368,10368]   | S-silent    | O-nothing        | TR@6.922+
+   livekit  I all   10s | R1 transport restart   |  0.279 |   6.152 | [12672,12672]   | S-silent    | O-nothing        | TR@5.279+ TR@18.879+
+   livekit  I all   30s | R2 rebuild             |  2.102 |   4.188 | [33771,33781]   | S-replaced  | O-left+returned  | TR@7.303- TR@27.502!RECONNECT/STATE_MISMATCH RB@33.702+
+   livekit  I all   30s | R2 rebuild             |  2.103 |   4.565 | [34261,34261]   | S-replaced  | O-left+returned  | TR@7.303- TR@27.503!RECONNECT/STATE_MISMATCH RB@33.703+
+   livekit  I all   30s | R2 rebuild             |  2.006 |   4.233 | [34256,34267]   | S-replaced  | O-left+returned  | TR@7.006- TR@27.206!RECONNECT/STATE_MISMATCH RB@33.406+
+   livekit  I media 10s | R1 transport restart   |  1.975 |   12.29 | [19968,20224]   | S-silent    | O-nothing        | TR@6.975+
+   livekit  I media 10s | R1 transport restart   |  2.092 |  11.738 | [19171,19160]   | S-silent    | O-nothing        | TR@7.092+
+   livekit  I media 10s | R1 transport restart   |  2.075 |  13.078 | [19328,19456]   | S-silent    | O-nothing        | TR@7.076+
+   livekit  I media 30s | R2 rebuild             |  1.971 |   1.199 | [30837,30827]   | S-replaced  | O-left+returned  | TR@6.972+ TR@14.171+ TR@21.371- TR@28.571!RECONNECT/STATE_MISMATCH RB@28.771+
+   livekit  I media 30s | R2 rebuild             |  2.021 |   1.633 | [31744,31744]   | S-replaced  | O-left+returned  | TR@7.022+ TR@14.221+ TR@21.422- TR@28.621!RECONNECT/STATE_MISMATCH RB@28.822+
+   livekit  I media 30s | R2 rebuild             |  2.065 |    1.58 | [31707,31706]   | S-replaced  | O-left+returned  | TR@7.065+ TR@14.265+ TR@21.465- TR@28.665!RECONNECT/STATE_MISMATCH RB@28.865+
+   livekit  O all   10s | R1 transport restart   |  2.143 |   8.524 | [15104,15232]   | S-silent    | O-nothing        | TR@7.143+
+   livekit  O all   10s | R1 transport restart   |  1.988 |  12.625 | [19200,18944]   | S-silent    | O-nothing        | TR@6.988+
+   livekit  O all   10s | R1 transport restart   |  1.891 |   3.975 | [10706,10714]   | S-silent    | O-nothing        | TR@6.891+
+   livekit  O all   30s | R2 rebuild             |  1.994 |   3.949 | [34019,33944]   | S-replaced  | O-left+returned  | TR@6.994- TR@27.194!RECONNECT/STATE_MISMATCH RB@33.394+
+   livekit  O all   30s | R2 rebuild             |  1.884 |   4.162 | [33792,33664]   | S-replaced  | O-left+returned  | TR@6.885- TR@27.084!RECONNECT/STATE_MISMATCH RB@33.284+
+   livekit  O all   30s | R2 rebuild             |  2.078 |   4.057 | [33664,33664]   | S-replaced  | O-left+returned  | TR@7.078- TR@27.278!RECONNECT/STATE_MISMATCH RB@33.478+
+   livekit  O media 10s | R1 transport restart   |  2.112 |  12.033 | [19584,19712]   | S-silent    | O-nothing        | TR@7.112+
+   livekit  O media 10s | R1 transport restart   |  1.895 |   5.268 | [12544,12672]   | S-silent    | O-nothing        | TR@6.895+
+   livekit  O media 10s | R1 transport restart   |  2.144 |  12.832 | [20029,20407]   | S-silent    | O-nothing        | TR@7.144+
+   livekit  O media 30s | R2 rebuild             |  1.974 |   1.212 | [30848,30848]   | S-replaced  | O-left+returned  | TR@6.974+ TR@14.174+ TR@21.374- TR@28.574!RECONNECT/STATE_MISMATCH RB@28.774+
+   livekit  O media 30s | R2 rebuild             |  1.929 |   0.398 | [30464,30499]   | S-replaced  | O-left+returned  | TR@7.129+ TR@14.329+ TR@21.529- TR@28.729!RECONNECT/STATE_MISMATCH RB@28.929+
+   livekit  O media 30s | R2 rebuild             |  2.009 |   1.219 | [31356,31295]   | S-replaced  | O-left+returned  | TR@7.009+ TR@14.209+ TR@21.409- TR@28.609!RECONNECT/STATE_MISMATCH RB@28.809+

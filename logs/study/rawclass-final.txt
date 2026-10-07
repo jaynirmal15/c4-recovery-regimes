@@ -1,0 +1,56 @@
+
+=== livekit, membership-silent trials: n=109  (true regimes: R1×109)
+  toSubject    correct 109/109
+     true R1 (n=109) -> R1×109   evidence: ReconnectResponse×1×54  ReconnectResponse×3×15  ReconnectResponse×4×35  ReconnectResponse×5×5  leave{RESUME,CONNECTION_TIMEOUT}×40
+  toObservers  correct 0/109
+     true R1 (n=109) -> R0|R1×109   evidence: ConnectionQualityUpdate≠EXCELLENT×109
+  fromSubject  correct 109/109
+     true R1 (n=109) -> R1×109   evidence: socket opened, JoinRequest{reconnect:true, participantSid}×109
+  serverSurface correct 0/109
+     true R1 (n=109) -> R0|R1×109   evidence: (no frame at all)×109
+
+=== livekit, all trials: n=150  (true regimes: R1×109  R2×41)
+  toSubject    correct 150/150
+     true R1 (n=109) -> R1×109   evidence: ReconnectResponse×1×54  ReconnectResponse×3×15  ReconnectResponse×4×35  ReconnectResponse×5×5  leave{RESUME,CONNECTION_TIMEOUT}×40
+     true R2 (n=41) -> R2×41   evidence: JoinResponse×41  leave{RECONNECT,STATE_MISMATCH}×41
+  toObservers  correct 41/150
+     true R1 (n=109) -> R0|R1×109   evidence: ConnectionQualityUpdate≠EXCELLENT×109
+     true R2 (n=41) -> R2×41   evidence: ConnectionQualityUpdate≠EXCELLENT×41  ParticipantUpdate{DISCONNECTED}×41  ParticipantUpdate{new sid}×41
+  fromSubject  correct 150/150
+     true R1 (n=109) -> R1×109   evidence: socket opened, JoinRequest{reconnect:true, participantSid}×109
+     true R2 (n=41) -> R2×41   evidence: socket opened, JoinRequest{reconnect:false}×41  socket opened, JoinRequest{reconnect:true, participantSid}×41
+  serverSurface correct 41/150
+     true R1 (n=109) -> R0|R1×109   evidence: (no frame at all)×109
+     true R2 (n=41) -> R2×41   evidence: participant_joined×41  participant_left×41  track_published×41  track_unpublished×41
+
+=== janus, membership-silent trials: n=55  (true regimes: R0×19  R1×36)
+  toSubject    correct 55/55
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×4  media{receiving:false}×15
+     true R1 (n=36) -> R1×36   evidence: event{configured, jsep answer}×36  event{jsep offer} (subscriber)×36  media{receiving:false}×16  success{session_id} (claim reply)×20
+  toObservers  correct 55/55
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×19
+     true R1 (n=36) -> R1×36   evidence: event{publishers:[101]}×36
+  fromSubject  correct 55/55
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×19
+     true R1 (n=36) -> R1×36   evidence: claim×20  configure{jsep offer | restart:true}×36
+  serverSurface correct 55/55
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×4  media receiving=false (type 32)×15
+     true R1 (n=36) -> R1×36   evidence: ICE state events (type 16)×36  handle attached (type 2)×20  jsep events (type 8)×36  media receiving=false (type 32)×36
+
+=== janus, all trials: n=65  (true regimes: R0×19  R1×36  R2×10)
+  toSubject    correct 65/65
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×4  media{receiving:false}×15
+     true R1 (n=36) -> R1×36   evidence: event{configured, jsep answer}×36  event{jsep offer} (subscriber)×36  media{receiving:false}×16  success{session_id} (claim reply)×20
+     true R2 (n=10) -> R2×10   evidence: error 458×10  event{configured, jsep answer}×10  event{jsep offer} (subscriber)×10  event{videoroom:joined}×10  success{data.id} (create reply)×10
+  toObservers  correct 65/65
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×19
+     true R1 (n=36) -> R1×36   evidence: event{publishers:[101]}×36
+     true R2 (n=10) -> R2×10   evidence: event{publishers:[101]}×10  event{unpublished|leaving:101}×10
+  fromSubject  correct 65/65
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×19
+     true R1 (n=36) -> R1×36   evidence: claim×20  configure{jsep offer | restart:true}×36
+     true R2 (n=10) -> R2×10   evidence: claim×10  configure{jsep offer | restart:true}×10  create×10
+  serverSurface correct 65/65
+     true R0 (n=19) -> R0×19   evidence: (no frame at all)×4  media receiving=false (type 32)×15
+     true R1 (n=36) -> R1×36   evidence: ICE state events (type 16)×36  handle attached (type 2)×20  jsep events (type 8)×36  media receiving=false (type 32)×36
+     true R2 (n=10) -> R2×10   evidence: media receiving=false (type 32)×10  plugin joined (new session)×10  session timeout×10

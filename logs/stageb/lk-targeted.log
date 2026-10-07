@@ -1,0 +1,22 @@
+[02:21:05.699] livekit-healthy_rebuild-I-20260930T022048-1 join_O1 {"sessionId":"PA_CBtNzn5RMgAH"}
+[02:21:07.848] livekit-healthy_rebuild-I-20260930T022048-1 join_O2 {"sessionId":"PA_r9m5hersrbKQ"}
+[02:21:09.948] livekit-healthy_rebuild-I-20260930T022048-1 join_S {"sessionId":"PA_rvGo9GxZ3xgJ"}
+[02:21:14.162] livekit-healthy_rebuild-I-20260930T022048-1 media_flowing {}
+[02:21:30.528] livekit-healthy_rebuild-I-20260930T022048-1 arm_O1 {"S":75.19921875,"O2":73.801025390625}
+[02:21:31.912] livekit-healthy_rebuild-I-20260930T022048-1 arm_O2 {"S":59.13916015625,"O1":78.233642578125}
+[02:21:33.326] livekit-healthy_rebuild-I-20260930T022048-1 arm_S {"O1":61.6513671875,"O2":57.332763671875}
+[02:21:40.012] livekit-healthy_rebuild-I-20260930T022048-1 trigger {"kind":"rebuild","tStart":1790734899675.1,"sid0":"PA_rvGo9GxZ3xgJ","tEnd":1790734900061.5,"result":{"ok":true,"sessionId":"PA_GweThHAqvRXj","oldSessionId":"PA_rvGo9GxZ3xgJ"},"sid1":"PA_GweThHAqvRXj"}
+[02:23:39.908] livekit-healthy_rebuild-I-20260930T022048-1 VALID
+[02:23:57.628] livekit-healthy_rebuild-I-20260930T022339-2 join_O1 {"sessionId":"PA_9J79xWWAanfJ"}
+[02:23:59.684] livekit-healthy_rebuild-I-20260930T022339-2 join_O2 {"sessionId":"PA_pMrcPFWPKmHu"}
+[02:24:01.997] livekit-healthy_rebuild-I-20260930T022339-2 join_S {"sessionId":"PA_nic2CPJSHgh5"}
+[02:24:06.149] livekit-healthy_rebuild-I-20260930T022339-2 media_flowing {}
+[02:24:23.079] livekit-healthy_rebuild-I-20260930T022339-2 arm_O1 {"S":72.430908203125,"O2":64.484375}
+[02:24:24.574] livekit-healthy_rebuild-I-20260930T022339-2 arm_O2 {"S":62.58740234375,"O1":75.533935546875}
+[02:24:25.994] livekit-healthy_rebuild-I-20260930T022339-2 arm_S {"O1":68.407958984375,"O2":69.2587890625}
+[02:24:32.825] livekit-healthy_rebuild-I-20260930T022339-2 trigger {"kind":"rebuild","tStart":1790735072483.1,"sid0":"PA_nic2CPJSHgh5","tEnd":1790735072876.6,"result":{"ok":true,"sessionId":"PA_bPgsXmwYbQrM","oldSessionId":"PA_nic2CPJSHgh5"},"sid1":"PA_bPgsXmwYbQrM"}
+[02:26:31.072] livekit-healthy_rebuild-I-20260930T022339-2 VALID
+[02:27:00.352] livekit-healthy_rebuild-I-20260930T022631-3 join_O1 {"sessionId":"PA_zbzL2PXBwi3U"}
+[02:51:24.325] livekit-healthy_rebuild-I-20260930T022631-3 runner_error {"e":"spawnSync kubectl ETIMEDOUT"}
+Unable to connect to the server: dial tcp: lookup <eks-endpoint>: no such host
+[23:27:54.227] livekit-healthy_rebuild-I-20260930T022631-3 INVALID: runner error: spawnSync kubectl ETIMEDOUT

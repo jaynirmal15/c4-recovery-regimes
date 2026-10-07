@@ -1,0 +1,181 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 04cdea0f-c133-3a35-b9db-4e75a0665dd9 submitted
+==> EKS update 04cdea0f-c133-3a35-b9db-4e75a0665dd9: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 4s elapsed
+==> waiting: 2/3 nodes Ready, 3 instance(s) live, 28s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (51s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP       OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-0-110.ec2.internal    Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.0.110    <node-ip>     Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-17-200.ec2.internal   Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.17.200   <node-ip>        Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-6-114.ec2.internal    Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.6.114    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-06T03:33:39Z
+deployment "event-sink" successfully rolled out
+deployment "event-sink" successfully rolled out
+[03:34:44.819] switched to janus
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[03:35:57.532] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1791257757607.374}
+[03:35:59.043] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1791257759138.5115}
+[03:36:00.597] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1791257760688.5059}
+[03:36:00.710] study janus planned 10 trials
+[03:36:21.049] janus-iso-media-16s-O-20261006T033600-1 janus_room {"videoroom":"created","room":17700,"permanent":false}
+[03:36:31.901] janus-iso-media-16s-O-20261006T033600-1 join_O1 {"sessionId":"7706038900893456"}
+[03:36:33.925] janus-iso-media-16s-O-20261006T033600-1 join_O2 {"sessionId":"7518011090931598"}
+[03:36:35.996] janus-iso-media-16s-O-20261006T033600-1 join_S {"sessionId":"6201924276610631"}
+[03:36:40.138] janus-iso-media-16s-O-20261006T033600-1 media_flowing {}
+[03:36:59.038] janus-iso-media-16s-O-20261006T033600-1 arm_O1 {"S":66.24365234375,"O2":67.42919921875}
+[03:37:00.493] janus-iso-media-16s-O-20261006T033600-1 arm_O2 {"S":76.796142578125,"O1":84.552490234375}
+[03:37:02.284] janus-iso-media-16s-O-20261006T033600-1 arm_S {"O1":92.8134765625,"O2":59.98828125}
+[03:37:08.775] janus-iso-media-16s-O-20261006T033600-1 isolate_on {"mode":"media","durMs":16000,"onset":{"before":1791257828826.5068,"after":1791257828837.6848},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:37:27.653] janus-iso-media-16s-O-20261006T033600-1 isolate_off {"mode":"media","durMs":16000,"onset":{"before":1791257828826.5068,"after":1791257828837.6848},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:38:51.704] janus-iso-media-16s-O-20261006T033600-1 VALID
+[03:39:11.104] janus-iso-media-20s-O-20261006T033851-2 janus_room {"videoroom":"created","room":10553,"permanent":false}
+[03:39:17.627] janus-iso-media-20s-O-20261006T033851-2 join_O1 {"sessionId":"547397874169455"}
+[03:39:19.463] janus-iso-media-20s-O-20261006T033851-2 join_O2 {"sessionId":"2165482896137599"}
+[03:39:21.394] janus-iso-media-20s-O-20261006T033851-2 join_S {"sessionId":"3921063520408618"}
+[03:39:25.619] janus-iso-media-20s-O-20261006T033851-2 media_flowing {}
+[03:39:46.792] janus-iso-media-20s-O-20261006T033851-2 arm_O1 {"S":73.407958984375,"O2":57.2890625}
+[03:39:48.339] janus-iso-media-20s-O-20261006T033851-2 arm_O2 {"S":67.630126953125,"O1":54.36669921875}
+[03:39:49.792] janus-iso-media-20s-O-20261006T033851-2 arm_S {"O1":72.9716796875,"O2":60.1103515625}
+[03:39:56.366] janus-iso-media-20s-O-20261006T033851-2 isolate_on {"mode":"media","durMs":20000,"onset":{"before":1791257996452.935,"after":1791257996462.3955},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"re
+[03:40:19.833] janus-iso-media-20s-O-20261006T033851-2 isolate_off {"mode":"media","durMs":20000,"onset":{"before":1791257996452.935,"after":1791257996462.3955},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"re
+[03:41:45.725] janus-iso-media-20s-O-20261006T033851-2 VALID
+[03:42:05.104] janus-iso-media-16s-O-20261006T034145-3 janus_room {"videoroom":"created","room":85046,"permanent":false}
+[03:42:13.088] janus-iso-media-16s-O-20261006T034145-3 join_O1 {"sessionId":"3986370835175698"}
+[03:42:15.140] janus-iso-media-16s-O-20261006T034145-3 join_O2 {"sessionId":"4116411617227764"}
+[03:42:17.590] janus-iso-media-16s-O-20261006T034145-3 join_S {"sessionId":"7758384891426981"}
+[03:42:22.342] janus-iso-media-16s-O-20261006T034145-3 media_flowing {}
+[03:42:41.439] janus-iso-media-16s-O-20261006T034145-3 arm_O1 {"S":60.442626953125,"O2":64.129638671875}
+[03:42:43.891] janus-iso-media-16s-O-20261006T034145-3 arm_O2 {"S":61.884033203125,"O1":70.4326171875}
+[03:42:45.479] janus-iso-media-16s-O-20261006T034145-3 arm_S {"O1":73.1787109375,"O2":63.9951171875}
+[03:42:52.078] janus-iso-media-16s-O-20261006T034145-3 isolate_on {"mode":"media","durMs":16000,"onset":{"before":1791258172161.796,"after":1791258172174.287},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"res
+[03:43:10.853] janus-iso-media-16s-O-20261006T034145-3 isolate_off {"mode":"media","durMs":16000,"onset":{"before":1791258172161.796,"after":1791258172174.287},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"res
+[03:44:33.301] janus-iso-media-16s-O-20261006T034145-3 VALID
+[03:44:54.054] janus-iso-media-20s-O-20261006T034433-4 janus_room {"videoroom":"created","room":50438,"permanent":false}
+[03:45:00.562] janus-iso-media-20s-O-20261006T034433-4 join_O1 {"sessionId":"8442470803085759"}
+[03:45:02.504] janus-iso-media-20s-O-20261006T034433-4 join_O2 {"sessionId":"4668456387384182"}
+[03:45:04.388] janus-iso-media-20s-O-20261006T034433-4 join_S {"sessionId":"4355792796132991"}
+[03:45:09.270] janus-iso-media-20s-O-20261006T034433-4 media_flowing {}
+[03:45:28.068] janus-iso-media-20s-O-20261006T034433-4 arm_O1 {"S":70.096923828125,"O2":64.261962890625}
+[03:45:29.588] janus-iso-media-20s-O-20261006T034433-4 arm_O2 {"S":64.408935546875,"O1":67.8330078125}
+[03:45:31.013] janus-iso-media-20s-O-20261006T034433-4 arm_S {"O1":64.436279296875,"O2":64.44091796875}
+[03:45:37.472] janus-iso-media-20s-O-20261006T034433-4 isolate_on {"mode":"media","durMs":20000,"onset":{"before":1791258337547.1238,"after":1791258337559.4219},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:46:00.498] janus-iso-media-20s-O-20261006T034433-4 isolate_off {"mode":"media","durMs":20000,"onset":{"before":1791258337547.1238,"after":1791258337559.4219},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:47:22.167] janus-iso-media-20s-O-20261006T034433-4 VALID
+[03:47:44.414] janus-iso-media-20s-O-20261006T034722-5 janus_room {"videoroom":"created","room":77933,"permanent":false}
+[03:47:52.029] janus-iso-media-20s-O-20261006T034722-5 join_O1 {"sessionId":"510695447359041"}
+[03:47:53.881] janus-iso-media-20s-O-20261006T034722-5 join_O2 {"sessionId":"7112280709459429"}
+[03:47:55.734] janus-iso-media-20s-O-20261006T034722-5 join_S {"sessionId":"1431339796199232"}
+[03:47:59.940] janus-iso-media-20s-O-20261006T034722-5 media_flowing {}
+[03:48:18.359] janus-iso-media-20s-O-20261006T034722-5 arm_O1 {"S":61.8330078125,"O2":79.080810546875}
+[03:48:19.760] janus-iso-media-20s-O-20261006T034722-5 arm_O2 {"S":60.847412109375,"O1":72.750244140625}
+[03:48:21.194] janus-iso-media-20s-O-20261006T034722-5 arm_S {"O1":82.10888671875,"O2":65.377197265625}
+[03:48:27.604] janus-iso-media-20s-O-20261006T034722-5 isolate_on {"mode":"media","durMs":20000,"onset":{"before":1791258507690.3923,"after":1791258507701.1306},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:48:50.325] janus-iso-media-20s-O-20261006T034722-5 isolate_off {"mode":"media","durMs":20000,"onset":{"before":1791258507690.3923,"after":1791258507701.1306},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:50:07.035] janus-iso-media-20s-O-20261006T034722-5 VALID
+[03:50:25.948] janus-iso-media-16s-O-20261006T035007-6 janus_room {"videoroom":"created","room":41617,"permanent":false}
+[03:50:32.286] janus-iso-media-16s-O-20261006T035007-6 join_O1 {"sessionId":"7732463979220676"}
+[03:50:34.235] janus-iso-media-16s-O-20261006T035007-6 join_O2 {"sessionId":"7252298399376550"}
+[03:50:36.078] janus-iso-media-16s-O-20261006T035007-6 join_S {"sessionId":"6718491933284511"}
+[03:50:40.068] janus-iso-media-16s-O-20261006T035007-6 media_flowing {}
+[03:50:58.877] janus-iso-media-16s-O-20261006T035007-6 arm_O1 {"S":65.21728515625,"O2":71.40771484375}
+[03:51:00.201] janus-iso-media-16s-O-20261006T035007-6 arm_O2 {"S":61.411865234375,"O1":58.004150390625}
+[03:51:01.564] janus-iso-media-16s-O-20261006T035007-6 arm_S {"O1":72.991455078125,"O2":59.96435546875}
+[03:51:07.883] janus-iso-media-16s-O-20261006T035007-6 isolate_on {"mode":"media","durMs":16000,"onset":{"before":1791258667973.3396,"after":1791258667984.2556},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:51:25.903] janus-iso-media-16s-O-20261006T035007-6 isolate_off {"mode":"media","durMs":16000,"onset":{"before":1791258667973.3396,"after":1791258667984.2556},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:52:46.370] janus-iso-media-16s-O-20261006T035007-6 VALID
+[03:53:05.850] janus-iso-media-20s-O-20261006T035246-7 janus_room {"videoroom":"created","room":20120,"permanent":false}
+[03:53:12.535] janus-iso-media-20s-O-20261006T035246-7 join_O1 {"sessionId":"3670799344839132"}
+[03:53:14.405] janus-iso-media-20s-O-20261006T035246-7 join_O2 {"sessionId":"5549946200041689"}
+[03:53:16.323] janus-iso-media-20s-O-20261006T035246-7 join_S {"sessionId":"1583403304576218"}
+[03:53:20.574] janus-iso-media-20s-O-20261006T035246-7 media_flowing {}
+[03:53:39.494] janus-iso-media-20s-O-20261006T035246-7 arm_O1 {"S":66.80517578125,"O2":81.7412109375}
+[03:53:40.812] janus-iso-media-20s-O-20261006T035246-7 arm_O2 {"S":69.67919921875,"O1":60.361572265625}
+[03:53:42.137] janus-iso-media-20s-O-20261006T035246-7 arm_S {"O1":65.095703125,"O2":63.8330078125}
+[03:53:48.595] janus-iso-media-20s-O-20261006T035246-7 isolate_on {"mode":"media","durMs":20000,"onset":{"before":1791258828697.1523,"after":1791258828706.6968},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:54:11.626] janus-iso-media-20s-O-20261006T035246-7 isolate_off {"mode":"media","durMs":20000,"onset":{"before":1791258828697.1523,"after":1791258828706.6968},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:55:35.929] janus-iso-media-20s-O-20261006T035246-7 VALID
+[03:55:56.217] janus-iso-media-20s-O-20261006T035535-8 janus_room {"videoroom":"created","room":72235,"permanent":false}
+[03:56:04.705] janus-iso-media-20s-O-20261006T035535-8 join_O1 {"sessionId":"921179084233221"}
+[03:56:07.307] janus-iso-media-20s-O-20261006T035535-8 join_O2 {"sessionId":"8327812728549701"}
+[03:56:09.583] janus-iso-media-20s-O-20261006T035535-8 join_S {"sessionId":"1656798665833138"}
+[03:56:13.879] janus-iso-media-20s-O-20261006T035535-8 media_flowing {}
+[03:56:32.850] janus-iso-media-20s-O-20261006T035535-8 arm_O1 {"S":65.23583984375,"O2":72.482666015625}
+[03:56:34.828] janus-iso-media-20s-O-20261006T035535-8 arm_O2 {"S":63.939208984375,"O1":72.0244140625}
+[03:56:37.018] janus-iso-media-20s-O-20261006T035535-8 arm_S {"O1":73.813720703125,"O2":68.345703125}
+[03:56:43.535] janus-iso-media-20s-O-20261006T035535-8 isolate_on {"mode":"media","durMs":20000,"onset":{"before":1791259003629.7217,"after":1791259003639.7825},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:57:06.683] janus-iso-media-20s-O-20261006T035535-8 isolate_off {"mode":"media","durMs":20000,"onset":{"before":1791259003629.7217,"after":1791259003639.7825},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[03:58:33.770] janus-iso-media-20s-O-20261006T035535-8 VALID
+[03:58:54.460] janus-iso-media-16s-O-20261006T035833-9 janus_room {"videoroom":"created","room":10666,"permanent":false}
+[03:59:01.104] janus-iso-media-16s-O-20261006T035833-9 join_O1 {"sessionId":"926736354160414"}
+[03:59:02.946] janus-iso-media-16s-O-20261006T035833-9 join_O2 {"sessionId":"1566168206175315"}
+[03:59:04.840] janus-iso-media-16s-O-20261006T035833-9 join_S {"sessionId":"966486177398452"}
+[03:59:09.457] janus-iso-media-16s-O-20261006T035833-9 media_flowing {}
+[03:59:27.571] janus-iso-media-16s-O-20261006T035833-9 arm_O1 {"S":63.547119140625,"O2":62.378662109375}
+[03:59:28.990] janus-iso-media-16s-O-20261006T035833-9 arm_O2 {"S":65.78857421875,"O1":64.40625}
+[03:59:30.407] janus-iso-media-16s-O-20261006T035833-9 arm_S {"O1":77.350341796875,"O2":66.058837890625}
+[03:59:36.778] janus-iso-media-16s-O-20261006T035833-9 isolate_on {"mode":"media","durMs":16000,"onset":{"before":1791259176883.691,"after":1791259176894.4424},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"re
+[03:59:55.953] janus-iso-media-16s-O-20261006T035833-9 isolate_off {"mode":"media","durMs":16000,"onset":{"before":1791259176883.691,"after":1791259176894.4424},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"re
+[04:01:20.186] janus-iso-media-16s-O-20261006T035833-9 VALID
+[04:01:45.606] janus-iso-media-16s-O-20261006T040120-10 janus_room {"videoroom":"created","room":25643,"permanent":false}
+[04:01:53.032] janus-iso-media-16s-O-20261006T040120-10 join_O1 {"sessionId":"1771737926267046"}
+[04:01:54.876] janus-iso-media-16s-O-20261006T040120-10 join_O2 {"sessionId":"2202887218417698"}
+[04:01:57.023] janus-iso-media-16s-O-20261006T040120-10 join_S {"sessionId":"1096034842027544"}
+[04:02:03.910] janus-iso-media-16s-O-20261006T040120-10 media_flowing {}
+[04:02:23.232] janus-iso-media-16s-O-20261006T040120-10 arm_O1 {"S":75.031005859375,"O2":66.877685546875}
+[04:02:24.540] janus-iso-media-16s-O-20261006T040120-10 arm_O2 {"S":70.885498046875,"O1":66.67578125}
+[04:02:25.916] janus-iso-media-16s-O-20261006T040120-10 arm_S {"O1":61.101318359375,"O2":69.595947265625}
+[04:02:32.254] janus-iso-media-16s-O-20261006T040120-10 isolate_on {"mode":"media","durMs":16000,"onset":{"before":1791259352363.4849,"after":1791259352374.3123},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[04:02:52.053] janus-iso-media-16s-O-20261006T040120-10 isolate_off {"mode":"media","durMs":16000,"onset":{"before":1791259352363.4849,"after":1791259352374.3123},"rulesDuring":["-A INPUT -s 10.42.0.59/32 -p udp -j DROP","-A OUTPUT -d 10.42.0.59/32 -p udp -j DROP"],"r
+[04:04:16.879] janus-iso-media-16s-O-20261006T040120-10 VALID
+[04:04:16.887] study janus done {"media-16":5,"media-20":5}
+STUDY_EXIT=0
+=== BACKLOG_DONE 2026-10-06T04:04:16Z
+=== PARK 2026-10-06T04:04:16Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 4662a871-c967-33e8-a8af-01d7fc04f1ef submitted
+==> EKS update 4662a871-c967-33e8-a8af-01d7fc04f1ef: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 3s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 36s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 70s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 103s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 137s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 172s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 205s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 239s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 272s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 306s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 339s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 373s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 408s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 442s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 476s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 510s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 543s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 577s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 611s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 644s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 680s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 714s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 747s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 781s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 815s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 848s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 883s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 916s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 950s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 985s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1019s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-06T04:21:47Z

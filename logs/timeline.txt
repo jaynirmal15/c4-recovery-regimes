@@ -1,0 +1,12 @@
+05:20Z approval received; step 2 start
+05:29:59Z livekit deploy attempt 1 start
+05:31:20Z livekit deployed+verified (helm exit 0, API ok, webhook ok)
+05:39:17Z step0 verified: 2 nodes Ready, coturn 1/1, NLB active 21/21 healthy, STUN 5/5 (first batch 0/5 = warm-up; that background check exit 144 = killed hung probe)
+05:39:17Z janus deploy attempt 1 start
+05:48:25Z janus attempt 1 FAILED: CrashLoopBackOff, apt exit 100 "Version '1.4.1+ds-4' for 'janus' was not found". Cause: pinned source version; arm64 binary in snapshot 20260928T000000Z sid is 1.4.1+ds-4+b2 (binNMU, first seen 20260919). Evidence: logs/janus-attempt1-*.
+05:48:25Z janus deploy attempt 2 start (version pin corrected to 1.4.1+ds-4+b2)
+05:50:18Z janus deployed+verified (attempt 2 rollout exit 0; info/admin ok; sampleevh->sink ok)
+05:55:22Z livekit probes L1-L3 done; janus probes start
+05:57:50Z janus probes J1-J4 done (exit 0)
+06:04:19Z adapters+conformance done (exit 0; mutation caught exit 1); live adapter check exit 0; starting make park
+06:05:01Z make park exit 0 but NO-OP (terraform 0 changed; module ignore_changes desired_size; nodegroup desired still 2). Parking via aws eks update-nodegroup-config desiredSize=0

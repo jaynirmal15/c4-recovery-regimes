@@ -1,0 +1,230 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 9926c281-4725-3461-a83e-82bc12b1dc17 submitted
+==> EKS update 9926c281-4725-3461-a83e-82bc12b1dc17: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 3s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (27s)
+NAME                          STATUS   ROLES    AGE   VERSION               INTERNAL-IP   EXTERNAL-IP     OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-1-144.ec2.internal   Ready    <none>   13s   v1.36.4-eks-f4fc4f1   10.42.1.144   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-25-57.ec2.internal   Ready    <none>   14s   v1.36.4-eks-f4fc4f1   10.42.25.57   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-3-28.ec2.internal    Ready    <none>   14s   v1.36.4-eks-f4fc4f1   10.42.3.28    <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-01T02:10:49Z
+[02:11:13.284] switched to janus
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[02:12:11.100] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790820731169.2273}
+[02:12:12.432] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790820732507.883}
+[02:12:13.742] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790820733813.0571}
+[02:12:27.168] janus-healthy_rebuild-I-20261001T021213-1 janus_room {"videoroom":"created","room":71358,"permanent":false}
+[02:12:33.731] janus-healthy_rebuild-I-20261001T021213-1 join_O1 {"sessionId":"3882870963920305"}
+[02:12:35.594] janus-healthy_rebuild-I-20261001T021213-1 join_O2 {"sessionId":"2456651344360866"}
+[02:12:37.584] janus-healthy_rebuild-I-20261001T021213-1 join_S {"sessionId":"6524113841142464"}
+[02:12:41.557] janus-healthy_rebuild-I-20261001T021213-1 media_flowing {}
+[02:12:58.302] janus-healthy_rebuild-I-20261001T021213-1 arm_O1 {"S":77.39990234375,"O2":63.2763671875}
+[02:12:59.664] janus-healthy_rebuild-I-20261001T021213-1 arm_O2 {"S":70.5537109375,"O1":63.662109375}
+[02:13:01.046] janus-healthy_rebuild-I-20261001T021213-1 arm_S {"O1":71.85791015625,"O2":80.955810546875}
+[02:13:07.447] janus-healthy_rebuild-I-20261001T021213-1 trigger {"kind":"rebuild","tStart":1790820787500.5,"sid0":"6524113841142464","tEnd":1790820787521.6,"result":{"ok":false,"refused":"join/436","sessionId":"7629233062577797","oldSessionId":"6524113841142464"},
+[02:15:08.979] janus-healthy_rebuild-I-20261001T021213-1 VALID
+[02:15:22.314] janus-healthy_rebuild-I-20261001T021508-2 janus_room {"videoroom":"created","room":56799,"permanent":false}
+[02:15:28.799] janus-healthy_rebuild-I-20261001T021508-2 join_O1 {"sessionId":"2249343257895251"}
+[02:15:30.643] janus-healthy_rebuild-I-20261001T021508-2 join_O2 {"sessionId":"1668160210108541"}
+[02:15:32.585] janus-healthy_rebuild-I-20261001T021508-2 join_S {"sessionId":"2475980406312840"}
+[02:15:36.666] janus-healthy_rebuild-I-20261001T021508-2 media_flowing {}
+[02:15:53.043] janus-healthy_rebuild-I-20261001T021508-2 arm_O1 {"S":54.543212890625,"O2":65.612060546875}
+[02:15:54.379] janus-healthy_rebuild-I-20261001T021508-2 arm_O2 {"S":70.08837890625,"O1":73.57861328125}
+[02:15:55.749] janus-healthy_rebuild-I-20261001T021508-2 arm_S {"O1":67.974365234375,"O2":66.8427734375}
+[02:16:02.117] janus-healthy_rebuild-I-20261001T021508-2 trigger {"kind":"rebuild","tStart":1790820962173,"sid0":"2475980406312840","tEnd":1790820962192.7,"result":{"ok":false,"refused":"join/436","sessionId":"2437142802229030","oldSessionId":"2475980406312840"},"s
+[02:18:01.263] janus-healthy_rebuild-I-20261001T021508-2 VALID
+[02:18:14.325] janus-healthy_rebuild-I-20261001T021801-3 janus_room {"videoroom":"created","room":28876,"permanent":false}
+[02:18:20.412] janus-healthy_rebuild-I-20261001T021801-3 join_O1 {"sessionId":"4639547895240424"}
+[02:18:22.163] janus-healthy_rebuild-I-20261001T021801-3 join_O2 {"sessionId":"8361939113940617"}
+[02:18:24.002] janus-healthy_rebuild-I-20261001T021801-3 join_S {"sessionId":"6488932534506085"}
+[02:18:27.867] janus-healthy_rebuild-I-20261001T021801-3 media_flowing {}
+[02:18:45.135] janus-healthy_rebuild-I-20261001T021801-3 arm_O1 {"S":72.16455078125,"O2":62.77880859375}
+[02:18:46.480] janus-healthy_rebuild-I-20261001T021801-3 arm_O2 {"S":61.084228515625,"O1":62.7998046875}
+[02:18:47.768] janus-healthy_rebuild-I-20261001T021801-3 arm_S {"O1":70.52978515625,"O2":69.677978515625}
+[02:18:54.099] janus-healthy_rebuild-I-20261001T021801-3 trigger {"kind":"rebuild","tStart":1790821134157.1,"sid0":"6488932534506085","tEnd":1790821134177.7,"result":{"ok":false,"refused":"join/436","sessionId":"4962262759898085","oldSessionId":"6488932534506085"},
+[02:20:55.061] janus-healthy_rebuild-I-20261001T021801-3 VALID
+[02:21:08.140] janus-kick-I-20261001T022055-1 janus_room {"videoroom":"created","room":66926,"permanent":false}
+[02:21:14.300] janus-kick-I-20261001T022055-1 join_O1 {"sessionId":"3516593296894872"}
+[02:21:16.137] janus-kick-I-20261001T022055-1 join_O2 {"sessionId":"5359917686818472"}
+[02:21:17.977] janus-kick-I-20261001T022055-1 join_S {"sessionId":"4917764972675747"}
+[02:21:21.914] janus-kick-I-20261001T022055-1 media_flowing {}
+[02:21:39.168] janus-kick-I-20261001T022055-1 arm_O1 {"S":63.1005859375,"O2":75.923095703125}
+[02:21:40.501] janus-kick-I-20261001T022055-1 arm_O2 {"S":64.94140625,"O1":66.314453125}
+[02:21:41.796] janus-kick-I-20261001T022055-1 arm_S {"O1":62.72900390625,"O2":68.849365234375}
+[02:21:48.130] janus-kick-I-20261001T022055-1 trigger {"videoroom":"success"}
+[02:23:47.795] janus-kick-I-20261001T022055-1 VALID
+[02:24:05.364] janus-kick-I-20261001T022347-2 janus_room {"videoroom":"created","room":49058,"permanent":false}
+[02:24:12.268] janus-kick-I-20261001T022347-2 join_O1 {"sessionId":"5807512045419436"}
+[02:24:14.227] janus-kick-I-20261001T022347-2 join_O2 {"sessionId":"5080850699256017"}
+[02:24:18.412] janus-kick-I-20261001T022347-2 join_S {"sessionId":"2911709262590947"}
+[02:24:22.600] janus-kick-I-20261001T022347-2 media_flowing {}
+[02:24:40.668] janus-kick-I-20261001T022347-2 arm_O1 {"S":62.073486328125,"O2":60.2431640625}
+[02:24:42.020] janus-kick-I-20261001T022347-2 arm_O2 {"S":63.181884765625,"O1":61.2431640625}
+[02:24:43.453] janus-kick-I-20261001T022347-2 arm_S {"O1":62.20166015625,"O2":72.583251953125}
+[02:24:50.198] janus-kick-I-20261001T022347-2 trigger {"videoroom":"success"}
+[02:26:51.593] janus-kick-I-20261001T022347-2 VALID
+[02:27:05.437] janus-kick-I-20261001T022651-3 janus_room {"videoroom":"created","room":58368,"permanent":false}
+[02:27:12.047] janus-kick-I-20261001T022651-3 join_O1 {"sessionId":"8551923163955793"}
+[02:27:14.439] janus-kick-I-20261001T022651-3 join_O2 {"sessionId":"3939837680728420"}
+[02:27:16.526] janus-kick-I-20261001T022651-3 join_S {"sessionId":"6736559657957604"}
+[02:27:20.576] janus-kick-I-20261001T022651-3 media_flowing {}
+[02:27:37.787] janus-kick-I-20261001T022651-3 arm_O1 {"S":60.904541015625,"O2":64.447265625}
+[02:27:39.172] janus-kick-I-20261001T022651-3 arm_O2 {"S":76.805908203125,"O1":66.892578125}
+[02:27:40.515] janus-kick-I-20261001T022651-3 arm_S {"O1":69.937744140625,"O2":60.826904296875}
+[02:27:46.878] janus-kick-I-20261001T022651-3 trigger {"videoroom":"success"}
+[02:29:47.193] janus-kick-I-20261001T022651-3 VALID
+[02:30:00.755] janus-rogue-I-20261001T022947-1 janus_room {"videoroom":"created","room":11454,"permanent":false}
+[02:30:07.121] janus-rogue-I-20261001T022947-1 join_O1 {"sessionId":"5515680493377599"}
+[02:30:08.925] janus-rogue-I-20261001T022947-1 join_O2 {"sessionId":"8903934293807530"}
+[02:30:10.760] janus-rogue-I-20261001T022947-1 join_S {"sessionId":"7501797217341782"}
+[02:30:14.896] janus-rogue-I-20261001T022947-1 media_flowing {}
+[02:30:32.123] janus-rogue-I-20261001T022947-1 arm_O1 {"S":70.369873046875,"O2":63.571533203125}
+[02:30:35.815] janus-rogue-I-20261001T022947-1 arm_O2 {"S":73.435791015625,"O1":63.0556640625}
+[02:30:37.122] janus-rogue-I-20261001T022947-1 arm_S {"O1":68.770263671875,"O2":56.3173828125}
+[02:30:45.688] janus-rogue-I-20261001T022947-1 trigger {"violationsAfter":1}
+[02:32:45.604] janus-rogue-I-20261001T022947-1 INVALID: attribution violation(s): 1 (EXPECTED for the planted-rogue self-test)
+[02:32:58.932] ABORT janus-healthy_rebuild-I-20261001T023247-1: idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-67hwv@ip-10-42-25-57.ec2.internal; SFU-under-test node ip-10-42-25-57.ec2.internal holds a client or another SFU
+{"selftest":"placement","aborted":true,"reasons":["idle SFU deployment c4-livekit/livekit-livekit-server has replicas=1 (must be 0)","idle SFU has 1 pod(s): c4-livekit/livekit-livekit-server-7454f7cb68-67hwv@ip-10-42-25-57.ec2.internal","SFU-under-test node ip-10-42-25-57.ec2.internal holds a client or another SFU"],"trialDirsBefore":7,"trialDirsAfter":7,"PASS":true}
+[02:35:06.859] switched to livekit
+[02:35:25.325] livekit-healthy_rebuild-I-20261001T023506-1 join_O1 {"sessionId":"PA_mWDveZUpB8x6"}
+[02:35:27.424] livekit-healthy_rebuild-I-20261001T023506-1 join_O2 {"sessionId":"PA_dNCjqMJLPqeh"}
+[02:35:29.742] livekit-healthy_rebuild-I-20261001T023506-1 join_S {"sessionId":"PA_phsewaVemBBn"}
+[02:35:33.875] livekit-healthy_rebuild-I-20261001T023506-1 media_flowing {}
+[02:35:51.071] livekit-healthy_rebuild-I-20261001T023506-1 arm_O1 {"S":58.511474609375,"O2":71.83984375}
+[02:35:52.655] livekit-healthy_rebuild-I-20261001T023506-1 arm_O2 {"S":78.95068359375,"O1":75.38720703125}
+[02:35:54.135] livekit-healthy_rebuild-I-20261001T023506-1 arm_S {"O1":71.130859375,"O2":67.89404296875}
+[02:36:01.058] livekit-healthy_rebuild-I-20261001T023506-1 trigger {"kind":"rebuild","tStart":1790822160760.2,"sid0":"PA_phsewaVemBBn","tEnd":1790822161147.6,"result":{"ok":true,"sessionId":"PA_R67j8bAfvJ5X","oldSessionId":"PA_phsewaVemBBn"},"sid1":"PA_R67j8bAfvJ5X"}
+[02:38:21.056] livekit-healthy_rebuild-I-20261001T023506-1 VALID
+[02:38:42.877] livekit-healthy_rebuild-I-20261001T023821-2 join_O1 {"sessionId":"PA_2cVZFh42CV87"}
+[02:38:45.034] livekit-healthy_rebuild-I-20261001T023821-2 join_O2 {"sessionId":"PA_xRuKqujnynru"}
+[02:38:47.169] livekit-healthy_rebuild-I-20261001T023821-2 join_S {"sessionId":"PA_F4SmhMDvoG8E"}
+[02:38:53.070] livekit-healthy_rebuild-I-20261001T023821-2 media_flowing {}
+[02:39:11.265] livekit-healthy_rebuild-I-20261001T023821-2 arm_O1 {"S":67.111083984375,"O2":63.6201171875}
+[02:39:13.348] livekit-healthy_rebuild-I-20261001T023821-2 arm_O2 {"S":77.953369140625,"O1":73.479248046875}
+[02:39:15.018] livekit-healthy_rebuild-I-20261001T023821-2 arm_S {"O1":78.842529296875,"O2":66.0244140625}
+[02:39:22.183] livekit-healthy_rebuild-I-20261001T023821-2 trigger {"kind":"rebuild","tStart":1790822361890,"sid0":"PA_F4SmhMDvoG8E","tEnd":1790822362281.3,"result":{"ok":true,"sessionId":"PA_BshpiGcCp6ip","oldSessionId":"PA_F4SmhMDvoG8E"},"sid1":"PA_BshpiGcCp6ip"}
+[02:41:34.735] livekit-healthy_rebuild-I-20261001T023821-2 VALID
+[02:41:55.241] livekit-healthy_rebuild-I-20261001T024134-3 join_O1 {"sessionId":"PA_9aLAkVWShkv5"}
+[02:41:57.277] livekit-healthy_rebuild-I-20261001T024134-3 join_O2 {"sessionId":"PA_jgKZKM8L9L6f"}
+[02:42:00.597] livekit-healthy_rebuild-I-20261001T024134-3 join_S {"sessionId":"PA_sLnJxPSpEjzz"}
+[02:42:09.199] livekit-healthy_rebuild-I-20261001T024134-3 media_flowing {}
+[02:42:28.153] livekit-healthy_rebuild-I-20261001T024134-3 arm_O1 {"S":71.729248046875,"O2":72.196533203125}
+[02:42:30.392] livekit-healthy_rebuild-I-20261001T024134-3 arm_O2 {"S":61.990478515625,"O1":69.658203125}
+[02:42:32.269] livekit-healthy_rebuild-I-20261001T024134-3 arm_S {"O1":65.63818359375,"O2":65.2041015625}
+[02:42:39.037] livekit-healthy_rebuild-I-20261001T024134-3 trigger {"kind":"rebuild","tStart":1790822558707.2,"sid0":"PA_sLnJxPSpEjzz","tEnd":1790822559103.4,"result":{"ok":true,"sessionId":"PA_weRtvJYatuhr","oldSessionId":"PA_sLnJxPSpEjzz"},"sid1":"PA_weRtvJYatuhr"}
+[02:44:38.089] livekit-healthy_rebuild-I-20261001T024134-3 VALID
+[02:44:56.656] livekit-remove_participant-I-20261001T024438-1 join_O1 {"sessionId":"PA_nM4QDDQMWn3p"}
+[02:44:58.862] livekit-remove_participant-I-20261001T024438-1 join_O2 {"sessionId":"PA_2mLsna4M2NJo"}
+[02:45:00.855] livekit-remove_participant-I-20261001T024438-1 join_S {"sessionId":"PA_QrueBPzfUYhs"}
+[02:45:04.745] livekit-remove_participant-I-20261001T024438-1 media_flowing {}
+[02:45:21.772] livekit-remove_participant-I-20261001T024438-1 arm_O1 {"S":68.828125,"O2":65.000244140625}
+[02:45:23.160] livekit-remove_participant-I-20261001T024438-1 arm_O2 {"S":72.06201171875,"O1":57.01220703125}
+[02:45:24.637] livekit-remove_participant-I-20261001T024438-1 arm_S {"O1":71.67626953125,"O2":68.113525390625}
+[02:45:30.977] livekit-remove_participant-I-20261001T024438-1 trigger {"status":200,"body":{}}
+[02:47:31.490] livekit-remove_participant-I-20261001T024438-1 VALID
+[02:47:47.979] livekit-remove_participant-I-20261001T024731-2 join_O1 {"sessionId":"PA_rQem8PN2hhq7"}
+[02:47:49.959] livekit-remove_participant-I-20261001T024731-2 join_O2 {"sessionId":"PA_3fMHxj9SzL5K"}
+[02:47:51.965] livekit-remove_participant-I-20261001T024731-2 join_S {"sessionId":"PA_iAnSniP2txFd"}
+[02:47:55.885] livekit-remove_participant-I-20261001T024731-2 media_flowing {}
+[02:48:13.289] livekit-remove_participant-I-20261001T024731-2 arm_O1 {"S":64.6162109375,"O2":70.05224609375}
+[02:48:14.580] livekit-remove_participant-I-20261001T024731-2 arm_O2 {"S":70.40234375,"O1":71.1953125}
+[02:48:15.985] livekit-remove_participant-I-20261001T024731-2 arm_S {"O1":71.20947265625,"O2":69.11572265625}
+[02:48:22.433] livekit-remove_participant-I-20261001T024731-2 trigger {"status":200,"body":{}}
+[02:50:18.644] livekit-remove_participant-I-20261001T024731-2 VALID
+[02:50:37.521] livekit-remove_participant-I-20261001T025018-3 join_O1 {"sessionId":"PA_LdwMbZVbCrPv"}
+[02:50:39.575] livekit-remove_participant-I-20261001T025018-3 join_O2 {"sessionId":"PA_LFAn6RnAE7e8"}
+[02:50:41.641] livekit-remove_participant-I-20261001T025018-3 join_S {"sessionId":"PA_SR6ibhy466wA"}
+[02:50:45.510] livekit-remove_participant-I-20261001T025018-3 media_flowing {}
+[02:51:02.129] livekit-remove_participant-I-20261001T025018-3 arm_O1 {"S":71.3642578125,"O2":82.11669921875}
+[02:51:03.391] livekit-remove_participant-I-20261001T025018-3 arm_O2 {"S":65.4931640625,"O1":63.2607421875}
+[02:51:04.716] livekit-remove_participant-I-20261001T025018-3 arm_S {"O1":69.216064453125,"O2":69.84619140625}
+[02:51:11.074] livekit-remove_participant-I-20261001T025018-3 trigger {"status":200,"body":{}}
+[02:53:07.655] livekit-remove_participant-I-20261001T025018-3 VALID
+[02:53:24.263] livekit-intruder-I-20261001T025307-1 join_O1 {"sessionId":"PA_jRp6TnKz8uRy"}
+[02:53:26.301] livekit-intruder-I-20261001T025307-1 join_O2 {"sessionId":"PA_Mf487WaCMa3o"}
+[02:53:28.344] livekit-intruder-I-20261001T025307-1 join_S {"sessionId":"PA_UtVNLrGHEUr8"}
+[02:53:32.166] livekit-intruder-I-20261001T025307-1 media_flowing {}
+[02:53:49.786] livekit-intruder-I-20261001T025307-1 arm_O1 {"S":62.1572265625,"O2":64.441650390625}
+[02:53:51.097] livekit-intruder-I-20261001T025307-1 arm_O2 {"S":69.017333984375,"O1":76.7607421875}
+[02:53:52.352] livekit-intruder-I-20261001T025307-1 arm_S {"O1":77.958984375,"O2":64.3935546875}
+[02:54:15.658] livekit-intruder-I-20261001T025307-1 trigger {"intruderJoin":"failed","error":"c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:45263/lk-sdk.js:1:153468)\n    at http://127.0.0.
+[02:56:13.363] livekit-intruder-I-20261001T025307-1 VALID
+[02:56:29.694] livekit-intruder-I-20261001T025613-2 join_O1 {"sessionId":"PA_kzRXZBRmAmSc"}
+[02:56:31.747] livekit-intruder-I-20261001T025613-2 join_O2 {"sessionId":"PA_FrNjGq7C7YKN"}
+[02:56:33.744] livekit-intruder-I-20261001T025613-2 join_S {"sessionId":"PA_wdKngKewoan7"}
+[02:56:37.518] livekit-intruder-I-20261001T025613-2 media_flowing {}
+[02:56:53.807] livekit-intruder-I-20261001T025613-2 arm_O1 {"S":68.331298828125,"O2":75.625244140625}
+[02:56:55.079] livekit-intruder-I-20261001T025613-2 arm_O2 {"S":63.684814453125,"O1":73.452392578125}
+[02:56:56.397] livekit-intruder-I-20261001T025613-2 arm_S {"O1":65.643798828125,"O2":82.73095703125}
+[02:57:20.189] livekit-intruder-I-20261001T025613-2 trigger {"intruderJoin":"failed","error":"c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:45263/lk-sdk.js:1:153468)\n    at http://127.0.0.
+[02:59:18.006] livekit-intruder-I-20261001T025613-2 VALID
+[02:59:34.836] livekit-intruder-I-20261001T025918-3 join_O1 {"sessionId":"PA_J6BnRwqSeDUW"}
+[02:59:36.885] livekit-intruder-I-20261001T025918-3 join_O2 {"sessionId":"PA_b4nVF3nFkwM7"}
+[02:59:38.931] livekit-intruder-I-20261001T025918-3 join_S {"sessionId":"PA_rh793vrgn6d7"}
+[02:59:42.826] livekit-intruder-I-20261001T025918-3 media_flowing {}
+[02:59:59.441] livekit-intruder-I-20261001T025918-3 arm_O1 {"S":60.871337890625,"O2":53.779541015625}
+[03:00:00.717] livekit-intruder-I-20261001T025918-3 arm_O2 {"S":62.18408203125,"O1":60.093017578125}
+[03:00:02.023] livekit-intruder-I-20261001T025918-3 arm_S {"O1":67.740478515625,"O2":64.978271484375}
+[03:00:25.219] livekit-intruder-I-20261001T025918-3 trigger {"intruderJoin":"failed","error":"c4-o2 /join: page.evaluate: ConnectionError: could not establish pc connection\n    at Xs.internal (http://127.0.0.1:45263/lk-sdk.js:1:153468)\n    at http://127.0.0.
+[03:02:23.987] livekit-intruder-I-20261001T025918-3 VALID
+[03:02:40.260] livekit-rogue-I-20261001T030224-1 join_O1 {"sessionId":"PA_3cDFtJQPQimk"}
+[03:02:42.264] livekit-rogue-I-20261001T030224-1 join_O2 {"sessionId":"PA_G4p7f6ntWrZD"}
+[03:02:44.292] livekit-rogue-I-20261001T030224-1 join_S {"sessionId":"PA_jc6tBVzKbun8"}
+[03:02:48.137] livekit-rogue-I-20261001T030224-1 media_flowing {}
+[03:03:04.384] livekit-rogue-I-20261001T030224-1 arm_O1 {"S":66.682861328125,"O2":57.459228515625}
+[03:03:05.675] livekit-rogue-I-20261001T030224-1 arm_O2 {"S":66.847900390625,"O1":71.978759765625}
+[03:03:07.007] livekit-rogue-I-20261001T030224-1 arm_S {"O1":69.870361328125,"O2":55.562744140625}
+[03:03:15.270] livekit-rogue-I-20261001T030224-1 trigger {"violationsAfter":2}
+[03:05:09.505] livekit-rogue-I-20261001T030224-1 INVALID: attribution violation(s): 2 (EXPECTED for the planted-rogue self-test)
+[03:05:40.171] ABORT livekit-healthy_rebuild-I-20261001T030531-1: idle SFU deployment c4-janus/janus has replicas=1 (must be 0); idle SFU has 1 pod(s): c4-janus/janus-8577587875-dwrf7@ip-10-42-25-57.ec2.internal; SFU-under-test node ip-10-42-25-57.ec2.internal holds a client or another SFU
+{"selftest":"placement","aborted":true,"reasons":["idle SFU deployment c4-janus/janus has replicas=1 (must be 0)","idle SFU has 1 pod(s): c4-janus/janus-8577587875-dwrf7@ip-10-42-25-57.ec2.internal","SFU-under-test node ip-10-42-25-57.ec2.internal holds a client or another SFU"],"trialDirsBefore":17,"trialDirsAfter":17,"PASS":true}
+=== TESTS_DONE 2026-10-01T03:07:41Z
+=== PARK 2026-10-01T03:07:41Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update a04fe0bd-eb15-35e3-b62c-354f2f250b1b submitted
+==> EKS update a04fe0bd-eb15-35e3-b62c-354f2f250b1b: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 2s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 35s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 68s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 101s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 135s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 168s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 201s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 233s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 267s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 300s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 336s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 370s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 403s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 436s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 470s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 506s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 540s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 574s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 609s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 643s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 677s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 710s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 744s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 777s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 811s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 846s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 891s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 924s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 958s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 991s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1025s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-01T03:25:13Z

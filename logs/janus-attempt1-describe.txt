@@ -1,0 +1,94 @@
+Name:             janus-8485b6874b-qmp2m
+Namespace:        c4-janus
+Priority:         0
+Service Account:  default
+Node:             ip-10-42-25-251.ec2.internal/10.42.25.251
+Start Time:       Tue, 29 Sep 2026 01:39:20 -0400
+Labels:           app=janus
+                  c4.stack=janus
+                  pod-template-hash=8485b6874b
+                  topology.kubernetes.io/region=us-east-1
+                  topology.kubernetes.io/zone=us-east-1b
+Annotations:      <none>
+Status:           Running
+IP:               10.42.25.9
+IPs:
+  IP:           10.42.25.9
+Controlled By:  ReplicaSet/janus-8485b6874b
+Containers:
+  janus:
+    Container ID:  containerd://767af32fd10fecca2b4f62d8c5739010b6da416d8f4da47265ad16c5f750ec78
+    Image:         debian@sha256:ec3fa4e0b2987ae47be353f56854191e300261915470e40165b1c906d22a65db
+    Image ID:      docker.io/library/debian@sha256:ec3fa4e0b2987ae47be353f56854191e300261915470e40165b1c906d22a65db
+    Ports:         31188/TCP (ws), 31088/TCP (http)
+    Host Ports:    0/TCP (ws), 0/TCP (http)
+    Command:
+      /bin/bash
+      -c
+    Args:
+      set -euo pipefail
+      rm -f /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list
+      echo "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/${SNAPSHOT} sid main" > /etc/apt/sources.list.d/snapshot.list
+      for i in 1 2 3; do apt-get -o Acquire::Retries=5 -o Acquire::http::Timeout=60 update && break; sleep 10; done
+      DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=5 install -y --no-install-recommends "janus=${JANUS_VERSION}" ca-certificates curl
+      echo "=== installed: $(dpkg-query -W janus) arch=$(dpkg --print-architecture)"
+      for f in /cfg/*.jcfg; do sed "s|@ADMIN_SECRET@|${ADMIN_SECRET}|" "$f" > "/etc/janus/$(basename "$f")"; done
+      echo "=== effective config files:"; ls -l /etc/janus
+      exec janus -F /etc/janus
+      
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    100
+      Started:      Tue, 29 Sep 2026 01:45:14 -0400
+      Finished:     Tue, 29 Sep 2026 01:45:16 -0400
+    Ready:          False
+    Restart Count:  6
+    Limits:
+      memory:  1Gi
+    Requests:
+      cpu:      250m
+      memory:   256Mi
+    Readiness:  tcp-socket :31188 delay=0s timeout=1s period=10s #success=1 #failure=3
+    Startup:    tcp-socket :31188 delay=0s timeout=1s period=10s #success=1 #failure=60
+    Environment:
+      ADMIN_SECRET:   <set to the key 'admin_secret' in secret 'janus-admin'>  Optional: false
+      SNAPSHOT:       20260928T000000Z
+      JANUS_VERSION:  1.4.1+ds-4
+    Mounts:
+      /cfg from cfg (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-ctr5g (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  cfg:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      janus-config
+    Optional:  false
+  kube-api-access-ctr5g:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  8m13s                  default-scheduler  Successfully assigned c4-janus/janus-8485b6874b-qmp2m to ip-10-42-25-251.ec2.internal
+  Normal   Pulling    8m12s                  kubelet            Pulling image "debian@sha256:ec3fa4e0b2987ae47be353f56854191e300261915470e40165b1c906d22a65db"
+  Normal   Pulled     8m10s                  kubelet            Successfully pulled image "debian@sha256:ec3fa4e0b2987ae47be353f56854191e300261915470e40165b1c906d22a65db" in 1.724s (1.724s including waiting). Image size: 30112419 bytes.
+  Warning  Unhealthy  7m22s (x2 over 8m2s)   kubelet            Startup probe failed: dial tcp 10.42.25.9:31188: connect: connection refused
+  Normal   Created    2m19s (x7 over 8m10s)  kubelet            Container created
+  Normal   Started    2m19s (x7 over 8m10s)  kubelet            Container started
+  Normal   Pulled     2m19s (x6 over 8m4s)   kubelet            Container image "debian@sha256:ec3fa4e0b2987ae47be353f56854191e300261915470e40165b1c906d22a65db" already present on machine and can be accessed by the pod
+  Warning  BackOff    55s (x16 over 8m1s)    kubelet            Back-off restarting failed container janus in pod janus-8485b6874b-qmp2m_c4-janus(981639c4-7cba-46d8-90c3-1d8d93bd3cd0)

@@ -1,0 +1,11 @@
+2026-09-30T02:04:02Z stage B: unpark
+helm_exit=0
+2026-09-30T02:20:40Z debug trial 1 (LK healthy_rebuild): invalid due to harness bug (unattributed teardown leave); fixed leave attribution + policy-log gen label; moved to trials-debug/
+2026-09-30T23:28:24Z INCIDENT: Mac slept 2026-09-30T02:51Z..23:26Z (low-battery sleep; runner not under caffeinate). Lab UP ~20.6h unattended at 3 nodes (~$7 list). LK healthy_rebuild trial 3 INVALID (runner error). Resuming under caffeinate.
+2026-10-01T00:28:08Z run1 archived to trials-run1 (bugs: LK intruder harness race; Janus driver false-healthy). Final run started on fixed code.
+2026-10-01T01:41:34Z run2 archived (bugs: Janus observer ignored 'kicked' -> no resubscribe; LK delivered-DISCONNECT cleanup stopped the chirp track -> silent republish). Fixed: fresh track per publish; kicked=gone. Run3 starting.
+2026-10-01T01:52:15Z run3 STOPPED by operator: on battery, draining ~1%/min. Completed on final code: LK healthy_rebuild 1/1 valid. Janus run3 trials all ABORTED by precondition (LK left active by run2 end; script lacked initial switch) - logged in aborts.log. Parking.
+2026-10-01T02:09:50Z run4 started on final code (AC power; spec §1.2 drop model as approved, unchanged)
+2026-10-01T03:54:12Z block-first adopted; stageb-final job started (tests 1-2 -> smoke -> gate -> 48-trial shakedown)
+2026-10-01T04:50:19Z job hard-stopped before gate: smoke exposed isolation overshoot (10s->11.61s, Mac-side timing) + label bug (teardown counted). Lab UP; fixing; replacement job follows.
+2026-10-01T05:01:31Z GATE PASS (targeted run5 15/15, smoke 4/4); shakedown started

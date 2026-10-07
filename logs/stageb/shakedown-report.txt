@@ -1,0 +1,681 @@
+
+=== janus-iso-all-10s-I-20261001T055814-1  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 6367046696379465
+   actions: transport_restart@7.223s ok (8.861s)
+   isolation: all planned 10s actual 10s | detected@2.023s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.196s recovered_t=10.264s observersFreshAgain=[10.263,10.264] staleMs@obs=[9728,9728] subjectFreshFrom=[10.109,10.109]
+   server: [{"t":-30.321,"event":"session.created","session":"6367046696379465"},{"t":-30.318,"event":"joined"},{"t":-30.184,"event":"configured"},{"t":-30.152,"event":"published"},{"t":11.438,"event":"configured"},{"t":11.438,"event":"updated"},{"t":65.874,"event":"leaving"},{"t":65.877,"event":"session.destroyed","session":"6367046696379465"}]
+   O1 saw: [{"t":65.875,"event":"leaving","feed":101}]
+   O2 saw: [{"t":65.875,"event":"leaving","feed":101}]
+
+=== janus-iso-all-10s-I-20261001T061940-9  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 6704419265626785
+   actions: transport_restart@7.019s ok (9.801s)
+   isolation: all planned 10s actual 10s | detected@2.018s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.09s recovered_t=10.165s observersFreshAgain=[10.165,10.155] staleMs@obs=[10165,10112] subjectFreshFrom=[10.124,10.124]
+   server: [{"t":-30.561,"event":"session.created","session":"6704419265626785"},{"t":-30.559,"event":"joined"},{"t":-30.41,"event":"configured"},{"t":-30.381,"event":"published"},{"t":11.134,"event":"configured"},{"t":11.134,"event":"updated"},{"t":66.319,"event":"leaving"},{"t":66.322,"event":"session.destroyed","session":"6704419265626785"}]
+   O1 saw: [{"t":66.32,"event":"leaving","feed":101}]
+   O2 saw: [{"t":66.32,"event":"leaving","feed":101}]
+
+=== janus-iso-all-10s-I-20261001T064109-17  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 4574077998211189
+   actions: transport_restart@7.033s ok (8.722s)
+   isolation: all planned 10s actual 10s | detected@2.033s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.189s recovered_t=10.251s observersFreshAgain=[10.248,10.251] staleMs@obs=[10240,10240] subjectFreshFrom=[10.217,10.227]
+   server: [{"t":-29.308,"event":"session.created","session":"4574077998211189"},{"t":-29.306,"event":"joined"},{"t":-29.174,"event":"configured"},{"t":-29.141,"event":"published"},{"t":10.694,"event":"configured"},{"t":10.694,"event":"updated"},{"t":66.516,"event":"leaving"},{"t":66.517,"event":"session.destroyed","session":"4574077998211189"}]
+   O1 saw: [{"t":66.517,"event":"leaving","feed":101}]
+   O2 saw: [{"t":66.516,"event":"leaving","feed":101}]
+
+=== janus-iso-all-10s-O-20261001T060857-5  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 727231453694981
+   actions: transport_restart@7.147s ok (9.182s)
+   isolation: all planned 10s actual 10s | detected@2.147s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.263s recovered_t=10.323s observersFreshAgain=[10.323,10.202] staleMs@obs=[9856,9728] subjectFreshFrom=[10.163,10.163]
+   server: [{"t":-29.618,"event":"session.created","session":"727231453694981"},{"t":-29.615,"event":"joined"},{"t":-29.473,"event":"configured"},{"t":-29.446,"event":"published"},{"t":10.385,"event":"configured"},{"t":10.385,"event":"updated"},{"t":66.248,"event":"leaving"},{"t":66.254,"event":"session.destroyed","session":"727231453694981"}]
+   O1 saw: [{"t":66.248,"event":"leaving","feed":101}]
+   O2 saw: [{"t":66.249,"event":"leaving","feed":101}]
+
+=== janus-iso-all-10s-O-20261001T063024-13  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 1829143638709200
+   actions: transport_restart@6.98s ok (9.135s)
+   isolation: all planned 10s actual 10s | detected@1.98s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.041s recovered_t=10.135s observersFreshAgain=[10.135,10.135] staleMs@obs=[9600,9600] subjectFreshFrom=[10.234,10.245]
+   server: [{"t":-29.162,"event":"session.created","session":"1829143638709200"},{"t":-29.16,"event":"joined"},{"t":-29.024,"event":"configured"},{"t":-28.994,"event":"published"},{"t":10.841,"event":"configured"},{"t":10.841,"event":"updated"},{"t":66.244,"event":"leaving"},{"t":66.248,"event":"session.destroyed","session":"1829143638709200"}]
+   O1 saw: [{"t":66.245,"event":"leaving","feed":101}]
+   O2 saw: [{"t":66.244,"event":"leaving","feed":101}]
+
+=== janus-iso-all-10s-O-20261001T065152-21  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 5111927629078327
+   actions: transport_restart@7.257s ok (9.783s)
+   isolation: all planned 10s actual 10.01s | detected@2.057s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.145s recovered_t=10.209s observersFreshAgain=[10.203,10.209] staleMs@obs=[10203,10593] subjectFreshFrom=[10.169,10.169]
+   server: [{"t":-29.493,"event":"session.created","session":"5111927629078327"},{"t":-29.491,"event":"joined"},{"t":-29.349,"event":"configured"},{"t":-29.315,"event":"published"},{"t":10.51,"event":"configured"},{"t":10.51,"event":"updated"},{"t":66.949,"event":"leaving"},{"t":66.952,"event":"session.destroyed","session":"5111927629078327"}]
+   O1 saw: [{"t":66.95,"event":"leaving","feed":101}]
+   O2 saw: [{"t":66.95,"event":"leaving","feed":101}]
+
+=== janus-iso-all-30s-I-20261001T060029-2  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R3 never recovers | sessions: 4019062270872906 -> 3275473320877091
+   actions: transport_restart@7.125s fail (23.459s) ; rebuild@31.925s join/436 (0.113s) ; rebuild@37.125s join/436 (0.001s) ; rebuild@42.325s join/436 (0.001s) ; rebuild@47.525s join/436 (0.001s) ; rebuild@52.725s join/436 (0.001s) ; rebuild@57.925s join/436 (0.001s)
+   isolation: all planned 30s actual 30.01s | detected@1.925s | gaveUp=true | server=S-removed | observers={"O1":"O-left","O2":"O-left"} | requests=[]
+   freshness: fromRestore=nulls recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[152190,152187] subjectFreshFrom=[30.692,30.703]
+   server: [{"t":-29.439,"event":"session.created","session":"4019062270872906"},{"t":-29.436,"event":"joined"},{"t":-29.28,"event":"configured"},{"t":-29.252,"event":"published"},{"t":30.565,"event":"configured"},{"t":30.565,"event":"updated"},{"t":32.034,"event":"session.created","session":"3275473320877091"},{"t":62.35,"event":"unpublished"},{"t":62.35,"event":"session.timeout","session":"4019062270872906
+   O1 saw: [{"t":62.353,"event":"unpublished","feed":101},{"t":62.359,"event":"leaving","feed":101}]
+   O2 saw: [{"t":62.352,"event":"unpublished","feed":101},{"t":62.356,"event":"leaving","feed":101}]
+
+=== janus-iso-all-30s-I-20261001T062157-10  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R3 never recovers | sessions: 2452702609066666 -> 140485851183355
+   actions: transport_restart@6.939s fail (23.75s) ; rebuild@31.939s join/436 (0.108s) ; rebuild@37.139s join/436 (0.002s) ; rebuild@42.339s join/436 (0.002s) ; rebuild@47.539s join/436 (0.001s) ; rebuild@52.739s join/436 (0.001s) ; rebuild@57.939s join/436 (0.001s)
+   isolation: all planned 30s actual 30s | detected@1.939s | gaveUp=true | server=S-removed | observers={"O1":"O-left","O2":"O-left"} | requests=[]
+   freshness: fromRestore=nulls recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[151134,151134] subjectFreshFrom=[30.795,30.795]
+   server: [{"t":-29.603,"event":"session.created","session":"2452702609066666"},{"t":-29.601,"event":"joined"},{"t":-29.467,"event":"configured"},{"t":-29.435,"event":"published"},{"t":30.4,"event":"configured"},{"t":30.4,"event":"updated"},{"t":32.044,"event":"session.created","session":"140485851183355"},{"t":62.439,"event":"session.timeout","session":"2452702609066666"},{"t":62.44,"event":"unpublished"},
+   O1 saw: [{"t":62.44,"event":"unpublished","feed":101},{"t":62.446,"event":"leaving","feed":101}]
+   O2 saw: [{"t":62.44,"event":"unpublished","feed":101},{"t":62.446,"event":"leaving","feed":101}]
+
+=== janus-iso-all-30s-I-20261001T064325-18  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R3 never recovers | sessions: 2887377561288713 -> 6061107355437209
+   actions: transport_restart@7.056s fail (45.003s) ; rebuild@52.256s join/436 (0.083s) ; rebuild@57.455s join/436 (0.001s)
+   isolation: all planned 30s actual 30.01s | detected@2.055s | gaveUp=true | server=S-removed | observers={"O1":"O-left","O2":"O-left"} | requests=[]
+   freshness: fromRestore=nulls recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[152727,152728] subjectFreshFrom=[null,null]
+   server: [{"t":32.704,"event":"configured"},{"t":32.704,"event":"updated"},{"t":52.331,"event":"session.created","session":"6061107355437209"},{"t":80.491,"event":"unpublished"},{"t":80.491,"event":"unpublished"},{"t":80.491,"event":"leaving"},{"t":80.491,"event":"session.timeout","session":"2887377561288713"},{"t":153.528,"event":"session.destroyed","session":"6061107355437209"}]
+   O1 saw: [{"t":80.493,"event":"unpublished","feed":101},{"t":80.495,"event":"leaving","feed":101}]
+   O2 saw: [{"t":80.494,"event":"unpublished","feed":101},{"t":80.498,"event":"leaving","feed":101}]
+
+=== janus-iso-all-30s-O-20261001T061113-6  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R3 never recovers | sessions: 7426622239416270 -> 8192993581369825
+   actions: transport_restart@7.153s fail (23.25s) ; rebuild@32.153s join/436 (0.132s) ; rebuild@37.353s join/436 (0.001s) ; rebuild@42.553s join/436 (0.001s) ; rebuild@47.753s join/436 (0.001s) ; rebuild@52.953s join/436 (0.001s) ; rebuild@58.153s join/436 (0.001s)
+   isolation: all planned 30s actual 30.01s | detected@2.153s | gaveUp=true | server=S-silent | observers={"O1":"O-left","O2":"O-left"} | requests=[]
+   freshness: fromRestore=nulls recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[152655,152655] subjectFreshFrom=[30.47,30.47]
+   server: [{"t":153.455,"event":"session.destroyed","session":"8192993581369825"}]
+   O1 saw: [{"t":61.991,"event":"unpublished","feed":101},{"t":61.995,"event":"leaving","feed":101}]
+   O2 saw: [{"t":61.991,"event":"unpublished","feed":101},{"t":61.995,"event":"leaving","feed":101}]
+
+=== janus-iso-all-30s-O-20261001T063239-14  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R3 never recovers | sessions: 6962731811924614 -> 643057873119499
+   actions: transport_restart@6.979s fail (23.58s) ; rebuild@31.979s join/436 (0.095s) ; rebuild@37.179s join/436 (0.001s) ; rebuild@42.379s join/436 (0.001s) ; rebuild@47.579s join/436 (0.001s) ; rebuild@52.779s join/436 (0.001s) ; rebuild@57.986s join/436 (0.009s)
+   isolation: all planned 30s actual 30.01s | detected@1.979s | gaveUp=true | server=S-removed | observers={"O1":"O-left","O2":"O-left"} | requests=[]
+   freshness: fromRestore=nulls recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[150767,150765] subjectFreshFrom=[30.621,30.621]
+   server: [{"t":-29.777,"event":"session.created","session":"6962731811924614"},{"t":-29.775,"event":"joined"},{"t":-29.625,"event":"configured"},{"t":-29.594,"event":"published"},{"t":30.225,"event":"configured"},{"t":30.225,"event":"updated"},{"t":32.072,"event":"session.created","session":"643057873119499"},{"t":62.374,"event":"unpublished"},{"t":62.374,"event":"unpublished"},{"t":62.374,"event":"leaving
+   O1 saw: [{"t":62.376,"event":"unpublished","feed":101},{"t":62.379,"event":"leaving","feed":101}]
+   O2 saw: [{"t":62.376,"event":"unpublished","feed":101},{"t":62.38,"event":"leaving","feed":101}]
+
+=== janus-iso-all-30s-O-20261001T065408-22  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R3 never recovers | sessions: 919584280922402 -> 2848651104723130
+   actions: transport_restart@7s fail (45.002s) ; rebuild@52.2s join/436 (0.077s) ; rebuild@57.4s join/436 (0.002s)
+   isolation: all planned 30s actual 30.01s | detected@2s | gaveUp=true | server=S-removed | observers={"O1":"O-left","O2":"O-left"} | requests=[]
+   freshness: fromRestore=nulls recovered_t=nulls observersFreshAgain=[null,null] staleMs@obs=[151315,151315] subjectFreshFrom=[null,null]
+   server: [{"t":-29.344,"event":"session.created","session":"919584280922402"},{"t":-29.342,"event":"joined"},{"t":-29.204,"event":"configured"},{"t":-29.177,"event":"published"},{"t":30.659,"event":"configured"},{"t":30.659,"event":"updated"},{"t":52.275,"event":"session.created","session":"2848651104723130"},{"t":81.53,"event":"session.timeout","session":"919584280922402"},{"t":81.531,"event":"unpublished
+   O1 saw: [{"t":81.533,"event":"unpublished","feed":101},{"t":81.537,"event":"leaving","feed":101}]
+   O2 saw: [{"t":81.533,"event":"unpublished","feed":101},{"t":81.539,"event":"leaving","feed":101}]
+
+=== janus-iso-media-10s-I-20261001T060411-3  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 3516318050343458
+   actions: transport_restart@6.967s ok (3.229s)
+   isolation: media planned 10s actual 10s | detected@1.967s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.076s recovered_t=10.163s observersFreshAgain=[10.16,10.163] staleMs@obs=[9728,9728] subjectFreshFrom=[10.126,10.137]
+   server: [{"t":-29.396,"event":"session.created","session":"3516318050343458"},{"t":-29.394,"event":"joined"},{"t":-29.253,"event":"configured"},{"t":-29.224,"event":"published"},{"t":6.97,"event":"configured"},{"t":6.97,"event":"updated"},{"t":62.396,"event":"leaving"},{"t":62.399,"event":"session.destroyed","session":"3516318050343458"}]
+   O1 saw: [{"t":62.397,"event":"leaving","feed":101}]
+   O2 saw: [{"t":62.396,"event":"leaving","feed":101}]
+
+=== janus-iso-media-10s-I-20261001T062538-11  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 6256332442228926
+   actions: transport_restart@7.22s ok (3.03s)
+   isolation: media planned 10s actual 10s | detected@2.02s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=11.588s recovered_t=21.695s observersFreshAgain=[21.695,21.693] staleMs@obs=[19263,19261] subjectFreshFrom=[10.134,10.134]
+   server: [{"t":-29.528,"event":"session.created","session":"6256332442228926"},{"t":-29.526,"event":"joined"},{"t":-29.386,"event":"configured"},{"t":-29.352,"event":"published"},{"t":7.223,"event":"configured"},{"t":7.223,"event":"updated"},{"t":63.457,"event":"leaving"},{"t":63.46,"event":"session.destroyed","session":"6256332442228926"}]
+   O1 saw: [{"t":63.457,"event":"leaving","feed":101}]
+   O2 saw: [{"t":63.459,"event":"leaving","feed":101}]
+
+=== janus-iso-media-10s-I-20261001T064708-19  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 1265544965584725
+   actions: transport_restart@7.073s ok (3.027s)
+   isolation: media planned 10s actual 10s | detected@2.072s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.157s recovered_t=10.217s observersFreshAgain=[10.217,10.214] staleMs@obs=[9728,9728] subjectFreshFrom=[10.062,10.19]
+   server: [{"t":-29.473,"event":"session.created","session":"1265544965584725"},{"t":-29.47,"event":"joined"},{"t":-29.331,"event":"configured"},{"t":-29.303,"event":"published"},{"t":7.075,"event":"configured"},{"t":7.076,"event":"updated"},{"t":62.626,"event":"leaving"},{"t":62.63,"event":"session.destroyed","session":"1265544965584725"}]
+   O1 saw: [{"t":62.626,"event":"leaving","feed":101}]
+   O2 saw: [{"t":62.627,"event":"leaving","feed":101}]
+
+=== janus-iso-media-10s-O-20261001T061456-7  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 2949052583668663
+   actions: transport_restart@7.009s ok (3.126s)
+   isolation: media planned 10s actual 10s | detected@2.009s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=0.152s recovered_t=10.231s observersFreshAgain=[10.227,10.231] staleMs@obs=[10227,10231] subjectFreshFrom=[10.188,10.199]
+   server: [{"t":-29.337,"event":"session.created","session":"2949052583668663"},{"t":-29.334,"event":"joined"},{"t":-29.195,"event":"configured"},{"t":-29.159,"event":"published"},{"t":7.011,"event":"configured"},{"t":7.012,"event":"updated"},{"t":62.683,"event":"leaving"},{"t":62.686,"event":"session.destroyed","session":"2949052583668663"}]
+   O1 saw: [{"t":62.684,"event":"leaving","feed":101}]
+   O2 saw: [{"t":62.684,"event":"leaving","feed":101}]
+
+=== janus-iso-media-10s-O-20261001T063620-15  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 1307564817934170
+   actions: transport_restart@6.996s ok (3.227s)
+   isolation: media planned 10s actual 10.01s | detected@1.996s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=13.485s recovered_t=23.546s observersFreshAgain=[23.546,23.545] staleMs@obs=[20090,20089] subjectFreshFrom=[10.197,10.08]
+   server: [{"t":-30.35,"event":"session.created","session":"1307564817934170"},{"t":-30.347,"event":"joined"},{"t":-30.21,"event":"configured"},{"t":-30.181,"event":"published"},{"t":6.999,"event":"configured"},{"t":6.999,"event":"updated"},{"t":64.846,"event":"leaving"},{"t":64.847,"event":"session.destroyed","session":"1307564817934170"}]
+   O1 saw: [{"t":64.846,"event":"leaving","feed":101}]
+   O2 saw: [{"t":64.849,"event":"leaving","feed":101}]
+
+=== janus-iso-media-10s-O-20261001T065749-23  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 6576637342290416
+   actions: transport_restart@7.228s ok (2.923s)
+   isolation: media planned 10s actual 10s | detected@2.028s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=11.775s recovered_t=21.867s observersFreshAgain=[21.867,21.862] staleMs@obs=[18304,18432] subjectFreshFrom=[10.174,10.182]
+   server: [{"t":-30.128,"event":"session.created","session":"6576637342290416"},{"t":-30.126,"event":"joined"},{"t":-29.978,"event":"configured"},{"t":-29.948,"event":"published"},{"t":7.231,"event":"configured"},{"t":7.231,"event":"updated"},{"t":62.906,"event":"leaving"},{"t":62.909,"event":"session.destroyed","session":"6576637342290416"}]
+   O1 saw: [{"t":62.908,"event":"leaving","feed":101}]
+   O2 saw: [{"t":62.907,"event":"leaving","feed":101}]
+
+=== janus-iso-media-30s-I-20261001T060623-4  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 1892192230044786
+   actions: transport_restart@7.158s fail (15.043s) ; transport_restart@27.358s ok (2.822s)
+   isolation: media planned 30s actual 30s | detected@1.958s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.271s recovered_t=42.356s observersFreshAgain=[41.19,42.356] staleMs@obs=[37350,38516] subjectFreshFrom=[30.667,30.675]
+   server: [{"t":-31.391,"event":"session.created","session":"1892192230044786"},{"t":-31.387,"event":"joined"},{"t":-31.247,"event":"configured"},{"t":-31.216,"event":"published"},{"t":7.163,"event":"configured"},{"t":7.163,"event":"updated"},{"t":27.361,"event":"configured"},{"t":27.361,"event":"updated"},{"t":83.675,"event":"leaving"},{"t":83.682,"event":"session.destroyed","session":"1892192230044786"}]
+   O1 saw: [{"t":83.677,"event":"leaving","feed":101}]
+   O2 saw: [{"t":83.676,"event":"leaving","feed":101}]
+
+=== janus-iso-media-30s-I-20261001T062750-12  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 5620562675482013
+   actions: transport_restart@6.959s fail (15.059s) ; transport_restart@27.159s ok (3.032s)
+   isolation: media planned 30s actual 30s | detected@1.959s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=13.114s recovered_t=43.2s observersFreshAgain=[43.2,42.812] staleMs@obs=[39872,39356] subjectFreshFrom=[30.244,30.244]
+   server: [{"t":27.164,"event":"configured"},{"t":27.164,"event":"updated"},{"t":83.502,"event":"leaving"},{"t":83.506,"event":"session.destroyed","session":"5620562675482013"}]
+   O1 saw: [{"t":83.503,"event":"leaving","feed":101}]
+   O2 saw: [{"t":83.503,"event":"leaving","feed":101}]
+
+=== janus-iso-media-30s-I-20261001T064919-20  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 7734144109068088
+   actions: transport_restart@6.942s fail (15.041s) ; transport_restart@27.142s ok (2.927s)
+   isolation: media planned 30s actual 30s | detected@1.942s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=11.235s recovered_t=41.299s observersFreshAgain=[39.89,41.299] staleMs@obs=[36434,38355] subjectFreshFrom=[30.262,30.262]
+   server: [{"t":-30.009,"event":"session.created","session":"7734144109068088"},{"t":-30.006,"event":"joined"},{"t":-29.863,"event":"configured"},{"t":-29.835,"event":"published"},{"t":6.945,"event":"configured"},{"t":6.946,"event":"updated"},{"t":27.144,"event":"configured"},{"t":27.144,"event":"updated"},{"t":82.431,"event":"leaving"},{"t":82.434,"event":"session.destroyed","session":"7734144109068088"}]
+   O1 saw: [{"t":82.433,"event":"leaving","feed":101}]
+   O2 saw: [{"t":82.432,"event":"leaving","feed":101}]
+
+=== janus-iso-media-30s-O-20261001T061708-8  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 5133958478329951
+   actions: transport_restart@7.037s fail (15.047s) ; transport_restart@27.236s ok (2.922s)
+   isolation: media planned 30s actual 30s | detected@2.036s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=10.923s recovered_t=40.985s observersFreshAgain=[40.985,40.851] staleMs@obs=[36864,36864] subjectFreshFrom=[30.196,30.196]
+   server: [{"t":-29.306,"event":"session.created","session":"5133958478329951"},{"t":-29.304,"event":"joined"},{"t":-29.167,"event":"configured"},{"t":-29.135,"event":"published"},{"t":7.039,"event":"configured"},{"t":7.039,"event":"updated"},{"t":27.238,"event":"configured"},{"t":27.238,"event":"updated"},{"t":82.563,"event":"leaving"},{"t":82.566,"event":"session.destroyed","session":"5133958478329951"}]
+   O1 saw: [{"t":82.563,"event":"leaving","feed":101}]
+   O2 saw: [{"t":82.564,"event":"leaving","feed":101}]
+
+=== janus-iso-media-30s-O-20261001T063835-16  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 5411277583557225
+   actions: transport_restart@6.95s fail (15.044s) ; transport_restart@27.149s ok (2.925s)
+   isolation: media planned 30s actual 30.01s | detected@1.949s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.357s recovered_t=42.42s observersFreshAgain=[42.42,42.412] staleMs@obs=[38452,38400] subjectFreshFrom=[30.211,30.219]
+   server: [{"t":-29.419,"event":"session.created","session":"5411277583557225"},{"t":-29.417,"event":"joined"},{"t":-29.267,"event":"configured"},{"t":-29.237,"event":"published"},{"t":6.952,"event":"configured"},{"t":6.953,"event":"updated"},{"t":27.153,"event":"configured"},{"t":27.154,"event":"updated"},{"t":83.645,"event":"leaving"},{"t":83.652,"event":"session.destroyed","session":"5411277583557225"}]
+   O1 saw: [{"t":83.646,"event":"leaving","feed":101}]
+   O2 saw: [{"t":83.646,"event":"leaving","feed":101}]
+
+=== janus-iso-media-30s-O-20261001T070002-24  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: 201501087357444
+   actions: transport_restart@6.984s fail (15.045s) ; transport_restart@27.184s ok (2.924s)
+   isolation: media planned 30s actual 30s | detected@1.984s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.109s recovered_t=42.197s observersFreshAgain=[42.195,42.197] staleMs@obs=[38656,38656] subjectFreshFrom=[30.271,30.783]
+   server: [{"t":6.986,"event":"configured"},{"t":6.986,"event":"updated"},{"t":27.186,"event":"configured"},{"t":27.187,"event":"updated"},{"t":82.788,"event":"leaving"},{"t":82.792,"event":"session.destroyed","session":"201501087357444"}]
+   O1 saw: [{"t":82.789,"event":"leaving","feed":101}]
+   O2 saw: [{"t":82.789,"event":"leaving","feed":101}]
+
+=== livekit-iso-all-10s-I-20261001T050117-1  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_rRWFQDrzrDRx
+   actions: transport_restart@7.043s ok (5.365s)
+   isolation: all planned 10s actual 10s | detected@2.043s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=7.55s recovered_t=17.635s observersFreshAgain=[17.635,17.382] staleMs@obs=[15331,15078] subjectFreshFrom=[11.123,10.995]
+   server: [{"t":-29.055,"event":"participant_joined","sid":"PA_rRWFQDrzrDRx","reason":null},{"t":-28.961,"event":"track_published","sid":"PA_rRWFQDrzrDRx","reason":null},{"t":66.571,"event":"track_unpublished","sid":"PA_rRWFQDrzrDRx","reason":null},{"t":66.58,"event":"participant_left","sid":"PA_rRWFQDrzrDRx","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.554,"sid":"PA_rRWFQDrzrDRx","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.556,"sid":"PA_rRWFQDrzrDRx","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-I-20261001T052007-9  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_zh6d5NDmU579
+   actions: transport_restart@6.922s ok (5.433s)
+   isolation: all planned 10s actual 10s | detected@1.922s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=4.091s recovered_t=14.157s observersFreshAgain=[14.157,14.028] staleMs@obs=[10368,10368] subjectFreshFrom=[10.972,10.972]
+   server: [{"t":-29.971,"event":"participant_joined","sid":"PA_zh6d5NDmU579","reason":null},{"t":-29.881,"event":"track_published","sid":"PA_zh6d5NDmU579","reason":null},{"t":66.47,"event":"track_unpublished","sid":"PA_zh6d5NDmU579","reason":null},{"t":66.484,"event":"participant_left","sid":"PA_zh6d5NDmU579","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.458,"sid":"PA_zh6d5NDmU579","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.459,"sid":"PA_zh6d5NDmU579","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-I-20261001T053857-17  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_ZMHs88ccyHQw
+   actions: transport_restart@5.279s ok (7.491s) ; transport_restart@18.879s ok (2.022s)
+   isolation: all planned 10s actual 10.01s | detected@0.279s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=6.152s recovered_t=16.223s observersFreshAgain=[16.223,16.101] staleMs@obs=[12672,12672] subjectFreshFrom=[11.388,11.388]
+   server: [{"t":-29.811,"event":"participant_joined","sid":"PA_ZMHs88ccyHQw","reason":null},{"t":-29.73,"event":"track_published","sid":"PA_ZMHs88ccyHQw","reason":null},{"t":69.193,"event":"track_unpublished","sid":"PA_ZMHs88ccyHQw","reason":null},{"t":69.206,"event":"participant_left","sid":"PA_ZMHs88ccyHQw","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":69.177,"sid":"PA_ZMHs88ccyHQw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":69.177,"sid":"PA_ZMHs88ccyHQw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-O-20261001T051044-5  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_FG9WYKWgZPm3
+   actions: transport_restart@7.143s ok (5.394s)
+   isolation: all planned 10s actual 10s | detected@2.143s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=8.524s recovered_t=18.6s observersFreshAgain=[18.598,18.6] staleMs@obs=[15104,15232] subjectFreshFrom=[11.194,11.194]
+   server: [{"t":-29.753,"event":"participant_joined","sid":"PA_FG9WYKWgZPm3","reason":null},{"t":-29.66,"event":"track_published","sid":"PA_FG9WYKWgZPm3","reason":null},{"t":66.544,"event":"track_unpublished","sid":"PA_FG9WYKWgZPm3","reason":null},{"t":66.552,"event":"participant_left","sid":"PA_FG9WYKWgZPm3","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.532,"sid":"PA_FG9WYKWgZPm3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.53,"sid":"PA_FG9WYKWgZPm3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-O-20261001T052936-13  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_6a6cC3XQmvVR
+   actions: transport_restart@6.988s ok (5.369s)
+   isolation: all planned 10s actual 10.01s | detected@1.988s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.625s recovered_t=22.695s observersFreshAgain=[22.695,22.57] staleMs@obs=[19200,18944] subjectFreshFrom=[11.074,10.946]
+   server: [{"t":-29.111,"event":"participant_joined","sid":"PA_6a6cC3XQmvVR","reason":null},{"t":-29.019,"event":"track_published","sid":"PA_6a6cC3XQmvVR","reason":null},{"t":65.801,"event":"track_unpublished","sid":"PA_6a6cC3XQmvVR","reason":null},{"t":65.806,"event":"participant_left","sid":"PA_6a6cC3XQmvVR","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":65.791,"sid":"PA_6a6cC3XQmvVR","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":65.793,"sid":"PA_6a6cC3XQmvVR","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-10s-O-20261001T054828-21  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_S9HpzZcaUuFY
+   actions: transport_restart@6.891s ok (5.385s)
+   isolation: all planned 10s actual 10.01s | detected@1.891s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=3.975s recovered_t=14.042s observersFreshAgain=[14.034,14.042] staleMs@obs=[10706,10714] subjectFreshFrom=[10.948,10.948]
+   server: [{"t":-29.217,"event":"participant_joined","sid":"PA_S9HpzZcaUuFY","reason":null},{"t":-29.118,"event":"track_published","sid":"PA_S9HpzZcaUuFY","reason":null},{"t":66.437,"event":"track_unpublished","sid":"PA_S9HpzZcaUuFY","reason":null},{"t":66.447,"event":"participant_left","sid":"PA_S9HpzZcaUuFY","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.418,"sid":"PA_S9HpzZcaUuFY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.416,"sid":"PA_S9HpzZcaUuFY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-I-20261001T050330-2  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_AqBLkwrDm7to -> PA_EH2jPdZwgmXQ
+   actions: transport_restart@7.303s resume did not complete (15.005s) ; transport_restart@27.502s RECONNECT/STATE_MISMATCH (6.168s) ; rebuild@33.702s ok (0.419s)
+   isolation: all planned 30s actual 30.01s | detected@2.102s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.188s recovered_t=34.251s observersFreshAgain=[34.251,34.251] staleMs@obs=[33771,33781] subjectFreshFrom=[34.15,34.15]
+   server: [{"t":-29.189,"event":"participant_joined","sid":"PA_AqBLkwrDm7to","reason":null},{"t":-29.099,"event":"track_published","sid":"PA_AqBLkwrDm7to","reason":null},{"t":20.026,"event":"track_unpublished","sid":"PA_AqBLkwrDm7to","reason":null},{"t":20.031,"event":"participant_left","sid":"PA_AqBLkwrDm7to","reason":"CONNECTION_TIMEOUT"},{"t":34.046,"event":"participant_joined","sid":"PA_EH2jPdZwgmXQ","r
+   O1 saw: [{"t":20.018,"sid":"PA_AqBLkwrDm7to","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.103,"sid":"PA_EH2jPdZwgmXQ","state":"ACTIVE","reason":null},{"t":86.032,"sid":"PA_EH2jPdZwgmXQ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":20.018,"sid":"PA_AqBLkwrDm7to","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.104,"sid":"PA_EH2jPdZwgmXQ","state":"ACTIVE","reason":null},{"t":86.031,"sid":"PA_EH2jPdZwgmXQ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-I-20261001T052221-10  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_kEMUsniaeQ4z -> PA_o5ibrjK2TEni
+   actions: transport_restart@7.303s resume did not complete (15.005s) ; transport_restart@27.503s RECONNECT/STATE_MISMATCH (6.143s) ; rebuild@33.703s ok (0.415s)
+   isolation: all planned 30s actual 30.01s | detected@2.103s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.565s recovered_t=34.63s observersFreshAgain=[34.626,34.63] staleMs@obs=[34261,34261] subjectFreshFrom=[34.14,34.15]
+   server: [{"t":-29.201,"event":"participant_joined","sid":"PA_kEMUsniaeQ4z","reason":null},{"t":-29.105,"event":"track_published","sid":"PA_kEMUsniaeQ4z","reason":null},{"t":20.017,"event":"track_unpublished","sid":"PA_kEMUsniaeQ4z","reason":null},{"t":20.022,"event":"participant_left","sid":"PA_kEMUsniaeQ4z","reason":"CONNECTION_TIMEOUT"},{"t":34.041,"event":"participant_joined","sid":"PA_o5ibrjK2TEni","r
+   O1 saw: [{"t":20.007,"sid":"PA_kEMUsniaeQ4z","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.103,"sid":"PA_o5ibrjK2TEni","state":"ACTIVE","reason":null},{"t":86.24,"sid":"PA_o5ibrjK2TEni","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":20.008,"sid":"PA_kEMUsniaeQ4z","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":34.103,"sid":"PA_o5ibrjK2TEni","state":"ACTIVE","reason":null},{"t":86.24,"sid":"PA_o5ibrjK2TEni","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-I-20261001T054113-18  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_BGJEB37uD7Ej -> PA_YQcCEN8cWAT3
+   actions: transport_restart@7.006s resume did not complete (15.004s) ; transport_restart@27.206s RECONNECT/STATE_MISMATCH (6.158s) ; rebuild@33.406s ok (0.428s)
+   isolation: all planned 30s actual 30.01s | detected@2.006s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.233s recovered_t=34.306s observersFreshAgain=[34.301,34.306] staleMs@obs=[34256,34267] subjectFreshFrom=[33.855,33.983]
+   server: [{"t":-29.293,"event":"participant_joined","sid":"PA_BGJEB37uD7Ej","reason":null},{"t":-29.202,"event":"track_published","sid":"PA_BGJEB37uD7Ej","reason":null},{"t":21.937,"event":"track_unpublished","sid":"PA_BGJEB37uD7Ej","reason":null},{"t":21.954,"event":"participant_left","sid":"PA_BGJEB37uD7Ej","reason":"CONNECTION_TIMEOUT"},{"t":33.754,"event":"participant_joined","sid":"PA_YQcCEN8cWAT3","r
+   O1 saw: [{"t":21.915,"sid":"PA_BGJEB37uD7Ej","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.82,"sid":"PA_YQcCEN8cWAT3","state":"ACTIVE","reason":null},{"t":84.451,"sid":"PA_YQcCEN8cWAT3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":21.916,"sid":"PA_BGJEB37uD7Ej","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.821,"sid":"PA_YQcCEN8cWAT3","state":"ACTIVE","reason":null},{"t":84.451,"sid":"PA_YQcCEN8cWAT3","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-O-20261001T051256-6  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_g2kDX2zm9ZkJ -> PA_AnWVJv28nUGa
+   actions: transport_restart@6.994s resume did not complete (15.005s) ; transport_restart@27.194s RECONNECT/STATE_MISMATCH (6.155s) ; rebuild@33.394s ok (0.427s)
+   isolation: all planned 30s actual 30s | detected@1.994s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=3.949s recovered_t=34.019s observersFreshAgain=[34.019,33.944] staleMs@obs=[34019,33944] subjectFreshFrom=[33.842,33.842]
+   server: [{"t":-29.303,"event":"participant_joined","sid":"PA_g2kDX2zm9ZkJ","reason":null},{"t":-29.209,"event":"track_published","sid":"PA_g2kDX2zm9ZkJ","reason":null},{"t":21.911,"event":"track_unpublished","sid":"PA_g2kDX2zm9ZkJ","reason":null},{"t":21.916,"event":"participant_left","sid":"PA_g2kDX2zm9ZkJ","reason":"CONNECTION_TIMEOUT"},{"t":33.725,"event":"participant_joined","sid":"PA_AnWVJv28nUGa","r
+   O1 saw: [{"t":21.902,"sid":"PA_g2kDX2zm9ZkJ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.801,"sid":"PA_AnWVJv28nUGa","state":"ACTIVE","reason":null},{"t":82.608,"sid":"PA_AnWVJv28nUGa","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":21.903,"sid":"PA_g2kDX2zm9ZkJ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.8,"sid":"PA_AnWVJv28nUGa","state":"ACTIVE","reason":null},{"t":82.607,"sid":"PA_AnWVJv28nUGa","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-O-20261001T053149-14  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_LQToCFgrobwF -> PA_FKbo6tGFTVzh
+   actions: transport_restart@6.885s resume did not complete (15.005s) ; transport_restart@27.084s RECONNECT/STATE_MISMATCH (6.193s) ; rebuild@33.284s ok (0.442s)
+   isolation: all planned 30s actual 30.01s | detected@1.884s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.162s recovered_t=34.231s observersFreshAgain=[34.229,34.231] staleMs@obs=[33792,33664] subjectFreshFrom=[33.732,33.732]
+   server: [{"t":-29.606,"event":"participant_joined","sid":"PA_LQToCFgrobwF","reason":null},{"t":-29.524,"event":"track_published","sid":"PA_LQToCFgrobwF","reason":null},{"t":21.614,"event":"track_unpublished","sid":"PA_LQToCFgrobwF","reason":null},{"t":21.619,"event":"participant_left","sid":"PA_LQToCFgrobwF","reason":"CONNECTION_TIMEOUT"},{"t":33.632,"event":"participant_joined","sid":"PA_FKbo6tGFTVzh","r
+   O1 saw: [{"t":21.599,"sid":"PA_LQToCFgrobwF","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.706,"sid":"PA_FKbo6tGFTVzh","state":"ACTIVE","reason":null},{"t":83.264,"sid":"PA_FKbo6tGFTVzh","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":21.6,"sid":"PA_LQToCFgrobwF","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.71,"sid":"PA_FKbo6tGFTVzh","state":"ACTIVE","reason":null},{"t":83.263,"sid":"PA_FKbo6tGFTVzh","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-all-30s-O-20261001T055041-22  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_HnDt7vxPf9RT -> PA_BGiwkTNLStmf
+   actions: transport_restart@7.078s resume did not complete (15.005s) ; transport_restart@27.278s RECONNECT/STATE_MISMATCH (6.153s) ; rebuild@33.478s ok (0.429s)
+   isolation: all planned 30s actual 30.01s | detected@2.078s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[]
+   freshness: fromRestore=4.057s recovered_t=34.127s observersFreshAgain=[34.118,34.127] staleMs@obs=[33664,33664] subjectFreshFrom=[33.927,33.927]
+   server: [{"t":-30.613,"event":"participant_joined","sid":"PA_HnDt7vxPf9RT","reason":null},{"t":-30.528,"event":"track_published","sid":"PA_HnDt7vxPf9RT","reason":null},{"t":20.601,"event":"track_unpublished","sid":"PA_HnDt7vxPf9RT","reason":null},{"t":20.607,"event":"participant_left","sid":"PA_HnDt7vxPf9RT","reason":"CONNECTION_TIMEOUT"},{"t":33.825,"event":"participant_joined","sid":"PA_BGiwkTNLStmf","r
+   O1 saw: [{"t":20.595,"sid":"PA_HnDt7vxPf9RT","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.89,"sid":"PA_BGiwkTNLStmf","state":"ACTIVE","reason":null},{"t":83.327,"sid":"PA_BGiwkTNLStmf","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":20.596,"sid":"PA_HnDt7vxPf9RT","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":33.892,"sid":"PA_BGiwkTNLStmf","state":"ACTIVE","reason":null},{"t":83.326,"sid":"PA_BGiwkTNLStmf","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-I-20261001T050602-3  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_7nuWvYfkofX4
+   actions: transport_restart@6.975s ok (2.027s)
+   isolation: media planned 10s actual 10s | detected@1.975s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.29s recovered_t=22.405s observersFreshAgain=[22.286,22.405] staleMs@obs=[19968,20224] subjectFreshFrom=[10.395,10.395]
+   server: [{"t":-31.306,"event":"participant_joined","sid":"PA_7nuWvYfkofX4","reason":null},{"t":-31.231,"event":"track_published","sid":"PA_7nuWvYfkofX4","reason":null},{"t":63.347,"event":"track_unpublished","sid":"PA_7nuWvYfkofX4","reason":null},{"t":63.353,"event":"participant_left","sid":"PA_7nuWvYfkofX4","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":63.332,"sid":"PA_7nuWvYfkofX4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":63.331,"sid":"PA_7nuWvYfkofX4","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-I-20261001T052453-11  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_s5AfSZm4Q4Fw
+   actions: transport_restart@7.092s ok (2.026s)
+   isolation: media planned 10s actual 10s | detected@2.092s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=11.738s recovered_t=21.859s observersFreshAgain=[21.859,21.848] staleMs@obs=[19171,19160] subjectFreshFrom=[10.611,10.483]
+   server: [{"t":-30.198,"event":"participant_joined","sid":"PA_s5AfSZm4Q4Fw","reason":null},{"t":-30.115,"event":"track_published","sid":"PA_s5AfSZm4Q4Fw","reason":null},{"t":62.695,"event":"track_unpublished","sid":"PA_s5AfSZm4Q4Fw","reason":null},{"t":62.704,"event":"participant_left","sid":"PA_s5AfSZm4Q4Fw","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":62.687,"sid":"PA_s5AfSZm4Q4Fw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":62.69,"sid":"PA_s5AfSZm4Q4Fw","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-I-20261001T054344-19  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_axPKheMt4s7E
+   actions: transport_restart@7.076s ok (2.024s)
+   isolation: media planned 10s actual 10.01s | detected@2.075s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=13.078s recovered_t=23.181s observersFreshAgain=[23.181,22.933] staleMs@obs=[19328,19456] subjectFreshFrom=[10.527,10.527]
+   server: [{"t":-30.423,"event":"participant_joined","sid":"PA_axPKheMt4s7E","reason":null},{"t":-30.331,"event":"track_published","sid":"PA_axPKheMt4s7E","reason":null},{"t":66.221,"event":"track_unpublished","sid":"PA_axPKheMt4s7E","reason":null},{"t":66.23,"event":"participant_left","sid":"PA_axPKheMt4s7E","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":66.21,"sid":"PA_axPKheMt4s7E","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":66.211,"sid":"PA_axPKheMt4s7E","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-O-20261001T051526-7  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_ZAbJKbwDxvUm
+   actions: transport_restart@7.112s ok (2.027s)
+   isolation: media planned 10s actual 10s | detected@2.112s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.033s recovered_t=22.169s observersFreshAgain=[22.169,22.162] staleMs@obs=[19584,19712] subjectFreshFrom=[10.525,10.525]
+   server: [{"t":-29.392,"event":"participant_joined","sid":"PA_ZAbJKbwDxvUm","reason":null},{"t":-29.288,"event":"track_published","sid":"PA_ZAbJKbwDxvUm","reason":null},{"t":63.886,"event":"track_unpublished","sid":"PA_ZAbJKbwDxvUm","reason":null},{"t":63.894,"event":"participant_left","sid":"PA_ZAbJKbwDxvUm","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":63.875,"sid":"PA_ZAbJKbwDxvUm","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":63.88,"sid":"PA_ZAbJKbwDxvUm","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-O-20261001T053418-15  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_KSP6WJXvwTZP
+   actions: transport_restart@6.895s ok (2.024s)
+   isolation: media planned 10s actual 10s | detected@1.895s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=5.268s recovered_t=15.372s observersFreshAgain=[15.237,15.372] staleMs@obs=[12544,12672] subjectFreshFrom=[10.265,10.265]
+   server: [{"t":-29.399,"event":"participant_joined","sid":"PA_KSP6WJXvwTZP","reason":null},{"t":-29.311,"event":"track_published","sid":"PA_KSP6WJXvwTZP","reason":null},{"t":62.663,"event":"track_unpublished","sid":"PA_KSP6WJXvwTZP","reason":null},{"t":62.671,"event":"participant_left","sid":"PA_KSP6WJXvwTZP","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":62.654,"sid":"PA_KSP6WJXvwTZP","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":62.653,"sid":"PA_KSP6WJXvwTZP","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-10s-O-20261001T055311-23  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R1 transport restart | sessions: PA_Hf5sqP7gZkRj
+   actions: transport_restart@7.144s ok (2.024s)
+   isolation: media planned 10s actual 10.01s | detected@2.144s | gaveUp=false | server=S-silent | observers={"O1":"O-nothing","O2":"O-nothing"} | requests=[]
+   freshness: fromRestore=12.832s recovered_t=22.973s observersFreshAgain=[22.973,22.967] staleMs@obs=[20029,20407] subjectFreshFrom=[10.567,10.567]
+   server: [{"t":-29.351,"event":"participant_joined","sid":"PA_Hf5sqP7gZkRj","reason":null},{"t":-29.264,"event":"track_published","sid":"PA_Hf5sqP7gZkRj","reason":null},{"t":62.675,"event":"track_unpublished","sid":"PA_Hf5sqP7gZkRj","reason":null},{"t":62.722,"event":"participant_left","sid":"PA_Hf5sqP7gZkRj","reason":"CLIENT_INITIATED"}]
+   O1 saw: [{"t":62.658,"sid":"PA_Hf5sqP7gZkRj","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":62.66,"sid":"PA_Hf5sqP7gZkRj","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-I-20261001T050814-4  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_7wKbGZcFPb73 -> PA_FBcjK3qfyuLN
+   actions: transport_restart@6.972s ok (2.024s) ; transport_restart@14.171s ok (2.037s) ; transport_restart@21.371s resume did not complete (2.023s) ; transport_restart@28.571s RECONNECT/STATE_MISMATCH (0.007s) ; rebuild@28.771s ok (2.416s)
+   isolation: media planned 30s actual 30.01s | detected@1.971s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.005,"kind":"resume"}]
+   freshness: fromRestore=1.199s recovered_t=31.313s observersFreshAgain=[31.313,31.294] staleMs@obs=[30837,30827] subjectFreshFrom=[31.192,31.192]
+   server: [{"t":-29.326,"event":"participant_joined","sid":"PA_7wKbGZcFPb73","reason":null},{"t":-29.229,"event":"track_published","sid":"PA_7wKbGZcFPb73","reason":null},{"t":27.017,"event":"track_unpublished","sid":"PA_7wKbGZcFPb73","reason":null},{"t":27.022,"event":"participant_left","sid":"PA_7wKbGZcFPb73","reason":"CONNECTION_TIMEOUT"},{"t":31.08,"event":"participant_joined","sid":"PA_FBcjK3qfyuLN","re
+   O1 saw: [{"t":27.007,"sid":"PA_7wKbGZcFPb73","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.281,"sid":"PA_FBcjK3qfyuLN","state":"JOINED","reason":null},{"t":31.153,"sid":"PA_FBcjK3qfyuLN","state":"ACTIVE","reason":null},{"t":83.314,"sid":"PA_FBcjK3qfyuLN","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.008,"sid":"PA_7wKbGZcFPb73","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.281,"sid":"PA_FBcjK3qfyuLN","state":"JOINED","reason":null},{"t":31.154,"sid":"PA_FBcjK3qfyuLN","state":"ACTIVE","reason":null},{"t":83.315,"sid":"PA_FBcjK3qfyuLN","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-I-20261001T052703-12  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_B5dXfDoa5dqf -> PA_gwgiFU4JJ2WM
+   actions: transport_restart@7.022s ok (2.026s) ; transport_restart@14.221s ok (2.021s) ; transport_restart@21.422s resume did not complete (2.022s) ; transport_restart@28.621s RECONNECT/STATE_MISMATCH (0.007s) ; rebuild@28.822s ok (2.454s)
+   isolation: media planned 30s actual 30s | detected@2.021s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.059,"kind":"resume"}]
+   freshness: fromRestore=1.633s recovered_t=31.752s observersFreshAgain=[31.752,31.752] staleMs@obs=[31744,31744] subjectFreshFrom=[31.296,31.306]
+   server: [{"t":-29.269,"event":"participant_joined","sid":"PA_B5dXfDoa5dqf","reason":null},{"t":-29.187,"event":"track_published","sid":"PA_B5dXfDoa5dqf","reason":null},{"t":27.071,"event":"track_unpublished","sid":"PA_B5dXfDoa5dqf","reason":null},{"t":27.077,"event":"participant_left","sid":"PA_B5dXfDoa5dqf","reason":"CONNECTION_TIMEOUT"},{"t":31.186,"event":"participant_joined","sid":"PA_gwgiFU4JJ2WM","r
+   O1 saw: [{"t":27.061,"sid":"PA_B5dXfDoa5dqf","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.099,"sid":"PA_gwgiFU4JJ2WM","state":"JOINED","reason":null},{"t":31.261,"sid":"PA_gwgiFU4JJ2WM","state":"ACTIVE","reason":null},{"t":84.162,"sid":"PA_gwgiFU4JJ2WM","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.062,"sid":"PA_B5dXfDoa5dqf","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.1,"sid":"PA_gwgiFU4JJ2WM","state":"JOINED","reason":null},{"t":31.261,"sid":"PA_gwgiFU4JJ2WM","state":"ACTIVE","reason":null},{"t":84.161,"sid":"PA_gwgiFU4JJ2WM","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-I-20261001T054557-20  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_JuLUBufC39Qg -> PA_F2uYM4vx6yoY
+   actions: transport_restart@7.065s ok (2.037s) ; transport_restart@14.265s ok (2.032s) ; transport_restart@21.465s resume did not complete (2.021s) ; transport_restart@28.665s RECONNECT/STATE_MISMATCH (0.008s) ; rebuild@28.865s ok (2.397s)
+   isolation: media planned 30s actual 30.01s | detected@2.065s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.108,"kind":"resume"}]
+   freshness: fromRestore=1.58s recovered_t=31.707s observersFreshAgain=[31.707,31.706] staleMs@obs=[31707,31706] subjectFreshFrom=[31.281,31.281]
+   server: [{"t":-29.834,"event":"participant_joined","sid":"PA_JuLUBufC39Qg","reason":null},{"t":-29.741,"event":"track_published","sid":"PA_JuLUBufC39Qg","reason":null},{"t":27.119,"event":"track_unpublished","sid":"PA_JuLUBufC39Qg","reason":null},{"t":27.123,"event":"participant_left","sid":"PA_JuLUBufC39Qg","reason":"CONNECTION_TIMEOUT"},{"t":31.167,"event":"participant_joined","sid":"PA_F2uYM4vx6yoY","r
+   O1 saw: [{"t":27.108,"sid":"PA_JuLUBufC39Qg","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":31.245,"sid":"PA_F2uYM4vx6yoY","state":"ACTIVE","reason":null},{"t":83.539,"sid":"PA_F2uYM4vx6yoY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.108,"sid":"PA_JuLUBufC39Qg","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":31.244,"sid":"PA_F2uYM4vx6yoY","state":"ACTIVE","reason":null},{"t":83.539,"sid":"PA_F2uYM4vx6yoY","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-O-20261001T051737-8  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_KCpZjNY7m3MZ -> PA_68znZDXCexMS
+   actions: transport_restart@6.974s ok (2.025s) ; transport_restart@14.174s ok (2.022s) ; transport_restart@21.374s resume did not complete (2.021s) ; transport_restart@28.574s RECONNECT/STATE_MISMATCH (0.008s) ; rebuild@28.774s ok (2.403s)
+   isolation: media planned 30s actual 30s | detected@1.974s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.008,"kind":"resume"}]
+   freshness: fromRestore=1.212s recovered_t=31.336s observersFreshAgain=[31.336,31.327] staleMs@obs=[30848,30848] subjectFreshFrom=[31.206,31.206]
+   server: [{"t":-29.366,"event":"participant_joined","sid":"PA_KCpZjNY7m3MZ","reason":null},{"t":-29.243,"event":"track_published","sid":"PA_KCpZjNY7m3MZ","reason":null},{"t":27.017,"event":"track_unpublished","sid":"PA_KCpZjNY7m3MZ","reason":null},{"t":27.021,"event":"participant_left","sid":"PA_KCpZjNY7m3MZ","reason":"CONNECTION_TIMEOUT"},{"t":31.087,"event":"participant_joined","sid":"PA_68znZDXCexMS","r
+   O1 saw: [{"t":27.009,"sid":"PA_KCpZjNY7m3MZ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.345,"sid":"PA_68znZDXCexMS","state":"JOINED","reason":null},{"t":31.161,"sid":"PA_68znZDXCexMS","state":"ACTIVE","reason":null},{"t":83.618,"sid":"PA_68znZDXCexMS","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.008,"sid":"PA_KCpZjNY7m3MZ","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.344,"sid":"PA_68znZDXCexMS","state":"JOINED","reason":null},{"t":31.164,"sid":"PA_68znZDXCexMS","state":"ACTIVE","reason":null},{"t":83.618,"sid":"PA_68znZDXCexMS","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-O-20261001T053627-16  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_yRX6FQfbLwJ2 -> PA_VJcBVoH6RnNt
+   actions: transport_restart@7.129s ok (2.026s) ; transport_restart@14.329s ok (2.021s) ; transport_restart@21.529s resume did not complete (2.022s) ; transport_restart@28.729s RECONNECT/STATE_MISMATCH (0.008s) ; rebuild@28.929s ok (1.352s)
+   isolation: media planned 30s actual 30.01s | detected@1.929s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.169,"kind":"resume"}]
+   freshness: fromRestore=0.398s recovered_t=30.537s observersFreshAgain=[30.504,30.537] staleMs@obs=[30464,30499] subjectFreshFrom=[30.297,30.308]
+   server: [{"t":-29.372,"event":"participant_joined","sid":"PA_yRX6FQfbLwJ2","reason":null},{"t":-29.276,"event":"track_published","sid":"PA_yRX6FQfbLwJ2","reason":null},{"t":27.179,"event":"track_unpublished","sid":"PA_yRX6FQfbLwJ2","reason":null},{"t":27.184,"event":"participant_left","sid":"PA_yRX6FQfbLwJ2","reason":"CONNECTION_TIMEOUT"},{"t":30.233,"event":"participant_joined","sid":"PA_VJcBVoH6RnNt","r
+   O1 saw: [{"t":27.171,"sid":"PA_yRX6FQfbLwJ2","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.334,"sid":"PA_VJcBVoH6RnNt","state":"JOINED","reason":null},{"t":30.265,"sid":"PA_VJcBVoH6RnNt","state":"ACTIVE","reason":null},{"t":83.792,"sid":"PA_VJcBVoH6RnNt","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.171,"sid":"PA_yRX6FQfbLwJ2","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.334,"sid":"PA_VJcBVoH6RnNt","state":"JOINED","reason":null},{"t":30.265,"sid":"PA_VJcBVoH6RnNt","state":"ACTIVE","reason":null},{"t":83.792,"sid":"PA_VJcBVoH6RnNt","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== livekit-iso-media-30s-O-20261001T055520-24  PASS
+   ok   trial valid
+   ok   classifiable by the rubric
+   ok   isolation held for the planned duration (±0.25 s)
+   ok   observers agree
+   regime: R2 rebuild | sessions: PA_KYKZhFpdy2fe -> PA_uppz3GtjuuUZ
+   actions: transport_restart@7.009s ok (2.042s) ; transport_restart@14.209s ok (2.021s) ; transport_restart@21.409s resume did not complete (2.023s) ; transport_restart@28.609s RECONNECT/STATE_MISMATCH (0.007s) ; rebuild@28.809s ok (2.352s)
+   isolation: media planned 30s actual 30s | detected@2.009s | gaveUp=false | server=S-replaced | observers={"O1":"O-left+returned","O2":"O-left+returned"} | requests=[{"t":22.248,"kind":"resume"}]
+   freshness: fromRestore=1.219s recovered_t=31.356s observersFreshAgain=[31.356,31.295] staleMs@obs=[31356,31295] subjectFreshFrom=[31.182,31.182]
+   server: [{"t":-29.289,"event":"participant_joined","sid":"PA_KYKZhFpdy2fe","reason":null},{"t":-29.198,"event":"track_published","sid":"PA_KYKZhFpdy2fe","reason":null},{"t":27.26,"event":"track_unpublished","sid":"PA_KYKZhFpdy2fe","reason":null},{"t":27.269,"event":"participant_left","sid":"PA_KYKZhFpdy2fe","reason":"CONNECTION_TIMEOUT"},{"t":31.099,"event":"participant_joined","sid":"PA_uppz3GtjuuUZ","re
+   O1 saw: [{"t":27.25,"sid":"PA_KYKZhFpdy2fe","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.385,"sid":"PA_uppz3GtjuuUZ","state":"JOINED","reason":null},{"t":31.145,"sid":"PA_uppz3GtjuuUZ","state":"ACTIVE","reason":null},{"t":83.67,"sid":"PA_uppz3GtjuuUZ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+   O2 saw: [{"t":27.252,"sid":"PA_KYKZhFpdy2fe","state":"DISCONNECTED","reason":"CONNECTION_TIMEOUT"},{"t":29.385,"sid":"PA_uppz3GtjuuUZ","state":"JOINED","reason":null},{"t":31.147,"sid":"PA_uppz3GtjuuUZ","state":"ACTIVE","reason":null},{"t":83.671,"sid":"PA_uppz3GtjuuUZ","state":"DISCONNECTED","reason":"CLIENT_INITIATED"}]
+
+=== SUMMARY
+   janus/isolation                  24/24 pass
+   livekit/isolation                24/24 pass
+   aborts logged: 0
+
+=== SHAKEDOWN CELLS (stack | arm | mode | D | regime | detect | recovered-from-restore | stale@obs | server | observers | actions)
+   janus    I all   10s | R1 transport restart   |  2.023 |   0.196 | [9728,9728]     | S-silent    | O-nothing        | TR@7.223+
+   janus    I all   10s | R1 transport restart   |  2.018 |    0.09 | [10165,10112]   | S-silent    | O-nothing        | TR@7.019+
+   janus    I all   10s | R1 transport restart   |  2.033 |   0.189 | [10240,10240]   | S-silent    | O-nothing        | TR@7.033+
+   janus    I all   30s | R3 never recovers      |  1.925 |    null | [152190,152187] | S-removed   | O-left           | TR@7.125- RB@31.925!join/436 RB@37.125!join/436 RB@42.325!join/436 RB@47.525!join/436 RB@52.725!join/436 RB@57.925!join/436
+   janus    I all   30s | R3 never recovers      |  1.939 |    null | [151134,151134] | S-removed   | O-left           | TR@6.939- RB@31.939!join/436 RB@37.139!join/436 RB@42.339!join/436 RB@47.539!join/436 RB@52.739!join/436 RB@57.939!join/436
+   janus    I all   30s | R3 never recovers      |  2.055 |    null | [152727,152728] | S-removed   | O-left           | TR@7.056- RB@52.256!join/436 RB@57.455!join/436
+   janus    I media 10s | R1 transport restart   |  1.967 |   0.076 | [9728,9728]     | S-silent    | O-nothing        | TR@6.967+
+   janus    I media 10s | R1 transport restart   |   2.02 |  11.588 | [19263,19261]   | S-silent    | O-nothing        | TR@7.22+
+   janus    I media 10s | R1 transport restart   |  2.072 |   0.157 | [9728,9728]     | S-silent    | O-nothing        | TR@7.073+
+   janus    I media 30s | R1 transport restart   |  1.958 |  12.271 | [37350,38516]   | S-silent    | O-nothing        | TR@7.158- TR@27.358+
+   janus    I media 30s | R1 transport restart   |  1.959 |  13.114 | [39872,39356]   | S-silent    | O-nothing        | TR@6.959- TR@27.159+
+   janus    I media 30s | R1 transport restart   |  1.942 |  11.235 | [36434,38355]   | S-silent    | O-nothing        | TR@6.942- TR@27.142+
+   janus    O all   10s | R1 transport restart   |  2.147 |   0.263 | [9856,9728]     | S-silent    | O-nothing        | TR@7.147+
+   janus    O all   10s | R1 transport restart   |   1.98 |   0.041 | [9600,9600]     | S-silent    | O-nothing        | TR@6.98+
+   janus    O all   10s | R1 transport restart   |  2.057 |   0.145 | [10203,10593]   | S-silent    | O-nothing        | TR@7.257+
+   janus    O all   30s | R3 never recovers      |  2.153 |    null | [152655,152655] | S-silent    | O-left           | TR@7.153- RB@32.153!join/436 RB@37.353!join/436 RB@42.553!join/436 RB@47.753!join/436 RB@52.953!join/436 RB@58.153!join/436
+   janus    O all   30s | R3 never recovers      |  1.979 |    null | [150767,150765] | S-removed   | O-left           | TR@6.979- RB@31.979!join/436 RB@37.179!join/436 RB@42.379!join/436 RB@47.579!join/436 RB@52.779!join/436 RB@57.986!join/436
+   janus    O all   30s | R3 never recovers      |      2 |    null | [151315,151315] | S-removed   | O-left           | TR@7- RB@52.2!join/436 RB@57.4!join/436
+   janus    O media 10s | R1 transport restart   |  2.009 |   0.152 | [10227,10231]   | S-silent    | O-nothing        | TR@7.009+
+   janus    O media 10s | R1 transport restart   |  1.996 |  13.485 | [20090,20089]   | S-silent    | O-nothing        | TR@6.996+
+   janus    O media 10s | R1 transport restart   |  2.028 |  11.775 | [18304,18432]   | S-silent    | O-nothing        | TR@7.228+
+   janus    O media 30s | R1 transport restart   |  2.036 |  10.923 | [36864,36864]   | S-silent    | O-nothing        | TR@7.037- TR@27.236+
+   janus    O media 30s | R1 transport restart   |  1.949 |  12.357 | [38452,38400]   | S-silent    | O-nothing        | TR@6.95- TR@27.149+
+   janus    O media 30s | R1 transport restart   |  1.984 |  12.109 | [38656,38656]   | S-silent    | O-nothing        | TR@6.984- TR@27.184+
+   livekit  I all   10s | R1 transport restart   |  2.043 |    7.55 | [15331,15078]   | S-silent    | O-nothing        | TR@7.043+
+   livekit  I all   10s | R1 transport restart   |  1.922 |   4.091 | [10368,10368]   | S-silent    | O-nothing        | TR@6.922+
+   livekit  I all   10s | R1 transport restart   |  0.279 |   6.152 | [12672,12672]   | S-silent    | O-nothing        | TR@5.279+ TR@18.879+
+   livekit  I all   30s | R2 rebuild             |  2.102 |   4.188 | [33771,33781]   | S-replaced  | O-left+returned  | TR@7.303- TR@27.502!RECONNECT/STATE_MISMATCH RB@33.702+
+   livekit  I all   30s | R2 rebuild             |  2.103 |   4.565 | [34261,34261]   | S-replaced  | O-left+returned  | TR@7.303- TR@27.503!RECONNECT/STATE_MISMATCH RB@33.703+
+   livekit  I all   30s | R2 rebuild             |  2.006 |   4.233 | [34256,34267]   | S-replaced  | O-left+returned  | TR@7.006- TR@27.206!RECONNECT/STATE_MISMATCH RB@33.406+
+   livekit  I media 10s | R1 transport restart   |  1.975 |   12.29 | [19968,20224]   | S-silent    | O-nothing        | TR@6.975+
+   livekit  I media 10s | R1 transport restart   |  2.092 |  11.738 | [19171,19160]   | S-silent    | O-nothing        | TR@7.092+
+   livekit  I media 10s | R1 transport restart   |  2.075 |  13.078 | [19328,19456]   | S-silent    | O-nothing        | TR@7.076+
+   livekit  I media 30s | R2 rebuild             |  1.971 |   1.199 | [30837,30827]   | S-replaced  | O-left+returned  | TR@6.972+ TR@14.171+ TR@21.371- TR@28.571!RECONNECT/STATE_MISMATCH RB@28.771+
+   livekit  I media 30s | R2 rebuild             |  2.021 |   1.633 | [31744,31744]   | S-replaced  | O-left+returned  | TR@7.022+ TR@14.221+ TR@21.422- TR@28.621!RECONNECT/STATE_MISMATCH RB@28.822+
+   livekit  I media 30s | R2 rebuild             |  2.065 |    1.58 | [31707,31706]   | S-replaced  | O-left+returned  | TR@7.065+ TR@14.265+ TR@21.465- TR@28.665!RECONNECT/STATE_MISMATCH RB@28.865+
+   livekit  O all   10s | R1 transport restart   |  2.143 |   8.524 | [15104,15232]   | S-silent    | O-nothing        | TR@7.143+
+   livekit  O all   10s | R1 transport restart   |  1.988 |  12.625 | [19200,18944]   | S-silent    | O-nothing        | TR@6.988+
+   livekit  O all   10s | R1 transport restart   |  1.891 |   3.975 | [10706,10714]   | S-silent    | O-nothing        | TR@6.891+
+   livekit  O all   30s | R2 rebuild             |  1.994 |   3.949 | [34019,33944]   | S-replaced  | O-left+returned  | TR@6.994- TR@27.194!RECONNECT/STATE_MISMATCH RB@33.394+
+   livekit  O all   30s | R2 rebuild             |  1.884 |   4.162 | [33792,33664]   | S-replaced  | O-left+returned  | TR@6.885- TR@27.084!RECONNECT/STATE_MISMATCH RB@33.284+
+   livekit  O all   30s | R2 rebuild             |  2.078 |   4.057 | [33664,33664]   | S-replaced  | O-left+returned  | TR@7.078- TR@27.278!RECONNECT/STATE_MISMATCH RB@33.478+
+   livekit  O media 10s | R1 transport restart   |  2.112 |  12.033 | [19584,19712]   | S-silent    | O-nothing        | TR@7.112+
+   livekit  O media 10s | R1 transport restart   |  1.895 |   5.268 | [12544,12672]   | S-silent    | O-nothing        | TR@6.895+
+   livekit  O media 10s | R1 transport restart   |  2.144 |  12.832 | [20029,20407]   | S-silent    | O-nothing        | TR@7.144+
+   livekit  O media 30s | R2 rebuild             |  1.974 |   1.212 | [30848,30848]   | S-replaced  | O-left+returned  | TR@6.974+ TR@14.174+ TR@21.374- TR@28.574!RECONNECT/STATE_MISMATCH RB@28.774+
+   livekit  O media 30s | R2 rebuild             |  1.929 |   0.398 | [30464,30499]   | S-replaced  | O-left+returned  | TR@7.129+ TR@14.329+ TR@21.529- TR@28.729!RECONNECT/STATE_MISMATCH RB@28.929+
+   livekit  O media 30s | R2 rebuild             |  2.009 |   1.219 | [31356,31295]   | S-replaced  | O-left+returned  | TR@7.009+ TR@14.209+ TR@21.409- TR@28.609!RECONNECT/STATE_MISMATCH RB@28.809+
+
+GATE: PASS

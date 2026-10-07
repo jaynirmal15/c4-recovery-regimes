@@ -1,0 +1,12 @@
+START 2026-09-29T16:05:56Z
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 2, live instances 2, k8s nodes 2 -> target 2
+==> desired size is already 2; skipping the update and verifying the actual state.
+==> VERIFIED UNPARKED: 2/2 k8s nodes Ready (2s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP       OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-31-230.ec2.internal   Ready    <none>   29s   v1.36.4-eks-f4fc4f1   10.42.31.230   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-9-56.ec2.internal     Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.9.56     <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+END 2026-09-29T16:06:19Z
+MAKE_UNPARK_EXIT=0

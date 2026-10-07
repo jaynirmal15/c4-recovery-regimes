@@ -1,0 +1,8 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 2
+==> EKS update f38ec53c-9524-3bed-8b12-bed5ac94db9d submitted
+==> EKS update f38ec53c-9524-3bed-8b12-bed5ac94db9d: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/2 nodes Ready, 0 instance(s) live, 2s elapsed
+[fail] NOT UNPARKED after 25s: 0/2 k8s nodes Ready, 2 instance(s) live.
+make: *** [unpark] Error 1

@@ -1,0 +1,71 @@
+# Deployed state snapshot 2026-09-29T06:03:52Z
+
+## helm
+NAME                        	NAMESPACE  	REVISION	UPDATED                             	STATUS  	CHART                             	APP VERSION
+aws-load-balancer-controller	kube-system	1       	2026-09-29 01:26:53.57219 -0400 EDT 	deployed	aws-load-balancer-controller-3.5.0	v3.5.0     
+livekit                     	c4-livekit 	1       	2026-09-29 01:30:05.183811 -0400 EDT	deployed	livekit-server-1.9.0              	v1.9.0     
+monitoring                  	monitoring 	1       	2026-09-29 01:27:36.239414 -0400 EDT	deployed	kube-prometheus-stack-88.6.2      	v0.93.1    
+
+## c4 pods
+NAME                                      READY   STATUS    RESTARTS   AGE   IP            NODE                        NOMINATED NODE   READINESS GATES
+event-sink-9599497c6-ftp7k                1/1     Running   0          33m   10.42.6.35    ip-10-42-4-5.ec2.internal   <none>           <none>
+livekit-livekit-server-6bfb89666b-wdzmv   1/1     Running   0          33m   10.42.8.120   ip-10-42-4-5.ec2.internal   <none>           <none>
+NAME                         READY   STATUS    RESTARTS   AGE   IP             NODE                           NOMINATED NODE   READINESS GATES
+event-sink-fc88cdffc-mslgn   1/1     Running   0          24m   10.42.30.108   ip-10-42-25-251.ec2.internal   <none>           <none>
+janus-85db476f67-ff57n       1/1     Running   0          15m   10.42.23.243   ip-10-42-25-251.ec2.internal   <none>           <none>
+
+## services
+NAME                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                                AGE
+event-sink               ClusterIP   172.20.106.234   <none>        8080/TCP                               33m
+livekit-livekit-server   ClusterIP   172.20.233.239   <none>        80/TCP,31881/TCP,31882/UDP,31889/TCP   33m
+NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)               AGE
+event-sink   ClusterIP   172.20.178.112   <none>        8080/TCP              24m
+janus        ClusterIP   172.20.175.132   <none>        31188/TCP,31088/TCP   24m
+
+## node allocation
+### node/ip-10-42-25-251.ec2.internal
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                770m (39%)   0 (0%)
+  memory             934Mi (29%)  2986Mi (95%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-1Gi      0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+    c4-janus/event-sink-fc88cdffc-mslgn
+    c4-janus/janus-85db476f67-ff57n
+    kube-system/aws-load-balancer-controller-767bfcf577-pbwgs
+    kube-system/aws-node-qrq64
+    kube-system/coredns-79f8dffc57-8jxsz
+    kube-system/eks-pod-identity-agent-l825w
+    kube-system/kube-proxy-24nps
+    monitoring/monitoring-kube-state-metrics-7b56559c6f-ptrjb
+    monitoring/monitoring-operator-699cc68b7b-rg6kc
+    monitoring/monitoring-prometheus-node-exporter-89s2s
+    monitoring/prometheus-monitoring-prometheus-0
+### node/ip-10-42-4-5.ec2.internal
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                920m (47%)   0 (0%)
+  memory             678Mi (21%)  2474Mi (78%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-1Gi      0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+    c4-livekit/event-sink-9599497c6-ftp7k
+    c4-livekit/livekit-livekit-server-6bfb89666b-wdzmv
+    coturn/coturn-d54bc877d-cp6cs
+    kube-system/aws-load-balancer-controller-767bfcf577-zxlll
+    kube-system/aws-node-pqsj9
+    kube-system/coredns-79f8dffc57-tgrzb
+    kube-system/eks-pod-identity-agent-t55zm
+    kube-system/kube-proxy-wcvqv
+    monitoring/monitoring-grafana-9c5c9fdc-6nk56
+    monitoring/monitoring-prometheus-node-exporter-pg2cj
+
+## top
+error: Metrics API not available
+error: Metrics API not available
+error: Metrics API not available

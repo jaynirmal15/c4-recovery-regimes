@@ -1,0 +1,190 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update f3e6ae99-3736-38fe-801f-aa2c6d5c3806 submitted
+==> EKS update f3e6ae99-3736-38fe-801f-aa2c6d5c3806: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 2s elapsed
+==> waiting: 1/3 nodes Ready, 3 instance(s) live, 25s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (47s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP    OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-16-235.ec2.internal   Ready    <none>   30s   v1.36.4-eks-f4fc4f1   10.42.16.235   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-19-175.ec2.internal   Ready    <none>   33s   v1.36.4-eks-f4fc4f1   10.42.19.175   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-5-93.ec2.internal     Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.5.93     <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-01T15:30:47Z
+configmap/c4-sink created
+deployment.apps "event-sink" deleted from c4-livekit namespace
+deployment.apps/event-sink created
+Waiting for deployment "event-sink" rollout to finish: 0 of 1 updated replicas are available...
+deployment "event-sink" successfully rolled out
+{"app":"event-sink"} 8080->http
+configmap/c4-sink created
+deployment.apps "event-sink" deleted from c4-janus namespace
+deployment.apps/event-sink created
+deployment "event-sink" successfully rolled out
+{"app":"event-sink"} 8080->http
+[15:31:08.728] switched to janus
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[15:32:09.607] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790868729617.221}
+[15:32:10.855] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790868730866.1038}
+[15:32:12.135] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","t":1790868732145.672}
+[15:32:30.316] janus-iso-all-10s-I-20261001T153212-1 janus_room {"videoroom":"created","room":91818,"permanent":false}
+[15:32:36.431] janus-iso-all-10s-I-20261001T153212-1 join_O1 {"sessionId":"2667288090677823"}
+[15:32:38.221] janus-iso-all-10s-I-20261001T153212-1 join_O2 {"sessionId":"8245555310339790"}
+[15:32:40.071] janus-iso-all-10s-I-20261001T153212-1 join_S {"sessionId":"6543058917170349"}
+[15:32:44.413] janus-iso-all-10s-I-20261001T153212-1 media_flowing {}
+[15:33:00.719] janus-iso-all-10s-I-20261001T153212-1 arm_O1 {"S":63.451904296875,"O2":61.409423828125}
+[15:33:02.001] janus-iso-all-10s-I-20261001T153212-1 arm_O2 {"S":64.46337890625,"O1":58.548095703125}
+[15:33:03.510] janus-iso-all-10s-I-20261001T153212-1 arm_S {"O1":70.56103515625,"O2":67.2724609375}
+[15:33:09.771] janus-iso-all-10s-I-20261001T153212-1 isolate_on {"mode":"all","durMs":10000,"onset":{"before":1790868789767.4402,"after":1790868789777.4172},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":null}
+[15:33:21.819] janus-iso-all-10s-I-20261001T153212-1 isolate_off {"mode":"all","durMs":10000,"onset":{"before":1790868789767.4402,"after":1790868789777.4172},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":{"befo
+[15:34:35.673] janus-iso-all-10s-I-20261001T153212-1 VALID
+[15:34:53.741] janus-iso-all-30s-I-20261001T153435-1 janus_room {"videoroom":"created","room":22135,"permanent":false}
+[15:34:59.819] janus-iso-all-30s-I-20261001T153435-1 join_O1 {"sessionId":"4119260104588289"}
+[15:35:01.613] janus-iso-all-30s-I-20261001T153435-1 join_O2 {"sessionId":"1503352554684924"}
+[15:35:03.335] janus-iso-all-30s-I-20261001T153435-1 join_S {"sessionId":"7795812052129323"}
+[15:35:07.042] janus-iso-all-30s-I-20261001T153435-1 media_flowing {}
+[15:35:23.276] janus-iso-all-30s-I-20261001T153435-1 arm_O1 {"S":70.816162109375,"O2":65.668212890625}
+[15:35:24.613] janus-iso-all-30s-I-20261001T153435-1 arm_O2 {"S":78.422119140625,"O1":64.8193359375}
+[15:35:25.892] janus-iso-all-30s-I-20261001T153435-1 arm_S {"O1":74.954833984375,"O2":78.865234375}
+[15:35:32.247] janus-iso-all-30s-I-20261001T153435-1 isolate_on {"mode":"all","durMs":30000,"onset":{"before":1790868932211.3713,"after":1790868932240.2385},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":null}
+[15:36:04.944] janus-iso-all-30s-I-20261001T153435-1 isolate_off {"mode":"all","durMs":30000,"onset":{"before":1790868932211.3713,"after":1790868932240.2385},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":{"befo
+[15:38:26.964] janus-iso-all-30s-I-20261001T153435-1 VALID
+[15:38:44.416] janus-iso-all-30s-O-20261001T153827-1 janus_room {"videoroom":"created","room":52841,"permanent":false}
+[15:38:50.343] janus-iso-all-30s-O-20261001T153827-1 join_O1 {"sessionId":"8704151847541021"}
+[15:38:52.086] janus-iso-all-30s-O-20261001T153827-1 join_O2 {"sessionId":"2679721850801409"}
+[15:38:53.839] janus-iso-all-30s-O-20261001T153827-1 join_S {"sessionId":"4273293550733332"}
+[15:38:57.544] janus-iso-all-30s-O-20261001T153827-1 media_flowing {}
+[15:39:13.838] janus-iso-all-30s-O-20261001T153827-1 arm_O1 {"S":76.788818359375,"O2":56.58935546875}
+[15:39:15.075] janus-iso-all-30s-O-20261001T153827-1 arm_O2 {"S":67.943603515625,"O1":58.164794921875}
+[15:39:16.307] janus-iso-all-30s-O-20261001T153827-1 arm_S {"O1":64.48486328125,"O2":62.96240234375}
+[15:39:22.543] janus-iso-all-30s-O-20261001T153827-1 isolate_on {"mode":"all","durMs":30000,"onset":{"before":1790869162546.2576,"after":1790869162555.434},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":null}
+[15:39:55.020] janus-iso-all-30s-O-20261001T153827-1 isolate_off {"mode":"all","durMs":30000,"onset":{"before":1790869162546.2576,"after":1790869162555.434},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":{"befor
+[15:41:06.985] janus-iso-all-30s-O-20261001T153827-1 VALID
+[15:41:24.180] janus-iso-all-30s-I-20261001T154107-1 janus_room {"videoroom":"created","room":88196,"permanent":false}
+[15:41:29.861] janus-iso-all-30s-I-20261001T154107-1 join_O1 {"sessionId":"6766450392893418"}
+[15:41:31.520] janus-iso-all-30s-I-20261001T154107-1 join_O2 {"sessionId":"8098959668418144"}
+[15:41:33.177] janus-iso-all-30s-I-20261001T154107-1 join_S {"sessionId":"3840887193007568"}
+[15:41:37.017] janus-iso-all-30s-I-20261001T154107-1 media_flowing {}
+[15:41:53.853] janus-iso-all-30s-I-20261001T154107-1 arm_O1 {"S":57.96923828125,"O2":63.140380859375}
+[15:41:55.127] janus-iso-all-30s-I-20261001T154107-1 arm_O2 {"S":62.03662109375,"O1":63.420654296875}
+[15:41:56.365] janus-iso-all-30s-I-20261001T154107-1 arm_S {"O1":68.72021484375,"O2":60.558349609375}
+[15:42:02.599] janus-iso-all-30s-I-20261001T154107-1 isolate_on {"mode":"all","durMs":30000,"onset":{"before":1790869322606.91,"after":1790869322614.4834},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":null}
+[15:42:35.360] janus-iso-all-30s-I-20261001T154107-1 isolate_off {"mode":"all","durMs":30000,"onset":{"before":1790869322606.91,"after":1790869322614.4834},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":{"before
+[15:43:48.702] janus-iso-all-30s-I-20261001T154107-1 VALID
+[15:44:06.186] janus-iso-all-10s-I-20261001T154348-1 janus_room {"videoroom":"created","room":40383,"permanent":false}
+[15:44:12.572] janus-iso-all-10s-I-20261001T154348-1 join_O1 {"sessionId":"3347385447743203"}
+[15:44:14.343] janus-iso-all-10s-I-20261001T154348-1 join_O2 {"sessionId":"895681371950992"}
+[15:44:16.180] janus-iso-all-10s-I-20261001T154348-1 join_S {"sessionId":"6293414963047331"}
+[15:44:19.980] janus-iso-all-10s-I-20261001T154348-1 media_flowing {}
+[15:44:36.260] janus-iso-all-10s-I-20261001T154348-1 arm_O1 {"S":59.90380859375,"O2":62.353515625}
+[15:44:37.477] janus-iso-all-10s-I-20261001T154348-1 arm_O2 {"S":72.59423828125,"O1":54.70849609375}
+[15:44:38.714] janus-iso-all-10s-I-20261001T154348-1 arm_S {"O1":63.92333984375,"O2":56.192138671875}
+[15:44:44.711] janus-iso-all-10s-I-20261001T154348-1 STARVE_SINK {"note":"sink pod deleted on purpose"}
+[15:44:46.015] janus-iso-all-10s-I-20261001T154348-1 isolate_on {"mode":"all","durMs":10000,"onset":{"before":1790869486026.7664,"after":1790869486035.6143},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":null}
+[15:44:57.632] janus-iso-all-10s-I-20261001T154348-1 isolate_off {"mode":"all","durMs":10000,"onset":{"before":1790869486026.7664,"after":1790869486035.6143},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -j DROP","-A OUTPUT -d 10.42.19.34/32 -j DROP"],"restore":{"befo
+[15:46:13.040] janus-iso-all-10s-I-20261001T154348-1 INVALID: server-event channel: sink restarted during the trial (bootId changed) | server-event channel: expected -1734 events (seq 1929..194), got 0 | server-event channel: start marker missing | server-event channel: end marker missing | server-event channel: only 0 of 3 participant-joined events for this room | clock-offset probe (sfu) produced no measurement
+deployment "event-sink" successfully rolled out
+[15:46:32.777] janus-iso-media-30s-I-20261001T154614-1 janus_room {"videoroom":"created","room":79678,"permanent":false}
+[15:46:39.336] janus-iso-media-30s-I-20261001T154614-1 join_O1 {"sessionId":"8200124659995623"}
+[15:46:41.065] janus-iso-media-30s-I-20261001T154614-1 join_O2 {"sessionId":"8798320974264040"}
+[15:46:43.022] janus-iso-media-30s-I-20261001T154614-1 join_S {"sessionId":"7654264572520997"}
+[15:46:46.818] janus-iso-media-30s-I-20261001T154614-1 media_flowing {}
+[15:47:04.045] janus-iso-media-30s-I-20261001T154614-1 arm_O1 {"S":61.3515625,"O2":75.526123046875}
+[15:47:05.294] janus-iso-media-30s-I-20261001T154614-1 arm_O2 {"S":65.42919921875,"O1":57.7666015625}
+[15:47:06.569] janus-iso-media-30s-I-20261001T154614-1 arm_S {"O1":76.3447265625,"O2":65.915283203125}
+[15:47:13.086] janus-iso-media-30s-I-20261001T154614-1 isolate_on {"mode":"media","durMs":30000,"onset":{"before":1790869633071.9248,"after":1790869633080.9648},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -p udp -j DROP","-A OUTPUT -d 10.42.19.34/32 -p udp -j DROP"],
+[15:47:45.745] janus-iso-media-30s-I-20261001T154614-1 isolate_off {"mode":"media","durMs":30000,"onset":{"before":1790869633071.9248,"after":1790869633080.9648},"rulesDuring":["-A INPUT -s 10.42.19.34/32 -p udp -j DROP","-A OUTPUT -d 10.42.19.34/32 -p udp -j DROP"],
+[15:48:57.113] janus-iso-media-30s-I-20261001T154614-1 VALID
+[15:49:01.502] switched to livekit
+[15:49:24.201] livekit-iso-all-10s-I-20261001T154901-1 join_O1 {"sessionId":"PA_fRbpefe4Yhbi"}
+[15:49:26.153] livekit-iso-all-10s-I-20261001T154901-1 join_O2 {"sessionId":"PA_5FNM4FsC3Jiy"}
+[15:49:28.165] livekit-iso-all-10s-I-20261001T154901-1 join_S {"sessionId":"PA_XbRqfbb4sA6d"}
+[15:49:31.902] livekit-iso-all-10s-I-20261001T154901-1 media_flowing {}
+[15:49:48.606] livekit-iso-all-10s-I-20261001T154901-1 arm_O1 {"S":62.857177734375,"O2":75.0732421875}
+[15:49:49.882] livekit-iso-all-10s-I-20261001T154901-1 arm_O2 {"S":70.20849609375,"O1":57.30810546875}
+[15:49:51.135] livekit-iso-all-10s-I-20261001T154901-1 arm_S {"O1":69.805419921875,"O2":69.125244140625}
+[15:49:57.374] livekit-iso-all-10s-I-20261001T154901-1 isolate_on {"mode":"all","durMs":10000,"onset":{"before":1790869797388.4521,"after":1790869797401.3215},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -j DROP","-A OUTPUT -d 10.42.30.185/32 -j DROP"],"restore":null
+[15:50:08.949] livekit-iso-all-10s-I-20261001T154901-1 isolate_off {"mode":"all","durMs":10000,"onset":{"before":1790869797388.4521,"after":1790869797401.3215},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -j DROP","-A OUTPUT -d 10.42.30.185/32 -j DROP"],"restore":{"be
+[15:51:23.662] livekit-iso-all-10s-I-20261001T154901-1 VALID
+[15:51:45.307] livekit-iso-all-30s-I-20261001T155123-1 join_O1 {"sessionId":"PA_GsTBFeXSvAhb"}
+[15:51:47.265] livekit-iso-all-30s-I-20261001T155123-1 join_O2 {"sessionId":"PA_mDZmYPnTMoJA"}
+[15:51:49.247] livekit-iso-all-30s-I-20261001T155123-1 join_S {"sessionId":"PA_3staMptX3ExG"}
+[15:51:53.027] livekit-iso-all-30s-I-20261001T155123-1 media_flowing {}
+[15:52:09.436] livekit-iso-all-30s-I-20261001T155123-1 arm_O1 {"S":79.5751953125,"O2":58.698486328125}
+[15:52:10.676] livekit-iso-all-30s-I-20261001T155123-1 arm_O2 {"S":81.216796875,"O1":61.753173828125}
+[15:52:11.967] livekit-iso-all-30s-I-20261001T155123-1 arm_S {"O1":74.8369140625,"O2":75.1064453125}
+[15:52:18.270] livekit-iso-all-30s-I-20261001T155123-1 isolate_on {"mode":"all","durMs":30000,"onset":{"before":1790869938285.089,"after":1790869938295.3447},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -j DROP","-A OUTPUT -d 10.42.30.185/32 -j DROP"],"restore":null}
+[15:52:51.068] livekit-iso-all-30s-I-20261001T155123-1 isolate_off {"mode":"all","durMs":30000,"onset":{"before":1790869938285.089,"after":1790869938295.3447},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -j DROP","-A OUTPUT -d 10.42.30.185/32 -j DROP"],"restore":{"bef
+[15:54:00.707] livekit-iso-all-30s-I-20261001T155123-1 VALID
+[15:54:21.875] livekit-iso-all-10s-I-20261001T155400-1 join_O1 {"sessionId":"PA_cPkvQuDSsSzg"}
+[15:54:23.923] livekit-iso-all-10s-I-20261001T155400-1 join_O2 {"sessionId":"PA_T263mpRCKbVf"}
+[15:54:25.971] livekit-iso-all-10s-I-20261001T155400-1 join_S {"sessionId":"PA_QaFEYPuPqt22"}
+[15:54:29.688] livekit-iso-all-10s-I-20261001T155400-1 media_flowing {}
+[15:54:45.955] livekit-iso-all-10s-I-20261001T155400-1 arm_O1 {"S":71.373779296875,"O2":68.3994140625}
+[15:54:47.214] livekit-iso-all-10s-I-20261001T155400-1 arm_O2 {"S":79.042236328125,"O1":59.859375}
+[15:54:48.506] livekit-iso-all-10s-I-20261001T155400-1 arm_S {"O1":65.844482421875,"O2":68.60595703125}
+[15:54:54.538] livekit-iso-all-10s-I-20261001T155400-1 STARVE_SINK {"note":"sink pod deleted on purpose"}
+[15:54:55.849] livekit-iso-all-10s-I-20261001T155400-1 isolate_on {"mode":"all","durMs":10000,"onset":{"before":1790870095866.2913,"after":1790870095876.9666},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -j DROP","-A OUTPUT -d 10.42.30.185/32 -j DROP"],"restore":null
+[15:55:07.756] livekit-iso-all-10s-I-20261001T155400-1 isolate_off {"mode":"all","durMs":10000,"onset":{"before":1790870095866.2913,"after":1790870095876.9666},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -j DROP","-A OUTPUT -d 10.42.30.185/32 -j DROP"],"restore":{"be
+[15:56:18.715] livekit-iso-all-10s-I-20261001T155400-1 INVALID: server-event channel: sink restarted during the trial (bootId changed) | server-event channel: expected -29 events (seq 37..7), got 0 | server-event channel: start marker missing | server-event channel: end marker missing | server-event channel: only 0 of 3 participant-joined events for this room
+deployment "event-sink" successfully rolled out
+[15:56:41.037] livekit-iso-media-10s-O-20261001T155619-1 join_O1 {"sessionId":"PA_LLGHUxqCXmd9"}
+[15:56:43.085] livekit-iso-media-10s-O-20261001T155619-1 join_O2 {"sessionId":"PA_EahvCPUp729S"}
+[15:56:45.098] livekit-iso-media-10s-O-20261001T155619-1 join_S {"sessionId":"PA_zMijVeu5W2hV"}
+[15:56:48.752] livekit-iso-media-10s-O-20261001T155619-1 media_flowing {}
+[15:57:05.019] livekit-iso-media-10s-O-20261001T155619-1 arm_O1 {"S":65.587158203125,"O2":69.1875}
+[15:57:06.278] livekit-iso-media-10s-O-20261001T155619-1 arm_O2 {"S":84.67919921875,"O1":63.86328125}
+[15:57:07.519] livekit-iso-media-10s-O-20261001T155619-1 arm_S {"O1":63.093994140625,"O2":53.65771484375}
+[15:57:13.825] livekit-iso-media-10s-O-20261001T155619-1 isolate_on {"mode":"media","durMs":10000,"onset":{"before":1790870233839.331,"after":1790870233857.69},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -p tcp -m tcp --sport 31881 -j DROP","-A INPUT -s 10.42.30.185/3
+[15:57:25.391] livekit-iso-media-10s-O-20261001T155619-1 isolate_off {"mode":"media","durMs":10000,"onset":{"before":1790870233839.331,"after":1790870233857.69},"rulesDuring":["-A INPUT -s 10.42.30.185/32 -p tcp -m tcp --sport 31881 -j DROP","-A INPUT -s 10.42.30.185/3
+[15:58:33.787] livekit-iso-media-10s-O-20261001T155619-1 VALID
+=== CONFIRM_DONE 2026-10-01T15:58:33Z
+=== PARK 2026-10-01T15:58:33Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 305c8267-c2e8-3d2f-a93b-f4c5a3032cc2 submitted
+==> EKS update 305c8267-c2e8-3d2f-a93b-f4c5a3032cc2: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 3s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 35s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 68s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 100s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 132s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 165s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 197s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 229s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 261s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 294s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 326s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 358s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 390s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 424s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 456s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 489s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 522s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 555s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 589s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 621s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 654s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 687s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 720s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 752s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 785s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 818s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 850s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 883s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 916s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 948s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 981s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1015s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-01T16:15:54Z
