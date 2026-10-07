@@ -23,6 +23,15 @@ What that check does and does not establish:
   start. The measured rebuild took 0.43 s, from 28.85 to 29.28 s; at that width the bar
   collides with the marker for the refused restart at 28.65 s.
 
+Reproducibility of the PDF:
+- The committed fig1_reversal.pdf was built with matplotlib 3.9.4 on Python 3.9.1.
+- The PDF is written without a creation timestamp, so re-running this script reproduces the
+  committed file byte for byte ON THAT matplotlib VERSION. That is the whole scope of the
+  claim. A different matplotlib version produces a different, equally correct PDF (the
+  version is embedded in the file, and font subsetting and layout can differ).
+- Unlike the Node.js analysis dependency, which is pinned by package-lock.json, the Python
+  dependency is not pinned anywhere in this repository.
+
 usage: python3 paper/fig1_reversal.py     (needs matplotlib; writes fig1_reversal.pdf beside itself)"""
 import matplotlib
 matplotlib.use("Agg")

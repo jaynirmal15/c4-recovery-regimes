@@ -146,6 +146,12 @@ The script needs Python 3 with matplotlib:
 python3 paper/fig1_reversal.py
 ```
 
+The committed PDF was built with matplotlib 3.9.4 on Python 3.9.1. The script writes the PDF
+without a creation timestamp, so on that matplotlib version it reproduces the committed file
+byte for byte; the claim goes no further than that version. Under a different matplotlib
+the output is a different, equally correct PDF. Unlike the Node.js dependency, the Python
+dependency is not pinned in this repository.
+
 ## Re-running trials
 
 This needs more than the repository:
