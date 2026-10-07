@@ -1,0 +1,149 @@
+{"t":"2026-09-29T05:55:30.371Z","who":"probe","dir":"meta","url":"ws://janus.c4-janus.svc.cluster.local:31188","room":1234,"scenarios":["J1","J2","J3","J4"],"node":"v24.21.0"}
+{"t":"2026-09-29T05:55:30.428Z","who":"observer","dir":"ws","ev":"open"}
+{"t":"2026-09-29T05:55:30.428Z","who":"observer","dir":"send","msg":{"janus":"create","transaction":"observer-1"}}
+{"t":"2026-09-29T05:55:30.430Z","who":"observer","dir":"recv","msg":{"janus":"success","transaction":"observer-1","data":{"id":1007504967308235}}}
+{"t":"2026-09-29T05:55:30.431Z","who":"observer","dir":"send","msg":{"janus":"attach","plugin":"janus.plugin.videoroom","transaction":"observer-2","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:30.432Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-2","data":{"id":1236318033801140}}}
+{"t":"2026-09-29T05:55:30.432Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"join","ptype":"publisher","room":1234,"id":9001,"display":"observer"},"transaction":"observer-3","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:30.433Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-3"}}
+{"t":"2026-09-29T05:55:30.433Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"transaction":"observer-3","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"joined","room":1234,"description":"c4 probe room (config-defined)","id":9001,"private_id":420805779,"publishers":[],"attendees":[]}}}}
+{"t":"2026-09-29T05:55:30.434Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-4","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:30.434Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-4","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:55:30.435Z","who":"probe","dir":"mark","scenario":"J1","step":"start"}
+{"t":"2026-09-29T05:55:30.439Z","who":"p1","dir":"ws","ev":"open"}
+{"t":"2026-09-29T05:55:30.439Z","who":"p1","dir":"send","msg":{"janus":"create","transaction":"p1-5"}}
+{"t":"2026-09-29T05:55:30.440Z","who":"p1","dir":"recv","msg":{"janus":"success","transaction":"p1-5","data":{"id":163016417413525}}}
+{"t":"2026-09-29T05:55:30.440Z","who":"p1","dir":"send","msg":{"janus":"attach","plugin":"janus.plugin.videoroom","transaction":"p1-6","session_id":163016417413525}}
+{"t":"2026-09-29T05:55:30.441Z","who":"p1","dir":"recv","msg":{"janus":"success","session_id":163016417413525,"transaction":"p1-6","data":{"id":785710188207917}}}
+{"t":"2026-09-29T05:55:30.442Z","who":"p1","dir":"send","msg":{"janus":"message","handle_id":785710188207917,"body":{"request":"join","ptype":"publisher","room":1234,"id":1001,"display":"p1"},"transaction":"p1-7","session_id":163016417413525}}
+{"t":"2026-09-29T05:55:30.442Z","who":"p1","dir":"recv","msg":{"janus":"ack","session_id":163016417413525,"transaction":"p1-7"}}
+{"t":"2026-09-29T05:55:30.443Z","who":"p1","dir":"recv","msg":{"janus":"event","session_id":163016417413525,"transaction":"p1-7","sender":785710188207917,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"joined","room":1234,"description":"c4 probe room (config-defined)","id":1001,"private_id":1596303230,"publishers":[],"attendees":[{"id":9001,"display":"observer"}]}}}}
+{"t":"2026-09-29T05:55:30.443Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"joining":{"id":1001,"display":"p1"}}}}}
+{"t":"2026-09-29T05:55:33.443Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-8","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:33.444Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-8","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":1001,"display":"p1","publisher":false},{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:55:33.444Z","who":"probe","dir":"mark","scenario":"J1","step":"leave"}
+{"t":"2026-09-29T05:55:33.444Z","who":"p1","dir":"send","msg":{"janus":"message","handle_id":785710188207917,"body":{"request":"leave"},"transaction":"p1-9","session_id":163016417413525}}
+{"t":"2026-09-29T05:55:33.445Z","who":"p1","dir":"recv","msg":{"janus":"ack","session_id":163016417413525,"transaction":"p1-9"}}
+{"t":"2026-09-29T05:55:33.445Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p1","leaving":1001}}}}
+{"t":"2026-09-29T05:55:33.445Z","who":"p1","dir":"recv","msg":{"janus":"event","session_id":163016417413525,"transaction":"p1-9","sender":785710188207917,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"leaving":"ok"}}}}
+{"t":"2026-09-29T05:55:35.446Z","who":"probe","dir":"mark","scenario":"J1","step":"detach"}
+{"t":"2026-09-29T05:55:35.447Z","who":"p1","dir":"send","msg":{"janus":"detach","handle_id":785710188207917,"transaction":"p1-10","session_id":163016417413525}}
+{"t":"2026-09-29T05:55:35.448Z","who":"p1","dir":"recv","msg":{"janus":"success","session_id":163016417413525,"transaction":"p1-10"}}
+{"t":"2026-09-29T05:55:35.448Z","who":"p1","dir":"recv","msg":{"janus":"detached","session_id":163016417413525,"sender":785710188207917}}
+{"t":"2026-09-29T05:55:36.449Z","who":"probe","dir":"mark","scenario":"J1","step":"destroy"}
+{"t":"2026-09-29T05:55:36.449Z","who":"p1","dir":"send","msg":{"janus":"destroy","transaction":"p1-11","session_id":163016417413525}}
+{"t":"2026-09-29T05:55:36.450Z","who":"p1","dir":"recv","msg":{"janus":"success","session_id":163016417413525,"transaction":"p1-11"}}
+{"t":"2026-09-29T05:55:37.454Z","who":"p1","dir":"ws","ev":"close","code":1000,"reason":"probe close"}
+{"t":"2026-09-29T05:55:40.452Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-12","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:40.453Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-12","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:55:40.453Z","who":"probe","dir":"mark","scenario":"J1","step":"end"}
+{"t":"2026-09-29T05:55:40.453Z","who":"probe","dir":"mark","scenario":"J2","step":"start"}
+{"t":"2026-09-29T05:55:40.458Z","who":"p2","dir":"ws","ev":"open"}
+{"t":"2026-09-29T05:55:40.458Z","who":"p2","dir":"send","msg":{"janus":"create","transaction":"p2-13"}}
+{"t":"2026-09-29T05:55:40.460Z","who":"p2","dir":"recv","msg":{"janus":"success","transaction":"p2-13","data":{"id":7930403005805850}}}
+{"t":"2026-09-29T05:55:40.460Z","who":"p2","dir":"send","msg":{"janus":"attach","plugin":"janus.plugin.videoroom","transaction":"p2-14","session_id":7930403005805850}}
+{"t":"2026-09-29T05:55:40.461Z","who":"p2","dir":"recv","msg":{"janus":"success","session_id":7930403005805850,"transaction":"p2-14","data":{"id":6428539854021990}}}
+{"t":"2026-09-29T05:55:40.461Z","who":"p2","dir":"send","msg":{"janus":"message","handle_id":6428539854021990,"body":{"request":"join","ptype":"publisher","room":1234,"id":1002,"display":"p2"},"transaction":"p2-15","session_id":7930403005805850}}
+{"t":"2026-09-29T05:55:40.462Z","who":"p2","dir":"recv","msg":{"janus":"ack","session_id":7930403005805850,"transaction":"p2-15"}}
+{"t":"2026-09-29T05:55:40.462Z","who":"p2","dir":"recv","msg":{"janus":"event","session_id":7930403005805850,"transaction":"p2-15","sender":6428539854021990,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"joined","room":1234,"description":"c4 probe room (config-defined)","id":1002,"private_id":615787375,"publishers":[],"attendees":[{"id":9001,"display":"observer"}]}}}}
+{"t":"2026-09-29T05:55:40.462Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"joining":{"id":1002,"display":"p2"}}}}}
+{"t":"2026-09-29T05:55:43.462Z","who":"probe","dir":"mark","scenario":"J2","step":"ws_close_without_leave"}
+{"t":"2026-09-29T05:55:43.463Z","who":"p2","dir":"ws","ev":"close","code":1000,"reason":"probe close"}
+{"t":"2026-09-29T05:55:43.463Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p2","unpublished":1002}}}}
+{"t":"2026-09-29T05:55:43.463Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p2","leaving":1002}}}}
+{"t":"2026-09-29T05:55:45.436Z","who":"observer","dir":"send","msg":{"janus":"keepalive","transaction":"observer-16","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:45.436Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-16"}}
+{"t":"2026-09-29T05:55:48.464Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-17","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:48.465Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-17","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:55:48.465Z","who":"probe","dir":"mark","scenario":"J2","step":"end"}
+{"t":"2026-09-29T05:55:48.465Z","who":"probe","dir":"mark","scenario":"J3","step":"start"}
+{"t":"2026-09-29T05:55:48.471Z","who":"p3","dir":"ws","ev":"open"}
+{"t":"2026-09-29T05:55:48.471Z","who":"p3","dir":"send","msg":{"janus":"create","transaction":"p3-18"}}
+{"t":"2026-09-29T05:55:48.472Z","who":"p3","dir":"recv","msg":{"janus":"success","transaction":"p3-18","data":{"id":8110213814635792}}}
+{"t":"2026-09-29T05:55:48.472Z","who":"p3","dir":"send","msg":{"janus":"attach","plugin":"janus.plugin.videoroom","transaction":"p3-19","session_id":8110213814635792}}
+{"t":"2026-09-29T05:55:48.473Z","who":"p3","dir":"recv","msg":{"janus":"success","session_id":8110213814635792,"transaction":"p3-19","data":{"id":7384347101826932}}}
+{"t":"2026-09-29T05:55:48.473Z","who":"p3","dir":"send","msg":{"janus":"message","handle_id":7384347101826932,"body":{"request":"join","ptype":"publisher","room":1234,"id":1003,"display":"p3"},"transaction":"p3-20","session_id":8110213814635792}}
+{"t":"2026-09-29T05:55:48.473Z","who":"p3","dir":"recv","msg":{"janus":"ack","session_id":8110213814635792,"transaction":"p3-20"}}
+{"t":"2026-09-29T05:55:48.474Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"joining":{"id":1003,"display":"p3"}}}}}
+{"t":"2026-09-29T05:55:48.474Z","who":"p3","dir":"recv","msg":{"janus":"event","session_id":8110213814635792,"transaction":"p3-20","sender":7384347101826932,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"joined","room":1234,"description":"c4 probe room (config-defined)","id":1003,"private_id":728308258,"publishers":[],"attendees":[{"id":9001,"display":"observer"}]}}}}
+{"t":"2026-09-29T05:55:48.474Z","who":"probe","dir":"mark","scenario":"J3","step":"silent_begin"}
+{"t":"2026-09-29T05:55:58.474Z","who":"probe","dir":"mark","scenario":"J3","step":"rejoin_same_id_before_timeout"}
+{"t":"2026-09-29T05:55:58.479Z","who":"p3b","dir":"ws","ev":"open"}
+{"t":"2026-09-29T05:55:58.479Z","who":"p3b","dir":"send","msg":{"janus":"create","transaction":"p3b-21"}}
+{"t":"2026-09-29T05:55:58.480Z","who":"p3b","dir":"recv","msg":{"janus":"success","transaction":"p3b-21","data":{"id":3293006123578908}}}
+{"t":"2026-09-29T05:55:58.480Z","who":"p3b","dir":"send","msg":{"janus":"attach","plugin":"janus.plugin.videoroom","transaction":"p3b-22","session_id":3293006123578908}}
+{"t":"2026-09-29T05:55:58.481Z","who":"p3b","dir":"recv","msg":{"janus":"success","session_id":3293006123578908,"transaction":"p3b-22","data":{"id":5264560832632530}}}
+{"t":"2026-09-29T05:55:58.481Z","who":"p3b","dir":"send","msg":{"janus":"message","handle_id":5264560832632530,"body":{"request":"join","ptype":"publisher","room":1234,"id":1003,"display":"p3-again"},"transaction":"p3b-23","session_id":3293006123578908}}
+{"t":"2026-09-29T05:55:58.482Z","who":"p3b","dir":"recv","msg":{"janus":"ack","session_id":3293006123578908,"transaction":"p3b-23"}}
+{"t":"2026-09-29T05:55:58.482Z","who":"p3b","dir":"recv","msg":{"janus":"event","session_id":3293006123578908,"transaction":"p3b-23","sender":5264560832632530,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","error_code":436,"error":"User ID 1003 already exists"}}}}
+{"t":"2026-09-29T05:55:58.482Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-24","session_id":1007504967308235}}
+{"t":"2026-09-29T05:55:58.483Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-24","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":1003,"display":"p3","publisher":false},{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:56:00.436Z","who":"observer","dir":"send","msg":{"janus":"keepalive","transaction":"observer-25","session_id":1007504967308235}}
+{"t":"2026-09-29T05:56:00.438Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-25"}}
+{"t":"2026-09-29T05:56:13.485Z","who":"p3b","dir":"send","msg":{"janus":"keepalive","transaction":"p3b-26","session_id":3293006123578908}}
+{"t":"2026-09-29T05:56:13.486Z","who":"p3b","dir":"recv","msg":{"janus":"ack","session_id":3293006123578908,"transaction":"p3b-26"}}
+{"t":"2026-09-29T05:56:15.439Z","who":"observer","dir":"send","msg":{"janus":"keepalive","transaction":"observer-27","session_id":1007504967308235}}
+{"t":"2026-09-29T05:56:15.440Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-27"}}
+{"t":"2026-09-29T05:56:28.486Z","who":"p3b","dir":"send","msg":{"janus":"keepalive","transaction":"p3b-28","session_id":3293006123578908}}
+{"t":"2026-09-29T05:56:28.487Z","who":"p3b","dir":"recv","msg":{"janus":"ack","session_id":3293006123578908,"transaction":"p3b-28"}}
+{"t":"2026-09-29T05:56:30.441Z","who":"observer","dir":"send","msg":{"janus":"keepalive","transaction":"observer-29","session_id":1007504967308235}}
+{"t":"2026-09-29T05:56:30.442Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-29"}}
+{"t":"2026-09-29T05:56:43.486Z","who":"p3b","dir":"send","msg":{"janus":"keepalive","transaction":"p3b-30","session_id":3293006123578908}}
+{"t":"2026-09-29T05:56:43.487Z","who":"p3b","dir":"recv","msg":{"janus":"ack","session_id":3293006123578908,"transaction":"p3b-30"}}
+{"t":"2026-09-29T05:56:45.443Z","who":"observer","dir":"send","msg":{"janus":"keepalive","transaction":"observer-31","session_id":1007504967308235}}
+{"t":"2026-09-29T05:56:45.444Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-31"}}
+{"t":"2026-09-29T05:56:48.519Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p3","unpublished":1003}}}}
+{"t":"2026-09-29T05:56:48.519Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p3","leaving":1003}}}}
+{"t":"2026-09-29T05:56:48.520Z","who":"p3","dir":"recv","msg":{"janus":"timeout","session_id":8110213814635792}}
+{"t":"2026-09-29T05:56:58.486Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-32","session_id":1007504967308235}}
+{"t":"2026-09-29T05:56:58.487Z","who":"p3b","dir":"send","msg":{"janus":"keepalive","transaction":"p3b-33","session_id":3293006123578908}}
+{"t":"2026-09-29T05:56:58.487Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-32","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:56:58.487Z","who":"probe","dir":"mark","scenario":"J3","step":"rejoin_same_id_after_timeout"}
+{"t":"2026-09-29T05:56:58.487Z","who":"p3b","dir":"send","msg":{"janus":"message","handle_id":5264560832632530,"body":{"request":"join","ptype":"publisher","room":1234,"id":1003,"display":"p3-again"},"transaction":"p3b-34","session_id":3293006123578908}}
+{"t":"2026-09-29T05:56:58.488Z","who":"p3b","dir":"recv","msg":{"janus":"ack","session_id":3293006123578908,"transaction":"p3b-33"}}
+{"t":"2026-09-29T05:56:58.488Z","who":"p3b","dir":"recv","msg":{"janus":"ack","session_id":3293006123578908,"transaction":"p3b-34"}}
+{"t":"2026-09-29T05:56:58.488Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"joining":{"id":1003,"display":"p3-again"}}}}}
+{"t":"2026-09-29T05:56:58.489Z","who":"p3b","dir":"recv","msg":{"janus":"event","session_id":3293006123578908,"transaction":"p3b-34","sender":5264560832632530,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"joined","room":1234,"description":"c4 probe room (config-defined)","id":1003,"private_id":4033542167,"publishers":[],"attendees":[{"id":9001,"display":"observer"}]}}}}
+{"t":"2026-09-29T05:57:00.444Z","who":"observer","dir":"send","msg":{"janus":"keepalive","transaction":"observer-35","session_id":1007504967308235}}
+{"t":"2026-09-29T05:57:00.445Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-35"}}
+{"t":"2026-09-29T05:57:00.488Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-36","session_id":1007504967308235}}
+{"t":"2026-09-29T05:57:00.490Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-36","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":1003,"display":"p3-again","publisher":false},{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:57:00.490Z","who":"probe","dir":"mark","scenario":"J3","step":"cleanup"}
+{"t":"2026-09-29T05:57:00.490Z","who":"p3b","dir":"send","msg":{"janus":"message","handle_id":5264560832632530,"body":{"request":"leave"},"transaction":"p3b-37","session_id":3293006123578908}}
+{"t":"2026-09-29T05:57:00.490Z","who":"p3b","dir":"recv","msg":{"janus":"ack","session_id":3293006123578908,"transaction":"p3b-37"}}
+{"t":"2026-09-29T05:57:00.491Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p3-again","leaving":1003}}}}
+{"t":"2026-09-29T05:57:00.491Z","who":"p3b","dir":"recv","msg":{"janus":"event","session_id":3293006123578908,"transaction":"p3b-37","sender":5264560832632530,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"leaving":"ok"}}}}
+{"t":"2026-09-29T05:57:00.491Z","who":"p3b","dir":"send","msg":{"janus":"destroy","transaction":"p3b-38","session_id":3293006123578908}}
+{"t":"2026-09-29T05:57:00.492Z","who":"p3b","dir":"recv","msg":{"janus":"success","session_id":3293006123578908,"transaction":"p3b-38"}}
+{"t":"2026-09-29T05:57:00.493Z","who":"p3b","dir":"ws","ev":"close","code":1000,"reason":"probe close"}
+{"t":"2026-09-29T05:57:00.493Z","who":"p3","dir":"ws","ev":"close","code":1000,"reason":"probe close"}
+{"t":"2026-09-29T05:57:02.494Z","who":"probe","dir":"mark","scenario":"J3","step":"end"}
+{"t":"2026-09-29T05:57:02.494Z","who":"probe","dir":"mark","scenario":"J4","step":"start"}
+{"t":"2026-09-29T05:57:02.501Z","who":"p4","dir":"ws","ev":"open"}
+{"t":"2026-09-29T05:57:02.501Z","who":"p4","dir":"send","msg":{"janus":"create","transaction":"p4-39"}}
+{"t":"2026-09-29T05:57:02.501Z","who":"p4","dir":"recv","msg":{"janus":"success","transaction":"p4-39","data":{"id":4441647382835718}}}
+{"t":"2026-09-29T05:57:02.502Z","who":"p4","dir":"send","msg":{"janus":"attach","plugin":"janus.plugin.videoroom","transaction":"p4-40","session_id":4441647382835718}}
+{"t":"2026-09-29T05:57:02.502Z","who":"p4","dir":"recv","msg":{"janus":"success","session_id":4441647382835718,"transaction":"p4-40","data":{"id":4224858941285171}}}
+{"t":"2026-09-29T05:57:02.502Z","who":"p4","dir":"send","msg":{"janus":"message","handle_id":4224858941285171,"body":{"request":"join","ptype":"publisher","room":1234,"id":1004,"display":"p4"},"transaction":"p4-41","session_id":4441647382835718}}
+{"t":"2026-09-29T05:57:02.503Z","who":"p4","dir":"recv","msg":{"janus":"ack","session_id":4441647382835718,"transaction":"p4-41"}}
+{"t":"2026-09-29T05:57:02.503Z","who":"p4","dir":"recv","msg":{"janus":"event","session_id":4441647382835718,"transaction":"p4-41","sender":4224858941285171,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"joined","room":1234,"description":"c4 probe room (config-defined)","id":1004,"private_id":2479542357,"publishers":[],"attendees":[{"id":9001,"display":"observer"}]}}}}
+{"t":"2026-09-29T05:57:02.503Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"joining":{"id":1004,"display":"p4"}}}}}
+{"t":"2026-09-29T05:57:05.506Z","who":"probe","dir":"mark","scenario":"J4","step":"ws_close"}
+{"t":"2026-09-29T05:57:05.508Z","who":"p4","dir":"ws","ev":"close","code":1000,"reason":"probe close"}
+{"t":"2026-09-29T05:57:05.508Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p4","unpublished":1004}}}}
+{"t":"2026-09-29T05:57:05.508Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"display":"p4","leaving":1004}}}}
+{"t":"2026-09-29T05:57:06.014Z","who":"p4-claim","dir":"ws","ev":"open"}
+{"t":"2026-09-29T05:57:06.014Z","who":"probe","dir":"mark","scenario":"J4","step":"claim"}
+{"t":"2026-09-29T05:57:06.014Z","who":"p4-claim","dir":"send","msg":{"janus":"claim","session_id":4441647382835718,"transaction":"p4-claim-42"}}
+{"t":"2026-09-29T05:57:06.015Z","who":"p4-claim","dir":"recv","msg":{"janus":"error","session_id":4441647382835718,"transaction":"p4-claim-42","error":{"code":458,"reason":"No such session 4441647382835718"}}}
+{"t":"2026-09-29T05:57:08.015Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"listparticipants","room":1234},"transaction":"observer-43","session_id":1007504967308235}}
+{"t":"2026-09-29T05:57:08.016Z","who":"p4-claim","dir":"ws","ev":"close","code":1000,"reason":"probe close"}
+{"t":"2026-09-29T05:57:08.016Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-43","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"participants","room":1234,"participants":[{"id":9001,"display":"observer","publisher":false}]}}}}
+{"t":"2026-09-29T05:57:08.016Z","who":"probe","dir":"mark","scenario":"J4","step":"end"}
+{"t":"2026-09-29T05:57:08.017Z","who":"observer","dir":"send","msg":{"janus":"message","handle_id":1236318033801140,"body":{"request":"leave"},"transaction":"observer-44","session_id":1007504967308235}}
+{"t":"2026-09-29T05:57:08.017Z","who":"observer","dir":"recv","msg":{"janus":"ack","session_id":1007504967308235,"transaction":"observer-44"}}
+{"t":"2026-09-29T05:57:08.017Z","who":"observer","dir":"recv","msg":{"janus":"event","session_id":1007504967308235,"transaction":"observer-44","sender":1236318033801140,"plugindata":{"plugin":"janus.plugin.videoroom","data":{"videoroom":"event","room":1234,"leaving":"ok"}}}}
+{"t":"2026-09-29T05:57:08.017Z","who":"observer","dir":"send","msg":{"janus":"destroy","transaction":"observer-45","session_id":1007504967308235}}
+{"t":"2026-09-29T05:57:08.018Z","who":"observer","dir":"recv","msg":{"janus":"success","session_id":1007504967308235,"transaction":"observer-45"}}
+{"t":"2026-09-29T05:57:08.019Z","who":"observer","dir":"ws","ev":"close","code":1000,"reason":"probe close"}
+{"t":"2026-09-29T05:57:09.019Z","who":"probe","dir":"meta","done":true}

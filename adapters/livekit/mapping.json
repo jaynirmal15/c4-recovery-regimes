@@ -1,0 +1,26 @@
+{
+  "stack": "livekit",
+  "versions": { "server": "1.13.7", "protocol": "a4f4b5c0c23f", "observer": "lk 2.18.8 (server-sdk-go)", "docsClient": "client-sdk-js 2.22.3" },
+  "events": {
+    "room.created": { "status": "observed", "observer": ["server"], "native": ["webhook room_started"], "evidence": "vocabulary/payloads/livekit-webhook-examples.json#room_started" },
+    "room.ended": { "status": "observed", "observer": ["server"], "native": ["webhook room_finished"], "evidence": "probes/raw/livekit-webhooks.jsonl (c4-webhook-check, 600 s)" },
+    "participant.joined": { "status": "observed", "observer": ["server", "other"], "native": ["webhook participant_joined (on ACTIVE)", "lk observer 'participant connected'", "docs: client-sdk-js ParticipantConnected"], "evidence": "vocabulary/livekit.md §1, §4" },
+    "participant.left.graceful": { "status": "observed", "observer": ["server"], "native": ["webhook participant_left disconnectReason=CLIENT_INITIATED"], "evidence": "L1: 1.1 s after SIGTERM" },
+    "participant.left.signal_closed": { "status": "docs-only", "observer": ["server"], "native": ["webhook participant_left disconnectReason=SIGNAL_CLOSE (only if ICE never connected)"], "evidence": "vocabulary/livekit-docs.md §2.3" },
+    "participant.left.media_timeout": { "status": "observed", "observer": ["server"], "native": ["webhook participant_left disconnectReason=CONNECTION_TIMEOUT", "server log 'participant closing' reason=PEER_CONNECTION_DISCONNECTED"], "evidence": "L2: 20.8 s after SIGKILL; vocabulary/livekit.md §3" },
+    "participant.left.inactivity_timeout": { "status": "unsupported", "reason": "LiveKit has no signalling-inactivity removal: with ICE up and signal gone, the participant stays (source: HandleSignalSourceClose); removal is driven by media transport failure (media_timeout)." },
+    "participant.left.replaced": { "status": "observed", "observer": ["server"], "native": ["webhook participant_left disconnectReason=DUPLICATE_IDENTITY, then participant_joined with new sid"], "evidence": "L3: 22 ms apart. NOT visible to lk observer (Go SDK)." },
+    "participant.left.administrative": { "status": "docs-only", "observer": ["server", "other"], "native": ["participant_left reason PARTICIPANT_REMOVED | ROOM_DELETED | SERVER_SHUTDOWN | ROOM_CLOSED"], "evidence": "vocabulary/livekit-docs.md §1.2" },
+    "participant.left.unknown": { "status": "observed", "observer": ["other"], "native": ["lk observer 'participant disconnected' (no cause given)", "webhook participant_connection_aborted (docs-only)"], "evidence": "probes/raw/livekit-observer.log" },
+    "participant.rejoin.rejected": { "status": "unsupported", "reason": "LiveKit never rejects a same-identity join; it evicts the old session (participant.left.replaced)." },
+    "participant.signal.lost": { "status": "observed", "observer": ["server-log-only"], "native": ["server log 'finishing WS connection' + 'signal source valid {valid:false}'"], "evidence": "L2 server log +0 s; not in webhooks or state API" },
+    "participant.signal.reclaimed": { "status": "docs-only", "observer": ["self"], "native": ["resume: join with reconnect=1 -> ReconnectResponse (same sid); client-sdk-js SignalReconnecting -> Reconnected"], "evidence": "vocabulary/livekit-docs.md §3.2, §4.3" },
+    "participant.signal.reclaim_failed": { "status": "docs-only", "observer": ["self"], "native": ["LeaveRequest{action=RECONNECT, reason=STATE_MISMATCH} -> client does full reconnect"], "evidence": "vocabulary/livekit-docs.md §3.2" },
+    "participant.transport.lost": { "status": "observed", "observer": ["server-log-only"], "native": ["server log ICE 'disconnected' (+9.7 s) / 'failed' (+15.7 s)", "docs: client ConnectionQualityChanged(lost)"], "evidence": "L2 server log" },
+    "participant.transport.resumed": { "status": "docs-only", "observer": ["self", "server-log-only"], "native": ["ICERestart after resume; analytics PARTICIPANT_RESUMED; no webhook"], "evidence": "vocabulary/livekit-docs.md §1, §3.2" },
+    "participant.media.published": { "status": "docs-only", "observer": ["server", "other"], "native": ["webhook track_published", "TrackPublished"], "evidence": "vocabulary/livekit-docs.md §1" },
+    "participant.media.unpublished": { "status": "docs-only", "observer": ["server", "other"], "native": ["webhook track_unpublished", "TrackUnpublished"], "evidence": "vocabulary/livekit-docs.md §1" },
+    "participant.media.stalled": { "status": "docs-only", "observer": ["other", "self"], "native": ["ConnectionQualityChanged(lost)", "TrackStreamStateChanged(paused)"], "evidence": "vocabulary/livekit-docs.md §4.1" },
+    "participant.media.flowing": { "status": "docs-only", "observer": ["other", "self"], "native": ["TrackStreamStateChanged(active)", "ConnectionQualityChanged(good|excellent)"], "evidence": "vocabulary/livekit-docs.md §4.1" }
+  }
+}

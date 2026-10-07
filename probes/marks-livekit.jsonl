@@ -1,0 +1,16 @@
+{"t":"2026-09-29T05:51:29.110Z","scenario":"L1","step":"start"}
+{"t":"2026-09-29T05:51:31.296Z","scenario":"L1","step":"p1_pod_ready"}
+{"t":"2026-09-29T05:51:41.318Z","scenario":"L1","step":"sigterm_delete"}
+{"t":"2026-09-29T05:51:43.459Z","scenario":"L1","step":"pod_gone"}
+{"t":"2026-09-29T05:52:08.487Z","scenario":"L1","step":"end"}
+{"t":"2026-09-29T05:52:08.499Z","scenario":"L2","step":"start"}
+{"t":"2026-09-29T05:52:11.790Z","scenario":"L2","step":"p2_pod_ready"}
+{"t":"2026-09-29T05:52:21.818Z","scenario":"L2","step":"sigkill"}
+{"t":"2026-09-29T05:52:26.029Z","scenario":"L2","step":"killed_checked"}
+{"t":"2026-09-29T05:53:11.081Z","scenario":"L2","step":"end"}
+{"t":"2026-09-29T05:53:13.315Z","scenario":"L3","step":"start"}
+{"t":"2026-09-29T05:53:15.548Z","scenario":"L3","step":"p3_pod_ready"}
+{"t":"2026-09-29T05:53:25.579Z","scenario":"L3","step":"second_join_same_identity"}
+{"t":"2026-09-29T05:53:27.848Z","scenario":"L3","step":"p3b_pod_ready"}
+{"t":"2026-09-29T05:53:43.971Z","scenario":"L3","step":"cleanup"}
+{"t":"2026-09-29T05:54:10.784Z","scenario":"L3","step":"end"}

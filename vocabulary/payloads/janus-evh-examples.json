@@ -1,0 +1,252 @@
+{
+ "256:core:started": {
+  "emitter": "c4-janus",
+  "type": 256,
+  "subtype": 1,
+  "timestamp": 1790660968170130,
+  "event": {
+   "status": "started",
+   "info": {
+    "janus": "server_info",
+    "name": "Janus WebRTC Server",
+    "version": 1401,
+    "version_string": "1.4.1",
+    "author": "Meetecho s.r.l.",
+    "commit-hash": "not-a-git-repo",
+    "compile-time": "Thu Jul  9 15:50:39 UTC 2026",
+    "log-to-stdout": true,
+    "log-to-file": false,
+    "data_channels": true,
+    "accepting-new-sessions": true,
+    "session-timeout": 60,
+    "reclaim-session-timeout": 0,
+    "candidates-timeout": 45,
+    "server-name": "c4-janus",
+    "local-ip": "10.42.23.243",
+    "ipv6": false,
+    "ice-lite": false,
+    "ice-tcp": false,
+    "ice-nomination": "aggressive",
+    "ice-consent-freshness": false,
+    "ice-keepalive-conncheck": false,
+    "hangup-on-failed": false,
+    "full-trickle": false,
+    "mdns-enabled": true,
+    "min-nack-queue": 200,
+    "nack-optimizations": false,
+    "twcc-period": 200,
+    "dtls-mtu": 1200,
+    "static-event-loops": 0,
+    "api_secret": false,
+    "auth_token": false,
+    "event_handlers": true,
+    "opaqueid_in_api": false,
+    "dependencies": {
+     "glib2": "2.90.0",
+     "jansson": "2.15.1",
+     "libnice": "0.1.23",
+     "libsrtp": "libsrtp2 2.8.0",
+     "libcurl": "8.23.0-rc2",
+     "crypto": "OpenSSL 3.6.4 25 Aug 2026"
+    },
+    "transports": {
+     "janus.transport.http": {
+      "name": "JANUS REST (HTTP/HTTPS) transport plugin",
+      "author": "Meetecho s.r.l.",
+      "description": "This transport plugin adds REST (HTTP/HTTPS) support to the Janus API via libmicrohttpd.",
+      "version_string": "0.0.2",
+      "version": 2
+     },
+     "janus.transport.websockets": {
+      "name": "JANUS WebSockets transport plugin",
+      "author": "Meetecho s.r.l.",
+      "description": "This transport plugin adds WebSockets support to the Janus API via libwebsockets.",
+      "version_string": "0.0.1",
+      "version": 1
+     }
+    },
+    "events": {
+     "janus.eventhandler.sampleevh": {
+      "name": "JANUS SampleEventHandler plugin",
+      "author": "Meetecho s.r.l.",
+      "description": "This is a trivial sample event handler plugin for Janus, which forwards events via HTTP POST.",
+      "version_string": "0.0.1",
+      "version": 1
+     }
+    },
+    "loggers": {
+     "janus.logger.jsonlog": {
+      "name": "JANUS JSON logger plugin",
+      "author": "Meetecho s.r.l.",
+      "description": "This is a trivial sample logger plugin for Janus, which saves log lines to a local JSON file.",
+      "version_string": "0.0.1",
+      "version": 1
+     }
+    },
+    "plugins": {
+     "janus.plugin.videoroom": {
+      "name": "JANUS VideoRoom plugin",
+      "author": "Meetecho s.r.l.",
+      "description": "This is a plugin implementing a videoconferencing SFU (Selective Forwarding Unit) for Janus, that is an audio/video router.",
+      "version_string": "0.0.10",
+      "version": 10
+     }
+    }
+   }
+  }
+ },
+ "256:core:update": {
+  "emitter": "c4-janus",
+  "type": 256,
+  "subtype": 1,
+  "timestamp": 1790660983518529,
+  "event": {
+   "status": "update",
+   "info": {
+    "sessions": 0,
+    "handles": 0,
+    "peerconnections": 0,
+    "stats-period": 5
+   }
+  }
+ },
+ "128:transport:request": {
+  "emitter": "c4-janus",
+  "type": 128,
+  "timestamp": 1790660989848066,
+  "event": {
+   "transport": "janus.transport.http",
+   "id": "17487548694762296358",
+   "data": {
+    "event": "request",
+    "admin_api": false,
+    "ip": "::1",
+    "port": 49496
+   }
+  }
+ },
+ "128:transport:connected": {
+  "emitter": "c4-janus",
+  "type": 128,
+  "timestamp": 1790661330421470,
+  "event": {
+   "transport": "janus.transport.websockets",
+   "id": "10764282604579265150",
+   "data": {
+    "event": "connected",
+    "admin_api": false,
+    "ip": "10.42.4.65"
+   }
+  }
+ },
+ "1:session:created": {
+  "emitter": "c4-janus",
+  "type": 1,
+  "timestamp": 1790661330429818,
+  "session_id": 1007504967308235,
+  "event": {
+   "name": "created",
+   "transport": {
+    "transport": "janus.transport.websockets",
+    "id": "10764282604579265150"
+   }
+  }
+ },
+ "2:handle:attached": {
+  "emitter": "c4-janus",
+  "type": 2,
+  "timestamp": 1790661330431679,
+  "session_id": 1007504967308235,
+  "handle_id": 1236318033801140,
+  "event": {
+   "name": "attached",
+   "plugin": "janus.plugin.videoroom"
+  }
+ },
+ "64:plugin:joined": {
+  "emitter": "c4-janus",
+  "type": 64,
+  "timestamp": 1790661330433148,
+  "session_id": 1007504967308235,
+  "handle_id": 1236318033801140,
+  "event": {
+   "plugin": "janus.plugin.videoroom",
+   "data": {
+    "event": "joined",
+    "room": 1234,
+    "id": 9001,
+    "private_id": 420805779,
+    "display": "observer"
+   }
+  }
+ },
+ "64:plugin:leaving": {
+  "emitter": "c4-janus",
+  "type": 64,
+  "timestamp": 1790661333445029,
+  "event": {
+   "plugin": "janus.plugin.videoroom",
+   "data": {
+    "event": "leaving",
+    "room": 1234,
+    "id": 1001,
+    "display": "p1"
+   }
+  }
+ },
+ "2:handle:detached": {
+  "emitter": "c4-janus",
+  "type": 2,
+  "timestamp": 1790661335447891,
+  "session_id": 163016417413525,
+  "handle_id": 785710188207917,
+  "event": {
+   "name": "detached",
+   "plugin": "janus.plugin.videoroom"
+  }
+ },
+ "1:session:destroyed": {
+  "emitter": "c4-janus",
+  "type": 1,
+  "timestamp": 1790661336450001,
+  "session_id": 163016417413525,
+  "event": {
+   "name": "destroyed"
+  }
+ },
+ "128:transport:disconnected": {
+  "emitter": "c4-janus",
+  "type": 128,
+  "timestamp": 1790661337452622,
+  "event": {
+   "transport": "janus.transport.websockets",
+   "id": "3892018056211116619",
+   "data": {
+    "event": "disconnected"
+   }
+  }
+ },
+ "64:plugin:unpublished": {
+  "emitter": "c4-janus",
+  "type": 64,
+  "timestamp": 1790661343462952,
+  "event": {
+   "plugin": "janus.plugin.videoroom",
+   "data": {
+    "event": "unpublished",
+    "room": 1234,
+    "id": 1002,
+    "display": "p2"
+   }
+  }
+ },
+ "1:session:timeout": {
+  "emitter": "c4-janus",
+  "type": 1,
+  "timestamp": 1790661408519178,
+  "session_id": 8110213814635792,
+  "event": {
+   "name": "timeout"
+  }
+ }
+}

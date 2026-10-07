@@ -1,0 +1,56 @@
+debconf: delaying package configuration, since apt-utils is not installed
+iptables ready
+node v24.18.1 ready
+{"t":1790703325448,"step":"page_ready","sdk":"2.22.3"}
+{"t":1790703325904,"step":"joined","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703333936,"step":"isolate_on","kind":"all","rules":["-A INPUT -s 10.42.31.161/32 -j DROP","-A OUTPUT -d 10.42.31.161/32 -j DROP"]}
+{"t":1790703344013,"step":"isolate_off","kind":"all","remaining":[]}
+{"t":1790703349015,"step":"T1_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703354017,"step":"T1_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703359020,"step":"T1_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703364025,"step":"T1_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703369027,"step":"T1_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703374030,"step":"T1_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703374047,"console":"warning","text":"triggering ICE restart {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR}"}
+{"t":1790703376059,"step":"action_resume","before":{"t":1790703374031,"roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]},"after":{"t":1790703376057,"roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]},"error":null}
+{"t":1790703384060,"step":"T1b_after","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703384069,"step":"isolate_on","kind":"all","rules":["-A INPUT -s 10.42.31.161/32 -j DROP","-A OUTPUT -d 10.42.31.161/32 -j DROP"]}
+{"t":1790703400068,"console":"warning","text":"peerconnection failed disconnected {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR}"}
+{"t":1790703404051,"console":"warning","text":"ping timeout triggered. last pong received at: Tue, 29 Sep 2026 17:36:24 GMT {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR}"}
+{"t":1790703404058,"console":"warning","text":"detected connection state mismatch {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR, numFailures: 1}"}
+{"t":1790703404302,"console":"warning","text":"signal disconnected {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR}"}
+{"t":1790703408058,"console":"warning","text":"detected connection state mismatch {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR, numFailures: 2}"}
+{"t":1790703409133,"step":"isolate_off","kind":"all","remaining":[]}
+{"t":1790703412059,"console":"warning","text":"detected connection state mismatch {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR, numFailures: 3}"}
+{"t":1790703412059,"console":"warning","text":"detected connection state mismatch, attempting full reconnect {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR}"}
+{"t":1790703412059,"console":"warning","text":"reconcile disconnected {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR}"}
+{"t":1790703414134,"step":"T2_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703416652,"console":"error","text":"error reading from signal stream {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR, error: ConnectionError: WS closed unexpectedly with code 1006\n    at Xs.websocket (http://127.0.0.1:46431/…}"}
+{"t":1790703419138,"step":"T2_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703424139,"step":"T2_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703429145,"step":"T2_passive","roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703429155,"console":"error","text":"Received leave request while trying to (re)connect {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR, error: ConnectionError: Received leave request while trying to (re)connect\n    at Xs.leaveRequest (http://…}"}
+{"t":1790703429156,"console":"warning","text":"reconnect disconnected {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_mimCktFZEoSR}"}
+{"t":1790703429157,"step":"action_resume","before":{"t":1790703429147,"roomState":"connected","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]},"after":{"t":1790703429156,"roomState":"signalReconnecting","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]},"error":null}
+{"t":1790703435161,"step":"T2b_after","roomState":"signalReconnecting","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703435200,"console":"warning","text":"failed to remove track {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx, error: InvalidAccessError: Failed to execute 'removeTrack' on 'RTCPeerConnection': The sender was not crea…}"}
+{"t":1790703437203,"step":"action_full","before":{"t":1790703435162,"roomState":"signalReconnecting","sid":"PA_mimCktFZEoSR","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]},"after":{"t":1790703437201,"roomState":"connected","sid":"PA_dXvTspZbXXFx","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]},"error":null}
+{"t":1790703445203,"step":"T2c_after","roomState":"connected","sid":"PA_dXvTspZbXXFx","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703445218,"step":"isolate_on","kind":"media","rules":["-A INPUT -s 10.42.31.161/32 -p tcp -m tcp --sport 31881 -j DROP","-A INPUT -s 10.42.31.161/32 -p udp -j DROP","-A OUTPUT -d 10.42.31.161/32 -p tcp -m tcp --dport 31881 -j DROP","-A OUTPUT -d 10.42.31.161/32 -p udp -j DROP"]}
+{"t":1790703460724,"console":"warning","text":"peerconnection failed disconnected {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx}"}
+{"t":1790703461202,"console":"warning","text":"detected connection state mismatch {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx, numFailures: 1}"}
+{"t":1790703461667,"console":"warning","text":"signal disconnected {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx}"}
+{"t":1790703465202,"console":"warning","text":"detected connection state mismatch {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx, numFailures: 2}"}
+{"t":1790703469202,"console":"warning","text":"detected connection state mismatch {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx, numFailures: 3}"}
+{"t":1790703469202,"console":"warning","text":"detected connection state mismatch, attempting full reconnect {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx}"}
+{"t":1790703469202,"console":"warning","text":"reconcile disconnected {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_dXvTspZbXXFx}"}
+{"t":1790703470312,"step":"isolate_off","kind":"media","remaining":[]}
+{"t":1790703475314,"step":"T4_passive","roomState":"connected","sid":"PA_dXvTspZbXXFx","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703480316,"step":"T4_passive","roomState":"connected","sid":"PA_dXvTspZbXXFx","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703485321,"step":"T4_passive","roomState":"connected","sid":"PA_dXvTspZbXXFx","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703485351,"console":"warning","text":"failed to remove track {room: c4-spike, roomID: RM_VgSCkLAPtEvx, participant: subj, participantID: PA_TyQVrEUxnwLT, error: InvalidAccessError: Failed to execute 'removeTrack' on 'RTCPeerConnection': The sender was not crea…}"}
+{"t":1790703487349,"step":"action_full","before":{"t":1790703485323,"roomState":"connected","sid":"PA_dXvTspZbXXFx","engineId":"hcmczl","engineClosed":false,"pcState":2,"signalState":4,"remotes":["obs/PA_gokYc6EhMW7R"]},"after":{"t":1790703487348,"roomState":"connected","sid":"PA_TyQVrEUxnwLT","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]},"error":null}
+{"t":1790703495350,"step":"T3_after","roomState":"connected","sid":"PA_TyQVrEUxnwLT","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]}
+{"t":1790703495363,"step":"action_leave","before":{"t":1790703495352,"roomState":"connected","sid":"PA_TyQVrEUxnwLT","engineId":"hcmczl","engineClosed":false,"pcState":1,"signalState":1,"remotes":["obs/PA_gokYc6EhMW7R"]},"after":{"t":1790703495362,"roomState":"disconnected","sid":"PA_TyQVrEUxnwLT","engineClosed":null,"remotes":[]},"error":null}
+{"t":1790703497397,"step":"done","bytes":242830,"violations":0}
+RUNNER_EXIT=0

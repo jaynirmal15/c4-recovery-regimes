@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use these records or this code, please cite the repository as below."
+title: "C4 recovery-regimes study: trial records, client and analysis"
+abstract: >-
+  Trial records, client, runner and analysis for a measurement study of what two
+  self-hosted WebRTC selective forwarding units, LiveKit and Janus, report when a
+  participant's session is disrupted and recovers, compared with receiver-defined audio
+  recovery. 215 cited trials, 30 superseded trials, development runs and a follow-up
+  measurement.
+type: dataset
+authors:
+  - family-names: Nirmal
+    given-names: Jay Suresh
+repository-code: "https://github.com/jaynirmal15/c4-recovery-regimes"
+license: MIT
+keywords:
+  - WebRTC
+  - selective forwarding unit
+  - session recovery
+  - observability
+  - measurement

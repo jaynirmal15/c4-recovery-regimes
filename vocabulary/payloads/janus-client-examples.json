@@ -1,0 +1,237 @@
+{
+ "other:success": {
+  "t": "2026-09-29T05:55:30.430Z",
+  "who": "observer",
+  "msg": {
+   "janus": "success",
+   "transaction": "observer-1",
+   "data": {
+    "id": 1007504967308235
+   }
+  }
+ },
+ "other:ack": {
+  "t": "2026-09-29T05:55:30.433Z",
+  "who": "observer",
+  "msg": {
+   "janus": "ack",
+   "session_id": 1007504967308235,
+   "transaction": "observer-3"
+  }
+ },
+ "other:event:joined": {
+  "t": "2026-09-29T05:55:30.433Z",
+  "who": "observer",
+  "msg": {
+   "janus": "event",
+   "session_id": 1007504967308235,
+   "transaction": "observer-3",
+   "sender": 1236318033801140,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "joined",
+     "room": 1234,
+     "description": "c4 probe room (config-defined)",
+     "id": 9001,
+     "private_id": 420805779,
+     "publishers": [],
+     "attendees": []
+    }
+   }
+  }
+ },
+ "other:success:participants": {
+  "t": "2026-09-29T05:55:30.434Z",
+  "who": "observer",
+  "msg": {
+   "janus": "success",
+   "session_id": 1007504967308235,
+   "transaction": "observer-4",
+   "sender": 1236318033801140,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "participants",
+     "room": 1234,
+     "participants": [
+      {
+       "id": 9001,
+       "display": "observer",
+       "publisher": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "self:success": {
+  "t": "2026-09-29T05:55:30.440Z",
+  "who": "p1",
+  "msg": {
+   "janus": "success",
+   "transaction": "p1-5",
+   "data": {
+    "id": 163016417413525
+   }
+  }
+ },
+ "self:ack": {
+  "t": "2026-09-29T05:55:30.442Z",
+  "who": "p1",
+  "msg": {
+   "janus": "ack",
+   "session_id": 163016417413525,
+   "transaction": "p1-7"
+  }
+ },
+ "self:event:joined": {
+  "t": "2026-09-29T05:55:30.443Z",
+  "who": "p1",
+  "msg": {
+   "janus": "event",
+   "session_id": 163016417413525,
+   "transaction": "p1-7",
+   "sender": 785710188207917,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "joined",
+     "room": 1234,
+     "description": "c4 probe room (config-defined)",
+     "id": 1001,
+     "private_id": 1596303230,
+     "publishers": [],
+     "attendees": [
+      {
+       "id": 9001,
+       "display": "observer"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "other:event:joining": {
+  "t": "2026-09-29T05:55:30.443Z",
+  "who": "observer",
+  "msg": {
+   "janus": "event",
+   "session_id": 1007504967308235,
+   "sender": 1236318033801140,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "event",
+     "room": 1234,
+     "joining": {
+      "id": 1001,
+      "display": "p1"
+     }
+    }
+   }
+  }
+ },
+ "other:event:leaving": {
+  "t": "2026-09-29T05:55:33.445Z",
+  "who": "observer",
+  "msg": {
+   "janus": "event",
+   "session_id": 1007504967308235,
+   "sender": 1236318033801140,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "event",
+     "room": 1234,
+     "display": "p1",
+     "leaving": 1001
+    }
+   }
+  }
+ },
+ "self:event:leaving": {
+  "t": "2026-09-29T05:55:33.445Z",
+  "who": "p1",
+  "msg": {
+   "janus": "event",
+   "session_id": 163016417413525,
+   "transaction": "p1-9",
+   "sender": 785710188207917,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "event",
+     "room": 1234,
+     "leaving": "ok"
+    }
+   }
+  }
+ },
+ "self:detached": {
+  "t": "2026-09-29T05:55:35.448Z",
+  "who": "p1",
+  "msg": {
+   "janus": "detached",
+   "session_id": 163016417413525,
+   "sender": 785710188207917
+  }
+ },
+ "other:event:unpublished": {
+  "t": "2026-09-29T05:55:43.463Z",
+  "who": "observer",
+  "msg": {
+   "janus": "event",
+   "session_id": 1007504967308235,
+   "sender": 1236318033801140,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "event",
+     "room": 1234,
+     "display": "p2",
+     "unpublished": 1002
+    }
+   }
+  }
+ },
+ "self:event:error_436": {
+  "t": "2026-09-29T05:55:58.482Z",
+  "who": "p3b",
+  "msg": {
+   "janus": "event",
+   "session_id": 3293006123578908,
+   "transaction": "p3b-23",
+   "sender": 5264560832632530,
+   "plugindata": {
+    "plugin": "janus.plugin.videoroom",
+    "data": {
+     "videoroom": "event",
+     "error_code": 436,
+     "error": "User ID 1003 already exists"
+    }
+   }
+  }
+ },
+ "self:timeout": {
+  "t": "2026-09-29T05:56:48.520Z",
+  "who": "p3",
+  "msg": {
+   "janus": "timeout",
+   "session_id": 8110213814635792
+  }
+ },
+ "self:error:458": {
+  "t": "2026-09-29T05:57:06.015Z",
+  "who": "p4-claim",
+  "msg": {
+   "janus": "error",
+   "session_id": 4441647382835718,
+   "transaction": "p4-claim-42",
+   "error": {
+    "code": 458,
+    "reason": "No such session 4441647382835718"
+   }
+  }
+ }
+}

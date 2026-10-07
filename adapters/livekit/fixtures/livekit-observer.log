@@ -1,0 +1,13 @@
+2026-09-29T05:50:22.610025179Z Using url, api-key, api-secret from environment
+2026-09-29T05:50:22.611024058Z 2026-09-29T05:50:22.610Z	INFO	lk	v2@v2.18.2-0.20260904062056-1da58cd7b795/engine.go:228	attempting join plan	{"attempt": {"ctxDeadline": "not-set", "backoffWait": "0s", "region": {"region": "__original__", "url": "http://livekit-livekit-server.c4-livekit.svc.cluster.local:80", "distance": -1}, "validateTimeout": "3s"}, "connParams": {"AutoSubscribe": true, "Reconnect": false, "DisableRegionDiscovery": false, "ConnectTimeout": "5s", "RetransmitBufferSize": 0, "DisableTURN": false, "UseSinglePeerConnection": false}}
+2026-09-29T05:50:22.638580645Z 2026-09-29T05:50:22.638Z	INFO	lk	v2@v2.18.2-0.20260904062056-1da58cd7b795/connection_manager.go:380	connection manager state change	{"old": "INITIAL", "new": "CONNECTED", "regionSettings": {}, "connectedRegion": {"region": "__original__", "url": "http://livekit-livekit-server.c4-livekit.svc.cluster.local:80", "distance": -1}}
+2026-09-29T05:50:22.639476752Z 2026-09-29T05:50:22.639Z	INFO	lk	lk/room.go:984	connected to room	{"room": "c4-probe"}
+2026-09-29T05:50:31.620953535Z 2026-09-29T05:50:31.620Z	INFO	lk	lk/room.go:866	participant connected	{"kind": 0, "participantID": "PA_L63iHAjCyuDA", "participant": "p0-smoke"}
+2026-09-29T05:50:37.621116080Z 2026-09-29T05:50:37.621Z	INFO	lk	lk/room.go:873	participant disconnected	{"kind": 0, "participantID": "PA_L63iHAjCyuDA", "participant": "p0-smoke"}
+2026-09-29T05:51:31.621197033Z 2026-09-29T05:51:31.621Z	INFO	lk	lk/room.go:866	participant connected	{"kind": 0, "participantID": "PA_EyxE35Jt5u7T", "participant": "p1"}
+2026-09-29T05:51:43.621409446Z 2026-09-29T05:51:43.621Z	INFO	lk	lk/room.go:873	participant disconnected	{"kind": 0, "participantID": "PA_EyxE35Jt5u7T", "participant": "p1"}
+2026-09-29T05:52:13.621108926Z 2026-09-29T05:52:13.620Z	INFO	lk	lk/room.go:866	participant connected	{"kind": 0, "participantID": "PA_PWmrCmty8RxG", "participant": "p2"}
+2026-09-29T05:52:46.621696141Z 2026-09-29T05:52:46.621Z	INFO	lk	lk/room.go:873	participant disconnected	{"kind": 0, "participantID": "PA_PWmrCmty8RxG", "participant": "p2"}
+2026-09-29T05:53:16.621151554Z 2026-09-29T05:53:16.621Z	INFO	lk	lk/room.go:866	participant connected	{"kind": 0, "participantID": "PA_GyDqxFky87Ji", "participant": "p3"}
+2026-09-29T05:53:27.389211304Z 2026-09-29T05:53:27.389Z	INFO	lk	v2@v2.18.2-0.20260904062056-1da58cd7b795/room.go:1166	participant sid update	{"participant": "p3", "sid-old": "PA_GyDqxFky87Ji", "sid-new": "PA_2vLkcyqFNenw"}
+2026-09-29T05:53:46.621135971Z 2026-09-29T05:53:46.621Z	INFO	lk	lk/room.go:873	participant disconnected	{"kind": 0, "participantID": "PA_2vLkcyqFNenw", "participant": "p3"}

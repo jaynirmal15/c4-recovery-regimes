@@ -1,0 +1,101 @@
+# Janus 1.4.1 (Debian build) config. Only these files are overridden; every other
+# /etc/janus file is the Debian package default and is dumped to logs at start.
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: janus-config, namespace: c4-janus }
+data:
+  janus.jcfg: |
+    general: {
+      configs_folder = "/etc/janus"
+      plugins_folder = "/usr/lib/aarch64-linux-gnu/janus/plugins"
+      transports_folder = "/usr/lib/aarch64-linux-gnu/janus/transports"
+      events_folder = "/usr/lib/aarch64-linux-gnu/janus/events"
+      loggers_folder = "/usr/lib/aarch64-linux-gnu/janus/loggers"
+      debug_level = 4
+      debug_timestamps = true
+      admin_secret = "@ADMIN_SECRET@"
+      # Explicit so the reconnect window is a recorded fact, not a default.
+      session_timeout = 60
+      # DC-4 (2026-09-29): 30 s so signalling re-attach (claim) is possible; fixed, not swept.
+      reclaim_session_timeout = 30
+      server_name = "c4-janus"
+    }
+    certificates: { }
+    media: {
+      rtp_port_range = "32000-32199"
+      dtls_timeout = 500
+      no_media_timer = 1
+      slowlink_threshold = 4
+    }
+    nat: {
+      nice_debug = false
+      ice_lite = false
+      ice_tcp = false
+    }
+    plugins: {
+      disable = "libjanus_audiobridge.so,libjanus_duktape.so,libjanus_echotest.so,libjanus_lua.so,libjanus_nosip.so,libjanus_recordplay.so,libjanus_sip.so,libjanus_streaming.so,libjanus_textroom.so,libjanus_videocall.so"
+    }
+    transports: {
+      disable = "libjanus_mqtt.so,libjanus_nanomsg.so,libjanus_pfunix.so,libjanus_rabbitmq.so"
+    }
+    loggers: { }
+    events: {
+      broadcast = true
+      disable = "libjanus_gelfevh.so,libjanus_mqttevh.so,libjanus_nanomsgevh.so,libjanus_rabbitmqevh.so,libjanus_wsevh.so"
+      stats_period = 5
+    }
+  janus.transport.websockets.jcfg: |
+    general: {
+      json = "indented"
+      ws = true
+      ws_port = 31188
+      wss = false
+    }
+    admin: {
+      admin_ws = true
+      admin_ws_port = 31789
+      admin_ws_ip = "127.0.0.1"
+      admin_wss = false
+    }
+    cors: { }
+    certificates: { }
+  janus.transport.http.jcfg: |
+    general: {
+      json = "indented"
+      base_path = "/janus"
+      http = true
+      port = 31088
+      https = false
+    }
+    admin: {
+      admin_base_path = "/admin"
+      admin_http = true
+      admin_port = 31788
+      admin_ip = "127.0.0.1"
+      admin_https = false
+    }
+    cors: { }
+    certificates: { }
+  janus.eventhandler.sampleevh.jcfg: |
+    general: {
+      enabled = true
+      events = "all"
+      grouping = false
+      json = "indented"
+      backend = "http://event-sink.c4-janus.svc.cluster.local:8080/janus-events"
+      max_retransmissions = 5
+      retransmissions_backoff = 100
+    }
+  janus.plugin.videoroom.jcfg: |
+    general: {
+      string_ids = false
+      lock_rtp_forward = true
+    }
+    room-1234: {
+      description = "c4 probe room (config-defined)"
+      publishers = 6
+      bitrate = 512000
+      audiocodec = "opus"
+      videocodec = "vp8"
+      notify_joining = true
+    }

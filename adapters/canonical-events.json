@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "description": "Stack-neutral participant-lifecycle vocabulary for C4. Every adapter's mapping.json must map each event here to native evidence, or mark it unsupported with a reason. Cause-specific 'left' variants exist because the study's outcome is WHICH regime occurred, and the regime is read off the cause.",
+  "observers": {
+    "server": "the SFU's own server-side surface (webhooks, event handler, state API, server log)",
+    "other": "what another participant in the room is told",
+    "self": "what the affected participant's own connection is told"
+  },
+  "events": {
+    "room.created": "Room came into existence.",
+    "room.ended": "Room closed (idle, deleted, or last-participant departure).",
+    "participant.joined": "Participant became a member of the room. Record the stack's definition of 'member' (LiveKit: ICE-connected ACTIVE; Janus: VideoRoom join accepted, no media required).",
+    "participant.left.graceful": "Participant asked to leave.",
+    "participant.left.signal_closed": "Participant removed because its signalling transport closed.",
+    "participant.left.media_timeout": "Participant removed because its media transport failed or timed out.",
+    "participant.left.inactivity_timeout": "Participant removed because it sent no signalling for the stack's session timeout.",
+    "participant.left.replaced": "Participant session removed because the same identity joined again (stack evicts the old one).",
+    "participant.left.administrative": "Participant removed by API, moderator, room deletion, or server shutdown.",
+    "participant.left.unknown": "Participant removed; cause not determinable from the stream.",
+    "participant.rejoin.rejected": "A new session for an identity still present was refused (stack keeps the old one).",
+    "participant.signal.lost": "Signalling connection dropped while the participant remains a member.",
+    "participant.signal.reclaimed": "A new signalling connection re-attached to the existing session (same participant id).",
+    "participant.signal.reclaim_failed": "An attempt to re-attach signalling to an existing session was refused.",
+    "participant.transport.lost": "Media transport reported disconnected or failed while the participant remains a member.",
+    "participant.transport.resumed": "Media transport restarted within the same session (ICE restart / resume); participant id unchanged.",
+    "participant.media.published": "Participant started publishing a track or stream.",
+    "participant.media.unpublished": "Participant stopped publishing (including because its PeerConnection died).",
+    "participant.media.stalled": "Media stopped arriving while the session persists.",
+    "participant.media.flowing": "Media (re)started arriving."
+  }
+}

@@ -1,0 +1,25 @@
+# Event sink for LiveKit webhooks: logs every request (headers + JSON body) to stdout.
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: event-sink, namespace: c4-livekit, labels: { app: event-sink, c4.stack: livekit } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: event-sink } }
+  template:
+    metadata: { labels: { app: event-sink, c4.stack: livekit } }
+    spec:
+      containers:
+        - name: sink
+          image: mendhak/http-https-echo@sha256:59e97f8417530cd88c2a4bb7b488153276e88df8a317a86641c575138ad81829
+          env:
+            - { name: HTTP_PORT, value: "8080" }
+            - { name: LOG_IGNORE_PATH, value: "/healthz" }
+          ports: [ { containerPort: 8080, name: http } ]
+          resources: { requests: { cpu: 20m, memory: 64Mi }, limits: { memory: 128Mi } }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: event-sink, namespace: c4-livekit }
+spec:
+  selector: { app: event-sink }
+  ports: [ { name: http, port: 8080, targetPort: http } ]

@@ -1,0 +1,26 @@
+{
+  "stack": "janus-videoroom",
+  "versions": { "server": "1.4.1 (Debian 1.4.1+ds-4+b2)", "eventHandler": "janus.eventhandler.sampleevh", "docsClient": "janus.js v1.4.1" },
+  "events": {
+    "room.created": { "status": "docs-only", "observer": ["server"], "native": ["evh plugin created (API-created rooms)"], "evidence": "vocabulary/janus-docs.md §3.2 (probe room was config-defined, no event)" },
+    "room.ended": { "status": "docs-only", "observer": ["server", "other"], "native": ["evh plugin destroyed", "videoroom 'destroyed' to participants"], "evidence": "vocabulary/janus-docs.md §3.1" },
+    "participant.joined": { "status": "observed", "observer": ["server", "other"], "native": ["evh plugin joined (carries session_id)", "videoroom event joining:{id,display} (notify_joining=true)"], "evidence": "J1-J4" },
+    "participant.left.graceful": { "status": "observed", "observer": ["server", "other"], "native": ["evh plugin leaving with no preceding session teardown", "videoroom event leaving:<id> WITHOUT unpublished"], "evidence": "J1: 1 ms" },
+    "participant.left.signal_closed": { "status": "observed", "observer": ["server"], "native": ["evh transport disconnected -> session destroyed -> plugin leaving (same ms)"], "evidence": "J2, J4: 0 ms; reclaim_session_timeout=0" },
+    "participant.left.media_timeout": { "status": "unsupported", "reason": "Janus never removes a participant for media failure: a PeerConnection hangup only unpublishes (participant stays, publisher:false). With consent freshness and hangup_on_failed off, silent media loss may produce no hangup at all (docs)." },
+    "participant.left.inactivity_timeout": { "status": "observed", "observer": ["server", "self"], "native": ["evh session timeout -> plugin unpublished -> plugin leaving", "client {janus:'timeout'}"], "evidence": "J3: 60.05 s after last request" },
+    "participant.left.replaced": { "status": "unsupported", "reason": "Janus never evicts on identity reuse; a same-feed-id join is refused with 436 (participant.rejoin.rejected)." },
+    "participant.left.administrative": { "status": "docs-only", "observer": ["server", "other"], "native": ["evh plugin kicked", "videoroom kicked:<id>"], "evidence": "vocabulary/janus-docs.md §3.1" },
+    "participant.left.unknown": { "status": "observed", "observer": ["other"], "native": ["videoroom unpublished:<id> + leaving:<id> in the same ms (other participants cannot tell WS-close from timeout)"], "evidence": "J2, J3, J4 observer view" },
+    "participant.rejoin.rejected": { "status": "observed", "observer": ["self"], "native": ["videoroom error_code 436 'User ID <id> already exists'"], "evidence": "J3; no evh event, others not told" },
+    "participant.signal.lost": { "status": "observed", "observer": ["server"], "native": ["evh transport disconnected for the session's transport id"], "evidence": "J2, J4. Transport ids are reused across connections: bind by time." },
+    "participant.signal.reclaimed": { "status": "unsupported", "reason": "Impossible in this deployment: reclaim_session_timeout=0 destroys the session on WS close. Becomes possible (claim -> success, no evh event) if reclaim>0; that is a server-config study variable." },
+    "participant.signal.reclaim_failed": { "status": "observed", "observer": ["self"], "native": ["{janus:'error', error:{code:458, reason:'No such session <id>'}}"], "evidence": "J4; no evh event" },
+    "participant.transport.lost": { "status": "docs-only", "observer": ["server", "self"], "native": ["evh webrtc ice:'failed' / connection:'hangup' reason", "client hangup{reason}", "client ice-failed (ignored by janus.js)"], "evidence": "vocabulary/janus-docs.md §1.1, §2" },
+    "participant.transport.resumed": { "status": "docs-only", "observer": ["server"], "native": ["publisher: configure + offer with new ICE creds; subscriber: configure {restart:true}; evh jsep + webrtc ice states"], "evidence": "vocabulary/janus-docs.md §1.2, §3.1. Application-initiated only." },
+    "participant.media.published": { "status": "docs-only", "observer": ["server", "other"], "native": ["evh plugin published", "videoroom publishers:[…]"], "evidence": "vocabulary/janus-docs.md §3" },
+    "participant.media.unpublished": { "status": "docs-only", "observer": ["server", "other"], "native": ["evh plugin unpublished (only meaningful after published; Janus also emits it on teardown of never-published feeds - observed)", "videoroom unpublished:<id>"], "evidence": "J2/J3/J4 show the teardown variant" },
+    "participant.media.stalled": { "status": "docs-only", "observer": ["server", "self"], "native": ["evh media receiving:false", "client media{receiving:false}"], "evidence": "vocabulary/janus-docs.md §1.1" },
+    "participant.media.flowing": { "status": "docs-only", "observer": ["server", "self"], "native": ["evh media receiving:true", "client webrtcup / media{receiving:true}"], "evidence": "vocabulary/janus-docs.md §1.1" }
+  }
+}

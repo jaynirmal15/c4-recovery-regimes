@@ -1,0 +1,22 @@
+{
+  "name": "c4-recovery-regimes",
+  "version": "0.1.0",
+  "private": true,
+  "description": "C4: what LiveKit and Janus report when a participant's session is disrupted and recovers. Trial records, client, runner and analysis.",
+  "author": "Jay Suresh Nirmal",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "divergence": "node client/runner/divergence.mjs --json study study-r2",
+    "per-observer": "node client/runner/per-observer.mjs",
+    "build:lkproto": "echo 'client/www/lkproto.js is a committed esbuild bundle of @livekit/protocol; see STAGE-A-SPEC.md'"
+  },
+  "dependencies": {
+    "@livekit/protocol": "1.50.4"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  },
+  "overrides": {
+    "@bufbuild/protobuf": "1.10.1"
+  }
+}

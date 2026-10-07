@@ -1,0 +1,34 @@
+{
+  "note": "Captured 2026-09-29 05:30-05:54 UTC on c4-livekit (probes L0 smoke, L1 graceful, L2 SIGKILL, L3 duplicate identity). Keys compared by identity (sid prefix ignored) except where noted.",
+  "cases": [
+    {
+      "name": "webhooks-all",
+      "sink": "fixtures/livekit-webhooks.jsonl",
+      "observer": "server",
+      "keyMode": "identity",
+      "expected": [
+        ["room.created", null], ["room.ended", null], ["room.created", null],
+        ["participant.joined", "observer"],
+        ["participant.joined", "p0-smoke"], ["participant.left.graceful", "p0-smoke"],
+        ["participant.joined", "p1"], ["participant.left.graceful", "p1"],
+        ["participant.joined", "p2"], ["participant.left.media_timeout", "p2"],
+        ["participant.joined", "p3"], ["participant.left.replaced", "p3"], ["participant.joined", "p3"], ["participant.left.graceful", "p3"]
+      ],
+      "assertDistinctSessions": ["p3"]
+    },
+    {
+      "name": "lk-observer (server-sdk-go view of others)",
+      "client": "fixtures/livekit-observer.log",
+      "clientFormat": "lines",
+      "observer": "other",
+      "keyMode": "identity",
+      "expected": [
+        ["participant.joined", "p0-smoke"], ["participant.left.unknown", "p0-smoke"],
+        ["participant.joined", "p1"], ["participant.left.unknown", "p1"],
+        ["participant.joined", "p2"], ["participant.left.unknown", "p2"],
+        ["participant.joined", "p3"], ["participant.left.unknown", "p3"]
+      ],
+      "documents": "Duplicate-identity replacement is invisible to this observer: only one joined/left pair for p3 despite two sids."
+    }
+  ]
+}

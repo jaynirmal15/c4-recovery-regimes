@@ -1,0 +1,75 @@
+# Janus from Debian's own build: stock debian:sid-slim (pinned by digest), apt pinned to a
+# snapshot.debian.org timestamp and an exact package version. No custom image.
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: janus, namespace: c4-janus, labels: { app: janus, c4.stack: janus } }
+spec:
+  replicas: 1
+  strategy: { type: Recreate }
+  selector: { matchLabels: { app: janus } }
+  template:
+    metadata: { labels: { app: janus, c4.stack: janus } }
+    spec:
+      terminationGracePeriodSeconds: 20
+      # Placement: never with coturn (REQUIRED; relay path); prefer apart from LiveKit
+      # (PREFERRED; with 2 nodes the two SFUs share, with >=3 all separate).
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: kubernetes.io/hostname
+              namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: coturn } }
+              labelSelector: { matchLabels: { app.kubernetes.io/name: coturn } }
+            # Stage B (DC-3a): never share a node with the C4 client pods.
+            - topologyKey: kubernetes.io/hostname
+              namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: c4-clients } }
+              labelSelector: { matchLabels: { c4.role: client } }
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+                namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: c4-livekit } }
+                labelSelector: { matchLabels: { app.kubernetes.io/name: livekit-server } }
+      containers:
+        - name: janus
+          image: debian@sha256:ec3fa4e0b2987ae47be353f56854191e300261915470e40165b1c906d22a65db
+          env:
+            - name: ADMIN_SECRET
+              valueFrom: { secretKeyRef: { name: janus-admin, key: admin_secret } }
+            - { name: SNAPSHOT, value: "20260928T000000Z" }
+            - { name: JANUS_VERSION, value: "1.4.1+ds-4+b2" }
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              set -euo pipefail
+              rm -f /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list
+              echo "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/${SNAPSHOT} sid main" > /etc/apt/sources.list.d/snapshot.list
+              for i in 1 2 3; do apt-get -o Acquire::Retries=5 -o Acquire::http::Timeout=60 update && break; sleep 10; done
+              DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=5 install -y --no-install-recommends "janus=${JANUS_VERSION}" ca-certificates curl
+              echo "=== installed: $(dpkg-query -W janus) arch=$(dpkg --print-architecture)"
+              for f in /cfg/*.jcfg; do sed "s|@ADMIN_SECRET@|${ADMIN_SECRET}|" "$f" > "/etc/janus/$(basename "$f")"; done
+              echo "=== effective config files:"; ls -l /etc/janus
+              exec janus -F /etc/janus
+          ports:
+            - { name: ws, containerPort: 31188, protocol: TCP }
+            - { name: http, containerPort: 31088, protocol: TCP }
+          startupProbe:
+            tcpSocket: { port: 31188 }
+            periodSeconds: 10
+            failureThreshold: 60
+          readinessProbe:
+            tcpSocket: { port: 31188 }
+            periodSeconds: 10
+          volumeMounts: [ { name: cfg, mountPath: /cfg } ]
+          resources: { requests: { cpu: 250m, memory: 256Mi }, limits: { memory: 1Gi } }
+      volumes:
+        - name: cfg
+          configMap: { name: janus-config }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: janus, namespace: c4-janus }
+spec:
+  selector: { app: janus }
+  ports:
+    - { name: ws, port: 31188, targetPort: ws }
+    - { name: http, port: 31088, targetPort: http }

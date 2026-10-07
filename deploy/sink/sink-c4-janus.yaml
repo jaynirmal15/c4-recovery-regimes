@@ -1,0 +1,23 @@
+# Event sink for c4-janus: stores events itself (deploy/sink/sink.mjs via ConfigMap c4-sink).
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: event-sink, namespace: c4-janus, labels: { app: event-sink } }
+spec:
+  replicas: 1
+  strategy: { type: Recreate }
+  selector: { matchLabels: { app: event-sink } }
+  template:
+    metadata: { labels: { app: event-sink } }
+    spec:
+      terminationGracePeriodSeconds: 2
+      containers:
+        - name: sink
+          image: node@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+          command: ["node", "/src/sink.mjs"]
+          ports: [ { containerPort: 8080, name: http } ]
+          readinessProbe: { httpGet: { path: /head, port: http }, periodSeconds: 2 }
+          volumeMounts: [ { name: src, mountPath: /src }, { name: data, mountPath: /data } ]
+          resources: { requests: { cpu: 50m, memory: 128Mi }, limits: { memory: 512Mi } }
+      volumes:
+        - { name: src, configMap: { name: c4-sink } }
+        - { name: data, emptyDir: {} }

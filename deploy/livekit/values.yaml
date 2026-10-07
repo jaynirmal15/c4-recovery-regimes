@@ -1,0 +1,51 @@
+# c4-livekit: LiveKit server, chart livekit/livekit-server 1.9.0, server v1.13.7 (pinned by digest).
+# Pod networking (not hostNetwork): every port is inside 30000-32767, which the lab's
+# node SG opens to the VPC CIDR only. No LoadBalancer, no embedded TURN.
+image:
+  repository: livekit/livekit-server@sha256
+  tag: 6fd3b7088874c4d119160dd688798dfec852bc014786d392caad15f6f63912a3
+podHostNetwork: false
+terminationGracePeriodSeconds: 30
+livekit:
+  port: 31880
+  log_level: debug
+  key_file: keys.yaml
+  prometheus_port: 31889
+  rtc:
+    tcp_port: 31881
+    udp_port: 31882
+    use_external_ip: false
+  turn:
+    enabled: false
+  webhook:
+    urls:
+      - http://event-sink.c4-livekit.svc.cluster.local:8080/livekit-webhook
+loadBalancer:
+  type: disable
+turnLoadbalancer:
+  enable: false
+resources:
+  requests: { cpu: 250m, memory: 256Mi }
+  limits: { memory: 1Gi }
+# Placement (added 2026-09-29 follow-up). coturn is on the relay path for any
+# relay-forced participant, so it must never share a node with an SFU: REQUIRED.
+# LiveKit vs Janus is PREFERRED: with 2 nodes they share (trials run one stack
+# at a time, so the idle SFU costs ~nothing); with >=3 nodes all three separate.
+# Required anti-affinity is enforced symmetrically, so coturn cannot later land
+# next to this pod either. See ../../REPORT.md, follow-up section.
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      - topologyKey: kubernetes.io/hostname
+        namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: coturn } }
+        labelSelector: { matchLabels: { app.kubernetes.io/name: coturn } }
+      # Stage B (DC-3a): never share a node with the C4 client pods.
+      - topologyKey: kubernetes.io/hostname
+        namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: c4-clients } }
+        labelSelector: { matchLabels: { c4.role: client } }
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          topologyKey: kubernetes.io/hostname
+          namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: c4-janus } }
+          labelSelector: { matchLabels: { app: janus } }

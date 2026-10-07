@@ -1,0 +1,47 @@
+{
+  "note": "Captured 2026-09-29 05:55:30-05:57:09 UTC on c4-janus (probes J1 graceful, J2 WS close, J3 silent timeout + same-id rejoin, J4 claim after WS close). Keys are room/feedId, or client:<probe-connection> for self events.",
+  "cases": [
+    {
+      "name": "event-handler stream",
+      "sink": "fixtures/janus-events.jsonl",
+      "observer": "server",
+      "keyMode": "exact",
+      "expected": [
+        ["participant.joined", "1234/9001"],
+        ["participant.joined", "1234/1001"], ["participant.left.graceful", "1234/1001"],
+        ["participant.joined", "1234/1002"], ["participant.signal.lost", "1234/1002"], ["participant.left.signal_closed", "1234/1002"],
+        ["participant.joined", "1234/1003"], ["participant.left.inactivity_timeout", "1234/1003"],
+        ["participant.joined", "1234/1003"], ["participant.left.graceful", "1234/1003"],
+        ["participant.joined", "1234/1004"], ["participant.signal.lost", "1234/1004"], ["participant.left.signal_closed", "1234/1004"],
+        ["participant.left.graceful", "1234/9001"]
+      ]
+    },
+    {
+      "name": "observer participant (what others see)",
+      "client": "fixtures/janus-probe.jsonl",
+      "clientFormat": "jsonl",
+      "observer": "other",
+      "keyMode": "exact",
+      "expected": [
+        ["participant.joined", "1234/1001"], ["participant.left.graceful", "1234/1001"],
+        ["participant.joined", "1234/1002"], ["participant.left.unknown", "1234/1002"],
+        ["participant.joined", "1234/1003"], ["participant.left.unknown", "1234/1003"],
+        ["participant.joined", "1234/1003"], ["participant.left.graceful", "1234/1003"],
+        ["participant.joined", "1234/1004"], ["participant.left.unknown", "1234/1004"]
+      ],
+      "documents": "Others cannot distinguish WS-close (J2/J4) from silent timeout (J3): both are unpublished+leaving."
+    },
+    {
+      "name": "self (the affected connection)",
+      "client": "fixtures/janus-probe.jsonl",
+      "clientFormat": "jsonl",
+      "observer": "self",
+      "keyMode": "exact",
+      "expected": [
+        ["participant.rejoin.rejected", "client:p3b"],
+        ["participant.left.inactivity_timeout", "client:p3"],
+        ["participant.signal.reclaim_failed", "client:p4-claim"]
+      ]
+    }
+  ]
+}

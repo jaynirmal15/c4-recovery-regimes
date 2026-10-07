@@ -1,0 +1,17 @@
+# Secrets: never commit. Templates and non-secret manifests in deploy/ are tracked.
+deploy/**/*.local.yaml
+*.local.yaml
+*.local.yaml.*
+
+# Paper 2 material does not belong in this repository's history
+logs/followup/paper2-runner-destroy.log
+
+# Dependencies and OS noise
+node_modules/
+.DS_Store
+
+# Review aid generated before the first commit
+FILES-TO-COMMIT.txt
+
+# Preview image written by paper/fig1_reversal.py; the PDF is the tracked output
+paper/fig1_reversal.png
