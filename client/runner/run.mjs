@@ -2,6 +2,8 @@
 // STAGE-A-SPEC §3.1 hard preconditions (abort => one line in logs/aborts.log, NO record),
 // runs trials, collects client + server evidence, marks invalidations (§3.3).
 //   node run.mjs setup | switch <stack> | targeted <stack> <test> <n> [arm] | placement-selftest <stack>
+//   C4_CONTROL=1 C4_CLIENT_BUILD=pre-sampler node run.mjs control <stack>   (healthy-session control arm)
+import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import { createRequire } from 'node:module';
@@ -14,7 +16,24 @@ const TRIALS = process.env.C4_TRIALS || 'trials'; // output directory under ROOT
 const IMG = 'mcr.microsoft.com/playwright@sha256:dcc5531e97840b9b5e794f2814476b21571c5124a3fca2267d73041f56e7580e'; // v1.62.1-noble
 const PIN = { livekitImage: 'sha256:6fd3b7088874c4d119160dd688798dfec852bc014786d392caad15f6f63912a3', janusImage: 'sha256:ec3fa4e0b2987ae47be353f56854191e300261915470e40165b1c906d22a65db', janusVersion: '1.4.1', reclaim: 30, sessionTimeout: 60, lkClient: '2.22.3', playwright: '1.62.1' };
 const PODS = { S: 'c4-s', O1: 'c4-o1', O2: 'c4-o2' };
-const FEED = { S: 101, O1: 102, O2: 103 };
+const FEED = { S: 101, O1: 102, O2: 103, B: 104 };
+// Control arm (healthy sessions, approved 2026-10-07). No isolation; 180 s of armed observation.
+//   h0 idle | h1 a non-publishing bystander joins and leaves | h2 a publishing bystander joins and leaves | h3 S muted for 10 s
+const CONTROL = process.env.C4_CONTROL === '1';
+const CONTROL_TESTS = ['h0', 'h1', 'h2', 'h3'];
+const CONTROL_OBSERVE_S = 180;
+// Node software of the three study sessions and the follow-up cell (`kubectl get nodes -o wide` in their job logs).
+const NODE_PIN = { kubeletVersion: 'v1.36.4-eks-f4fc4f1', osImage: 'Amazon Linux 2023.12.20260918', kernelVersion: '6.18.48-109.150.amzn2023.aarch64', containerRuntimeVersion: 'containerd://2.2.7+unknown' };
+/** Client page files as deployed. C4_CLIENT_BUILD=pre-sampler takes common.js and driver.js as
+ *  saved just before the statistics sampler was added (2026-10-06), i.e. the build of the 215. */
+function wwwSources() {
+  const www = path.join(ROOT, 'client/www'); const early = path.join(ROOT, 'logs/study/janus-early');
+  const src = Object.fromEntries(['common.js', 'lkproto.js', 'lk.js', 'janus.js', 'driver.js'].map((f) => [f, path.join(www, f)]));
+  if (process.env.C4_CLIENT_BUILD === 'pre-sampler') { src['common.js'] = path.join(early, 'common.js.before-stats'); src['driver.js'] = path.join(early, 'driver.js.before-stats'); }
+  if (CONTROL) src['control-arm.js'] = path.join(www, 'control-arm.js');
+  return src;
+}
+const wwwHashes = () => Object.fromEntries(Object.entries(wwwSources()).sort().map(([f, p]) => [f, crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')]));
 const SINK = { livekit: 'http://event-sink.c4-livekit.svc.cluster.local:8080', janus: 'http://event-sink.c4-janus.svc.cluster.local:8080' };
 const CLOCK_UNC_BOUND_MS = 10; // spec §3.1.5: a probe with larger uncertainty invalidates the trial
 const sinkCall = (stack, route, method = 'GET', body) => pod(PODS.S, 'POST', '/fetch', { url: `${SINK[stack]}${route}`, method, body });
@@ -92,8 +111,8 @@ function setup() {
   const key = Buffer.from(kc(['-n', 'c4-livekit', 'get', 'secret', 'lk-cli-env', '-o', 'jsonpath={.data.LIVEKIT_API_KEY}']), 'base64').toString();
   const sec = Buffer.from(kc(['-n', 'c4-livekit', 'get', 'secret', 'lk-cli-env', '-o', 'jsonpath={.data.LIVEKIT_API_SECRET}']), 'base64').toString();
   execFileSync('sh', ['-c', `kubectl -n ${NS} create secret generic c4-lk --from-literal=LIVEKIT_API_KEY="$K" --from-literal=LIVEKIT_API_SECRET="$S" --dry-run=client -o yaml | kubectl apply -f - >/dev/null`], { env: { ...process.env, K: key, S: sec } });
-  const www = path.join(ROOT, 'client/www');
-  execFileSync('sh', ['-c', `kubectl -n ${NS} create configmap c4-www ${['common.js', 'lkproto.js', 'lk.js', 'janus.js', 'driver.js'].map((f) => `--from-file=${www}/${f}`).join(' ')} --dry-run=client -o yaml | kubectl apply -f - >/dev/null`]);
+  log('setup', 'client build', process.env.C4_CLIENT_BUILD || 'current', JSON.stringify(wwwHashes()));
+  execFileSync('sh', ['-c', `kubectl -n ${NS} create configmap c4-www ${Object.entries(wwwSources()).map(([f, p]) => `--from-file=${f}=${p}`).join(' ')} --dry-run=client -o yaml | kubectl apply -f - >/dev/null`]);
   execFileSync('sh', ['-c', `kubectl -n ${NS} create configmap c4-pod --from-file=${ROOT}/client/pod/control.mjs --dry-run=client -o yaml | kubectl apply -f - >/dev/null`]);
   for (const [role, name] of Object.entries(PODS)) {
     const netadmin = role === 'S';
@@ -185,6 +204,9 @@ function preconditions(stack) {
   if (tn && (sfuNodes.includes(tn) || cn.has(tn))) failed.push(`coturn node ${tn} is shared with an SFU or a client`);
   if (sn && (cn.has(sn) || sfuNodes.filter((n) => n === sn).length > 1)) failed.push(`SFU-under-test node ${sn} holds a client or another SFU`);
   if (clientNode && sfuNodes.includes(clientNode)) failed.push(`client node ${clientNode} holds an SFU`);
+  const nodeInfo = nodes.map((n) => ({ name: n.metadata.name, ...Object.fromEntries(Object.keys(NODE_PIN).map((k) => [k, n.status.nodeInfo[k]])) }));
+  let stop = false; // control arm: a different node image or client build ends the session, it is not retried
+  if (CONTROL) for (const n of nodeInfo) for (const k of Object.keys(NODE_PIN)) if (n[k] !== NODE_PIN[k]) { failed.push(`node ${n.name} ${k}=${n[k]} differs from the study's ${NODE_PIN[k]}`); stop = true; }
   const used = [tn, sn, clientNode].filter(Boolean);
   for (const n of used) if (placement.nodes.find((x) => x.name === n)?.ready !== 'True') failed.push(`node ${n} not Ready`);
   // versions + config
@@ -204,12 +226,13 @@ function preconditions(stack) {
     for (const [role, name] of Object.entries(PODS)) {
       const h = pod(name, 'GET', '/health');
       if (h.lkClient !== PIN.lkClient || h.playwright !== PIN.playwright) failed.push(`${role} versions lk=${h.lkClient} pw=${h.playwright}`);
+      if (CONTROL && JSON.stringify(h.www) !== JSON.stringify(wwwHashes())) { failed.push(`${role} serves client files that differ from the selected build`); stop = true; }
     }
     const ipt = pod(PODS.S, 'GET', '/iptables');
     if (ipt.rules.length) failed.push(`subject has DROP rules: ${ipt.rules.join(' | ')}`);
   } catch (e) { failed.push(`client pod check failed: ${e.message.slice(0, 200)}`); }
   try { const h = sinkCall(stack, '/head'); if (!h.json || !h.json.bootId) failed.push('event sink not answering /head'); } catch (e) { failed.push(`event sink unreachable: ${e.message.slice(0, 120)}`); }
-  return { ok: failed.length === 0, failed, placement, sfu: s ? { ip: s.ip, node: s.pod.spec.nodeName } : null };
+  return { ok: failed.length === 0, failed, stop, placement, nodeInfo, build: CONTROL ? { name: process.env.C4_CLIENT_BUILD || 'current', sha256: wwwHashes() } : undefined, sfu: s ? { ip: s.ip, node: s.pod.spec.nodeName } : null };
 }
 
 function abort(trialId, stack, pre) {
@@ -225,7 +248,7 @@ async function trial(stack, test, arm, opt = {}) {
   const stamp = nowIso().replace(/[-:]/g, '').replace(/\..*/, '');
   const id = test === 'isolation' ? `${stack}-iso-${opt.mode}-${opt.durS}s-${arm}-${stamp}-${++seq}` : `${stack}-${test}-${arm}-${stamp}-${++seq}`;
   const pre = preconditions(stack);
-  if (!pre.ok) { abort(id, stack, pre); return { id, aborted: true, failed: pre.failed }; }
+  if (!pre.ok) { abort(id, stack, pre); return { id, aborted: true, failed: pre.failed, stop: pre.stop }; }
   const s = sfu(stack);
   const dir = path.join(ROOT, TRIALS, id); fs.mkdirSync(dir, { recursive: true });
   const w = (f, o) => fs.writeFileSync(path.join(dir, f), typeof o === 'string' ? o : JSON.stringify(o));
@@ -283,7 +306,8 @@ async function trial(stack, test, arm, opt = {}) {
         if (res.error) invalid.push(`isolation restore error: ${res.error}`);
         if ((res.rulesAfter || []).some((r) => r.includes(s.ip))) invalid.push('isolation rules were not removed');
       }
-    } else throw new Error(`unknown test ${test}`);
+    } else if (CONTROL_TESTS.includes(test)) mark('trigger', { control: test, observeS: CONTROL_OBSERVE_S });
+    else throw new Error(`unknown test ${test}`);
     if (test === 'isolation') {
       // observe until S has been healthy for 30 s after restore, capped at onset + max(160, D + 80) s (give-up is 120 s)
       const tOnset = Date.now() - opt.durS * 1000 - 1500; let healthyPolls = 0;
@@ -291,6 +315,28 @@ async function trial(stack, test, arm, opt = {}) {
         await sleep(2000); const st = pod(PODS.S, 'POST', '/eval', { ctx: 'main', fn: 'status' }); marks.push({ t: Date.now(), step: 'S_status', ...st });
         healthyPolls = st.state === 'healthy' ? healthyPolls + 1 : 0;
         if (healthyPolls >= 15) break;
+      }
+    } else if (CONTROL_TESTS.includes(test)) {
+      // Benign events at fixed offsets from the trigger mark; each mark carries the time it actually ran.
+      const T0 = Date.now(); const B = (route, body) => pod(PODS.O2, 'POST', route, { ctx: 'bystander', ...body });
+      const bCfg = (publish) => cfgFor('B', { role: 'bystander', remotes: [], publish });
+      const ev = (step, f) => { try { const { t: tPod, ...rest } = f() || {}; mark(step, { ...rest, tPod }); } catch (e) { invalid.push(`control event ${step} failed: ${String(e.message || e).slice(0, 200)}`); mark(step, { error: String(e.message || e).slice(0, 300) }); } };
+      const sEval = (fn, args = []) => pod(PODS.S, 'POST', '/eval', { ctx: 'main', fn, args });
+      // C4.leave() returns nothing, so the pod's reply has no body to parse; that the bystander left is checked from its dump.
+      const bLeave = () => { try { B('/eval', { fn: 'leave' }); } catch (e) { if (!/Unexpected end of JSON input/.test(String(e.message))) throw e; } return { requested: true }; };
+      const plan = {
+        h0: [],
+        h1: [[25, 'bystander_open', () => B('/open')],
+          [30, 'bystander_join', () => (stack === 'livekit' ? B('/join', { cfg: bCfg(false) }) : B('/eval', { fn: 'ctlJanusBystander', args: [{ wsUrl: s.ws, room, id: FEED.B, display: 'B' }] }))],
+          [90, 'bystander_leave', () => (stack === 'livekit' ? bLeave() : B('/eval', { fn: 'ctlJanusBystanderLeave' }))]],
+        h2: [[25, 'bystander_open', () => B('/open')], [30, 'bystander_join_publishing', () => B('/join', { cfg: bCfg(true) })], [90, 'bystander_leave', bLeave]],
+        h3: [[28, 'packets_before', () => sEval('ctlPackets')], [30, 'mute_on', () => sEval('ctlMute', [true])], [34, 'packets_muted_1', () => sEval('ctlPackets')],
+          [39, 'packets_muted_2', () => sEval('ctlPackets')], [40, 'mute_off', () => sEval('ctlMute', [false])], [45, 'packets_after', () => sEval('ctlPackets')]],
+      }[test];
+      while (Date.now() - T0 < CONTROL_OBSERVE_S * 1000) {
+        while (plan.length && Date.now() - T0 >= plan[0][0] * 1000) { const [, step, f] = plan.shift(); ev(step, f); }
+        const next = Math.min(2000, plan.length ? Math.max(50, plan[0][0] * 1000 - (Date.now() - T0)) : 2000); await sleep(next);
+        if (next === 2000) { const st = pod(PODS.S, 'POST', '/eval', { ctx: 'main', fn: 'status' }); marks.push({ t: Date.now(), step: 'S_status', ...st }); }
       }
     } else for (let i = 0; i < 30; i++) { await sleep(2000); const st = pod(PODS.S, 'POST', '/eval', { ctx: 'main', fn: 'status' }); marks.push({ t: Date.now(), step: 'S_status', ...st }); }
   } catch (e) { invalid.push(`runner error: ${String(e.message || e).slice(0, 500)}`); mark('runner_error', { e: String(e.message || e).slice(0, 500) }); }
@@ -304,9 +350,9 @@ async function trial(stack, test, arm, opt = {}) {
   } catch (e) { invalid.push(`state poll: collection failed: ${String(e.message).slice(0, 160)}`); }
   for (const who of ['S', 'O1', 'O2']) { try { pod(PODS[who], 'POST', '/eval', { ctx: 'main', fn: 'leave' }); } catch {} }
   const dumps = {};
-  for (const [who, ctx] of [['S', 'main'], ['O1', 'main'], ['O2', 'main'], ...(test === 'intruder' ? [['INTRUDER', 'intruder']] : [])]) {
-    try { dumps[who] = pod(who === 'INTRUDER' ? PODS.O2 : PODS[who], 'POST', '/dump', { ctx }); w(`${who}.json`, dumps[who]); } catch (e) { invalid.push(`no dump from ${who}: ${e.message.slice(0, 200)}`); }
-    try { pod(who === 'INTRUDER' ? PODS.O2 : PODS[who], 'POST', '/close', { ctx }); } catch {}
+  for (const [who, ctx] of [['S', 'main'], ['O1', 'main'], ['O2', 'main'], ...(test === 'intruder' ? [['INTRUDER', 'intruder']] : []), ...(['h1', 'h2'].includes(test) ? [['B', 'bystander']] : [])]) {
+    try { dumps[who] = pod(who === 'INTRUDER' || who === 'B' ? PODS.O2 : PODS[who], 'POST', '/dump', { ctx }); w(`${who}.json`, dumps[who]); } catch (e) { invalid.push(`no dump from ${who}: ${e.message.slice(0, 200)}`); }
+    try { pod(who === 'INTRUDER' || who === 'B' ? PODS.O2 : PODS[who], 'POST', '/close', { ctx }); } catch {}
   }
   try { pod(PODS.S, 'POST', '/unblock-all'); } catch {}
   try { const ipt = pod(PODS.S, 'GET', '/iptables'); if (ipt.rules.length) invalid.push(`DROP rules left in subject: ${ipt.rules.join(' | ')}`); } catch (e) { invalid.push(`iptables check failed: ${e.message}`); }
@@ -335,9 +381,31 @@ async function trial(stack, test, arm, opt = {}) {
   const viol = dumps.S ? dumps.S.violations.length : null;
   const expectViolation = test === 'rogue';
   if (!expectViolation && viol) invalid.push(`${viol} attribution violation(s) in subject`);
-  for (const who of ['O1', 'O2']) if (dumps[who] && dumps[who].driver && dumps[who].driver.observerDetected) invalid.push(`observer ${who} detected a failure of its own connection`);
+  // h3 mutes S on purpose: the observers' received audio from S stops carrying the clock, so this check is
+  // exempted for that arm only, and the exemption is written into the record with what was observed.
+  const exemptions = test === 'h3' ? [{ check: 'observer detected a failure of its own connection', reason: 'S is muted for 10 s by design; a muted track carries no in-band clock, so both observers are expected to see S\'s audio go stale. The check exists to catch an unintended failure of an observer\'s own connection, which this is not.', observed: [] }] : undefined;
+  for (const who of ['O1', 'O2']) if (dumps[who] && dumps[who].driver && dumps[who].driver.observerDetected) { if (exemptions) exemptions[0].observed.push({ who, ...dumps[who].driver.observerDetected }); else invalid.push(`observer ${who} detected a failure of its own connection`); }
+  let control;
+  if (['h1', 'h2'].includes(test) && !(dumps.B && dumps.B.log.some((l) => (l.type === 'driver_state' && l.state === 'left') || l.type === 'ctl_bystander_left'))) invalid.push('bystander did not leave (no left state in its dump)');
+  if (CONTROL_TESTS.includes(test)) {
+    // The same arm label is NOT the same condition on the two stacks: each record names its own condition.
+    const NOTE = {
+      h0: { livekit: 'idle session', janus: 'idle session' },
+      h1: { livekit: 'bystander joins and leaves without publishing (livekit-client, publish: false)', janus: 'bystander joins and leaves without publishing (minimal Janus client: joins as a publisher, never publishes)' },
+      h2: { livekit: 'publishing bystander joins and leaves; the existing subscriber connection of each participant is expected to be renegotiated (to be confirmed per trial from the recorded offers)', janus: 'publishing bystander joins and leaves; each participant opens a NEW handle and connection for it. No existing connection is renegotiated: benign renegotiation is not tested on Janus' },
+      h3: { livekit: 'mute SIGNALLED to the server (LocalTrackPublication.mute: track disabled and the server told it is muted)', janus: 'mute NOT signalled (MediaStreamTrack.enabled = false only; the server is told nothing)' },
+    };
+    control = { test, condition: `${test}-${stack}`, conditionNote: NOTE[test][stack], observeS: CONTROL_OBSERVE_S, build: pre.build, nodeInfo: pre.nodeInfo };
+    if (['h1', 'h2'].includes(test)) control.observerAsymmetry = 'the bystander runs as a second browser context in the O2 pod' + (test === 'h2' ? '; every participant also decodes the bystander\'s audio' : '');
+    if (test === 'h3') { // did RTP keep flowing while S was muted? (two reads inside the mute)
+      const m = Object.fromEntries(marks.filter((x) => /^(packets_|mute_)/.test(x.step)).map((x) => [x.step, x])); const a1 = m.packets_muted_1, a2 = m.packets_muted_2;
+      const rate = a1 && a2 && a1.packetsSent != null && a2.packetsSent != null ? (a2.packetsSent - a1.packetsSent) / ((a2.statsTimestamp - a1.statsTimestamp) / 1000) : null;
+      control.mute = { mechanism: m.mute_on && m.mute_on.mechanism, mutedForS: m.mute_on && m.mute_off ? +((m.mute_off.tPod - m.mute_on.tPod) / 1000).toFixed(2) : null, packetsPerSecondWhileMuted: rate != null ? +rate.toFixed(1) : null, bytesPerPacketWhileMuted: rate ? +((a2.bytesSent - a1.bytesSent) / (a2.packetsSent - a1.packetsSent)).toFixed(1) : null, packetsContinued: rate != null ? rate > 40 : null };
+      if (control.mute.packetsContinued === null) invalid.push('h3: outbound packet counters were not read during the mute');
+    }
+  }
   if (expectViolation) { if (viol > 0) invalid.push(`attribution violation(s): ${viol} (EXPECTED for the planted-rogue self-test)`); else invalid.push('SELF-TEST FAILURE: planted rogue reconnect was NOT caught'); }
-  const result = { id, stack, test, arm, room, iso, clock, ladder: 'v2', tStart, tEnd: nowIso(), valid: invalid.length === 0, invalid, marks };
+  const result = { id, stack, test, arm, room, iso, clock, ladder: 'v2', tStart, tEnd: nowIso(), valid: invalid.length === 0, invalid, ...(control ? { control } : {}), ...(exemptions ? { exemptions } : {}), marks };
   w('result.json', result);
   log(id, result.valid ? 'VALID' : `INVALID: ${invalid.join(' | ')}`);
   return result;
@@ -380,6 +448,32 @@ else if (cmd === 'study') {
     fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried, remaining: queue.length }));
   }
   log('study', stack, 'done', JSON.stringify(have));
+} else if (cmd === 'control') {
+  // Healthy-session control arm (approved 2026-10-07). Arm O. Per stack: h0 8, h1 8, h2 12, h3 12.
+  // Randomized order, resumable like the study. A node-image or client-build mismatch stops the session.
+  const stack = a[0];
+  if (!CONTROL) { console.error('control: set C4_CONTROL=1 (and C4_CLIENT_BUILD=pre-sampler)'); process.exit(2); }
+  const CELLS = (process.env.C4_CELLS || 'h0:8,h1:8,h2:12,h3:12').split(',').map((x) => { const [test, n] = x.split(':'); return { test, n: Number(n) }; });
+  const dirT = path.join(ROOT, TRIALS); fs.mkdirSync(dirT, { recursive: true });
+  const have = {}; const tried = {};
+  for (const d of fs.readdirSync(dirT)) { const f = path.join(dirT, d, 'result.json'); if (!fs.existsSync(f)) continue; const r = JSON.parse(fs.readFileSync(f, 'utf8')); if (r.stack !== stack || !r.control) continue; tried[r.test] = (tried[r.test] || 0) + 1; if (r.valid) have[r.test] = (have[r.test] || 0) + 1; }
+  const queue = []; for (const c of CELLS) for (let i = have[c.test] || 0; i < c.n; i++) queue.push(c);
+  for (let i = queue.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [queue[i], queue[j]] = [queue[j], queue[i]]; }
+  fs.appendFileSync(path.join(dirT, `order-${stack}.jsonl`), JSON.stringify({ t: nowIso(), planned: queue.map((c) => c.test) }) + '\n');
+  log('control', stack, `planned ${queue.length} sessions`);
+  let aborts = 0;
+  while (queue.length) {
+    const c = queue.shift(); const k = c.test;
+    const r = await trial(stack, c.test, 'O');
+    if (r && r.aborted && r.stop) { log('control', `STOP: ${r.failed.join(' | ')}`); process.exit(5); }
+    if (r && r.aborted) { aborts++; if (aborts > 10) { log('control', 'too many precondition aborts: stopping'); process.exit(3); } await sleep(30000); queue.push(c); continue; }
+    tried[k] = (tried[k] || 0) + 1;
+    if (r && r.valid) have[k] = (have[k] || 0) + 1;
+    else if (tried[k] < c.n + 3) queue.push(c); // replace an invalid session, at most 3 extra attempts per arm
+    else log('control', `arm ${k}: attempts exhausted with ${have[k] || 0}/${c.n} valid`);
+    fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried, remaining: queue.length }));
+  }
+  log('control', stack, 'done', JSON.stringify(have));
 } else if (cmd === 'shakedown') {
   // STAGE-A-SPEC §4.2: 2 arms x 2 modes x {10 s, 30 s} x 3 reps = 24 trials per stack, reps interleaved.
   const stack = a[0]; const reps = Number(a[1] || 3);

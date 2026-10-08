@@ -10,10 +10,10 @@ const { LIVEKIT_API_KEY: K, LIVEKIT_API_SECRET: S, POD_ROLE } = process.env;
 const WWW = '/c4/www';
 const now = () => performance.timeOrigin + performance.now();
 const files = {
-  '/': ['text/html', '<!doctype html><meta charset=utf-8><body><script src="/common.js"></script><script src="/lkproto.js"></script><script src="/lk-sdk.js"></script><script src="/lk.js"></script><script src="/janus.js"></script><script src="/driver.js"></script></body>'],
+  '/': ['text/html', '<!doctype html><meta charset=utf-8><body><script src="/common.js"></script><script src="/lkproto.js"></script><script src="/lk-sdk.js"></script><script src="/lk.js"></script><script src="/janus.js"></script><script src="/driver.js"></script>' + (fs.existsSync(`${WWW}/control-arm.js`) ? '<script src="/control-arm.js"></script>' : '') + '</body>'],
   '/lk-sdk.js': ['text/javascript', () => fs.readFileSync('/work/node_modules/livekit-client/dist/livekit-client.umd.js')],
 };
-for (const f of ['common.js', 'lkproto.js', 'lk.js', 'janus.js', 'driver.js']) files[`/${f}`] = ['text/javascript', () => fs.readFileSync(`${WWW}/${f}`)];
+for (const f of ['common.js', 'lkproto.js', 'lk.js', 'janus.js', 'driver.js', 'control-arm.js']) files[`/${f}`] = ['text/javascript', () => fs.readFileSync(`${WWW}/${f}`)];
 const web = http.createServer((q, r) => { const m = files[q.url]; if (!m) { r.writeHead(404); return r.end(); } r.writeHead(200, { 'content-type': m[0], 'cache-control': 'no-store' }); r.end(typeof m[1] === 'function' ? m[1]() : m[1]); });
 await new Promise((r) => web.listen(0, '127.0.0.1', r));
 const PAGE_URL = `http://127.0.0.1:${web.address().port}/`;
@@ -100,7 +100,7 @@ const routes = {
   'POST /poll-stop': async () => { if (!poll) return { samples: [] }; clearInterval(poll.timer); const P = poll; poll = null;
     if (P.sess) fetch(`${P.httpUrl}/${P.sess}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ janus: 'destroy', transaction: 'x' }) }).catch(() => {});
     return { samples: P.samples }; },
-  'GET /health': async () => ({ ok: true, role: POD_ROLE, ctxs: [...ctxs.keys()], playwright: JSON.parse(fs.readFileSync('/work/node_modules/playwright/package.json')).version, lkClient: JSON.parse(fs.readFileSync('/work/node_modules/livekit-client/package.json')).version, t: now() }),
+  'GET /health': async () => ({ ok: true, role: POD_ROLE, ctxs: [...ctxs.keys()], playwright: JSON.parse(fs.readFileSync('/work/node_modules/playwright/package.json')).version, lkClient: JSON.parse(fs.readFileSync('/work/node_modules/livekit-client/package.json')).version, www: Object.fromEntries(fs.readdirSync(WWW).sort().map((f) => [f, crypto.createHash('sha256').update(fs.readFileSync(`${WWW}/${f}`)).digest('hex')])), t: now() }),
   'POST /open': async ({ ctx }) => {
     if (ctxs.has(ctx)) { try { await ctxs.get(ctx).context.close(); } catch {} ctxs.delete(ctx); }
     const context = await browser.newContext(); const page = await context.newPage(); const con = [];
