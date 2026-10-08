@@ -57,8 +57,9 @@ client.
   11, 19, ... times the initial RTO. `net/ipv4/tcp_timer.c` lines 671–679 is the code.
 - Fit (`resume-arrival.txt`): with the unit estimated once from the data as 1.033 s, each of the 56
   first arrivals on both stacks falls on the first schedule point after restore: 0, 1, 2, 3, 7 or 11
-  units. 52 are within 0.1 s; the other four are Janus 10 s trials in which restore falls within
-  0.16 s of a schedule point, which is the uncertainty of the restore time.
+  units. 55 are within 0.1 s; the other is a Janus 10 s trial in which restore is recorded 0.02 s
+  after a schedule point and the request arrived on that point; the restore time is uncertain by up
+  to about 0.16 s.
 - The eleventh unit is 11.33 s. The next point is 19 units, 19.6 s after the open, and the driver
   abandons the attempt after 15 s, so 11.33 s is the last chance of the first connection.
 - Tie to the running system: the nodes ran kernel `6.18.48-109.150.amzn2023.aarch64` in every
