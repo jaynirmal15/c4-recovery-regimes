@@ -1,0 +1,22 @@
+LiveKit, full isolation, retained: 80 trials | 75 with a usable server log and at least one resume request | 5 left out
+
+| D (s) | Trials | Client opens its first connection | Restore | First resume received, after that open | Answer |
+|---|---|---|---|---|---|
+| 2 | 4 | 7.07–7.37 | 2.05–2.07 | 0.00–0.00 | accepted 4 |
+| 5 | 5 | 7.02–7.25 | 5.06–5.08 | 0.00–0.00 | accepted 5 |
+| 10 | 5 | 7.19–7.50 | 10.05–10.08 | 3.09–3.17 | accepted 5 |
+| 16 | 4 | 7.13–7.36 | 16.06–16.10 | 11.33–11.41 | accepted 4 |
+| 17 | 9 | 5.61–7.55 | 17.07–17.09 | 11.33–19.95 | accepted 8, refused 1 |
+| 18 | 10 | 7.10–7.63 | 18.05–18.07 | 11.33–11.39 | accepted 10 |
+| 19 | 9 | 5.48–7.49 | 19.05–19.08 | 19.95–19.96 | refused 9 |
+| 21 | 9 | 7.14–7.54 | 21.05–21.07 | 19.95–19.95 | refused 9 |
+| 23 | 10 | 7.17–7.47 | 23.05–23.08 | 19.95–19.95 | refused 10 |
+| 26 | 5 | 7.19–7.39 | 26.07–26.08 | 19.95–19.95 | refused 5 |
+| 30 | 5 | 7.19–7.34 | 30.07–30.08 | 26.09–26.14 | refused 5 |
+
+survivors with a race: 22 | accepted resume received 11.33–11.41 s after the client opened the connection, at 18.45–19.00 s after onset
+rule "restore precedes (first open + 11.33 s)": true in 22 of 22 survivors and 0 of 39 rebuilds
+rebuilds: connections the client opened before the removal: 1.00–1.00 | first attempt ends 20.23–22.30 | second begins 25.43–27.49 | removal 20.04–21.83
+rebuilds: a second attempt begun 2 s after the first ended would begin before the removal in 0 of 39
+
+Janus, survivors with a claim (20): successful claim sent, after the websocket carrying it was opened, by D: 10 s: 1.01–2.04 | 30 s: 1.01–1.08 | 45 s: 0.00–0.00 | 55 s: 7.24–7.28
