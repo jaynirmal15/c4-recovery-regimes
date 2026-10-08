@@ -51,6 +51,23 @@ rather than upstream v6.18.
   longest). Not registered, stated for transparency: without it the full-isolation T4 range is
   7.55–9.86 s and the verdict is unchanged.
 
+## Exploratory, not registered: the spread of the two arms
+
+The registration fixed a verdict on medians and ranges. It said nothing about spread, so what
+follows was noticed after the data were seen and is exploratory.
+
+| Condition | Width of the restart arm (T2, 7 trials) | Width of the no-restart arm (T4, 8 trials) | Ratio | Width of fresh-again, T2 | Width of fresh-again, T4 | T4 trials relative to the T2 range |
+|---|---|---|---|---|---|---|
+| Full isolation, 2 s | 0.54 s (7.30–7.84) | 2.61 s (7.55–10.16) | 4.8 | 0.39 s | 2.37 s | 6 above, 2 inside, 0 below |
+| Media-only, 2 s | 0.25 s (7.43–7.68) | 3.59 s (6.79–10.38) | 14.4 | 0.19 s | 3.46 s | 7 above, 0 inside, 1 below |
+
+The overlap of the ranges that decides the registered verdict comes from the lower end of the
+no-restart arm: a few no-restart trials are as short as the restart trials, and most are longer,
+by up to about 2.5 s. It is one arm's spread, not two similar arms. With a restart, fresh-again
+fell inside a window of a few tenths of a second in every trial; without one it varied over two
+to three and a half seconds. Widths of 7 and 8 trials are small-sample ranges and understate the
+true spread of both arms; no interval or test is attached to them.
+
 ## Observation window
 
 T4 trials were observed for 54.9–57.7 s after restore, not the "about 30 s" the registration
