@@ -4,6 +4,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
+import os from 'node:os';
 import { chromium } from 'playwright';
 
 const { LIVEKIT_API_KEY: K, LIVEKIT_API_SECRET: S, POD_ROLE } = process.env;
@@ -100,7 +101,7 @@ const routes = {
   'POST /poll-stop': async () => { if (!poll) return { samples: [] }; clearInterval(poll.timer); const P = poll; poll = null;
     if (P.sess) fetch(`${P.httpUrl}/${P.sess}`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ janus: 'destroy', transaction: 'x' }) }).catch(() => {});
     return { samples: P.samples }; },
-  'GET /health': async () => ({ ok: true, role: POD_ROLE, ctxs: [...ctxs.keys()], playwright: JSON.parse(fs.readFileSync('/work/node_modules/playwright/package.json')).version, lkClient: JSON.parse(fs.readFileSync('/work/node_modules/livekit-client/package.json')).version, www: Object.fromEntries(fs.readdirSync(WWW).sort().map((f) => [f, crypto.createHash('sha256').update(fs.readFileSync(`${WWW}/${f}`)).digest('hex')])), t: now() }),
+  'GET /health': async () => ({ ok: true, role: POD_ROLE, ctxs: [...ctxs.keys()], playwright: JSON.parse(fs.readFileSync('/work/node_modules/playwright/package.json')).version, lkClient: JSON.parse(fs.readFileSync('/work/node_modules/livekit-client/package.json')).version, kernel: { release: os.release(), ...Object.fromEntries(['tcp_syn_linear_timeouts', 'tcp_syn_retries'].map((k) => { try { return [k, Number(fs.readFileSync(`/proc/sys/net/ipv4/${k}`, 'utf8').trim())]; } catch { return [k, null]; } })) }, www: Object.fromEntries(fs.readdirSync(WWW).sort().map((f) => [f, crypto.createHash('sha256').update(fs.readFileSync(`${WWW}/${f}`)).digest('hex')])), t: now() }),
   'POST /open': async ({ ctx }) => {
     if (ctxs.has(ctx)) { try { await ctxs.get(ctx).context.close(); } catch {} ctxs.delete(ctx); }
     const context = await browser.newContext(); const page = await context.newPage(); const con = [];

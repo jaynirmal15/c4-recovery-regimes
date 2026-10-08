@@ -21,6 +21,15 @@
     return { t: C4X.now(), muted, ...r };
   };
 
+  /** R2 (registered 2026-10-08): set the driver's detection threshold. The one constant the registration
+   *  names is the only one that can be set; the value in force is in every dump (params.mediaAgeMs). */
+  window.C4.ctlSetParam = (key, value) => {
+    if (key !== 'mediaAgeMs' || !(value > 0)) throw new Error(`ctlSetParam: only mediaAgeMs can be set (got ${key}=${value})`);
+    const before = window.C4.params[key]; window.C4.params[key] = value;
+    C4X.log('ctl_param', { key, before, value });
+    return { key, before, value: window.C4.params[key] };
+  };
+
   /** One read of the publisher's outbound audio RTP counters (not a sampler). */
   window.C4.ctlPackets = async () => {
     const pc = isLk() ? null : adapter.pub.pc; const report = isLk() ? await lkPub().track.sender.getStats() : await pc.getStats();

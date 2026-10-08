@@ -3,6 +3,7 @@
 // runs trials, collects client + server evidence, marks invalidations (§3.3).
 //   node run.mjs setup | switch <stack> | targeted <stack> <test> <n> [arm] | placement-selftest <stack>
 //   C4_CONTROL=1 C4_CLIENT_BUILD=pre-sampler node run.mjs control <stack>   (healthy-session control arm)
+//   C4_CONTROL=1 C4_CLIENT_BUILD=pre-sampler node run.mjs threshold livekit (R2: detection threshold, REGISTRATION-R2-detection-threshold.md)
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -204,6 +205,7 @@ function preconditions(stack) {
   if (tn && (sfuNodes.includes(tn) || cn.has(tn))) failed.push(`coturn node ${tn} is shared with an SFU or a client`);
   if (sn && (cn.has(sn) || sfuNodes.filter((n) => n === sn).length > 1)) failed.push(`SFU-under-test node ${sn} holds a client or another SFU`);
   if (clientNode && sfuNodes.includes(clientNode)) failed.push(`client node ${clientNode} holds an SFU`);
+  const clientKernel = {}; // SYN retransmission settings and kernel release as seen inside each client pod (R2)
   const nodeInfo = nodes.map((n) => ({ name: n.metadata.name, ...Object.fromEntries(Object.keys(NODE_PIN).map((k) => [k, n.status.nodeInfo[k]])) }));
   let stop = false; // control arm: a different node image or client build ends the session, it is not retried
   if (CONTROL) for (const n of nodeInfo) for (const k of Object.keys(NODE_PIN)) if (n[k] !== NODE_PIN[k]) { failed.push(`node ${n.name} ${k}=${n[k]} differs from the study's ${NODE_PIN[k]}`); stop = true; }
@@ -226,13 +228,15 @@ function preconditions(stack) {
     for (const [role, name] of Object.entries(PODS)) {
       const h = pod(name, 'GET', '/health');
       if (h.lkClient !== PIN.lkClient || h.playwright !== PIN.playwright) failed.push(`${role} versions lk=${h.lkClient} pw=${h.playwright}`);
+      clientKernel[role] = h.kernel || null;
+      if (CONTROL && !(h.kernel && h.kernel.release && Number.isFinite(h.kernel.tcp_syn_linear_timeouts) && Number.isFinite(h.kernel.tcp_syn_retries))) { failed.push(`${role}: kernel release or SYN retransmission settings could not be read inside the pod`); stop = true; }
       if (CONTROL && JSON.stringify(h.www) !== JSON.stringify(wwwHashes())) { failed.push(`${role} serves client files that differ from the selected build`); stop = true; }
     }
     const ipt = pod(PODS.S, 'GET', '/iptables');
     if (ipt.rules.length) failed.push(`subject has DROP rules: ${ipt.rules.join(' | ')}`);
   } catch (e) { failed.push(`client pod check failed: ${e.message.slice(0, 200)}`); }
   try { const h = sinkCall(stack, '/head'); if (!h.json || !h.json.bootId) failed.push('event sink not answering /head'); } catch (e) { failed.push(`event sink unreachable: ${e.message.slice(0, 120)}`); }
-  return { ok: failed.length === 0, failed, stop, placement, nodeInfo, build: CONTROL ? { name: process.env.C4_CLIENT_BUILD || 'current', sha256: wwwHashes() } : undefined, sfu: s ? { ip: s.ip, node: s.pod.spec.nodeName } : null };
+  return { ok: failed.length === 0, failed, stop, placement, nodeInfo, clientKernel, build: CONTROL ? { name: process.env.C4_CLIENT_BUILD || 'current', sha256: wwwHashes() } : undefined, sfu: s ? { ip: s.ip, node: s.pod.spec.nodeName } : null };
 }
 
 function abort(trialId, stack, pre) {
@@ -246,7 +250,7 @@ function abort(trialId, stack, pre) {
 let seq = 0;
 async function trial(stack, test, arm, opt = {}) {
   const stamp = nowIso().replace(/[-:]/g, '').replace(/\..*/, '');
-  const id = test === 'isolation' ? `${stack}-iso-${opt.mode}-${opt.durS}s-${arm}-${stamp}-${++seq}` : `${stack}-${test}-${arm}-${stamp}-${++seq}`;
+  const id = test === 'isolation' ? `${stack}-iso-${opt.mode}-${opt.durS}s-${arm}-${opt.mediaAgeMs ? `T${opt.mediaAgeMs / 1000}-` : ''}${stamp}-${++seq}` : `${stack}-${test}-${arm}-${stamp}-${++seq}`;
   const pre = preconditions(stack);
   if (!pre.ok) { abort(id, stack, pre); return { id, aborted: true, failed: pre.failed, stop: pre.stop }; }
   const s = sfu(stack);
@@ -278,6 +282,8 @@ async function trial(stack, test, arm, opt = {}) {
     }
     try { pod(PODS.O1, 'POST', '/poll-start', { stack, httpUrl: s.http, room }); } catch (e) { invalid.push(`state poll did not start: ${String(e.message).slice(0, 120)}`); }
     await sleep(15000); // warm-up (spec §3.2)
+    // R2: both arms set the detection threshold through the same call, before arming; the reply is in the record
+    if (opt.mediaAgeMs) { const r = pod(PODS.S, 'POST', '/eval', { ctx: 'main', fn: 'ctlSetParam', args: ['mediaAgeMs', opt.mediaAgeMs] }); mark('threshold_set', r); if (r.value !== opt.mediaAgeMs) invalid.push(`detection threshold not set: ${JSON.stringify(r)}`); }
     for (const who of ['O1', 'O2', 'S']) mark(`arm_${who}`, pod(PODS[who], 'POST', '/eval', { ctx: 'main', fn: 'arm' }));
     await sleep(5000);
     // ---- deliberate-failure self-test (spec §3.3): starve the server-event channel mid-trial ----
@@ -386,6 +392,11 @@ async function trial(stack, test, arm, opt = {}) {
   const exemptions = test === 'h3' ? [{ check: 'observer detected a failure of its own connection', reason: 'S is muted for 10 s by design; a muted track carries no in-band clock, so both observers are expected to see S\'s audio go stale. The check exists to catch an unintended failure of an observer\'s own connection, which this is not.', observed: [] }] : undefined;
   for (const who of ['O1', 'O2']) if (dumps[who] && dumps[who].driver && dumps[who].driver.observerDetected) { if (exemptions) exemptions[0].observed.push({ who, ...dumps[who].driver.observerDetected }); else invalid.push(`observer ${who} detected a failure of its own connection`); }
   let control;
+  if (opt.mediaAgeMs) {
+    const inForce = dumps.S && dumps.S.params ? dumps.S.params.mediaAgeMs : null;
+    if (inForce !== opt.mediaAgeMs) invalid.push(`detection threshold in the subject's record is ${inForce}, not ${opt.mediaAgeMs}`);
+    control = { registration: 'REGISTRATION-R2-detection-threshold.md', arm: `T${opt.mediaAgeMs / 1000}`, mediaAgeMs: opt.mediaAgeMs, mediaAgeMsInSubjectRecord: inForce, build: pre.build, nodeInfo: pre.nodeInfo, clientKernel: pre.clientKernel };
+  }
   if (['h1', 'h2'].includes(test) && !(dumps.B && dumps.B.log.some((l) => (l.type === 'driver_state' && l.state === 'left') || l.type === 'ctl_bystander_left'))) invalid.push('bystander did not leave (no left state in its dump)');
   if (CONTROL_TESTS.includes(test)) {
     // The same arm label is NOT the same condition on the two stacks: each record names its own condition.
@@ -395,7 +406,7 @@ async function trial(stack, test, arm, opt = {}) {
       h2: { livekit: 'publishing bystander joins and leaves; the existing subscriber connection of each participant is expected to be renegotiated (to be confirmed per trial from the recorded offers)', janus: 'publishing bystander joins and leaves; each participant opens a NEW handle and connection for it. No existing connection is renegotiated: benign renegotiation is not tested on Janus' },
       h3: { livekit: 'mute SIGNALLED to the server (LocalTrackPublication.mute: track disabled and the server told it is muted)', janus: 'mute NOT signalled (MediaStreamTrack.enabled = false only; the server is told nothing)' },
     };
-    control = { test, condition: `${test}-${stack}`, conditionNote: NOTE[test][stack], observeS: CONTROL_OBSERVE_S, build: pre.build, nodeInfo: pre.nodeInfo };
+    control = { clientKernel: pre.clientKernel, test, condition: `${test}-${stack}`, conditionNote: NOTE[test][stack], observeS: CONTROL_OBSERVE_S, build: pre.build, nodeInfo: pre.nodeInfo };
     if (['h1', 'h2'].includes(test)) control.observerAsymmetry = 'the bystander runs as a second browser context in the O2 pod' + (test === 'h2' ? '; every participant also decodes the bystander\'s audio' : '');
     if (test === 'h3') { // did RTP keep flowing while S was muted? (two reads inside the mute)
       const m = Object.fromEntries(marks.filter((x) => /^(packets_|mute_)/.test(x.step)).map((x) => [x.step, x])); const a1 = m.packets_muted_1, a2 = m.packets_muted_2;
@@ -474,6 +485,33 @@ else if (cmd === 'study') {
     fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried, remaining: queue.length }));
   }
   log('control', stack, 'done', JSON.stringify(have));
+} else if (cmd === 'threshold') {
+  // R2, registered 2026-10-08 (REGISTRATION-R2-detection-threshold.md). LiveKit only; full and media-only isolation, 2 s;
+  // per condition 8 trials at mediaAgeMs 4000 and 7 at 2000; one randomized order; resumable like the study.
+  const stack = a[0];
+  if (stack !== 'livekit' || !CONTROL) { console.error('threshold: LiveKit only, with C4_CONTROL=1 and C4_CLIENT_BUILD=pre-sampler'); process.exit(2); }
+  const N = process.env.C4_CELLS ? Object.fromEntries(process.env.C4_CELLS.split(',').map((x) => x.split(':')).map(([k, n]) => [k, Number(n)])) : { T4: 8, T2: 7 };
+  const CELLS = []; for (const mode of ['all', 'media']) for (const [armName, n] of Object.entries(N)) CELLS.push({ mode, durS: 2, mediaAgeMs: armName === 'T4' ? 4000 : 2000, n });
+  const key = (c) => `${c.mode}-2-T${c.mediaAgeMs / 1000}`; const dirT = path.join(ROOT, TRIALS); fs.mkdirSync(dirT, { recursive: true });
+  const have = {}; const tried = {};
+  for (const d of fs.readdirSync(dirT)) { const f = path.join(dirT, d, 'result.json'); if (!fs.existsSync(f)) continue; const r = JSON.parse(fs.readFileSync(f, 'utf8')); if (!r.iso || !r.control || !r.control.mediaAgeMs) continue; const k = `${r.iso.mode}-${r.iso.plannedS}-${r.control.arm}`; tried[k] = (tried[k] || 0) + 1; if (r.valid) have[k] = (have[k] || 0) + 1; }
+  const queue = []; for (const c of CELLS) for (let i = have[key(c)] || 0; i < c.n; i++) queue.push(c);
+  for (let i = queue.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [queue[i], queue[j]] = [queue[j], queue[i]]; }
+  fs.appendFileSync(path.join(dirT, `order-${stack}.jsonl`), JSON.stringify({ t: nowIso(), planned: queue.map(key) }) + '\n');
+  log('threshold', stack, `planned ${queue.length} trials`);
+  let aborts = 0;
+  while (queue.length) {
+    const c = queue.shift(); const k = key(c);
+    const r = await trial(stack, 'isolation', 'O', { mode: c.mode, durS: c.durS, mediaAgeMs: c.mediaAgeMs });
+    if (r && r.aborted && r.stop) { log('threshold', `STOP: ${r.failed.join(' | ')}`); process.exit(5); }
+    if (r && r.aborted) { aborts++; if (aborts > 10) { log('threshold', 'too many precondition aborts: stopping'); process.exit(3); } await sleep(30000); queue.push(c); continue; }
+    tried[k] = (tried[k] || 0) + 1;
+    if (r && r.valid) have[k] = (have[k] || 0) + 1;
+    else if (tried[k] < c.n + 3) queue.push(c); // replace an invalid trial, at most 3 extra attempts per group
+    else log('threshold', `group ${k}: attempts exhausted with ${have[k] || 0}/${c.n} valid`);
+    fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried, remaining: queue.length }));
+  }
+  log('threshold', stack, 'done', JSON.stringify(have));
 } else if (cmd === 'shakedown') {
   // STAGE-A-SPEC §4.2: 2 arms x 2 modes x {10 s, 30 s} x 3 reps = 24 trials per stack, reps interleaved.
   const stack = a[0]; const reps = Number(a[1] || 3);
