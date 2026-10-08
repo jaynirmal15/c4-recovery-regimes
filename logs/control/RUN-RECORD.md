@@ -135,3 +135,9 @@ session that was killed and has no result. Found on 2026-10-08 by enumerating th
 (`logs/study/removal-race/cohort.json`).
 The message of `b35a832` is left as it is on purpose: it disagrees with this file, this file is
 correct, and the history keeps the trace of the error rather than being rewritten to hide it.
+
+## After the control arm
+
+Item 3 of the remediation plan (the removal race) was closed on 2026-10-08 by source inspection at
+the pinned tags plus the order of events in the server logs, not by intervention. The record is
+`logs/study/removal-race/SERVER-TIMERS.md`. No lab session was run for it.

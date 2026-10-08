@@ -1,0 +1,25 @@
+
+Janus full 2 s: trials 5 | detection at 1.89–2.04 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 0 | largest rule age before acting 2.18–2.25 s; over 4 s in 0 | restart taken in 0 | fresh-again at 2.05–2.15 s
+
+Janus full 5 s: trials 5 | detection at 0.32–2.13 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 2 | largest rule age before acting 5.10–67.24 s; over 4 s in 5 | restart taken in 1 | fresh-again at 5.10–5.17 s
+   restart begins 5.32–5.32 ends 7.61–7.61 | subject inbound between restore and the restart: no samples in 1 trials; else excess at the restart – s, slope – s/s
+
+Janus media-only 2 s: trials 5 | detection at 1.98–2.13 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 0 | largest rule age before acting 2.10–2.24 s; over 4 s in 0 | restart taken in 0 | fresh-again at 2.06–2.12 s
+
+Janus media-only 5 s: trials 5 | detection at 1.88–2.08 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 1 | largest rule age before acting 5.18–5.31 s; over 4 s in 5 | restart taken in 0 | fresh-again at 5.07–5.19 s
+
+LiveKit full 2 s: trials 5 | detection at 2.00–2.16 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 0 | largest rule age before acting 3.55–3.82 s; over 4 s in 0 | restart taken in 5 | fresh-again at 7.72–8.21 s
+   restart begins 7.00–7.36 ends 9.03–9.39 | subject inbound between restore and the restart: no samples in 0 trials; else excess at the restart 2.45–2.91 s, slope -0.25–-0.19 s/s
+   observers hearing S (10 streams): excess just after restore 1.37–1.99 s | just before the restart 0.44–0.92 s | slope over the last 3 s -0.28–-0.21 s/s | straight-line time to the band 7.78–9.55 s after onset
+
+LiveKit full 5 s: trials 5 | detection at 2.01–2.10 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 5 | largest rule age before acting 6.95–7.01 s; over 4 s in 5 | restart taken in 5 | fresh-again at 7.67–14.94 s
+   restart begins 7.01–7.25 ends 9.04–9.28 | subject inbound between restore and the restart: no samples in 5 trials; else excess at the restart – s, slope – s/s
+   observers hearing S (8 streams): excess just after restore 0.77–4.98 s | just before the restart 1.06–4.20 s | slope over the last 3 s -0.98–0.29 s/s | straight-line time to the band 10.39–13.65 s after onset
+
+LiveKit media-only 2 s: trials 5 | detection at 0.21–2.09 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 0 | largest rule age before acting 3.48–5.41 s; over 4 s in 1 | restart taken in 5 | fresh-again at 6.10–8.13 s
+   restart begins 5.21–7.22 ends 7.24–9.24 | subject inbound between restore and the restart: no samples in 0 trials; else excess at the restart 2.63–3.22 s, slope -0.22–-0.09 s/s
+   observers hearing S (10 streams): excess just after restore 1.39–2.04 s | just before the restart 0.50–1.14 s | slope over the last 3 s -0.30–-0.16 s/s | straight-line time to the band 7.96–10.70 s after onset
+
+LiveKit media-only 5 s: trials 5 | detection at 1.97–2.14 s (signalling healthy in 5, connections healthy in 5) | client ICE disconnected before any action: 2 | largest rule age before acting 6.98–7.04 s; over 4 s in 5 | restart taken in 5 | fresh-again at 8.06–14.05 s
+   restart begins 6.97–7.14 ends 9.00–9.17 | subject inbound between restore and the restart: no samples in 5 trials; else excess at the restart – s, slope – s/s
+   observers hearing S (10 streams): excess just after restore 1.66–3.74 s | just before the restart 1.51–3.64 s | slope over the last 3 s -1.05–-0.07 s/s | straight-line time to the band 8.87–52.60 s after onset

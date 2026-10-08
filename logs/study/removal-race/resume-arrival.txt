@@ -20,3 +20,18 @@ rebuilds: connections the client opened before the removal: 1.00–1.00 | first 
 rebuilds: a second attempt begun 2 s after the first ended would begin before the removal in 0 of 39
 
 Janus, survivors with a claim (20): successful claim sent, after the websocket carrying it was opened, by D: 10 s: 1.01–2.04 | 30 s: 1.01–1.08 | 45 s: 0.00–0.00 | 55 s: 7.24–7.28
+
+SYN schedule fit: unit (initial RTO) estimated from the 22 arrivals over 10 s as lag/11 = 1.033 s
+connections opened while the path was blocked: 42 | opened after restore: 14
+  Janus 10 s: n 5 | restore − open 0.95–1.19 | predicted point 2 or 1 × unit | observed − predicted -1.00–0.03 s
+  Janus 30 s: n 5 | restore − open 0.58–0.85 | predicted point 1 × unit | observed − predicted -0.02–0.04 s
+  Janus 45 s: n 5 | restore − open -4.53–-4.27 | predicted point 0 × unit | observed − predicted 0.00–0.00 s
+  Janus 55 s: n 5 | restore − open 5.49–5.69 | predicted point 7 × unit | observed − predicted 0.01–0.05 s
+  LiveKit 2 s: n 4 | restore − open -5.31–-5.01 | predicted point 0 × unit | observed − predicted 0.00–0.00 s
+  LiveKit 5 s: n 5 | restore − open -2.19–-1.95 | predicted point 0 × unit | observed − predicted 0.00–0.00 s
+  LiveKit 10 s: n 5 | restore − open 2.57–2.88 | predicted point 3 × unit | observed − predicted -0.00–0.07 s
+  LiveKit 16 s: n 4 | restore − open 8.71–8.94 | predicted point 11 × unit | observed − predicted -0.03–0.05 s
+  LiveKit 17 s: n 8 | restore − open 9.52–9.84 | predicted point 11 × unit | observed − predicted -0.03–0.05 s
+  LiveKit 18 s: n 10 | restore − open 10.44–10.96 | predicted point 11 × unit | observed − predicted -0.03–0.03 s
+all 56 arrivals: observed − predicted -1.00–0.07 s | within 0.1 s: 55 | the others: Janus 10 s, restore − open 1.05 s, arrived at 1.03 units
+(restore is the time the runner confirmed the rules removed; they are removed up to about 0.16 s before that, which is the size of the gap in the cases listed)
