@@ -1,0 +1,10 @@
+
+study: LiveKit trials 110 | server pods c4-livekit/livekit-livekit-server-7454f7cb68-djhrg | "starting LiveKit server" lines in any log: 0
+  first log line is typically 10.0 s after trial start | complete 82 | head missing 25 (first line after isolation onset in 9, before it in 16) | empty 3
+  bytes written between consecutive cut points, MiB (n 27): min 9.98 median 10.24 max 11.14 | between 9.9 and 11.3 MiB: 27 | others: none
+  not usable for the removal race (empty, or first line after onset): livekit-iso-all-16s-O-20261002T064043-31 livekit-iso-all-19s-O-20261002T073906-54 livekit-iso-all-21s-O-20261002T061236-20 livekit-iso-all-2s-O-20261002T091756-93 livekit-iso-media-10s-O-20261002T074922-58 livekit-iso-media-23s-O-20261002T053228-4 livekit-iso-media-26s-O-20261002T063031-27 livekit-iso-media-26s-O-20261002T072106-47 livekit-iso-media-26s-O-20261002T090750-89 livekit-iso-media-28s-O-20261002T070059-39 livekit-iso-media-28s-O-20261002T093948-102 livekit-iso-media-30s-O-20261002T084946-82
+
+study-r2: LiveKit trials 70 | server pods c4-livekit/livekit-livekit-server-7454f7cb68-glsn6 | "starting LiveKit server" lines in any log: 0
+  first log line is typically 9.8 s after trial start | complete 51 | head missing 19 (first line after isolation onset in 4, before it in 15) | empty 0
+  bytes written between consecutive cut points, MiB (n 18): min 1.45 median 10.21 max 11.21 | between 9.9 and 11.3 MiB: 15 | others: 1.5, 2.1, 6.7
+  not usable for the removal race (empty, or first line after onset): livekit-iso-all-17s-O-20261002T164848-33 livekit-iso-media-21s-O-20261002T180150-62 livekit-iso-media-22s-O-20261002T165835-37 livekit-iso-media-30s-O-20261002T175141-58

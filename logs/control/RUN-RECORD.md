@@ -133,3 +133,5 @@ An earlier version of this file, and the message of commit `b35a832`, said five 
 were invalidated by the runner bug. The count is four (two h1, two h2); the fifth directory is the
 session that was killed and has no result. Found on 2026-10-08 by enumerating the directories
 (`logs/study/removal-race/cohort.json`).
+The message of `b35a832` is left as it is on purpose: it disagrees with this file, this file is
+correct, and the history keeps the trace of the error rather than being rewritten to hide it.
