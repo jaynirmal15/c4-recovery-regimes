@@ -1,0 +1,1602 @@
+{
+ "margin": 0.9,
+ "minNoAction": 6,
+ "summary": {
+  "full": {
+   "verdict": "not resolved by this sample",
+   "bandDependent": false,
+   "gapDependent": false,
+   "v": "not resolved by this sample",
+   "overlap": true,
+   "medianDiff": 1.24
+  },
+  "media-only": {
+   "verdict": "not resolved by this sample",
+   "bandDependent": false,
+   "gapDependent": false,
+   "v": "not resolved by this sample",
+   "overlap": true,
+   "medianDiff": 1.83
+  }
+ },
+ "rows": [
+  {
+   "id": "livekit-iso-all-2s-O-T2-20261008T051911-2",
+   "dir": "threshold/livekit-iso-all-2s-O-T2-20261008T051911-2",
+   "cond": "full",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.17,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.17,
+     "end": 9.2,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.48,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 2944,
+    "stepMs": 3120.61,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.55,
+   "firstStale": 0.43,
+   "freshAgain": 7.99,
+   "perObserver": [
+    7.55,
+    7.55
+   ],
+   "band125": 7.55,
+   "band375": 7.55,
+   "gapTolerant": 7.55,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 58.39,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T2-20261008T052133-3",
+   "dir": "threshold/livekit-iso-all-2s-O-T2-20261008T052133-3",
+   "cond": "full",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 1.99,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 6.99,
+     "end": 9.03,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.49,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3456,
+    "stepMs": 3279.07,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.43,
+   "firstStale": 0.56,
+   "freshAgain": 7.99,
+   "perObserver": [
+    7.42,
+    7.42
+   ],
+   "band125": 8.19,
+   "band375": 7.43,
+   "gapTolerant": 7.43,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 61.93,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T2-20261008T052622-5",
+   "dir": "threshold/livekit-iso-all-2s-O-T2-20261008T052622-5",
+   "cond": "full",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.08,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.28,
+     "end": 9.31,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.62,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3584,
+    "stepMs": 3373.77,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.68,
+   "firstStale": 0.45,
+   "freshAgain": 8.13,
+   "perObserver": [
+    7.55,
+    7.68
+   ],
+   "band125": 7.68,
+   "band375": 7.68,
+   "gapTolerant": 7.68,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 58.94,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T2-20261008T053327-8",
+   "dir": "threshold/livekit-iso-all-2s-O-T2-20261008T053327-8",
+   "cond": "full",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 1.99,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 6.99,
+     "end": 9.04,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.54,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3456,
+    "stepMs": 3272.44,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.74,
+   "firstStale": 0,
+   "freshAgain": 7.74,
+   "perObserver": [
+    7.73,
+    7.74
+   ],
+   "band125": 7.74,
+   "band375": 7.74,
+   "gapTolerant": 7.74,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 63.05,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T2-20261008T054737-14",
+   "dir": "threshold/livekit-iso-all-2s-O-T2-20261008T054737-14",
+   "cond": "full",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 1.96,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 6.96,
+     "end": 8.99,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.65,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3584,
+    "stepMs": 3424.88,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.84,
+   "firstStale": 0,
+   "freshAgain": 7.84,
+   "perObserver": [
+    7.83,
+    7.84
+   ],
+   "band125": 7.84,
+   "band375": 7.84,
+   "gapTolerant": 7.84,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 59.61,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T2-20261008T060627-22",
+   "dir": "threshold/livekit-iso-all-2s-O-T2-20261008T060627-22",
+   "cond": "full",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.07,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.07,
+     "end": 9.09,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.59,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3456,
+    "stepMs": 3362.77,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.83,
+   "firstStale": 0.01,
+   "freshAgain": 7.83,
+   "perObserver": [
+    7.81,
+    7.81
+   ],
+   "band125": 7.83,
+   "band375": 7.83,
+   "gapTolerant": 7.83,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 61.77,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T2-20261008T061823-27",
+   "dir": "threshold/livekit-iso-all-2s-O-T2-20261008T061823-27",
+   "cond": "full",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.12,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.12,
+     "end": 9.15,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.67,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3072,
+    "stepMs": 3244.82,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.3,
+   "firstStale": 0.56,
+   "freshAgain": 7.86,
+   "perObserver": [
+    7.3,
+    7.3
+   ],
+   "band125": 7.3,
+   "band375": 7.3,
+   "gapTolerant": 7.3,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 63.17,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T052847-6",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T052847-6",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.63,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 8.07,
+   "firstStale": 0.56,
+   "freshAgain": 8.63,
+   "perObserver": [
+    8.06,
+    8.06
+   ],
+   "band125": 8.19,
+   "band375": 7.69,
+   "gapTolerant": 8.07,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.38,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T053554-9",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T053554-9",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.51,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 9.13,
+   "firstStale": 0,
+   "freshAgain": 9.13,
+   "perObserver": [
+    8.89,
+    9.09
+   ],
+   "band125": 10.67,
+   "band375": 8.62,
+   "gapTolerant": 9.13,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.08,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T053813-10",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T053813-10",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.52,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 9.86,
+   "firstStale": 0.45,
+   "freshAgain": 10.31,
+   "perObserver": [
+    9.34,
+    9.86
+   ],
+   "band125": 10.37,
+   "band375": 8.97,
+   "gapTolerant": 9.86,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.38,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T055928-19",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T055928-19",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.03,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 5.37,
+   "detectedThenHealthy": true,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 10.16,
+   "firstStale": 0,
+   "freshAgain": 10.16,
+   "perObserver": [
+    10.03,
+    10.16
+   ],
+   "band125": 11.18,
+   "band375": 9.26,
+   "gapTolerant": 10.16,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.3,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T060148-20",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T060148-20",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.66,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 9.34,
+   "firstStale": 0.45,
+   "freshAgain": 9.79,
+   "perObserver": [
+    9.34,
+    9.22
+   ],
+   "band125": 10.62,
+   "band375": 9.09,
+   "gapTolerant": 9.34,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.65,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T060407-21",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T060407-21",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.59,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 8.71,
+   "firstStale": 0.51,
+   "freshAgain": 9.22,
+   "perObserver": [
+    8.7,
+    8.7
+   ],
+   "band125": 9.73,
+   "band375": 8.58,
+   "gapTolerant": 8.71,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.14,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T061332-25",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T061332-25",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.61,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 7.55,
+   "firstStale": 0.39,
+   "freshAgain": 7.94,
+   "perObserver": [
+    7.55,
+    7.42
+   ],
+   "band125": 8.06,
+   "band375": 7.3,
+   "gapTolerant": 7.55,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.58,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-all-2s-O-T4-20261008T062050-28",
+   "dir": "threshold/livekit-iso-all-2s-O-T4-20261008T062050-28",
+   "cond": "full",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.68,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 7.56,
+   "firstStale": 0.49,
+   "freshAgain": 8.05,
+   "perObserver": [
+    7.55,
+    7.55
+   ],
+   "band125": 8.2,
+   "band375": 7.44,
+   "gapTolerant": 7.56,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 57.72,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T2-20261008T052359-4",
+   "dir": "threshold/livekit-iso-media-2s-O-T2-20261008T052359-4",
+   "cond": "media-only",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.07,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.07,
+     "end": 9.1,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.48,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 2944,
+    "stepMs": 3106.47,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.56,
+   "firstStale": 0.47,
+   "freshAgain": 8.03,
+   "perObserver": [
+    7.55,
+    7.55
+   ],
+   "band125": 7.56,
+   "band375": 7.56,
+   "gapTolerant": 7.56,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 58.55,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T2-20261008T054253-12",
+   "dir": "threshold/livekit-iso-media-2s-O-T2-20261008T054253-12",
+   "cond": "media-only",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.12,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.12,
+     "end": 9.17,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.58,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 2944,
+    "stepMs": 3167.57,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.57,
+   "firstStale": 0.49,
+   "freshAgain": 8.05,
+   "perObserver": [
+    7.55,
+    7.55
+   ],
+   "band125": 7.57,
+   "band375": 7.57,
+   "gapTolerant": 7.57,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 58.52,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T2-20261008T055000-15",
+   "dir": "threshold/livekit-iso-media-2s-O-T2-20261008T055000-15",
+   "cond": "media-only",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.19,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.19,
+     "end": 9.24,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.53,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 2944,
+    "stepMs": 3116.68,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.56,
+   "firstStale": 0.5,
+   "freshAgain": 8.06,
+   "perObserver": [
+    7.55,
+    7.55
+   ],
+   "band125": 7.56,
+   "band375": 7.56,
+   "gapTolerant": 7.56,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 60.27,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T2-20261008T055443-17",
+   "dir": "threshold/livekit-iso-media-2s-O-T2-20261008T055443-17",
+   "cond": "media-only",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.08,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.08,
+     "end": 9.11,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.59,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3456,
+    "stepMs": 3373.66,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.56,
+   "firstStale": 0.45,
+   "freshAgain": 8.01,
+   "perObserver": [
+    7.55,
+    7.55
+   ],
+   "band125": 7.94,
+   "band375": 7.56,
+   "gapTolerant": 7.56,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 59.77,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T2-20261008T061555-26",
+   "dir": "threshold/livekit-iso-media-2s-O-T2-20261008T061555-26",
+   "cond": "media-only",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.05,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.05,
+     "end": 9.09,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.57,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 3072,
+    "stepMs": 3217.23,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.55,
+   "firstStale": 0.44,
+   "freshAgain": 7.99,
+   "perObserver": [
+    7.42,
+    7.55
+   ],
+   "band125": 7.81,
+   "band375": 7.55,
+   "gapTolerant": 7.55,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 62.67,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T2-20261008T062311-29",
+   "dir": "threshold/livekit-iso-media-2s-O-T2-20261008T062311-29",
+   "cond": "media-only",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.1,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.3,
+     "end": 9.33,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.68,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 2944,
+    "stepMs": 3155.83,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.68,
+   "firstStale": 0.48,
+   "freshAgain": 8.16,
+   "perObserver": [
+    7.68,
+    7.68
+   ],
+   "band125": 7.68,
+   "band375": 7.68,
+   "gapTolerant": 7.68,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 62.34,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T2-20261008T062538-30",
+   "dir": "threshold/livekit-iso-media-2s-O-T2-20261008T062538-30",
+   "cond": "media-only",
+   "arm": "T2",
+   "valid": true,
+   "invalid": [],
+   "threshold": 2000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": 2.11,
+   "actions": [
+    {
+     "kind": "transport_restart",
+     "t": 7.11,
+     "end": 9.14,
+     "ok": true
+    }
+   ],
+   "action": true,
+   "ruleMaxS": 3.58,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": {
+    "stream": "O2",
+    "intervalMs": 2944,
+    "stepMs": 3108.85,
+    "wouldHaveCrossedWithin256ms": false
+   },
+   "interruption": 7.43,
+   "firstStale": 0.54,
+   "freshAgain": 7.97,
+   "perObserver": [
+    7.42,
+    7.42
+   ],
+   "band125": 7.68,
+   "band375": 7.43,
+   "gapTolerant": 7.43,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 59.58,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T051647-1",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T051647-1",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.65,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 6.79,
+   "firstStale": 0.56,
+   "freshAgain": 7.35,
+   "perObserver": [
+    6.78,
+    6.78
+   ],
+   "band125": 7.69,
+   "band375": 6.54,
+   "gapTolerant": 6.79,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.73,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T053108-7",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T053108-7",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.58,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 8.95,
+   "firstStale": 0,
+   "freshAgain": 8.95,
+   "perObserver": [
+    8.95,
+    8.83
+   ],
+   "band125": 9.72,
+   "band375": 8.31,
+   "gapTolerant": 8.95,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.2,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T054033-11",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T054033-11",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.63,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 9.35,
+   "firstStale": 0.42,
+   "freshAgain": 9.77,
+   "perObserver": [
+    9.34,
+    9.34
+   ],
+   "band125": 10.5,
+   "band375": 8.84,
+   "gapTolerant": 9.35,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.31,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T054517-13",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T054517-13",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.52,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 9.93,
+   "firstStale": 0,
+   "freshAgain": 9.93,
+   "perObserver": [
+    9.73,
+    9.93
+   ],
+   "band125": 11.32,
+   "band375": 9.54,
+   "gapTolerant": 9.93,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.17,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T055225-16",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T055225-16",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.52,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 10.38,
+   "firstStale": 0.44,
+   "freshAgain": 10.81,
+   "perObserver": [
+    10.37,
+    10.37
+   ],
+   "band125": 11.79,
+   "band375": 10.12,
+   "gapTolerant": 10.38,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 54.9,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T055707-18",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T055707-18",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.61,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 10.37,
+   "firstStale": 0.43,
+   "freshAgain": 10.8,
+   "perObserver": [
+    10.24,
+    10.37
+   ],
+   "band125": 11.26,
+   "band375": 9.99,
+   "gapTolerant": 10.37,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.27,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T060852-23",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T060852-23",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.78,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 7.82,
+   "firstStale": 0.53,
+   "freshAgain": 8.35,
+   "perObserver": [
+    7.81,
+    7.81
+   ],
+   "band125": 8.58,
+   "band375": 7.56,
+   "gapTolerant": 7.82,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.89,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  },
+  {
+   "id": "livekit-iso-media-2s-O-T4-20261008T061113-24",
+   "dir": "threshold/livekit-iso-media-2s-O-T4-20261008T061113-24",
+   "cond": "media-only",
+   "arm": "T4",
+   "valid": true,
+   "invalid": [],
+   "threshold": 4000,
+   "clientKernel": {
+    "S": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O1": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    },
+    "O2": {
+     "release": "6.18.48-109.150.amzn2023.aarch64",
+     "tcp_syn_linear_timeouts": 4,
+     "tcp_syn_retries": 6
+    }
+   },
+   "detectedAt": null,
+   "actions": [],
+   "action": false,
+   "ruleMaxS": 3.65,
+   "detectedThenHealthy": false,
+   "defect": null,
+   "longIntervalAtCrossing": null,
+   "interruption": 9.42,
+   "firstStale": 0,
+   "freshAgain": 9.42,
+   "perObserver": [
+    9.42,
+    9.42
+   ],
+   "band125": 10.57,
+   "band375": 8.52,
+   "gapTolerant": 9.42,
+   "holdRestartedByGap": false,
+   "observedAfterRestoreS": 55.27,
+   "notRecovered": false,
+   "matchesAnalyze": true
+  }
+ ]
+}

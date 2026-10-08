@@ -63,8 +63,11 @@ client.
 - The eleventh unit is 11.33 s. The next point is 19 units, 19.6 s after the open, and the driver
   abandons the attempt after 15 s, so 11.33 s is the last chance of the first connection.
 - Tie to the running system: the nodes ran kernel `6.18.48-109.150.amzn2023.aarch64` in every
-  session (job logs; `control.nodeInfo`). Not recorded: the value of the sysctl inside the client
-  pods, and the AWS kernel's own source. The match of all 56 arrivals to the default schedule is the
+  session (job logs; `control.nodeInfo`). When this was first written the value of the sysctl
+  inside the client pods had not been recorded. It was recorded on 2026-10-08 in the R2 session, in
+  all three client pods before each of 34 trials: `tcp_syn_linear_timeouts = 4`,
+  `tcp_syn_retries = 6`, the same kernel release (`logs/threshold/RUN-RECORD.md`). Still not read:
+  the AWS kernel's own source. The match of all 56 arrivals to the default schedule is the
   evidence that the default was in force.
 
 The same schedule on Janus: claims succeeded 0, 1, 2 or 7 units after the websocket was opened. The
