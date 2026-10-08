@@ -1,0 +1,43 @@
+samples 1302729 | streams 3060 | stream-hours 46.2 | 2 s wraps crossed 82056
+
+== livekit: samples 773238 | within 60 ms of a 2 s wrap: 37758 (4.9%)
+  |error| away from a wrap: median 0.1 p99 97.7 p99.9 210.0 max 259 ms
+  |error| within 60 ms of a wrap: median 0.2 p90 0.6 p99 3.0 max 20 ms
+  |error| > 30 ms: 18355 samples (23738 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 60 ms: 11573 samples (14967 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 125 ms: 5058 samples (6541 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 250 ms: 28 samples (36 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 300 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 500 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 1000 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  position of >60 ms errors relative to the wrap (ms: count): {}
+  sign of >60 ms errors at a wrap: negative 0 positive 0 | range Infinity to -Infinity
+  errors >125 ms followed immediately by another: 138 | errors >60 ms NOT near a 2 s wrap: 11573 of 11573
+  per 2 s wrap ( 48048 wraps): sample with error >60 ms 0.00% | >125 ms 0.00% | >250 ms 0.000% | a 256 ms interval 20.9%
+  largest: -259ms@wrap-295/corpus-post  -255ms@wrap-650/corpus-post  -255ms@wrap-586/corpus-post  -255ms@wrap-589/control  -254ms@wrap-312/corpus-post  -254ms@wrap-582/control
+
+== janus: samples 529491 | within 60 ms of a 2 s wrap: 25767 (4.9%)
+  |error| away from a wrap: median 0.2 p99 1.5 p99.9 7.3 max 19 ms
+  |error| within 60 ms of a wrap: median 0.3 p90 1.0 p99 2.7 max 40 ms
+  |error| > 30 ms: 2 samples (4 per million) | within 60 ms of a 2 s wrap: 2 | within 150 ms of a 64 s wrap: 0
+  |error| > 60 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 125 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 250 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 300 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 500 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  |error| > 1000 ms: 0 samples (0 per million) | within 60 ms of a 2 s wrap: 0 | within 150 ms of a 64 s wrap: 0
+  position of >60 ms errors relative to the wrap (ms: count): {}
+  sign of >60 ms errors at a wrap: negative 0 positive 0 | range Infinity to -Infinity
+  errors >125 ms followed immediately by another: 0 | errors >60 ms NOT near a 2 s wrap: 0 of 0
+  per 2 s wrap ( 34008 wraps): sample with error >60 ms 0.00% | >125 ms 0.00% | >250 ms 0.000% | a 256 ms interval 18.6%
+  largest: 
+
+enumerated: control valid sessions 80 | dataset index rows 215
+
+errors >125 ms: 5058 | reading too young 5026 | too old 32 | most negative -259 | most positive 235 | below -250: 28 | above +250: 0
+position relative to the 2 s wrap, 100 ms bins: {"-1000":4,"-900":152,"-800":374,"-700":60,"-600":561,"-500":3582,"-400":29,"-300":296}
+by stack {"livekit":5058} | by direction {"S<-O1":814,"S<-O2":859,"O1<-O2":845,"O1<-S":863,"O2<-O1":828,"O2<-S":849} | trials or sessions with any: 190 of LiveKit 190
+
+the 215: observer fresh-again endpoints 430 | endpoint sample reads >100 ms lower than the 8 after it: 0 | shift if that sample is ignored (s): [] | low-reading samples inside a 1 s hold: 15 | last sample the subject received before the stall reads >100 ms low: 0 of 430 streams
+the 215, LiveKit, observers hearing S, armed .. onset: samples 14514 | older than baseline + 250 ms: 0 | largest excess over baseline (ms): 124
+control, LiveKit, all six directions: samples 345164 | older than baseline + 250 ms: 0 | younger than baseline - 250 ms: 19 | largest excess over baseline (ms): 180

@@ -1,7 +1,8 @@
 # Control arm (healthy sessions): run record
 
 Run on 2026-10-07 and 2026-10-08 (UTC). Records: `control/` (81 sessions: 80 valid, 1 invalid)
-and `control-shakedown/` (13 directories). Job logs: this directory. This file was written after
+and `control-shakedown/` (13 directories: 12 with a result, 8 valid and 4 invalid, and 1 with
+no result). Job logs: this directory. This file was written after
 the run, from the job logs and the records.
 
 ## What was and was not fixed in advance
@@ -13,8 +14,18 @@ exemption were settled in conversation before the first launch and are in the ru
 (`client/runner/run.mjs`, last edited 16:58 UTC, between the first and second launch, to fix the
 bystander-leave handling only). The analysis (`client/runner/control-analyze.mjs`) was written
 after the LiveKit shakedown records existed and while the LiveKit 40 were running, and was edited
-once more after the Janus shakedown (see "Analysis"). Any reading of these records beyond
-"did a monitored layer or the client fire in a healthy session" was not pre-specified.
+once more after the Janus shakedown (see "Analysis").
+
+The mute result therefore stands in three tiers, and is reported in three:
+
+- **Pre-stated in correspondence, not committed, and answered.** Before the run the question was
+  put whether a media-reception signal can distinguish silence-with-packets from disruption. On
+  Janus, in 12 of 12 unsignalled mutes, no reception event or any other server signal fired while
+  the server's own statistics showed 50 packets per second received.
+- **Post hoc, exploratory.** Reading the two mute conditions as a demonstration of substitution
+  error was formed after the records were seen.
+- **Absent.** No pre-scoring definition of expected outcomes per rule per arm was committed
+  before the data was scored.
 
 ## Conditions
 
@@ -73,7 +84,7 @@ digest per session, as in the study. Runner: one Mac on AC power, under `caffein
 
 | Log | Unparked (UTC) | Sessions | Parked, verified (UTC) |
 |---|---|---|---|
-| `session1-livekit.log` | 10-07 16:27:01 | LiveKit shakedown only: h0 and h3 valid; h1 and h2 invalid on every attempt (5 invalid records, 1 session killed with no result). Gate failed (6); the 40 did not run | 10-07 17:16:01 |
+| `session1-livekit.log` | 10-07 16:27:01 | LiveKit shakedown only: h0 and h3 valid; h1 and h2 invalid on every attempt (4 invalid records, 1 session killed with no result). Gate failed (6); the 40 did not run | 10-07 17:16:01 |
 | `session1b-livekit.log` | 10-07 17:17:42 | LiveKit shakedown h1 and h2 (valid), gate passed, then 40 of 40 valid, done 20:23:08 | 10-07 20:40:46 |
 | `session2-janus.log` | 10-07 20:42:47 | Janus shakedown, 4 of 4 valid, gate passed, then 41 sessions for 40 valid, done 10-08 00:08:39 | 10-08 00:26:04 |
 
@@ -115,3 +126,10 @@ The AWS account ID and the nodes' public addresses are replaced by `<aws-account
 `<node-ip>` in the three session logs, as in the earlier job logs. The session records are as the
 instrument wrote them; the LiveKit server logs in them contain participant access tokens, each
 valid for two hours from its session.
+
+## Correction
+
+An earlier version of this file, and the message of commit `b35a832`, said five shakedown sessions
+were invalidated by the runner bug. The count is four (two h1, two h2); the fifth directory is the
+session that was killed and has no result. Found on 2026-10-08 by enumerating the directories
+(`logs/study/removal-race/cohort.json`).

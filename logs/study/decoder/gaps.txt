@@ -1,0 +1,33 @@
+enumerated: control valid sessions 80 | dataset index rows 215
+
+=== CONTROL (80 valid sessions): stream-hours 26.4 | intervals 726824 | 64 s wraps crossed 1486 | intervals >=200 ms: 11070
+   256 ms: n 11056 (1.52% of intervals) | spans a 2 s wrap 8665 | spans a 64 s wrap 246
+   384 ms: n 14 (0.00% of intervals) | spans a 2 s wrap 6 | spans a 64 s wrap 0
+  gaps >300 ms: 14 | span a 64 s wrap: 0 | not: 14
+  64 s wraps that produced a >300 ms gap: 0 of 1486 | produced any >=200 ms interval: 246
+  by condition: {"h2-janus":4,"h2-livekit":10} | by receiver: {"S":9,"O1":4,"O2":1} | by stream: {"S<-B":6,"O1<-B":4,"O2<-B":1,"S<-O1":2,"S<-O2":1}
+    janus-h2-O-20261007T210737-2 h2-janus S<-B len 384 at 37.02 s | 64s-wrap false nearest wrap ms 505 | age change ms 20
+    janus-h2-O-20261007T210737-2 h2-janus O1<-B len 384 at 37.02 s | 64s-wrap false nearest wrap ms 513 | age change ms -10
+    janus-h2-O-20261007T210737-2 h2-janus O2<-B len 384 at 37.02 s | 64s-wrap false nearest wrap ms 513 | age change ms -10
+    janus-h2-O-20261007T213945-9 h2-janus S<-B len 384 at 37.39 s | 64s-wrap false nearest wrap ms 7124 | age change ms 14
+    livekit-h2-O-20261007T180715-10 h2-livekit S<-O1 len 384 at 70.8 s | 64s-wrap false nearest wrap ms 13882 | age change ms 10
+    livekit-h2-O-20261007T180715-10 h2-livekit S<-O2 len 384 at 70.8 s | 64s-wrap false nearest wrap ms 13882 | age change ms 10
+    livekit-h2-O-20261007T180715-10 h2-livekit S<-B len 384 at 70.79 s | 64s-wrap false nearest wrap ms 13864 | age change ms 10
+    livekit-h2-O-20261007T185942-22 h2-livekit S<-B len 384 at 37.25 s | 64s-wrap false nearest wrap ms 6203 | age change ms 21
+    livekit-h2-O-20261007T185942-22 h2-livekit O1<-B len 384 at 37.24 s | 64s-wrap false nearest wrap ms 6198 | age change ms 16
+    livekit-h2-O-20261007T191719-26 h2-livekit S<-O1 len 384 at 67.28 s | 64s-wrap false nearest wrap ms 9749 | age change ms 10
+    livekit-h2-O-20261007T194801-33 h2-livekit S<-B len 384 at 37.57 s | 64s-wrap false nearest wrap ms 13754 | age change ms 31
+    livekit-h2-O-20261007T194801-33 h2-livekit O1<-B len 384 at 37.57 s | 64s-wrap false nearest wrap ms 13763 | age change ms 28
+    livekit-h2-O-20261007T195655-35 h2-livekit S<-B len 384 at 37.44 s | 64s-wrap false nearest wrap ms 28437 | age change ms 36
+    livekit-h2-O-20261007T195655-35 h2-livekit O1<-B len 384 at 37.44 s | 64s-wrap false nearest wrap ms 28436 | age change ms 41
+
+=== CORPUS healthy windows (215 trials; pre-onset armed, and post-recovery from 3 s after both directions healthy): stream-hours 17.8 | intervals 520964 | 64 s wraps crossed 946 | intervals >=200 ms: 7681
+   256 ms: n 7680 (1.47% of intervals) | spans a 2 s wrap 5674 | spans a 64 s wrap 189
+   384 ms: n 1 (0.00% of intervals) | spans a 2 s wrap 1 | spans a 64 s wrap 0
+  gaps >300 ms: 1 | span a 64 s wrap: 0 | not: 1
+  64 s wraps that produced a >300 ms gap: 0 of 946 | produced any >=200 ms interval: 189
+  by stack: {"livekit corpus-post":1} | by stream: {"O2<-O1":1}
+    corpus-post:livekit-iso-all-23s-O-20261002T090 livekit/R2/all/23 O2<-O1 len 384 at 40.37 | 64s-wrap false nearest 11748 | dAge 10
+
+gaps >300 ms on measured streams: 4 | with an age change of 8 ms or more: 4 | age changes (ms): [10,10,10,10]
+h2-livekit receiver-hours with the bystander present (three streams decoded): 0.60 | gap events on measured streams in control (receiver, instant): 2
