@@ -1,0 +1,309 @@
+{
+ "sets": {
+  "study": {
+   "directories": 175,
+   "withResult": 175,
+   "withoutResult": [],
+   "valid": 175,
+   "invalid": [],
+   "retained": 145,
+   "superseded": 30,
+   "notInIndex": [],
+   "byStack": {
+    "janus": {
+     "retained": 65,
+     "superseded": 0
+    },
+    "livekit": {
+     "retained": 80,
+     "superseded": 30
+    }
+   }
+  },
+  "study-r2": {
+   "directories": 70,
+   "withResult": 70,
+   "withoutResult": [],
+   "valid": 70,
+   "invalid": [],
+   "retained": 70,
+   "superseded": 0,
+   "notInIndex": [],
+   "byStack": {
+    "livekit": {
+     "retained": 70,
+     "superseded": 0
+    }
+   }
+  }
+ },
+ "rules": [
+  "A trial is a directory with a result.json written by the runner. A trial is valid if the runner recorded no invalidation (result.valid).",
+  "Retained = valid trials of study run 1 (study/) except the four LiveKit media-only conditions at 23, 26, 28 and 30 s, plus every valid trial of run 2 (study-r2/).",
+  "Superseded = the valid run-1 trials of those four conditions: run with the client before the dropped-resume-request fix and re-run in run 2 with it."
+ ],
+ "otherRecordDirectories": {
+  "arms": {
+   "records": 24,
+   "valid": 23,
+   "invalid": 1,
+   "isolationTrials": 24,
+   "byStack": {
+    "janus": 8,
+    "livekit": 16
+   },
+   "invalidReasons": {
+    "observer ON detected a failure of its own connection": 1
+   }
+  },
+  "backlog-cell": {
+   "records": 10,
+   "valid": 10,
+   "invalid": 0,
+   "isolationTrials": 10,
+   "byStack": {
+    "janus": 10
+   },
+   "invalidReasons": {}
+  },
+  "confirm": {
+   "records": 8,
+   "valid": 8,
+   "invalid": 0,
+   "isolationTrials": 8,
+   "byStack": {
+    "janus": 5,
+    "livekit": 3
+   },
+   "invalidReasons": {}
+  },
+  "confirm-starve": {
+   "records": 2,
+   "valid": 0,
+   "invalid": 2,
+   "isolationTrials": 2,
+   "byStack": {
+    "janus": 1,
+    "livekit": 1
+   },
+   "invalidReasons": {
+    "server-event channel: sink restarted during the trial (bootId changed)": 2,
+    "server-event channel: expected -N events (seq N..N), got N": 2,
+    "server-event channel: start marker missing": 2,
+    "server-event channel: end marker missing": 2,
+    "server-event channel: only N of N participant-joined events for this room": 2,
+    "clock-offset probe (sfu) produced no measurement": 1
+   }
+  },
+  "confirm2": {
+   "records": 5,
+   "valid": 5,
+   "invalid": 0,
+   "isolationTrials": 5,
+   "byStack": {
+    "janus": 5
+   },
+   "invalidReasons": {}
+  },
+  "confirm3": {
+   "records": 5,
+   "valid": 5,
+   "invalid": 0,
+   "isolationTrials": 5,
+   "byStack": {
+    "janus": 5
+   },
+   "invalidReasons": {}
+  },
+  "control": {
+   "records": 81,
+   "valid": 80,
+   "invalid": 1,
+   "isolationTrials": 0,
+   "byStack": {
+    "janus": 41,
+    "livekit": 40
+   },
+   "invalidReasons": {
+    "observer ON detected a failure of its own connection": 1
+   }
+  },
+  "control-shakedown": {
+   "records": 12,
+   "valid": 8,
+   "invalid": 4,
+   "isolationTrials": 0,
+   "byStack": {
+    "janus": 4,
+    "livekit": 8
+   },
+   "invalidReasons": {
+    "control event bystander_leave failed: Unexpected end of JSON input": 4
+   }
+  },
+  "shakedown": {
+   "records": 48,
+   "valid": 48,
+   "invalid": 0,
+   "isolationTrials": 48,
+   "byStack": {
+    "janus": 24,
+    "livekit": 24
+   },
+   "invalidReasons": {}
+  },
+  "shakedown-smoke": {
+   "records": 4,
+   "valid": 4,
+   "invalid": 0,
+   "isolationTrials": 4,
+   "byStack": {
+    "janus": 2,
+    "livekit": 2
+   },
+   "invalidReasons": {}
+  },
+  "shakedown-smoke-v1": {
+   "records": 3,
+   "valid": 3,
+   "invalid": 0,
+   "isolationTrials": 3,
+   "byStack": {
+    "janus": 1,
+    "livekit": 2
+   },
+   "invalidReasons": {}
+  },
+  "trials-debug": {
+   "records": 1,
+   "valid": 0,
+   "invalid": 1,
+   "isolationTrials": 0,
+   "byStack": {
+    "livekit": 1
+   },
+   "invalidReasons": {
+    "N attribution violation(s) in subject": 1
+   }
+  },
+  "trials-run1": {
+   "records": 18,
+   "valid": 12,
+   "invalid": 6,
+   "isolationTrials": 0,
+   "byStack": {
+    "janus": 7,
+    "livekit": 11
+   },
+   "invalidReasons": {
+    "attribution violation(s): N (EXPECTED for the planted-rogue self-test)": 2,
+    "runner error: spawnSync kubectl ETIMEDOUT": 1,
+    "runner error: cN-oN /join: page.evaluate: ConnectionError: could not establish pc connecti": 3
+   }
+  },
+  "trials-run2": {
+   "records": 17,
+   "valid": 15,
+   "invalid": 2,
+   "isolationTrials": 0,
+   "byStack": {
+    "janus": 7,
+    "livekit": 10
+   },
+   "invalidReasons": {
+    "attribution violation(s): N (EXPECTED for the planted-rogue self-test)": 2
+   }
+  },
+  "trials-run3": {
+   "records": 1,
+   "valid": 1,
+   "invalid": 0,
+   "isolationTrials": 0,
+   "byStack": {
+    "livekit": 1
+   },
+   "invalidReasons": {}
+  },
+  "trials-run4": {
+   "records": 17,
+   "valid": 15,
+   "invalid": 2,
+   "isolationTrials": 0,
+   "byStack": {
+    "janus": 7,
+    "livekit": 10
+   },
+   "invalidReasons": {
+    "attribution violation(s): N (EXPECTED for the planted-rogue self-test)": 2
+   }
+  },
+  "trials-run5": {
+   "records": 15,
+   "valid": 15,
+   "invalid": 0,
+   "isolationTrials": 0,
+   "byStack": {
+    "janus": 6,
+    "livekit": 9
+   },
+   "invalidReasons": {}
+  },
+  "validate": {
+   "records": 7,
+   "valid": 7,
+   "invalid": 0,
+   "isolationTrials": 7,
+   "byStack": {
+    "janus": 4,
+    "livekit": 3
+   },
+   "invalidReasons": {}
+  }
+ },
+ "runner": {
+  "study/progress-janus.json": {
+   "conditions": 13,
+   "tried": 65,
+   "valid": 65,
+   "replaced": 0,
+   "remaining": 0,
+   "launches": 1,
+   "plannedPerLaunch": [
+    65
+   ]
+  },
+  "study/progress-livekit.json": {
+   "conditions": 17,
+   "tried": 110,
+   "valid": 110,
+   "replaced": 0,
+   "remaining": 0,
+   "launches": 1,
+   "plannedPerLaunch": [
+    110
+   ]
+  },
+  "study-r2/progress-livekit.json": {
+   "conditions": 8,
+   "tried": 70,
+   "valid": 70,
+   "replaced": 0,
+   "remaining": 0,
+   "launches": 1,
+   "plannedPerLaunch": [
+    70
+   ]
+  }
+ },
+ "abortLogs": {
+  "aborts-run1.log": 1,
+  "aborts-run2.log": 2,
+  "aborts-run3.log": 8,
+  "aborts-run4.log": 2
+ },
+ "studyJobLogAbortLines": {
+  "session1-livekit.log": 0,
+  "session2-janus.log": 0,
+  "session3-livekit-r2.log": 0
+ }
+}

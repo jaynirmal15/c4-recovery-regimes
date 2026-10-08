@@ -1,0 +1,4397 @@
+[
+ {
+  "set": "study",
+  "dir": "janus-iso-all-10s-O-20261002T104504-8",
+  "id": "janus-iso-all-10s-O-20261002T104504-8",
+  "stack": "janus",
+  "mode": "all",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.059,
+  "verdict": "as predicted",
+  "why": "claim at 10.911 s succeeded; no session timeout",
+  "sinceLastKeepalive": 11.18,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.7,
+    "last": 65.463,
+    "lines": 135
+   },
+   "sid0": "4308475982797460",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.269,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 10.911,
+     "session": "4308475982797460",
+     "replied": 10.912,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    10.91
+   ],
+   "membershipEvents": [
+    {
+     "t": 62.977,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.866,
+      "end": 12.912,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.866
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-10s-O-20261002T110752-17",
+  "id": "janus-iso-all-10s-O-20261002T110752-17",
+  "stack": "janus",
+  "mode": "all",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.06,
+  "verdict": "as predicted",
+  "why": "claim at 10.112 s succeeded; no session timeout",
+  "sinceLastKeepalive": 10.194,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.289,
+    "last": 65.66,
+    "lines": 136
+   },
+   "sid0": "2395575490681743",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.082,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 10.112,
+     "session": "2395575490681743",
+     "replied": 10.113,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    10.111
+   ],
+   "membershipEvents": [
+    {
+     "t": 63.134,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.054,
+      "end": 12.113,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.054
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-10s-O-20261002T112558-24",
+  "id": "janus-iso-all-10s-O-20261002T112558-24",
+  "stack": "janus",
+  "mode": "all",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.06,
+  "verdict": "as predicted",
+  "why": "claim at 10.072 s succeeded; no session timeout",
+  "sinceLastKeepalive": 10.201,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.477,
+    "last": 66.301,
+    "lines": 135
+   },
+   "sid0": "2873580993856202",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.129,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 10.072,
+     "session": "2873580993856202",
+     "replied": 10.072,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    10.071
+   ],
+   "membershipEvents": [
+    {
+     "t": 63.56,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.006,
+      "end": 12.072,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.007
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-10s-O-20261002T125835-57",
+  "id": "janus-iso-all-10s-O-20261002T125835-57",
+  "stack": "janus",
+  "mode": "all",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.058,
+  "verdict": "as predicted",
+  "why": "claim at 10.171 s succeeded; no session timeout",
+  "sinceLastKeepalive": 11.197,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.672,
+    "last": 66.954,
+    "lines": 135
+   },
+   "sid0": "1731283221970213",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -1.026,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 10.171,
+     "session": "1731283221970213",
+     "replied": 10.172,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    10.169
+   ],
+   "membershipEvents": [
+    {
+     "t": 64.386,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.107,
+      "end": 12.172,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.109
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-10s-O-20261002T130536-60",
+  "id": "janus-iso-all-10s-O-20261002T130536-60",
+  "stack": "janus",
+  "mode": "all",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.068,
+  "verdict": "as predicted",
+  "why": "claim at 10.08 s succeeded; no session timeout",
+  "sinceLastKeepalive": 10.936,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.429,
+    "last": 67.39,
+    "lines": 135
+   },
+   "sid0": "4326068424826898",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.856,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 10.08,
+     "session": "4326068424826898",
+     "replied": 10.082,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    10.079
+   ],
+   "membershipEvents": [
+    {
+     "t": 64.759,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.074,
+      "end": 12.082,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.074
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-2s-O-20261002T110539-16",
+  "id": "janus-iso-all-2s-O-20261002T110539-16",
+  "stack": "janus",
+  "mode": "all",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.066,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.263,
+    "last": 57.625,
+    "lines": 109
+   },
+   "sid0": "1426410551394278",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.072,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 55.152,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-2s-O-20261002T112133-22",
+  "id": "janus-iso-all-2s-O-20261002T112133-22",
+  "stack": "janus",
+  "mode": "all",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.067,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.799,
+    "last": 57.803,
+    "lines": 109
+   },
+   "sid0": "7602279409807728",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.617,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 55.099,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-2s-O-20261002T113329-27",
+  "id": "janus-iso-all-2s-O-20261002T113329-27",
+  "stack": "janus",
+  "mode": "all",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.064,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.542,
+    "last": 57.479,
+    "lines": 110
+   },
+   "sid0": "8126614600029002",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.799,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 54.946,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-2s-O-20261002T113540-28",
+  "id": "janus-iso-all-2s-O-20261002T113540-28",
+  "stack": "janus",
+  "mode": "all",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.067,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.22,
+    "last": 57.401,
+    "lines": 110
+   },
+   "sid0": "4279384824852374",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 49.887,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 54.824,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-2s-O-20261002T120415-38",
+  "id": "janus-iso-all-2s-O-20261002T120415-38",
+  "stack": "janus",
+  "mode": "all",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.064,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.573,
+    "last": 58.816,
+    "lines": 110
+   },
+   "sid0": "8608484856545618",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.757,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 56.213,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-30s-O-20261002T105021-10",
+  "id": "janus-iso-all-30s-O-20261002T105021-10",
+  "stack": "janus",
+  "mode": "all",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.075,
+  "verdict": "as predicted",
+  "why": "claim at 30.576 s succeeded; no session timeout",
+  "sinceLastKeepalive": 31.414,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.094,
+    "last": 87.048,
+    "lines": 135
+   },
+   "sid0": "8813271592450757",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.838,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 30.576,
+     "session": "8813271592450757",
+     "replied": 30.577,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    30.575
+   ],
+   "membershipEvents": [
+    {
+     "t": 84.437,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.299,
+      "end": 24.3,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.498,
+      "end": 32.577,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.299,
+     29.499
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-30s-O-20261002T105803-13",
+  "id": "janus-iso-all-30s-O-20261002T105803-13",
+  "stack": "janus",
+  "mode": "all",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.068,
+  "verdict": "as predicted",
+  "why": "claim at 30.26 s succeeded; no session timeout",
+  "sinceLastKeepalive": 30.562,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.492,
+    "last": 85.791,
+    "lines": 135
+   },
+   "sid0": "2759278075204955",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.302,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 30.26,
+     "session": "2759278075204955",
+     "replied": 30.261,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    30.259
+   ],
+   "membershipEvents": [
+    {
+     "t": 83.103,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.034,
+      "end": 24.037,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.234,
+      "end": 32.261,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.036,
+     29.235
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-30s-O-20261002T110258-15",
+  "id": "janus-iso-all-30s-O-20261002T110258-15",
+  "stack": "janus",
+  "mode": "all",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.072,
+  "verdict": "as predicted",
+  "why": "claim at 30.264 s succeeded; no session timeout",
+  "sinceLastKeepalive": 31.746,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.907,
+    "last": 86.189,
+    "lines": 135
+   },
+   "sid0": "8855735068626225",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -1.482,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 30.264,
+     "session": "8855735068626225",
+     "replied": 30.265,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    30.263
+   ],
+   "membershipEvents": [
+    {
+     "t": 83.699,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.053,
+      "end": 24.054,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.253,
+      "end": 32.265,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.054,
+     29.253
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-30s-O-20261002T122449-45",
+  "id": "janus-iso-all-30s-O-20261002T122449-45",
+  "stack": "janus",
+  "mode": "all",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.07,
+  "verdict": "as predicted",
+  "why": "claim at 30.231 s succeeded; no session timeout",
+  "sinceLastKeepalive": 30.744,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.999,
+    "last": 86.418,
+    "lines": 135
+   },
+   "sid0": "8483968965837934",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.513,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 30.231,
+     "session": "8483968965837934",
+     "replied": 30.232,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    30.23
+   ],
+   "membershipEvents": [
+    {
+     "t": 83.858,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.021,
+      "end": 24.022,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.221,
+      "end": 32.232,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.022,
+     29.222
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-30s-O-20261002T125250-55",
+  "id": "janus-iso-all-30s-O-20261002T125250-55",
+  "stack": "janus",
+  "mode": "all",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.099,
+  "verdict": "as predicted",
+  "why": "claim at 30.351 s succeeded; no session timeout",
+  "sinceLastKeepalive": 31.219,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -42.17,
+    "last": 87.017,
+    "lines": 135
+   },
+   "sid0": "1036364678695543",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.868,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 30.351,
+     "session": "1036364678695543",
+     "replied": 30.352,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    30.349
+   ],
+   "membershipEvents": [
+    {
+     "t": 84.414,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.073,
+      "end": 24.075,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.273,
+      "end": 32.352,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.074,
+     29.274
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-45s-O-20261002T104724-9",
+  "id": "janus-iso-all-45s-O-20261002T104724-9",
+  "stack": "janus",
+  "mode": "all",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.065,
+  "verdict": "as predicted",
+  "why": "claim at 49.411 s succeeded; no session timeout",
+  "sinceLastKeepalive": 49.539,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.526,
+    "last": 103.849,
+    "lines": 135
+   },
+   "sid0": "8164107120810966",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.128,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 49.411,
+     "session": "8164107120810966",
+     "replied": 49.412,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    49.409
+   ],
+   "membershipEvents": [
+    {
+     "t": 101.324,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.007,
+      "end": 24.008,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.207,
+      "end": 44.209,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.407,
+      "end": 51.413,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.008,
+     29.209,
+     49.407
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-45s-O-20261002T114002-30",
+  "id": "janus-iso-all-45s-O-20261002T114002-30",
+  "stack": "janus",
+  "mode": "all",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.066,
+  "verdict": "as predicted",
+  "why": "claim at 49.495 s succeeded; no session timeout",
+  "sinceLastKeepalive": 49.542,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.499,
+    "last": 103.603,
+    "lines": 135
+   },
+   "sid0": "4212040344424916",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.047,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 49.495,
+     "session": "4212040344424916",
+     "replied": 49.495,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    49.493
+   ],
+   "membershipEvents": [
+    {
+     "t": 101.156,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.091,
+      "end": 24.093,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.291,
+      "end": 44.292,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.491,
+      "end": 51.496,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.092,
+     29.292,
+     49.492
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-45s-O-20261002T114959-33",
+  "id": "janus-iso-all-45s-O-20261002T114959-33",
+  "stack": "janus",
+  "mode": "all",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.072,
+  "verdict": "as predicted",
+  "why": "claim at 49.608 s succeeded; no session timeout",
+  "sinceLastKeepalive": 49.736,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.492,
+    "last": 103.699,
+    "lines": 135
+   },
+   "sid0": "687744418033359",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.128,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 49.608,
+     "session": "687744418033359",
+     "replied": 49.609,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    49.607
+   ],
+   "membershipEvents": [
+    {
+     "t": 101.158,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.205,
+      "end": 24.206,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.405,
+      "end": 44.406,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.605,
+      "end": 51.61,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.206,
+     29.406,
+     49.605
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-45s-O-20261002T121008-40",
+  "id": "janus-iso-all-45s-O-20261002T121008-40",
+  "stack": "janus",
+  "mode": "all",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.079,
+  "verdict": "as predicted",
+  "why": "claim at 49.351 s succeeded; no session timeout",
+  "sinceLastKeepalive": 50.347,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.387,
+    "last": 105.172,
+    "lines": 135
+   },
+   "sid0": "4333849711653675",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.996,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 49.351,
+     "session": "4333849711653675",
+     "replied": 49.352,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    49.35
+   ],
+   "membershipEvents": [
+    {
+     "t": 102.63,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.947,
+      "end": 23.949,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.147,
+      "end": 44.148,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.347,
+      "end": 51.352,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.948,
+     29.148,
+     49.348
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-45s-O-20261002T124947-54",
+  "id": "janus-iso-all-45s-O-20261002T124947-54",
+  "stack": "janus",
+  "mode": "all",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.079,
+  "verdict": "as predicted",
+  "why": "claim at 49.473 s succeeded; no session timeout",
+  "sinceLastKeepalive": 50.534,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.791,
+    "last": 106.605,
+    "lines": 135
+   },
+   "sid0": "8046644772568515",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -1.061,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 49.473,
+     "session": "8046644772568515",
+     "replied": 49.475,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    49.472
+   ],
+   "membershipEvents": [
+    {
+     "t": 103.945,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.07,
+      "end": 24.071,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.27,
+      "end": 44.271,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.47,
+      "end": 51.475,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.071,
+     29.27,
+     49.47
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-55s-O-20261002T102746-2",
+  "id": "janus-iso-all-55s-O-20261002T102746-2",
+  "stack": "janus",
+  "mode": "all",
+  "D": 55,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 55.06,
+  "verdict": "as predicted",
+  "why": "claim at 56.642 s succeeded; no session timeout",
+  "sinceLastKeepalive": 56.808,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.296,
+    "last": 111.842,
+    "lines": 135
+   },
+   "sid0": "4781900521638488",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.166,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 56.642,
+     "session": "4781900521638488",
+     "replied": 56.643,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    56.641
+   ],
+   "membershipEvents": [
+    {
+     "t": 109.37,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.974,
+      "end": 23.975,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.173,
+      "end": 44.174,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.373,
+      "end": 58.644,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.974,
+     29.174,
+     49.374
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-55s-O-20261002T104158-7",
+  "id": "janus-iso-all-55s-O-20261002T104158-7",
+  "stack": "janus",
+  "mode": "all",
+  "D": 55,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 55.065,
+  "verdict": "as predicted",
+  "why": "claim at 56.726 s succeeded; no session timeout",
+  "sinceLastKeepalive": 57.027,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.592,
+    "last": 111.432,
+    "lines": 136
+   },
+   "sid0": "3790105812622746",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.301,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 56.726,
+     "session": "3790105812622746",
+     "replied": 56.728,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    56.725
+   ],
+   "membershipEvents": [
+    {
+     "t": 108.943,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.044,
+      "end": 24.045,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.244,
+      "end": 44.245,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.444,
+      "end": 58.728,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.045,
+     29.245,
+     49.444
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-55s-O-20261002T111011-18",
+  "id": "janus-iso-all-55s-O-20261002T111011-18",
+  "stack": "janus",
+  "mode": "all",
+  "D": 55,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 55.063,
+  "verdict": "as predicted",
+  "why": "claim at 56.616 s succeeded; no session timeout",
+  "sinceLastKeepalive": 57.996,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.713,
+    "last": 111.526,
+    "lines": 135
+   },
+   "sid0": "2160277443014444",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -1.38,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 56.616,
+     "session": "2160277443014444",
+     "replied": 56.617,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    56.614
+   ],
+   "membershipEvents": [
+    {
+     "t": 109.046,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.972,
+      "end": 23.973,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.171,
+      "end": 44.173,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.372,
+      "end": 58.617,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.973,
+     29.172,
+     49.372
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-55s-O-20261002T120109-37",
+  "id": "janus-iso-all-55s-O-20261002T120109-37",
+  "stack": "janus",
+  "mode": "all",
+  "D": 55,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 55.071,
+  "verdict": "as predicted",
+  "why": "claim at 56.843 s succeeded; no session timeout",
+  "sinceLastKeepalive": 57.006,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.658,
+    "last": 111.949,
+    "lines": 135
+   },
+   "sid0": "1579213356389028",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.163,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 56.843,
+     "session": "1579213356389028",
+     "replied": 56.844,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    56.841
+   ],
+   "membershipEvents": [
+    {
+     "t": 109.427,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.177,
+      "end": 24.178,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.377,
+      "end": 44.378,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.577,
+      "end": 58.844,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.178,
+     29.378,
+     49.577
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-55s-O-20261002T121307-41",
+  "id": "janus-iso-all-55s-O-20261002T121307-41",
+  "stack": "janus",
+  "mode": "all",
+  "D": 55,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 55.066,
+  "verdict": "as predicted",
+  "why": "claim at 56.718 s succeeded; no session timeout",
+  "sinceLastKeepalive": 57,
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.673,
+    "last": 110.855,
+    "lines": 135
+   },
+   "sid0": "5759715678841939",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.282,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [
+    {
+     "t": 56.718,
+     "session": "5759715678841939",
+     "replied": 56.719,
+     "reply": "success",
+     "error": null
+    }
+   ],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [
+    56.717
+   ],
+   "membershipEvents": [
+    {
+     "t": 108.21,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.053,
+      "end": 24.054,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.253,
+      "end": 44.254,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.453,
+      "end": 58.719,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.054,
+     29.253,
+     49.453
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-5s-O-20261002T110044-14",
+  "id": "janus-iso-all-5s-O-20261002T110044-14",
+  "stack": "janus",
+  "mode": "all",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.062,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.952,
+    "last": 60.309,
+    "lines": 110
+   },
+   "sid0": "5703618963351751",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.255,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 57.802,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-5s-O-20261002T111317-19",
+  "id": "janus-iso-all-5s-O-20261002T111317-19",
+  "stack": "janus",
+  "mode": "all",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.069,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.43,
+    "last": 60.45,
+    "lines": 110
+   },
+   "sid0": "2270573441529595",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.923,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 57.912,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-5s-O-20261002T123306-48",
+  "id": "janus-iso-all-5s-O-20261002T123306-48",
+  "stack": "janus",
+  "mode": "all",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 5.069,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.248,
+    "last": 61.625,
+    "lines": 126
+   },
+   "sid0": "1763166332904598",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.394,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 58.968,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 5.323,
+      "end": 7.61,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-5s-O-20261002T130058-58",
+  "id": "janus-iso-all-5s-O-20261002T130058-58",
+  "stack": "janus",
+  "mode": "all",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.061,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -41.318,
+    "last": 61.469,
+    "lines": 110
+   },
+   "sid0": "1722401287054539",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 58.395,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 58.797,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-5s-O-20261002T130759-61",
+  "id": "janus-iso-all-5s-O-20261002T130759-61",
+  "stack": "janus",
+  "mode": "all",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.077,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.333,
+    "last": 62.113,
+    "lines": 110
+   },
+   "sid0": "4393703560378218",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 59.32,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 59.411,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-65s-O-20261002T103546-5",
+  "id": "janus-iso-all-65s-O-20261002T103546-5",
+  "stack": "janus",
+  "mode": "all",
+  "D": 65,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 65.051,
+  "verdict": "as predicted",
+  "why": "session timed out at 59.991 s; first claim after that at 69.628 s, refused 458 No such session 8259946825777156; server logged \"Couldn't find any session\" at 69.029, 69.029, 69.629",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.355,
+    "last": 124.255,
+    "lines": 170
+   },
+   "sid0": "8259946825777156",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.105,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 59.991,
+    "tEvent": 59.991,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    69.029,
+    69.029,
+    69.629
+   ],
+   "claims": [
+    {
+     "t": 69.628,
+     "session": "8259946825777156",
+     "replied": 69.629,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 8259946825777156"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    69.898
+   ],
+   "websocketConnectedEvents": [
+    69.627,
+    69.897
+   ],
+   "membershipEvents": [
+    {
+     "t": 59.992,
+     "event": "unpublished"
+    },
+    {
+     "t": 59.993,
+     "event": "unpublished"
+    },
+    {
+     "t": 59.993,
+     "event": "leaving"
+    },
+    {
+     "t": 121.781,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.025,
+      "end": 24.026,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.225,
+      "end": 44.226,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.425,
+      "end": 64.425,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.625,
+      "end": 69.629,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 69.825,
+      "end": 70.04,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.026,
+     29.225,
+     49.425,
+     69.625,
+     69.895
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-65s-O-20261002T114259-31",
+  "id": "janus-iso-all-65s-O-20261002T114259-31",
+  "stack": "janus",
+  "mode": "all",
+  "D": 65,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 65.063,
+  "verdict": "as predicted",
+  "why": "session timed out at 60.803 s; first claim after that at 69.503 s, refused 458 No such session 6362347843939651; server logged \"Couldn't find any session\" at 68.901, 68.902, 69.503",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.657,
+    "last": 123.87,
+    "lines": 170
+   },
+   "sid0": "6362347843939651",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.235,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 60.803,
+    "tEvent": 60.803,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    68.901,
+    68.902,
+    69.503
+   ],
+   "claims": [
+    {
+     "t": 69.503,
+     "session": "6362347843939651",
+     "replied": 69.504,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 6362347843939651"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    69.773
+   ],
+   "websocketConnectedEvents": [
+    69.501,
+    69.772
+   ],
+   "membershipEvents": [
+    {
+     "t": 60.803,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.804,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.804,
+     "event": "leaving"
+    },
+    {
+     "t": 121.397,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.899,
+      "end": 23.901,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.099,
+      "end": 44.1,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.299,
+      "end": 64.3,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.499,
+      "end": 69.504,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 69.699,
+      "end": 69.914,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.9,
+     29.1,
+     49.3,
+     69.5,
+     69.768
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-65s-O-20261002T121907-43",
+  "id": "janus-iso-all-65s-O-20261002T121907-43",
+  "stack": "janus",
+  "mode": "all",
+  "D": 65,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 65.052,
+  "verdict": "as predicted",
+  "why": "session timed out at 60.762 s; first claim after that at 69.585 s, refused 458 No such session 4487741618284560; server logged \"Couldn't find any session\" at 68.984, 68.984, 69.585, 69.645",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.684,
+    "last": 126.49,
+    "lines": 171
+   },
+   "sid0": "4487741618284560",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.355,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 60.763,
+    "tEvent": 60.762,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    68.984,
+    68.984,
+    69.585,
+    69.645
+   ],
+   "claims": [
+    {
+     "t": 69.585,
+     "session": "4487741618284560",
+     "replied": 69.585,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 4487741618284560"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    69.857
+   ],
+   "websocketConnectedEvents": [
+    69.583,
+    69.856
+   ],
+   "membershipEvents": [
+    {
+     "t": 60.763,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.763,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.763,
+     "event": "leaving"
+    },
+    {
+     "t": 123.91,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.981,
+      "end": 23.983,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.181,
+      "end": 44.182,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.381,
+      "end": 64.381,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.581,
+      "end": 69.586,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 69.781,
+      "end": 69.984,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.982,
+     29.181,
+     49.381,
+     69.581,
+     69.852
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-65s-O-20261002T122730-46",
+  "id": "janus-iso-all-65s-O-20261002T122730-46",
+  "stack": "janus",
+  "mode": "all",
+  "D": 65,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 65.079,
+  "verdict": "as predicted",
+  "why": "session timed out at 59.768 s; first claim after that at 69.54 s, refused 458 No such session 4304984904910340; server logged \"Couldn't find any session\" at 68.938, 68.938, 69.54",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.059,
+    "last": 126.59,
+    "lines": 170
+   },
+   "sid0": "4304984904910340",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.593,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 59.768,
+    "tEvent": 59.768,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    68.938,
+    68.938,
+    69.54
+   ],
+   "claims": [
+    {
+     "t": 69.54,
+     "session": "4304984904910340",
+     "replied": 69.541,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 4304984904910340"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    69.814
+   ],
+   "websocketConnectedEvents": [
+    69.539,
+    69.813
+   ],
+   "membershipEvents": [
+    {
+     "t": 59.769,
+     "event": "unpublished"
+    },
+    {
+     "t": 59.77,
+     "event": "unpublished"
+    },
+    {
+     "t": 59.77,
+     "event": "leaving"
+    },
+    {
+     "t": 123.931,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.936,
+      "end": 23.937,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.136,
+      "end": 44.137,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.336,
+      "end": 64.337,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.536,
+      "end": 69.541,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 69.736,
+      "end": 69.943,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.937,
+     29.137,
+     49.337,
+     69.537,
+     69.81
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-65s-O-20261002T131719-65",
+  "id": "janus-iso-all-65s-O-20261002T131719-65",
+  "stack": "janus",
+  "mode": "all",
+  "D": 65,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 65.068,
+  "verdict": "as predicted",
+  "why": "session timed out at 60.468 s; first claim after that at 69.549 s, refused 458 No such session 3994124594772579; server logged \"Couldn't find any session\" at 68.947, 68.947, 69.549",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.428,
+    "last": 126.57,
+    "lines": 170
+   },
+   "sid0": "3994124594772579",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.613,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 60.467,
+    "tEvent": 60.468,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    68.947,
+    68.947,
+    69.549
+   ],
+   "claims": [
+    {
+     "t": 69.549,
+     "session": "3994124594772579",
+     "replied": 69.55,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 3994124594772579"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    69.819
+   ],
+   "websocketConnectedEvents": [
+    69.548,
+    69.817
+   ],
+   "membershipEvents": [
+    {
+     "t": 60.469,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.469,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.469,
+     "event": "leaving"
+    },
+    {
+     "t": 123.896,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.945,
+      "end": 23.946,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.145,
+      "end": 44.146,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.345,
+      "end": 64.345,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.545,
+      "end": 69.55,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 69.745,
+      "end": 69.954,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.946,
+     29.145,
+     49.345,
+     69.545,
+     69.814
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-90s-O-20261002T111752-21",
+  "id": "janus-iso-all-90s-O-20261002T111752-21",
+  "stack": "janus",
+  "mode": "all",
+  "D": 90,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 90.06,
+  "verdict": "as predicted",
+  "why": "session timed out at 60.68 s; first claim after that at 90.782 s, refused 458 No such session 2637283576710399; server logged \"Couldn't find any session\" at 90.782",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.686,
+    "last": 145.588,
+    "lines": 168
+   },
+   "sid0": "2637283576710399",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.357,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 60.68,
+    "tEvent": 60.68,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    90.782
+   ],
+   "claims": [
+    {
+     "t": 90.782,
+     "session": "2637283576710399",
+     "replied": 90.784,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 2637283576710399"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    91.05
+   ],
+   "websocketConnectedEvents": [
+    90.781,
+    91.049
+   ],
+   "membershipEvents": [
+    {
+     "t": 60.68,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.681,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.681,
+     "event": "leaving"
+    },
+    {
+     "t": 143.023,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.976,
+      "end": 23.978,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.176,
+      "end": 44.178,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.376,
+      "end": 64.377,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.576,
+      "end": 84.577,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 89.776,
+      "end": 90.784,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 90.977,
+      "end": 91.182,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.977,
+     29.177,
+     49.377,
+     69.577,
+     89.777,
+     91.046
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-90s-O-20261002T114616-32",
+  "id": "janus-iso-all-90s-O-20261002T114616-32",
+  "stack": "janus",
+  "mode": "all",
+  "D": 90,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 90.076,
+  "verdict": "as predicted",
+  "why": "session timed out at 59.945 s; first claim after that at 90.848 s, refused 458 No such session 580178877533193; server logged \"Couldn't find any session\" at 90.848",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.812,
+    "last": 147.823,
+    "lines": 168
+   },
+   "sid0": "580178877533193",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -1.093,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 59.946,
+    "tEvent": 59.945,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    90.848
+   ],
+   "claims": [
+    {
+     "t": 90.848,
+     "session": "580178877533193",
+     "replied": 90.849,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 580178877533193"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    91.111
+   ],
+   "websocketConnectedEvents": [
+    90.846,
+    91.11
+   ],
+   "membershipEvents": [
+    {
+     "t": 59.946,
+     "event": "unpublished"
+    },
+    {
+     "t": 59.946,
+     "event": "unpublished"
+    },
+    {
+     "t": 59.946,
+     "event": "leaving"
+    },
+    {
+     "t": 144.802,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.042,
+      "end": 24.044,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.242,
+      "end": 44.243,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.442,
+      "end": 64.443,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.642,
+      "end": 84.643,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 89.842,
+      "end": 90.849,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 91.042,
+      "end": 91.245,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.043,
+     29.243,
+     49.442,
+     69.643,
+     89.842,
+     91.107
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-90s-O-20261002T115257-34",
+  "id": "janus-iso-all-90s-O-20261002T115257-34",
+  "stack": "janus",
+  "mode": "all",
+  "D": 90,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 90.078,
+  "verdict": "as predicted",
+  "why": "session timed out at 60.947 s; first claim after that at 90.97 s, refused 458 No such session 115423964492051; server logged \"Couldn't find any session\" at 90.97",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.8,
+    "last": 147.619,
+    "lines": 168
+   },
+   "sid0": "115423964492051",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.431,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 60.947,
+    "tEvent": 60.947,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    90.97
+   ],
+   "claims": [
+    {
+     "t": 90.97,
+     "session": "115423964492051",
+     "replied": 90.971,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 115423964492051"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    91.173
+   ],
+   "websocketConnectedEvents": [
+    90.968,
+    91.171
+   ],
+   "membershipEvents": [
+    {
+     "t": 60.948,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.948,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.948,
+     "event": "leaving"
+    },
+    {
+     "t": 145.078,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.1,
+      "end": 24.102,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.3,
+      "end": 44.301,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.5,
+      "end": 64.501,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.7,
+      "end": 84.701,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 89.9,
+      "end": 90.971,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 91.1,
+      "end": 91.309,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.101,
+     29.301,
+     49.5,
+     69.7,
+     89.901,
+     91.169
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-90s-O-20261002T120627-39",
+  "id": "janus-iso-all-90s-O-20261002T120627-39",
+  "stack": "janus",
+  "mode": "all",
+  "D": 90,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 90.068,
+  "verdict": "as predicted",
+  "why": "session timed out at 60.288 s; first claim after that at 90.71 s, refused 458 No such session 3478215422025852; server logged \"Couldn't find any session\" at 90.71",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.76,
+    "last": 146.811,
+    "lines": 168
+   },
+   "sid0": "3478215422025852",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.237,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 60.287,
+    "tEvent": 60.288,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    90.71
+   ],
+   "claims": [
+    {
+     "t": 90.71,
+     "session": "3478215422025852",
+     "replied": 90.711,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 3478215422025852"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    90.968
+   ],
+   "websocketConnectedEvents": [
+    90.708,
+    90.967
+   ],
+   "membershipEvents": [
+    {
+     "t": 60.289,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.289,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.289,
+     "event": "leaving"
+    },
+    {
+     "t": 144.311,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.9,
+      "end": 23.902,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.1,
+      "end": 44.101,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.3,
+      "end": 64.301,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.5,
+      "end": 84.501,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 89.7,
+      "end": 90.711,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 90.901,
+      "end": 91.103,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     8.901,
+     29.101,
+     49.3,
+     69.5,
+     89.7,
+     90.965
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-all-90s-O-20261002T123806-50",
+  "id": "janus-iso-all-90s-O-20261002T123806-50",
+  "stack": "janus",
+  "mode": "all",
+  "D": 90,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R2",
+  "restore": 90.065,
+  "verdict": "as predicted",
+  "why": "session timed out at 60.585 s; first claim after that at 90.847 s, refused 458 No such session 8326396007372072; server logged \"Couldn't find any session\" at 90.847",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.342,
+    "last": 148.126,
+    "lines": 168
+   },
+   "sid0": "8326396007372072",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": -0.715,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": {
+    "tLog": 60.585,
+    "tEvent": 60.585,
+    "reason": "session timeout"
+   },
+   "sessionNotFoundLogged": [
+    90.847
+   ],
+   "claims": [
+    {
+     "t": 90.847,
+     "session": "8326396007372072",
+     "replied": 90.848,
+     "reply": "error",
+     "error": {
+      "code": 458,
+      "reason": "No such session 8326396007372072"
+     }
+    }
+   ],
+   "newSessionCreates": [
+    91.086
+   ],
+   "websocketConnectedEvents": [
+    90.846,
+    91.085
+   ],
+   "membershipEvents": [
+    {
+     "t": 60.586,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.587,
+     "event": "unpublished"
+    },
+    {
+     "t": 60.587,
+     "event": "leaving"
+    },
+    {
+     "t": 145.316,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.017,
+      "end": 24.018,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 29.217,
+      "end": 44.218,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 49.417,
+      "end": 64.417,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 69.617,
+      "end": 84.617,
+      "ok": false,
+      "refused": null,
+      "detail": "ws: ws open timeout"
+     },
+     {
+      "kind": "transport_restart",
+      "t": 89.817,
+      "end": 90.848,
+      "ok": false,
+      "refused": "claim/458",
+      "detail": null
+     },
+     {
+      "kind": "rebuild",
+      "t": 91.017,
+      "end": 91.228,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": [
+     9.018,
+     29.217,
+     49.417,
+     69.617,
+     89.817,
+     91.083
+    ]
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-10s-O-20261002T105542-12",
+  "id": "janus-iso-media-10s-O-20261002T105542-12",
+  "stack": "janus",
+  "mode": "media",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.065,
+  "verdict": "no race",
+  "why": "no claim was needed: 3 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.704,
+    "last": 66.354,
+    "lines": 126
+   },
+   "sid0": "8153888466233724",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 59.644,
+   "keepalivesAckedDuringIsolation": 3,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 63.795,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.985,
+      "end": 10.106,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-10s-O-20261002T111532-20",
+  "id": "janus-iso-media-10s-O-20261002T111532-20",
+  "stack": "janus",
+  "mode": "media",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.066,
+  "verdict": "no race",
+  "why": "no claim was needed: 3 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.843,
+    "last": 66.483,
+    "lines": 126
+   },
+   "sid0": "4586631118819390",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 59.588,
+   "keepalivesAckedDuringIsolation": 3,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 63.89,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.121,
+      "end": 10.142,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-10s-O-20261002T115639-35",
+  "id": "janus-iso-media-10s-O-20261002T115639-35",
+  "stack": "janus",
+  "mode": "media",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.053,
+  "verdict": "no race",
+  "why": "no claim was needed: 3 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.386,
+    "last": 66.216,
+    "lines": 126
+   },
+   "sid0": "7119709498590702",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 59.781,
+   "keepalivesAckedDuringIsolation": 3,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 63.704,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.321,
+      "end": 10.142,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-10s-O-20261002T122228-44",
+  "id": "janus-iso-media-10s-O-20261002T122228-44",
+  "stack": "janus",
+  "mode": "media",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.062,
+  "verdict": "no race",
+  "why": "no claim was needed: 3 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.006,
+    "last": 66.461,
+    "lines": 126
+   },
+   "sid0": "7656763493510256",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 59.392,
+   "keepalivesAckedDuringIsolation": 3,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 63.848,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.925,
+      "end": 10.147,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-10s-O-20261002T131239-63",
+  "id": "janus-iso-media-10s-O-20261002T131239-63",
+  "stack": "janus",
+  "mode": "media",
+  "D": 10,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 10.061,
+  "verdict": "no race",
+  "why": "no claim was needed: 3 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.867,
+    "last": 66.407,
+    "lines": 126
+   },
+   "sid0": "3786767535869973",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 58.9,
+   "keepalivesAckedDuringIsolation": 3,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 63.804,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.041,
+      "end": 10.161,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-2s-O-20261002T113751-29",
+  "id": "janus-iso-media-2s-O-20261002T113751-29",
+  "stack": "janus",
+  "mode": "media",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.063,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.612,
+    "last": 57.658,
+    "lines": 109
+   },
+   "sid0": "943651486109827",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.591,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 54.897,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-2s-O-20261002T115858-36",
+  "id": "janus-iso-media-2s-O-20261002T115858-36",
+  "stack": "janus",
+  "mode": "media",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.088,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.389,
+    "last": 57.382,
+    "lines": 110
+   },
+   "sid0": "4973531392322664",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.863,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 54.91,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-2s-O-20261002T123053-47",
+  "id": "janus-iso-media-2s-O-20261002T123053-47",
+  "stack": "janus",
+  "mode": "media",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.063,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.333,
+    "last": 58.182,
+    "lines": 110
+   },
+   "sid0": "1569672893601928",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.098,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 55.645,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-2s-O-20261002T124449-52",
+  "id": "janus-iso-media-2s-O-20261002T124449-52",
+  "stack": "janus",
+  "mode": "media",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.076,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.344,
+    "last": 58.311,
+    "lines": 109
+   },
+   "sid0": "5251165590782031",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.037,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 55.684,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-2s-O-20261002T131503-64",
+  "id": "janus-iso-media-2s-O-20261002T131503-64",
+  "stack": "janus",
+  "mode": "media",
+  "D": 2,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 2.07,
+  "verdict": "no race",
+  "why": "no claim was needed: 0 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.848,
+    "last": 58.964,
+    "lines": 110
+   },
+   "sid0": "3026232070126919",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 53.832,
+   "keepalivesAckedDuringIsolation": 0,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 56.404,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-30s-O-20261002T102507-1",
+  "id": "janus-iso-media-30s-O-20261002T102507-1",
+  "stack": "janus",
+  "mode": "media",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.048,
+  "verdict": "no race",
+  "why": "no claim was needed: 8 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.458,
+    "last": 85.532,
+    "lines": 137
+   },
+   "sid0": "7088865807338374",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 79.906,
+   "keepalivesAckedDuringIsolation": 8,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 83.044,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.248,
+      "end": 22.283,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.447,
+      "end": 30.165,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-30s-O-20261002T103306-4",
+  "id": "janus-iso-media-30s-O-20261002T103306-4",
+  "stack": "janus",
+  "mode": "media",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.08,
+  "verdict": "no race",
+  "why": "no claim was needed: 8 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.409,
+    "last": 85.873,
+    "lines": 137
+   },
+   "sid0": "8364659021612460",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 79.86,
+   "keepalivesAckedDuringIsolation": 8,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 83.437,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.993,
+      "end": 22.036,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.193,
+      "end": 30.11,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-30s-O-20261002T105302-11",
+  "id": "janus-iso-media-30s-O-20261002T105302-11",
+  "stack": "janus",
+  "mode": "media",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.081,
+  "verdict": "no race",
+  "why": "no claim was needed: 8 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.775,
+    "last": 85.981,
+    "lines": 137
+   },
+   "sid0": "1098595033389346",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 79.66,
+   "keepalivesAckedDuringIsolation": 8,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 83.16,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.029,
+      "end": 22.066,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.228,
+      "end": 30.147,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-30s-O-20261002T123523-49",
+  "id": "janus-iso-media-30s-O-20261002T123523-49",
+  "stack": "janus",
+  "mode": "media",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.066,
+  "verdict": "no race",
+  "why": "no claim was needed: 8 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.583,
+    "last": 86.456,
+    "lines": 137
+   },
+   "sid0": "8275613507741570",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 78.919,
+   "keepalivesAckedDuringIsolation": 8,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 83.846,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.05,
+      "end": 22.091,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.25,
+      "end": 30.071,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-30s-O-20261002T124703-53",
+  "id": "janus-iso-media-30s-O-20261002T124703-53",
+  "stack": "janus",
+  "mode": "media",
+  "D": 30,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 30.07,
+  "verdict": "no race",
+  "why": "no claim was needed: 8 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -41.141,
+    "last": 86.836,
+    "lines": 137
+   },
+   "sid0": "6880681975644641",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 83.458,
+   "keepalivesAckedDuringIsolation": 8,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 84.237,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.011,
+      "end": 22.047,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.211,
+      "end": 30.129,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-45s-O-20261002T103903-6",
+  "id": "janus-iso-media-45s-O-20261002T103903-6",
+  "stack": "janus",
+  "mode": "media",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.071,
+  "verdict": "no race",
+  "why": "no claim was needed: 11 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.676,
+    "last": 100.31,
+    "lines": 148
+   },
+   "sid0": "5976855308620854",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 94.791,
+   "keepalivesAckedDuringIsolation": 11,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 97.771,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.122,
+      "end": 22.162,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.322,
+      "end": 42.364,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 47.521,
+      "end": 49.522,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-45s-O-20261002T113033-26",
+  "id": "janus-iso-media-45s-O-20261002T113033-26",
+  "stack": "janus",
+  "mode": "media",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.06,
+  "verdict": "no race",
+  "why": "no claim was needed: 11 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.945,
+    "last": 101.718,
+    "lines": 148
+   },
+   "sid0": "1460510869155716",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 94.315,
+   "keepalivesAckedDuringIsolation": 11,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 99.251,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.047,
+      "end": 22.084,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.247,
+      "end": 42.286,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 47.447,
+      "end": 49.448,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-45s-O-20261002T121613-42",
+  "id": "janus-iso-media-45s-O-20261002T121613-42",
+  "stack": "janus",
+  "mode": "media",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.063,
+  "verdict": "no race",
+  "why": "no claim was needed: 11 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.715,
+    "last": 100.348,
+    "lines": 148
+   },
+   "sid0": "8058564434068843",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 94.801,
+   "keepalivesAckedDuringIsolation": 11,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 97.838,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.138,
+      "end": 22.184,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.338,
+      "end": 42.376,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 47.538,
+      "end": 49.539,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-45s-O-20261002T124151-51",
+  "id": "janus-iso-media-45s-O-20261002T124151-51",
+  "stack": "janus",
+  "mode": "media",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.053,
+  "verdict": "no race",
+  "why": "no claim was needed: 11 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.706,
+    "last": 101.249,
+    "lines": 148
+   },
+   "sid0": "4935665383663562",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 94.238,
+   "keepalivesAckedDuringIsolation": 11,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 98.707,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 6.972,
+      "end": 22.016,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.172,
+      "end": 42.209,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 47.372,
+      "end": 49.372,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-45s-O-20261002T125535-56",
+  "id": "janus-iso-media-45s-O-20261002T125535-56",
+  "stack": "janus",
+  "mode": "media",
+  "D": 45,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R1",
+  "restore": 45.064,
+  "verdict": "no race",
+  "why": "no claim was needed: 11 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.672,
+    "last": 103.178,
+    "lines": 148
+   },
+   "sid0": "4284373251181945",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 99.32,
+   "keepalivesAckedDuringIsolation": 11,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 100.519,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [
+     {
+      "kind": "transport_restart",
+      "t": 7.279,
+      "end": 22.315,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 27.479,
+      "end": 42.516,
+      "ok": false,
+      "refused": null,
+      "detail": null
+     },
+     {
+      "kind": "transport_restart",
+      "t": 47.679,
+      "end": 49.68,
+      "ok": true,
+      "refused": null,
+      "detail": null
+     }
+    ],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-5s-O-20261002T103051-3",
+  "id": "janus-iso-media-5s-O-20261002T103051-3",
+  "stack": "janus",
+  "mode": "media",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.063,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.754,
+    "last": 61.365,
+    "lines": 110
+   },
+   "sid0": "3584816773334161",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.59,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 58.874,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-5s-O-20261002T112344-23",
+  "id": "janus-iso-media-5s-O-20261002T112344-23",
+  "stack": "janus",
+  "mode": "media",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.062,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -40.213,
+    "last": 60.268,
+    "lines": 110
+   },
+   "sid0": "6713136117712030",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.748,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 57.766,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-5s-O-20261002T112818-25",
+  "id": "janus-iso-media-5s-O-20261002T112818-25",
+  "stack": "janus",
+  "mode": "media",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.068,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -39.701,
+    "last": 60.789,
+    "lines": 110
+   },
+   "sid0": "7964064185750583",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 54.681,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 58.233,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-5s-O-20261002T130316-59",
+  "id": "janus-iso-media-5s-O-20261002T130316-59",
+  "stack": "janus",
+  "mode": "media",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.061,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -41.945,
+    "last": 62.739,
+    "lines": 110
+   },
+   "sid0": "3786433177563127",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 57.937,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 59.847,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ },
+ {
+  "set": "study",
+  "dir": "janus-iso-media-5s-O-20261002T131018-62",
+  "id": "janus-iso-media-5s-O-20261002T131018-62",
+  "stack": "janus",
+  "mode": "media",
+  "D": 5,
+  "valid": true,
+  "cohort": "retained",
+  "regime": "R0",
+  "restore": 5.089,
+  "verdict": "no race",
+  "why": "no claim was needed: 1 keepalives were acknowledged during the isolation, or the connection outlived it",
+  "log": {
+   "flags": [],
+   "coverage": {
+    "first": -41.5,
+    "last": 62.706,
+    "lines": 110
+   },
+   "sid0": "4529944905470831",
+   "lastKeepaliveAckedBeforeRemovalOrClaim": 58.585,
+   "keepalivesAckedDuringIsolation": 1,
+   "removal": null,
+   "sessionNotFoundLogged": [],
+   "claims": [],
+   "newSessionCreates": [],
+   "websocketConnectedEvents": [],
+   "membershipEvents": [
+    {
+     "t": 59.997,
+     "event": "leaving"
+    }
+   ],
+   "client": {
+    "actions": [],
+    "wsOpens": []
+   }
+  }
+ }
+]
