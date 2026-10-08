@@ -1,0 +1,675 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 6cc7d02a-0f09-3a00-994e-b5639e120ce3 submitted
+==> EKS update 6cc7d02a-0f09-3a00-994e-b5639e120ce3: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 2s elapsed
+==> waiting: 2/3 nodes Ready, 3 instance(s) live, 25s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (47s)
+NAME                          STATUS   ROLES    AGE   VERSION               INTERNAL-IP   EXTERNAL-IP     OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-15-13.ec2.internal   Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.15.13   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-31-29.ec2.internal   Ready    <none>   34s   v1.36.4-eks-f4fc4f1   10.42.31.29   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-4-198.ec2.internal   Ready    <none>   36s   v1.36.4-eks-f4fc4f1   10.42.4.198   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-07T20:42:47Z
+NAME                          STATUS   ROLES    AGE   VERSION               INTERNAL-IP   EXTERNAL-IP     OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-15-13.ec2.internal   Ready    <none>   36s   v1.36.4-eks-f4fc4f1   10.42.15.13   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-31-29.ec2.internal   Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.31.29   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-4-198.ec2.internal   Ready    <none>   37s   v1.36.4-eks-f4fc4f1   10.42.4.198   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+deployment "event-sink" successfully rolled out
+deployment "event-sink" successfully rolled out
+[20:43:23.770] switched to janus
+[20:43:30.212] setup client build pre-sampler {"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"}
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[20:44:20.555] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791405860561.5867}
+[20:44:21.865] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791405861878.868}
+[20:44:23.110] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791405863118.2642}
+[20:44:23.215] control janus planned 4 sessions
+[20:44:41.401] janus-h1-O-20261007T204423-1 janus_room {"videoroom":"created","room":49886,"permanent":false}
+[20:44:47.811] janus-h1-O-20261007T204423-1 join_O1 {"sessionId":"5624279009229818"}
+[20:44:49.662] janus-h1-O-20261007T204423-1 join_O2 {"sessionId":"4212166842215467"}
+[20:44:51.521] janus-h1-O-20261007T204423-1 join_S {"sessionId":"3994956365072075"}
+[20:44:55.504] janus-h1-O-20261007T204423-1 media_flowing {}
+[20:45:13.369] janus-h1-O-20261007T204423-1 arm_O1 {"S":47.51708984375,"O2":54.56787109375}
+[20:45:14.686] janus-h1-O-20261007T204423-1 arm_O2 {"S":68.4404296875,"O1":92.822509765625}
+[20:45:15.980] janus-h1-O-20261007T204423-1 arm_S {"O1":82.025146484375,"O2":76.652099609375}
+[20:45:20.983] janus-h1-O-20261007T204423-1 trigger {"control":"h1","observeS":180}
+[20:45:47.473] janus-h1-O-20261007T204423-1 bystander_open {"ok":true,"sdk":"2.22.3"}
+[20:45:52.296] janus-h1-O-20261007T204423-1 bystander_join {"sessionId":2429207662437957,"tPod":1791405952304.7998}
+[20:46:53.265] janus-h1-O-20261007T204423-1 bystander_leave {"ok":true,"tPod":1791406013270.4}
+[20:48:50.008] janus-h1-O-20261007T204423-1 VALID
+[20:49:08.225] janus-h0-O-20261007T204850-2 janus_room {"videoroom":"created","room":32847,"permanent":false}
+[20:49:14.734] janus-h0-O-20261007T204850-2 join_O1 {"sessionId":"8843625730390102"}
+[20:49:16.546] janus-h0-O-20261007T204850-2 join_O2 {"sessionId":"2280170714422219"}
+[20:49:18.360] janus-h0-O-20261007T204850-2 join_S {"sessionId":"8668450480127905"}
+[20:49:22.328] janus-h0-O-20261007T204850-2 media_flowing {}
+[20:49:40.053] janus-h0-O-20261007T204850-2 arm_O1 {"S":69.724609375,"O2":72.126220703125}
+[20:49:41.377] janus-h0-O-20261007T204850-2 arm_O2 {"S":74.587158203125,"O1":68.402587890625}
+[20:49:42.642] janus-h0-O-20261007T204850-2 arm_S {"O1":62.6279296875,"O2":68.63671875}
+[20:49:47.644] janus-h0-O-20261007T204850-2 trigger {"control":"h0","observeS":180}
+[20:53:17.232] janus-h0-O-20261007T204850-2 VALID
+[20:54:04.640] janus-h3-O-20261007T205317-3 janus_room {"videoroom":"created","room":37548,"permanent":false}
+[20:54:12.447] janus-h3-O-20261007T205317-3 join_O1 {"sessionId":"8635030735534493"}
+[20:54:14.542] janus-h3-O-20261007T205317-3 join_O2 {"sessionId":"3477625926720605"}
+[20:54:16.636] janus-h3-O-20261007T205317-3 join_S {"sessionId":"6786861223418243"}
+[20:54:21.267] janus-h3-O-20261007T205317-3 media_flowing {}
+[20:54:40.399] janus-h3-O-20261007T205317-3 arm_O1 {"S":86.62060546875,"O2":83.97509765625}
+[20:54:41.873] janus-h3-O-20261007T205317-3 arm_O2 {"S":66.5419921875,"O1":65.761474609375}
+[20:54:43.293] janus-h3-O-20261007T205317-3 arm_S {"O1":69.24169921875,"O2":60.88427734375}
+[20:54:48.294] janus-h3-O-20261007T205317-3 trigger {"control":"h3","observeS":180}
+[20:55:17.680] janus-h3-O-20261007T205317-3 packets_before {"packetsSent":3051,"bytesSent":249267,"statsTimestamp":1791406517682.807,"tPod":1791406517683.7}
+[20:55:19.815] janus-h3-O-20261007T205317-3 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791406519814.4}
+[20:55:24.848] janus-h3-O-20261007T205317-3 packets_muted_1 {"packetsSent":3410,"bytesSent":258830,"statsTimestamp":1791406524857.527,"tPod":1791406524858}
+[20:55:29.745] janus-h3-O-20261007T205317-3 packets_muted_2 {"packetsSent":3654,"bytesSent":259562,"statsTimestamp":1791406529749.06,"tPod":1791406529749.5}
+[20:55:31.045] janus-h3-O-20261007T205317-3 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791406531047.7998}
+[20:55:35.688] janus-h3-O-20261007T205317-3 packets_after {"packetsSent":3952,"bytesSent":278710,"statsTimestamp":1791406535696.86,"tPod":1791406535697.2998}
+[20:58:20.299] janus-h3-O-20261007T205317-3 VALID
+[20:58:39.850] janus-h2-O-20261007T205820-4 janus_room {"videoroom":"created","room":54018,"permanent":false}
+[20:58:46.103] janus-h2-O-20261007T205820-4 join_O1 {"sessionId":"5534465409155648"}
+[20:58:47.946] janus-h2-O-20261007T205820-4 join_O2 {"sessionId":"6282767147651436"}
+[20:58:49.892] janus-h2-O-20261007T205820-4 join_S {"sessionId":"2318901754307743"}
+[20:58:53.953] janus-h2-O-20261007T205820-4 media_flowing {}
+[20:59:13.517] janus-h2-O-20261007T205820-4 arm_O1 {"S":53.706787109375,"O2":60.607177734375}
+[20:59:14.889] janus-h2-O-20261007T205820-4 arm_O2 {"S":57.15771484375,"O1":63.630615234375}
+[20:59:16.310] janus-h2-O-20261007T205820-4 arm_S {"O1":76.160888671875,"O2":66.72802734375}
+[20:59:21.311] janus-h2-O-20261007T205820-4 trigger {"control":"h2","observeS":180}
+[20:59:47.863] janus-h2-O-20261007T205820-4 bystander_open {"ok":true,"sdk":"2.22.3"}
+[20:59:53.335] janus-h2-O-20261007T205820-4 bystander_join_publishing {"sessionId":"1180046755525863"}
+[21:00:52.913] janus-h2-O-20261007T205820-4 bystander_leave {"requested":true}
+[21:02:52.402] janus-h2-O-20261007T205820-4 VALID
+[21:02:52.402] control janus done {"h1":1,"h0":1,"h3":1,"h2":1}
+SHAKEDOWN_EXIT=0
+SHAKEDOWN {"stack":"janus","sessions":{"h0":{"id":"janus-h0-O-20261007T204850-2","valid":true,"invalid":[],"condition":"h0-janus"},"h1":{"id":"janus-h1-O-20261007T204423-1","valid":true,"invalid":[],"condition":"h1-janus"},"h2":{"id":"janus-h2-O-20261007T205820-4","valid":true,"invalid":[],"condition":"h2-janus"},"h3":{"id":"janus-h3-O-20261007T205317-3","valid":true,"invalid":[],"condition":"h3-janus"}},"invalidOrMissing":[],"mute":{"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","mutedForS":11.23,"packetsPerSecondWhileMuted":49.9,"bytesPerPacketWhileMuted":3,"packetsContinued":true}}
+[21:02:52.938] control janus planned 40 sessions
+[21:03:14.428] janus-h2-O-20261007T210252-1 janus_room {"videoroom":"created","room":75874,"permanent":false}
+[21:03:22.496] janus-h2-O-20261007T210252-1 join_O1 {"sessionId":"1967392723448259"}
+[21:03:24.553] janus-h2-O-20261007T210252-1 join_O2 {"sessionId":"7224897003108523"}
+[21:03:26.595] janus-h2-O-20261007T210252-1 join_S {"sessionId":"6459118868622575"}
+[21:03:32.102] janus-h2-O-20261007T210252-1 media_flowing {}
+[21:03:53.967] janus-h2-O-20261007T210252-1 arm_O1 {"S":71.244140625,"O2":65.711669921875}
+[21:03:57.867] janus-h2-O-20261007T210252-1 arm_O2 {"S":67.501220703125,"O1":67.290283203125}
+[21:04:00.995] janus-h2-O-20261007T210252-1 arm_S {"O1":60.456787109375,"O2":69.765869140625}
+[21:04:05.999] janus-h2-O-20261007T210252-1 trigger {"control":"h2","observeS":180}
+[21:04:32.669] janus-h2-O-20261007T210252-1 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:04:37.933] janus-h2-O-20261007T210252-1 bystander_join_publishing {"sessionId":"5959814949387034"}
+[21:05:37.381] janus-h2-O-20261007T210252-1 bystander_leave {"requested":true}
+[21:07:37.274] janus-h2-O-20261007T210252-1 VALID
+[21:08:01.044] janus-h2-O-20261007T210737-2 janus_room {"videoroom":"created","room":17478,"permanent":false}
+[21:08:09.059] janus-h2-O-20261007T210737-2 join_O1 {"sessionId":"3228182613442687"}
+[21:08:11.126] janus-h2-O-20261007T210737-2 join_O2 {"sessionId":"799151493138996"}
+[21:08:13.585] janus-h2-O-20261007T210737-2 join_S {"sessionId":"3346056203989128"}
+[21:08:18.506] janus-h2-O-20261007T210737-2 media_flowing {}
+[21:08:39.297] janus-h2-O-20261007T210737-2 arm_O1 {"S":73.457763671875,"O2":69.18994140625}
+[21:08:40.808] janus-h2-O-20261007T210737-2 arm_O2 {"S":69.419921875,"O1":65.063232421875}
+[21:08:42.116] janus-h2-O-20261007T210737-2 arm_S {"O1":72.1279296875,"O2":65.995849609375}
+[21:08:47.116] janus-h2-O-20261007T210737-2 trigger {"control":"h2","observeS":180}
+[21:09:13.698] janus-h2-O-20261007T210737-2 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:09:18.897] janus-h2-O-20261007T210737-2 bystander_join_publishing {"sessionId":"1676817635990136"}
+[21:10:18.533] janus-h2-O-20261007T210737-2 bystander_leave {"requested":true}
+[21:12:19.046] janus-h2-O-20261007T210737-2 VALID
+[21:12:41.365] janus-h2-O-20261007T211219-3 janus_room {"videoroom":"created","room":21304,"permanent":false}
+[21:12:47.510] janus-h2-O-20261007T211219-3 join_O1 {"sessionId":"109549211045502"}
+[21:12:49.266] janus-h2-O-20261007T211219-3 join_O2 {"sessionId":"3526128961697011"}
+[21:12:51.192] janus-h2-O-20261007T211219-3 join_S {"sessionId":"8341784729413852"}
+[21:12:55.122] janus-h2-O-20261007T211219-3 media_flowing {}
+[21:13:14.285] janus-h2-O-20261007T211219-3 arm_O1 {"S":77.270751953125,"O2":68.633544921875}
+[21:13:15.843] janus-h2-O-20261007T211219-3 arm_O2 {"S":60.506103515625,"O1":60.0615234375}
+[21:13:17.979] janus-h2-O-20261007T211219-3 arm_S {"O1":61.336181640625,"O2":65.931640625}
+[21:13:23.016] janus-h2-O-20261007T211219-3 trigger {"control":"h2","observeS":180}
+[21:13:49.720] janus-h2-O-20261007T211219-3 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:13:55.097] janus-h2-O-20261007T211219-3 bystander_join_publishing {"sessionId":"3601124322907967"}
+[21:14:55.844] janus-h2-O-20261007T211219-3 bystander_leave {"requested":true}
+[21:16:51.895] janus-h2-O-20261007T211219-3 VALID
+[21:17:11.366] janus-h1-O-20261007T211651-4 janus_room {"videoroom":"created","room":66335,"permanent":false}
+[21:17:18.048] janus-h1-O-20261007T211651-4 join_O1 {"sessionId":"774134955047643"}
+[21:17:20.097] janus-h1-O-20261007T211651-4 join_O2 {"sessionId":"5030614930843951"}
+[21:17:21.953] janus-h1-O-20261007T211651-4 join_S {"sessionId":"6147356708558598"}
+[21:17:25.969] janus-h1-O-20261007T211651-4 media_flowing {}
+[21:17:43.906] janus-h1-O-20261007T211651-4 arm_O1 {"S":70.511962890625,"O2":63.89892578125}
+[21:17:45.243] janus-h1-O-20261007T211651-4 arm_O2 {"S":70.982177734375,"O1":75.500732421875}
+[21:17:46.578] janus-h1-O-20261007T211651-4 arm_S {"O1":71.1923828125,"O2":62.251953125}
+[21:17:51.578] janus-h1-O-20261007T211651-4 trigger {"control":"h1","observeS":180}
+[21:18:18.164] janus-h1-O-20261007T211651-4 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:18:22.901] janus-h1-O-20261007T211651-4 bystander_join {"sessionId":607060216823294,"tPod":1791407902931.6}
+[21:19:22.990] janus-h1-O-20261007T211651-4 bystander_leave {"ok":true,"tPod":1791407963016.9001}
+[21:21:22.055] janus-h1-O-20261007T211651-4 VALID
+[21:21:41.512] janus-h2-O-20261007T212122-5 janus_room {"videoroom":"created","room":20136,"permanent":false}
+[21:21:48.747] janus-h2-O-20261007T212122-5 join_O1 {"sessionId":"4477326658120031"}
+[21:21:50.814] janus-h2-O-20261007T212122-5 join_O2 {"sessionId":"2114920606745740"}
+[21:21:52.793] janus-h2-O-20261007T212122-5 join_S {"sessionId":"4302274005322947"}
+[21:21:56.811] janus-h2-O-20261007T212122-5 media_flowing {}
+[21:22:15.474] janus-h2-O-20261007T212122-5 arm_O1 {"S":66.313232421875,"O2":71.4970703125}
+[21:22:16.852] janus-h2-O-20261007T212122-5 arm_O2 {"S":65.687744140625,"O1":62.451171875}
+[21:22:18.275] janus-h2-O-20261007T212122-5 arm_S {"O1":73.578125,"O2":69.049072265625}
+[21:22:23.276] janus-h2-O-20261007T212122-5 trigger {"control":"h2","observeS":180}
+[21:22:49.884] janus-h2-O-20261007T212122-5 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:22:55.245] janus-h2-O-20261007T212122-5 bystander_join_publishing {"sessionId":"1230529212768530"}
+[21:23:55.746] janus-h2-O-20261007T212122-5 bystander_leave {"requested":true}
+[21:25:59.708] janus-h2-O-20261007T212122-5 VALID
+[21:26:23.184] janus-h2-O-20261007T212559-6 janus_room {"videoroom":"created","room":58178,"permanent":false}
+[21:26:30.286] janus-h2-O-20261007T212559-6 join_O1 {"sessionId":"975714588521292"}
+[21:26:32.187] janus-h2-O-20261007T212559-6 join_O2 {"sessionId":"1551517434339353"}
+[21:26:34.089] janus-h2-O-20261007T212559-6 join_S {"sessionId":"7201724084223219"}
+[21:26:38.095] janus-h2-O-20261007T212559-6 media_flowing {}
+[21:26:57.046] janus-h2-O-20261007T212559-6 arm_O1 {"S":67.23193359375,"O2":69.583984375}
+[21:26:58.409] janus-h2-O-20261007T212559-6 arm_O2 {"S":71.39306640625,"O1":63.717529296875}
+[21:26:59.778] janus-h2-O-20261007T212559-6 arm_S {"O1":71.8056640625,"O2":69.90283203125}
+[21:27:04.779] janus-h2-O-20261007T212559-6 trigger {"control":"h2","observeS":180}
+[21:27:31.356] janus-h2-O-20261007T212559-6 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:27:36.776] janus-h2-O-20261007T212559-6 bystander_join_publishing {"sessionId":"6210801210033609"}
+[21:28:36.109] janus-h2-O-20261007T212559-6 bystander_leave {"requested":true}
+[21:30:38.279] janus-h2-O-20261007T212559-6 VALID
+[21:30:57.681] janus-h3-O-20261007T213038-7 janus_room {"videoroom":"created","room":58713,"permanent":false}
+[21:31:04.325] janus-h3-O-20261007T213038-7 join_O1 {"sessionId":"7530279783859926"}
+[21:31:06.172] janus-h3-O-20261007T213038-7 join_O2 {"sessionId":"4809383437983755"}
+[21:31:08.011] janus-h3-O-20261007T213038-7 join_S {"sessionId":"4096693795933957"}
+[21:31:12.066] janus-h3-O-20261007T213038-7 media_flowing {}
+[21:31:30.361] janus-h3-O-20261007T213038-7 arm_O1 {"S":72.849609375,"O2":66.881103515625}
+[21:31:31.745] janus-h3-O-20261007T213038-7 arm_O2 {"S":68.070068359375,"O1":66.40673828125}
+[21:31:33.041] janus-h3-O-20261007T213038-7 arm_S {"O1":65.886474609375,"O2":60.979248046875}
+[21:31:38.042] janus-h3-O-20261007T213038-7 trigger {"control":"h3","observeS":180}
+[21:32:07.470] janus-h3-O-20261007T213038-7 packets_before {"packetsSent":2972,"bytesSent":242830,"statsTimestamp":1791408727506.236,"tPod":1791408727506.9}
+[21:32:09.433] janus-h3-O-20261007T213038-7 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791408729468.2}
+[21:32:14.163] janus-h3-O-20261007T213038-7 packets_muted_1 {"packetsSent":3306,"bytesSent":251595,"statsTimestamp":1791408734200.318,"tPod":1791408734200.8}
+[21:32:18.952] janus-h3-O-20261007T213038-7 packets_muted_2 {"packetsSent":3546,"bytesSent":252315,"statsTimestamp":1791408738990.051,"tPod":1791408738990.4}
+[21:32:20.422] janus-h3-O-20261007T213038-7 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791408740457.5}
+[21:32:25.363] janus-h3-O-20261007T213038-7 packets_after {"packetsSent":3867,"bytesSent":272702,"statsTimestamp":1791408745402.162,"tPod":1791408745402.5}
+[21:35:04.701] janus-h3-O-20261007T213038-7 VALID
+[21:35:23.090] janus-h0-O-20261007T213504-8 janus_room {"videoroom":"created","room":38890,"permanent":false}
+[21:35:29.338] janus-h0-O-20261007T213504-8 join_O1 {"sessionId":"4778948405013076"}
+[21:35:31.192] janus-h0-O-20261007T213504-8 join_O2 {"sessionId":"7691749568549733"}
+[21:35:32.964] janus-h0-O-20261007T213504-8 join_S {"sessionId":"1905374937709803"}
+[21:35:36.883] janus-h0-O-20261007T213504-8 media_flowing {}
+[21:35:54.642] janus-h0-O-20261007T213504-8 arm_O1 {"S":69.091552734375,"O2":61.734375}
+[21:35:55.960] janus-h0-O-20261007T213504-8 arm_O2 {"S":77.723388671875,"O1":67.43505859375}
+[21:35:57.263] janus-h0-O-20261007T213504-8 arm_S {"O1":63.980712890625,"O2":72.93115234375}
+[21:36:02.264] janus-h0-O-20261007T213504-8 trigger {"control":"h0","observeS":180}
+[21:39:45.517] janus-h0-O-20261007T213504-8 INVALID: observer O2 detected a failure of its own connection
+[21:40:12.251] janus-h2-O-20261007T213945-9 janus_room {"videoroom":"created","room":79603,"permanent":false}
+[21:40:19.024] janus-h2-O-20261007T213945-9 join_O1 {"sessionId":"2527552044988587"}
+[21:40:20.954] janus-h2-O-20261007T213945-9 join_O2 {"sessionId":"5684185653716457"}
+[21:40:22.864] janus-h2-O-20261007T213945-9 join_S {"sessionId":"2988394014932547"}
+[21:40:26.978] janus-h2-O-20261007T213945-9 media_flowing {}
+[21:40:45.991] janus-h2-O-20261007T213945-9 arm_O1 {"S":75.548095703125,"O2":66.316650390625}
+[21:40:47.632] janus-h2-O-20261007T213945-9 arm_O2 {"S":65.095703125,"O1":70.590576171875}
+[21:40:49.788] janus-h2-O-20261007T213945-9 arm_S {"O1":78.016357421875,"O2":56.69482421875}
+[21:40:54.789] janus-h2-O-20261007T213945-9 trigger {"control":"h2","observeS":180}
+[21:41:21.328] janus-h2-O-20261007T213945-9 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:41:26.926] janus-h2-O-20261007T213945-9 bystander_join_publishing {"sessionId":"455887299406208"}
+[21:42:28.564] janus-h2-O-20261007T213945-9 bystander_leave {"requested":true}
+[21:44:34.443] janus-h2-O-20261007T213945-9 VALID
+[21:45:03.318] janus-h0-O-20261007T214434-10 janus_room {"videoroom":"created","room":5561,"permanent":false}
+[21:45:10.823] janus-h0-O-20261007T214434-10 join_O1 {"sessionId":"692453187098321"}
+[21:45:12.965] janus-h0-O-20261007T214434-10 join_O2 {"sessionId":"2911425611780417"}
+[21:45:14.920] janus-h0-O-20261007T214434-10 join_S {"sessionId":"8150374228076325"}
+[21:45:19.871] janus-h0-O-20261007T214434-10 media_flowing {}
+[21:45:39.464] janus-h0-O-20261007T214434-10 arm_O1 {"S":75.14208984375,"O2":87.0546875}
+[21:45:41.352] janus-h0-O-20261007T214434-10 arm_O2 {"S":76.84326171875,"O1":65.236328125}
+[21:45:43.720] janus-h0-O-20261007T214434-10 arm_S {"O1":69.47265625,"O2":73.6962890625}
+[21:45:48.721] janus-h0-O-20261007T214434-10 trigger {"control":"h0","observeS":180}
+[21:49:17.280] janus-h0-O-20261007T214434-10 VALID
+[21:50:17.962] janus-h1-O-20261007T214917-11 janus_room {"videoroom":"created","room":58462,"permanent":false}
+[21:50:31.005] janus-h1-O-20261007T214917-11 join_O1 {"sessionId":"2004121462215004"}
+[21:50:36.429] janus-h1-O-20261007T214917-11 join_O2 {"sessionId":"1341790169980113"}
+[21:50:39.729] janus-h1-O-20261007T214917-11 join_S {"sessionId":"7143797963397551"}
+[21:50:46.929] janus-h1-O-20261007T214917-11 media_flowing {}
+[21:51:07.449] janus-h1-O-20261007T214917-11 arm_O1 {"S":62.62646484375,"O2":82.905029296875}
+[21:51:08.950] janus-h1-O-20261007T214917-11 arm_O2 {"S":64.67724609375,"O1":54.3681640625}
+[21:51:10.319] janus-h1-O-20261007T214917-11 arm_S {"O1":66.76513671875,"O2":58.591552734375}
+[21:51:15.343] janus-h1-O-20261007T214917-11 trigger {"control":"h1","observeS":180}
+[21:51:42.405] janus-h1-O-20261007T214917-11 bystander_open {"ok":true,"sdk":"2.22.3"}
+[21:51:48.215] janus-h1-O-20261007T214917-11 bystander_join {"sessionId":7465551568067380,"tPod":1791409908208.2}
+[21:52:46.813] janus-h1-O-20261007T214917-11 bystander_leave {"ok":true,"tPod":1791409966801.2998}
+[21:54:48.378] janus-h1-O-20261007T214917-11 VALID
+[21:55:11.025] janus-h0-O-20261007T215448-12 janus_room {"videoroom":"created","room":88582,"permanent":false}
+[21:55:18.467] janus-h0-O-20261007T215448-12 join_O1 {"sessionId":"1801832193449100"}
+[21:55:20.574] janus-h0-O-20261007T215448-12 join_O2 {"sessionId":"1765950106093490"}
+[21:55:22.993] janus-h0-O-20261007T215448-12 join_S {"sessionId":"6862139096178184"}
+[21:55:28.567] janus-h0-O-20261007T215448-12 media_flowing {}
+[21:55:47.949] janus-h0-O-20261007T215448-12 arm_O1 {"S":71.75244140625,"O2":67.1396484375}
+[21:55:49.406] janus-h0-O-20261007T215448-12 arm_O2 {"S":65.03857421875,"O1":70.710693359375}
+[21:55:50.945] janus-h0-O-20261007T215448-12 arm_S {"O1":63.73974609375,"O2":69.713623046875}
+[21:55:55.947] janus-h0-O-20261007T215448-12 trigger {"control":"h0","observeS":180}
+[21:59:24.569] janus-h0-O-20261007T215448-12 VALID
+[21:59:45.596] janus-h3-O-20261007T215924-13 janus_room {"videoroom":"created","room":76529,"permanent":false}
+[21:59:52.086] janus-h3-O-20261007T215924-13 join_O1 {"sessionId":"713624776558650"}
+[21:59:53.894] janus-h3-O-20261007T215924-13 join_O2 {"sessionId":"8471373243428776"}
+[21:59:55.670] janus-h3-O-20261007T215924-13 join_S {"sessionId":"5412137906218846"}
+[21:59:59.778] janus-h3-O-20261007T215924-13 media_flowing {}
+[22:00:19.034] janus-h3-O-20261007T215924-13 arm_O1 {"S":60.65625,"O2":64.64208984375}
+[22:00:20.622] janus-h3-O-20261007T215924-13 arm_O2 {"S":72.986572265625,"O1":67.166259765625}
+[22:00:22.104] janus-h3-O-20261007T215924-13 arm_S {"O1":61.741455078125,"O2":79.6845703125}
+[22:00:27.105] janus-h3-O-20261007T215924-13 trigger {"control":"h3","observeS":180}
+[22:00:56.550] janus-h3-O-20261007T215924-13 packets_before {"packetsSent":3043,"bytesSent":248388,"statsTimestamp":1791410456545.576,"tPod":1791410456546.5}
+[22:00:58.517] janus-h3-O-20261007T215924-13 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791410458512.7998}
+[22:01:03.383] janus-h3-O-20261007T215924-13 packets_muted_1 {"packetsSent":3384,"bytesSent":257289,"statsTimestamp":1791410463362.318,"tPod":1791410463362.7998}
+[22:01:08.451] janus-h3-O-20261007T215924-13 packets_muted_2 {"packetsSent":3638,"bytesSent":258051,"statsTimestamp":1791410468447.962,"tPod":1791410468449.2}
+[22:01:09.846] janus-h3-O-20261007T215924-13 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791410469844.2998}
+[22:01:14.736] janus-h3-O-20261007T215924-13 packets_after {"packetsSent":3952,"bytesSent":278105,"statsTimestamp":1791410474732.462,"tPod":1791410474733.2}
+[22:03:56.690] janus-h3-O-20261007T215924-13 VALID
+[22:04:16.969] janus-h2-O-20261007T220356-14 janus_room {"videoroom":"created","room":7080,"permanent":false}
+[22:04:24.574] janus-h2-O-20261007T220356-14 join_O1 {"sessionId":"8411308660168193"}
+[22:04:26.519] janus-h2-O-20261007T220356-14 join_O2 {"sessionId":"7359336993781628"}
+[22:04:28.362] janus-h2-O-20261007T220356-14 join_S {"sessionId":"5546377419760258"}
+[22:04:32.594] janus-h2-O-20261007T220356-14 media_flowing {}
+[22:04:51.579] janus-h2-O-20261007T220356-14 arm_O1 {"S":80.15478515625,"O2":64.27001953125}
+[22:04:53.084] janus-h2-O-20261007T220356-14 arm_O2 {"S":64.677490234375,"O1":75.650634765625}
+[22:04:54.509] janus-h2-O-20261007T220356-14 arm_S {"O1":70.78759765625,"O2":71.8115234375}
+[22:04:59.510] janus-h2-O-20261007T220356-14 trigger {"control":"h2","observeS":180}
+[22:05:26.937] janus-h2-O-20261007T220356-14 bystander_open {"ok":true,"sdk":"2.22.3"}
+[22:05:32.681] janus-h2-O-20261007T220356-14 bystander_join_publishing {"sessionId":"1588044932167320"}
+[22:06:31.255] janus-h2-O-20261007T220356-14 bystander_leave {"requested":true}
+[22:08:31.736] janus-h2-O-20261007T220356-14 VALID
+[22:08:55.207] janus-h3-O-20261007T220831-15 janus_room {"videoroom":"created","room":46948,"permanent":false}
+[22:09:03.963] janus-h3-O-20261007T220831-15 join_O1 {"sessionId":"494058705173805"}
+[22:09:05.910] janus-h3-O-20261007T220831-15 join_O2 {"sessionId":"5753708878522985"}
+[22:09:08.160] janus-h3-O-20261007T220831-15 join_S {"sessionId":"904767927783020"}
+[22:09:12.463] janus-h3-O-20261007T220831-15 media_flowing {}
+[22:09:31.486] janus-h3-O-20261007T220831-15 arm_O1 {"S":63.90087890625,"O2":70.975341796875}
+[22:09:33.093] janus-h3-O-20261007T220831-15 arm_O2 {"S":65.5068359375,"O1":62.392822265625}
+[22:09:34.531] janus-h3-O-20261007T220831-15 arm_S {"O1":68.02490234375,"O2":71.022216796875}
+[22:09:39.532] janus-h3-O-20261007T220831-15 trigger {"control":"h3","observeS":180}
+[22:10:08.925] janus-h3-O-20261007T220831-15 packets_before {"packetsSent":3037,"bytesSent":247761,"statsTimestamp":1791411008917.396,"tPod":1791411008918.9001}
+[22:10:10.906] janus-h3-O-20261007T220831-15 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791411010902.1}
+[22:10:15.801] janus-h3-O-20261007T220831-15 packets_muted_1 {"packetsSent":3381,"bytesSent":257128,"statsTimestamp":1791411015801.408,"tPod":1791411015801.7002}
+[22:10:20.596] janus-h3-O-20261007T220831-15 packets_muted_2 {"packetsSent":3621,"bytesSent":257848,"statsTimestamp":1791411020589.256,"tPod":1791411020589.6}
+[22:10:22.049] janus-h3-O-20261007T220831-15 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791411022043.9001}
+[22:10:27.386] janus-h3-O-20261007T220831-15 packets_after {"packetsSent":3960,"bytesSent":279771,"statsTimestamp":1791411027372.667,"tPod":1791411027374.2002}
+[22:13:07.710] janus-h3-O-20261007T220831-15 VALID
+[22:13:25.975] janus-h1-O-20261007T221307-16 janus_room {"videoroom":"created","room":69236,"permanent":false}
+[22:13:32.137] janus-h1-O-20261007T221307-16 join_O1 {"sessionId":"1669917600999269"}
+[22:13:33.880] janus-h1-O-20261007T221307-16 join_O2 {"sessionId":"5748989044081743"}
+[22:13:35.689] janus-h1-O-20261007T221307-16 join_S {"sessionId":"5381252463664068"}
+[22:13:39.717] janus-h1-O-20261007T221307-16 media_flowing {}
+[22:13:58.659] janus-h1-O-20261007T221307-16 arm_O1 {"S":68.408203125,"O2":59.8134765625}
+[22:13:59.970] janus-h1-O-20261007T221307-16 arm_O2 {"S":68.303466796875,"O1":55.890869140625}
+[22:14:01.288] janus-h1-O-20261007T221307-16 arm_S {"O1":66.86767578125,"O2":64.061279296875}
+[22:14:06.289] janus-h1-O-20261007T221307-16 trigger {"control":"h1","observeS":180}
+[22:14:32.795] janus-h1-O-20261007T221307-16 bystander_open {"ok":true,"sdk":"2.22.3"}
+[22:14:37.601] janus-h1-O-20261007T221307-16 bystander_join {"sessionId":205514842914162,"tPod":1791411277609.1}
+[22:15:37.683] janus-h1-O-20261007T221307-16 bystander_leave {"ok":true,"tPod":1791411337690.7}
+[22:17:35.099] janus-h1-O-20261007T221307-16 VALID
+[22:17:53.860] janus-h3-O-20261007T221735-17 janus_room {"videoroom":"created","room":77453,"permanent":false}
+[22:18:00.088] janus-h3-O-20261007T221735-17 join_O1 {"sessionId":"8385150396670736"}
+[22:18:01.835] janus-h3-O-20261007T221735-17 join_O2 {"sessionId":"2136585169260218"}
+[22:18:03.672] janus-h3-O-20261007T221735-17 join_S {"sessionId":"6392870671472287"}
+[22:18:07.813] janus-h3-O-20261007T221735-17 media_flowing {}
+[22:18:25.585] janus-h3-O-20261007T221735-17 arm_O1 {"S":53.186279296875,"O2":78.056640625}
+[22:18:26.982] janus-h3-O-20261007T221735-17 arm_O2 {"S":82.574462890625,"O1":69.3408203125}
+[22:18:28.309] janus-h3-O-20261007T221735-17 arm_S {"O1":62.490478515625,"O2":65.8076171875}
+[22:18:33.310] janus-h3-O-20261007T221735-17 trigger {"control":"h3","observeS":180}
+[22:19:02.716] janus-h3-O-20261007T221735-17 packets_before {"packetsSent":2955,"bytesSent":240317,"statsTimestamp":1791411542716.535,"tPod":1791411542717.2}
+[22:19:05.068] janus-h3-O-20261007T221735-17 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791411545075.0999}
+[22:19:09.746] janus-h3-O-20261007T221735-17 packets_muted_1 {"packetsSent":3307,"bytesSent":250772,"statsTimestamp":1791411549757.332,"tPod":1791411549758.5999}
+[22:19:14.655] janus-h3-O-20261007T221735-17 packets_muted_2 {"packetsSent":3552,"bytesSent":251507,"statsTimestamp":1791411554665.652,"tPod":1791411554666}
+[22:19:16.002] janus-h3-O-20261007T221735-17 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791411556012.2}
+[22:19:20.692] janus-h3-O-20261007T221735-17 packets_after {"packetsSent":3853,"bytesSent":270664,"statsTimestamp":1791411560681.977,"tPod":1791411560682.4}
+[22:21:57.499] janus-h3-O-20261007T221735-17 VALID
+[22:22:15.755] janus-h3-O-20261007T222157-18 janus_room {"videoroom":"created","room":30186,"permanent":false}
+[22:22:22.131] janus-h3-O-20261007T222157-18 join_O1 {"sessionId":"3635515815360717"}
+[22:22:23.973] janus-h3-O-20261007T222157-18 join_O2 {"sessionId":"1609721980526048"}
+[22:22:25.795] janus-h3-O-20261007T222157-18 join_S {"sessionId":"2805093378995504"}
+[22:22:29.984] janus-h3-O-20261007T222157-18 media_flowing {}
+[22:22:47.764] janus-h3-O-20261007T222157-18 arm_O1 {"S":69.86376953125,"O2":67.611083984375}
+[22:22:49.159] janus-h3-O-20261007T222157-18 arm_O2 {"S":69.89697265625,"O1":60.3408203125}
+[22:22:50.603] janus-h3-O-20261007T222157-18 arm_S {"O1":73.30126953125,"O2":68.454833984375}
+[22:22:55.603] janus-h3-O-20261007T222157-18 trigger {"control":"h3","observeS":180}
+[22:23:24.984] janus-h3-O-20261007T222157-18 packets_before {"packetsSent":2961,"bytesSent":240974,"statsTimestamp":1791411804998.198,"tPod":1791411804998.9001}
+[22:23:27.011] janus-h3-O-20261007T222157-18 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791411807022.3}
+[22:23:31.590] janus-h3-O-20261007T222157-18 packets_muted_1 {"packetsSent":3291,"bytesSent":249990,"statsTimestamp":1791411811599.641,"tPod":1791411811600.2}
+[22:23:36.256] janus-h3-O-20261007T222157-18 packets_muted_2 {"packetsSent":3524,"bytesSent":250689,"statsTimestamp":1791411816266.828,"tPod":1791411816267.1}
+[22:23:37.575] janus-h3-O-20261007T222157-18 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791411817589.5}
+[22:23:42.694] janus-h3-O-20261007T222157-18 packets_after {"packetsSent":3846,"bytesSent":271703,"statsTimestamp":1791411822706.218,"tPod":1791411822706.6}
+[22:26:22.201] janus-h3-O-20261007T222157-18 VALID
+[22:26:41.539] janus-h0-O-20261007T222622-19 janus_room {"videoroom":"created","room":80131,"permanent":false}
+[22:26:47.997] janus-h0-O-20261007T222622-19 join_O1 {"sessionId":"6917709379323402"}
+[22:26:49.770] janus-h0-O-20261007T222622-19 join_O2 {"sessionId":"8797160895764695"}
+[22:26:51.600] janus-h0-O-20261007T222622-19 join_S {"sessionId":"7599680933793217"}
+[22:26:55.901] janus-h0-O-20261007T222622-19 media_flowing {}
+[22:27:14.436] janus-h0-O-20261007T222622-19 arm_O1 {"S":78.291748046875,"O2":65.045166015625}
+[22:27:15.797] janus-h0-O-20261007T222622-19 arm_O2 {"S":82.793212890625,"O1":68.245361328125}
+[22:27:17.147] janus-h0-O-20261007T222622-19 arm_S {"O1":73.79443359375,"O2":67.552978515625}
+[22:27:22.148] janus-h0-O-20261007T222622-19 trigger {"control":"h0","observeS":180}
+[22:30:48.256] janus-h0-O-20261007T222622-19 VALID
+[22:31:07.107] janus-h2-O-20261007T223048-20 janus_room {"videoroom":"created","room":67488,"permanent":false}
+[22:31:13.283] janus-h2-O-20261007T223048-20 join_O1 {"sessionId":"6699583525929921"}
+[22:31:15.085] janus-h2-O-20261007T223048-20 join_O2 {"sessionId":"1079497939900335"}
+[22:31:16.864] janus-h2-O-20261007T223048-20 join_S {"sessionId":"752408699243830"}
+[22:31:20.820] janus-h2-O-20261007T223048-20 media_flowing {}
+[22:31:39.535] janus-h2-O-20261007T223048-20 arm_O1 {"S":72.040771484375,"O2":60.69287109375}
+[22:31:40.840] janus-h2-O-20261007T223048-20 arm_O2 {"S":69.390625,"O1":64.75634765625}
+[22:31:42.173] janus-h2-O-20261007T223048-20 arm_S {"O1":62.488525390625,"O2":68.4453125}
+[22:31:47.173] janus-h2-O-20261007T223048-20 trigger {"control":"h2","observeS":180}
+[22:32:14.199] janus-h2-O-20261007T223048-20 bystander_open {"ok":true,"sdk":"2.22.3"}
+[22:32:19.336] janus-h2-O-20261007T223048-20 bystander_join_publishing {"sessionId":"7243978131552459"}
+[22:33:18.475] janus-h2-O-20261007T223048-20 bystander_leave {"requested":true}
+[22:35:17.241] janus-h2-O-20261007T223048-20 VALID
+[22:35:35.566] janus-h2-O-20261007T223517-21 janus_room {"videoroom":"created","room":50279,"permanent":false}
+[22:35:41.689] janus-h2-O-20261007T223517-21 join_O1 {"sessionId":"325010963148130"}
+[22:35:43.526] janus-h2-O-20261007T223517-21 join_O2 {"sessionId":"9000519519713353"}
+[22:35:45.340] janus-h2-O-20261007T223517-21 join_S {"sessionId":"4287510139670613"}
+[22:35:49.426] janus-h2-O-20261007T223517-21 media_flowing {}
+[22:36:08.379] janus-h2-O-20261007T223517-21 arm_O1 {"S":71.902587890625,"O2":77.61328125}
+[22:36:09.715] janus-h2-O-20261007T223517-21 arm_O2 {"S":58.745361328125,"O1":53.257080078125}
+[22:36:11.033] janus-h2-O-20261007T223517-21 arm_S {"O1":72.9404296875,"O2":74.285888671875}
+[22:36:16.035] janus-h2-O-20261007T223517-21 trigger {"control":"h2","observeS":180}
+[22:36:42.585] janus-h2-O-20261007T223517-21 bystander_open {"ok":true,"sdk":"2.22.3"}
+[22:36:47.909] janus-h2-O-20261007T223517-21 bystander_join_publishing {"sessionId":"5999559496935564"}
+[22:37:47.383] janus-h2-O-20261007T223517-21 bystander_leave {"requested":true}
+[22:39:45.277] janus-h2-O-20261007T223517-21 VALID
+[22:40:04.100] janus-h0-O-20261007T223945-22 janus_room {"videoroom":"created","room":37240,"permanent":false}
+[22:40:10.557] janus-h0-O-20261007T223945-22 join_O1 {"sessionId":"735643928556335"}
+[22:40:12.316] janus-h0-O-20261007T223945-22 join_O2 {"sessionId":"1639990946342814"}
+[22:40:14.142] janus-h0-O-20261007T223945-22 join_S {"sessionId":"8977377372085098"}
+[22:40:18.193] janus-h0-O-20261007T223945-22 media_flowing {}
+[22:40:35.985] janus-h0-O-20261007T223945-22 arm_O1 {"S":66.2265625,"O2":67.278076171875}
+[22:40:37.265] janus-h0-O-20261007T223945-22 arm_O2 {"S":63.685791015625,"O1":63.302490234375}
+[22:40:38.578] janus-h0-O-20261007T223945-22 arm_S {"O1":66.570068359375,"O2":66.134033203125}
+[22:40:43.581] janus-h0-O-20261007T223945-22 trigger {"control":"h0","observeS":180}
+[22:44:10.663] janus-h0-O-20261007T223945-22 VALID
+[22:44:30.148] janus-h3-O-20261007T224410-23 janus_room {"videoroom":"created","room":19960,"permanent":false}
+[22:44:36.992] janus-h3-O-20261007T224410-23 join_O1 {"sessionId":"2438301675153609"}
+[22:44:38.847] janus-h3-O-20261007T224410-23 join_O2 {"sessionId":"3651171556102632"}
+[22:44:40.819] janus-h3-O-20261007T224410-23 join_S {"sessionId":"4871846067150548"}
+[22:44:45.127] janus-h3-O-20261007T224410-23 media_flowing {}
+[22:45:03.761] janus-h3-O-20261007T224410-23 arm_O1 {"S":72.522216796875,"O2":53.8662109375}
+[22:45:05.363] janus-h3-O-20261007T224410-23 arm_O2 {"S":57.7939453125,"O1":71.766845703125}
+[22:45:06.801] janus-h3-O-20261007T224410-23 arm_S {"O1":72.95703125,"O2":60.1875}
+[22:45:11.803] janus-h3-O-20261007T224410-23 trigger {"control":"h3","observeS":180}
+[22:45:41.350] janus-h3-O-20261007T224410-23 packets_before {"packetsSent":3025,"bytesSent":246105,"statsTimestamp":1791413141392.251,"tPod":1791413141392.9001}
+[22:45:43.158] janus-h3-O-20261007T224410-23 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791413143188.2002}
+[22:45:47.788] janus-h3-O-20261007T224410-23 packets_muted_1 {"packetsSent":3347,"bytesSent":254181,"statsTimestamp":1791413147834.594,"tPod":1791413147835.4001}
+[22:45:52.585] janus-h3-O-20261007T224410-23 packets_muted_2 {"packetsSent":3587,"bytesSent":254901,"statsTimestamp":1791413152634.365,"tPod":1791413152634.7002}
+[22:45:53.892] janus-h3-O-20261007T224410-23 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791413153940.8}
+[22:45:58.617] janus-h3-O-20261007T224410-23 packets_after {"packetsSent":3889,"bytesSent":274373,"statsTimestamp":1791413158665.232,"tPod":1791413158665.7002}
+[22:48:39.027] janus-h3-O-20261007T224410-23 VALID
+[22:48:57.926] janus-h0-O-20261007T224839-24 janus_room {"videoroom":"created","room":26465,"permanent":false}
+[22:49:04.151] janus-h0-O-20261007T224839-24 join_O1 {"sessionId":"8462093099555464"}
+[22:49:05.993] janus-h0-O-20261007T224839-24 join_O2 {"sessionId":"3770905830136772"}
+[22:49:07.808] janus-h0-O-20261007T224839-24 join_S {"sessionId":"871883381878120"}
+[22:49:12.524] janus-h0-O-20261007T224839-24 media_flowing {}
+[22:49:30.372] janus-h0-O-20261007T224839-24 arm_O1 {"S":69.08203125,"O2":60.9580078125}
+[22:49:31.673] janus-h0-O-20261007T224839-24 arm_O2 {"S":66.177734375,"O1":62.908447265625}
+[22:49:33.284] janus-h0-O-20261007T224839-24 arm_S {"O1":65.088623046875,"O2":62.529052734375}
+[22:49:38.284] janus-h0-O-20261007T224839-24 trigger {"control":"h0","observeS":180}
+[22:53:05.889] janus-h0-O-20261007T224839-24 VALID
+[22:53:29.189] janus-h1-O-20261007T225305-25 janus_room {"videoroom":"created","room":14642,"permanent":false}
+[22:53:37.099] janus-h1-O-20261007T225305-25 join_O1 {"sessionId":"1860784994722436"}
+[22:53:39.098] janus-h1-O-20261007T225305-25 join_O2 {"sessionId":"1086743767500111"}
+[22:53:41.081] janus-h1-O-20261007T225305-25 join_S {"sessionId":"793116079392138"}
+[22:53:45.442] janus-h1-O-20261007T225305-25 media_flowing {}
+[22:54:04.264] janus-h1-O-20261007T225305-25 arm_O1 {"S":69.443115234375,"O2":62.158935546875}
+[22:54:05.886] janus-h1-O-20261007T225305-25 arm_O2 {"S":64.991943359375,"O1":61.61572265625}
+[22:54:07.404] janus-h1-O-20261007T225305-25 arm_S {"O1":62.005615234375,"O2":71.921142578125}
+[22:54:12.404] janus-h1-O-20261007T225305-25 trigger {"control":"h1","observeS":180}
+[22:54:38.978] janus-h1-O-20261007T225305-25 bystander_open {"ok":true,"sdk":"2.22.3"}
+[22:54:43.828] janus-h1-O-20261007T225305-25 bystander_join {"sessionId":4603249559247263,"tPod":1791413683894.9}
+[22:55:43.730] janus-h1-O-20261007T225305-25 bystander_leave {"ok":true,"tPod":1791413743793}
+[22:57:40.443] janus-h1-O-20261007T225305-25 VALID
+[22:57:59.371] janus-h2-O-20261007T225740-26 janus_room {"videoroom":"created","room":19406,"permanent":false}
+[22:58:05.632] janus-h2-O-20261007T225740-26 join_O1 {"sessionId":"2635177067216589"}
+[22:58:07.485] janus-h2-O-20261007T225740-26 join_O2 {"sessionId":"1152217946842304"}
+[22:58:09.328] janus-h2-O-20261007T225740-26 join_S {"sessionId":"4937294280052038"}
+[22:58:13.379] janus-h2-O-20261007T225740-26 media_flowing {}
+[22:58:31.623] janus-h2-O-20261007T225740-26 arm_O1 {"S":71.651123046875,"O2":65.285400390625}
+[22:58:33.047] janus-h2-O-20261007T225740-26 arm_O2 {"S":72.039306640625,"O1":57.32080078125}
+[22:58:34.388] janus-h2-O-20261007T225740-26 arm_S {"O1":55.493896484375,"O2":55.36279296875}
+[22:58:39.389] janus-h2-O-20261007T225740-26 trigger {"control":"h2","observeS":180}
+[22:59:06.028] janus-h2-O-20261007T225740-26 bystander_open {"ok":true,"sdk":"2.22.3"}
+[22:59:11.230] janus-h2-O-20261007T225740-26 bystander_join_publishing {"sessionId":"946785600723466"}
+[23:00:10.790] janus-h2-O-20261007T225740-26 bystander_leave {"requested":true}
+[23:02:08.597] janus-h2-O-20261007T225740-26 VALID
+[23:02:28.097] janus-h3-O-20261007T230208-27 janus_room {"videoroom":"created","room":57651,"permanent":false}
+[23:02:34.572] janus-h3-O-20261007T230208-27 join_O1 {"sessionId":"292648583788937"}
+[23:02:36.334] janus-h3-O-20261007T230208-27 join_O2 {"sessionId":"4937890614839395"}
+[23:02:38.129] janus-h3-O-20261007T230208-27 join_S {"sessionId":"1172905166380191"}
+[23:02:42.093] janus-h3-O-20261007T230208-27 media_flowing {}
+[23:02:59.894] janus-h3-O-20261007T230208-27 arm_O1 {"S":63.2509765625,"O2":68.28564453125}
+[23:03:01.208] janus-h3-O-20261007T230208-27 arm_O2 {"S":59.253662109375,"O1":65.32763671875}
+[23:03:02.549] janus-h3-O-20261007T230208-27 arm_S {"O1":69.77392578125,"O2":64.121826171875}
+[23:03:07.550] janus-h3-O-20261007T230208-27 trigger {"control":"h3","observeS":180}
+[23:03:36.867] janus-h3-O-20261007T230208-27 packets_before {"packetsSent":2938,"bytesSent":239573,"statsTimestamp":1791414216940.258,"tPod":1791414216941.2002}
+[23:03:38.858] janus-h3-O-20261007T230208-27 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791414218936.7002}
+[23:03:43.498] janus-h3-O-20261007T230208-27 packets_muted_1 {"packetsSent":3269,"bytesSent":248471,"statsTimestamp":1791414223576.133,"tPod":1791414223576.6}
+[23:03:48.130] janus-h3-O-20261007T230208-27 packets_muted_2 {"packetsSent":3501,"bytesSent":249167,"statsTimestamp":1791414228205.347,"tPod":1791414228205.8}
+[23:03:49.454] janus-h3-O-20261007T230208-27 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791414229530.1}
+[23:03:54.085] janus-h3-O-20261007T230208-27 packets_after {"packetsSent":3799,"bytesSent":268206,"statsTimestamp":1791414234162.502,"tPod":1791414234163.1}
+[23:06:30.836] janus-h3-O-20261007T230208-27 VALID
+[23:06:49.201] janus-h3-O-20261007T230630-28 janus_room {"videoroom":"created","room":78584,"permanent":false}
+[23:06:55.458] janus-h3-O-20261007T230630-28 join_O1 {"sessionId":"3265612963073890"}
+[23:06:57.303] janus-h3-O-20261007T230630-28 join_O2 {"sessionId":"8235025195865465"}
+[23:06:59.099] janus-h3-O-20261007T230630-28 join_S {"sessionId":"1748951778816476"}
+[23:07:03.021] janus-h3-O-20261007T230630-28 media_flowing {}
+[23:07:21.568] janus-h3-O-20261007T230630-28 arm_O1 {"S":63.809814453125,"O2":60.086669921875}
+[23:07:23.036] janus-h3-O-20261007T230630-28 arm_O2 {"S":64.323486328125,"O1":68.163330078125}
+[23:07:24.355] janus-h3-O-20261007T230630-28 arm_S {"O1":68.89208984375,"O2":68.793212890625}
+[23:07:29.356] janus-h3-O-20261007T230630-28 trigger {"control":"h3","observeS":180}
+[23:07:58.722] janus-h3-O-20261007T230630-28 packets_before {"packetsSent":2980,"bytesSent":243543,"statsTimestamp":1791414478796.884,"tPod":1791414478797.6}
+[23:08:00.732] janus-h3-O-20261007T230630-28 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791414480814.9001}
+[23:08:05.375] janus-h3-O-20261007T230630-28 packets_muted_1 {"packetsSent":3312,"bytesSent":252529,"statsTimestamp":1791414485454.741,"tPod":1791414485455.5}
+[23:08:10.055] janus-h3-O-20261007T230630-28 packets_muted_2 {"packetsSent":3547,"bytesSent":253234,"statsTimestamp":1791414490138.016,"tPod":1791414490138.8}
+[23:08:11.393] janus-h3-O-20261007T230630-28 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791414491472.7002}
+[23:08:16.067] janus-h3-O-20261007T230630-28 packets_after {"packetsSent":3847,"bytesSent":272341,"statsTimestamp":1791414496151.276,"tPod":1791414496151.8}
+[23:10:53.476] janus-h3-O-20261007T230630-28 VALID
+[23:11:11.805] janus-h3-O-20261007T231053-29 janus_room {"videoroom":"created","room":86411,"permanent":false}
+[23:11:18.035] janus-h3-O-20261007T231053-29 join_O1 {"sessionId":"1837299312317131"}
+[23:11:19.878] janus-h3-O-20261007T231053-29 join_O2 {"sessionId":"164138886450506"}
+[23:11:21.722] janus-h3-O-20261007T231053-29 join_S {"sessionId":"7068888100385495"}
+[23:11:25.806] janus-h3-O-20261007T231053-29 media_flowing {}
+[23:11:43.782] janus-h3-O-20261007T231053-29 arm_O1 {"S":60.446533203125,"O2":55.393798828125}
+[23:11:45.148] janus-h3-O-20261007T231053-29 arm_O2 {"S":77.875244140625,"O1":85.141357421875}
+[23:11:46.501] janus-h3-O-20261007T231053-29 arm_S {"O1":80.64599609375,"O2":76.6884765625}
+[23:11:51.502] janus-h3-O-20261007T231053-29 trigger {"control":"h3","observeS":180}
+[23:12:20.857] janus-h3-O-20261007T231053-29 packets_before {"packetsSent":2959,"bytesSent":241381,"statsTimestamp":1791414740915.419,"tPod":1791414740917.2}
+[23:12:22.809] janus-h3-O-20261007T231053-29 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791414742872}
+[23:12:27.481] janus-h3-O-20261007T231053-29 packets_muted_1 {"packetsSent":3290,"bytesSent":250197,"statsTimestamp":1791414747540.923,"tPod":1791414747542.2}
+[23:12:32.152] janus-h3-O-20261007T231053-29 packets_muted_2 {"packetsSent":3524,"bytesSent":250899,"statsTimestamp":1791414752213.28,"tPod":1791414752213.7}
+[23:12:33.450] janus-h3-O-20261007T231053-29 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791414753514}
+[23:12:38.116] janus-h3-O-20261007T231053-29 packets_after {"packetsSent":3822,"bytesSent":269987,"statsTimestamp":1791414758169.889,"tPod":1791414758170.3}
+[23:15:18.504] janus-h3-O-20261007T231053-29 VALID
+[23:15:37.159] janus-h1-O-20261007T231518-30 janus_room {"videoroom":"created","room":42819,"permanent":false}
+[23:15:43.456] janus-h1-O-20261007T231518-30 join_O1 {"sessionId":"3152303710968788"}
+[23:15:45.181] janus-h1-O-20261007T231518-30 join_O2 {"sessionId":"6843348252693030"}
+[23:15:46.974] janus-h1-O-20261007T231518-30 join_S {"sessionId":"2614776705039163"}
+[23:15:51.705] janus-h1-O-20261007T231518-30 media_flowing {}
+[23:16:10.292] janus-h1-O-20261007T231518-30 arm_O1 {"S":72.37451171875,"O2":71.6240234375}
+[23:16:11.605] janus-h1-O-20261007T231518-30 arm_O2 {"S":69.22509765625,"O1":64.700927734375}
+[23:16:12.927] janus-h1-O-20261007T231518-30 arm_S {"O1":64.33447265625,"O2":71.22607421875}
+[23:16:17.929] janus-h1-O-20261007T231518-30 trigger {"control":"h1","observeS":180}
+[23:16:44.440] janus-h1-O-20261007T231518-30 bystander_open {"ok":true,"sdk":"2.22.3"}
+[23:16:49.241] janus-h1-O-20261007T231518-30 bystander_join {"sessionId":2181241114464322,"tPod":1791415009307.5999}
+[23:17:49.292] janus-h1-O-20261007T231518-30 bystander_leave {"ok":true,"tPod":1791415069351.0999}
+[23:19:46.194] janus-h1-O-20261007T231518-30 VALID
+[23:20:05.176] janus-h1-O-20261007T231946-31 janus_room {"videoroom":"created","room":72065,"permanent":false}
+[23:20:11.395] janus-h1-O-20261007T231946-31 join_O1 {"sessionId":"5137093545480333"}
+[23:20:13.229] janus-h1-O-20261007T231946-31 join_O2 {"sessionId":"2468218163792491"}
+[23:20:14.990] janus-h1-O-20261007T231946-31 join_S {"sessionId":"8507654436959652"}
+[23:20:19.124] janus-h1-O-20261007T231946-31 media_flowing {}
+[23:20:37.354] janus-h1-O-20261007T231946-31 arm_O1 {"S":57.5732421875,"O2":61.321044921875}
+[23:20:38.678] janus-h1-O-20261007T231946-31 arm_O2 {"S":72.88232421875,"O1":70.156982421875}
+[23:20:39.994] janus-h1-O-20261007T231946-31 arm_S {"O1":70.013671875,"O2":85.88037109375}
+[23:20:44.996] janus-h1-O-20261007T231946-31 trigger {"control":"h1","observeS":180}
+[23:21:11.545] janus-h1-O-20261007T231946-31 bystander_open {"ok":true,"sdk":"2.22.3"}
+[23:21:16.334] janus-h1-O-20261007T231946-31 bystander_join {"sessionId":7158042327861668,"tPod":1791415276405.1}
+[23:22:16.362] janus-h1-O-20261007T231946-31 bystander_leave {"ok":true,"tPod":1791415336432.1}
+[23:24:13.371] janus-h1-O-20261007T231946-31 VALID
+[23:24:32.199] janus-h2-O-20261007T232413-32 janus_room {"videoroom":"created","room":26854,"permanent":false}
+[23:24:38.492] janus-h2-O-20261007T232413-32 join_O1 {"sessionId":"8257035737780070"}
+[23:24:40.338] janus-h2-O-20261007T232413-32 join_O2 {"sessionId":"8938084700167196"}
+[23:24:42.094] janus-h2-O-20261007T232413-32 join_S {"sessionId":"3311371598826845"}
+[23:24:45.973] janus-h2-O-20261007T232413-32 media_flowing {}
+[23:25:04.344] janus-h2-O-20261007T232413-32 arm_O1 {"S":61.573486328125,"O2":60.2666015625}
+[23:25:05.873] janus-h2-O-20261007T232413-32 arm_O2 {"S":69.00048828125,"O1":65.652587890625}
+[23:25:07.340] janus-h2-O-20261007T232413-32 arm_S {"O1":75.023193359375,"O2":67.92529296875}
+[23:25:12.341] janus-h2-O-20261007T232413-32 trigger {"control":"h2","observeS":180}
+[23:25:39.116] janus-h2-O-20261007T232413-32 bystander_open {"ok":true,"sdk":"2.22.3"}
+[23:25:44.340] janus-h2-O-20261007T232413-32 bystander_join_publishing {"sessionId":"7438788518461937"}
+[23:26:43.686] janus-h2-O-20261007T232413-32 bystander_leave {"requested":true}
+[23:28:43.940] janus-h2-O-20261007T232413-32 VALID
+[23:29:03.558] janus-h3-O-20261007T232843-33 janus_room {"videoroom":"created","room":25050,"permanent":false}
+[23:29:09.751] janus-h3-O-20261007T232843-33 join_O1 {"sessionId":"5225624520889408"}
+[23:29:11.540] janus-h3-O-20261007T232843-33 join_O2 {"sessionId":"173331976491929"}
+[23:29:13.487] janus-h3-O-20261007T232843-33 join_S {"sessionId":"767269605090389"}
+[23:29:18.013] janus-h3-O-20261007T232843-33 media_flowing {}
+[23:29:37.063] janus-h3-O-20261007T232843-33 arm_O1 {"S":59.87158203125,"O2":64.314697265625}
+[23:29:38.486] janus-h3-O-20261007T232843-33 arm_O2 {"S":76.51318359375,"O1":55.70751953125}
+[23:29:40.251] janus-h3-O-20261007T232843-33 arm_S {"O1":76.762451171875,"O2":65.734375}
+[23:29:45.252] janus-h3-O-20261007T232843-33 trigger {"control":"h3","observeS":180}
+[23:30:14.673] janus-h3-O-20261007T232843-33 packets_before {"packetsSent":3059,"bytesSent":249384,"statsTimestamp":1791415814729.388,"tPod":1791415814731.2}
+[23:30:16.604] janus-h3-O-20261007T232843-33 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791415816661.0999}
+[23:30:21.260] janus-h3-O-20261007T232843-33 packets_muted_1 {"packetsSent":3389,"bytesSent":258022,"statsTimestamp":1791415821316.841,"tPod":1791415821317.5}
+[23:30:25.961] janus-h3-O-20261007T232843-33 packets_muted_2 {"packetsSent":3624,"bytesSent":258727,"statsTimestamp":1791415826017.68,"tPod":1791415826018.0999}
+[23:30:27.487] janus-h3-O-20261007T232843-33 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791415827541.3}
+[23:30:32.118] janus-h3-O-20261007T232843-33 packets_after {"packetsSent":3931,"bytesSent":277702,"statsTimestamp":1791415832175.364,"tPod":1791415832175.8}
+[23:33:11.347] janus-h3-O-20261007T232843-33 VALID
+[23:33:30.834] janus-h1-O-20261007T233311-34 janus_room {"videoroom":"created","room":26540,"permanent":false}
+[23:33:37.109] janus-h1-O-20261007T233311-34 join_O1 {"sessionId":"123968976027999"}
+[23:33:38.835] janus-h1-O-20261007T233311-34 join_O2 {"sessionId":"362836241398265"}
+[23:33:40.728] janus-h1-O-20261007T233311-34 join_S {"sessionId":"2928703679841052"}
+[23:33:44.750] janus-h1-O-20261007T233311-34 media_flowing {}
+[23:34:02.531] janus-h1-O-20261007T233311-34 arm_O1 {"S":60.28466796875,"O2":65.229736328125}
+[23:34:04.148] janus-h1-O-20261007T233311-34 arm_O2 {"S":67.617919921875,"O1":59.908447265625}
+[23:34:05.455] janus-h1-O-20261007T233311-34 arm_S {"O1":75.61669921875,"O2":70.0390625}
+[23:34:10.455] janus-h1-O-20261007T233311-34 trigger {"control":"h1","observeS":180}
+[23:34:36.917] janus-h1-O-20261007T233311-34 bystander_open {"ok":true,"sdk":"2.22.3"}
+[23:34:41.768] janus-h1-O-20261007T233311-34 bystander_join {"sessionId":1157902091709692,"tPod":1791416081825.3}
+[23:35:42.845] janus-h1-O-20261007T233311-34 bystander_leave {"ok":true,"tPod":1791416142899.3}
+[23:37:39.864] janus-h1-O-20261007T233311-34 VALID
+[23:37:58.703] janus-h3-O-20261007T233739-35 janus_room {"videoroom":"created","room":78289,"permanent":false}
+[23:38:05.182] janus-h3-O-20261007T233739-35 join_O1 {"sessionId":"7722948681625585"}
+[23:38:07.069] janus-h3-O-20261007T233739-35 join_O2 {"sessionId":"2255979463138239"}
+[23:38:08.907] janus-h3-O-20261007T233739-35 join_S {"sessionId":"5739038899110486"}
+[23:38:12.992] janus-h3-O-20261007T233739-35 media_flowing {}
+[23:38:31.937] janus-h3-O-20261007T233739-35 arm_O1 {"S":70.772216796875,"O2":54.05712890625}
+[23:38:33.259] janus-h3-O-20261007T233739-35 arm_O2 {"S":65.190673828125,"O1":63.994140625}
+[23:38:34.615] janus-h3-O-20261007T233739-35 arm_S {"O1":76.78662109375,"O2":79.48974609375}
+[23:38:39.617] janus-h3-O-20261007T233739-35 trigger {"control":"h3","observeS":180}
+[23:39:09.029] janus-h3-O-20261007T233739-35 packets_before {"packetsSent":3005,"bytesSent":245031,"statsTimestamp":1791416349092.697,"tPod":1791416349093.5}
+[23:39:10.970] janus-h3-O-20261007T233739-35 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791416351033.0999}
+[23:39:15.804] janus-h3-O-20261007T233739-35 packets_muted_1 {"packetsSent":3344,"bytesSent":253747,"statsTimestamp":1791416355866.733,"tPod":1791416355867.7}
+[23:39:20.543] janus-h3-O-20261007T233739-35 packets_muted_2 {"packetsSent":3581,"bytesSent":254458,"statsTimestamp":1791416360604.669,"tPod":1791416360605.2998}
+[23:39:21.857] janus-h3-O-20261007T233739-35 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791416361920.0999}
+[23:39:26.489] janus-h3-O-20261007T233739-35 packets_after {"packetsSent":3878,"bytesSent":273447,"statsTimestamp":1791416366549.059,"tPod":1791416366549.9}
+[23:42:04.003] janus-h3-O-20261007T233739-35 VALID
+[23:42:22.522] janus-h1-O-20261007T234204-36 janus_room {"videoroom":"created","room":38177,"permanent":false}
+[23:42:28.787] janus-h1-O-20261007T234204-36 join_O1 {"sessionId":"3768836759450527"}
+[23:42:30.633] janus-h1-O-20261007T234204-36 join_O2 {"sessionId":"897208344701856"}
+[23:42:32.386] janus-h1-O-20261007T234204-36 join_S {"sessionId":"5135416274004141"}
+[23:42:36.863] janus-h1-O-20261007T234204-36 media_flowing {}
+[23:42:55.326] janus-h1-O-20261007T234204-36 arm_O1 {"S":63.05712890625,"O2":66.07568359375}
+[23:42:56.646] janus-h1-O-20261007T234204-36 arm_O2 {"S":63.72900390625,"O1":72.252197265625}
+[23:42:58.022] janus-h1-O-20261007T234204-36 arm_S {"O1":76.496337890625,"O2":65.730712890625}
+[23:43:03.023] janus-h1-O-20261007T234204-36 trigger {"control":"h1","observeS":180}
+[23:43:29.631] janus-h1-O-20261007T234204-36 bystander_open {"ok":true,"sdk":"2.22.3"}
+[23:43:34.391] janus-h1-O-20261007T234204-36 bystander_join {"sessionId":2952749764874106,"tPod":1791416614457.2}
+[23:44:34.352] janus-h1-O-20261007T234204-36 bystander_leave {"ok":true,"tPod":1791416674402.0999}
+[23:46:31.459] janus-h1-O-20261007T234204-36 VALID
+[23:46:50.090] janus-h0-O-20261007T234631-37 janus_room {"videoroom":"created","room":89300,"permanent":false}
+[23:46:56.649] janus-h0-O-20261007T234631-37 join_O1 {"sessionId":"8472425014556394"}
+[23:46:58.542] janus-h0-O-20261007T234631-37 join_O2 {"sessionId":"8497015092185943"}
+[23:47:00.332] janus-h0-O-20261007T234631-37 join_S {"sessionId":"4300853917508090"}
+[23:47:04.368] janus-h0-O-20261007T234631-37 media_flowing {}
+[23:47:22.811] janus-h0-O-20261007T234631-37 arm_O1 {"S":60.226806640625,"O2":73.73486328125}
+[23:47:24.166] janus-h0-O-20261007T234631-37 arm_O2 {"S":58.525634765625,"O1":74.8271484375}
+[23:47:25.486] janus-h0-O-20261007T234631-37 arm_S {"O1":64.434326171875,"O2":69.66552734375}
+[23:47:30.487] janus-h0-O-20261007T234631-37 trigger {"control":"h0","observeS":180}
+[23:50:56.930] janus-h0-O-20261007T234631-37 VALID
+[23:51:15.331] janus-h3-O-20261007T235056-38 janus_room {"videoroom":"created","room":23350,"permanent":false}
+[23:51:21.551] janus-h3-O-20261007T235056-38 join_O1 {"sessionId":"6981814421200165"}
+[23:51:23.431] janus-h3-O-20261007T235056-38 join_O2 {"sessionId":"175513576572620"}
+[23:51:25.299] janus-h3-O-20261007T235056-38 join_S {"sessionId":"1499803789666060"}
+[23:51:29.269] janus-h3-O-20261007T235056-38 media_flowing {}
+[23:51:47.538] janus-h3-O-20261007T235056-38 arm_O1 {"S":56.297119140625,"O2":58.8447265625}
+[23:51:48.858] janus-h3-O-20261007T235056-38 arm_O2 {"S":66.534423828125,"O1":64.647216796875}
+[23:51:50.224] janus-h3-O-20261007T235056-38 arm_S {"O1":70.752197265625,"O2":68.09814453125}
+[23:51:55.225] janus-h3-O-20261007T235056-38 trigger {"control":"h3","observeS":180}
+[23:52:24.570] janus-h3-O-20261007T235056-38 packets_before {"packetsSent":2966,"bytesSent":240591,"statsTimestamp":1791417144620.209,"tPod":1791417144621.1}
+[23:52:26.554] janus-h3-O-20261007T235056-38 mute_on {"muted":true,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":false,"tPod":1791417146604.9}
+[23:52:31.261] janus-h3-O-20261007T235056-38 packets_muted_1 {"packetsSent":3301,"bytesSent":249551,"statsTimestamp":1791417151312.665,"tPod":1791417151313}
+[23:52:35.952] janus-h3-O-20261007T235056-38 packets_muted_2 {"packetsSent":3535,"bytesSent":250253,"statsTimestamp":1791417156006.074,"tPod":1791417156006.6}
+[23:52:37.268] janus-h3-O-20261007T235056-38 mute_off {"muted":false,"mechanism":"MediaStreamTrack.enabled (janus.js muteAudio/unmuteAudio)","enabled":true,"tPod":1791417157324.9}
+[23:52:41.897] janus-h3-O-20261007T235056-38 packets_after {"packetsSent":3833,"bytesSent":269245,"statsTimestamp":1791417161945.071,"tPod":1791417161945.5}
+[23:55:19.315] janus-h3-O-20261007T235056-38 VALID
+[23:55:38.160] janus-h0-O-20261007T235519-39 janus_room {"videoroom":"created","room":94977,"permanent":false}
+[23:55:44.576] janus-h0-O-20261007T235519-39 join_O1 {"sessionId":"4050190045374998"}
+[23:55:46.420] janus-h0-O-20261007T235519-39 join_O2 {"sessionId":"6947518696086602"}
+[23:55:48.261] janus-h0-O-20261007T235519-39 join_S {"sessionId":"7338540006509661"}
+[23:55:52.825] janus-h0-O-20261007T235519-39 media_flowing {}
+[23:56:10.866] janus-h0-O-20261007T235519-39 arm_O1 {"S":78.52587890625,"O2":71.821533203125}
+[23:56:12.204] janus-h0-O-20261007T235519-39 arm_O2 {"S":71.83642578125,"O1":72.829833984375}
+[23:56:13.502] janus-h0-O-20261007T235519-39 arm_S {"O1":67.822265625,"O2":59.015869140625}
+[23:56:18.501] janus-h0-O-20261007T235519-39 trigger {"control":"h0","observeS":180}
+[23:59:42.657] janus-h0-O-20261007T235519-39 VALID
+[00:00:01.326] janus-h2-O-20261007T235942-40 janus_room {"videoroom":"created","room":35668,"permanent":false}
+[00:00:07.540] janus-h2-O-20261007T235942-40 join_O1 {"sessionId":"859021278127253"}
+[00:00:09.382] janus-h2-O-20261007T235942-40 join_O2 {"sessionId":"6483077792569941"}
+[00:00:11.225] janus-h2-O-20261007T235942-40 join_S {"sessionId":"4142093981189788"}
+[00:00:15.125] janus-h2-O-20261007T235942-40 media_flowing {}
+[00:00:33.058] janus-h2-O-20261007T235942-40 arm_O1 {"S":64.31005859375,"O2":65.78662109375}
+[00:00:34.369] janus-h2-O-20261007T235942-40 arm_O2 {"S":64.670166015625,"O1":72.026123046875}
+[00:00:35.728] janus-h2-O-20261007T235942-40 arm_S {"O1":48.222900390625,"O2":60.64892578125}
+[00:00:40.728] janus-h2-O-20261007T235942-40 trigger {"control":"h2","observeS":180}
+[00:01:07.240] janus-h2-O-20261007T235942-40 bystander_open {"ok":true,"sdk":"2.22.3"}
+[00:01:12.563] janus-h2-O-20261007T235942-40 bystander_join_publishing {"sessionId":"992042128949078"}
+[00:02:12.045] janus-h2-O-20261007T235942-40 bystander_leave {"requested":true}
+[00:04:09.027] janus-h2-O-20261007T235942-40 VALID
+[00:04:27.883] janus-h0-O-20261008T000409-41 janus_room {"videoroom":"created","room":34349,"permanent":false}
+[00:04:34.397] janus-h0-O-20261008T000409-41 join_O1 {"sessionId":"6727325785844889"}
+[00:04:37.365] janus-h0-O-20261008T000409-41 join_O2 {"sessionId":"5653915947031627"}
+[00:04:39.578] janus-h0-O-20261008T000409-41 join_S {"sessionId":"298655191653701"}
+[00:04:44.274] janus-h0-O-20261008T000409-41 media_flowing {}
+[00:05:03.263] janus-h0-O-20261008T000409-41 arm_O1 {"S":58.025634765625,"O2":68.30908203125}
+[00:05:04.618] janus-h0-O-20261008T000409-41 arm_O2 {"S":64.6875,"O1":63.99560546875}
+[00:05:06.031] janus-h0-O-20261008T000409-41 arm_S {"O1":68.2431640625,"O2":71.62841796875}
+[00:05:11.032] janus-h0-O-20261008T000409-41 trigger {"control":"h0","observeS":180}
+[00:08:39.264] janus-h0-O-20261008T000409-41 VALID
+[00:08:39.266] control janus done {"h2":12,"h1":8,"h3":12,"h0":8}
+CONTROL_EXIT=0
+=== CONTROL_DONE janus 2026-10-08T00:08:39Z
+=== PARK 2026-10-08T00:08:39Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 8b13aa87-0bd2-32d4-ad41-31f8550a904b submitted
+==> EKS update 8b13aa87-0bd2-32d4-ad41-31f8550a904b: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 4s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 43s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 79s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 112s elapsed
+==> waiting: 1 instance(s) live, 2 k8s node(s), 146s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 180s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 213s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 247s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 280s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 314s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 347s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 381s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 413s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 445s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 479s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 512s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 545s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 578s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 611s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 645s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 678s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 712s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 745s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 778s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 811s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 845s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 878s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 910s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 943s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 976s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1011s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-08T00:26:04Z

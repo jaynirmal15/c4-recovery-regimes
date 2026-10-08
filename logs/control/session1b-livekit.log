@@ -1,0 +1,598 @@
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 0e25549c-849b-371d-9af6-294f894b4da7 submitted
+==> EKS update 0e25549c-849b-371d-9af6-294f894b4da7: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 0 instance(s) live, 3s elapsed
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 25s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (48s)
+NAME                          STATUS   ROLES    AGE   VERSION               INTERNAL-IP   EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-13-11.ec2.internal   Ready    <none>   32s   v1.36.4-eks-f4fc4f1   10.42.13.11   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-29-80.ec2.internal   Ready    <none>   31s   v1.36.4-eks-f4fc4f1   10.42.29.80   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-7-43.ec2.internal    Ready    <none>   31s   v1.36.4-eks-f4fc4f1   10.42.7.43    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-07T17:17:42Z
+NAME                          STATUS   ROLES    AGE   VERSION               INTERNAL-IP   EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-13-11.ec2.internal   Ready    <none>   33s   v1.36.4-eks-f4fc4f1   10.42.13.11   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-29-80.ec2.internal   Ready    <none>   32s   v1.36.4-eks-f4fc4f1   10.42.29.80   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-7-43.ec2.internal    Ready    <none>   32s   v1.36.4-eks-f4fc4f1   10.42.7.43    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+deployment "event-sink" successfully rolled out
+deployment "event-sink" successfully rolled out
+[17:17:50.355] switched to livekit
+[17:17:56.809] setup client build pre-sampler {"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"}
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[17:18:46.746] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791393526818.576}
+[17:18:48.042] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791393528117.8599}
+[17:18:49.457] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"949c292926d8719632b6a23b0662800f1d04e01fabe813a71b44034323e18415","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"aba4ef519694aa0a41a2b2ce5eb880581503a03d89f813c646e9a9b3c55dca28","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791393529530.6943}
+[17:18:49.566] control livekit planned 2 sessions
+[17:19:12.403] livekit-h1-O-20261007T171849-1 join_O1 {"sessionId":"PA_RqWLUoVGjmgV"}
+[17:19:14.523] livekit-h1-O-20261007T171849-1 join_O2 {"sessionId":"PA_UDQFtQy2SDvd"}
+[17:19:16.633] livekit-h1-O-20261007T171849-1 join_S {"sessionId":"PA_nfVoh39Bjmsr"}
+[17:19:20.694] livekit-h1-O-20261007T171849-1 media_flowing {}
+[17:19:39.711] livekit-h1-O-20261007T171849-1 arm_O1 {"S":64.74169921875,"O2":64.19482421875}
+[17:19:41.062] livekit-h1-O-20261007T171849-1 arm_O2 {"S":78.7119140625,"O1":68.102783203125}
+[17:19:42.469] livekit-h1-O-20261007T171849-1 arm_S {"O1":64.7705078125,"O2":73.62744140625}
+[17:19:47.470] livekit-h1-O-20261007T171849-1 trigger {"control":"h1","observeS":180}
+[17:20:14.008] livekit-h1-O-20261007T171849-1 bystander_open {"ok":true,"sdk":"2.22.3"}
+[17:20:19.522] livekit-h1-O-20261007T171849-1 bystander_join {"sessionId":"PA_TD5mSu7vBsNY"}
+[17:21:18.884] livekit-h1-O-20261007T171849-1 bystander_leave {"requested":true}
+[17:23:16.858] livekit-h1-O-20261007T171849-1 VALID
+[17:23:39.007] livekit-h2-O-20261007T172316-2 join_O1 {"sessionId":"PA_9R8joJtDrfUd"}
+[17:23:41.078] livekit-h2-O-20261007T172316-2 join_O2 {"sessionId":"PA_jFF8USDsP3YZ"}
+[17:23:43.163] livekit-h2-O-20261007T172316-2 join_S {"sessionId":"PA_ZcJrtZxfcwJ8"}
+[17:23:47.299] livekit-h2-O-20261007T172316-2 media_flowing {}
+[17:24:06.249] livekit-h2-O-20261007T172316-2 arm_O1 {"S":76.64111328125,"O2":69.090576171875}
+[17:24:07.564] livekit-h2-O-20261007T172316-2 arm_O2 {"S":62.66552734375,"O1":71.163330078125}
+[17:24:08.897] livekit-h2-O-20261007T172316-2 arm_S {"O1":73.484375,"O2":75.342529296875}
+[17:24:13.902] livekit-h2-O-20261007T172316-2 trigger {"control":"h2","observeS":180}
+[17:24:40.423] livekit-h2-O-20261007T172316-2 bystander_open {"ok":true,"sdk":"2.22.3"}
+[17:24:46.125] livekit-h2-O-20261007T172316-2 bystander_join_publishing {"sessionId":"PA_MXAzzpmvcjh7"}
+[17:25:45.490] livekit-h2-O-20261007T172316-2 bystander_leave {"requested":true}
+[17:27:42.581] livekit-h2-O-20261007T172316-2 VALID
+[17:27:42.582] control livekit done {"h0":1,"h3":1,"h1":1,"h2":1}
+SHAKEDOWN_EXIT=0
+SHAKEDOWN {"stack":"livekit","sessions":{"h0":{"id":"livekit-h0-O-20261007T163301-2","valid":true,"invalid":[],"condition":"h0-livekit"},"h1":{"id":"livekit-h1-O-20261007T171849-1","valid":true,"invalid":[],"condition":"h1-livekit"},"h2":{"id":"livekit-h2-O-20261007T172316-2","valid":true,"invalid":[],"condition":"h2-livekit"},"h3":{"id":"livekit-h3-O-20261007T163723-3","valid":true,"invalid":[],"condition":"h3-livekit"}},"invalidOrMissing":[],"mute":{"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","mutedForS":10.53,"packetsPerSecondWhileMuted":50.2,"bytesPerPacketWhileMuted":3,"packetsContinued":true},"renegotiationsAfterArming":{"h0":{"S":0,"O1":1,"O2":2},"h1":{"S":0,"O1":1,"O2":2},"h2":{"S":2,"O1":3,"O2":4},"h3":{"S":0,"O1":1,"O2":2}},"h2Renegotiation":{"answeredClientOffers":{"S":[{"afterJoinS":0.04,"afterLeaveS":-59.39},{"afterJoinS":59.66,"afterLeaveS":0.23}],"O1":[{"afterJoinS":0.05,"afterLeaveS":-59.38},{"afterJoinS":59.65,"afterLeaveS":0.23},{"afterJoinS":153.9,"afterLeaveS":94.48}],"O2":[{"afterJoinS":0.07,"afterLeaveS":-59.35},{"afterJoinS":59.66,"afterLeaveS":0.23},{"afterJoinS":153.9,"afterLeaveS":94.47},{"afterJoinS":155.28,"afterLeaveS":95.85}]},"within5sBefore10sAfterBystanderJoin":{"S":1,"O1":1,"O2":1},"confirmedOnAllThree":true}}
+[17:27:43.180] control livekit planned 40 sessions
+[17:28:05.882] livekit-h1-O-20261007T172743-1 join_O1 {"sessionId":"PA_x7PQBa4Uo9GT"}
+[17:28:08.054] livekit-h1-O-20261007T172743-1 join_O2 {"sessionId":"PA_H4QSk8g5pS2z"}
+[17:28:10.212] livekit-h1-O-20261007T172743-1 join_S {"sessionId":"PA_PaPPWfELxgcL"}
+[17:28:14.323] livekit-h1-O-20261007T172743-1 media_flowing {}
+[17:28:33.326] livekit-h1-O-20261007T172743-1 arm_O1 {"S":64.29736328125,"O2":77.187255859375}
+[17:28:34.754] livekit-h1-O-20261007T172743-1 arm_O2 {"S":62.014404296875,"O1":80.517578125}
+[17:28:36.287] livekit-h1-O-20261007T172743-1 arm_S {"O1":65.426025390625,"O2":66.917236328125}
+[17:28:41.288] livekit-h1-O-20261007T172743-1 trigger {"control":"h1","observeS":180}
+[17:29:07.965] livekit-h1-O-20261007T172743-1 bystander_open {"ok":true,"sdk":"2.22.3"}
+[17:29:13.699] livekit-h1-O-20261007T172743-1 bystander_join {"sessionId":"PA_ttkgkAGNMw7T"}
+[17:30:12.642] livekit-h1-O-20261007T172743-1 bystander_leave {"requested":true}
+[17:32:09.327] livekit-h1-O-20261007T172743-1 VALID
+[17:32:31.831] livekit-h1-O-20261007T173209-2 join_O1 {"sessionId":"PA_DczKt3RSq9R8"}
+[17:32:33.892] livekit-h1-O-20261007T173209-2 join_O2 {"sessionId":"PA_PoKmMKZ7TJmu"}
+[17:32:35.939] livekit-h1-O-20261007T173209-2 join_S {"sessionId":"PA_mTBv36fhy4pT"}
+[17:32:40.001] livekit-h1-O-20261007T173209-2 media_flowing {}
+[17:32:58.849] livekit-h1-O-20261007T173209-2 arm_O1 {"S":55.539306640625,"O2":69.529541015625}
+[17:33:00.228] livekit-h1-O-20261007T173209-2 arm_O2 {"S":78.3271484375,"O1":67.705322265625}
+[17:33:01.592] livekit-h1-O-20261007T173209-2 arm_S {"O1":70.667724609375,"O2":76.05078125}
+[17:33:06.593] livekit-h1-O-20261007T173209-2 trigger {"control":"h1","observeS":180}
+[17:33:33.180] livekit-h1-O-20261007T173209-2 bystander_open {"ok":true,"sdk":"2.22.3"}
+[17:33:38.711] livekit-h1-O-20261007T173209-2 bystander_join {"sessionId":"PA_76vfBy3MHNxg"}
+[17:34:37.970] livekit-h1-O-20261007T173209-2 bystander_leave {"requested":true}
+[17:36:33.306] livekit-h1-O-20261007T173209-2 VALID
+[17:36:56.853] livekit-h2-O-20261007T173633-3 join_O1 {"sessionId":"PA_qgUGpreKv2fm"}
+[17:36:59.005] livekit-h2-O-20261007T173633-3 join_O2 {"sessionId":"PA_B8bhcocy6DLC"}
+[17:37:01.148] livekit-h2-O-20261007T173633-3 join_S {"sessionId":"PA_CKyRq47XsmTg"}
+[17:37:05.145] livekit-h2-O-20261007T173633-3 media_flowing {}
+[17:37:23.937] livekit-h2-O-20261007T173633-3 arm_O1 {"S":57.009033203125,"O2":79.385498046875}
+[17:37:25.252] livekit-h2-O-20261007T173633-3 arm_O2 {"S":57.84423828125,"O1":74.9931640625}
+[17:37:26.604] livekit-h2-O-20261007T173633-3 arm_S {"O1":66.0751953125,"O2":68.163818359375}
+[17:37:31.604] livekit-h2-O-20261007T173633-3 trigger {"control":"h2","observeS":180}
+[17:37:58.291] livekit-h2-O-20261007T173633-3 bystander_open {"ok":true,"sdk":"2.22.3"}
+[17:38:04.027] livekit-h2-O-20261007T173633-3 bystander_join_publishing {"sessionId":"PA_p7ri32G3GHLr"}
+[17:39:03.179] livekit-h2-O-20261007T173633-3 bystander_leave {"requested":true}
+[17:41:00.456] livekit-h2-O-20261007T173633-3 VALID
+[17:41:23.364] livekit-h3-O-20261007T174100-4 join_O1 {"sessionId":"PA_iumA4dP28SA6"}
+[17:41:25.478] livekit-h3-O-20261007T174100-4 join_O2 {"sessionId":"PA_CYKABCdQ4Qx8"}
+[17:41:27.652] livekit-h3-O-20261007T174100-4 join_S {"sessionId":"PA_xHnaowjophkH"}
+[17:41:31.739] livekit-h3-O-20261007T174100-4 media_flowing {}
+[17:41:50.869] livekit-h3-O-20261007T174100-4 arm_O1 {"S":65.4560546875,"O2":76.01171875}
+[17:41:52.166] livekit-h3-O-20261007T174100-4 arm_O2 {"S":83.48193359375,"O1":65.410400390625}
+[17:41:53.495] livekit-h3-O-20261007T174100-4 arm_S {"O1":60.345947265625,"O2":65.5166015625}
+[17:41:58.497] livekit-h3-O-20261007T174100-4 trigger {"control":"h3","observeS":180}
+[17:42:27.864] livekit-h3-O-20261007T174100-4 packets_before {"packetsSent":3010,"bytesSent":364225,"statsTimestamp":1791394947928.504,"tPod":1791394947929.3}
+[17:42:29.927] livekit-h3-O-20261007T174100-4 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791394949981.5}
+[17:42:34.637] livekit-h3-O-20261007T174100-4 packets_muted_1 {"packetsSent":3349,"bytesSent":378102,"statsTimestamp":1791394954699.519,"tPod":1791394954700.6}
+[17:42:39.294] livekit-h3-O-20261007T174100-4 packets_muted_2 {"packetsSent":3582,"bytesSent":378801,"statsTimestamp":1791394959362.553,"tPod":1791394959363}
+[17:42:40.629] livekit-h3-O-20261007T174100-4 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791394960691.9001}
+[17:42:45.290] livekit-h3-O-20261007T174100-4 packets_after {"packetsSent":3882,"bytesSent":407315,"statsTimestamp":1791394965354.952,"tPod":1791394965355.6}
+[17:45:23.823] livekit-h3-O-20261007T174100-4 VALID
+[17:45:46.410] livekit-h1-O-20261007T174523-5 join_O1 {"sessionId":"PA_mYyceRXjYcAK"}
+[17:45:48.497] livekit-h1-O-20261007T174523-5 join_O2 {"sessionId":"PA_mPp8BH698Ap4"}
+[17:45:50.619] livekit-h1-O-20261007T174523-5 join_S {"sessionId":"PA_jZJ2AWQst62s"}
+[17:45:54.524] livekit-h1-O-20261007T174523-5 media_flowing {}
+[17:46:12.359] livekit-h1-O-20261007T174523-5 arm_O1 {"S":67.57568359375,"O2":67.843017578125}
+[17:46:13.736] livekit-h1-O-20261007T174523-5 arm_O2 {"S":62.1787109375,"O1":72.59619140625}
+[17:46:15.038] livekit-h1-O-20261007T174523-5 arm_S {"O1":74.30224609375,"O2":73.645263671875}
+[17:46:20.039] livekit-h1-O-20261007T174523-5 trigger {"control":"h1","observeS":180}
+[17:46:46.582] livekit-h1-O-20261007T174523-5 bystander_open {"ok":true,"sdk":"2.22.3"}
+[17:46:52.066] livekit-h1-O-20261007T174523-5 bystander_join {"sessionId":"PA_skimEpxjMEom"}
+[17:47:51.393] livekit-h1-O-20261007T174523-5 bystander_leave {"requested":true}
+[17:49:47.954] livekit-h1-O-20261007T174523-5 VALID
+[17:50:10.357] livekit-h0-O-20261007T174947-6 join_O1 {"sessionId":"PA_vKzQ5iTY7qfS"}
+[17:50:12.405] livekit-h0-O-20261007T174947-6 join_O2 {"sessionId":"PA_QYgYbcxcKQh6"}
+[17:50:14.556] livekit-h0-O-20261007T174947-6 join_S {"sessionId":"PA_djxfQLvdGHrM"}
+[17:50:18.581] livekit-h0-O-20261007T174947-6 media_flowing {}
+[17:50:37.345] livekit-h0-O-20261007T174947-6 arm_O1 {"S":74.130615234375,"O2":67.268798828125}
+[17:50:38.661] livekit-h0-O-20261007T174947-6 arm_O2 {"S":73.90185546875,"O1":72.18017578125}
+[17:50:40.025] livekit-h0-O-20261007T174947-6 arm_S {"O1":72.885009765625,"O2":73.343994140625}
+[17:50:45.025] livekit-h0-O-20261007T174947-6 trigger {"control":"h0","observeS":180}
+[17:54:09.245] livekit-h0-O-20261007T174947-6 VALID
+[17:54:31.581] livekit-h0-O-20261007T175409-7 join_O1 {"sessionId":"PA_b73RxDQ4FKgg"}
+[17:54:33.629] livekit-h0-O-20261007T175409-7 join_O2 {"sessionId":"PA_kJsrDngH6ww5"}
+[17:54:35.781] livekit-h0-O-20261007T175409-7 join_S {"sessionId":"PA_xM4DwUzevk2o"}
+[17:54:39.728] livekit-h0-O-20261007T175409-7 media_flowing {}
+[17:54:58.107] livekit-h0-O-20261007T175409-7 arm_O1 {"S":73.137939453125,"O2":76.500732421875}
+[17:54:59.435] livekit-h0-O-20261007T175409-7 arm_O2 {"S":77.63037109375,"O1":71.88330078125}
+[17:55:00.746] livekit-h0-O-20261007T175409-7 arm_S {"O1":77.763916015625,"O2":69.578369140625}
+[17:55:05.748] livekit-h0-O-20261007T175409-7 trigger {"control":"h0","observeS":180}
+[17:58:28.240] livekit-h0-O-20261007T175409-7 VALID
+[17:58:50.958] livekit-h2-O-20261007T175828-8 join_O1 {"sessionId":"PA_YsBWWuQ5cLFp"}
+[17:58:53.005] livekit-h2-O-20261007T175828-8 join_O2 {"sessionId":"PA_9VW7ZvRkoGyv"}
+[17:58:55.052] livekit-h2-O-20261007T175828-8 join_S {"sessionId":"PA_XA8JWb9RMGFH"}
+[17:58:58.987] livekit-h2-O-20261007T175828-8 media_flowing {}
+[17:59:17.231] livekit-h2-O-20261007T175828-8 arm_O1 {"S":58.235107421875,"O2":74.550537109375}
+[17:59:18.556] livekit-h2-O-20261007T175828-8 arm_O2 {"S":65.575927734375,"O1":63.731689453125}
+[17:59:19.852] livekit-h2-O-20261007T175828-8 arm_S {"O1":60.689208984375,"O2":66.355224609375}
+[17:59:24.855] livekit-h2-O-20261007T175828-8 trigger {"control":"h2","observeS":180}
+[17:59:51.476] livekit-h2-O-20261007T175828-8 bystander_open {"ok":true,"sdk":"2.22.3"}
+[17:59:57.011] livekit-h2-O-20261007T175828-8 bystander_join_publishing {"sessionId":"PA_ozyPXzQES6TY"}
+[18:00:56.200] livekit-h2-O-20261007T175828-8 bystander_leave {"requested":true}
+[18:02:52.236] livekit-h2-O-20261007T175828-8 VALID
+[18:03:14.737] livekit-h1-O-20261007T180252-9 join_O1 {"sessionId":"PA_M8C3S4eu3J5Q"}
+[18:03:16.775] livekit-h1-O-20261007T180252-9 join_O2 {"sessionId":"PA_w8taQ7gszavT"}
+[18:03:18.859] livekit-h1-O-20261007T180252-9 join_S {"sessionId":"PA_eWjgCAA2kUtk"}
+[18:03:22.882] livekit-h1-O-20261007T180252-9 media_flowing {}
+[18:03:40.726] livekit-h1-O-20261007T180252-9 arm_O1 {"S":65.31103515625,"O2":69.60498046875}
+[18:03:42.036] livekit-h1-O-20261007T180252-9 arm_O2 {"S":59.410400390625,"O1":66.321044921875}
+[18:03:43.324] livekit-h1-O-20261007T180252-9 arm_S {"O1":69.590087890625,"O2":59.4287109375}
+[18:03:48.324] livekit-h1-O-20261007T180252-9 trigger {"control":"h1","observeS":180}
+[18:04:14.851] livekit-h1-O-20261007T180252-9 bystander_open {"ok":true,"sdk":"2.22.3"}
+[18:04:20.382] livekit-h1-O-20261007T180252-9 bystander_join {"sessionId":"PA_F6YMueXRvQKH"}
+[18:05:20.000] livekit-h1-O-20261007T180252-9 bystander_leave {"requested":true}
+[18:07:15.051] livekit-h1-O-20261007T180252-9 VALID
+[18:07:37.545] livekit-h2-O-20261007T180715-10 join_O1 {"sessionId":"PA_uWqKXmcoQ4cc"}
+[18:07:39.594] livekit-h2-O-20261007T180715-10 join_O2 {"sessionId":"PA_xUSsWgcFnnqc"}
+[18:07:41.720] livekit-h2-O-20261007T180715-10 join_S {"sessionId":"PA_pC7MeNzFVJAx"}
+[18:07:45.788] livekit-h2-O-20261007T180715-10 media_flowing {}
+[18:08:04.445] livekit-h2-O-20261007T180715-10 arm_O1 {"S":60.091796875,"O2":63.3046875}
+[18:08:05.794] livekit-h2-O-20261007T180715-10 arm_O2 {"S":74.980224609375,"O1":69.556640625}
+[18:08:07.058] livekit-h2-O-20261007T180715-10 arm_S {"O1":67.14453125,"O2":69.69873046875}
+[18:08:12.060] livekit-h2-O-20261007T180715-10 trigger {"control":"h2","observeS":180}
+[18:08:38.631] livekit-h2-O-20261007T180715-10 bystander_open {"ok":true,"sdk":"2.22.3"}
+[18:08:44.263] livekit-h2-O-20261007T180715-10 bystander_join_publishing {"sessionId":"PA_P4vmWAtGHKZq"}
+[18:09:43.422] livekit-h2-O-20261007T180715-10 bystander_leave {"requested":true}
+[18:11:39.759] livekit-h2-O-20261007T180715-10 VALID
+[18:12:02.746] livekit-h3-O-20261007T181139-11 join_O1 {"sessionId":"PA_97e4qinrpb8s"}
+[18:12:04.765] livekit-h3-O-20261007T181139-11 join_O2 {"sessionId":"PA_YtZc3e3xC77X"}
+[18:12:06.916] livekit-h3-O-20261007T181139-11 join_S {"sessionId":"PA_sDkbkVHfwcpo"}
+[18:12:10.968] livekit-h3-O-20261007T181139-11 media_flowing {}
+[18:12:28.958] livekit-h3-O-20261007T181139-11 arm_O1 {"S":78.020751953125,"O2":61.484130859375}
+[18:12:30.285] livekit-h3-O-20261007T181139-11 arm_O2 {"S":77.765380859375,"O1":61.696533203125}
+[18:12:31.642] livekit-h3-O-20261007T181139-11 arm_S {"O1":82.17626953125,"O2":59.93408203125}
+[18:12:36.644] livekit-h3-O-20261007T181139-11 trigger {"control":"h3","observeS":180}
+[18:13:05.956] livekit-h3-O-20261007T181139-11 packets_before {"packetsSent":2955,"bytesSent":357587,"statsTimestamp":1791396786050.537,"tPod":1791396786050.9}
+[18:13:07.972] livekit-h3-O-20261007T181139-11 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791396788062.4}
+[18:13:13.147] livekit-h3-O-20261007T181139-11 packets_muted_1 {"packetsSent":3314,"bytesSent":371760,"statsTimestamp":1791396793240.41,"tPod":1791396793240.9}
+[18:13:17.809] livekit-h3-O-20261007T181139-11 packets_muted_2 {"packetsSent":3547,"bytesSent":372459,"statsTimestamp":1791396797901.204,"tPod":1791396797901.8}
+[18:13:19.094] livekit-h3-O-20261007T181139-11 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791396799185.6}
+[18:13:23.758] livekit-h3-O-20261007T181139-11 packets_after {"packetsSent":3845,"bytesSent":401463,"statsTimestamp":1791396803853.31,"tPod":1791396803854}
+[18:16:02.294] livekit-h3-O-20261007T181139-11 VALID
+[18:16:25.066] livekit-h3-O-20261007T181602-12 join_O1 {"sessionId":"PA_QWJ5aWB4r8DZ"}
+[18:16:27.136] livekit-h3-O-20261007T181602-12 join_O2 {"sessionId":"PA_L4BPJaQugjwg"}
+[18:16:29.264] livekit-h3-O-20261007T181602-12 join_S {"sessionId":"PA_KySqZkKjvT8P"}
+[18:16:33.252] livekit-h3-O-20261007T181602-12 media_flowing {}
+[18:16:51.000] livekit-h3-O-20261007T181602-12 arm_O1 {"S":64.8857421875,"O2":57.673583984375}
+[18:16:52.355] livekit-h3-O-20261007T181602-12 arm_O2 {"S":72.63330078125,"O1":68.784912109375}
+[18:16:53.682] livekit-h3-O-20261007T181602-12 arm_S {"O1":65.595703125,"O2":70.8505859375}
+[18:16:58.682] livekit-h3-O-20261007T181602-12 trigger {"control":"h3","observeS":180}
+[18:17:28.337] livekit-h3-O-20261007T181602-12 packets_before {"packetsSent":2958,"bytesSent":358102,"statsTimestamp":1791397048435.756,"tPod":1791397048436.3}
+[18:17:30.033] livekit-h3-O-20261007T181602-12 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791397050120.6}
+[18:17:34.680] livekit-h3-O-20261007T181602-12 packets_muted_1 {"packetsSent":3275,"bytesSent":369557,"statsTimestamp":1791397054778.499,"tPod":1791397054779.6}
+[18:17:39.308] livekit-h3-O-20261007T181602-12 packets_muted_2 {"packetsSent":3506,"bytesSent":370250,"statsTimestamp":1791397059404.882,"tPod":1791397059405.9001}
+[18:17:40.655] livekit-h3-O-20261007T181602-12 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791397060750.1}
+[18:17:45.322] livekit-h3-O-20261007T181602-12 packets_after {"packetsSent":3806,"bytesSent":398764,"statsTimestamp":1791397065406.089,"tPod":1791397065407.3}
+[18:20:20.902] livekit-h3-O-20261007T181602-12 VALID
+[18:20:43.009] livekit-h3-O-20261007T182020-13 join_O1 {"sessionId":"PA_eYgTprGivsrT"}
+[18:20:45.055] livekit-h3-O-20261007T182020-13 join_O2 {"sessionId":"PA_CFsqKpzuyNom"}
+[18:20:47.102] livekit-h3-O-20261007T182020-13 join_S {"sessionId":"PA_yisDregUsidU"}
+[18:20:51.026] livekit-h3-O-20261007T182020-13 media_flowing {}
+[18:21:08.898] livekit-h3-O-20261007T182020-13 arm_O1 {"S":76.628173828125,"O2":64.17822265625}
+[18:21:10.199] livekit-h3-O-20261007T182020-13 arm_O2 {"S":71.298583984375,"O1":69.9501953125}
+[18:21:11.493] livekit-h3-O-20261007T182020-13 arm_S {"O1":76.305908203125,"O2":75.33642578125}
+[18:21:16.495] livekit-h3-O-20261007T182020-13 trigger {"control":"h3","observeS":180}
+[18:21:45.862] livekit-h3-O-20261007T182020-13 packets_before {"packetsSent":2940,"bytesSent":355834,"statsTimestamp":1791397305965.871,"tPod":1791397305966.8}
+[18:21:47.785] livekit-h3-O-20261007T182020-13 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791397307886.8}
+[18:21:52.364] livekit-h3-O-20261007T182020-13 packets_muted_1 {"packetsSent":3265,"bytesSent":369315,"statsTimestamp":1791397312468.579,"tPod":1791397312469.4001}
+[18:21:57.055] livekit-h3-O-20261007T182020-13 packets_muted_2 {"packetsSent":3497,"bytesSent":370011,"statsTimestamp":1791397317119.183,"tPod":1791397317160.9001}
+[18:21:58.357] livekit-h3-O-20261007T182020-13 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791397318460.2}
+[18:22:02.967] livekit-h3-O-20261007T182020-13 packets_after {"packetsSent":3795,"bytesSent":398283,"statsTimestamp":1791397323070.041,"tPod":1791397323070.6}
+[18:24:41.628] livekit-h3-O-20261007T182020-13 VALID
+[18:25:03.821] livekit-h0-O-20261007T182441-14 join_O1 {"sessionId":"PA_uWRUPnTfVtFf"}
+[18:25:05.884] livekit-h0-O-20261007T182441-14 join_O2 {"sessionId":"PA_xzZ6zA2wcgQR"}
+[18:25:08.019] livekit-h0-O-20261007T182441-14 join_S {"sessionId":"PA_GeaMecorwvvV"}
+[18:25:11.970] livekit-h0-O-20261007T182441-14 media_flowing {}
+[18:25:29.898] livekit-h0-O-20261007T182441-14 arm_O1 {"S":60.803955078125,"O2":62.59375}
+[18:25:31.226] livekit-h0-O-20261007T182441-14 arm_O2 {"S":87.207275390625,"O1":65.10205078125}
+[18:25:32.532] livekit-h0-O-20261007T182441-14 arm_S {"O1":71.081298828125,"O2":71.220458984375}
+[18:25:37.533] livekit-h0-O-20261007T182441-14 trigger {"control":"h0","observeS":180}
+[18:29:02.170] livekit-h0-O-20261007T182441-14 VALID
+[18:29:24.681] livekit-h2-O-20261007T182902-15 join_O1 {"sessionId":"PA_U9YcwNw9iFKp"}
+[18:29:26.831] livekit-h2-O-20261007T182902-15 join_O2 {"sessionId":"PA_5nj2HBPYyuYb"}
+[18:29:29.186] livekit-h2-O-20261007T182902-15 join_S {"sessionId":"PA_RVje9DZvKSLJ"}
+[18:29:33.396] livekit-h2-O-20261007T182902-15 media_flowing {}
+[18:29:51.726] livekit-h2-O-20261007T182902-15 arm_O1 {"S":62.985107421875,"O2":64.72265625}
+[18:29:53.146] livekit-h2-O-20261007T182902-15 arm_O2 {"S":67.134033203125,"O1":77.9658203125}
+[18:29:54.409] livekit-h2-O-20261007T182902-15 arm_S {"O1":66.00439453125,"O2":54.37890625}
+[18:29:59.411] livekit-h2-O-20261007T182902-15 trigger {"control":"h2","observeS":180}
+[18:30:26.023] livekit-h2-O-20261007T182902-15 bystander_open {"ok":true,"sdk":"2.22.3"}
+[18:30:31.655] livekit-h2-O-20261007T182902-15 bystander_join_publishing {"sessionId":"PA_nt6QFCGHUJoY"}
+[18:31:30.822] livekit-h2-O-20261007T182902-15 bystander_leave {"requested":true}
+[18:33:26.021] livekit-h2-O-20261007T182902-15 VALID
+[18:33:48.997] livekit-h2-O-20261007T183326-16 join_O1 {"sessionId":"PA_TuZCTcQaK8rg"}
+[18:33:51.033] livekit-h2-O-20261007T183326-16 join_O2 {"sessionId":"PA_JiCbkLPsptAV"}
+[18:33:53.057] livekit-h2-O-20261007T183326-16 join_S {"sessionId":"PA_XPbeYp8zzLp9"}
+[18:33:57.017] livekit-h2-O-20261007T183326-16 media_flowing {}
+[18:34:14.794] livekit-h2-O-20261007T183326-16 arm_O1 {"S":71.19287109375,"O2":70.1298828125}
+[18:34:16.094] livekit-h2-O-20261007T183326-16 arm_O2 {"S":67.641845703125,"O1":65.045654296875}
+[18:34:17.466] livekit-h2-O-20261007T183326-16 arm_S {"O1":73.491455078125,"O2":72.80224609375}
+[18:34:22.468] livekit-h2-O-20261007T183326-16 trigger {"control":"h2","observeS":180}
+[18:34:49.025] livekit-h2-O-20261007T183326-16 bystander_open {"ok":true,"sdk":"2.22.3"}
+[18:34:54.563] livekit-h2-O-20261007T183326-16 bystander_join_publishing {"sessionId":"PA_rvneySCMKjZo"}
+[18:35:53.818] livekit-h2-O-20261007T183326-16 bystander_leave {"requested":true}
+[18:37:49.275] livekit-h2-O-20261007T183326-16 VALID
+[18:38:11.635] livekit-h3-O-20261007T183749-17 join_O1 {"sessionId":"PA_3UEJuYtwc52Y"}
+[18:38:13.783] livekit-h3-O-20261007T183749-17 join_O2 {"sessionId":"PA_HZUwbxkfgjzU"}
+[18:38:15.839] livekit-h3-O-20261007T183749-17 join_S {"sessionId":"PA_2jckVCSExRHN"}
+[18:38:19.864] livekit-h3-O-20261007T183749-17 media_flowing {}
+[18:38:37.713] livekit-h3-O-20261007T183749-17 arm_O1 {"S":68.8583984375,"O2":73.34521484375}
+[18:38:39.018] livekit-h3-O-20261007T183749-17 arm_O2 {"S":75.442626953125,"O1":65.595703125}
+[18:38:40.356] livekit-h3-O-20261007T183749-17 arm_S {"O1":79.73681640625,"O2":76.88330078125}
+[18:38:45.357] livekit-h3-O-20261007T183749-17 trigger {"control":"h3","observeS":180}
+[18:39:14.708] livekit-h3-O-20261007T183749-17 packets_before {"packetsSent":2943,"bytesSent":356223,"statsTimestamp":1791398354779.883,"tPod":1791398354780.5}
+[18:39:16.692] livekit-h3-O-20261007T183749-17 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791398356755.7}
+[18:39:21.313] livekit-h3-O-20261007T183749-17 packets_muted_1 {"packetsSent":3273,"bytesSent":370309,"statsTimestamp":1791398361382.11,"tPod":1791398361382.8}
+[18:39:25.978] livekit-h3-O-20261007T183749-17 packets_muted_2 {"packetsSent":3506,"bytesSent":371008,"statsTimestamp":1791398366048.396,"tPod":1791398366049.3}
+[18:39:27.278] livekit-h3-O-20261007T183749-17 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791398367346.2}
+[18:39:31.901] livekit-h3-O-20261007T183749-17 packets_after {"packetsSent":3802,"bytesSent":399274,"statsTimestamp":1791398371972.219,"tPod":1791398371972.7}
+[18:42:13.848] livekit-h3-O-20261007T183749-17 VALID
+[18:42:37.259] livekit-h3-O-20261007T184213-18 join_O1 {"sessionId":"PA_TCPeE4MTUNzm"}
+[18:42:39.454] livekit-h3-O-20261007T184213-18 join_O2 {"sessionId":"PA_piYUfr3SntDU"}
+[18:42:41.875] livekit-h3-O-20261007T184213-18 join_S {"sessionId":"PA_3KcJWLJVaXM5"}
+[18:42:46.049] livekit-h3-O-20261007T184213-18 media_flowing {}
+[18:43:04.343] livekit-h3-O-20261007T184213-18 arm_O1 {"S":66.546875,"O2":60.03271484375}
+[18:43:05.776] livekit-h3-O-20261007T184213-18 arm_O2 {"S":72.53076171875,"O1":58.992919921875}
+[18:43:07.150] livekit-h3-O-20261007T184213-18 arm_S {"O1":60.97900390625,"O2":68.34912109375}
+[18:43:12.151] livekit-h3-O-20261007T184213-18 trigger {"control":"h3","observeS":180}
+[18:43:41.959] livekit-h3-O-20261007T184213-18 packets_before {"packetsSent":3009,"bytesSent":364209,"statsTimestamp":1791398622026.705,"tPod":1791398622027.2}
+[18:43:43.874] livekit-h3-O-20261007T184213-18 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791398623936}
+[18:43:49.484] livekit-h3-O-20261007T184213-18 packets_muted_1 {"packetsSent":3385,"bytesSent":377961,"statsTimestamp":1791398629548.596,"tPod":1791398629549.4}
+[18:43:52.821] livekit-h3-O-20261007T184213-18 packets_muted_2 {"packetsSent":3552,"bytesSent":378462,"statsTimestamp":1791398632889.393,"tPod":1791398632889.9}
+[18:43:54.382] livekit-h3-O-20261007T184213-18 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791398634446.2}
+[18:43:59.166] livekit-h3-O-20261007T184213-18 packets_after {"packetsSent":3869,"bytesSent":407735,"statsTimestamp":1791398639230.217,"tPod":1791398639230.7998}
+[18:46:36.909] livekit-h3-O-20261007T184213-18 VALID
+[18:47:00.534] livekit-h0-O-20261007T184636-19 join_O1 {"sessionId":"PA_isjwQvsSgxRo"}
+[18:47:02.684] livekit-h0-O-20261007T184636-19 join_O2 {"sessionId":"PA_2uuvnhhcKbf2"}
+[18:47:04.829] livekit-h0-O-20261007T184636-19 join_S {"sessionId":"PA_4BQW4aH5MgC3"}
+[18:47:09.131] livekit-h0-O-20261007T184636-19 media_flowing {}
+[18:47:27.177] livekit-h0-O-20261007T184636-19 arm_O1 {"S":72.3330078125,"O2":56.88623046875}
+[18:47:28.473] livekit-h0-O-20261007T184636-19 arm_O2 {"S":67.66650390625,"O1":65.709228515625}
+[18:47:29.803] livekit-h0-O-20261007T184636-19 arm_S {"O1":74.203125,"O2":61.070068359375}
+[18:47:34.803] livekit-h0-O-20261007T184636-19 trigger {"control":"h0","observeS":180}
+[18:50:57.096] livekit-h0-O-20261007T184636-19 VALID
+[18:51:19.525] livekit-h1-O-20261007T185057-20 join_O1 {"sessionId":"PA_A9zEe677vK5d"}
+[18:51:21.661] livekit-h1-O-20261007T185057-20 join_O2 {"sessionId":"PA_SMdDxaakqhMy"}
+[18:51:23.913] livekit-h1-O-20261007T185057-20 join_S {"sessionId":"PA_5boqGzbCAVME"}
+[18:51:27.817] livekit-h1-O-20261007T185057-20 media_flowing {}
+[18:51:46.004] livekit-h1-O-20261007T185057-20 arm_O1 {"S":58.677978515625,"O2":55.82958984375}
+[18:51:47.335] livekit-h1-O-20261007T185057-20 arm_O2 {"S":63.7021484375,"O1":69.49853515625}
+[18:51:48.666] livekit-h1-O-20261007T185057-20 arm_S {"O1":73.462890625,"O2":65.5380859375}
+[18:51:53.666] livekit-h1-O-20261007T185057-20 trigger {"control":"h1","observeS":180}
+[18:52:20.110] livekit-h1-O-20261007T185057-20 bystander_open {"ok":true,"sdk":"2.22.3"}
+[18:52:25.762] livekit-h1-O-20261007T185057-20 bystander_join {"sessionId":"PA_7JUxRP5KbQ2E"}
+[18:53:25.360] livekit-h1-O-20261007T185057-20 bystander_leave {"requested":true}
+[18:55:19.499] livekit-h1-O-20261007T185057-20 VALID
+[18:55:42.370] livekit-h3-O-20261007T185519-21 join_O1 {"sessionId":"PA_ARugDmsWGci8"}
+[18:55:44.523] livekit-h3-O-20261007T185519-21 join_O2 {"sessionId":"PA_6acJJFd9rgTk"}
+[18:55:46.673] livekit-h3-O-20261007T185519-21 join_S {"sessionId":"PA_LyvKvyck8zaG"}
+[18:55:50.801] livekit-h3-O-20261007T185519-21 media_flowing {}
+[18:56:08.851] livekit-h3-O-20261007T185519-21 arm_O1 {"S":71.0498046875,"O2":78.940185546875}
+[18:56:10.648] livekit-h3-O-20261007T185519-21 arm_O2 {"S":75.60400390625,"O1":71.560791015625}
+[18:56:12.053] livekit-h3-O-20261007T185519-21 arm_S {"O1":68.320556640625,"O2":65.571044921875}
+[18:56:17.054] livekit-h3-O-20261007T185519-21 trigger {"control":"h3","observeS":180}
+[18:56:46.592] livekit-h3-O-20261007T185519-21 packets_before {"packetsSent":2997,"bytesSent":362721,"statsTimestamp":1791399406660.608,"tPod":1791399406663.6}
+[18:56:48.447] livekit-h3-O-20261007T185519-21 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791399408520.7}
+[18:56:53.290] livekit-h3-O-20261007T185519-21 packets_muted_1 {"packetsSent":3332,"bytesSent":375996,"statsTimestamp":1791399413363.794,"tPod":1791399413365}
+[18:56:58.455] livekit-h3-O-20261007T185519-21 packets_muted_2 {"packetsSent":3590,"bytesSent":376770,"statsTimestamp":1791399418531.574,"tPod":1791399418532.6}
+[18:56:59.845] livekit-h3-O-20261007T185519-21 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791399419920.9}
+[18:57:04.741] livekit-h3-O-20261007T185519-21 packets_after {"packetsSent":3905,"bytesSent":406745,"statsTimestamp":1791399424816.369,"tPod":1791399424816.9}
+[18:59:42.986] livekit-h3-O-20261007T185519-21 VALID
+[19:00:05.945] livekit-h2-O-20261007T185942-22 join_O1 {"sessionId":"PA_uWK2WE2Azx5q"}
+[19:00:08.100] livekit-h2-O-20261007T185942-22 join_O2 {"sessionId":"PA_wcF8WcTKfTmx"}
+[19:00:10.249] livekit-h2-O-20261007T185942-22 join_S {"sessionId":"PA_x5r9j9tvTJhB"}
+[19:00:14.322] livekit-h2-O-20261007T185942-22 media_flowing {}
+[19:00:33.550] livekit-h2-O-20261007T185942-22 arm_O1 {"S":76.634765625,"O2":72.11376953125}
+[19:00:34.863] livekit-h2-O-20261007T185942-22 arm_O2 {"S":74.406494140625,"O1":63.59619140625}
+[19:00:36.171] livekit-h2-O-20261007T185942-22 arm_S {"O1":73.125244140625,"O2":63.703369140625}
+[19:00:41.176] livekit-h2-O-20261007T185942-22 trigger {"control":"h2","observeS":180}
+[19:01:07.720] livekit-h2-O-20261007T185942-22 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:01:13.347] livekit-h2-O-20261007T185942-22 bystander_join_publishing {"sessionId":"PA_VMwcRrbRcZkZ"}
+[19:02:13.582] livekit-h2-O-20261007T185942-22 bystander_leave {"requested":true}
+[19:04:10.419] livekit-h2-O-20261007T185942-22 VALID
+[19:04:34.647] livekit-h3-O-20261007T190410-23 join_O1 {"sessionId":"PA_LRFica2UiSr9"}
+[19:04:37.251] livekit-h3-O-20261007T190410-23 join_O2 {"sessionId":"PA_nxxbiB892amN"}
+[19:04:39.789] livekit-h3-O-20261007T190410-23 join_S {"sessionId":"PA_hXD9eajnpVk8"}
+[19:04:44.761] livekit-h3-O-20261007T190410-23 media_flowing {}
+[19:05:03.837] livekit-h3-O-20261007T190410-23 arm_O1 {"S":61.93896484375,"O2":62.618408203125}
+[19:05:05.235] livekit-h3-O-20261007T190410-23 arm_O2 {"S":70.9462890625,"O1":63.389892578125}
+[19:05:06.670] livekit-h3-O-20261007T190410-23 arm_S {"O1":67.052978515625,"O2":67.325439453125}
+[19:05:11.671] livekit-h3-O-20261007T190410-23 trigger {"control":"h3","observeS":180}
+[19:05:42.287] livekit-h3-O-20261007T190410-23 packets_before {"packetsSent":3127,"bytesSent":378426,"statsTimestamp":1791399942347.548,"tPod":1791399942349.2998}
+[19:05:43.684] livekit-h3-O-20261007T190410-23 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791399943732.4}
+[19:05:47.118] livekit-h3-O-20261007T190410-23 packets_muted_1 {"packetsSent":3369,"bytesSent":389008,"statsTimestamp":1791399947179.257,"tPod":1791399947179.7998}
+[19:05:52.232] livekit-h3-O-20261007T190410-23 packets_muted_2 {"packetsSent":3624,"bytesSent":389773,"statsTimestamp":1791399952289.743,"tPod":1791399952290.9}
+[19:05:53.681] livekit-h3-O-20261007T190410-23 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791399953738.0999}
+[19:05:58.761] livekit-h3-O-20261007T190410-23 packets_after {"packetsSent":3951,"bytesSent":420846,"statsTimestamp":1791399958819.49,"tPod":1791399958820}
+[19:08:35.212] livekit-h3-O-20261007T190410-23 VALID
+[19:08:57.532] livekit-h0-O-20261007T190835-24 join_O1 {"sessionId":"PA_4EGjvXR7YZhk"}
+[19:08:59.542] livekit-h0-O-20261007T190835-24 join_O2 {"sessionId":"PA_UraZDTMsmxLL"}
+[19:09:01.729] livekit-h0-O-20261007T190835-24 join_S {"sessionId":"PA_ynWNYuPUB5UX"}
+[19:09:05.780] livekit-h0-O-20261007T190835-24 media_flowing {}
+[19:09:23.655] livekit-h0-O-20261007T190835-24 arm_O1 {"S":65.351318359375,"O2":74.418701171875}
+[19:09:24.958] livekit-h0-O-20261007T190835-24 arm_O2 {"S":69.880615234375,"O1":86.38232421875}
+[19:09:26.248] livekit-h0-O-20261007T190835-24 arm_S {"O1":73.47119140625,"O2":60.291015625}
+[19:09:31.250] livekit-h0-O-20261007T190835-24 trigger {"control":"h0","observeS":180}
+[19:12:56.130] livekit-h0-O-20261007T190835-24 VALID
+[19:13:18.858] livekit-h1-O-20261007T191256-25 join_O1 {"sessionId":"PA_B5kbd6kTwm5z"}
+[19:13:21.011] livekit-h1-O-20261007T191256-25 join_O2 {"sessionId":"PA_QAKEZHcgt3Dx"}
+[19:13:23.133] livekit-h1-O-20261007T191256-25 join_S {"sessionId":"PA_KnzUrQiNrbRC"}
+[19:13:27.135] livekit-h1-O-20261007T191256-25 media_flowing {}
+[19:13:45.448] livekit-h1-O-20261007T191256-25 arm_O1 {"S":65.018798828125,"O2":72.4609375}
+[19:13:46.801] livekit-h1-O-20261007T191256-25 arm_O2 {"S":63.660888671875,"O1":80.373046875}
+[19:13:48.102] livekit-h1-O-20261007T191256-25 arm_S {"O1":64.2197265625,"O2":72.077880859375}
+[19:13:53.102] livekit-h1-O-20261007T191256-25 trigger {"control":"h1","observeS":180}
+[19:14:19.636] livekit-h1-O-20261007T191256-25 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:14:25.213] livekit-h1-O-20261007T191256-25 bystander_join {"sessionId":"PA_4h57ia2AR9JR"}
+[19:15:24.470] livekit-h1-O-20261007T191256-25 bystander_leave {"requested":true}
+[19:17:19.811] livekit-h1-O-20261007T191256-25 VALID
+[19:17:42.129] livekit-h2-O-20261007T191719-26 join_O1 {"sessionId":"PA_o9NMRp8i7Gp9"}
+[19:17:44.157] livekit-h2-O-20261007T191719-26 join_O2 {"sessionId":"PA_9Ejkiq2rGqaz"}
+[19:17:46.226] livekit-h2-O-20261007T191719-26 join_S {"sessionId":"PA_aAStFin3n8sg"}
+[19:17:50.172] livekit-h2-O-20261007T191719-26 media_flowing {}
+[19:18:07.936] livekit-h2-O-20261007T191719-26 arm_O1 {"S":68.506103515625,"O2":61.169921875}
+[19:18:09.291] livekit-h2-O-20261007T191719-26 arm_O2 {"S":67.291259765625,"O1":65.882568359375}
+[19:18:10.590] livekit-h2-O-20261007T191719-26 arm_S {"O1":78.3955078125,"O2":62.940673828125}
+[19:18:15.592] livekit-h2-O-20261007T191719-26 trigger {"control":"h2","observeS":180}
+[19:18:42.136] livekit-h2-O-20261007T191719-26 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:18:47.721] livekit-h2-O-20261007T191719-26 bystander_join_publishing {"sessionId":"PA_CoUEabm9FAVt"}
+[19:19:46.951] livekit-h2-O-20261007T191719-26 bystander_leave {"requested":true}
+[19:21:42.308] livekit-h2-O-20261007T191719-26 VALID
+[19:22:04.487] livekit-h2-O-20261007T192142-27 join_O1 {"sessionId":"PA_JVjAU5z5fZDP"}
+[19:22:06.620] livekit-h2-O-20261007T192142-27 join_O2 {"sessionId":"PA_LfNWMcE6FEPQ"}
+[19:22:08.777] livekit-h2-O-20261007T192142-27 join_S {"sessionId":"PA_sfRirziSG64s"}
+[19:22:12.875] livekit-h2-O-20261007T192142-27 media_flowing {}
+[19:22:31.808] livekit-h2-O-20261007T192142-27 arm_O1 {"S":77.242919921875,"O2":86.658935546875}
+[19:22:33.453] livekit-h2-O-20261007T192142-27 arm_O2 {"S":75.195556640625,"O1":66.128662109375}
+[19:22:34.829] livekit-h2-O-20261007T192142-27 arm_S {"O1":65.970458984375,"O2":58.946533203125}
+[19:22:39.829] livekit-h2-O-20261007T192142-27 trigger {"control":"h2","observeS":180}
+[19:23:06.401] livekit-h2-O-20261007T192142-27 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:23:12.232] livekit-h2-O-20261007T192142-27 bystander_join_publishing {"sessionId":"PA_uaLKEyCKmzpy"}
+[19:24:12.293] livekit-h2-O-20261007T192142-27 bystander_leave {"requested":true}
+[19:26:05.927] livekit-h2-O-20261007T192142-27 VALID
+[19:26:27.867] livekit-h2-O-20261007T192605-28 join_O1 {"sessionId":"PA_KZmKN2ogcwRk"}
+[19:26:29.889] livekit-h2-O-20261007T192605-28 join_O2 {"sessionId":"PA_yqdTmugsgy4L"}
+[19:26:31.932] livekit-h2-O-20261007T192605-28 join_S {"sessionId":"PA_KC3xzoQmEx9T"}
+[19:26:35.918] livekit-h2-O-20261007T192605-28 media_flowing {}
+[19:26:53.992] livekit-h2-O-20261007T192605-28 arm_O1 {"S":71.175048828125,"O2":69.994873046875}
+[19:26:55.293] livekit-h2-O-20261007T192605-28 arm_O2 {"S":66.577392578125,"O1":72.648681640625}
+[19:26:56.653] livekit-h2-O-20261007T192605-28 arm_S {"O1":65.634765625,"O2":70.18115234375}
+[19:27:01.654] livekit-h2-O-20261007T192605-28 trigger {"control":"h2","observeS":180}
+[19:27:28.125] livekit-h2-O-20261007T192605-28 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:27:33.800] livekit-h2-O-20261007T192605-28 bystander_join_publishing {"sessionId":"PA_d7huXPhT6CjV"}
+[19:28:33.049] livekit-h2-O-20261007T192605-28 bystander_leave {"requested":true}
+[19:30:28.317] livekit-h2-O-20261007T192605-28 VALID
+[19:30:50.313] livekit-h0-O-20261007T193028-29 join_O1 {"sessionId":"PA_as33Ctcgnuui"}
+[19:30:52.350] livekit-h0-O-20261007T193028-29 join_O2 {"sessionId":"PA_nPYcaj9L3fGe"}
+[19:30:54.474] livekit-h0-O-20261007T193028-29 join_S {"sessionId":"PA_E2MRYwFeCuEM"}
+[19:30:59.562] livekit-h0-O-20261007T193028-29 media_flowing {}
+[19:31:17.523] livekit-h0-O-20261007T193028-29 arm_O1 {"S":71.89990234375,"O2":58.970703125}
+[19:31:18.823] livekit-h0-O-20261007T193028-29 arm_O2 {"S":60.017333984375,"O1":64.717529296875}
+[19:31:20.119] livekit-h0-O-20261007T193028-29 arm_S {"O1":72.65966796875,"O2":71.215576171875}
+[19:31:25.120] livekit-h0-O-20261007T193028-29 trigger {"control":"h0","observeS":180}
+[19:34:47.307] livekit-h0-O-20261007T193028-29 VALID
+[19:35:09.887] livekit-h1-O-20261007T193447-30 join_O1 {"sessionId":"PA_NYbthpJwyGBg"}
+[19:35:11.912] livekit-h1-O-20261007T193447-30 join_O2 {"sessionId":"PA_xduxPFudFKWJ"}
+[19:35:13.963] livekit-h1-O-20261007T193447-30 join_S {"sessionId":"PA_gDgrNMaRHwYx"}
+[19:35:17.908] livekit-h1-O-20261007T193447-30 media_flowing {}
+[19:35:35.736] livekit-h1-O-20261007T193447-30 arm_O1 {"S":65.34814453125,"O2":70.969482421875}
+[19:35:37.071] livekit-h1-O-20261007T193447-30 arm_O2 {"S":76.846435546875,"O1":73.662353515625}
+[19:35:38.390] livekit-h1-O-20261007T193447-30 arm_S {"O1":69.52490234375,"O2":62.232177734375}
+[19:35:43.392] livekit-h1-O-20261007T193447-30 trigger {"control":"h1","observeS":180}
+[19:36:09.878] livekit-h1-O-20261007T193447-30 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:36:15.438] livekit-h1-O-20261007T193447-30 bystander_join {"sessionId":"PA_KuicEB7HwT8j"}
+[19:37:14.780] livekit-h1-O-20261007T193447-30 bystander_leave {"requested":true}
+[19:39:09.529] livekit-h1-O-20261007T193447-30 VALID
+[19:39:32.244] livekit-h2-O-20261007T193909-31 join_O1 {"sessionId":"PA_rbhjEvB9JVLZ"}
+[19:39:34.311] livekit-h2-O-20261007T193909-31 join_O2 {"sessionId":"PA_JqYNPy4KtEmk"}
+[19:39:36.388] livekit-h2-O-20261007T193909-31 join_S {"sessionId":"PA_XjYuvQCYsXNV"}
+[19:39:40.360] livekit-h2-O-20261007T193909-31 media_flowing {}
+[19:39:58.709] livekit-h2-O-20261007T193909-31 arm_O1 {"S":72.0498046875,"O2":54.384521484375}
+[19:40:00.025] livekit-h2-O-20261007T193909-31 arm_O2 {"S":73.177978515625,"O1":69.525634765625}
+[19:40:01.370] livekit-h2-O-20261007T193909-31 arm_S {"O1":71.05419921875,"O2":59.41015625}
+[19:40:06.371] livekit-h2-O-20261007T193909-31 trigger {"control":"h2","observeS":180}
+[19:40:33.074] livekit-h2-O-20261007T193909-31 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:40:38.859] livekit-h2-O-20261007T193909-31 bystander_join_publishing {"sessionId":"PA_FtCefUBFYnJv"}
+[19:41:38.044] livekit-h2-O-20261007T193909-31 bystander_leave {"requested":true}
+[19:43:38.115] livekit-h2-O-20261007T193909-31 VALID
+[19:44:03.280] livekit-h3-O-20261007T194338-32 join_O1 {"sessionId":"PA_V6m598H3ujDE"}
+[19:44:05.447] livekit-h3-O-20261007T194338-32 join_O2 {"sessionId":"PA_frgNyJqSDfBE"}
+[19:44:07.542] livekit-h3-O-20261007T194338-32 join_S {"sessionId":"PA_WCWVZVYKZbWQ"}
+[19:44:11.783] livekit-h3-O-20261007T194338-32 media_flowing {}
+[19:44:29.838] livekit-h3-O-20261007T194338-32 arm_O1 {"S":60.405029296875,"O2":71.9658203125}
+[19:44:31.253] livekit-h3-O-20261007T194338-32 arm_O2 {"S":71.7392578125,"O1":66.72265625}
+[19:44:32.619] livekit-h3-O-20261007T194338-32 arm_S {"O1":71.27099609375,"O2":65.35498046875}
+[19:44:37.620] livekit-h3-O-20261007T194338-32 trigger {"control":"h3","observeS":180}
+[19:45:07.044] livekit-h3-O-20261007T194338-32 packets_before {"packetsSent":2975,"bytesSent":359926,"statsTimestamp":1791402307119.585,"tPod":1791402307120.2998}
+[19:45:08.980] livekit-h3-O-20261007T194338-32 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791402309054.9}
+[19:45:13.762] livekit-h3-O-20261007T194338-32 packets_muted_1 {"packetsSent":3311,"bytesSent":373912,"statsTimestamp":1791402313837.503,"tPod":1791402313838.7}
+[19:45:18.526] livekit-h3-O-20261007T194338-32 packets_muted_2 {"packetsSent":3549,"bytesSent":374626,"statsTimestamp":1791402318603.84,"tPod":1791402318604.4}
+[19:45:19.882] livekit-h3-O-20261007T194338-32 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791402319959.5}
+[19:45:24.672] livekit-h3-O-20261007T194338-32 packets_after {"packetsSent":3857,"bytesSent":403990,"statsTimestamp":1791402324747.423,"tPod":1791402324747.9}
+[19:48:01.860] livekit-h3-O-20261007T194338-32 VALID
+[19:48:25.753] livekit-h2-O-20261007T194801-33 join_O1 {"sessionId":"PA_eqx3zzzCmS9c"}
+[19:48:27.956] livekit-h2-O-20261007T194801-33 join_O2 {"sessionId":"PA_SvSWFgAW73sr"}
+[19:48:30.088] livekit-h2-O-20261007T194801-33 join_S {"sessionId":"PA_FuDR4F2me2gv"}
+[19:48:34.236] livekit-h2-O-20261007T194801-33 media_flowing {}
+[19:48:53.250] livekit-h2-O-20261007T194801-33 arm_O1 {"S":68.2431640625,"O2":84.4482421875}
+[19:48:54.642] livekit-h2-O-20261007T194801-33 arm_O2 {"S":68.005126953125,"O1":65.320068359375}
+[19:48:56.148] livekit-h2-O-20261007T194801-33 arm_S {"O1":71.72705078125,"O2":62.65673828125}
+[19:49:01.150] livekit-h2-O-20261007T194801-33 trigger {"control":"h2","observeS":180}
+[19:49:27.739] livekit-h2-O-20261007T194801-33 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:49:33.600] livekit-h2-O-20261007T194801-33 bystander_join_publishing {"sessionId":"PA_geejXJxQ2fD2"}
+[19:50:33.261] livekit-h2-O-20261007T194801-33 bystander_leave {"requested":true}
+[19:52:28.661] livekit-h2-O-20261007T194801-33 VALID
+[19:52:52.530] livekit-h1-O-20261007T195228-34 join_O1 {"sessionId":"PA_YkcsVzpCTEGK"}
+[19:52:54.698] livekit-h1-O-20261007T195228-34 join_O2 {"sessionId":"PA_MyN3tsxGGqAK"}
+[19:52:56.843] livekit-h1-O-20261007T195228-34 join_S {"sessionId":"PA_qQkKcgd6Zgza"}
+[19:53:00.941] livekit-h1-O-20261007T195228-34 media_flowing {}
+[19:53:18.949] livekit-h1-O-20261007T195228-34 arm_O1 {"S":67.75146484375,"O2":60.771484375}
+[19:53:20.559] livekit-h1-O-20261007T195228-34 arm_O2 {"S":62.70263671875,"O1":67.56298828125}
+[19:53:21.994] livekit-h1-O-20261007T195228-34 arm_S {"O1":73.2265625,"O2":72.904541015625}
+[19:53:26.993] livekit-h1-O-20261007T195228-34 trigger {"control":"h1","observeS":180}
+[19:53:53.531] livekit-h1-O-20261007T195228-34 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:53:59.142] livekit-h1-O-20261007T195228-34 bystander_join {"sessionId":"PA_KFTBrcrqxrFg"}
+[19:54:59.242] livekit-h1-O-20261007T195228-34 bystander_leave {"requested":true}
+[19:56:55.913] livekit-h1-O-20261007T195228-34 VALID
+[19:57:19.820] livekit-h2-O-20261007T195655-35 join_O1 {"sessionId":"PA_mBi2c7z4zvGz"}
+[19:57:22.055] livekit-h2-O-20261007T195655-35 join_O2 {"sessionId":"PA_3asMVq29Coj2"}
+[19:57:24.144] livekit-h2-O-20261007T195655-35 join_S {"sessionId":"PA_kRovDiQS3hXd"}
+[19:57:28.521] livekit-h2-O-20261007T195655-35 media_flowing {}
+[19:57:46.742] livekit-h2-O-20261007T195655-35 arm_O1 {"S":87.705810546875,"O2":72.24267578125}
+[19:57:48.150] livekit-h2-O-20261007T195655-35 arm_O2 {"S":74.208251953125,"O1":74.864013671875}
+[19:57:49.698] livekit-h2-O-20261007T195655-35 arm_S {"O1":71.820556640625,"O2":72.06787109375}
+[19:57:54.699] livekit-h2-O-20261007T195655-35 trigger {"control":"h2","observeS":180}
+[19:58:21.415] livekit-h2-O-20261007T195655-35 bystander_open {"ok":true,"sdk":"2.22.3"}
+[19:58:27.024] livekit-h2-O-20261007T195655-35 bystander_join_publishing {"sessionId":"PA_rPkx97QRMNz8"}
+[19:59:26.969] livekit-h2-O-20261007T195655-35 bystander_leave {"requested":true}
+[20:01:25.011] livekit-h2-O-20261007T195655-35 VALID
+[20:01:49.415] livekit-h3-O-20261007T200125-36 join_O1 {"sessionId":"PA_5xwG4jvNacXA"}
+[20:01:51.706] livekit-h3-O-20261007T200125-36 join_O2 {"sessionId":"PA_UixJqimnGZus"}
+[20:01:53.926] livekit-h3-O-20261007T200125-36 join_S {"sessionId":"PA_Dh9ss3gSH7zP"}
+[20:01:58.278] livekit-h3-O-20261007T200125-36 media_flowing {}
+[20:02:16.939] livekit-h3-O-20261007T200125-36 arm_O1 {"S":60.31494140625,"O2":77.16943359375}
+[20:02:18.327] livekit-h3-O-20261007T200125-36 arm_O2 {"S":57.120361328125,"O1":70.069580078125}
+[20:02:19.726] livekit-h3-O-20261007T200125-36 arm_S {"O1":62.2509765625,"O2":67.024658203125}
+[20:02:24.726] livekit-h3-O-20261007T200125-36 trigger {"control":"h3","observeS":180}
+[20:02:54.590] livekit-h3-O-20261007T200125-36 packets_before {"packetsSent":3034,"bytesSent":367234,"statsTimestamp":1791403374716.713,"tPod":1791403374717.6}
+[20:02:56.132] livekit-h3-O-20261007T200125-36 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791403376259.4001}
+[20:03:01.058] livekit-h3-O-20261007T200125-36 packets_muted_1 {"packetsSent":3357,"bytesSent":378703,"statsTimestamp":1791403381187.04,"tPod":1791403381187.6}
+[20:03:05.997] livekit-h3-O-20261007T200125-36 packets_muted_2 {"packetsSent":3604,"bytesSent":379444,"statsTimestamp":1791403386125.019,"tPod":1791403386125.7}
+[20:03:07.468] livekit-h3-O-20261007T200125-36 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791403387593}
+[20:03:12.404] livekit-h3-O-20261007T200125-36 packets_after {"packetsSent":3924,"bytesSent":409552,"statsTimestamp":1791403392528.084,"tPod":1791403392528.8}
+[20:05:48.922] livekit-h3-O-20261007T200125-36 VALID
+[20:06:11.672] livekit-h3-O-20261007T200548-37 join_O1 {"sessionId":"PA_XRRVEDu6Aejc"}
+[20:06:13.774] livekit-h3-O-20261007T200548-37 join_O2 {"sessionId":"PA_f4Ga9ys8YXvR"}
+[20:06:15.927] livekit-h3-O-20261007T200548-37 join_S {"sessionId":"PA_cpey7DjTf2jp"}
+[20:06:19.988] livekit-h3-O-20261007T200548-37 media_flowing {}
+[20:06:38.292] livekit-h3-O-20261007T200548-37 arm_O1 {"S":75.74560546875,"O2":65.366455078125}
+[20:06:39.555] livekit-h3-O-20261007T200548-37 arm_O2 {"S":70.7939453125,"O1":63.01708984375}
+[20:06:40.829] livekit-h3-O-20261007T200548-37 arm_S {"O1":81.35546875,"O2":78.19677734375}
+[20:06:45.831] livekit-h3-O-20261007T200548-37 trigger {"control":"h3","observeS":180}
+[20:07:15.216] livekit-h3-O-20261007T200548-37 packets_before {"packetsSent":2965,"bytesSent":359122,"statsTimestamp":1791403635347.618,"tPod":1791403635349.7}
+[20:07:17.142] livekit-h3-O-20261007T200548-37 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791403637270.5}
+[20:07:21.850] livekit-h3-O-20261007T200548-37 packets_muted_1 {"packetsSent":3297,"bytesSent":372270,"statsTimestamp":1791403641977.141,"tPod":1791403641977.7}
+[20:07:27.025] livekit-h3-O-20261007T200548-37 packets_muted_2 {"packetsSent":3555,"bytesSent":373044,"statsTimestamp":1791403647139.088,"tPod":1791403647139.6}
+[20:07:28.856] livekit-h3-O-20261007T200548-37 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791403648987.8}
+[20:07:32.528] livekit-h3-O-20261007T200548-37 packets_after {"packetsSent":3831,"bytesSent":395586,"statsTimestamp":1791403652662.237,"tPod":1791403652662.8}
+[20:10:10.990] livekit-h3-O-20261007T200548-37 VALID
+[20:10:33.531] livekit-h0-O-20261007T201010-38 join_O1 {"sessionId":"PA_2QrGyrTNd4Kn"}
+[20:10:35.677] livekit-h0-O-20261007T201010-38 join_O2 {"sessionId":"PA_Z2MVeFqwbA3q"}
+[20:10:37.935] livekit-h0-O-20261007T201010-38 join_S {"sessionId":"PA_dh8Ui82DbJS5"}
+[20:10:41.923] livekit-h0-O-20261007T201010-38 media_flowing {}
+[20:10:59.565] livekit-h0-O-20261007T201010-38 arm_O1 {"S":70.725341796875,"O2":70.44580078125}
+[20:11:00.899] livekit-h0-O-20261007T201010-38 arm_O2 {"S":79.197021484375,"O1":68.46630859375}
+[20:11:02.258] livekit-h0-O-20261007T201010-38 arm_S {"O1":64.5693359375,"O2":75.2294921875}
+[20:11:07.259] livekit-h0-O-20261007T201010-38 trigger {"control":"h0","observeS":180}
+[20:14:29.812] livekit-h0-O-20261007T201010-38 VALID
+[20:14:52.203] livekit-h0-O-20261007T201429-39 join_O1 {"sessionId":"PA_ZjvK6hx9PFmd"}
+[20:14:54.317] livekit-h0-O-20261007T201429-39 join_O2 {"sessionId":"PA_yq57ZheKeu4p"}
+[20:14:56.401] livekit-h0-O-20261007T201429-39 join_S {"sessionId":"PA_dcMZ4URGWiEB"}
+[20:15:00.536] livekit-h0-O-20261007T201429-39 media_flowing {}
+[20:15:18.380] livekit-h0-O-20261007T201429-39 arm_O1 {"S":68.64501953125,"O2":71.394775390625}
+[20:15:19.656] livekit-h0-O-20261007T201429-39 arm_O2 {"S":68.3623046875,"O1":79.274169921875}
+[20:15:20.950] livekit-h0-O-20261007T201429-39 arm_S {"O1":69.881103515625,"O2":63.89501953125}
+[20:15:25.952] livekit-h0-O-20261007T201429-39 trigger {"control":"h0","observeS":180}
+[20:18:48.309] livekit-h0-O-20261007T201429-39 VALID
+[20:19:10.560] livekit-h3-O-20261007T201848-40 join_O1 {"sessionId":"PA_5L8ZqAYivmVt"}
+[20:19:12.643] livekit-h3-O-20261007T201848-40 join_O2 {"sessionId":"PA_D2CusaqA45X5"}
+[20:19:14.758] livekit-h3-O-20261007T201848-40 join_S {"sessionId":"PA_goqGBE6kxJHQ"}
+[20:19:18.738] livekit-h3-O-20261007T201848-40 media_flowing {}
+[20:19:36.504] livekit-h3-O-20261007T201848-40 arm_O1 {"S":83.654052734375,"O2":70.44482421875}
+[20:19:37.796] livekit-h3-O-20261007T201848-40 arm_O2 {"S":75.78857421875,"O1":66.175537109375}
+[20:19:39.058] livekit-h3-O-20261007T201848-40 arm_S {"O1":84.683349609375,"O2":65.90380859375}
+[20:19:44.060] livekit-h3-O-20261007T201848-40 trigger {"control":"h3","observeS":180}
+[20:20:13.351] livekit-h3-O-20261007T201848-40 packets_before {"packetsSent":2933,"bytesSent":354797,"statsTimestamp":1791404413386.837,"tPod":1791404413387.3}
+[20:20:15.380] livekit-h3-O-20261007T201848-40 mute_on {"muted":true,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":false,"isMuted":true,"tPod":1791404415409.9}
+[20:20:19.988] livekit-h3-O-20261007T201848-40 packets_muted_1 {"packetsSent":3265,"bytesSent":368771,"statsTimestamp":1791404420026.82,"tPod":1791404420027.4}
+[20:20:24.647] livekit-h3-O-20261007T201848-40 packets_muted_2 {"packetsSent":3497,"bytesSent":369467,"statsTimestamp":1791404424661.417,"tPod":1791404424680.1}
+[20:20:25.958] livekit-h3-O-20261007T201848-40 mute_off {"muted":false,"mechanism":"livekit-client LocalTrackPublication.mute()/unmute()","enabled":true,"isMuted":false,"tPod":1791404425983.9}
+[20:20:30.588] livekit-h3-O-20261007T201848-40 packets_after {"packetsSent":3795,"bytesSent":397857,"statsTimestamp":1791404430622.192,"tPod":1791404430622.7}
+[20:23:08.829] livekit-h3-O-20261007T201848-40 VALID
+[20:23:08.830] control livekit done {"h1":8,"h2":12,"h3":12,"h0":8}
+CONTROL_EXIT=0
+=== CONTROL_DONE livekit 2026-10-07T20:23:08Z
+=== PARK 2026-10-07T20:23:08Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update b49ea0a6-a148-33c7-b897-4da6d8e6fa0a submitted
+==> EKS update b49ea0a6-a148-33c7-b897-4da6d8e6fa0a: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 2s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 35s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 68s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 101s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 135s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 168s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 202s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 235s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 268s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 302s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 335s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 368s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 402s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 435s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 468s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 502s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 536s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 568s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 601s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 633s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 666s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 699s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 732s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 764s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 797s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 831s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 865s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 898s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 931s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 964s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 996s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1030s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-07T20:40:46Z
