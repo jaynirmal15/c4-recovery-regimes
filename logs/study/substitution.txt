@@ -1,0 +1,29 @@
+trials 215 | receiver-defined interruption, total s: 6069
+
+== livekit: trials 150 | survived 109 | rebuilt 41 | interruption total 3901 s
+ rule 1: no membership event in 109 of 109 surviving interruptions (6.1–42.9 s each, total 2731 s; lasting 15 s or more: 86, 30 s or more: 39)
+         rebuilds: event 19.6–21.8 s after first stale (median 20.6), after 59.0–80.0 % of the interruption; return reported -0.6–-0.2 s relative to fresh again
+ rule 2: S listed present for 3580 of 3901 s of interruption = 91.8%
+ rule 3: downtime from membership events 314 of 3901 s = 8.0% | trials with any: 41 of 150
+ rule 5 (LiveKit, client-facing): quality interval 3760 of 3901 s = 96.4% | per trial, interval minus interruption -10.8–17.4 s | differs by more than 5 s in 75 of 150
+
+== janus: trials 65 | survived 55 | rebuilt 10 | interruption total 2167 s
+ rule 1: no membership event in 55 of 55 surviving interruptions (1.5–56.7 s each, total 1359 s; lasting 15 s or more: 30, 30 s or more: 24)
+         rebuilds: event 59.8–60.8 s after first stale (median 60.2), after 66.0–87.0 % of the interruption; return reported -1.0–-0.4 s relative to fresh again
+ rule 2: S listed present for 1965 of 2167 s of interruption = 90.7%
+ rule 3: downtime from membership events 200 of 2167 s = 9.2% | trials with any: 10 of 65
+ rule 4 (Janus): events in 61 of 65 | downtime from reception events 1924 of 2167 s = 88.8%
+         full: 1498 of 1572 s = 95.3% | per-trial shortfall 1.0–3.2 s
+         media-only: 426 of 595 s = 71.6% | per-trial shortfall 1.2–15.1 s
+         no event: full 2 s, full 2 s, media-only 2 s, media-only 2 s
+
+== both: trials 215 | survived 164 | rebuilt 51 | interruption total 6069 s
+ rule 1: no membership event in 164 of 164 surviving interruptions (1.5–56.7 s each, total 4090 s; lasting 15 s or more: 116, 30 s or more: 63)
+         rebuilds: event 19.6–60.8 s after first stale (median 20.7), after 59.0–87.0 % of the interruption; return reported -1.0–-0.2 s relative to fresh again
+ rule 2: S listed present for 5545 of 6069 s of interruption = 91.4%
+ rule 3: downtime from membership events 514 of 6069 s = 8.5% | trials with any: 51 of 215
+ rule 4 (Janus): events in 61 of 65 | downtime from reception events 1924 of 2167 s = 88.8%
+         full: 1498 of 1572 s = 95.3% | per-trial shortfall 1.0–3.2 s
+         media-only: 426 of 595 s = 71.6% | per-trial shortfall 1.2–15.1 s
+         no event: full 2 s, full 2 s, media-only 2 s, media-only 2 s
+ rule 5 (LiveKit, client-facing): quality interval 3760 of 3901 s = 96.4% | per trial, interval minus interruption -10.8–17.4 s | differs by more than 5 s in 75 of 150
