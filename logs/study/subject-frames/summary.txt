@@ -1,0 +1,8 @@
+LiveKit retained trials: 150
+with a reconnect response to S (reply to a resume): 109
+with a leave message to S carrying a reason: 81
+with neither: 0
+frames by kind: {"reconnect":264,"leave STATE_MISMATCH/RECONNECT":41,"leave CONNECTION_TIMEOUT/RESUME":40}
+by outcome: survived 109 of which with a reconnect response 109 | rebuilt 41 of which with a leave 41
+example study-r2/livekit-iso-media-23s-O-20261002T161609-20 [{"frame":61,"t":7.05,"kind":"reconnect"},{"frame":86,"t":14.25,"kind":"reconnect"},{"frame":110,"t":21.45,"kind":"reconnect"},{"frame":126,"t":22.08,"kind":"leave","reason":"CONNECTION_TIMEOUT","action":"RESUME"},{"frame":129,"t":23.65,"kind":"reconnect"}]
+example study/livekit-iso-all-23s-O-20261002T061000-19 [{"frame":60,"t":27.21,"kind":"leave","reason":"STATE_MISMATCH","action":"RECONNECT"}]
