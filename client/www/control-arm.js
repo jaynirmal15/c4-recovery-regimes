@@ -30,6 +30,15 @@
     return { key, before, value: window.C4.params[key] };
   };
 
+  /** Timeout intervention: the signal-connection timeout livekit-client applies to the join and to every resume
+   *  (RoomConnectOptions.websocketTimeout, default 15 s). Must be called before the join; lk.js passes it to
+   *  room.connect. Every arm, the 15 s one included, sets it through this call. */
+  window.C4.ctlSetAttemptTimeout = (ms) => {
+    if (!(ms >= 1000) || adapter) throw new Error(`ctlSetAttemptTimeout: needs a value of 1000 ms or more, before the join (got ${ms}, joined ${!!adapter})`);
+    C4X.websocketTimeoutMs = ms; C4X.log('ctl_attempt_timeout', { ms });
+    return { ms: C4X.websocketTimeoutMs };
+  };
+
   /** One read of the publisher's outbound audio RTP counters (not a sampler). */
   window.C4.ctlPackets = async () => {
     const pc = isLk() ? null : adapter.pub.pc; const report = isLk() ? await lkPub().track.sender.getStats() : await pc.getStats();

@@ -1,0 +1,104 @@
+// R3 (REGISTRATION-R3-attempt-timeout.md): scoring. Read-only; applies the registered rules and nothing else.
+// usage, from the repository root, after `npm ci`: node client/runner/r3-score.mjs [dir=timeout] > logs/timeout/SCORE.md
+// Trial set: every directory under <dir> that holds a result.json with a control.wsTimeoutMs, enumerated from the
+// filesystem. Invalid trials are listed and not scored. Times are seconds after isolation onset. Frozen quantities are
+// the registration's; none is fitted here.
+import fs from 'node:fs'; import path from 'node:path'; import { createRequire } from 'node:module';
+const P = createRequire(import.meta.url)('@livekit/protocol');
+const UNIT = 1.033, SCHEDULE = [0, 1, 2, 3, 4, 5, 7, 11, 19, 35], ARRIVAL_TOL = 0.10, NEAR = 0.16, LIFE_TOL_MS = 50, EARLY = 6.5;
+const PLAN = { W10: [14, 15, 16, 17], W15: [18, 19], W25: [18, 19, 26, 28] };
+// registered predictions. P: does the first attempt's request get a response. S: survive or rebuild ('A' = rests on assumption A, 'desc' = descriptive)
+const PRED_P = { 'W10-14': true, 'W10-15': false, 'W10-16': false, 'W10-17': false, 'W15-18': true, 'W15-19': false, 'W25-18': true, 'W25-19': true, 'W25-26': true, 'W25-28': false };
+const PRED_S = { 'W10-14': 'survive', 'W10-15': 'A', 'W10-16': 'desc', 'W10-17': 'rebuild', 'W15-18': 'survive', 'W15-19': 'rebuild', 'W25-18': 'survive', 'W25-19': 'rebuild', 'W25-26': 'rebuild', 'W25-28': 'rebuild' };
+const BOUNDARY = { W10: [14, 15], W15: [18, 19], W25: [26, 28] };
+const dir = process.argv[2] || 'timeout'; const r2 = (x) => (x == null ? null : +x.toFixed(2)); const f2 = (x) => (x == null ? '–' : x.toFixed(2));
+const rng = (v) => (v.length ? `${Math.min(...v).toFixed(2)}–${Math.max(...v).toFixed(2)}` : '–');
+
+function serverIce(d, r, S, t0) { // the server's own report of ICE failure for S, where its log covers the interval
+  const p = path.join(d, 'server-livekit.log'); if (!fs.existsSync(p)) return { usable: false, why: 'missing' };
+  const off = (r.clock && r.clock.sfu && r.clock.sfu.offsetMs) || 0; const rows = [];
+  for (const l of fs.readFileSync(p, 'utf8').split('\n')) { const m = l.match(/^(\S+)\s+(\S+)\t(\w+)\t(\S+)\t(\S+)\t([^\t]*)\t?(.*)$/); if (!m) continue; try { rows.push({ t: Date.parse(m[2]) - off, msg: m[6], j: JSON.parse(m[7]) }); } catch { /* not a JSON line */ } }
+  if (!rows.length) return { usable: false, why: 'empty' };
+  const lastAct = Math.max(t0, ...S.driver.actions.map((a) => a.tEnd || a.tStart));
+  if (rows[0].t > t0 || rows[rows.length - 1].t < lastAct) return { usable: false, why: 'does not cover onset to last action' };
+  const pid0 = (S.log.filter((l) => l.type === 'lk_joined' && l.t < t0).pop() || {}).sid || null;
+  const st = (s) => rows.filter((x) => x.t > t0 && x.j.participant === 'S' && x.msg === 'ice connection state change' && x.j.transport === 'PUBLISHER' && x.j.state === s && x.j.participantID === pid0).map((x) => (x.t - t0) / 1000);
+  const rm = rows.find((x) => x.t > t0 && x.msg === 'participant closing' && x.j.participantID === pid0 && x.j.reason !== 'CLIENT_REQUEST_LEAVE');
+  return { usable: true, disconnected: r2(st('disconnected')[0]), failed: r2(st('failed')[0]), removal: rm ? r2((rm.t - t0) / 1000) : null };
+}
+
+const rows = [], invalid = [];
+for (const name of fs.readdirSync(dir).sort()) {
+  const d = path.join(dir, name); if (!fs.existsSync(path.join(d, 'result.json'))) continue;
+  const r = JSON.parse(fs.readFileSync(path.join(d, 'result.json'), 'utf8')); if (!r.control || !r.control.wsTimeoutMs || !r.iso) continue;
+  if (!r.valid) { invalid.push({ id: r.id, why: r.invalid }); continue; }
+  const S = JSON.parse(fs.readFileSync(path.join(d, 'S.json'), 'utf8')); const t0 = r.iso.onset.after; const rel = (t) => (t - t0) / 1000;
+  const T = r.control.wsTimeoutMs / 1000, arm = r.control.arm, D = r.iso.plannedS, cell = `${arm}-${D}`;
+  const acts = S.driver.actions; const a1 = acts.find((a) => a.kind === 'transport_restart');
+  const open = a1 && S.frames.find((f) => f.dir === 'open' && f.t >= a1.tStart);
+  const row = { id: r.id, arm, T, D, cell, restore: rel(r.iso.restore.after), begin: a1 ? rel(a1.tStart) : null, open: open ? rel(open.t) : null, end: a1 && a1.tEnd ? rel(a1.tEnd) : null, early: !!(a1 && rel(a1.tStart) < EARLY) };
+  // P: any frame from the server on the first attempt's connection before that attempt ended, and its type
+  let resp = null;
+  if (open) for (const f of S.frames) { if (f.dir !== 'in' || f.ws !== open.ws || !f.b64 || f.t < open.t || (a1.tEnd && f.t > a1.tEnd)) continue; let m = null; try { m = P.SignalResponse.fromBinary(Buffer.from(f.b64, 'base64')).message; } catch { /* undecodable */ }
+    resp = { t: rel(f.t), type: !m ? 'undecoded' : m.case === 'reconnect' ? 'accepted' : m.case === 'leave' ? `refused ${P.DisconnectReason[m.value.reason]}/${P.LeaveRequest_Action[m.value.action]}` : `other:${m.case}` }; break; }
+  row.responded = !!resp; row.response = resp ? resp.type : null; row.responseAt = resp ? resp.t : null;
+  // M: the frozen schedule from this trial's own open time
+  if (open) { const k = SCHEDULE.find((p) => row.open + p * UNIT > row.restore); const inst = k == null ? null : row.open + k * UNIT; const fire = row.begin + T;
+    row.predPoint = k ?? null; row.predArrive = inst; row.predRespond = inst != null && inst < fire;
+    row.near = SCHEDULE.some((p) => { const x = row.restore - (row.open + p * UNIT); return x > 0 && x < NEAR; });
+    row.mHit = row.predRespond === row.responded && (!row.responded || Math.abs(row.responseAt - inst) <= ARRIVAL_TOL); }
+  // S: survive or rebuild, from the driver's own actions
+  const rb = acts.find((a) => a.kind === 'rebuild' && a.result && a.result.ok); row.outcome = rb ? 'rebuild' : 'survive'; row.rebuildDone = rb ? rel(rb.tEnd) : null;
+  const a2 = acts.filter((a) => a.kind === 'transport_restart')[1]; row.second = a2 ? { begin: r2(rel(a2.tStart)), result: a2.result && (a2.result.ok ? 'accepted' : a2.result.refused || a2.result.detail) } : null;
+  row.lifetimesMs = r.control.unansweredAttemptLifetimesMs || []; row.ice = serverIce(d, r, S, t0);
+  rows.push(row);
+}
+
+const out = []; const say = (s = '') => out.push(s);
+say(`# R3 score (${dir}/)`); say();
+say(`Valid trials scored: ${rows.length}. Invalid, listed and not scored: ${invalid.length}${invalid.length ? ' (' + invalid.map((x) => x.id).join('; ') + ')' : ''}.`);
+const cells = Object.entries(PLAN).flatMap(([a, ds]) => ds.map((D) => `${a}-${D}`)); const of = (c) => rows.filter((x) => x.cell === c);
+say(`Cells short of ten valid trials: ${cells.filter((c) => of(c).length < 10).map((c) => `${c} (${of(c).length})`).join(', ') || 'none'}; over ten: ${cells.filter((c) => of(c).length > 10).map((c) => `${c} (${of(c).length})`).join(', ') || 'none'}.`);
+
+say(); say('## Manipulation check'); say();
+const failedArms = new Set();
+for (const a of Object.keys(PLAN)) { const g = rows.filter((x) => x.arm === a); const L = g.flatMap((x) => x.lifetimesMs); const bad = L.filter((x) => Math.abs(x - g[0].T * 1000) > LIFE_TOL_MS);
+  if (!L.length || bad.length) failedArms.add(a);
+  say(`- ${a}: ${L.length} unanswered attempts in ${g.filter((x) => x.lifetimesMs.length).length} trials; lifetime ${L.length ? Math.min(...L) + '–' + Math.max(...L) + ' ms' : '–'}; outside ${LIFE_TOL_MS} ms of the set value: ${bad.length}. ${!L.length ? 'NO LIFETIME OBSERVED' : bad.length ? '**FAILED MANIPULATION: arm excluded, not evidence against the model**' : 'passes'}`); }
+
+say(); say('## Primary rule P: the first attempt\'s request receives a response'); say();
+say('| Cell | Valid | Responded | of which accepted | of which refused | Predicted | Reading |'); say('|---|---|---|---|---|---|---|');
+const cnt = {}; for (const c of cells) { const g = of(c); const y = g.filter((x) => x.responded); cnt[c] = { n: g.length, y: y.length };
+  const reading = !g.length ? 'no trials' : PRED_P[c] ? (y.length >= 9 ? 'as predicted' : y.length <= 1 ? 'AGAINST' : 'split') : (y.length <= 1 ? 'as predicted' : y.length >= 9 ? 'AGAINST' : 'split');
+  say(`| ${c} | ${g.length} | ${y.length} | ${y.filter((x) => x.response === 'accepted').length} | ${y.filter((x) => String(x.response).startsWith('refused')).length} | ${PRED_P[c] ? 'responds' : 'no response'} | ${reading} |`); }
+say();
+for (const [a, ds] of Object.entries(PLAN)) { let found = null; for (let i = 0; i < ds.length - 1; i++) { const lo = cnt[`${a}-${ds[i]}`], hi = cnt[`${a}-${ds[i + 1]}`]; if (lo.n && hi.n && lo.y >= 9 && hi.y <= 1) found = [ds[i], ds[i + 1]]; }
+  const split = ds.filter((D) => { const c = cnt[`${a}-${D}`]; return c.y >= 2 && c.y <= 8; });
+  const verdict = failedArms.has(a) ? 'arm excluded (failed manipulation)' : split.length ? `NOT RESOLVED (split at ${split.join(', ')} s)` : !found ? 'NO BOUNDARY among the tested durations' : found[0] === BOUNDARY[a][0] && found[1] === BOUNDARY[a][1] ? `boundary at ${found.join('/')}: AS PREDICTED` : `boundary at ${found.join('/')}: AGAINST (predicted ${BOUNDARY[a].join('/')})`;
+  say(`- ${a}: ${verdict}`); }
+say(); say(`Trials whose first attempt began before ${EARLY} s (decoder defect), counted as they fell: ${rows.filter((x) => x.early).map((x) => `${x.id} (${x.cell}, ${x.responded ? 'responded' : 'no response'})`).join('; ') || 'none'}.`);
+
+say(); say('## Secondary rule M: per-trial timing'); say();
+const scor = rows.filter((x) => x.open != null); const apart = scor.filter((x) => x.near), main = scor.filter((x) => !x.near);
+say(`Trials with a first connection: ${scor.length} of ${rows.length}. Set apart (restore within ${NEAR} s after a schedule instant): ${apart.length}, of which hits ${apart.filter((x) => x.mHit).length}.`);
+for (const a of [...Object.keys(PLAN), 'all']) { const g = main.filter((x) => a === 'all' || x.arm === a); const resp = g.filter((x) => x.responded && x.predArrive != null);
+  say(`- ${a}: ${g.filter((x) => x.mHit).length} hits of ${g.length} | response classified correctly ${g.filter((x) => x.predRespond === x.responded).length} | arrival minus predicted, where a response came: ${rng(resp.map((x) => x.responseAt - x.predArrive))} s (${resp.length})`); }
+const miss = main.filter((x) => !x.mHit); if (miss.length) { say(); say('Misses: ' + miss.map((x) => `${x.id} open ${f2(x.open)} restore ${f2(x.restore)} predicted ${x.predRespond ? 'response at ' + f2(x.predArrive) : 'no response'}; observed ${x.responded ? x.response + ' at ' + f2(x.responseAt) : 'none'}`).join(' | ')); }
+
+say(); say('## Derived rule S: survive or rebuild'); say();
+say('| Cell | Valid | Survive | Rebuild | Rebuild completed (s) | Predicted | Reading |'); say('|---|---|---|---|---|---|---|');
+for (const c of cells) { const g = of(c); const sv = g.filter((x) => x.outcome === 'survive').length, rb = g.length - sv; const p = PRED_S[c];
+  const reading = !g.length ? 'no trials' : p === 'survive' ? (sv >= 9 ? 'as predicted' : 'AGAINST') : p === 'rebuild' ? (rb >= 9 ? 'as predicted' : 'AGAINST') : p === 'A' ? (sv >= 7 ? 'assumption A holds' : sv <= 2 ? 'assumption A false (boundary 14/15); not evidence about the equation' : 'unresolved') : 'descriptive, no verdict (expected about 2 of 10 under A, 0 otherwise)';
+  say(`| ${c} | ${g.length} | ${sv} | ${rb} | ${rng(g.filter((x) => x.rebuildDone != null).map((x) => x.rebuildDone))} | ${p === 'A' ? 'under A: 7 or more survive' : p === 'desc' ? 'none' : p + ', 9 or more'} | ${reading} |`); }
+say(); say('Timing parts of S: W25-19 and W25-26 rebuilds completed by 28 s: ' + ['W25-19', 'W25-26'].map((c) => `${c} ${of(c).filter((x) => x.rebuildDone != null && x.rebuildDone <= 28).length} of ${of(c).filter((x) => x.outcome === 'rebuild').length}`).join(', ') + `; W25-28 rebuilds completed after 37 s: ${of('W25-28').filter((x) => x.rebuildDone != null && x.rebuildDone > 37).length} of ${of('W25-28').filter((x) => x.outcome === 'rebuild').length}.`);
+
+say(); say('## Assumption A observed directly: the server\'s ICE report, W10-15 and W10-16'); say();
+for (const c of ['W10-15', 'W10-16']) { const g = of(c); const u = g.filter((x) => x.ice.usable);
+  const agree = u.filter((x) => (x.ice.failed == null) === (x.outcome === 'survive')).length;
+  say(`- ${c}: server log usable in ${u.length} of ${g.length}. No ICE failure reported: ${u.filter((x) => x.ice.failed == null).length}; failure reported: ${u.filter((x) => x.ice.failed != null).length} (at ${rng(u.filter((x) => x.ice.failed != null).map((x) => x.ice.failed))} s). Outcome agrees with the report (no failure and survive, or failure and rebuild): ${agree} of ${u.length}. Survivors whose second attempt was accepted: ${g.filter((x) => x.outcome === 'survive' && x.second && x.second.result === 'accepted').length} of ${g.filter((x) => x.outcome === 'survive').length}.`); }
+const allU = rows.filter((x) => x.ice.usable); say(`- all cells: server log usable in ${allU.length} of ${rows.length}; ICE failure reported at ${rng(allU.filter((x) => x.ice.failed != null).map((x) => x.ice.failed))} s (${allU.filter((x) => x.ice.failed != null).length}); removal minus failure ${rng(allU.filter((x) => x.ice.removal != null && x.ice.failed != null).map((x) => x.ice.removal - x.ice.failed))} s.`);
+
+say(); say('## Recorded times'); say();
+say(`First attempt begins ${rng(rows.filter((x) => !x.early && x.begin != null).map((x) => x.begin))} s; connection opened ${rng(rows.filter((x) => !x.early && x.open != null).map((x) => x.open))} s; restore minus nominal ${rng(rows.map((x) => x.restore - x.D))} s.`);
+console.log(out.join('\n'));
+fs.mkdirSync('logs/timeout', { recursive: true }); fs.writeFileSync(`logs/timeout/score-${path.basename(dir)}.json`, JSON.stringify(rows, null, 1));

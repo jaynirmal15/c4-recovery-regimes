@@ -4,6 +4,7 @@
 //   node run.mjs setup | switch <stack> | targeted <stack> <test> <n> [arm] | placement-selftest <stack>
 //   C4_CONTROL=1 C4_CLIENT_BUILD=pre-sampler node run.mjs control <stack>   (healthy-session control arm)
 //   C4_CONTROL=1 C4_CLIENT_BUILD=pre-sampler node run.mjs threshold livekit (R2: detection threshold, REGISTRATION-R2-detection-threshold.md)
+//   C4_CONTROL=1 C4_CLIENT_BUILD=pre-sampler node run.mjs timeout livekit   (R3: attempt timeout, REGISTRATION-R3-attempt-timeout.md)
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -250,7 +251,7 @@ function abort(trialId, stack, pre) {
 let seq = 0;
 async function trial(stack, test, arm, opt = {}) {
   const stamp = nowIso().replace(/[-:]/g, '').replace(/\..*/, '');
-  const id = test === 'isolation' ? `${stack}-iso-${opt.mode}-${opt.durS}s-${arm}-${opt.mediaAgeMs ? `T${opt.mediaAgeMs / 1000}-` : ''}${stamp}-${++seq}` : `${stack}-${test}-${arm}-${stamp}-${++seq}`;
+  const id = test === 'isolation' ? `${stack}-iso-${opt.mode}-${opt.durS}s-${arm}-${opt.mediaAgeMs ? `T${opt.mediaAgeMs / 1000}-` : ''}${opt.wsTimeoutMs ? `W${opt.wsTimeoutMs / 1000}-` : ''}${stamp}-${++seq}` : `${stack}-${test}-${arm}-${stamp}-${++seq}`;
   const pre = preconditions(stack);
   if (!pre.ok) { abort(id, stack, pre); return { id, aborted: true, failed: pre.failed, stop: pre.stop }; }
   const s = sfu(stack);
@@ -272,6 +273,8 @@ async function trial(stack, test, arm, opt = {}) {
   try {
     if (stack === 'janus') { const r = pod(PODS.S, 'POST', '/admin/janus', { httpUrl: s.http, body: { request: 'create', room, publishers: 6, audiocodec: 'opus', notify_joining: true, permanent: false } }); mark('janus_room', r); }
     for (const who of ['O1', 'O2', 'S']) pod(PODS[who], 'POST', '/open', { ctx: 'main' });
+    // R3: every arm sets the SDK's signal-connection timeout through the same call, on the subject only, before the join
+    if (opt.wsTimeoutMs) { const r = pod(PODS.S, 'POST', '/eval', { ctx: 'main', fn: 'ctlSetAttemptTimeout', args: [opt.wsTimeoutMs] }); mark('attempt_timeout_set', r); if (r.ms !== opt.wsTimeoutMs) invalid.push(`attempt timeout not set: ${JSON.stringify(r)}`); }
     for (const who of ['O1', 'O2', 'S']) mark(`join_${who}`, pod(PODS[who], 'POST', '/join', { ctx: 'main', cfg: cfgFor(who) }));
     // wait for fresh media from every remote at every participant (<= 25 s)
     for (let i = 0; i < 50; i++) {
@@ -397,6 +400,13 @@ async function trial(stack, test, arm, opt = {}) {
     if (inForce !== opt.mediaAgeMs) invalid.push(`detection threshold in the subject's record is ${inForce}, not ${opt.mediaAgeMs}`);
     control = { registration: 'REGISTRATION-R2-detection-threshold.md', arm: `T${opt.mediaAgeMs / 1000}`, mediaAgeMs: opt.mediaAgeMs, mediaAgeMsInSubjectRecord: inForce, build: pre.build, nodeInfo: pre.nodeInfo, clientKernel: pre.clientKernel };
   }
+  if (opt.wsTimeoutMs) {
+    const L = dumps.S ? dumps.S.log : []; const inForce = (L.filter((l) => l.type === 'lk_websocket_timeout').pop() || {}).ms ?? null;
+    if (inForce !== opt.wsTimeoutMs) invalid.push(`attempt timeout passed to room.connect in the subject's record is ${inForce}, not ${opt.wsTimeoutMs}`);
+    // lifetime of each restart attempt that ended unanswered, as the driver recorded it: the manipulation check reads these
+    const acts = dumps.S && dumps.S.driver ? dumps.S.driver.actions.filter((x) => x.kind === 'transport_restart' && x.result && x.result.ok === false && !x.result.refused && x.tEnd != null) : [];
+    control = { registration: 'REGISTRATION-R3-attempt-timeout.md', arm: `W${opt.wsTimeoutMs / 1000}`, wsTimeoutMs: opt.wsTimeoutMs, wsTimeoutMsInSubjectRecord: inForce, unansweredAttemptLifetimesMs: acts.map((x) => Math.round(x.tEnd - x.tStart)), build: pre.build, nodeInfo: pre.nodeInfo, clientKernel: pre.clientKernel };
+  }
   if (['h1', 'h2'].includes(test) && !(dumps.B && dumps.B.log.some((l) => (l.type === 'driver_state' && l.state === 'left') || l.type === 'ctl_bystander_left'))) invalid.push('bystander did not leave (no left state in its dump)');
   if (CONTROL_TESTS.includes(test)) {
     // The same arm label is NOT the same condition on the two stacks: each record names its own condition.
@@ -512,6 +522,35 @@ else if (cmd === 'study') {
     fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried, remaining: queue.length }));
   }
   log('threshold', stack, 'done', JSON.stringify(have));
+} else if (cmd === 'timeout') {
+  // R3 (REGISTRATION-R3-attempt-timeout.md). LiveKit only, full isolation. Arms are the SDK's signal-connection timeout:
+  // W10 at 14, 15, 16, 17 s; W15 at 18, 19 s; W25 at 18, 19, 26, 28 s; ten trials a cell; one randomized order; resumable.
+  const stack = a[0];
+  if (stack !== 'livekit' || !CONTROL) { console.error('timeout: LiveKit only, with C4_CONTROL=1 and C4_CLIENT_BUILD=pre-sampler'); process.exit(2); }
+  const PLAN = { W10: [14, 15, 16, 17], W15: [18, 19], W25: [18, 19, 26, 28] }; const PER = Number(process.env.C4_PER_CELL || 10);
+  // C4_CELLS=W10-17:1,W15-19:1,W25-28:1 runs just those cells (the shakedown)
+  const CELLS = process.env.C4_CELLS ? process.env.C4_CELLS.split(',').map((x) => { const [k, n] = x.split(':'); const [w, d] = k.split('-'); return { arm: w, durS: Number(d), n: Number(n) }; }) : Object.entries(PLAN).flatMap(([w, ds]) => ds.map((d) => ({ arm: w, durS: d, n: PER })));
+  for (const c of CELLS) { c.wsTimeoutMs = Number(c.arm.slice(1)) * 1000; if (!PLAN[c.arm] || !PLAN[c.arm].includes(c.durS)) { console.error(`timeout: ${c.arm}-${c.durS} is not a registered cell`); process.exit(2); } }
+  const key = (c) => `${c.arm}-${c.durS}`; const dirT = path.join(ROOT, TRIALS); fs.mkdirSync(dirT, { recursive: true });
+  const have = {}; const tried = {};
+  for (const d of fs.readdirSync(dirT)) { const f = path.join(dirT, d, 'result.json'); if (!fs.existsSync(f)) continue; const r = JSON.parse(fs.readFileSync(f, 'utf8')); if (!r.iso || !r.control || !r.control.wsTimeoutMs) continue; const k = `${r.control.arm}-${r.iso.plannedS}`; tried[k] = (tried[k] || 0) + 1; if (r.valid) have[k] = (have[k] || 0) + 1; }
+  const queue = []; for (const c of CELLS) for (let i = have[key(c)] || 0; i < c.n; i++) queue.push(c);
+  for (let i = queue.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [queue[i], queue[j]] = [queue[j], queue[i]]; }
+  fs.appendFileSync(path.join(dirT, `order-${stack}.jsonl`), JSON.stringify({ t: nowIso(), planned: queue.map(key) }) + '\n');
+  log('timeout', stack, `planned ${queue.length} trials`);
+  let aborts = 0;
+  while (queue.length) {
+    const c = queue.shift(); const k = key(c);
+    const r = await trial(stack, 'isolation', 'O', { mode: 'all', durS: c.durS, wsTimeoutMs: c.wsTimeoutMs });
+    if (r && r.aborted && r.stop) { log('timeout', `STOP: ${r.failed.join(' | ')}`); process.exit(5); }
+    if (r && r.aborted) { aborts++; if (aborts > 10) { log('timeout', 'too many precondition aborts: stopping'); process.exit(3); } await sleep(30000); queue.push(c); continue; }
+    tried[k] = (tried[k] || 0) + 1;
+    if (r && r.valid) have[k] = (have[k] || 0) + 1;
+    else if (tried[k] < c.n + 3) queue.push(c); // replace an invalid trial, at most 3 extra attempts per cell
+    else log('timeout', `cell ${k}: attempts exhausted with ${have[k] || 0}/${c.n} valid`);
+    fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried, remaining: queue.length }));
+  }
+  log('timeout', stack, 'done', JSON.stringify(have));
 } else if (cmd === 'shakedown') {
   // STAGE-A-SPEC §4.2: 2 arms x 2 modes x {10 s, 30 s} x 3 reps = 24 trials per stack, reps interleaved.
   const stack = a[0]; const reps = Number(a[1] || 3);

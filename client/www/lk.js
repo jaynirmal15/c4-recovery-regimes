@@ -87,7 +87,11 @@
 
     async #connect() {
       this.room = this.#makeRoom();
-      await this.room.connect(this.o.url, this.o.token, { autoSubscribe: true });
+      // Timeout intervention only: C4X.websocketTimeoutMs is set by control-arm.js before the join. Unset in every other
+      // run, in which livekit-client's default applies (websocketTimeout 15 s). The SDK reuses the value on every resume.
+      const wsT = C4X.websocketTimeoutMs;
+      if (wsT) C4X.log('lk_websocket_timeout', { ms: wsT });
+      await this.room.connect(this.o.url, this.o.token, wsT ? { autoSubscribe: true, websocketTimeout: wsT } : { autoSubscribe: true });
       this.engine = this.room.engine;
       this.#installHooks(this.engine);
       this.terminated = null;
