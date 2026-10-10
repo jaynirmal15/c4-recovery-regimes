@@ -1,4 +1,5 @@
 // R3 (REGISTRATION-R3-attempt-timeout.md): scoring. Read-only; applies the registered rules and nothing else.
+// The rules are stated for ten valid trials a cell; a cell with fewer prints "incomplete" and no verdict.
 // usage, from the repository root, after `npm ci`: node client/runner/r3-score.mjs [dir=timeout] > logs/timeout/SCORE.md
 // Trial set: every directory under <dir> that holds a result.json with a control.wsTimeoutMs, enumerated from the
 // filesystem. Invalid trials are listed and not scored. Times are seconds after isolation onset. Frozen quantities are
@@ -69,12 +70,13 @@ for (const a of Object.keys(PLAN)) { const g = rows.filter((x) => x.arm === a); 
 say(); say('## Primary rule P: the first attempt\'s request receives a response'); say();
 say('| Cell | Valid | Responded | of which accepted | of which refused | Predicted | Reading |'); say('|---|---|---|---|---|---|---|');
 const cnt = {}; for (const c of cells) { const g = of(c); const y = g.filter((x) => x.responded); cnt[c] = { n: g.length, y: y.length };
-  const reading = !g.length ? 'no trials' : PRED_P[c] ? (y.length >= 9 ? 'as predicted' : y.length <= 1 ? 'AGAINST' : 'split') : (y.length <= 1 ? 'as predicted' : y.length >= 9 ? 'AGAINST' : 'split');
+  const reading = !g.length ? 'no trials' : g.length < 10 ? `incomplete (${g.length} of 10 valid): the rule defines no verdict` : PRED_P[c] ? (y.length >= 9 ? 'as predicted' : y.length <= 1 ? 'AGAINST' : 'split') : (y.length <= 1 ? 'as predicted' : y.length >= 9 ? 'AGAINST' : 'split');
   say(`| ${c} | ${g.length} | ${y.length} | ${y.filter((x) => x.response === 'accepted').length} | ${y.filter((x) => String(x.response).startsWith('refused')).length} | ${PRED_P[c] ? 'responds' : 'no response'} | ${reading} |`); }
 say();
 for (const [a, ds] of Object.entries(PLAN)) { let found = null; for (let i = 0; i < ds.length - 1; i++) { const lo = cnt[`${a}-${ds[i]}`], hi = cnt[`${a}-${ds[i + 1]}`]; if (lo.n && hi.n && lo.y >= 9 && hi.y <= 1) found = [ds[i], ds[i + 1]]; }
   const split = ds.filter((D) => { const c = cnt[`${a}-${D}`]; return c.y >= 2 && c.y <= 8; });
-  const verdict = failedArms.has(a) ? 'arm excluded (failed manipulation)' : split.length ? `NOT RESOLVED (split at ${split.join(', ')} s)` : !found ? 'NO BOUNDARY among the tested durations' : found[0] === BOUNDARY[a][0] && found[1] === BOUNDARY[a][1] ? `boundary at ${found.join('/')}: AS PREDICTED` : `boundary at ${found.join('/')}: AGAINST (predicted ${BOUNDARY[a].join('/')})`;
+  const short = ds.filter((D) => cnt[`${a}-${D}`].n < 10);
+  const verdict = failedArms.has(a) ? 'arm excluded (failed manipulation)' : short.length ? `incomplete (fewer than ten valid trials at ${short.join(', ')} s): the rule defines no verdict` : split.length ? `NOT RESOLVED (split at ${split.join(', ')} s)` : !found ? 'NO BOUNDARY among the tested durations' : found[0] === BOUNDARY[a][0] && found[1] === BOUNDARY[a][1] ? `boundary at ${found.join('/')}: AS PREDICTED` : `boundary at ${found.join('/')}: AGAINST (predicted ${BOUNDARY[a].join('/')})`;
   say(`- ${a}: ${verdict}`); }
 say(); say(`Trials whose first attempt began before ${EARLY} s (decoder defect), counted as they fell: ${rows.filter((x) => x.early).map((x) => `${x.id} (${x.cell}, ${x.responded ? 'responded' : 'no response'})`).join('; ') || 'none'}.`);
 
@@ -88,7 +90,7 @@ const miss = main.filter((x) => !x.mHit); if (miss.length) { say(); say('Misses:
 say(); say('## Derived rule S: survive or rebuild'); say();
 say('| Cell | Valid | Survive | Rebuild | Rebuild completed (s) | Predicted | Reading |'); say('|---|---|---|---|---|---|---|');
 for (const c of cells) { const g = of(c); const sv = g.filter((x) => x.outcome === 'survive').length, rb = g.length - sv; const p = PRED_S[c];
-  const reading = !g.length ? 'no trials' : p === 'survive' ? (sv >= 9 ? 'as predicted' : 'AGAINST') : p === 'rebuild' ? (rb >= 9 ? 'as predicted' : 'AGAINST') : p === 'A' ? (sv >= 7 ? 'assumption A holds' : sv <= 2 ? 'assumption A false (boundary 14/15); not evidence about the equation' : 'unresolved') : 'descriptive, no verdict (expected about 2 of 10 under A, 0 otherwise)';
+  const reading = !g.length ? 'no trials' : g.length < 10 ? `incomplete (${g.length} of 10 valid): the rule defines no verdict` : p === 'survive' ? (sv >= 9 ? 'as predicted' : 'AGAINST') : p === 'rebuild' ? (rb >= 9 ? 'as predicted' : 'AGAINST') : p === 'A' ? (sv >= 7 ? 'assumption A holds' : sv <= 2 ? 'assumption A false (boundary 14/15); not evidence about the equation' : 'unresolved') : 'descriptive, no verdict (expected about 2 of 10 under A, 0 otherwise)';
   say(`| ${c} | ${g.length} | ${sv} | ${rb} | ${rng(g.filter((x) => x.rebuildDone != null).map((x) => x.rebuildDone))} | ${p === 'A' ? 'under A: 7 or more survive' : p === 'desc' ? 'none' : p + ', 9 or more'} | ${reading} |`); }
 say(); say('Timing parts of S: W25-19 and W25-26 rebuilds completed by 28 s: ' + ['W25-19', 'W25-26'].map((c) => `${c} ${of(c).filter((x) => x.rebuildDone != null && x.rebuildDone <= 28).length} of ${of(c).filter((x) => x.outcome === 'rebuild').length}`).join(', ') + `; W25-28 rebuilds completed after 37 s: ${of('W25-28').filter((x) => x.rebuildDone != null && x.rebuildDone > 37).length} of ${of('W25-28').filter((x) => x.outcome === 'rebuild').length}.`);
 

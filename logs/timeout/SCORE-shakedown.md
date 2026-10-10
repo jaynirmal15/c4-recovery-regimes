@@ -16,17 +16,17 @@ Cells short of ten valid trials: W10-14 (0), W10-15 (0), W10-16 (0), W10-17 (1),
 | W10-14 | 0 | 0 | 0 | 0 | responds | no trials |
 | W10-15 | 0 | 0 | 0 | 0 | no response | no trials |
 | W10-16 | 0 | 0 | 0 | 0 | no response | no trials |
-| W10-17 | 1 | 0 | 0 | 0 | no response | as predicted |
-| W15-18 | 1 | 1 | 1 | 0 | responds | AGAINST |
-| W15-19 | 1 | 0 | 0 | 0 | no response | as predicted |
+| W10-17 | 1 | 0 | 0 | 0 | no response | incomplete (1 of 10 valid): the rule defines no verdict |
+| W15-18 | 1 | 1 | 1 | 0 | responds | incomplete (1 of 10 valid): the rule defines no verdict |
+| W15-19 | 1 | 0 | 0 | 0 | no response | incomplete (1 of 10 valid): the rule defines no verdict |
 | W25-18 | 0 | 0 | 0 | 0 | responds | no trials |
 | W25-19 | 0 | 0 | 0 | 0 | responds | no trials |
 | W25-26 | 0 | 0 | 0 | 0 | responds | no trials |
-| W25-28 | 1 | 0 | 0 | 0 | no response | as predicted |
+| W25-28 | 1 | 0 | 0 | 0 | no response | incomplete (1 of 10 valid): the rule defines no verdict |
 
-- W10: NO BOUNDARY among the tested durations
-- W15: NO BOUNDARY among the tested durations
-- W25: NO BOUNDARY among the tested durations
+- W10: incomplete (fewer than ten valid trials at 14, 15, 16, 17 s): the rule defines no verdict
+- W15: incomplete (fewer than ten valid trials at 18, 19 s): the rule defines no verdict
+- W25: incomplete (fewer than ten valid trials at 18, 19, 26, 28 s): the rule defines no verdict
 
 Trials whose first attempt began before 6.5 s (decoder defect), counted as they fell: none.
 
@@ -45,13 +45,13 @@ Trials with a first connection: 4 of 4. Set apart (restore within 0.16 s after a
 | W10-14 | 0 | 0 | 0 | – | survive, 9 or more | no trials |
 | W10-15 | 0 | 0 | 0 | – | under A: 7 or more survive | no trials |
 | W10-16 | 0 | 0 | 0 | – | none | no trials |
-| W10-17 | 1 | 0 | 1 | 22.79–22.79 | rebuild, 9 or more | AGAINST |
-| W15-18 | 1 | 1 | 0 | – | survive, 9 or more | AGAINST |
-| W15-19 | 1 | 0 | 1 | 27.81–27.81 | rebuild, 9 or more | AGAINST |
+| W10-17 | 1 | 0 | 1 | 22.79–22.79 | rebuild, 9 or more | incomplete (1 of 10 valid): the rule defines no verdict |
+| W15-18 | 1 | 1 | 0 | – | survive, 9 or more | incomplete (1 of 10 valid): the rule defines no verdict |
+| W15-19 | 1 | 0 | 1 | 27.81–27.81 | rebuild, 9 or more | incomplete (1 of 10 valid): the rule defines no verdict |
 | W25-18 | 0 | 0 | 0 | – | survive, 9 or more | no trials |
 | W25-19 | 0 | 0 | 0 | – | rebuild, 9 or more | no trials |
 | W25-26 | 0 | 0 | 0 | – | rebuild, 9 or more | no trials |
-| W25-28 | 1 | 0 | 1 | 37.89–37.89 | rebuild, 9 or more | AGAINST |
+| W25-28 | 1 | 0 | 1 | 37.89–37.89 | rebuild, 9 or more | incomplete (1 of 10 valid): the rule defines no verdict |
 
 Timing parts of S: W25-19 and W25-26 rebuilds completed by 28 s: W25-19 0 of 0, W25-26 0 of 0; W25-28 rebuilds completed after 37 s: 1 of 1.
 
