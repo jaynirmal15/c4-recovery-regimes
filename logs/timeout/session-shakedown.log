@@ -1,0 +1,122 @@
+=== AC present 2026-10-10T00:21:12Z, starting shakedown
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update 2a7aedd2-7e29-3642-8eca-58ccc0004de9 submitted
+==> EKS update 2a7aedd2-7e29-3642-8eca-58ccc0004de9: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 3s elapsed
+==> waiting: 2/3 nodes Ready, 3 instance(s) live, 27s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (49s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-13-220.ec2.internal   Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.13.220   <node-ip>      Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-28-174.ec2.internal   Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.28.174   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-7-56.ec2.internal     Ready    <none>   35s   v1.36.4-eks-f4fc4f1   10.42.7.56     <node-ip>     Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-10T00:22:44Z
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-13-220.ec2.internal   Ready    <none>   37s   v1.36.4-eks-f4fc4f1   10.42.13.220   <node-ip>      Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-28-174.ec2.internal   Ready    <none>   37s   v1.36.4-eks-f4fc4f1   10.42.28.174   <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-7-56.ec2.internal     Ready    <none>   37s   v1.36.4-eks-f4fc4f1   10.42.7.56     <node-ip>     Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+deployment "event-sink" successfully rolled out
+deployment "event-sink" successfully rolled out
+[00:22:53.064] switched to livekit
+[00:22:59.859] setup client build pre-sampler {"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"}
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[00:23:51.821] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","kernel":{"release":"6.18.48-109.150.amzn2023.aarch64","tcp_syn_linear_timeouts":4,"tcp_syn_retries":6},"www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791591831850.102}
+[00:23:53.277] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","kernel":{"release":"6.18.48-109.150.amzn2023.aarch64","tcp_syn_linear_timeouts":4,"tcp_syn_retries":6},"www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791591833307.984}
+[00:23:54.685] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","kernel":{"release":"6.18.48-109.150.amzn2023.aarch64","tcp_syn_linear_timeouts":4,"tcp_syn_retries":6},"www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791591834718.2078}
+[00:23:54.782] timeout livekit planned 4 trials
+[00:24:16.884] livekit-iso-all-19s-O-W15-20261010T002354-1 attempt_timeout_set {"ms":15000}
+[00:24:19.135] livekit-iso-all-19s-O-W15-20261010T002354-1 join_O1 {"sessionId":"PA_ySEdsKd8K5Qw"}
+[00:24:21.387] livekit-iso-all-19s-O-W15-20261010T002354-1 join_O2 {"sessionId":"PA_dQi5nfdfPomM"}
+[00:24:23.537] livekit-iso-all-19s-O-W15-20261010T002354-1 join_S {"sessionId":"PA_Ny3v3BAjfYXz"}
+[00:24:27.545] livekit-iso-all-19s-O-W15-20261010T002354-1 media_flowing {}
+[00:24:45.239] livekit-iso-all-19s-O-W15-20261010T002354-1 arm_O1 {"S":83.07275390625,"O2":64.318359375}
+[00:24:46.677] livekit-iso-all-19s-O-W15-20261010T002354-1 arm_O2 {"S":77.694580078125,"O1":71.490966796875}
+[00:24:48.072] livekit-iso-all-19s-O-W15-20261010T002354-1 arm_S {"O1":68.530517578125,"O2":66.91259765625}
+[00:24:54.486] livekit-iso-all-19s-O-W15-20261010T002354-1 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791591894504.1208,"after":1791591894514.9658},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":null}
+[00:25:16.011] livekit-iso-all-19s-O-W15-20261010T002354-1 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791591894504.1208,"after":1791591894514.9658},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":{"befo
+[00:26:36.340] livekit-iso-all-19s-O-W15-20261010T002354-1 VALID
+[00:26:58.350] livekit-iso-all-17s-O-W10-20261010T002636-2 attempt_timeout_set {"ms":10000}
+[00:27:00.592] livekit-iso-all-17s-O-W10-20261010T002636-2 join_O1 {"sessionId":"PA_gKCfpg9JcbfM"}
+[00:27:02.884] livekit-iso-all-17s-O-W10-20261010T002636-2 join_O2 {"sessionId":"PA_tLbDyVeUaNuK"}
+[00:27:05.123] livekit-iso-all-17s-O-W10-20261010T002636-2 join_S {"sessionId":"PA_78yj2MGhxtWp"}
+[00:27:09.524] livekit-iso-all-17s-O-W10-20261010T002636-2 media_flowing {}
+[00:27:27.885] livekit-iso-all-17s-O-W10-20261010T002636-2 arm_O1 {"S":68.6240234375,"O2":79.25537109375}
+[00:27:29.302] livekit-iso-all-17s-O-W10-20261010T002636-2 arm_O2 {"S":72.13623046875,"O1":79.3291015625}
+[00:27:31.034] livekit-iso-all-17s-O-W10-20261010T002636-2 arm_S {"O1":67.09619140625,"O2":75.604248046875}
+[00:27:37.448] livekit-iso-all-17s-O-W10-20261010T002636-2 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791592057468.5178,"after":1791592057479.956},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":null}
+[00:27:57.055] livekit-iso-all-17s-O-W10-20261010T002636-2 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791592057468.5178,"after":1791592057479.956},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":{"befor
+[00:29:13.219] livekit-iso-all-17s-O-W10-20261010T002636-2 VALID
+[00:29:34.697] livekit-iso-all-28s-O-W25-20261010T002913-3 attempt_timeout_set {"ms":25000}
+[00:29:36.660] livekit-iso-all-28s-O-W25-20261010T002913-3 join_O1 {"sessionId":"PA_24Yw3Sur3WQL"}
+[00:29:38.700] livekit-iso-all-28s-O-W25-20261010T002913-3 join_O2 {"sessionId":"PA_c6WmSWSVpSan"}
+[00:29:40.709] livekit-iso-all-28s-O-W25-20261010T002913-3 join_S {"sessionId":"PA_X9Jd5MffUMSs"}
+[00:29:44.600] livekit-iso-all-28s-O-W25-20261010T002913-3 media_flowing {}
+[00:30:03.138] livekit-iso-all-28s-O-W25-20261010T002913-3 arm_O1 {"S":62.088134765625,"O2":77.627685546875}
+[00:30:04.594] livekit-iso-all-28s-O-W25-20261010T002913-3 arm_O2 {"S":78.457275390625,"O1":66.81103515625}
+[00:30:05.878] livekit-iso-all-28s-O-W25-20261010T002913-3 arm_S {"O1":79.72900390625,"O2":67.87451171875}
+[00:30:12.220] livekit-iso-all-28s-O-W25-20261010T002913-3 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791592212243.4775,"after":1791592212253.1753},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":null}
+[00:30:42.183] livekit-iso-all-28s-O-W25-20261010T002913-3 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791592212243.4775,"after":1791592212253.1753},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":{"befo
+[00:32:00.917] livekit-iso-all-28s-O-W25-20261010T002913-3 VALID
+[00:32:22.770] livekit-iso-all-18s-O-W15-20261010T003200-4 attempt_timeout_set {"ms":15000}
+[00:32:24.878] livekit-iso-all-18s-O-W15-20261010T003200-4 join_O1 {"sessionId":"PA_QXuqFThCaYmy"}
+[00:32:28.669] livekit-iso-all-18s-O-W15-20261010T003200-4 join_O2 {"sessionId":"PA_7WEpRBEsWeW8"}
+[00:32:30.780] livekit-iso-all-18s-O-W15-20261010T003200-4 join_S {"sessionId":"PA_LUCzvte3tSZM"}
+[00:32:35.481] livekit-iso-all-18s-O-W15-20261010T003200-4 media_flowing {}
+[00:32:53.375] livekit-iso-all-18s-O-W15-20261010T003200-4 arm_O1 {"S":67.518798828125,"O2":69.23486328125}
+[00:32:55.689] livekit-iso-all-18s-O-W15-20261010T003200-4 arm_O2 {"S":71.934326171875,"O1":63.067626953125}
+[00:32:56.991] livekit-iso-all-18s-O-W15-20261010T003200-4 arm_S {"O1":61.412109375,"O2":69.753173828125}
+[00:33:03.353] livekit-iso-all-18s-O-W15-20261010T003200-4 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791592383384.8052,"after":1791592383393.4392},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":null}
+[00:33:24.124] livekit-iso-all-18s-O-W15-20261010T003200-4 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791592383384.8052,"after":1791592383393.4392},"rulesDuring":["-A INPUT -s 10.42.25.12/32 -j DROP","-A OUTPUT -d 10.42.25.12/32 -j DROP"],"restore":{"befo
+[00:34:35.633] livekit-iso-all-18s-O-W15-20261010T003200-4 VALID
+[00:34:35.635] timeout livekit done {"W15-19":1,"W10-17":1,"W25-28":1,"W15-18":1}
+SHAKEDOWN_EXIT=0
+SHAKEDOWN [{"cell":"W10-17","arm":"W10","id":"livekit-iso-all-17s-O-W10-20261010T002636-2","valid":true,"invalid":[],"setMs":10000,"firstUnansweredLifetimeMs":10004,"ok":true},{"cell":"W15-19","arm":"W15","id":"livekit-iso-all-19s-O-W15-20261010T002354-1","valid":true,"invalid":[],"setMs":15000,"firstUnansweredLifetimeMs":15004,"ok":true},{"cell":"W25-28","arm":"W25","id":"livekit-iso-all-28s-O-W25-20261010T002913-3","valid":true,"invalid":[],"setMs":25000,"firstUnansweredLifetimeMs":25004,"ok":true},{"cell":"W15-18","arm":"W15","id":"livekit-iso-all-18s-O-W15-20261010T003200-4","valid":true,"invalid":[],"setMs":15000,"firstUnansweredLifetimeMs":null,"ok":true}]
+=== PARK 2026-10-10T00:34:35Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update 01da5846-a931-3ec1-88bb-074ec9cc47ca submitted
+==> EKS update 01da5846-a931-3ec1-88bb-074ec9cc47ca: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 2s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 34s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 67s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 100s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 134s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 167s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 202s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 236s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 269s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 303s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 337s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 370s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 404s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 437s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 470s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 503s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 537s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 570s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 603s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 637s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 670s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 703s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 737s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 770s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 804s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 837s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 871s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 904s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 938s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 972s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (1008s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-10T00:51:51Z
+TIMEOUT_SH_EXIT=0

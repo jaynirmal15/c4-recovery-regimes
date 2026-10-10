@@ -1,0 +1,135 @@
+[
+ {
+  "id": "livekit-iso-all-17s-O-W10-20261010T002636-2",
+  "arm": "W10",
+  "T": 10,
+  "D": 17,
+  "cell": "W10-17",
+  "restore": 17.0659814453125,
+  "begin": 6.974743896484375,
+  "open": 7.228343994140625,
+  "end": 16.978843994140625,
+  "early": false,
+  "responded": false,
+  "response": null,
+  "responseAt": null,
+  "predPoint": 11,
+  "predArrive": 18.591343994140622,
+  "predRespond": false,
+  "near": false,
+  "mHit": true,
+  "outcome": "rebuild",
+  "rebuildDone": 22.7900439453125,
+  "second": {
+   "begin": 22.17,
+   "result": "RECONNECT/STATE_MISMATCH"
+  },
+  "lifetimesMs": [
+   10004
+  ],
+  "ice": {
+   "usable": true,
+   "disconnected": 11.67,
+   "failed": 15.67,
+   "removal": 20.67
+  }
+ },
+ {
+  "id": "livekit-iso-all-18s-O-W15-20261010T003200-4",
+  "arm": "W15",
+  "T": 15,
+  "D": 18,
+  "cell": "W15-18",
+  "restore": 18.062646484375,
+  "begin": 7.02266064453125,
+  "open": 7.276560791015625,
+  "end": 20.631460693359376,
+  "early": false,
+  "responded": true,
+  "response": "accepted",
+  "responseAt": 18.616360595703124,
+  "predPoint": 11,
+  "predArrive": 18.639560791015626,
+  "predRespond": true,
+  "near": false,
+  "mHit": true,
+  "outcome": "survive",
+  "rebuildDone": null,
+  "second": null,
+  "lifetimesMs": [],
+  "ice": {
+   "usable": false,
+   "why": "empty"
+  }
+ },
+ {
+  "id": "livekit-iso-all-19s-O-W15-20261010T002354-1",
+  "arm": "W15",
+  "T": 15,
+  "D": 19,
+  "cell": "W15-19",
+  "restore": 19.071797607421875,
+  "begin": 6.977734375,
+  "open": 7.231334228515625,
+  "end": 21.981734375,
+  "early": false,
+  "responded": false,
+  "response": null,
+  "responseAt": null,
+  "predPoint": 19,
+  "predArrive": 26.858334228515623,
+  "predRespond": false,
+  "near": false,
+  "mHit": true,
+  "outcome": "rebuild",
+  "rebuildDone": 27.813434326171876,
+  "second": {
+   "begin": 27.18,
+   "result": "RECONNECT/STATE_MISMATCH"
+  },
+  "lifetimesMs": [
+   15004
+  ],
+  "ice": {
+   "usable": true,
+   "disconnected": 11.09,
+   "failed": 15.09,
+   "removal": 20.09
+  }
+ },
+ {
+  "id": "livekit-iso-all-28s-O-W25-20261010T002913-3",
+  "arm": "W25",
+  "T": 25,
+  "D": 28,
+  "cell": "W25-28",
+  "restore": 28.072724853515624,
+  "begin": 7.071624755859375,
+  "open": 7.32582470703125,
+  "end": 32.076024658203124,
+  "early": false,
+  "responded": false,
+  "response": null,
+  "responseAt": null,
+  "predPoint": 35,
+  "predArrive": 43.480824707031246,
+  "predRespond": false,
+  "near": false,
+  "mHit": true,
+  "outcome": "rebuild",
+  "rebuildDone": 37.889724609375,
+  "second": {
+   "begin": 37.27,
+   "result": "RECONNECT/STATE_MISMATCH"
+  },
+  "lifetimesMs": [
+   25004
+  ],
+  "ice": {
+   "usable": true,
+   "disconnected": 10.59,
+   "failed": 16.59,
+   "removal": 21.59
+  }
+ }
+]
