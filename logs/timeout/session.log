@@ -1,0 +1,1214 @@
+=== starting the 100, 2026-10-10T00:57:41Z
+./scripts/nodegroup.sh unpark
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 0, live instances 0, k8s nodes 0 -> target 3
+==> EKS update e02e754d-ca3a-39d6-821c-e70e83c016c6 submitted
+==> EKS update e02e754d-ca3a-39d6-821c-e70e83c016c6: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 0/3 nodes Ready, 3 instance(s) live, 4s elapsed
+==> VERIFIED UNPARKED: 3/3 k8s nodes Ready (27s)
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-15-88.ec2.internal    Ready    <none>   17s   v1.36.4-eks-f4fc4f1   10.42.15.88    <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-20-229.ec2.internal   Ready    <none>   16s   v1.36.4-eks-f4fc4f1   10.42.20.229   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-7-125.ec2.internal    Ready    <none>   16s   v1.36.4-eks-f4fc4f1   10.42.7.125    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+==> nodes and pods have NEW IPs after an unpark; re-read anything that pinned an address. The coturn NLB needs a few minutes of target warm-up before STUN answers.
+=== UNPARKED 2026-10-10T00:58:48Z
+NAME                           STATUS   ROLES    AGE   VERSION               INTERNAL-IP    EXTERNAL-IP      OS-IMAGE                        KERNEL-VERSION                             CONTAINER-RUNTIME
+ip-10-42-15-88.ec2.internal    Ready    <none>   18s   v1.36.4-eks-f4fc4f1   10.42.15.88    <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-20-229.ec2.internal   Ready    <none>   17s   v1.36.4-eks-f4fc4f1   10.42.20.229   <node-ip>    Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+ip-10-42-7-125.ec2.internal    Ready    <none>   17s   v1.36.4-eks-f4fc4f1   10.42.7.125    <node-ip>   Amazon Linux 2023.12.20260918   6.18.48-109.150.amzn2023.aarch64 (arm64)   containerd://2.2.7+unknown
+deployment "event-sink" successfully rolled out
+deployment "event-sink" successfully rolled out
+[00:58:56.075] switched to livekit
+[00:59:02.724] setup client build pre-sampler {"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"}
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+error: unable to upgrade connection: container not found ("client")
+[00:59:50.234] c4-s ready {"ok":true,"role":"S","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","kernel":{"release":"6.18.48-109.150.amzn2023.aarch64","tcp_syn_linear_timeouts":4,"tcp_syn_retries":6},"www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791593990320.3118}
+[00:59:51.659] c4-o1 ready {"ok":true,"role":"O1","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","kernel":{"release":"6.18.48-109.150.amzn2023.aarch64","tcp_syn_linear_timeouts":4,"tcp_syn_retries":6},"www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791593991743.8838}
+[00:59:53.121] c4-o2 ready {"ok":true,"role":"O2","ctxs":[],"playwright":"1.62.1","lkClient":"2.22.3","kernel":{"release":"6.18.48-109.150.amzn2023.aarch64","tcp_syn_linear_timeouts":4,"tcp_syn_retries":6},"www":{"common.js":"097c6031fdcf16f6ec87fc8cab7aebcaf3ab6e818c2c9d70c0be04df2d6bc816","control-arm.js":"50ca4078f77e222e45a07ff3226a4f1784ff99d4af0dca1189fe97f4662bf78d","driver.js":"1eec3389dcdb10935b09b95d58331d8f286b7af4a81f7bffef6bafff552f80a7","janus.js":"d0e68847976416aadc36bd99f38338be7502d2c51feef12bf4c48c84152240bb","lk.js":"3c5bbe082ffb1495cd863f44fe3f918561de25cf2c91f1619c0beafea1d9e102","lkproto.js":"f76cfa36ecad3e1eac52401f2f615ca930b790e173354c37488fe1af99b08924"},"t":1791593993203.6243}
+[00:59:53.232] timeout livekit planned 0 trials
+[00:59:53.234] timeout livekit done {"W10-17":1,"W15-18":1,"W15-19":1,"W25-28":1}
+SHAKEDOWN_EXIT=0
+SHAKEDOWN [{"cell":"W10-17","arm":"W10","id":"livekit-iso-all-17s-O-W10-20261010T002636-2","valid":true,"invalid":[],"setMs":10000,"firstUnansweredLifetimeMs":10004,"ok":true},{"cell":"W15-19","arm":"W15","id":"livekit-iso-all-19s-O-W15-20261010T002354-1","valid":true,"invalid":[],"setMs":15000,"firstUnansweredLifetimeMs":15004,"ok":true},{"cell":"W25-28","arm":"W25","id":"livekit-iso-all-28s-O-W25-20261010T002913-3","valid":true,"invalid":[],"setMs":25000,"firstUnansweredLifetimeMs":25004,"ok":true},{"cell":"W15-18","arm":"W15","id":"livekit-iso-all-18s-O-W15-20261010T003200-4","valid":true,"invalid":[],"setMs":15000,"firstUnansweredLifetimeMs":null,"ok":true}]
+[00:59:53.418] timeout livekit planned 100 trials
+[01:00:16.247] livekit-iso-all-19s-O-W25-20261010T005953-1 attempt_timeout_set {"ms":25000}
+[01:00:18.710] livekit-iso-all-19s-O-W25-20261010T005953-1 join_O1 {"sessionId":"PA_kdLwWf9gg2Za"}
+[01:00:20.858] livekit-iso-all-19s-O-W25-20261010T005953-1 join_O2 {"sessionId":"PA_d6zVKLegycLw"}
+[01:00:23.156] livekit-iso-all-19s-O-W25-20261010T005953-1 join_S {"sessionId":"PA_BPBCapHuV2HH"}
+[01:00:27.339] livekit-iso-all-19s-O-W25-20261010T005953-1 media_flowing {}
+[01:00:46.028] livekit-iso-all-19s-O-W25-20261010T005953-1 arm_O1 {"S":66.713623046875,"O2":66.53515625}
+[01:00:47.406] livekit-iso-all-19s-O-W25-20261010T005953-1 arm_O2 {"S":71.342529296875,"O1":65.547119140625}
+[01:00:48.741] livekit-iso-all-19s-O-W25-20261010T005953-1 arm_S {"O1":62.669189453125,"O2":56.910888671875}
+[01:00:55.076] livekit-iso-all-19s-O-W25-20261010T005953-1 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791594055150.431,"after":1791594055161.2917},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:01:16.381] livekit-iso-all-19s-O-W25-20261010T005953-1 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791594055150.431,"after":1791594055161.2917},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:02:41.114] livekit-iso-all-19s-O-W25-20261010T005953-1 VALID
+[01:03:04.187] livekit-iso-all-16s-O-W10-20261010T010241-2 attempt_timeout_set {"ms":10000}
+[01:03:06.231] livekit-iso-all-16s-O-W10-20261010T010241-2 join_O1 {"sessionId":"PA_xGkVqEWT9bUP"}
+[01:03:08.368] livekit-iso-all-16s-O-W10-20261010T010241-2 join_O2 {"sessionId":"PA_47xWv3wD9WAX"}
+[01:03:10.514] livekit-iso-all-16s-O-W10-20261010T010241-2 join_S {"sessionId":"PA_jNdC86gmmTpC"}
+[01:03:14.850] livekit-iso-all-16s-O-W10-20261010T010241-2 media_flowing {}
+[01:03:33.611] livekit-iso-all-16s-O-W10-20261010T010241-2 arm_O1 {"S":67.8486328125,"O2":62.93408203125}
+[01:03:34.967] livekit-iso-all-16s-O-W10-20261010T010241-2 arm_O2 {"S":67.457763671875,"O1":80.39404296875}
+[01:03:36.331] livekit-iso-all-16s-O-W10-20261010T010241-2 arm_S {"O1":74.411376953125,"O2":72.62109375}
+[01:03:42.818] livekit-iso-all-16s-O-W10-20261010T010241-2 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791594222833.315,"after":1791594222844.383},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:04:01.257] livekit-iso-all-16s-O-W10-20261010T010241-2 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791594222833.315,"after":1791594222844.383},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[01:05:27.639] livekit-iso-all-16s-O-W10-20261010T010241-2 VALID
+[01:05:52.366] livekit-iso-all-19s-O-W25-20261010T010527-3 attempt_timeout_set {"ms":25000}
+[01:05:54.463] livekit-iso-all-19s-O-W25-20261010T010527-3 join_O1 {"sessionId":"PA_MjHeZ4Pzk7J3"}
+[01:05:56.712] livekit-iso-all-19s-O-W25-20261010T010527-3 join_O2 {"sessionId":"PA_MdNT5iX52QEH"}
+[01:05:59.161] livekit-iso-all-19s-O-W25-20261010T010527-3 join_S {"sessionId":"PA_kZsWURyF6zfv"}
+[01:06:03.967] livekit-iso-all-19s-O-W25-20261010T010527-3 media_flowing {}
+[01:06:24.737] livekit-iso-all-19s-O-W25-20261010T010527-3 arm_O1 {"S":66.404296875,"O2":72.3193359375}
+[01:06:26.072] livekit-iso-all-19s-O-W25-20261010T010527-3 arm_O2 {"S":70.296875,"O1":72.703369140625}
+[01:06:27.412] livekit-iso-all-19s-O-W25-20261010T010527-3 arm_S {"O1":72.49462890625,"O2":68.13525390625}
+[01:06:33.886] livekit-iso-all-19s-O-W25-20261010T010527-3 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791594393900.772,"after":1791594393911.5256},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:06:55.599] livekit-iso-all-19s-O-W25-20261010T010527-3 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791594393900.772,"after":1791594393911.5256},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:08:13.989] livekit-iso-all-19s-O-W25-20261010T010527-3 VALID
+[01:08:36.659] livekit-iso-all-14s-O-W10-20261010T010813-4 attempt_timeout_set {"ms":10000}
+[01:08:38.704] livekit-iso-all-14s-O-W10-20261010T010813-4 join_O1 {"sessionId":"PA_jgRaND2XPvAC"}
+[01:08:40.854] livekit-iso-all-14s-O-W10-20261010T010813-4 join_O2 {"sessionId":"PA_K6Dj4J7eVtkD"}
+[01:08:43.091] livekit-iso-all-14s-O-W10-20261010T010813-4 join_S {"sessionId":"PA_HSHYxdNq5ZMN"}
+[01:08:47.161] livekit-iso-all-14s-O-W10-20261010T010813-4 media_flowing {}
+[01:09:05.679] livekit-iso-all-14s-O-W10-20261010T010813-4 arm_O1 {"S":71.13916015625,"O2":54.161376953125}
+[01:09:07.004] livekit-iso-all-14s-O-W10-20261010T010813-4 arm_O2 {"S":68.7568359375,"O1":66.5185546875}
+[01:09:08.354] livekit-iso-all-14s-O-W10-20261010T010813-4 arm_S {"O1":78.952392578125,"O2":72.59033203125}
+[01:09:14.778] livekit-iso-all-14s-O-W10-20261010T010813-4 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791594554794.8228,"after":1791594554804.4995},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:09:30.589] livekit-iso-all-14s-O-W10-20261010T010813-4 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791594554794.8228,"after":1791594554804.4995},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:11:00.203] livekit-iso-all-14s-O-W10-20261010T010813-4 VALID
+[01:11:21.292] livekit-iso-all-14s-O-W10-20261010T011100-5 attempt_timeout_set {"ms":10000}
+[01:11:23.285] livekit-iso-all-14s-O-W10-20261010T011100-5 join_O1 {"sessionId":"PA_Ffq4bs58Rh3a"}
+[01:11:25.366] livekit-iso-all-14s-O-W10-20261010T011100-5 join_O2 {"sessionId":"PA_STvWSEghgRhn"}
+[01:11:27.382] livekit-iso-all-14s-O-W10-20261010T011100-5 join_S {"sessionId":"PA_YpvR83CjJ6Dq"}
+[01:11:31.201] livekit-iso-all-14s-O-W10-20261010T011100-5 media_flowing {}
+[01:11:50.762] livekit-iso-all-14s-O-W10-20261010T011100-5 arm_O1 {"S":76.776123046875,"O2":66.58544921875}
+[01:11:52.442] livekit-iso-all-14s-O-W10-20261010T011100-5 arm_O2 {"S":57.70361328125,"O1":66.6513671875}
+[01:11:53.716] livekit-iso-all-14s-O-W10-20261010T011100-5 arm_S {"O1":62.4345703125,"O2":68.19677734375}
+[01:11:59.986] livekit-iso-all-14s-O-W10-20261010T011100-5 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791594720007.1313,"after":1791594720018.0898},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:12:16.511] livekit-iso-all-14s-O-W10-20261010T011100-5 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791594720007.1313,"after":1791594720018.0898},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:13:28.286] livekit-iso-all-14s-O-W10-20261010T011100-5 VALID
+[01:13:50.236] livekit-iso-all-17s-O-W10-20261010T011328-6 attempt_timeout_set {"ms":10000}
+[01:13:52.366] livekit-iso-all-17s-O-W10-20261010T011328-6 join_O1 {"sessionId":"PA_Re7PTW8gsgx4"}
+[01:13:54.413] livekit-iso-all-17s-O-W10-20261010T011328-6 join_O2 {"sessionId":"PA_ssSGLpAxC8Pv"}
+[01:13:56.447] livekit-iso-all-17s-O-W10-20261010T011328-6 join_S {"sessionId":"PA_2YEVPPBMttmk"}
+[01:14:00.607] livekit-iso-all-17s-O-W10-20261010T011328-6 media_flowing {}
+[01:14:18.381] livekit-iso-all-17s-O-W10-20261010T011328-6 arm_O1 {"S":64.02197265625,"O2":75.778076171875}
+[01:14:19.653] livekit-iso-all-17s-O-W10-20261010T011328-6 arm_O2 {"S":66.726318359375,"O1":75.76318359375}
+[01:14:20.926] livekit-iso-all-17s-O-W10-20261010T011328-6 arm_S {"O1":62.23779296875,"O2":69.974365234375}
+[01:14:28.111] livekit-iso-all-17s-O-W10-20261010T011328-6 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791594868135.69,"after":1791594868145.4998},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:14:46.742] livekit-iso-all-17s-O-W10-20261010T011328-6 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791594868135.69,"after":1791594868145.4998},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[01:16:02.364] livekit-iso-all-17s-O-W10-20261010T011328-6 VALID
+[01:16:23.313] livekit-iso-all-14s-O-W10-20261010T011602-7 attempt_timeout_set {"ms":10000}
+[01:16:25.345] livekit-iso-all-14s-O-W10-20261010T011602-7 join_O1 {"sessionId":"PA_m8s7hrByqr7K"}
+[01:16:27.392] livekit-iso-all-14s-O-W10-20261010T011602-7 join_O2 {"sessionId":"PA_8RY65bMMx6xh"}
+[01:16:29.382] livekit-iso-all-14s-O-W10-20261010T011602-7 join_S {"sessionId":"PA_GPmG7xcK2jW4"}
+[01:16:33.363] livekit-iso-all-14s-O-W10-20261010T011602-7 media_flowing {}
+[01:16:51.104] livekit-iso-all-14s-O-W10-20261010T011602-7 arm_O1 {"S":58.8291015625,"O2":73.489501953125}
+[01:16:52.374] livekit-iso-all-14s-O-W10-20261010T011602-7 arm_O2 {"S":71.90576171875,"O1":65.279541015625}
+[01:16:53.623] livekit-iso-all-14s-O-W10-20261010T011602-7 arm_S {"O1":71.893798828125,"O2":68.408447265625}
+[01:16:59.949] livekit-iso-all-14s-O-W10-20261010T011602-7 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791595019968.7053,"after":1791595019980.6199},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:17:16.681] livekit-iso-all-14s-O-W10-20261010T011602-7 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791595019968.7053,"after":1791595019980.6199},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:18:35.220] livekit-iso-all-14s-O-W10-20261010T011602-7 VALID
+[01:19:01.400] livekit-iso-all-15s-O-W10-20261010T011835-8 attempt_timeout_set {"ms":10000}
+[01:19:03.754] livekit-iso-all-15s-O-W10-20261010T011835-8 join_O1 {"sessionId":"PA_H5WBLNQya2oX"}
+[01:19:06.419] livekit-iso-all-15s-O-W10-20261010T011835-8 join_O2 {"sessionId":"PA_8TcBCkywsqnd"}
+[01:19:09.033] livekit-iso-all-15s-O-W10-20261010T011835-8 join_S {"sessionId":"PA_dSQGq7MPk6cw"}
+[01:19:13.679] livekit-iso-all-15s-O-W10-20261010T011835-8 media_flowing {}
+[01:19:31.872] livekit-iso-all-15s-O-W10-20261010T011835-8 arm_O1 {"S":69.902587890625,"O2":69.14892578125}
+[01:19:33.162] livekit-iso-all-15s-O-W10-20261010T011835-8 arm_O2 {"S":65.59521484375,"O1":73.18212890625}
+[01:19:34.507] livekit-iso-all-15s-O-W10-20261010T011835-8 arm_S {"O1":77.678466796875,"O2":72.124267578125}
+[01:19:40.923] livekit-iso-all-15s-O-W10-20261010T011835-8 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791595180888.9766,"after":1791595180898.454},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:19:58.620] livekit-iso-all-15s-O-W10-20261010T011835-8 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791595180888.9766,"after":1791595180898.454},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:21:24.659] livekit-iso-all-15s-O-W10-20261010T011835-8 VALID
+[01:21:48.401] livekit-iso-all-26s-O-W25-20261010T012124-9 attempt_timeout_set {"ms":25000}
+[01:21:50.607] livekit-iso-all-26s-O-W25-20261010T012124-9 join_O1 {"sessionId":"PA_GSj5VrwLfX3M"}
+[01:21:52.961] livekit-iso-all-26s-O-W25-20261010T012124-9 join_O2 {"sessionId":"PA_pHpDPKcKaQTS"}
+[01:21:55.056] livekit-iso-all-26s-O-W25-20261010T012124-9 join_S {"sessionId":"PA_6ENB4BjpV2ah"}
+[01:21:59.366] livekit-iso-all-26s-O-W25-20261010T012124-9 media_flowing {}
+[01:22:17.991] livekit-iso-all-26s-O-W25-20261010T012124-9 arm_O1 {"S":66.995361328125,"O2":66.04638671875}
+[01:22:19.373] livekit-iso-all-26s-O-W25-20261010T012124-9 arm_O2 {"S":70.63671875,"O1":67.939208984375}
+[01:22:20.739] livekit-iso-all-26s-O-W25-20261010T012124-9 arm_S {"O1":64.83935546875,"O2":76.150634765625}
+[01:22:27.153] livekit-iso-all-26s-O-W25-20261010T012124-9 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791595347185.1978,"after":1791595347196.416},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:22:55.652] livekit-iso-all-26s-O-W25-20261010T012124-9 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791595347185.1978,"after":1791595347196.416},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:24:11.480] livekit-iso-all-26s-O-W25-20261010T012124-9 VALID
+[01:24:34.789] livekit-iso-all-26s-O-W25-20261010T012411-10 attempt_timeout_set {"ms":25000}
+[01:24:36.864] livekit-iso-all-26s-O-W25-20261010T012411-10 join_O1 {"sessionId":"PA_sxePq6E2jxdp"}
+[01:24:38.945] livekit-iso-all-26s-O-W25-20261010T012411-10 join_O2 {"sessionId":"PA_iD2qNVPmttHw"}
+[01:24:41.062] livekit-iso-all-26s-O-W25-20261010T012411-10 join_S {"sessionId":"PA_V7pMzg8sVeay"}
+[01:24:45.359] livekit-iso-all-26s-O-W25-20261010T012411-10 media_flowing {}
+[01:25:04.077] livekit-iso-all-26s-O-W25-20261010T012411-10 arm_O1 {"S":75.234619140625,"O2":60.1142578125}
+[01:25:05.437] livekit-iso-all-26s-O-W25-20261010T012411-10 arm_O2 {"S":62.73046875,"O1":76.76953125}
+[01:25:06.765] livekit-iso-all-26s-O-W25-20261010T012411-10 arm_S {"O1":67.78125,"O2":77.197509765625}
+[01:25:13.213] livekit-iso-all-26s-O-W25-20261010T012411-10 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791595513246.5789,"after":1791595513256.3496},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:25:41.838] livekit-iso-all-26s-O-W25-20261010T012411-10 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791595513246.5789,"after":1791595513256.3496},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:26:56.678] livekit-iso-all-26s-O-W25-20261010T012411-10 VALID
+[01:27:18.989] livekit-iso-all-18s-O-W25-20261010T012656-11 attempt_timeout_set {"ms":25000}
+[01:27:21.021] livekit-iso-all-18s-O-W25-20261010T012656-11 join_O1 {"sessionId":"PA_pR2jJh5MiJBm"}
+[01:27:23.181] livekit-iso-all-18s-O-W25-20261010T012656-11 join_O2 {"sessionId":"PA_rcUcVFLxWJ7Q"}
+[01:27:25.339] livekit-iso-all-18s-O-W25-20261010T012656-11 join_S {"sessionId":"PA_gAXt3s57dAJb"}
+[01:27:29.796] livekit-iso-all-18s-O-W25-20261010T012656-11 media_flowing {}
+[01:27:48.354] livekit-iso-all-18s-O-W25-20261010T012656-11 arm_O1 {"S":64.96875,"O2":62.845947265625}
+[01:27:49.722] livekit-iso-all-18s-O-W25-20261010T012656-11 arm_O2 {"S":62.23193359375,"O1":71.725341796875}
+[01:27:51.110] livekit-iso-all-18s-O-W25-20261010T012656-11 arm_S {"O1":67.372802734375,"O2":77.44091796875}
+[01:27:57.569] livekit-iso-all-18s-O-W25-20261010T012656-11 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791595677602.4443,"after":1791595677613.0225},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:28:20.826] livekit-iso-all-18s-O-W25-20261010T012656-11 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791595677602.4443,"after":1791595677613.0225},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:29:41.108] livekit-iso-all-18s-O-W25-20261010T012656-11 VALID
+[01:30:04.312] livekit-iso-all-17s-O-W10-20261010T012941-12 attempt_timeout_set {"ms":10000}
+[01:30:06.403] livekit-iso-all-17s-O-W10-20261010T012941-12 join_O1 {"sessionId":"PA_yDyR6mxoCixz"}
+[01:30:08.560] livekit-iso-all-17s-O-W10-20261010T012941-12 join_O2 {"sessionId":"PA_cuyxwRNaRSMU"}
+[01:30:10.706] livekit-iso-all-17s-O-W10-20261010T012941-12 join_S {"sessionId":"PA_EyhS5RrvmCtb"}
+[01:30:15.390] livekit-iso-all-17s-O-W10-20261010T012941-12 media_flowing {}
+[01:30:38.167] livekit-iso-all-17s-O-W10-20261010T012941-12 arm_O1 {"S":52.769775390625,"O2":57.901123046875}
+[01:30:40.769] livekit-iso-all-17s-O-W10-20261010T012941-12 arm_O2 {"S":56.5146484375,"O1":73.45947265625}
+[01:30:42.679] livekit-iso-all-17s-O-W10-20261010T012941-12 arm_S {"O1":86.517822265625,"O2":75.361328125}
+[01:30:49.171] livekit-iso-all-17s-O-W10-20261010T012941-12 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791595849189.908,"after":1791595849201.9275},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:31:08.015] livekit-iso-all-17s-O-W10-20261010T012941-12 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791595849189.908,"after":1791595849201.9275},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:32:36.884] livekit-iso-all-17s-O-W10-20261010T012941-12 VALID
+[01:33:06.688] livekit-iso-all-16s-O-W10-20261010T013236-13 attempt_timeout_set {"ms":10000}
+[01:33:09.046] livekit-iso-all-16s-O-W10-20261010T013236-13 join_O1 {"sessionId":"PA_t9m79mGsPf8m"}
+[01:33:11.334] livekit-iso-all-16s-O-W10-20261010T013236-13 join_O2 {"sessionId":"PA_okjPtNzALXCy"}
+[01:33:13.685] livekit-iso-all-16s-O-W10-20261010T013236-13 join_S {"sessionId":"PA_T5fhJXpr5S6S"}
+[01:33:19.359] livekit-iso-all-16s-O-W10-20261010T013236-13 media_flowing {}
+[01:33:39.305] livekit-iso-all-16s-O-W10-20261010T013236-13 arm_O1 {"S":78.70068359375,"O2":63.98291015625}
+[01:33:41.243] livekit-iso-all-16s-O-W10-20261010T013236-13 arm_O2 {"S":66.26904296875,"O1":68.76318359375}
+[01:33:43.183] livekit-iso-all-16s-O-W10-20261010T013236-13 arm_S {"O1":63.616455078125,"O2":62.368408203125}
+[01:33:49.814] livekit-iso-all-16s-O-W10-20261010T013236-13 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791596029833.0776,"after":1791596029843.279},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:34:08.408] livekit-iso-all-16s-O-W10-20261010T013236-13 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791596029833.0776,"after":1791596029843.279},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:35:27.531] livekit-iso-all-16s-O-W10-20261010T013236-13 VALID
+[01:35:50.159] livekit-iso-all-19s-O-W15-20261010T013527-14 attempt_timeout_set {"ms":15000}
+[01:35:52.310] livekit-iso-all-19s-O-W15-20261010T013527-14 join_O1 {"sessionId":"PA_NZakq6dGgQji"}
+[01:35:54.428] livekit-iso-all-19s-O-W15-20261010T013527-14 join_O2 {"sessionId":"PA_ASNfMcqY8NUU"}
+[01:35:56.631] livekit-iso-all-19s-O-W15-20261010T013527-14 join_S {"sessionId":"PA_tnpTuuqiixtJ"}
+[01:36:00.743] livekit-iso-all-19s-O-W15-20261010T013527-14 media_flowing {}
+[01:36:19.534] livekit-iso-all-19s-O-W15-20261010T013527-14 arm_O1 {"S":65.84130859375,"O2":64.051513671875}
+[01:36:20.832] livekit-iso-all-19s-O-W15-20261010T013527-14 arm_O2 {"S":74.2841796875,"O1":70.61328125}
+[01:36:22.246] livekit-iso-all-19s-O-W15-20261010T013527-14 arm_S {"O1":72.517333984375,"O2":73.6865234375}
+[01:36:28.623] livekit-iso-all-19s-O-W15-20261010T013527-14 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791596188647.3894,"after":1791596188657.5198},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:36:50.343] livekit-iso-all-19s-O-W15-20261010T013527-14 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791596188647.3894,"after":1791596188657.5198},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:38:15.229] livekit-iso-all-19s-O-W15-20261010T013527-14 VALID
+[01:38:38.645] livekit-iso-all-14s-O-W10-20261010T013815-15 attempt_timeout_set {"ms":10000}
+[01:38:40.732] livekit-iso-all-14s-O-W10-20261010T013815-15 join_O1 {"sessionId":"PA_db7VAmMLjVDY"}
+[01:38:42.928] livekit-iso-all-14s-O-W10-20261010T013815-15 join_O2 {"sessionId":"PA_dnRVM82HtZQs"}
+[01:38:45.176] livekit-iso-all-14s-O-W10-20261010T013815-15 join_S {"sessionId":"PA_xFydKv9MZ2cL"}
+[01:38:49.686] livekit-iso-all-14s-O-W10-20261010T013815-15 media_flowing {}
+[01:39:07.783] livekit-iso-all-14s-O-W10-20261010T013815-15 arm_O1 {"S":79.53125,"O2":79.52978515625}
+[01:39:09.179] livekit-iso-all-14s-O-W10-20261010T013815-15 arm_O2 {"S":75.76806640625,"O1":62.8369140625}
+[01:39:10.615] livekit-iso-all-14s-O-W10-20261010T013815-15 arm_S {"O1":78.387939453125,"O2":88.02392578125}
+[01:39:17.009] livekit-iso-all-14s-O-W10-20261010T013815-15 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791596357035.7815,"after":1791596357044.2512},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:39:33.303] livekit-iso-all-14s-O-W10-20261010T013815-15 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791596357035.7815,"after":1791596357044.2512},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:40:54.909] livekit-iso-all-14s-O-W10-20261010T013815-15 VALID
+[01:41:22.284] livekit-iso-all-19s-O-W15-20261010T014054-16 attempt_timeout_set {"ms":15000}
+[01:41:25.093] livekit-iso-all-19s-O-W15-20261010T014054-16 join_O1 {"sessionId":"PA_pPys4wZSdWW6"}
+[01:41:27.283] livekit-iso-all-19s-O-W15-20261010T014054-16 join_O2 {"sessionId":"PA_gREsv2Vw6sS8"}
+[01:41:29.833] livekit-iso-all-19s-O-W15-20261010T014054-16 join_S {"sessionId":"PA_WXJ2nE36wb5T"}
+[01:41:42.219] livekit-iso-all-19s-O-W15-20261010T014054-16 media_flowing {}
+[01:42:03.550] livekit-iso-all-19s-O-W15-20261010T014054-16 arm_O1 {"S":85.99072265625,"O2":73.66064453125}
+[01:42:05.135] livekit-iso-all-19s-O-W15-20261010T014054-16 arm_O2 {"S":80.353759765625,"O1":54.96435546875}
+[01:42:06.783] livekit-iso-all-19s-O-W15-20261010T014054-16 arm_S {"O1":68.211669921875,"O2":72.479248046875}
+[01:42:13.674] livekit-iso-all-19s-O-W15-20261010T014054-16 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791596533702.4844,"after":1791596533711.2998},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:42:36.213] livekit-iso-all-19s-O-W15-20261010T014054-16 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791596533702.4844,"after":1791596533711.2998},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:44:00.613] livekit-iso-all-19s-O-W15-20261010T014054-16 VALID
+[01:44:28.418] livekit-iso-all-26s-O-W25-20261010T014400-17 attempt_timeout_set {"ms":25000}
+[01:44:30.509] livekit-iso-all-26s-O-W25-20261010T014400-17 join_O1 {"sessionId":"PA_gQ7kLW8CDnE5"}
+[01:44:32.548] livekit-iso-all-26s-O-W25-20261010T014400-17 join_O2 {"sessionId":"PA_UXME34V5xqcE"}
+[01:44:34.671] livekit-iso-all-26s-O-W25-20261010T014400-17 join_S {"sessionId":"PA_k5GkFGvJSfH7"}
+[01:44:38.913] livekit-iso-all-26s-O-W25-20261010T014400-17 media_flowing {}
+[01:44:57.524] livekit-iso-all-26s-O-W25-20261010T014400-17 arm_O1 {"S":75.639892578125,"O2":63.599853515625}
+[01:44:58.925] livekit-iso-all-26s-O-W25-20261010T014400-17 arm_O2 {"S":71.72265625,"O1":68.58837890625}
+[01:45:00.345] livekit-iso-all-26s-O-W25-20261010T014400-17 arm_S {"O1":65.7451171875,"O2":61.45751953125}
+[01:45:06.743] livekit-iso-all-26s-O-W25-20261010T014400-17 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791596706789.0498,"after":1791596706801.3574},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:45:35.367] livekit-iso-all-26s-O-W25-20261010T014400-17 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791596706789.0498,"after":1791596706801.3574},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:46:51.929] livekit-iso-all-26s-O-W25-20261010T014400-17 VALID
+[01:47:15.898] livekit-iso-all-28s-O-W25-20261010T014651-18 attempt_timeout_set {"ms":25000}
+[01:47:17.997] livekit-iso-all-28s-O-W25-20261010T014651-18 join_O1 {"sessionId":"PA_EkMGd2XDevZ4"}
+[01:47:20.094] livekit-iso-all-28s-O-W25-20261010T014651-18 join_O2 {"sessionId":"PA_dxKvDhQ7yxie"}
+[01:47:22.180] livekit-iso-all-28s-O-W25-20261010T014651-18 join_S {"sessionId":"PA_uvBEgM4ew8X5"}
+[01:47:26.277] livekit-iso-all-28s-O-W25-20261010T014651-18 media_flowing {}
+[01:47:44.010] livekit-iso-all-28s-O-W25-20261010T014651-18 arm_O1 {"S":69.420654296875,"O2":57.357177734375}
+[01:47:45.353] livekit-iso-all-28s-O-W25-20261010T014651-18 arm_O2 {"S":62.459716796875,"O1":75.74462890625}
+[01:47:46.708] livekit-iso-all-28s-O-W25-20261010T014651-18 arm_S {"O1":71.64453125,"O2":72.045166015625}
+[01:47:53.384] livekit-iso-all-28s-O-W25-20261010T014651-18 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791596873433.4275,"after":1791596873446.396},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:48:25.319] livekit-iso-all-28s-O-W25-20261010T014651-18 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791596873433.4275,"after":1791596873446.396},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:49:46.607] livekit-iso-all-28s-O-W25-20261010T014651-18 VALID
+[01:50:08.174] livekit-iso-all-18s-O-W25-20261010T014946-19 attempt_timeout_set {"ms":25000}
+[01:50:10.214] livekit-iso-all-18s-O-W25-20261010T014946-19 join_O1 {"sessionId":"PA_r76EfaCuvXbJ"}
+[01:50:12.253] livekit-iso-all-18s-O-W25-20261010T014946-19 join_O2 {"sessionId":"PA_hnUXN2vGQ6Y9"}
+[01:50:14.339] livekit-iso-all-18s-O-W25-20261010T014946-19 join_S {"sessionId":"PA_WJ2LLfLfRaZ9"}
+[01:50:18.847] livekit-iso-all-18s-O-W25-20261010T014946-19 media_flowing {}
+[01:50:37.475] livekit-iso-all-18s-O-W25-20261010T014946-19 arm_O1 {"S":59.221435546875,"O2":70.511962890625}
+[01:50:39.073] livekit-iso-all-18s-O-W25-20261010T014946-19 arm_O2 {"S":62.328857421875,"O1":65.0439453125}
+[01:50:40.420] livekit-iso-all-18s-O-W25-20261010T014946-19 arm_S {"O1":66.796142578125,"O2":71.8466796875}
+[01:50:47.064] livekit-iso-all-18s-O-W25-20261010T014946-19 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791597047118.3274,"after":1791597047128.7131},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:51:07.528] livekit-iso-all-18s-O-W25-20261010T014946-19 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791597047118.3274,"after":1791597047128.7131},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[01:52:38.304] livekit-iso-all-18s-O-W25-20261010T014946-19 VALID
+[01:53:01.734] livekit-iso-all-19s-O-W25-20261010T015238-20 attempt_timeout_set {"ms":25000}
+[01:53:03.912] livekit-iso-all-19s-O-W25-20261010T015238-20 join_O1 {"sessionId":"PA_2MPGmMT55xdg"}
+[01:53:05.999] livekit-iso-all-19s-O-W25-20261010T015238-20 join_O2 {"sessionId":"PA_THEXd9ZG4mPH"}
+[01:53:08.153] livekit-iso-all-19s-O-W25-20261010T015238-20 join_S {"sessionId":"PA_vWnnSwWQar59"}
+[01:53:12.512] livekit-iso-all-19s-O-W25-20261010T015238-20 media_flowing {}
+[01:53:31.064] livekit-iso-all-19s-O-W25-20261010T015238-20 arm_O1 {"S":73.40869140625,"O2":67.628173828125}
+[01:53:32.602] livekit-iso-all-19s-O-W25-20261010T015238-20 arm_O2 {"S":66.39990234375,"O1":70.38671875}
+[01:53:33.962] livekit-iso-all-19s-O-W25-20261010T015238-20 arm_S {"O1":75.161376953125,"O2":62.38330078125}
+[01:53:40.429] livekit-iso-all-19s-O-W25-20261010T015238-20 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791597220484.205,"after":1791597220494.5256},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:54:01.857] livekit-iso-all-19s-O-W25-20261010T015238-20 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791597220484.205,"after":1791597220494.5256},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:55:25.810] livekit-iso-all-19s-O-W25-20261010T015238-20 VALID
+[01:55:50.221] livekit-iso-all-18s-O-W25-20261010T015525-21 attempt_timeout_set {"ms":25000}
+[01:55:52.254] livekit-iso-all-18s-O-W25-20261010T015525-21 join_O1 {"sessionId":"PA_X7amxeX8HLrf"}
+[01:55:54.312] livekit-iso-all-18s-O-W25-20261010T015525-21 join_O2 {"sessionId":"PA_H563JQ9pi5J8"}
+[01:55:56.397] livekit-iso-all-18s-O-W25-20261010T015525-21 join_S {"sessionId":"PA_LymwZ9Cgija9"}
+[01:56:00.665] livekit-iso-all-18s-O-W25-20261010T015525-21 media_flowing {}
+[01:56:19.553] livekit-iso-all-18s-O-W25-20261010T015525-21 arm_O1 {"S":63.7236328125,"O2":77.08642578125}
+[01:56:21.455] livekit-iso-all-18s-O-W25-20261010T015525-21 arm_O2 {"S":69.875732421875,"O1":66.535888671875}
+[01:56:22.880] livekit-iso-all-18s-O-W25-20261010T015525-21 arm_S {"O1":76.134033203125,"O2":74.806396484375}
+[01:56:29.293] livekit-iso-all-18s-O-W25-20261010T015525-21 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791597389356.5566,"after":1791597389367.386},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:56:49.874] livekit-iso-all-18s-O-W25-20261010T015525-21 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791597389356.5566,"after":1791597389367.386},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[01:58:04.046] livekit-iso-all-18s-O-W25-20261010T015525-21 VALID
+[01:58:25.938] livekit-iso-all-19s-O-W15-20261010T015804-22 attempt_timeout_set {"ms":15000}
+[01:58:27.921] livekit-iso-all-19s-O-W15-20261010T015804-22 join_O1 {"sessionId":"PA_PWmcBe6H5uFT"}
+[01:58:29.909] livekit-iso-all-19s-O-W15-20261010T015804-22 join_O2 {"sessionId":"PA_XpNyKgcZ9PVe"}
+[01:58:31.955] livekit-iso-all-19s-O-W15-20261010T015804-22 join_S {"sessionId":"PA_za3SR5nvCZEq"}
+[01:58:35.984] livekit-iso-all-19s-O-W15-20261010T015804-22 media_flowing {}
+[01:58:53.906] livekit-iso-all-19s-O-W15-20261010T015804-22 arm_O1 {"S":62.017578125,"O2":76.392822265625}
+[01:58:55.200] livekit-iso-all-19s-O-W15-20261010T015804-22 arm_O2 {"S":63.314697265625,"O1":69.653564453125}
+[01:58:56.475] livekit-iso-all-19s-O-W15-20261010T015804-22 arm_S {"O1":85.470947265625,"O2":77.497802734375}
+[01:59:02.932] livekit-iso-all-19s-O-W15-20261010T015804-22 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791597542990.0588,"after":1791597543002.034},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[01:59:24.635] livekit-iso-all-19s-O-W15-20261010T015804-22 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791597542990.0588,"after":1791597543002.034},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:00:53.442] livekit-iso-all-19s-O-W15-20261010T015804-22 VALID
+[02:01:20.311] livekit-iso-all-19s-O-W15-20261010T020053-23 attempt_timeout_set {"ms":15000}
+[02:01:25.418] livekit-iso-all-19s-O-W15-20261010T020053-23 join_O1 {"sessionId":"PA_E8CCneoizg2A"}
+[02:01:28.545] livekit-iso-all-19s-O-W15-20261010T020053-23 join_O2 {"sessionId":"PA_esFJrL7Jfy37"}
+[02:01:31.729] livekit-iso-all-19s-O-W15-20261010T020053-23 join_S {"sessionId":"PA_WwBXGxKa2Lbr"}
+[02:01:37.431] livekit-iso-all-19s-O-W15-20261010T020053-23 media_flowing {}
+[02:01:57.068] livekit-iso-all-19s-O-W15-20261010T020053-23 arm_O1 {"S":63.501708984375,"O2":77.53857421875}
+[02:01:58.599] livekit-iso-all-19s-O-W15-20261010T020053-23 arm_O2 {"S":70.607421875,"O1":61.342041015625}
+[02:02:00.142] livekit-iso-all-19s-O-W15-20261010T020053-23 arm_S {"O1":81.30859375,"O2":63.685302734375}
+[02:02:06.682] livekit-iso-all-19s-O-W15-20261010T020053-23 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791597726750.225,"after":1791597726759.898},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:02:29.447] livekit-iso-all-19s-O-W15-20261010T020053-23 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791597726750.225,"after":1791597726759.898},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[02:04:24.705] livekit-iso-all-19s-O-W15-20261010T020053-23 VALID
+[02:05:02.797] livekit-iso-all-17s-O-W10-20261010T020424-24 attempt_timeout_set {"ms":10000}
+[02:05:05.131] livekit-iso-all-17s-O-W10-20261010T020424-24 join_O1 {"sessionId":"PA_9UFdS59ikWGg"}
+[02:05:07.217] livekit-iso-all-17s-O-W10-20261010T020424-24 join_O2 {"sessionId":"PA_pfU56DnnayZV"}
+[02:05:09.339] livekit-iso-all-17s-O-W10-20261010T020424-24 join_S {"sessionId":"PA_nvDqzZ2CkwmS"}
+[02:05:13.888] livekit-iso-all-17s-O-W10-20261010T020424-24 media_flowing {}
+[02:05:33.500] livekit-iso-all-17s-O-W10-20261010T020424-24 arm_O1 {"S":68.90234375,"O2":80.910888671875}
+[02:05:34.879] livekit-iso-all-17s-O-W10-20261010T020424-24 arm_O2 {"S":75.7822265625,"O1":58.12060546875}
+[02:05:36.226] livekit-iso-all-17s-O-W10-20261010T020424-24 arm_S {"O1":71.884033203125,"O2":63.77392578125}
+[02:05:42.775] livekit-iso-all-17s-O-W10-20261010T020424-24 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791597942849.6882,"after":1791597942859.668},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:06:02.475] livekit-iso-all-17s-O-W10-20261010T020424-24 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791597942849.6882,"after":1791597942859.668},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:07:30.831] livekit-iso-all-17s-O-W10-20261010T020424-24 VALID
+[02:07:53.816] livekit-iso-all-18s-O-W25-20261010T020730-25 attempt_timeout_set {"ms":25000}
+[02:07:55.921] livekit-iso-all-18s-O-W25-20261010T020730-25 join_O1 {"sessionId":"PA_RYhsQNommYUz"}
+[02:07:58.019] livekit-iso-all-18s-O-W25-20261010T020730-25 join_O2 {"sessionId":"PA_jdffTfcxNLQc"}
+[02:08:00.591] livekit-iso-all-18s-O-W25-20261010T020730-25 join_S {"sessionId":"PA_Bh9GBEqjAgGb"}
+[02:08:06.183] livekit-iso-all-18s-O-W25-20261010T020730-25 media_flowing {}
+[02:08:31.059] livekit-iso-all-18s-O-W25-20261010T020730-25 arm_O1 {"S":63.15087890625,"O2":70.763916015625}
+[02:08:36.273] livekit-iso-all-18s-O-W25-20261010T020730-25 arm_O2 {"S":64.399658203125,"O1":65.901123046875}
+[02:08:38.447] livekit-iso-all-18s-O-W25-20261010T020730-25 arm_S {"O1":75.44189453125,"O2":74.774658203125}
+[02:08:46.708] livekit-iso-all-18s-O-W25-20261010T020730-25 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791598126756.6738,"after":1791598126768.5059},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:09:07.516] livekit-iso-all-18s-O-W25-20261010T020730-25 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791598126756.6738,"after":1791598126768.5059},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:10:37.215] livekit-iso-all-18s-O-W25-20261010T020730-25 VALID
+[02:11:02.084] livekit-iso-all-16s-O-W10-20261010T021037-26 attempt_timeout_set {"ms":10000}
+[02:11:04.159] livekit-iso-all-16s-O-W10-20261010T021037-26 join_O1 {"sessionId":"PA_Txt3rvdEPXwx"}
+[02:11:06.261] livekit-iso-all-16s-O-W10-20261010T021037-26 join_O2 {"sessionId":"PA_rx4JFPKrJL6o"}
+[02:11:08.403] livekit-iso-all-16s-O-W10-20261010T021037-26 join_S {"sessionId":"PA_Gesa6orwHpXD"}
+[02:11:12.620] livekit-iso-all-16s-O-W10-20261010T021037-26 media_flowing {}
+[02:11:31.106] livekit-iso-all-16s-O-W10-20261010T021037-26 arm_O1 {"S":63.1845703125,"O2":61.967529296875}
+[02:11:32.490] livekit-iso-all-16s-O-W10-20261010T021037-26 arm_O2 {"S":65.214111328125,"O1":62.406005859375}
+[02:11:33.826] livekit-iso-all-16s-O-W10-20261010T021037-26 arm_S {"O1":69.89599609375,"O2":71.38623046875}
+[02:11:41.188] livekit-iso-all-16s-O-W10-20261010T021037-26 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791598301236.3047,"after":1791598301252.6016},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:11:59.620] livekit-iso-all-16s-O-W10-20261010T021037-26 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791598301236.3047,"after":1791598301252.6016},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:13:19.176] livekit-iso-all-16s-O-W10-20261010T021037-26 VALID
+[02:13:41.048] livekit-iso-all-16s-O-W10-20261010T021319-27 attempt_timeout_set {"ms":10000}
+[02:13:43.098] livekit-iso-all-16s-O-W10-20261010T021319-27 join_O1 {"sessionId":"PA_SdAubkP2AU29"}
+[02:13:45.252] livekit-iso-all-16s-O-W10-20261010T021319-27 join_O2 {"sessionId":"PA_HnveyLGkBKc7"}
+[02:13:47.971] livekit-iso-all-16s-O-W10-20261010T021319-27 join_S {"sessionId":"PA_T8mry8qet9Jm"}
+[02:13:51.914] livekit-iso-all-16s-O-W10-20261010T021319-27 media_flowing {}
+[02:14:09.730] livekit-iso-all-16s-O-W10-20261010T021319-27 arm_O1 {"S":65.15185546875,"O2":60.0498046875}
+[02:14:11.080] livekit-iso-all-16s-O-W10-20261010T021319-27 arm_O2 {"S":68.125732421875,"O1":56.648681640625}
+[02:14:12.464] livekit-iso-all-16s-O-W10-20261010T021319-27 arm_S {"O1":66.52880859375,"O2":60.70947265625}
+[02:14:18.810] livekit-iso-all-16s-O-W10-20261010T021319-27 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791598458873.833,"after":1791598458883.3262},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:14:37.180] livekit-iso-all-16s-O-W10-20261010T021319-27 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791598458873.833,"after":1791598458883.3262},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:16:05.924] livekit-iso-all-16s-O-W10-20261010T021319-27 VALID
+[02:16:33.089] livekit-iso-all-18s-O-W15-20261010T021605-28 attempt_timeout_set {"ms":15000}
+[02:16:35.423] livekit-iso-all-18s-O-W15-20261010T021605-28 join_O1 {"sessionId":"PA_rS5tgEDpoYc5"}
+[02:16:37.534] livekit-iso-all-18s-O-W15-20261010T021605-28 join_O2 {"sessionId":"PA_tJ7248gfzZqr"}
+[02:16:39.665] livekit-iso-all-18s-O-W15-20261010T021605-28 join_S {"sessionId":"PA_hyc3LdwJRNYV"}
+[02:16:43.837] livekit-iso-all-18s-O-W15-20261010T021605-28 media_flowing {}
+[02:17:02.638] livekit-iso-all-18s-O-W15-20261010T021605-28 arm_O1 {"S":68.77978515625,"O2":71.703857421875}
+[02:17:03.971] livekit-iso-all-18s-O-W15-20261010T021605-28 arm_O2 {"S":70.1708984375,"O1":74.5537109375}
+[02:17:05.383] livekit-iso-all-18s-O-W15-20261010T021605-28 arm_S {"O1":76.26904296875,"O2":76.099853515625}
+[02:17:12.022] livekit-iso-all-18s-O-W15-20261010T021605-28 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791598632083.7449,"after":1791598632093.3625},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:17:37.263] livekit-iso-all-18s-O-W15-20261010T021605-28 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791598632083.7449,"after":1791598632093.3625},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:19:14.880] livekit-iso-all-18s-O-W15-20261010T021605-28 VALID
+[02:19:38.132] livekit-iso-all-17s-O-W10-20261010T021914-29 attempt_timeout_set {"ms":10000}
+[02:19:40.119] livekit-iso-all-17s-O-W10-20261010T021914-29 join_O1 {"sessionId":"PA_WsY6LNJZnvkf"}
+[02:19:42.145] livekit-iso-all-17s-O-W10-20261010T021914-29 join_O2 {"sessionId":"PA_mUvkXNsRQqxf"}
+[02:19:44.160] livekit-iso-all-17s-O-W10-20261010T021914-29 join_S {"sessionId":"PA_6fxGWEMF5vGZ"}
+[02:19:48.129] livekit-iso-all-17s-O-W10-20261010T021914-29 media_flowing {}
+[02:20:06.852] livekit-iso-all-17s-O-W10-20261010T021914-29 arm_O1 {"S":58.56005859375,"O2":73.375244140625}
+[02:20:08.407] livekit-iso-all-17s-O-W10-20261010T021914-29 arm_O2 {"S":67.881103515625,"O1":72.673828125}
+[02:20:10.789] livekit-iso-all-17s-O-W10-20261010T021914-29 arm_S {"O1":81.56494140625,"O2":66.2041015625}
+[02:20:19.130] livekit-iso-all-17s-O-W10-20261010T021914-29 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791598819202.216,"after":1791598819211.3647},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:20:38.041] livekit-iso-all-17s-O-W10-20261010T021914-29 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791598819202.216,"after":1791598819211.3647},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:21:59.321] livekit-iso-all-17s-O-W10-20261010T021914-29 VALID
+[02:22:27.058] livekit-iso-all-18s-O-W15-20261010T022159-30 attempt_timeout_set {"ms":15000}
+[02:22:29.129] livekit-iso-all-18s-O-W15-20261010T022159-30 join_O1 {"sessionId":"PA_PiEnwdQV7xMZ"}
+[02:22:32.410] livekit-iso-all-18s-O-W15-20261010T022159-30 join_O2 {"sessionId":"PA_3byCQCm3mhup"}
+[02:22:35.714] livekit-iso-all-18s-O-W15-20261010T022159-30 join_S {"sessionId":"PA_6HKNVYUoHyi6"}
+[02:22:40.376] livekit-iso-all-18s-O-W15-20261010T022159-30 media_flowing {}
+[02:22:58.357] livekit-iso-all-18s-O-W15-20261010T022159-30 arm_O1 {"S":85.411376953125,"O2":66.277099609375}
+[02:22:59.884] livekit-iso-all-18s-O-W15-20261010T022159-30 arm_O2 {"S":73.38232421875,"O1":61.857177734375}
+[02:23:01.327] livekit-iso-all-18s-O-W15-20261010T022159-30 arm_S {"O1":79.450439453125,"O2":70.272216796875}
+[02:23:07.712] livekit-iso-all-18s-O-W15-20261010T022159-30 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791598987786.7588,"after":1791598987796.7595},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:23:27.430] livekit-iso-all-18s-O-W15-20261010T022159-30 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791598987786.7588,"after":1791598987796.7595},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:24:42.176] livekit-iso-all-18s-O-W15-20261010T022159-30 VALID
+[02:25:04.155] livekit-iso-all-16s-O-W10-20261010T022442-31 attempt_timeout_set {"ms":10000}
+[02:25:06.171] livekit-iso-all-16s-O-W10-20261010T022442-31 join_O1 {"sessionId":"PA_kaPfXZooYJsv"}
+[02:25:08.230] livekit-iso-all-16s-O-W10-20261010T022442-31 join_O2 {"sessionId":"PA_4wieH5ZKSp8F"}
+[02:25:10.284] livekit-iso-all-16s-O-W10-20261010T022442-31 join_S {"sessionId":"PA_UyzEGd5DfmTd"}
+[02:25:14.416] livekit-iso-all-16s-O-W10-20261010T022442-31 media_flowing {}
+[02:25:32.953] livekit-iso-all-16s-O-W10-20261010T022442-31 arm_O1 {"S":64.09033203125,"O2":67.80224609375}
+[02:25:34.316] livekit-iso-all-16s-O-W10-20261010T022442-31 arm_O2 {"S":55.600341796875,"O1":66.251953125}
+[02:25:35.628] livekit-iso-all-16s-O-W10-20261010T022442-31 arm_S {"O1":68.201171875,"O2":69.237548828125}
+[02:25:41.997] livekit-iso-all-16s-O-W10-20261010T022442-31 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791599142072.7249,"after":1791599142083.4307},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:26:00.348] livekit-iso-all-16s-O-W10-20261010T022442-31 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791599142072.7249,"after":1791599142083.4307},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:27:19.395] livekit-iso-all-16s-O-W10-20261010T022442-31 VALID
+[02:27:45.660] livekit-iso-all-26s-O-W25-20261010T022719-32 attempt_timeout_set {"ms":25000}
+[02:27:47.926] livekit-iso-all-26s-O-W25-20261010T022719-32 join_O1 {"sessionId":"PA_m4j9rkdJHxiK"}
+[02:27:50.545] livekit-iso-all-26s-O-W25-20261010T022719-32 join_O2 {"sessionId":"PA_JM7xGdB7hZGY"}
+[02:27:52.846] livekit-iso-all-26s-O-W25-20261010T022719-32 join_S {"sessionId":"PA_ExoYXqKWCqCE"}
+[02:27:57.465] livekit-iso-all-26s-O-W25-20261010T022719-32 media_flowing {}
+[02:28:16.195] livekit-iso-all-26s-O-W25-20261010T022719-32 arm_O1 {"S":70.914306640625,"O2":64.5341796875}
+[02:28:17.648] livekit-iso-all-26s-O-W25-20261010T022719-32 arm_O2 {"S":68.365478515625,"O1":79.787109375}
+[02:28:19.168] livekit-iso-all-26s-O-W25-20261010T022719-32 arm_S {"O1":74.742919921875,"O2":68.987548828125}
+[02:28:25.656] livekit-iso-all-26s-O-W25-20261010T022719-32 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791599305732.7605,"after":1791599305742.645},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:28:54.349] livekit-iso-all-26s-O-W25-20261010T022719-32 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791599305732.7605,"after":1791599305742.645},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:30:29.764] livekit-iso-all-26s-O-W25-20261010T022719-32 VALID
+[02:31:04.849] livekit-iso-all-28s-O-W25-20261010T023029-33 attempt_timeout_set {"ms":25000}
+[02:31:07.508] livekit-iso-all-28s-O-W25-20261010T023029-33 join_O1 {"sessionId":"PA_EHrYSRYp6dME"}
+[02:31:10.240] livekit-iso-all-28s-O-W25-20261010T023029-33 join_O2 {"sessionId":"PA_vKwSbA9ce5n8"}
+[02:31:12.926] livekit-iso-all-28s-O-W25-20261010T023029-33 join_S {"sessionId":"PA_Vafj5GHGQb8G"}
+[02:31:19.254] livekit-iso-all-28s-O-W25-20261010T023029-33 media_flowing {}
+[02:31:38.160] livekit-iso-all-28s-O-W25-20261010T023029-33 arm_O1 {"S":64.379638671875,"O2":58.19921875}
+[02:31:40.282] livekit-iso-all-28s-O-W25-20261010T023029-33 arm_O2 {"S":63.451171875,"O1":68.500244140625}
+[02:31:42.400] livekit-iso-all-28s-O-W25-20261010T023029-33 arm_S {"O1":63.5302734375,"O2":75.230224609375}
+[02:31:49.622] livekit-iso-all-28s-O-W25-20261010T023029-33 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791599509689.1812,"after":1791599509702.5093},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:32:20.064] livekit-iso-all-28s-O-W25-20261010T023029-33 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791599509689.1812,"after":1791599509702.5093},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:34:02.235] livekit-iso-all-28s-O-W25-20261010T023029-33 VALID
+[02:34:33.370] livekit-iso-all-19s-O-W15-20261010T023402-34 attempt_timeout_set {"ms":15000}
+[02:34:36.094] livekit-iso-all-19s-O-W15-20261010T023402-34 join_O1 {"sessionId":"PA_vUd9Hmvt52bu"}
+[02:34:38.646] livekit-iso-all-19s-O-W15-20261010T023402-34 join_O2 {"sessionId":"PA_qppfb5i27qdR"}
+[02:34:41.214] livekit-iso-all-19s-O-W15-20261010T023402-34 join_S {"sessionId":"PA_iK9FKpCu2XCG"}
+[02:34:47.234] livekit-iso-all-19s-O-W15-20261010T023402-34 media_flowing {}
+[02:35:07.437] livekit-iso-all-19s-O-W15-20261010T023402-34 arm_O1 {"S":54.52783203125,"O2":70.110595703125}
+[02:35:09.578] livekit-iso-all-19s-O-W15-20261010T023402-34 arm_O2 {"S":61.01123046875,"O1":72.44677734375}
+[02:35:11.371] livekit-iso-all-19s-O-W15-20261010T023402-34 arm_S {"O1":54.273681640625,"O2":62.584716796875}
+[02:35:18.398] livekit-iso-all-19s-O-W15-20261010T023402-34 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791599718480.4287,"after":1791599718491.275},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:35:39.638] livekit-iso-all-19s-O-W15-20261010T023402-34 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791599718480.4287,"after":1791599718491.275},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:37:24.465] livekit-iso-all-19s-O-W15-20261010T023402-34 INVALID: observer O2 detected a failure of its own connection
+[02:37:55.400] livekit-iso-all-16s-O-W10-20261010T023724-35 attempt_timeout_set {"ms":10000}
+[02:37:57.918] livekit-iso-all-16s-O-W10-20261010T023724-35 join_O1 {"sessionId":"PA_fMEs2JnEPPMZ"}
+[02:38:00.415] livekit-iso-all-16s-O-W10-20261010T023724-35 join_O2 {"sessionId":"PA_x6AbUFKFxRfW"}
+[02:38:02.885] livekit-iso-all-16s-O-W10-20261010T023724-35 join_S {"sessionId":"PA_dg2DiiNM3div"}
+[02:38:08.328] livekit-iso-all-16s-O-W10-20261010T023724-35 media_flowing {}
+[02:38:29.702] livekit-iso-all-16s-O-W10-20261010T023724-35 arm_O1 {"S":67.275634765625,"O2":64.99609375}
+[02:38:32.499] livekit-iso-all-16s-O-W10-20261010T023724-35 arm_O2 {"S":73.19287109375,"O1":69.884521484375}
+[02:38:37.257] livekit-iso-all-16s-O-W10-20261010T023724-35 arm_S {"O1":61.591796875,"O2":71.19189453125}
+[02:38:45.330] livekit-iso-all-16s-O-W10-20261010T023724-35 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791599925419.1694,"after":1791599925429.644},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:39:10.032] livekit-iso-all-16s-O-W10-20261010T023724-35 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791599925419.1694,"after":1791599925429.644},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:42:11.392] livekit-iso-all-16s-O-W10-20261010T023724-35 INVALID: observer O2 detected a failure of its own connection
+[02:43:12.144] livekit-iso-all-26s-O-W25-20261010T024211-36 attempt_timeout_set {"ms":25000}
+[02:43:16.369] livekit-iso-all-26s-O-W25-20261010T024211-36 join_O1 {"sessionId":"PA_moco9QnpJd4m"}
+[02:43:20.731] livekit-iso-all-26s-O-W25-20261010T024211-36 join_O2 {"sessionId":"PA_XYvntxuRAhhE"}
+[02:43:25.295] livekit-iso-all-26s-O-W25-20261010T024211-36 join_S {"sessionId":"PA_FW5Z95ywx4L4"}
+[02:43:35.860] livekit-iso-all-26s-O-W25-20261010T024211-36 media_flowing {}
+[02:44:02.130] livekit-iso-all-26s-O-W25-20261010T024211-36 arm_O1 {"S":60.227783203125,"O2":68.42919921875}
+[02:44:10.398] livekit-iso-all-26s-O-W25-20261010T024211-36 arm_O2 {"S":69.709228515625,"O1":61.14013671875}
+[02:44:15.281] livekit-iso-all-26s-O-W25-20261010T024211-36 arm_S {"O1":69.0244140625,"O2":57.185302734375}
+[02:44:24.224] livekit-iso-all-26s-O-W25-20261010T024211-36 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791600264271.9666,"after":1791600264282.0737},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:45:00.737] livekit-iso-all-26s-O-W25-20261010T024211-36 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791600264271.9666,"after":1791600264282.0737},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:47:42.544] livekit-iso-all-26s-O-W25-20261010T024211-36 INVALID: observer O2 detected a failure of its own connection
+[02:48:54.315] livekit-iso-all-14s-O-W10-20261010T024742-37 attempt_timeout_set {"ms":10000}
+[02:48:59.003] livekit-iso-all-14s-O-W10-20261010T024742-37 join_O1 {"sessionId":"PA_hLKh76DAdLNZ"}
+[02:49:04.774] livekit-iso-all-14s-O-W10-20261010T024742-37 join_O2 {"sessionId":"PA_rNaSASYdmAQE"}
+[02:49:10.675] livekit-iso-all-14s-O-W10-20261010T024742-37 join_S {"sessionId":"PA_zQ9LFFH6xoHx"}
+[02:49:24.950] livekit-iso-all-14s-O-W10-20261010T024742-37 media_flowing {}
+[02:49:48.827] livekit-iso-all-14s-O-W10-20261010T024742-37 arm_O1 {"S":59.7041015625,"O2":66.0029296875}
+[02:49:52.417] livekit-iso-all-14s-O-W10-20261010T024742-37 arm_O2 {"S":67.256103515625,"O1":62.762939453125}
+[02:49:55.335] livekit-iso-all-14s-O-W10-20261010T024742-37 arm_S {"O1":79.70458984375,"O2":67.079345703125}
+[02:50:03.423] livekit-iso-all-14s-O-W10-20261010T024742-37 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791600603510.9343,"after":1791600603524.3318},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:50:21.501] livekit-iso-all-14s-O-W10-20261010T024742-37 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791600603510.9343,"after":1791600603524.3318},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:52:34.350] livekit-iso-all-14s-O-W10-20261010T024742-37 VALID
+[02:53:26.282] livekit-iso-all-18s-O-W15-20261010T025234-38 attempt_timeout_set {"ms":15000}
+[02:53:29.303] livekit-iso-all-18s-O-W15-20261010T025234-38 join_O1 {"sessionId":"PA_ebcx9VQJihkE"}
+[02:53:31.989] livekit-iso-all-18s-O-W15-20261010T025234-38 join_O2 {"sessionId":"PA_f72rp4f4N57a"}
+[02:53:35.226] livekit-iso-all-18s-O-W15-20261010T025234-38 join_S {"sessionId":"PA_v9eSA3g5Yw6f"}
+[02:53:42.108] livekit-iso-all-18s-O-W15-20261010T025234-38 media_flowing {}
+[02:54:03.394] livekit-iso-all-18s-O-W15-20261010T025234-38 arm_O1 {"S":69.1123046875,"O2":83.9052734375}
+[02:54:05.539] livekit-iso-all-18s-O-W15-20261010T025234-38 arm_O2 {"S":66.21142578125,"O1":62.731201171875}
+[02:54:07.474] livekit-iso-all-18s-O-W15-20261010T025234-38 arm_S {"O1":64.785888671875,"O2":70.609619140625}
+[02:54:14.580] livekit-iso-all-18s-O-W15-20261010T025234-38 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791600854656.1775,"after":1791600854666.332},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:54:35.972] livekit-iso-all-18s-O-W15-20261010T025234-38 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791600854656.1775,"after":1791600854666.332},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[02:56:23.252] livekit-iso-all-18s-O-W15-20261010T025234-38 VALID
+[02:57:04.684] livekit-iso-all-15s-O-W10-20261010T025623-39 attempt_timeout_set {"ms":10000}
+[02:57:07.461] livekit-iso-all-15s-O-W10-20261010T025623-39 join_O1 {"sessionId":"PA_fNMsbAZAr7tF"}
+[02:57:10.453] livekit-iso-all-15s-O-W10-20261010T025623-39 join_O2 {"sessionId":"PA_WQcNdNbzHxiU"}
+[02:57:13.779] livekit-iso-all-15s-O-W10-20261010T025623-39 join_S {"sessionId":"PA_U6zjEHCaMbar"}
+[02:57:20.303] livekit-iso-all-15s-O-W10-20261010T025623-39 media_flowing {}
+[02:57:39.486] livekit-iso-all-15s-O-W10-20261010T025623-39 arm_O1 {"S":66.821533203125,"O2":64.5625}
+[02:57:40.826] livekit-iso-all-15s-O-W10-20261010T025623-39 arm_O2 {"S":73.536865234375,"O1":73.4921875}
+[02:57:42.406] livekit-iso-all-15s-O-W10-20261010T025623-39 arm_S {"O1":74.081298828125,"O2":72.451416015625}
+[02:57:49.151] livekit-iso-all-15s-O-W10-20261010T025623-39 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791601069232.3733,"after":1791601069244.2144},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[02:58:06.499] livekit-iso-all-15s-O-W10-20261010T025623-39 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791601069232.3733,"after":1791601069244.2144},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[02:59:34.849] livekit-iso-all-15s-O-W10-20261010T025623-39 VALID
+[02:59:58.990] livekit-iso-all-17s-O-W10-20261010T025934-40 attempt_timeout_set {"ms":10000}
+[03:00:01.072] livekit-iso-all-17s-O-W10-20261010T025934-40 join_O1 {"sessionId":"PA_du79RW2ayxj6"}
+[03:00:03.097] livekit-iso-all-17s-O-W10-20261010T025934-40 join_O2 {"sessionId":"PA_z4pm4wxeYMGr"}
+[03:00:05.802] livekit-iso-all-17s-O-W10-20261010T025934-40 join_S {"sessionId":"PA_LTbBLUMRuMda"}
+[03:00:10.657] livekit-iso-all-17s-O-W10-20261010T025934-40 media_flowing {}
+[03:00:30.308] livekit-iso-all-17s-O-W10-20261010T025934-40 arm_O1 {"S":72.0751953125,"O2":69.196533203125}
+[03:00:32.625] livekit-iso-all-17s-O-W10-20261010T025934-40 arm_O2 {"S":67.439453125,"O1":71.678466796875}
+[03:00:34.978] livekit-iso-all-17s-O-W10-20261010T025934-40 arm_S {"O1":81.586181640625,"O2":71.449462890625}
+[03:00:41.558] livekit-iso-all-17s-O-W10-20261010T025934-40 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791601241657.9812,"after":1791601241668.8755},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:01:00.242] livekit-iso-all-17s-O-W10-20261010T025934-40 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791601241657.9812,"after":1791601241668.8755},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:02:19.135] livekit-iso-all-17s-O-W10-20261010T025934-40 VALID
+[03:02:43.013] livekit-iso-all-28s-O-W25-20261010T030219-41 attempt_timeout_set {"ms":25000}
+[03:02:45.290] livekit-iso-all-28s-O-W25-20261010T030219-41 join_O1 {"sessionId":"PA_vYNxNwoxKDdN"}
+[03:02:47.435] livekit-iso-all-28s-O-W25-20261010T030219-41 join_O2 {"sessionId":"PA_V6wnb2hvrT6o"}
+[03:02:49.480] livekit-iso-all-28s-O-W25-20261010T030219-41 join_S {"sessionId":"PA_vmvBPMugzFYm"}
+[03:02:53.481] livekit-iso-all-28s-O-W25-20261010T030219-41 media_flowing {}
+[03:03:13.056] livekit-iso-all-28s-O-W25-20261010T030219-41 arm_O1 {"S":69.683349609375,"O2":68.53076171875}
+[03:03:14.514] livekit-iso-all-28s-O-W25-20261010T030219-41 arm_O2 {"S":62.156005859375,"O1":65.246826171875}
+[03:03:15.817] livekit-iso-all-28s-O-W25-20261010T030219-41 arm_S {"O1":70.22900390625,"O2":63.5537109375}
+[03:03:22.240] livekit-iso-all-28s-O-W25-20261010T030219-41 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791601402339.671,"after":1791601402351.2795},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:03:52.867] livekit-iso-all-28s-O-W25-20261010T030219-41 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791601402339.671,"after":1791601402351.2795},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[03:05:35.353] livekit-iso-all-28s-O-W25-20261010T030219-41 VALID
+[03:06:20.734] livekit-iso-all-19s-O-W15-20261010T030535-42 attempt_timeout_set {"ms":15000}
+[03:06:23.625] livekit-iso-all-19s-O-W15-20261010T030535-42 join_O1 {"sessionId":"PA_LXgaDRy9NywM"}
+[03:06:26.192] livekit-iso-all-19s-O-W15-20261010T030535-42 join_O2 {"sessionId":"PA_fN5VUdeaUv3D"}
+[03:06:28.323] livekit-iso-all-19s-O-W15-20261010T030535-42 join_S {"sessionId":"PA_sPW8RBt37ubc"}
+[03:06:32.737] livekit-iso-all-19s-O-W15-20261010T030535-42 media_flowing {}
+[03:06:51.569] livekit-iso-all-19s-O-W15-20261010T030535-42 arm_O1 {"S":80.11962890625,"O2":74.906005859375}
+[03:06:53.117] livekit-iso-all-19s-O-W15-20261010T030535-42 arm_O2 {"S":71.036376953125,"O1":83.7275390625}
+[03:06:55.332] livekit-iso-all-19s-O-W15-20261010T030535-42 arm_S {"O1":64.427978515625,"O2":58.113525390625}
+[03:07:02.757] livekit-iso-all-19s-O-W15-20261010T030535-42 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791601622837.0798,"after":1791601622851.16},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:07:25.618] livekit-iso-all-19s-O-W15-20261010T030535-42 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791601622837.0798,"after":1791601622851.16},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[03:08:50.025] livekit-iso-all-19s-O-W15-20261010T030535-42 VALID
+[03:09:15.344] livekit-iso-all-17s-O-W10-20261010T030850-43 attempt_timeout_set {"ms":10000}
+[03:09:17.576] livekit-iso-all-17s-O-W10-20261010T030850-43 join_O1 {"sessionId":"PA_ZteRtEeQb727"}
+[03:09:19.767] livekit-iso-all-17s-O-W10-20261010T030850-43 join_O2 {"sessionId":"PA_QzhhwxzJZC69"}
+[03:09:21.975] livekit-iso-all-17s-O-W10-20261010T030850-43 join_S {"sessionId":"PA_HpkuJfZySc6D"}
+[03:09:26.692] livekit-iso-all-17s-O-W10-20261010T030850-43 media_flowing {}
+[03:09:45.281] livekit-iso-all-17s-O-W10-20261010T030850-43 arm_O1 {"S":62.163818359375,"O2":62.48779296875}
+[03:09:46.673] livekit-iso-all-17s-O-W10-20261010T030850-43 arm_O2 {"S":75.148681640625,"O1":59.679931640625}
+[03:09:48.039] livekit-iso-all-17s-O-W10-20261010T030850-43 arm_S {"O1":70.20703125,"O2":65.0419921875}
+[03:09:54.442] livekit-iso-all-17s-O-W10-20261010T030850-43 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791601794553.7258,"after":1791601794565.1558},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:10:13.826] livekit-iso-all-17s-O-W10-20261010T030850-43 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791601794553.7258,"after":1791601794565.1558},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:11:42.948] livekit-iso-all-17s-O-W10-20261010T030850-43 VALID
+[03:12:07.342] livekit-iso-all-19s-O-W15-20261010T031142-44 attempt_timeout_set {"ms":15000}
+[03:12:09.610] livekit-iso-all-19s-O-W15-20261010T031142-44 join_O1 {"sessionId":"PA_faM8V84vafQ8"}
+[03:12:12.384] livekit-iso-all-19s-O-W15-20261010T031142-44 join_O2 {"sessionId":"PA_xA2JGAVF9abX"}
+[03:12:14.608] livekit-iso-all-19s-O-W15-20261010T031142-44 join_S {"sessionId":"PA_nVZxeszGfrji"}
+[03:12:18.710] livekit-iso-all-19s-O-W15-20261010T031142-44 media_flowing {}
+[03:12:36.540] livekit-iso-all-19s-O-W15-20261010T031142-44 arm_O1 {"S":68.93359375,"O2":59.89794921875}
+[03:12:38.004] livekit-iso-all-19s-O-W15-20261010T031142-44 arm_O2 {"S":70.5029296875,"O1":62.916015625}
+[03:12:39.361] livekit-iso-all-19s-O-W15-20261010T031142-44 arm_S {"O1":61.805419921875,"O2":68.601318359375}
+[03:12:45.813] livekit-iso-all-19s-O-W15-20261010T031142-44 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791601965928.126,"after":1791601965937.4614},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:13:08.332] livekit-iso-all-19s-O-W15-20261010T031142-44 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791601965928.126,"after":1791601965937.4614},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[03:14:30.487] livekit-iso-all-19s-O-W15-20261010T031142-44 VALID
+[03:14:52.692] livekit-iso-all-18s-O-W25-20261010T031430-45 attempt_timeout_set {"ms":25000}
+[03:14:54.960] livekit-iso-all-18s-O-W25-20261010T031430-45 join_O1 {"sessionId":"PA_z423TpK8HjpE"}
+[03:14:57.043] livekit-iso-all-18s-O-W25-20261010T031430-45 join_O2 {"sessionId":"PA_QFFeRPZX4FpF"}
+[03:14:59.133] livekit-iso-all-18s-O-W25-20261010T031430-45 join_S {"sessionId":"PA_bDutRbg9Ztrt"}
+[03:15:03.130] livekit-iso-all-18s-O-W25-20261010T031430-45 media_flowing {}
+[03:15:20.849] livekit-iso-all-18s-O-W25-20261010T031430-45 arm_O1 {"S":79.093017578125,"O2":69.9140625}
+[03:15:22.185] livekit-iso-all-18s-O-W25-20261010T031430-45 arm_O2 {"S":67.069091796875,"O1":75.9931640625}
+[03:15:23.569] livekit-iso-all-18s-O-W25-20261010T031430-45 arm_S {"O1":64.654052734375,"O2":76.383544921875}
+[03:15:29.943] livekit-iso-all-18s-O-W25-20261010T031430-45 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791602130053.716,"after":1791602130062.826},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:15:50.713] livekit-iso-all-18s-O-W25-20261010T031430-45 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791602130053.716,"after":1791602130062.826},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[03:17:11.753] livekit-iso-all-18s-O-W25-20261010T031430-45 VALID
+[03:17:35.412] livekit-iso-all-28s-O-W25-20261010T031711-46 attempt_timeout_set {"ms":25000}
+[03:17:37.492] livekit-iso-all-28s-O-W25-20261010T031711-46 join_O1 {"sessionId":"PA_a5m3fpnEZa2B"}
+[03:17:39.621] livekit-iso-all-28s-O-W25-20261010T031711-46 join_O2 {"sessionId":"PA_m7UrnGSVT8Ld"}
+[03:17:41.755] livekit-iso-all-28s-O-W25-20261010T031711-46 join_S {"sessionId":"PA_orVwJmcjTpZu"}
+[03:17:46.006] livekit-iso-all-28s-O-W25-20261010T031711-46 media_flowing {}
+[03:18:04.707] livekit-iso-all-28s-O-W25-20261010T031711-46 arm_O1 {"S":70.93505859375,"O2":68.256103515625}
+[03:18:06.040] livekit-iso-all-28s-O-W25-20261010T031711-46 arm_O2 {"S":66.25146484375,"O1":60.430419921875}
+[03:18:07.457] livekit-iso-all-28s-O-W25-20261010T031711-46 arm_S {"O1":70.6318359375,"O2":63.79443359375}
+[03:18:13.908] livekit-iso-all-28s-O-W25-20261010T031711-46 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791602294029.7837,"after":1791602294041.269},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:18:44.951] livekit-iso-all-28s-O-W25-20261010T031711-46 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791602294029.7837,"after":1791602294041.269},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[03:20:08.430] livekit-iso-all-28s-O-W25-20261010T031711-46 VALID
+[03:20:31.635] livekit-iso-all-26s-O-W25-20261010T032008-47 attempt_timeout_set {"ms":25000}
+[03:20:33.746] livekit-iso-all-26s-O-W25-20261010T032008-47 join_O1 {"sessionId":"PA_7jzVH4wh3EiM"}
+[03:20:35.869] livekit-iso-all-26s-O-W25-20261010T032008-47 join_O2 {"sessionId":"PA_fcSgAYedB7Fz"}
+[03:20:38.061] livekit-iso-all-26s-O-W25-20261010T032008-47 join_S {"sessionId":"PA_oGUmPM8FvSka"}
+[03:20:42.214] livekit-iso-all-26s-O-W25-20261010T032008-47 media_flowing {}
+[03:21:00.863] livekit-iso-all-26s-O-W25-20261010T032008-47 arm_O1 {"S":65.6533203125,"O2":62.468994140625}
+[03:21:02.303] livekit-iso-all-26s-O-W25-20261010T032008-47 arm_O2 {"S":62.280029296875,"O1":61.5703125}
+[03:21:03.637] livekit-iso-all-26s-O-W25-20261010T032008-47 arm_S {"O1":75.51513671875,"O2":75.821044921875}
+[03:21:10.155] livekit-iso-all-26s-O-W25-20261010T032008-47 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791602470283.7905,"after":1791602470295.6533},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:21:39.188] livekit-iso-all-26s-O-W25-20261010T032008-47 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791602470283.7905,"after":1791602470295.6533},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:22:53.306] livekit-iso-all-26s-O-W25-20261010T032008-47 VALID
+[03:23:18.858] livekit-iso-all-16s-O-W10-20261010T032253-48 attempt_timeout_set {"ms":10000}
+[03:23:20.976] livekit-iso-all-16s-O-W10-20261010T032253-48 join_O1 {"sessionId":"PA_tnW6MeFq7RLw"}
+[03:23:23.158] livekit-iso-all-16s-O-W10-20261010T032253-48 join_O2 {"sessionId":"PA_WdeenJ6a5c5t"}
+[03:23:25.344] livekit-iso-all-16s-O-W10-20261010T032253-48 join_S {"sessionId":"PA_drg64zKZwJTy"}
+[03:23:29.585] livekit-iso-all-16s-O-W10-20261010T032253-48 media_flowing {}
+[03:23:47.974] livekit-iso-all-16s-O-W10-20261010T032253-48 arm_O1 {"S":72.480712890625,"O2":57.7783203125}
+[03:23:49.306] livekit-iso-all-16s-O-W10-20261010T032253-48 arm_O2 {"S":69.02587890625,"O1":66.548828125}
+[03:23:50.644] livekit-iso-all-16s-O-W10-20261010T032253-48 arm_S {"O1":75.59619140625,"O2":70.881103515625}
+[03:23:57.081] livekit-iso-all-16s-O-W10-20261010T032253-48 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791602637208.051,"after":1791602637218.9143},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:24:15.103] livekit-iso-all-16s-O-W10-20261010T032253-48 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791602637208.051,"after":1791602637218.9143},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[03:25:30.691] livekit-iso-all-16s-O-W10-20261010T032253-48 VALID
+[03:25:54.265] livekit-iso-all-15s-O-W10-20261010T032530-49 attempt_timeout_set {"ms":10000}
+[03:25:56.838] livekit-iso-all-15s-O-W10-20261010T032530-49 join_O1 {"sessionId":"PA_axDFjwYtZmfY"}
+[03:25:58.983] livekit-iso-all-15s-O-W10-20261010T032530-49 join_O2 {"sessionId":"PA_TLrgvzEBNbjH"}
+[03:26:01.089] livekit-iso-all-15s-O-W10-20261010T032530-49 join_S {"sessionId":"PA_pmgbuzRz4vZs"}
+[03:26:05.186] livekit-iso-all-15s-O-W10-20261010T032530-49 media_flowing {}
+[03:26:24.244] livekit-iso-all-15s-O-W10-20261010T032530-49 arm_O1 {"S":62.10009765625,"O2":56.19384765625}
+[03:26:25.606] livekit-iso-all-15s-O-W10-20261010T032530-49 arm_O2 {"S":54.43505859375,"O1":67.202392578125}
+[03:26:27.053] livekit-iso-all-15s-O-W10-20261010T032530-49 arm_S {"O1":80.51025390625,"O2":65.404541015625}
+[03:26:33.531] livekit-iso-all-15s-O-W10-20261010T032530-49 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791602793568.8071,"after":1791602793579.9917},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:26:50.186] livekit-iso-all-15s-O-W10-20261010T032530-49 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791602793568.8071,"after":1791602793579.9917},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:28:12.240] livekit-iso-all-15s-O-W10-20261010T032530-49 VALID
+[03:28:36.297] livekit-iso-all-18s-O-W25-20261010T032812-50 attempt_timeout_set {"ms":25000}
+[03:28:38.423] livekit-iso-all-18s-O-W25-20261010T032812-50 join_O1 {"sessionId":"PA_HChmj594JbAa"}
+[03:28:40.688] livekit-iso-all-18s-O-W25-20261010T032812-50 join_O2 {"sessionId":"PA_nP9Z2SUgj9TJ"}
+[03:28:42.933] livekit-iso-all-18s-O-W25-20261010T032812-50 join_S {"sessionId":"PA_3zN2vqXk8v5y"}
+[03:28:47.164] livekit-iso-all-18s-O-W25-20261010T032812-50 media_flowing {}
+[03:29:05.567] livekit-iso-all-18s-O-W25-20261010T032812-50 arm_O1 {"S":75.944580078125,"O2":69.867919921875}
+[03:29:06.932] livekit-iso-all-18s-O-W25-20261010T032812-50 arm_O2 {"S":67.6767578125,"O1":66.7998046875}
+[03:29:08.230] livekit-iso-all-18s-O-W25-20261010T032812-50 arm_S {"O1":71.384521484375,"O2":66.772705078125}
+[03:29:14.647] livekit-iso-all-18s-O-W25-20261010T032812-50 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791602954739.7544,"after":1791602954749.1555},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:29:35.203] livekit-iso-all-18s-O-W25-20261010T032812-50 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791602954739.7544,"after":1791602954749.1555},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:30:52.748] livekit-iso-all-18s-O-W25-20261010T032812-50 VALID
+[03:31:14.793] livekit-iso-all-19s-O-W25-20261010T033052-51 attempt_timeout_set {"ms":25000}
+[03:31:16.812] livekit-iso-all-19s-O-W25-20261010T033052-51 join_O1 {"sessionId":"PA_WeNPSKpVhcXz"}
+[03:31:19.006] livekit-iso-all-19s-O-W25-20261010T033052-51 join_O2 {"sessionId":"PA_UXLwPEUMZ7WX"}
+[03:31:21.604] livekit-iso-all-19s-O-W25-20261010T033052-51 join_S {"sessionId":"PA_4KNkjUk6VvWD"}
+[03:31:27.313] livekit-iso-all-19s-O-W25-20261010T033052-51 media_flowing {}
+[03:31:45.210] livekit-iso-all-19s-O-W25-20261010T033052-51 arm_O1 {"S":69.220458984375,"O2":60.45947265625}
+[03:31:46.548] livekit-iso-all-19s-O-W25-20261010T033052-51 arm_O2 {"S":65.560546875,"O1":69.61474609375}
+[03:31:47.860] livekit-iso-all-19s-O-W25-20261010T033052-51 arm_S {"O1":70.275390625,"O2":69.03271484375}
+[03:31:54.322] livekit-iso-all-19s-O-W25-20261010T033052-51 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791603114410.94,"after":1791603114420.7834},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:32:16.345] livekit-iso-all-19s-O-W25-20261010T033052-51 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791603114410.94,"after":1791603114420.7834},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[03:33:43.545] livekit-iso-all-19s-O-W25-20261010T033052-51 VALID
+[03:34:07.311] livekit-iso-all-15s-O-W10-20261010T033343-52 attempt_timeout_set {"ms":10000}
+[03:34:09.418] livekit-iso-all-15s-O-W10-20261010T033343-52 join_O1 {"sessionId":"PA_MqfwYCVmHJ6B"}
+[03:34:11.515] livekit-iso-all-15s-O-W10-20261010T033343-52 join_O2 {"sessionId":"PA_utqosVEf92rg"}
+[03:34:13.638] livekit-iso-all-15s-O-W10-20261010T033343-52 join_S {"sessionId":"PA_jBQLuqMbK4no"}
+[03:34:18.010] livekit-iso-all-15s-O-W10-20261010T033343-52 media_flowing {}
+[03:34:37.544] livekit-iso-all-15s-O-W10-20261010T033343-52 arm_O1 {"S":65.66552734375,"O2":65.557373046875}
+[03:34:38.835] livekit-iso-all-15s-O-W10-20261010T033343-52 arm_O2 {"S":58.628662109375,"O1":76.213134765625}
+[03:34:40.149] livekit-iso-all-15s-O-W10-20261010T033343-52 arm_S {"O1":74.59619140625,"O2":85.864501953125}
+[03:34:46.557] livekit-iso-all-15s-O-W10-20261010T033343-52 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791603286646.142,"after":1791603286657.0159},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:35:04.330] livekit-iso-all-15s-O-W10-20261010T033343-52 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791603286646.142,"after":1791603286657.0159},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[03:36:23.520] livekit-iso-all-15s-O-W10-20261010T033343-52 VALID
+[03:36:46.096] livekit-iso-all-17s-O-W10-20261010T033623-53 attempt_timeout_set {"ms":10000}
+[03:36:48.127] livekit-iso-all-17s-O-W10-20261010T033623-53 join_O1 {"sessionId":"PA_gFJNoH3Vegrx"}
+[03:36:50.160] livekit-iso-all-17s-O-W10-20261010T033623-53 join_O2 {"sessionId":"PA_ZiJbwirAuTgU"}
+[03:36:52.229] livekit-iso-all-17s-O-W10-20261010T033623-53 join_S {"sessionId":"PA_mDvBGeTZvLoW"}
+[03:36:56.306] livekit-iso-all-17s-O-W10-20261010T033623-53 media_flowing {}
+[03:37:14.381] livekit-iso-all-17s-O-W10-20261010T033623-53 arm_O1 {"S":61.64501953125,"O2":84.97314453125}
+[03:37:15.774] livekit-iso-all-17s-O-W10-20261010T033623-53 arm_O2 {"S":69.41552734375,"O1":72.9306640625}
+[03:37:17.215] livekit-iso-all-17s-O-W10-20261010T033623-53 arm_S {"O1":71.95556640625,"O2":80.7724609375}
+[03:37:23.609] livekit-iso-all-17s-O-W10-20261010T033623-53 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791603443704.398,"after":1791603443715.3225},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:37:42.326] livekit-iso-all-17s-O-W10-20261010T033623-53 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791603443704.398,"after":1791603443715.3225},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[03:39:03.379] livekit-iso-all-17s-O-W10-20261010T033623-53 VALID
+[03:39:27.005] livekit-iso-all-19s-O-W15-20261010T033903-54 attempt_timeout_set {"ms":15000}
+[03:39:29.182] livekit-iso-all-19s-O-W15-20261010T033903-54 join_O1 {"sessionId":"PA_x4HH6fjiJczJ"}
+[03:39:31.247] livekit-iso-all-19s-O-W15-20261010T033903-54 join_O2 {"sessionId":"PA_JXsbxe7x43Uj"}
+[03:39:33.376] livekit-iso-all-19s-O-W15-20261010T033903-54 join_S {"sessionId":"PA_sscRJEhtnFeS"}
+[03:39:37.437] livekit-iso-all-19s-O-W15-20261010T033903-54 media_flowing {}
+[03:39:56.936] livekit-iso-all-19s-O-W15-20261010T033903-54 arm_O1 {"S":76.47021484375,"O2":66.826171875}
+[03:39:58.350] livekit-iso-all-19s-O-W15-20261010T033903-54 arm_O2 {"S":69.927001953125,"O1":79.031494140625}
+[03:39:59.728] livekit-iso-all-19s-O-W15-20261010T033903-54 arm_S {"O1":55.87890625,"O2":62.285400390625}
+[03:40:06.152] livekit-iso-all-19s-O-W15-20261010T033903-54 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791603606244.1091,"after":1791603606256.7468},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:40:27.749] livekit-iso-all-19s-O-W15-20261010T033903-54 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791603606244.1091,"after":1791603606256.7468},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:42:05.364] livekit-iso-all-19s-O-W15-20261010T033903-54 VALID
+[03:42:46.875] livekit-iso-all-28s-O-W25-20261010T034205-55 attempt_timeout_set {"ms":25000}
+[03:42:49.064] livekit-iso-all-28s-O-W25-20261010T034205-55 join_O1 {"sessionId":"PA_xQ8MRiBQxYGN"}
+[03:42:51.207] livekit-iso-all-28s-O-W25-20261010T034205-55 join_O2 {"sessionId":"PA_KnGUJanx4e3q"}
+[03:42:53.352] livekit-iso-all-28s-O-W25-20261010T034205-55 join_S {"sessionId":"PA_KzoqmUoH4tNq"}
+[03:42:58.166] livekit-iso-all-28s-O-W25-20261010T034205-55 media_flowing {}
+[03:43:16.275] livekit-iso-all-28s-O-W25-20261010T034205-55 arm_O1 {"S":64.145263671875,"O2":66.955810546875}
+[03:43:17.625] livekit-iso-all-28s-O-W25-20261010T034205-55 arm_O2 {"S":66.20068359375,"O1":72.6123046875}
+[03:43:19.018] livekit-iso-all-28s-O-W25-20261010T034205-55 arm_S {"O1":67.398681640625,"O2":72.319091796875}
+[03:43:25.414] livekit-iso-all-28s-O-W25-20261010T034205-55 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791603805508.9216,"after":1791603805518.5166},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:43:56.276] livekit-iso-all-28s-O-W25-20261010T034205-55 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791603805508.9216,"after":1791603805518.5166},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:45:18.612] livekit-iso-all-28s-O-W25-20261010T034205-55 VALID
+[03:45:41.193] livekit-iso-all-26s-O-W25-20261010T034518-56 attempt_timeout_set {"ms":25000}
+[03:45:43.348] livekit-iso-all-26s-O-W25-20261010T034518-56 join_O1 {"sessionId":"PA_jrj8ZuZjLEz2"}
+[03:45:45.362] livekit-iso-all-26s-O-W25-20261010T034518-56 join_O2 {"sessionId":"PA_rH6wb3Zeecqj"}
+[03:45:47.582] livekit-iso-all-26s-O-W25-20261010T034518-56 join_S {"sessionId":"PA_WZEstWebKXsg"}
+[03:45:51.740] livekit-iso-all-26s-O-W25-20261010T034518-56 media_flowing {}
+[03:46:10.430] livekit-iso-all-26s-O-W25-20261010T034518-56 arm_O1 {"S":69.91455078125,"O2":59.451171875}
+[03:46:11.814] livekit-iso-all-26s-O-W25-20261010T034518-56 arm_O2 {"S":62.795166015625,"O1":72.727294921875}
+[03:46:13.186] livekit-iso-all-26s-O-W25-20261010T034518-56 arm_S {"O1":71.378662109375,"O2":63.590087890625}
+[03:46:19.692] livekit-iso-all-26s-O-W25-20261010T034518-56 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791603979790.3267,"after":1791603979800.1306},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:46:48.318] livekit-iso-all-26s-O-W25-20261010T034518-56 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791603979790.3267,"after":1791603979800.1306},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:48:06.252] livekit-iso-all-26s-O-W25-20261010T034518-56 VALID
+[03:48:29.515] livekit-iso-all-19s-O-W25-20261010T034806-57 attempt_timeout_set {"ms":25000}
+[03:48:31.604] livekit-iso-all-19s-O-W25-20261010T034806-57 join_O1 {"sessionId":"PA_798rwz5AetJU"}
+[03:48:33.656] livekit-iso-all-19s-O-W25-20261010T034806-57 join_O2 {"sessionId":"PA_j87Yyx67wqCv"}
+[03:48:35.792] livekit-iso-all-19s-O-W25-20261010T034806-57 join_S {"sessionId":"PA_xTcc25XyqEqi"}
+[03:48:40.026] livekit-iso-all-19s-O-W25-20261010T034806-57 media_flowing {}
+[03:48:57.951] livekit-iso-all-19s-O-W25-20261010T034806-57 arm_O1 {"S":70.228271484375,"O2":69.452392578125}
+[03:48:59.370] livekit-iso-all-19s-O-W25-20261010T034806-57 arm_O2 {"S":73.877197265625,"O1":65.191162109375}
+[03:49:00.837] livekit-iso-all-19s-O-W25-20261010T034806-57 arm_S {"O1":63.1474609375,"O2":64.03173828125}
+[03:49:07.370] livekit-iso-all-19s-O-W25-20261010T034806-57 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791604147353.0688,"after":1791604147364.0393},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:49:29.030] livekit-iso-all-19s-O-W25-20261010T034806-57 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791604147353.0688,"after":1791604147364.0393},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:50:49.036] livekit-iso-all-19s-O-W25-20261010T034806-57 VALID
+[03:51:11.919] livekit-iso-all-26s-O-W25-20261010T035049-58 attempt_timeout_set {"ms":25000}
+[03:51:13.915] livekit-iso-all-26s-O-W25-20261010T035049-58 join_O1 {"sessionId":"PA_nsYn9Xgux7fm"}
+[03:51:16.102] livekit-iso-all-26s-O-W25-20261010T035049-58 join_O2 {"sessionId":"PA_CzTHkcXNHrfi"}
+[03:51:18.189] livekit-iso-all-26s-O-W25-20261010T035049-58 join_S {"sessionId":"PA_DAuZgb9fL4h8"}
+[03:51:22.222] livekit-iso-all-26s-O-W25-20261010T035049-58 media_flowing {}
+[03:51:40.781] livekit-iso-all-26s-O-W25-20261010T035049-58 arm_O1 {"S":67.78173828125,"O2":73.413330078125}
+[03:51:42.186] livekit-iso-all-26s-O-W25-20261010T035049-58 arm_O2 {"S":69.1982421875,"O1":68.83837890625}
+[03:51:43.595] livekit-iso-all-26s-O-W25-20261010T035049-58 arm_S {"O1":89.8408203125,"O2":75.413330078125}
+[03:51:50.004] livekit-iso-all-26s-O-W25-20261010T035049-58 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791604310015.579,"after":1791604310026.7253},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:52:18.884] livekit-iso-all-26s-O-W25-20261010T035049-58 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791604310015.579,"after":1791604310026.7253},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[03:53:34.083] livekit-iso-all-26s-O-W25-20261010T035049-58 VALID
+[03:53:56.177] livekit-iso-all-28s-O-W25-20261010T035334-59 attempt_timeout_set {"ms":25000}
+[03:53:58.240] livekit-iso-all-28s-O-W25-20261010T035334-59 join_O1 {"sessionId":"PA_AcZ6Peo8wDU8"}
+[03:54:00.270] livekit-iso-all-28s-O-W25-20261010T035334-59 join_O2 {"sessionId":"PA_RQSYm4tbLbRb"}
+[03:54:02.424] livekit-iso-all-28s-O-W25-20261010T035334-59 join_S {"sessionId":"PA_9PxLngVorJWx"}
+[03:54:06.391] livekit-iso-all-28s-O-W25-20261010T035334-59 media_flowing {}
+[03:54:24.234] livekit-iso-all-28s-O-W25-20261010T035334-59 arm_O1 {"S":69.015625,"O2":72.34326171875}
+[03:54:25.615] livekit-iso-all-28s-O-W25-20261010T035334-59 arm_O2 {"S":64.29345703125,"O1":72.70556640625}
+[03:54:27.044] livekit-iso-all-28s-O-W25-20261010T035334-59 arm_S {"O1":68.415283203125,"O2":64.057861328125}
+[03:54:33.396] livekit-iso-all-28s-O-W25-20261010T035334-59 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791604473399.0723,"after":1791604473412.0144},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:55:03.159] livekit-iso-all-28s-O-W25-20261010T035334-59 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791604473399.0723,"after":1791604473412.0144},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:56:23.155] livekit-iso-all-28s-O-W25-20261010T035334-59 VALID
+[03:56:49.010] livekit-iso-all-18s-O-W15-20261010T035623-60 attempt_timeout_set {"ms":15000}
+[03:56:51.128] livekit-iso-all-18s-O-W15-20261010T035623-60 join_O1 {"sessionId":"PA_pWTHLtXf5bWE"}
+[03:56:53.346] livekit-iso-all-18s-O-W15-20261010T035623-60 join_O2 {"sessionId":"PA_eJ8yykEQWQ6T"}
+[03:56:55.561] livekit-iso-all-18s-O-W15-20261010T035623-60 join_S {"sessionId":"PA_hgHhCpCFw9cF"}
+[03:56:59.869] livekit-iso-all-18s-O-W15-20261010T035623-60 media_flowing {}
+[03:57:19.070] livekit-iso-all-18s-O-W15-20261010T035623-60 arm_O1 {"S":69.170654296875,"O2":58.31298828125}
+[03:57:20.558] livekit-iso-all-18s-O-W15-20261010T035623-60 arm_O2 {"S":78.662109375,"O1":57.684326171875}
+[03:57:22.163] livekit-iso-all-18s-O-W15-20261010T035623-60 arm_S {"O1":77.680908203125,"O2":71.614990234375}
+[03:57:28.631] livekit-iso-all-18s-O-W15-20261010T035623-60 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791604648643.5432,"after":1791604648653.4177},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[03:57:49.251] livekit-iso-all-18s-O-W15-20261010T035623-60 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791604648643.5432,"after":1791604648653.4177},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[03:59:02.861] livekit-iso-all-18s-O-W15-20261010T035623-60 VALID
+[03:59:25.063] livekit-iso-all-28s-O-W25-20261010T035902-61 attempt_timeout_set {"ms":25000}
+[03:59:27.259] livekit-iso-all-28s-O-W25-20261010T035902-61 join_O1 {"sessionId":"PA_MxpScZRABWep"}
+[03:59:29.832] livekit-iso-all-28s-O-W25-20261010T035902-61 join_O2 {"sessionId":"PA_j6UE4pxuYGBi"}
+[03:59:32.461] livekit-iso-all-28s-O-W25-20261010T035902-61 join_S {"sessionId":"PA_kUBinqF2HLSn"}
+[03:59:36.550] livekit-iso-all-28s-O-W25-20261010T035902-61 media_flowing {}
+[03:59:54.590] livekit-iso-all-28s-O-W25-20261010T035902-61 arm_O1 {"S":58.112548828125,"O2":73.6650390625}
+[03:59:55.966] livekit-iso-all-28s-O-W25-20261010T035902-61 arm_O2 {"S":66.622314453125,"O1":70.27880859375}
+[03:59:57.320] livekit-iso-all-28s-O-W25-20261010T035902-61 arm_S {"O1":73.7236328125,"O2":70.22021484375}
+[04:00:03.970] livekit-iso-all-28s-O-W25-20261010T035902-61 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791604803978.9568,"after":1791604803991.0376},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:00:34.491] livekit-iso-all-28s-O-W25-20261010T035902-61 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791604803978.9568,"after":1791604803991.0376},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:01:55.200] livekit-iso-all-28s-O-W25-20261010T035902-61 VALID
+[04:02:17.985] livekit-iso-all-16s-O-W10-20261010T040155-62 attempt_timeout_set {"ms":10000}
+[04:02:20.116] livekit-iso-all-16s-O-W10-20261010T040155-62 join_O1 {"sessionId":"PA_rNEJ8FupYSPW"}
+[04:02:22.264] livekit-iso-all-16s-O-W10-20261010T040155-62 join_O2 {"sessionId":"PA_c46xL4343Pcx"}
+[04:02:24.424] livekit-iso-all-16s-O-W10-20261010T040155-62 join_S {"sessionId":"PA_kPa6GzHYXvHf"}
+[04:02:28.868] livekit-iso-all-16s-O-W10-20261010T040155-62 media_flowing {}
+[04:02:46.620] livekit-iso-all-16s-O-W10-20261010T040155-62 arm_O1 {"S":64.1728515625,"O2":72.526611328125}
+[04:02:47.974] livekit-iso-all-16s-O-W10-20261010T040155-62 arm_O2 {"S":69.730712890625,"O1":74.012451171875}
+[04:02:49.383] livekit-iso-all-16s-O-W10-20261010T040155-62 arm_S {"O1":62.957275390625,"O2":65.9404296875}
+[04:02:55.801] livekit-iso-all-16s-O-W10-20261010T040155-62 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791604975810.2832,"after":1791604975820.7065},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:03:14.571] livekit-iso-all-16s-O-W10-20261010T040155-62 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791604975810.2832,"after":1791604975820.7065},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:04:31.934] livekit-iso-all-16s-O-W10-20261010T040155-62 VALID
+[04:04:54.319] livekit-iso-all-15s-O-W10-20261010T040431-63 attempt_timeout_set {"ms":10000}
+[04:04:56.482] livekit-iso-all-15s-O-W10-20261010T040431-63 join_O1 {"sessionId":"PA_nC6FDpcqfFET"}
+[04:04:58.631] livekit-iso-all-15s-O-W10-20261010T040431-63 join_O2 {"sessionId":"PA_62GR3UFhNGUt"}
+[04:05:00.710] livekit-iso-all-15s-O-W10-20261010T040431-63 join_S {"sessionId":"PA_J6whwggV4XEe"}
+[04:05:04.821] livekit-iso-all-15s-O-W10-20261010T040431-63 media_flowing {}
+[04:05:22.604] livekit-iso-all-15s-O-W10-20261010T040431-63 arm_O1 {"S":69.271240234375,"O2":83.671630859375}
+[04:05:23.952] livekit-iso-all-15s-O-W10-20261010T040431-63 arm_O2 {"S":62.2353515625,"O1":71.79541015625}
+[04:05:25.259] livekit-iso-all-15s-O-W10-20261010T040431-63 arm_S {"O1":65.263671875,"O2":65.429443359375}
+[04:05:31.679] livekit-iso-all-15s-O-W10-20261010T040431-63 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791605131687.63,"after":1791605131697.7244},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:05:49.387] livekit-iso-all-15s-O-W10-20261010T040431-63 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791605131687.63,"after":1791605131697.7244},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[04:07:05.906] livekit-iso-all-15s-O-W10-20261010T040431-63 VALID
+[04:07:28.261] livekit-iso-all-16s-O-W10-20261010T040705-64 attempt_timeout_set {"ms":10000}
+[04:07:30.391] livekit-iso-all-16s-O-W10-20261010T040705-64 join_O1 {"sessionId":"PA_N4ENBwhwAGfq"}
+[04:07:32.454] livekit-iso-all-16s-O-W10-20261010T040705-64 join_O2 {"sessionId":"PA_eTuPoB8nZbAR"}
+[04:07:34.588] livekit-iso-all-16s-O-W10-20261010T040705-64 join_S {"sessionId":"PA_hFcUrh5Y766W"}
+[04:07:38.812] livekit-iso-all-16s-O-W10-20261010T040705-64 media_flowing {}
+[04:07:56.934] livekit-iso-all-16s-O-W10-20261010T040705-64 arm_O1 {"S":68.772705078125,"O2":69.507568359375}
+[04:07:58.324] livekit-iso-all-16s-O-W10-20261010T040705-64 arm_O2 {"S":62.415771484375,"O1":64.329833984375}
+[04:07:59.664] livekit-iso-all-16s-O-W10-20261010T040705-64 arm_S {"O1":72.792724609375,"O2":78.203369140625}
+[04:08:06.074] livekit-iso-all-16s-O-W10-20261010T040705-64 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791605286086.0942,"after":1791605286096.0632},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:08:23.791] livekit-iso-all-16s-O-W10-20261010T040705-64 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791605286086.0942,"after":1791605286096.0632},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:09:40.282] livekit-iso-all-16s-O-W10-20261010T040705-64 VALID
+[04:10:02.263] livekit-iso-all-15s-O-W10-20261010T040940-65 attempt_timeout_set {"ms":10000}
+[04:10:04.403] livekit-iso-all-15s-O-W10-20261010T040940-65 join_O1 {"sessionId":"PA_ocndUvHdFcBz"}
+[04:10:06.554] livekit-iso-all-15s-O-W10-20261010T040940-65 join_O2 {"sessionId":"PA_V58buVwpix8Z"}
+[04:10:08.705] livekit-iso-all-15s-O-W10-20261010T040940-65 join_S {"sessionId":"PA_b7nHgQtJKhbP"}
+[04:10:12.727] livekit-iso-all-15s-O-W10-20261010T040940-65 media_flowing {}
+[04:10:30.884] livekit-iso-all-15s-O-W10-20261010T040940-65 arm_O1 {"S":72.52490234375,"O2":56.69287109375}
+[04:10:32.265] livekit-iso-all-15s-O-W10-20261010T040940-65 arm_O2 {"S":67.865966796875,"O1":81.500244140625}
+[04:10:33.622] livekit-iso-all-15s-O-W10-20261010T040940-65 arm_S {"O1":64.217041015625,"O2":66.17724609375}
+[04:10:40.137] livekit-iso-all-15s-O-W10-20261010T040940-65 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791605440145.7368,"after":1791605440159.057},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:10:57.517] livekit-iso-all-15s-O-W10-20261010T040940-65 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791605440145.7368,"after":1791605440159.057},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[04:12:17.792] livekit-iso-all-15s-O-W10-20261010T040940-65 VALID
+[04:12:39.971] livekit-iso-all-28s-O-W25-20261010T041217-66 attempt_timeout_set {"ms":25000}
+[04:12:42.028] livekit-iso-all-28s-O-W25-20261010T041217-66 join_O1 {"sessionId":"PA_x5pwbPhWQWsX"}
+[04:12:44.099] livekit-iso-all-28s-O-W25-20261010T041217-66 join_O2 {"sessionId":"PA_JMY2ZF8vvaYj"}
+[04:12:46.200] livekit-iso-all-28s-O-W25-20261010T041217-66 join_S {"sessionId":"PA_w8xoiF2MWTSg"}
+[04:12:50.224] livekit-iso-all-28s-O-W25-20261010T041217-66 media_flowing {}
+[04:13:08.291] livekit-iso-all-28s-O-W25-20261010T041217-66 arm_O1 {"S":63.65576171875,"O2":70.847412109375}
+[04:13:09.727] livekit-iso-all-28s-O-W25-20261010T041217-66 arm_O2 {"S":72.300537109375,"O1":58.18310546875}
+[04:13:11.112] livekit-iso-all-28s-O-W25-20261010T041217-66 arm_S {"O1":74.343994140625,"O2":66.955078125}
+[04:13:17.534] livekit-iso-all-28s-O-W25-20261010T041217-66 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791605597542.3816,"after":1791605597552.7786},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:13:47.953] livekit-iso-all-28s-O-W25-20261010T041217-66 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791605597542.3816,"after":1791605597552.7786},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:15:09.443] livekit-iso-all-28s-O-W25-20261010T041217-66 VALID
+[04:15:33.421] livekit-iso-all-15s-O-W10-20261010T041509-67 attempt_timeout_set {"ms":10000}
+[04:15:35.584] livekit-iso-all-15s-O-W10-20261010T041509-67 join_O1 {"sessionId":"PA_Tto4ra9NS332"}
+[04:15:37.636] livekit-iso-all-15s-O-W10-20261010T041509-67 join_O2 {"sessionId":"PA_4bgPPfpfuFeW"}
+[04:15:39.881] livekit-iso-all-15s-O-W10-20261010T041509-67 join_S {"sessionId":"PA_WrikJepucpTb"}
+[04:15:43.919] livekit-iso-all-15s-O-W10-20261010T041509-67 media_flowing {}
+[04:16:01.712] livekit-iso-all-15s-O-W10-20261010T041509-67 arm_O1 {"S":69.885986328125,"O2":68.89990234375}
+[04:16:03.067] livekit-iso-all-15s-O-W10-20261010T041509-67 arm_O2 {"S":71.580078125,"O1":71.0966796875}
+[04:16:04.390] livekit-iso-all-15s-O-W10-20261010T041509-67 arm_S {"O1":68.943603515625,"O2":67.16552734375}
+[04:16:10.829] livekit-iso-all-15s-O-W10-20261010T041509-67 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791605770826.224,"after":1791605770835.9336},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:16:27.509] livekit-iso-all-15s-O-W10-20261010T041509-67 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791605770826.224,"after":1791605770835.9336},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[04:17:47.419] livekit-iso-all-15s-O-W10-20261010T041509-67 VALID
+[04:18:10.132] livekit-iso-all-14s-O-W10-20261010T041747-68 attempt_timeout_set {"ms":10000}
+[04:18:12.254] livekit-iso-all-14s-O-W10-20261010T041747-68 join_O1 {"sessionId":"PA_WGyob7kK3p7g"}
+[04:18:14.509] livekit-iso-all-14s-O-W10-20261010T041747-68 join_O2 {"sessionId":"PA_ikCpo9sLZVnY"}
+[04:18:16.649] livekit-iso-all-14s-O-W10-20261010T041747-68 join_S {"sessionId":"PA_PXmZnRc5AXkx"}
+[04:18:20.936] livekit-iso-all-14s-O-W10-20261010T041747-68 media_flowing {}
+[04:18:47.307] livekit-iso-all-14s-O-W10-20261010T041747-68 arm_O1 {"S":72.093017578125,"O2":66.708984375}
+[04:18:49.713] livekit-iso-all-14s-O-W10-20261010T041747-68 arm_O2 {"S":68.925537109375,"O1":64.163330078125}
+[04:18:51.342] livekit-iso-all-14s-O-W10-20261010T041747-68 arm_S {"O1":62.729736328125,"O2":60.243408203125}
+[04:18:57.716] livekit-iso-all-14s-O-W10-20261010T041747-68 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791605937704.9915,"after":1791605937717.0952},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:19:13.285] livekit-iso-all-14s-O-W10-20261010T041747-68 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791605937704.9915,"after":1791605937717.0952},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:20:41.385] livekit-iso-all-14s-O-W10-20261010T041747-68 VALID
+[04:21:02.053] livekit-iso-all-17s-O-W10-20261010T042041-69 attempt_timeout_set {"ms":10000}
+[04:21:04.084] livekit-iso-all-17s-O-W10-20261010T042041-69 join_O1 {"sessionId":"PA_b7dNARgzqv8c"}
+[04:21:06.116] livekit-iso-all-17s-O-W10-20261010T042041-69 join_O2 {"sessionId":"PA_xRpquwX7p6DH"}
+[04:21:08.160] livekit-iso-all-17s-O-W10-20261010T042041-69 join_S {"sessionId":"PA_yUt69QDTeVgN"}
+[04:21:12.112] livekit-iso-all-17s-O-W10-20261010T042041-69 media_flowing {}
+[04:21:30.541] livekit-iso-all-17s-O-W10-20261010T042041-69 arm_O1 {"S":58.244873046875,"O2":62.5068359375}
+[04:21:31.848] livekit-iso-all-17s-O-W10-20261010T042041-69 arm_O2 {"S":66.129150390625,"O1":64.086669921875}
+[04:21:33.154] livekit-iso-all-17s-O-W10-20261010T042041-69 arm_S {"O1":68.448486328125,"O2":61.39013671875}
+[04:21:39.473] livekit-iso-all-17s-O-W10-20261010T042041-69 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791606099458.4224,"after":1791606099471.3777},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:21:58.917] livekit-iso-all-17s-O-W10-20261010T042041-69 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791606099458.4224,"after":1791606099471.3777},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:23:41.921] livekit-iso-all-17s-O-W10-20261010T042041-69 VALID
+[04:24:04.153] livekit-iso-all-15s-O-W10-20261010T042341-70 attempt_timeout_set {"ms":10000}
+[04:24:06.225] livekit-iso-all-15s-O-W10-20261010T042341-70 join_O1 {"sessionId":"PA_GX8sfkRvd5oM"}
+[04:24:08.271] livekit-iso-all-15s-O-W10-20261010T042341-70 join_O2 {"sessionId":"PA_e478LwL2VVpL"}
+[04:24:10.364] livekit-iso-all-15s-O-W10-20261010T042341-70 join_S {"sessionId":"PA_mujdbUxfWM7Q"}
+[04:24:14.382] livekit-iso-all-15s-O-W10-20261010T042341-70 media_flowing {}
+[04:24:32.997] livekit-iso-all-15s-O-W10-20261010T042341-70 arm_O1 {"S":66.844482421875,"O2":70.959228515625}
+[04:24:34.384] livekit-iso-all-15s-O-W10-20261010T042341-70 arm_O2 {"S":65.43017578125,"O1":68.684326171875}
+[04:24:35.704] livekit-iso-all-15s-O-W10-20261010T042341-70 arm_S {"O1":69.23828125,"O2":72.819091796875}
+[04:24:42.087] livekit-iso-all-15s-O-W10-20261010T042341-70 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791606282074.4775,"after":1791606282085.4475},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:24:59.549] livekit-iso-all-15s-O-W10-20261010T042341-70 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791606282074.4775,"after":1791606282085.4475},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:26:18.872] livekit-iso-all-15s-O-W10-20261010T042341-70 VALID
+[04:26:40.523] livekit-iso-all-18s-O-W25-20261010T042618-71 attempt_timeout_set {"ms":25000}
+[04:26:42.533] livekit-iso-all-18s-O-W25-20261010T042618-71 join_O1 {"sessionId":"PA_Buzc97CeKE9S"}
+[04:26:44.693] livekit-iso-all-18s-O-W25-20261010T042618-71 join_O2 {"sessionId":"PA_wUBtbHQfyGxs"}
+[04:26:46.751] livekit-iso-all-18s-O-W25-20261010T042618-71 join_S {"sessionId":"PA_r2iSmL5UPNkc"}
+[04:26:50.590] livekit-iso-all-18s-O-W25-20261010T042618-71 media_flowing {}
+[04:27:08.578] livekit-iso-all-18s-O-W25-20261010T042618-71 arm_O1 {"S":68.86083984375,"O2":75.66015625}
+[04:27:09.888] livekit-iso-all-18s-O-W25-20261010T042618-71 arm_O2 {"S":64.82568359375,"O1":74.736572265625}
+[04:27:11.383] livekit-iso-all-18s-O-W25-20261010T042618-71 arm_S {"O1":66.59033203125,"O2":73.92333984375}
+[04:27:17.771] livekit-iso-all-18s-O-W25-20261010T042618-71 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791606437755.4385,"after":1791606437765.7239},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:27:38.051] livekit-iso-all-18s-O-W25-20261010T042618-71 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791606437755.4385,"after":1791606437765.7239},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:28:52.585] livekit-iso-all-18s-O-W25-20261010T042618-71 VALID
+[04:29:14.739] livekit-iso-all-19s-O-W15-20261010T042852-72 attempt_timeout_set {"ms":15000}
+[04:29:16.810] livekit-iso-all-19s-O-W15-20261010T042852-72 join_O1 {"sessionId":"PA_ehjKbMucmWRj"}
+[04:29:18.902] livekit-iso-all-19s-O-W15-20261010T042852-72 join_O2 {"sessionId":"PA_DdkjaFq9ddbu"}
+[04:29:20.951] livekit-iso-all-19s-O-W15-20261010T042852-72 join_S {"sessionId":"PA_gcHxKgREfe92"}
+[04:29:25.422] livekit-iso-all-19s-O-W15-20261010T042852-72 media_flowing {}
+[04:29:43.774] livekit-iso-all-19s-O-W15-20261010T042852-72 arm_O1 {"S":61.19921875,"O2":76.81396484375}
+[04:29:45.110] livekit-iso-all-19s-O-W15-20261010T042852-72 arm_O2 {"S":64.635498046875,"O1":66.19482421875}
+[04:29:46.499] livekit-iso-all-19s-O-W15-20261010T042852-72 arm_S {"O1":63.434814453125,"O2":69.666748046875}
+[04:29:52.953] livekit-iso-all-19s-O-W15-20261010T042852-72 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791606592936.7773,"after":1791606592946.501},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:30:14.440] livekit-iso-all-19s-O-W15-20261010T042852-72 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791606592936.7773,"after":1791606592946.501},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[04:31:38.173] livekit-iso-all-19s-O-W15-20261010T042852-72 VALID
+[04:32:00.721] livekit-iso-all-28s-O-W25-20261010T043138-73 attempt_timeout_set {"ms":25000}
+[04:32:02.848] livekit-iso-all-28s-O-W25-20261010T043138-73 join_O1 {"sessionId":"PA_C7mktpXxMxSd"}
+[04:32:04.996] livekit-iso-all-28s-O-W25-20261010T043138-73 join_O2 {"sessionId":"PA_xVDqx3LMZB4q"}
+[04:32:07.146] livekit-iso-all-28s-O-W25-20261010T043138-73 join_S {"sessionId":"PA_TNx5GYARGcJP"}
+[04:32:11.173] livekit-iso-all-28s-O-W25-20261010T043138-73 media_flowing {}
+[04:32:29.692] livekit-iso-all-28s-O-W25-20261010T043138-73 arm_O1 {"S":61.274658203125,"O2":59.435791015625}
+[04:32:31.061] livekit-iso-all-28s-O-W25-20261010T043138-73 arm_O2 {"S":54.187255859375,"O1":77.166748046875}
+[04:32:32.409] livekit-iso-all-28s-O-W25-20261010T043138-73 arm_S {"O1":67.41064453125,"O2":64.380859375}
+[04:32:38.746] livekit-iso-all-28s-O-W25-20261010T043138-73 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791606758726.489,"after":1791606758740.093},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:33:08.996] livekit-iso-all-28s-O-W25-20261010T043138-73 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791606758726.489,"after":1791606758740.093},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[04:34:28.929] livekit-iso-all-28s-O-W25-20261010T043138-73 VALID
+[04:34:51.093] livekit-iso-all-19s-O-W25-20261010T043428-74 attempt_timeout_set {"ms":25000}
+[04:34:53.350] livekit-iso-all-19s-O-W25-20261010T043428-74 join_O1 {"sessionId":"PA_jDsYuCdjqygt"}
+[04:34:55.605] livekit-iso-all-19s-O-W25-20261010T043428-74 join_O2 {"sessionId":"PA_rcyc2Kiy5FwT"}
+[04:34:57.677] livekit-iso-all-19s-O-W25-20261010T043428-74 join_S {"sessionId":"PA_Rdpw9ktQH49H"}
+[04:35:01.625] livekit-iso-all-19s-O-W25-20261010T043428-74 media_flowing {}
+[04:35:20.000] livekit-iso-all-19s-O-W25-20261010T043428-74 arm_O1 {"S":68.2373046875,"O2":52.52392578125}
+[04:35:21.332] livekit-iso-all-19s-O-W25-20261010T043428-74 arm_O2 {"S":72.385009765625,"O1":58.510498046875}
+[04:35:22.666] livekit-iso-all-19s-O-W25-20261010T043428-74 arm_S {"O1":66.102294921875,"O2":78.04736328125}
+[04:35:29.098] livekit-iso-all-19s-O-W25-20261010T043428-74 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791606929077.0732,"after":1791606929086.8135},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:35:49.806] livekit-iso-all-19s-O-W25-20261010T043428-74 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791606929077.0732,"after":1791606929086.8135},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:37:09.183] livekit-iso-all-19s-O-W25-20261010T043428-74 VALID
+[04:37:31.117] livekit-iso-all-15s-O-W10-20261010T043709-75 attempt_timeout_set {"ms":10000}
+[04:37:33.200] livekit-iso-all-15s-O-W10-20261010T043709-75 join_O1 {"sessionId":"PA_8y8CieFzy4br"}
+[04:37:35.351] livekit-iso-all-15s-O-W10-20261010T043709-75 join_O2 {"sessionId":"PA_DUd2KLaQPTDt"}
+[04:37:37.415] livekit-iso-all-15s-O-W10-20261010T043709-75 join_S {"sessionId":"PA_i8EfbBQQELSF"}
+[04:37:41.612] livekit-iso-all-15s-O-W10-20261010T043709-75 media_flowing {}
+[04:37:59.323] livekit-iso-all-15s-O-W10-20261010T043709-75 arm_O1 {"S":52.9189453125,"O2":68.33447265625}
+[04:38:00.645] livekit-iso-all-15s-O-W10-20261010T043709-75 arm_O2 {"S":55.78564453125,"O1":78.25390625}
+[04:38:01.945] livekit-iso-all-15s-O-W10-20261010T043709-75 arm_S {"O1":68.05126953125,"O2":74.099365234375}
+[04:38:08.388] livekit-iso-all-15s-O-W10-20261010T043709-75 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791607088365.1443,"after":1791607088376.4011},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:38:25.577] livekit-iso-all-15s-O-W10-20261010T043709-75 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791607088365.1443,"after":1791607088376.4011},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:39:44.520] livekit-iso-all-15s-O-W10-20261010T043709-75 VALID
+[04:40:06.237] livekit-iso-all-14s-O-W10-20261010T043944-76 attempt_timeout_set {"ms":10000}
+[04:40:08.342] livekit-iso-all-14s-O-W10-20261010T043944-76 join_O1 {"sessionId":"PA_MWPH7KeH2gJP"}
+[04:40:10.384] livekit-iso-all-14s-O-W10-20261010T043944-76 join_O2 {"sessionId":"PA_V3ATjpYtmUzj"}
+[04:40:12.446] livekit-iso-all-14s-O-W10-20261010T043944-76 join_S {"sessionId":"PA_Sp7ym8VEeNJm"}
+[04:40:16.705] livekit-iso-all-14s-O-W10-20261010T043944-76 media_flowing {}
+[04:40:34.630] livekit-iso-all-14s-O-W10-20261010T043944-76 arm_O1 {"S":66.62353515625,"O2":64.36962890625}
+[04:40:35.947] livekit-iso-all-14s-O-W10-20261010T043944-76 arm_O2 {"S":64.77978515625,"O1":77.505859375}
+[04:40:37.249] livekit-iso-all-14s-O-W10-20261010T043944-76 arm_S {"O1":58.43798828125,"O2":76.255615234375}
+[04:40:43.597] livekit-iso-all-14s-O-W10-20261010T043944-76 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791607243573.6477,"after":1791607243584.225},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:40:59.361] livekit-iso-all-14s-O-W10-20261010T043944-76 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791607243573.6477,"after":1791607243584.225},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[04:42:32.222] livekit-iso-all-14s-O-W10-20261010T043944-76 VALID
+[04:42:54.201] livekit-iso-all-15s-O-W10-20261010T044232-77 attempt_timeout_set {"ms":10000}
+[04:42:56.384] livekit-iso-all-15s-O-W10-20261010T044232-77 join_O1 {"sessionId":"PA_fvCsdhSHMzgq"}
+[04:42:58.431] livekit-iso-all-15s-O-W10-20261010T044232-77 join_O2 {"sessionId":"PA_jTs3rxWXC45c"}
+[04:43:00.578] livekit-iso-all-15s-O-W10-20261010T044232-77 join_S {"sessionId":"PA_MXkc2Ujh6LCE"}
+[04:43:04.599] livekit-iso-all-15s-O-W10-20261010T044232-77 media_flowing {}
+[04:43:22.267] livekit-iso-all-15s-O-W10-20261010T044232-77 arm_O1 {"S":54.680419921875,"O2":71.99169921875}
+[04:43:23.645] livekit-iso-all-15s-O-W10-20261010T044232-77 arm_O2 {"S":57.909912109375,"O1":67.546630859375}
+[04:43:25.025] livekit-iso-all-15s-O-W10-20261010T044232-77 arm_S {"O1":75.203857421875,"O2":76.655517578125}
+[04:43:31.584] livekit-iso-all-15s-O-W10-20261010T044232-77 isolate_on {"mode":"all","durMs":15000,"onset":{"before":1791607411556.223,"after":1791607411566.1797},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:43:48.983] livekit-iso-all-15s-O-W10-20261010T044232-77 isolate_off {"mode":"all","durMs":15000,"onset":{"before":1791607411556.223,"after":1791607411566.1797},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[04:45:05.355] livekit-iso-all-15s-O-W10-20261010T044232-77 VALID
+[04:45:26.943] livekit-iso-all-17s-O-W10-20261010T044505-78 attempt_timeout_set {"ms":10000}
+[04:45:29.219] livekit-iso-all-17s-O-W10-20261010T044505-78 join_O1 {"sessionId":"PA_gGmzFakNWEM7"}
+[04:45:31.321] livekit-iso-all-17s-O-W10-20261010T044505-78 join_O2 {"sessionId":"PA_hopuUBA7Hvoj"}
+[04:45:33.473] livekit-iso-all-17s-O-W10-20261010T044505-78 join_S {"sessionId":"PA_oDnGbK3X5L2e"}
+[04:45:37.719] livekit-iso-all-17s-O-W10-20261010T044505-78 media_flowing {}
+[04:45:56.118] livekit-iso-all-17s-O-W10-20261010T044505-78 arm_O1 {"S":76.12353515625,"O2":72.039794921875}
+[04:45:57.481] livekit-iso-all-17s-O-W10-20261010T044505-78 arm_O2 {"S":70.278564453125,"O1":74.539306640625}
+[04:45:58.757] livekit-iso-all-17s-O-W10-20261010T044505-78 arm_S {"O1":78.0771484375,"O2":64.231689453125}
+[04:46:05.244] livekit-iso-all-17s-O-W10-20261010T044505-78 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791607565210.7488,"after":1791607565223.34},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:46:24.362] livekit-iso-all-17s-O-W10-20261010T044505-78 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791607565210.7488,"after":1791607565223.34},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[04:47:41.428] livekit-iso-all-17s-O-W10-20261010T044505-78 VALID
+[04:48:03.475] livekit-iso-all-18s-O-W15-20261010T044741-79 attempt_timeout_set {"ms":15000}
+[04:48:05.539] livekit-iso-all-18s-O-W15-20261010T044741-79 join_O1 {"sessionId":"PA_LPFL6Cyx9cMG"}
+[04:48:07.586] livekit-iso-all-18s-O-W15-20261010T044741-79 join_O2 {"sessionId":"PA_MmiBRK5Jb7Qm"}
+[04:48:09.737] livekit-iso-all-18s-O-W15-20261010T044741-79 join_S {"sessionId":"PA_VgJKc4spJrcH"}
+[04:48:13.669] livekit-iso-all-18s-O-W15-20261010T044741-79 media_flowing {}
+[04:48:32.070] livekit-iso-all-18s-O-W15-20261010T044741-79 arm_O1 {"S":77.65869140625,"O2":65.78662109375}
+[04:48:33.391] livekit-iso-all-18s-O-W15-20261010T044741-79 arm_O2 {"S":71.339599609375,"O1":68.284912109375}
+[04:48:34.792] livekit-iso-all-18s-O-W15-20261010T044741-79 arm_S {"O1":76.85888671875,"O2":73.715576171875}
+[04:48:41.151] livekit-iso-all-18s-O-W15-20261010T044741-79 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791607721116.8965,"after":1791607721127.635},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:49:01.703] livekit-iso-all-18s-O-W15-20261010T044741-79 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791607721116.8965,"after":1791607721127.635},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[04:50:13.938] livekit-iso-all-18s-O-W15-20261010T044741-79 VALID
+[04:50:35.526] livekit-iso-all-17s-O-W10-20261010T045013-80 attempt_timeout_set {"ms":10000}
+[04:50:37.603] livekit-iso-all-17s-O-W10-20261010T045013-80 join_O1 {"sessionId":"PA_ayFN9hdwigBb"}
+[04:50:39.652] livekit-iso-all-17s-O-W10-20261010T045013-80 join_O2 {"sessionId":"PA_dd4iiN3BxD3z"}
+[04:50:41.696] livekit-iso-all-17s-O-W10-20261010T045013-80 join_S {"sessionId":"PA_gsrcSTCc6bnd"}
+[04:50:45.636] livekit-iso-all-17s-O-W10-20261010T045013-80 media_flowing {}
+[04:51:03.693] livekit-iso-all-17s-O-W10-20261010T045013-80 arm_O1 {"S":60.676513671875,"O2":61.173583984375}
+[04:51:05.044] livekit-iso-all-17s-O-W10-20261010T045013-80 arm_O2 {"S":71.55615234375,"O1":65.5947265625}
+[04:51:06.358] livekit-iso-all-17s-O-W10-20261010T045013-80 arm_S {"O1":67.629638671875,"O2":60.60791015625}
+[04:51:12.783] livekit-iso-all-17s-O-W10-20261010T045013-80 isolate_on {"mode":"all","durMs":17000,"onset":{"before":1791607872746.5815,"after":1791607872757.6047},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:51:32.225] livekit-iso-all-17s-O-W10-20261010T045013-80 isolate_off {"mode":"all","durMs":17000,"onset":{"before":1791607872746.5815,"after":1791607872757.6047},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:52:49.784] livekit-iso-all-17s-O-W10-20261010T045013-80 VALID
+[04:53:11.792] livekit-iso-all-14s-O-W10-20261010T045249-81 attempt_timeout_set {"ms":10000}
+[04:53:13.840] livekit-iso-all-14s-O-W10-20261010T045249-81 join_O1 {"sessionId":"PA_gh7qY8pWv6oG"}
+[04:53:16.022] livekit-iso-all-14s-O-W10-20261010T045249-81 join_O2 {"sessionId":"PA_puReNQRYQ679"}
+[04:53:18.067] livekit-iso-all-14s-O-W10-20261010T045249-81 join_S {"sessionId":"PA_nzPvb7FfsJB3"}
+[04:53:22.035] livekit-iso-all-14s-O-W10-20261010T045249-81 media_flowing {}
+[04:53:40.246] livekit-iso-all-14s-O-W10-20261010T045249-81 arm_O1 {"S":64.14794921875,"O2":73.75439453125}
+[04:53:41.577] livekit-iso-all-14s-O-W10-20261010T045249-81 arm_O2 {"S":71.666259765625,"O1":67.348876953125}
+[04:53:42.919] livekit-iso-all-14s-O-W10-20261010T045249-81 arm_S {"O1":74.818115234375,"O2":80.4384765625}
+[04:53:49.298] livekit-iso-all-14s-O-W10-20261010T045249-81 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791608029259.356,"after":1791608029270.3064},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:54:05.944] livekit-iso-all-14s-O-W10-20261010T045249-81 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791608029259.356,"after":1791608029270.3064},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[04:55:35.494] livekit-iso-all-14s-O-W10-20261010T045249-81 VALID
+[04:55:57.746] livekit-iso-all-26s-O-W25-20261010T045535-82 attempt_timeout_set {"ms":25000}
+[04:55:59.819] livekit-iso-all-26s-O-W25-20261010T045535-82 join_O1 {"sessionId":"PA_N8oueGx7qFGL"}
+[04:56:01.899] livekit-iso-all-26s-O-W25-20261010T045535-82 join_O2 {"sessionId":"PA_nfy3Ws928MnW"}
+[04:56:04.062] livekit-iso-all-26s-O-W25-20261010T045535-82 join_S {"sessionId":"PA_TvS5bvQwPoXC"}
+[04:56:08.199] livekit-iso-all-26s-O-W25-20261010T045535-82 media_flowing {}
+[04:56:26.610] livekit-iso-all-26s-O-W25-20261010T045535-82 arm_O1 {"S":62.60986328125,"O2":63.8056640625}
+[04:56:27.984] livekit-iso-all-26s-O-W25-20261010T045535-82 arm_O2 {"S":64.012451171875,"O1":69.215576171875}
+[04:56:29.301] livekit-iso-all-26s-O-W25-20261010T045535-82 arm_S {"O1":72.30908203125,"O2":56.129150390625}
+[04:56:35.698] livekit-iso-all-26s-O-W25-20261010T045535-82 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791608195663.3555,"after":1791608195672.8923},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:57:04.082] livekit-iso-all-26s-O-W25-20261010T045535-82 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791608195663.3555,"after":1791608195672.8923},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[04:58:19.453] livekit-iso-all-26s-O-W25-20261010T045535-82 VALID
+[04:58:41.896] livekit-iso-all-18s-O-W25-20261010T045819-83 attempt_timeout_set {"ms":25000}
+[04:58:44.015] livekit-iso-all-18s-O-W25-20261010T045819-83 join_O1 {"sessionId":"PA_eZGatsQCZKSz"}
+[04:58:46.162] livekit-iso-all-18s-O-W25-20261010T045819-83 join_O2 {"sessionId":"PA_gcFdMddgAqj7"}
+[04:58:48.419] livekit-iso-all-18s-O-W25-20261010T045819-83 join_S {"sessionId":"PA_4jdEgfSEU8Vu"}
+[04:58:52.666] livekit-iso-all-18s-O-W25-20261010T045819-83 media_flowing {}
+[04:59:10.565] livekit-iso-all-18s-O-W25-20261010T045819-83 arm_O1 {"S":58.85400390625,"O2":68.0712890625}
+[04:59:11.926] livekit-iso-all-18s-O-W25-20261010T045819-83 arm_O2 {"S":64.956298828125,"O1":75.525634765625}
+[04:59:13.273] livekit-iso-all-18s-O-W25-20261010T045819-83 arm_S {"O1":65.2763671875,"O2":74.240478515625}
+[04:59:19.682] livekit-iso-all-18s-O-W25-20261010T045819-83 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791608359637.2332,"after":1791608359647.6155},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[04:59:40.271] livekit-iso-all-18s-O-W25-20261010T045819-83 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791608359637.2332,"after":1791608359647.6155},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:00:54.902] livekit-iso-all-18s-O-W25-20261010T045819-83 VALID
+[05:01:16.771] livekit-iso-all-18s-O-W15-20261010T050054-84 attempt_timeout_set {"ms":15000}
+[05:01:18.950] livekit-iso-all-18s-O-W15-20261010T050054-84 join_O1 {"sessionId":"PA_vJTubs5t8bL9"}
+[05:01:20.967] livekit-iso-all-18s-O-W15-20261010T050054-84 join_O2 {"sessionId":"PA_M7TR54HtKV2Z"}
+[05:01:23.043] livekit-iso-all-18s-O-W15-20261010T050054-84 join_S {"sessionId":"PA_HNbNScLSESTZ"}
+[05:01:27.204] livekit-iso-all-18s-O-W15-20261010T050054-84 media_flowing {}
+[05:01:44.946] livekit-iso-all-18s-O-W15-20261010T050054-84 arm_O1 {"S":74.4892578125,"O2":66.521728515625}
+[05:01:46.302] livekit-iso-all-18s-O-W15-20261010T050054-84 arm_O2 {"S":67.60302734375,"O1":64.4736328125}
+[05:01:47.646] livekit-iso-all-18s-O-W15-20261010T050054-84 arm_S {"O1":79.84521484375,"O2":69.583984375}
+[05:01:53.992] livekit-iso-all-18s-O-W15-20261010T050054-84 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791608513958.0613,"after":1791608513968.387},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:02:15.587] livekit-iso-all-18s-O-W15-20261010T050054-84 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791608513958.0613,"after":1791608513968.387},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[05:03:28.326] livekit-iso-all-18s-O-W15-20261010T050054-84 VALID
+[05:03:50.550] livekit-iso-all-19s-O-W25-20261010T050328-85 attempt_timeout_set {"ms":25000}
+[05:03:52.656] livekit-iso-all-19s-O-W25-20261010T050328-85 join_O1 {"sessionId":"PA_vufJVqjFfGJP"}
+[05:03:54.804] livekit-iso-all-19s-O-W25-20261010T050328-85 join_O2 {"sessionId":"PA_fF7XzHBi3sAm"}
+[05:03:56.956] livekit-iso-all-19s-O-W25-20261010T050328-85 join_S {"sessionId":"PA_KeCUd6zV8ZSf"}
+[05:04:00.998] livekit-iso-all-19s-O-W25-20261010T050328-85 media_flowing {}
+[05:04:18.745] livekit-iso-all-19s-O-W25-20261010T050328-85 arm_O1 {"S":64.05859375,"O2":67.586669921875}
+[05:04:20.052] livekit-iso-all-19s-O-W25-20261010T050328-85 arm_O2 {"S":63.081787109375,"O1":68.07958984375}
+[05:04:21.382] livekit-iso-all-19s-O-W25-20261010T050328-85 arm_S {"O1":72.192138671875,"O2":69.589111328125}
+[05:04:27.712] livekit-iso-all-19s-O-W25-20261010T050328-85 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791608667675.984,"after":1791608667685.9277},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:04:48.357] livekit-iso-all-19s-O-W25-20261010T050328-85 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791608667675.984,"after":1791608667685.9277},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[05:06:07.812] livekit-iso-all-19s-O-W25-20261010T050328-85 VALID
+[05:06:29.399] livekit-iso-all-19s-O-W25-20261010T050607-86 attempt_timeout_set {"ms":25000}
+[05:06:31.585] livekit-iso-all-19s-O-W25-20261010T050607-86 join_O1 {"sessionId":"PA_VWb3JR6UmVrx"}
+[05:06:33.639] livekit-iso-all-19s-O-W25-20261010T050607-86 join_O2 {"sessionId":"PA_ahuBv7Xn4k8Z"}
+[05:06:35.785] livekit-iso-all-19s-O-W25-20261010T050607-86 join_S {"sessionId":"PA_PX9ScW8fEdqA"}
+[05:06:40.107] livekit-iso-all-19s-O-W25-20261010T050607-86 media_flowing {}
+[05:06:58.977] livekit-iso-all-19s-O-W25-20261010T050607-86 arm_O1 {"S":86.98779296875,"O2":77.77880859375}
+[05:07:00.351] livekit-iso-all-19s-O-W25-20261010T050607-86 arm_O2 {"S":73.16015625,"O1":67.938720703125}
+[05:07:01.746] livekit-iso-all-19s-O-W25-20261010T050607-86 arm_S {"O1":62.197998046875,"O2":59.677490234375}
+[05:07:08.130] livekit-iso-all-19s-O-W25-20261010T050607-86 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791608828083.9717,"after":1791608828096.3276},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:07:29.368] livekit-iso-all-19s-O-W25-20261010T050607-86 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791608828083.9717,"after":1791608828096.3276},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:08:50.016] livekit-iso-all-19s-O-W25-20261010T050607-86 VALID
+[05:09:11.913] livekit-iso-all-18s-O-W15-20261010T050850-87 attempt_timeout_set {"ms":15000}
+[05:09:13.993] livekit-iso-all-18s-O-W15-20261010T050850-87 join_O1 {"sessionId":"PA_BWHxKhs3iZWn"}
+[05:09:16.041] livekit-iso-all-18s-O-W15-20261010T050850-87 join_O2 {"sessionId":"PA_8aAkCdirC6kW"}
+[05:09:18.191] livekit-iso-all-18s-O-W15-20261010T050850-87 join_S {"sessionId":"PA_YLtW5ThvBetD"}
+[05:09:22.075] livekit-iso-all-18s-O-W15-20261010T050850-87 media_flowing {}
+[05:09:39.714] livekit-iso-all-18s-O-W15-20261010T050850-87 arm_O1 {"S":66.771240234375,"O2":79.0947265625}
+[05:09:41.016] livekit-iso-all-18s-O-W15-20261010T050850-87 arm_O2 {"S":77.397705078125,"O1":58.52001953125}
+[05:09:42.404] livekit-iso-all-18s-O-W15-20261010T050850-87 arm_S {"O1":69.775146484375,"O2":82.222900390625}
+[05:09:48.796] livekit-iso-all-18s-O-W15-20261010T050850-87 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791608988779.0422,"after":1791608988790.1863},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:10:08.679] livekit-iso-all-18s-O-W15-20261010T050850-87 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791608988779.0422,"after":1791608988790.1863},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:11:21.028] livekit-iso-all-18s-O-W15-20261010T050850-87 VALID
+[05:11:43.195] livekit-iso-all-18s-O-W15-20261010T051121-88 attempt_timeout_set {"ms":15000}
+[05:11:45.315] livekit-iso-all-18s-O-W15-20261010T051121-88 join_O1 {"sessionId":"PA_bs3VzsaTWZhx"}
+[05:11:47.466] livekit-iso-all-18s-O-W15-20261010T051121-88 join_O2 {"sessionId":"PA_cQd7T39FzmKy"}
+[05:11:49.513] livekit-iso-all-18s-O-W15-20261010T051121-88 join_S {"sessionId":"PA_fD7xzh3MYhJX"}
+[05:11:53.450] livekit-iso-all-18s-O-W15-20261010T051121-88 media_flowing {}
+[05:12:11.983] livekit-iso-all-18s-O-W15-20261010T051121-88 arm_O1 {"S":73.9423828125,"O2":69.461669921875}
+[05:12:13.328] livekit-iso-all-18s-O-W15-20261010T051121-88 arm_O2 {"S":78.942138671875,"O1":61.01806640625}
+[05:12:14.723] livekit-iso-all-18s-O-W15-20261010T051121-88 arm_S {"O1":68.3125,"O2":62.5859375}
+[05:12:21.134] livekit-iso-all-18s-O-W15-20261010T051121-88 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791609141122.6736,"after":1791609141135.491},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:12:40.830] livekit-iso-all-18s-O-W15-20261010T051121-88 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791609141122.6736,"after":1791609141135.491},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[05:13:52.835] livekit-iso-all-18s-O-W15-20261010T051121-88 VALID
+[05:14:14.227] livekit-iso-all-19s-O-W25-20261010T051352-89 attempt_timeout_set {"ms":25000}
+[05:14:16.226] livekit-iso-all-19s-O-W25-20261010T051352-89 join_O1 {"sessionId":"PA_Q9vvx6J8cJXh"}
+[05:14:18.299] livekit-iso-all-19s-O-W25-20261010T051352-89 join_O2 {"sessionId":"PA_MkMK8TY78Yk4"}
+[05:14:20.336] livekit-iso-all-19s-O-W25-20261010T051352-89 join_S {"sessionId":"PA_kcfnHCwd7Bnd"}
+[05:14:24.199] livekit-iso-all-19s-O-W25-20261010T051352-89 media_flowing {}
+[05:14:42.293] livekit-iso-all-19s-O-W25-20261010T051352-89 arm_O1 {"S":66.355712890625,"O2":71.577392578125}
+[05:14:43.608] livekit-iso-all-19s-O-W25-20261010T051352-89 arm_O2 {"S":63.413330078125,"O1":72.9775390625}
+[05:14:44.908] livekit-iso-all-19s-O-W25-20261010T051352-89 arm_S {"O1":65.34326171875,"O2":63.767333984375}
+[05:14:51.261] livekit-iso-all-19s-O-W25-20261010T051352-89 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791609291245.555,"after":1791609291258.4197},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:15:12.166] livekit-iso-all-19s-O-W25-20261010T051352-89 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791609291245.555,"after":1791609291258.4197},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befor
+[05:16:31.096] livekit-iso-all-19s-O-W25-20261010T051352-89 VALID
+[05:16:53.076] livekit-iso-all-26s-O-W25-20261010T051631-90 attempt_timeout_set {"ms":25000}
+[05:16:55.075] livekit-iso-all-26s-O-W25-20261010T051631-90 join_O1 {"sessionId":"PA_7LsDN7pdZMyC"}
+[05:16:57.213] livekit-iso-all-26s-O-W25-20261010T051631-90 join_O2 {"sessionId":"PA_StKWX8GpmyMH"}
+[05:16:59.287] livekit-iso-all-26s-O-W25-20261010T051631-90 join_S {"sessionId":"PA_k7wDoL2U9oif"}
+[05:17:03.312] livekit-iso-all-26s-O-W25-20261010T051631-90 media_flowing {}
+[05:17:21.084] livekit-iso-all-26s-O-W25-20261010T051631-90 arm_O1 {"S":63.568603515625,"O2":68.92333984375}
+[05:17:22.410] livekit-iso-all-26s-O-W25-20261010T051631-90 arm_O2 {"S":59.346923828125,"O1":66.988037109375}
+[05:17:23.696] livekit-iso-all-26s-O-W25-20261010T051631-90 arm_S {"O1":85.775146484375,"O2":60.1455078125}
+[05:17:30.058] livekit-iso-all-26s-O-W25-20261010T051631-90 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791609450049.6165,"after":1791609450059.6716},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:17:58.227] livekit-iso-all-26s-O-W25-20261010T051631-90 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791609450049.6165,"after":1791609450059.6716},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:19:11.001] livekit-iso-all-26s-O-W25-20261010T051631-90 VALID
+[05:19:32.408] livekit-iso-all-18s-O-W15-20261010T051911-91 attempt_timeout_set {"ms":15000}
+[05:19:34.513] livekit-iso-all-18s-O-W15-20261010T051911-91 join_O1 {"sessionId":"PA_iQvkaT3SptNe"}
+[05:19:36.627] livekit-iso-all-18s-O-W15-20261010T051911-91 join_O2 {"sessionId":"PA_JBDnKpwnGi4v"}
+[05:19:38.709] livekit-iso-all-18s-O-W15-20261010T051911-91 join_S {"sessionId":"PA_XM4uVUe8Fcnb"}
+[05:19:42.683] livekit-iso-all-18s-O-W15-20261010T051911-91 media_flowing {}
+[05:20:00.364] livekit-iso-all-18s-O-W15-20261010T051911-91 arm_O1 {"S":64.762939453125,"O2":69.31591796875}
+[05:20:01.723] livekit-iso-all-18s-O-W15-20261010T051911-91 arm_O2 {"S":59.94091796875,"O1":66.25390625}
+[05:20:03.084] livekit-iso-all-18s-O-W15-20261010T051911-91 arm_S {"O1":70.839111328125,"O2":71.6513671875}
+[05:20:09.421] livekit-iso-all-18s-O-W15-20261010T051911-91 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791609609412.2068,"after":1791609609424.9285},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:20:29.564] livekit-iso-all-18s-O-W15-20261010T051911-91 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791609609412.2068,"after":1791609609424.9285},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:21:42.445] livekit-iso-all-18s-O-W15-20261010T051911-91 VALID
+[05:22:04.188] livekit-iso-all-16s-O-W10-20261010T052142-92 attempt_timeout_set {"ms":10000}
+[05:22:06.270] livekit-iso-all-16s-O-W10-20261010T052142-92 join_O1 {"sessionId":"PA_cCUtVvDnrCfp"}
+[05:22:08.319] livekit-iso-all-16s-O-W10-20261010T052142-92 join_O2 {"sessionId":"PA_ETN36bqKJZwr"}
+[05:22:10.465] livekit-iso-all-16s-O-W10-20261010T052142-92 join_S {"sessionId":"PA_J6WpR2Xa2PHX"}
+[05:22:14.726] livekit-iso-all-16s-O-W10-20261010T052142-92 media_flowing {}
+[05:22:32.890] livekit-iso-all-16s-O-W10-20261010T052142-92 arm_O1 {"S":70.85302734375,"O2":84.01318359375}
+[05:22:34.256] livekit-iso-all-16s-O-W10-20261010T052142-92 arm_O2 {"S":55.2216796875,"O1":61.623291015625}
+[05:22:35.593] livekit-iso-all-16s-O-W10-20261010T052142-92 arm_S {"O1":72.524169921875,"O2":73.051025390625}
+[05:22:41.930] livekit-iso-all-16s-O-W10-20261010T052142-92 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791609761927.6118,"after":1791609761937.2612},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:22:59.901] livekit-iso-all-16s-O-W10-20261010T052142-92 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791609761927.6118,"after":1791609761937.2612},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:24:15.777] livekit-iso-all-16s-O-W10-20261010T052142-92 VALID
+[05:24:37.325] livekit-iso-all-18s-O-W15-20261010T052415-93 attempt_timeout_set {"ms":15000}
+[05:24:39.566] livekit-iso-all-18s-O-W15-20261010T052415-93 join_O1 {"sessionId":"PA_n2vgx8eRe6yd"}
+[05:24:41.716] livekit-iso-all-18s-O-W15-20261010T052415-93 join_O2 {"sessionId":"PA_WiCThK8STsnD"}
+[05:24:43.865] livekit-iso-all-18s-O-W15-20261010T052415-93 join_S {"sessionId":"PA_36uaebWEAgTi"}
+[05:24:47.819] livekit-iso-all-18s-O-W15-20261010T052415-93 media_flowing {}
+[05:25:05.836] livekit-iso-all-18s-O-W15-20261010T052415-93 arm_O1 {"S":81.705078125,"O2":64.63232421875}
+[05:25:07.210] livekit-iso-all-18s-O-W15-20261010T052415-93 arm_O2 {"S":70.744384765625,"O1":65.664794921875}
+[05:25:08.545] livekit-iso-all-18s-O-W15-20261010T052415-93 arm_S {"O1":78.401611328125,"O2":71.32275390625}
+[05:25:14.883] livekit-iso-all-18s-O-W15-20261010T052415-93 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791609914879.5034,"after":1791609914889.3716},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:25:34.643] livekit-iso-all-18s-O-W15-20261010T052415-93 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791609914879.5034,"after":1791609914889.3716},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:26:47.876] livekit-iso-all-18s-O-W15-20261010T052415-93 VALID
+[05:27:09.705] livekit-iso-all-14s-O-W10-20261010T052647-94 attempt_timeout_set {"ms":10000}
+[05:27:11.681] livekit-iso-all-14s-O-W10-20261010T052647-94 join_O1 {"sessionId":"PA_r3cupS5fa6Sd"}
+[05:27:13.722] livekit-iso-all-14s-O-W10-20261010T052647-94 join_O2 {"sessionId":"PA_msEUYn8MddNu"}
+[05:27:15.832] livekit-iso-all-14s-O-W10-20261010T052647-94 join_S {"sessionId":"PA_dgdm2t6APCti"}
+[05:27:19.875] livekit-iso-all-14s-O-W10-20261010T052647-94 media_flowing {}
+[05:27:38.379] livekit-iso-all-14s-O-W10-20261010T052647-94 arm_O1 {"S":78.676025390625,"O2":68.4658203125}
+[05:27:39.754] livekit-iso-all-14s-O-W10-20261010T052647-94 arm_O2 {"S":78.33056640625,"O1":70.420166015625}
+[05:27:41.080] livekit-iso-all-14s-O-W10-20261010T052647-94 arm_S {"O1":61.282958984375,"O2":66.194091796875}
+[05:27:47.492] livekit-iso-all-14s-O-W10-20261010T052647-94 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791610067488.9348,"after":1791610067499.2004},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:28:03.305] livekit-iso-all-14s-O-W10-20261010T052647-94 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791610067488.9348,"after":1791610067499.2004},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:29:15.933] livekit-iso-all-14s-O-W10-20261010T052647-94 VALID
+[05:29:37.601] livekit-iso-all-18s-O-W25-20261010T052915-95 attempt_timeout_set {"ms":25000}
+[05:29:39.802] livekit-iso-all-18s-O-W25-20261010T052915-95 join_O1 {"sessionId":"PA_mL2ULsk8EtAF"}
+[05:29:41.900] livekit-iso-all-18s-O-W25-20261010T052915-95 join_O2 {"sessionId":"PA_hiBxpPswnvjF"}
+[05:29:44.003] livekit-iso-all-18s-O-W25-20261010T052915-95 join_S {"sessionId":"PA_JQx59id42u2d"}
+[05:29:48.055] livekit-iso-all-18s-O-W25-20261010T052915-95 media_flowing {}
+[05:30:05.710] livekit-iso-all-18s-O-W25-20261010T052915-95 arm_O1 {"S":58.319580078125,"O2":54.506591796875}
+[05:30:07.092] livekit-iso-all-18s-O-W25-20261010T052915-95 arm_O2 {"S":69.23681640625,"O1":72.34912109375}
+[05:30:08.394] livekit-iso-all-18s-O-W25-20261010T052915-95 arm_S {"O1":71.769775390625,"O2":62.978515625}
+[05:30:14.739] livekit-iso-all-18s-O-W25-20261010T052915-95 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791610214728.2021,"after":1791610214739.1677},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:30:34.690] livekit-iso-all-18s-O-W25-20261010T052915-95 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791610214728.2021,"after":1791610214739.1677},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:31:53.983] livekit-iso-all-18s-O-W25-20261010T052915-95 VALID
+[05:32:15.781] livekit-iso-all-19s-O-W15-20261010T053153-96 attempt_timeout_set {"ms":15000}
+[05:32:18.014] livekit-iso-all-19s-O-W15-20261010T053153-96 join_O1 {"sessionId":"PA_a8zbcX2QQMVR"}
+[05:32:20.061] livekit-iso-all-19s-O-W15-20261010T053153-96 join_O2 {"sessionId":"PA_uQaFLySJTXSM"}
+[05:32:22.212] livekit-iso-all-19s-O-W15-20261010T053153-96 join_S {"sessionId":"PA_YwErTtTaGVdd"}
+[05:32:26.122] livekit-iso-all-19s-O-W15-20261010T053153-96 media_flowing {}
+[05:32:43.920] livekit-iso-all-19s-O-W15-20261010T053153-96 arm_O1 {"S":76.815673828125,"O2":69.5419921875}
+[05:32:45.256] livekit-iso-all-19s-O-W15-20261010T053153-96 arm_O2 {"S":63.502685546875,"O1":73.92138671875}
+[05:32:46.661] livekit-iso-all-19s-O-W15-20261010T053153-96 arm_S {"O1":76.6513671875,"O2":69.312744140625}
+[05:32:53.092] livekit-iso-all-19s-O-W15-20261010T053153-96 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791610373090.6658,"after":1791610373101.6992},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:33:13.707] livekit-iso-all-19s-O-W15-20261010T053153-96 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791610373090.6658,"after":1791610373101.6992},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:34:32.809] livekit-iso-all-19s-O-W15-20261010T053153-96 VALID
+[05:34:54.780] livekit-iso-all-14s-O-W10-20261010T053432-97 attempt_timeout_set {"ms":10000}
+[05:34:56.770] livekit-iso-all-14s-O-W10-20261010T053432-97 join_O1 {"sessionId":"PA_aas44gRt7tgj"}
+[05:34:58.882] livekit-iso-all-14s-O-W10-20261010T053432-97 join_O2 {"sessionId":"PA_wi4MX6eKWEea"}
+[05:35:00.937] livekit-iso-all-14s-O-W10-20261010T053432-97 join_S {"sessionId":"PA_CFZobvkwfJat"}
+[05:35:04.926] livekit-iso-all-14s-O-W10-20261010T053432-97 media_flowing {}
+[05:35:23.349] livekit-iso-all-14s-O-W10-20261010T053432-97 arm_O1 {"S":75.84033203125,"O2":69.261962890625}
+[05:35:24.718] livekit-iso-all-14s-O-W10-20261010T053432-97 arm_O2 {"S":81.364990234375,"O1":56.517333984375}
+[05:35:26.041] livekit-iso-all-14s-O-W10-20261010T053432-97 arm_S {"O1":62.80126953125,"O2":63.712646484375}
+[05:35:32.402] livekit-iso-all-14s-O-W10-20261010T053432-97 isolate_on {"mode":"all","durMs":14000,"onset":{"before":1791610532400.6738,"after":1791610532412.0457},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:35:48.357] livekit-iso-all-14s-O-W10-20261010T053432-97 isolate_off {"mode":"all","durMs":14000,"onset":{"before":1791610532400.6738,"after":1791610532412.0457},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:37:07.702] livekit-iso-all-14s-O-W10-20261010T053432-97 VALID
+[05:37:29.729] livekit-iso-all-19s-O-W25-20261010T053707-98 attempt_timeout_set {"ms":25000}
+[05:37:31.985] livekit-iso-all-19s-O-W25-20261010T053707-98 join_O1 {"sessionId":"PA_BxVntSecKmph"}
+[05:37:34.127] livekit-iso-all-19s-O-W25-20261010T053707-98 join_O2 {"sessionId":"PA_GNqqzvxpzFXq"}
+[05:37:36.191] livekit-iso-all-19s-O-W25-20261010T053707-98 join_S {"sessionId":"PA_musem4Rkw2mT"}
+[05:37:40.358] livekit-iso-all-19s-O-W25-20261010T053707-98 media_flowing {}
+[05:37:58.581] livekit-iso-all-19s-O-W25-20261010T053707-98 arm_O1 {"S":63.98095703125,"O2":76.185302734375}
+[05:37:59.953] livekit-iso-all-19s-O-W25-20261010T053707-98 arm_O2 {"S":76.687255859375,"O1":70.6279296875}
+[05:38:01.293] livekit-iso-all-19s-O-W25-20261010T053707-98 arm_S {"O1":68.7919921875,"O2":65.712646484375}
+[05:38:07.655] livekit-iso-all-19s-O-W25-20261010T053707-98 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791610687643.7434,"after":1791610687653.9512},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:38:28.851] livekit-iso-all-19s-O-W25-20261010T053707-98 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791610687643.7434,"after":1791610687653.9512},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:39:47.917] livekit-iso-all-19s-O-W25-20261010T053707-98 VALID
+[05:40:09.925] livekit-iso-all-28s-O-W25-20261010T053947-99 attempt_timeout_set {"ms":25000}
+[05:40:12.051] livekit-iso-all-28s-O-W25-20261010T053947-99 join_O1 {"sessionId":"PA_UQYVWYo5BTik"}
+[05:40:14.191] livekit-iso-all-28s-O-W25-20261010T053947-99 join_O2 {"sessionId":"PA_UK4uzHyGw5Qp"}
+[05:40:16.341] livekit-iso-all-28s-O-W25-20261010T053947-99 join_S {"sessionId":"PA_nFZyS7CsChys"}
+[05:40:20.326] livekit-iso-all-28s-O-W25-20261010T053947-99 media_flowing {}
+[05:40:38.899] livekit-iso-all-28s-O-W25-20261010T053947-99 arm_O1 {"S":64.505859375,"O2":71.31396484375}
+[05:40:40.223] livekit-iso-all-28s-O-W25-20261010T053947-99 arm_O2 {"S":55.60546875,"O1":70.185302734375}
+[05:40:41.538] livekit-iso-all-28s-O-W25-20261010T053947-99 arm_S {"O1":69.9873046875,"O2":64.370849609375}
+[05:40:47.898] livekit-iso-all-28s-O-W25-20261010T053947-99 isolate_on {"mode":"all","durMs":28000,"onset":{"before":1791610847883.7932,"after":1791610847896.2883},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:41:18.657] livekit-iso-all-28s-O-W25-20261010T053947-99 isolate_off {"mode":"all","durMs":28000,"onset":{"before":1791610847883.7932,"after":1791610847896.2883},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:42:38.928] livekit-iso-all-28s-O-W25-20261010T053947-99 VALID
+[05:43:00.956] livekit-iso-all-18s-O-W25-20261010T054238-100 attempt_timeout_set {"ms":25000}
+[05:43:03.052] livekit-iso-all-18s-O-W25-20261010T054238-100 join_O1 {"sessionId":"PA_LbDmxzbkf7C9"}
+[05:43:05.096] livekit-iso-all-18s-O-W25-20261010T054238-100 join_O2 {"sessionId":"PA_hzwxEK2kaPRh"}
+[05:43:07.250] livekit-iso-all-18s-O-W25-20261010T054238-100 join_S {"sessionId":"PA_pdVtRrY2XbH5"}
+[05:43:11.292] livekit-iso-all-18s-O-W25-20261010T054238-100 media_flowing {}
+[05:43:29.472] livekit-iso-all-18s-O-W25-20261010T054238-100 arm_O1 {"S":60.259033203125,"O2":62.121826171875}
+[05:43:30.798] livekit-iso-all-18s-O-W25-20261010T054238-100 arm_O2 {"S":57.033447265625,"O1":86.263671875}
+[05:43:32.118] livekit-iso-all-18s-O-W25-20261010T054238-100 arm_S {"O1":66.25830078125,"O2":73.866943359375}
+[05:43:38.467] livekit-iso-all-18s-O-W25-20261010T054238-100 isolate_on {"mode":"all","durMs":18000,"onset":{"before":1791611018452.3127,"after":1791611018463.71},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:43:58.548] livekit-iso-all-18s-O-W25-20261010T054238-100 isolate_off {"mode":"all","durMs":18000,"onset":{"before":1791611018452.3127,"after":1791611018463.71},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"before
+[05:45:10.603] livekit-iso-all-18s-O-W25-20261010T054238-100 VALID
+[05:45:32.330] livekit-iso-all-19s-O-W15-20261010T054510-101 attempt_timeout_set {"ms":15000}
+[05:45:34.397] livekit-iso-all-19s-O-W15-20261010T054510-101 join_O1 {"sessionId":"PA_fsoeFufkaRAC"}
+[05:45:36.449] livekit-iso-all-19s-O-W15-20261010T054510-101 join_O2 {"sessionId":"PA_ZLCWU6yqnpvq"}
+[05:45:38.608] livekit-iso-all-19s-O-W15-20261010T054510-101 join_S {"sessionId":"PA_Z6fMoTpGTNph"}
+[05:45:42.623] livekit-iso-all-19s-O-W15-20261010T054510-101 media_flowing {}
+[05:46:00.305] livekit-iso-all-19s-O-W15-20261010T054510-101 arm_O1 {"S":68.9541015625,"O2":72.3203125}
+[05:46:01.657] livekit-iso-all-19s-O-W15-20261010T054510-101 arm_O2 {"S":67.0537109375,"O1":66.25341796875}
+[05:46:03.978] livekit-iso-all-19s-O-W15-20261010T054510-101 arm_S {"O1":72.130615234375,"O2":70.616455078125}
+[05:46:10.581] livekit-iso-all-19s-O-W15-20261010T054510-101 isolate_on {"mode":"all","durMs":19000,"onset":{"before":1791611170569.6804,"after":1791611170579.5432},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:46:31.181] livekit-iso-all-19s-O-W15-20261010T054510-101 isolate_off {"mode":"all","durMs":19000,"onset":{"before":1791611170569.6804,"after":1791611170579.5432},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:47:50.644] livekit-iso-all-19s-O-W15-20261010T054510-101 VALID
+[05:48:12.514] livekit-iso-all-16s-O-W10-20261010T054750-102 attempt_timeout_set {"ms":10000}
+[05:48:14.559] livekit-iso-all-16s-O-W10-20261010T054750-102 join_O1 {"sessionId":"PA_pAnHVyPztHbv"}
+[05:48:16.562] livekit-iso-all-16s-O-W10-20261010T054750-102 join_O2 {"sessionId":"PA_5dzTtS9TrAE8"}
+[05:48:18.856] livekit-iso-all-16s-O-W10-20261010T054750-102 join_S {"sessionId":"PA_PahEMs6HHqDq"}
+[05:48:22.823] livekit-iso-all-16s-O-W10-20261010T054750-102 media_flowing {}
+[05:48:40.500] livekit-iso-all-16s-O-W10-20261010T054750-102 arm_O1 {"S":71.97119140625,"O2":78.438720703125}
+[05:48:41.837] livekit-iso-all-16s-O-W10-20261010T054750-102 arm_O2 {"S":65.340087890625,"O1":73.67431640625}
+[05:48:43.145] livekit-iso-all-16s-O-W10-20261010T054750-102 arm_S {"O1":72.4453125,"O2":61.068115234375}
+[05:48:49.541] livekit-iso-all-16s-O-W10-20261010T054750-102 isolate_on {"mode":"all","durMs":16000,"onset":{"before":1791611329529.8691,"after":1791611329539.5176},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:49:07.423] livekit-iso-all-16s-O-W10-20261010T054750-102 isolate_off {"mode":"all","durMs":16000,"onset":{"before":1791611329529.8691,"after":1791611329539.5176},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:50:22.947] livekit-iso-all-16s-O-W10-20261010T054750-102 VALID
+[05:50:44.693] livekit-iso-all-26s-O-W25-20261010T055022-103 attempt_timeout_set {"ms":25000}
+[05:50:46.730] livekit-iso-all-26s-O-W25-20261010T055022-103 join_O1 {"sessionId":"PA_yt9yWHzygBA3"}
+[05:50:48.874] livekit-iso-all-26s-O-W25-20261010T055022-103 join_O2 {"sessionId":"PA_kvcKJUFyGTdm"}
+[05:50:51.028] livekit-iso-all-26s-O-W25-20261010T055022-103 join_S {"sessionId":"PA_jhdas6tUSh3v"}
+[05:50:54.900] livekit-iso-all-26s-O-W25-20261010T055022-103 media_flowing {}
+[05:51:12.558] livekit-iso-all-26s-O-W25-20261010T055022-103 arm_O1 {"S":68.271484375,"O2":60.420654296875}
+[05:51:14.040] livekit-iso-all-26s-O-W25-20261010T055022-103 arm_O2 {"S":69.250244140625,"O1":56.330810546875}
+[05:51:15.376] livekit-iso-all-26s-O-W25-20261010T055022-103 arm_S {"O1":67.81591796875,"O2":78.16552734375}
+[05:51:21.699] livekit-iso-all-26s-O-W25-20261010T055022-103 isolate_on {"mode":"all","durMs":26000,"onset":{"before":1791611481687.8647,"after":1791611481699.3135},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":null}
+[05:51:50.427] livekit-iso-all-26s-O-W25-20261010T055022-103 isolate_off {"mode":"all","durMs":26000,"onset":{"before":1791611481687.8647,"after":1791611481699.3135},"rulesDuring":["-A INPUT -s 10.42.5.163/32 -j DROP","-A OUTPUT -d 10.42.5.163/32 -j DROP"],"restore":{"befo
+[05:53:03.494] livekit-iso-all-26s-O-W25-20261010T055022-103 VALID
+[05:53:03.497] timeout livekit done {"W25-19":10,"W10-16":10,"W10-14":10,"W10-17":10,"W10-15":10,"W25-26":10,"W25-18":10,"W15-19":10,"W25-28":10,"W15-18":10}
+TIMEOUT_EXIT=0
+=== TIMEOUT_DONE 2026-10-10T05:53:03Z
+=== PARK 2026-10-10T05:53:03Z
+./scripts/nodegroup.sh park
+==> AWS identity: arn:aws:iam::<aws-account-id>:user/lab-admin (profile medialab)
+==> node group media-d2d1bcd317a9f7e6ac1dd04994: desired 3, live instances 3, k8s nodes 3 -> target 0
+[warn] these PodDisruptionBudgets allow 0 disruptions: coturn/coturn 
+[warn] the node drain will wait on them. EKS gives up and terminates anyway after its drain timeout:
+[warn] about 15-17 min here (observed 16.5 min on 2026-09-29). That wait is expected, not a hang.
+==> EKS update da928347-e7be-3a64-9580-b551c0e9c2e7 submitted
+==> EKS update da928347-e7be-3a64-9580-b551c0e9c2e7: Successful (accepted only; now checking that nodes actually changed)
+==> waiting: 3 instance(s) live, 3 k8s node(s), 2s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 35s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 68s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 100s elapsed
+==> waiting: 3 instance(s) live, 3 k8s node(s), 133s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 166s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 200s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 233s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 266s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 299s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 331s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 364s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 397s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 431s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 464s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 498s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 531s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 564s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 597s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 629s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 662s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 695s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 729s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 762s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 795s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 829s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 862s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 895s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 928s elapsed
+==> waiting: 1 instance(s) live, 1 k8s node(s), 961s elapsed
+==> VERIFIED PARKED: node group desired 0, 0 live instances, 0 k8s nodes (995s)
+==> still billing: EKS control plane, and any NLB (e.g. coturn's). Pods are Pending, not deleted.
+MAKE_PARK_EXIT=0
+=== JOB_DONE 2026-10-10T06:10:06Z
+TIMEOUT_SH_EXIT=0
