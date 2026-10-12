@@ -1,0 +1,223 @@
+// CORRECTED-DECODER BUILD: logs/study/janus-early/common.js.before-stats with one change, in attachRemote (search
+// "Corrected-decoder build"). Used only by the R4 replication. Generated; do not edit by hand.
+// C4 study client: shared page core. Loaded FIRST (before any SDK), so the WebSocket
+// and RTCPeerConnection taps see everything.
+'use strict';
+
+const C4X = (window.C4X = {});
+C4X.now = () => performance.timeOrigin + performance.now(); // monotonic, epoch scale
+C4X.LOG = [];
+C4X.log = (type, data = {}) => { const e = { t: C4X.now(), type, ...data }; C4X.LOG.push(e); return e; };
+C4X.generation = 0; // bumped on every rebuild; sockets and PCs are tagged with it
+
+// ---- raw signalling tap ------------------------------------------------------
+C4X.FRAMES = [];
+C4X.SOCKETS = new Map();
+(() => {
+  const Native = window.WebSocket;
+  let seq = 0;
+  const b64 = (buf) => {
+    const u8 = new Uint8Array(buf); let s = '';
+    for (let i = 0; i < u8.length; i += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000));
+    return btoa(s);
+  };
+  const listeners = new Set();
+  C4X.onFrame = (fn) => listeners.add(fn);
+  class TapWS extends Native {
+    constructor(url, protocols) {
+      super(url, protocols);
+      const id = ++seq, gen = C4X.generation;
+      this._c4 = { id, gen };
+      C4X.SOCKETS.set(id, this);
+      const push = (f) => { C4X.FRAMES.push(f); for (const l of listeners) { try { l(f, this); } catch (e) { C4X.log('frame_listener_error', { e: String(e) }); } } };
+      push({ t: C4X.now(), ws: id, gen, dir: 'open', url: String(url).replace(/access_token=[^&]+/, 'access_token=REDACTED') });
+      this.addEventListener('message', (ev) => {
+        if (ev.data instanceof ArrayBuffer) push({ t: C4X.now(), ws: id, gen, dir: 'in', b64: b64(ev.data), raw: ev.data });
+        else push({ t: C4X.now(), ws: id, gen, dir: 'in', text: String(ev.data) });
+      });
+      this.addEventListener('close', (ev) => { push({ t: C4X.now(), ws: id, gen, dir: 'close', code: ev.code }); C4X.SOCKETS.delete(id); });
+    }
+    send(data) {
+      if (typeof data === 'string') C4X.FRAMES.push({ t: C4X.now(), ws: this._c4.id, gen: this._c4.gen, dir: 'out', text: data });
+      else {
+        const buf = data instanceof ArrayBuffer ? data : data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
+        C4X.FRAMES.push({ t: C4X.now(), ws: this._c4.id, gen: this._c4.gen, dir: 'out', b64: b64(buf) });
+      }
+      return super.send(data);
+    }
+  }
+  window.WebSocket = TapWS;
+})();
+C4X.dumpFrames = () => C4X.FRAMES.map(({ raw, ...f }) => f);
+
+// ---- PeerConnection registry (for abandon-by-generation) ---------------------
+C4X.PCS = [];
+(() => {
+  const Native = window.RTCPeerConnection;
+  class TapPC extends Native {
+    constructor(cfg) {
+      super(cfg);
+      const rec = { id: C4X.PCS.length + 1, gen: C4X.generation, pc: this, closedByC4: false };
+      C4X.PCS.push(rec);
+      this.addEventListener('iceconnectionstatechange', () => C4X.log('pc_ice', { pc: rec.id, gen: rec.gen, state: this.iceConnectionState }));
+      this.addEventListener('connectionstatechange', () => C4X.log('pc_conn', { pc: rec.id, gen: rec.gen, state: this.connectionState }));
+    }
+  }
+  window.RTCPeerConnection = TapPC;
+})();
+C4X.livePCs = () => C4X.PCS.filter((r) => r.gen === C4X.generation && r.pc.connectionState !== 'closed');
+
+/** Local UDP ports of generation g's live PeerConnections (for block-first abandonment). */
+C4X.pcPorts = async (g) => {
+  const ports = new Set();
+  for (const r of C4X.PCS) {
+    if (r.gen !== g || r.pc.connectionState === 'closed') continue;
+    try { (await r.pc.getStats()).forEach((x) => { if (x.type === 'local-candidate' && x.port && x.port !== 9 && (x.protocol || 'udp') === 'udp') ports.add(x.port); }); } catch {}
+  }
+  return [...ports];
+};
+
+/** Abandon generation g (spec §1.2, block-first): blackhole its media ports, THEN close.
+ *  The signalling socket closes with a normal TCP FIN (crashed-process model); the PCs'
+ *  DTLS goodbye is dropped. Port rules are removed ~1.5 s later. */
+C4X.dropGeneration = async (g) => {
+  const ports = await C4X.pcPorts(g);
+  let blocked = null;
+  if (window.c4BlockPorts && ports.length) { try { blocked = await window.c4BlockPorts(ports); } catch (e) { blocked = { ok: false, error: String(e) }; } }
+  C4X.log('block_first', { gen: g, ports, blocked });
+  const closed = { sockets: 0, pcs: 0 };
+  for (const ws of [...C4X.SOCKETS.values()]) if (ws._c4.gen === g) { try { ws.close(); closed.sockets++; } catch {} }
+  for (const r of C4X.PCS) if (r.gen === g && r.pc.connectionState !== 'closed') { r.closedByC4 = true; try { r.pc.close(); closed.pcs++; } catch {} }
+  C4X.log('drop_generation', { gen: g, ...closed, blockFirst: !!(blocked && blocked.ok) });
+  if (blocked && blocked.ok) setTimeout(() => window.c4UnblockPorts(ports).then((r) => C4X.log('unblock', { gen: g, r })).catch((e) => C4X.log('unblock_error', { e: String(e) })), 1500);
+  return { ...closed, blockFirst: !!(blocked && blocked.ok) };
+};
+
+// ---- audio clock: chirp generator (encodes SENDER EPOCH) ---------------------
+const FINE = { f0: 1200, bw: 2400, period: 2 }; // 1200 Hz/s
+const COARSE = { f0: 300, bw: 600, period: 64 }; // 9.375 Hz/s
+C4X.CHIRP = { FINE, COARSE };
+
+const GEN_SRC = `
+const FINE=${JSON.stringify(FINE)}, COARSE=${JSON.stringify(COARSE)};
+const frac=(x)=>x-Math.floor(x);
+class Gen extends AudioWorkletProcessor{
+  constructor(){super();this.p1=0;this.p2=0;this.off=null;this.port.onmessage=(e)=>{this.off=e.data.offMs;};}
+  process(_i,outs){const o=outs[0][0];if(this.off===null){o.fill(0);return true;}
+    for(let i=0;i<o.length;i++){const t=((currentFrame+i)/sampleRate*1000+this.off)/1000;
+      this.p1+=2*Math.PI*(FINE.f0+FINE.bw*frac(t/FINE.period))/sampleRate;
+      this.p2+=2*Math.PI*(COARSE.f0+COARSE.bw*frac(t/COARSE.period))/sampleRate;
+      if(this.p1>1e4)this.p1%=2*Math.PI; if(this.p2>1e4)this.p2%=2*Math.PI;
+      o[i]=0.3*Math.sin(this.p1)+0.3*Math.sin(this.p2);}
+    return true;}}
+registerProcessor('c4-gen',Gen);`;
+
+const CAP_SRC = `
+class Cap extends AudioWorkletProcessor{
+  constructor(){super();this.buf=new Float32Array(2048);this.n=0;this.f0=0;}
+  process(ins){const x=ins[0]&&ins[0][0];if(this.n===0)this.f0=currentFrame;
+    if(x)this.buf.set(x,this.n);else this.buf.fill(0,this.n,this.n+128);this.n+=128;
+    if(this.n>=2048){this.port.postMessage({f0:this.f0,d:this.buf},[this.buf.buffer]);this.buf=new Float32Array(2048);this.n=0;}
+    return true;}}
+registerProcessor('c4-cap',Cap);`;
+
+C4X.audio = null;
+C4X.initAudio = async () => {
+  if (C4X.audio) return C4X.audio;
+  const ctx = new AudioContext({ sampleRate: 48000, latencyHint: 'interactive' });
+  const url = (src) => URL.createObjectURL(new Blob([src], { type: 'text/javascript' }));
+  await ctx.audioWorklet.addModule(url(GEN_SRC));
+  await ctx.audioWorklet.addModule(url(CAP_SRC));
+  await ctx.resume();
+  // epochMs = ctx.currentTime*1000 + offMs : lower envelope over 300 ms of samples
+  let off = Infinity;
+  const t0 = performance.now();
+  while (performance.now() - t0 < 300) { off = Math.min(off, C4X.now() - ctx.currentTime * 1000); await new Promise((r) => setTimeout(r, 5)); }
+  const gen = new AudioWorkletNode(ctx, 'c4-gen', { numberOfInputs: 0, outputChannelCount: [1] });
+  gen.port.postMessage({ offMs: off });
+  const dest = ctx.createMediaStreamDestination();
+  gen.connect(dest);
+  // A FRESH track per (re)publish: an SDK's disconnect cleanup may stop() a published track
+  // (seen with livekit-client on a delivered DISCONNECT, 2026-10-01); the generator keeps running.
+  const freshTrack = () => { const d = ctx.createMediaStreamDestination(); gen.connect(d); const t = d.stream.getAudioTracks()[0]; C4X.log('chirp_track', { id: t.id }); return t; };
+  C4X.audio = { ctx, offMs: off, track: dest.stream.getAudioTracks()[0], freshTrack };
+  C4X.log('audio_ready', { offMs: off, sampleRate: ctx.sampleRate, baseLatency: ctx.baseLatency });
+  return C4X.audio;
+};
+
+// ---- freshness decoder: one per remote participant ---------------------------
+const N = 8192, W1 = 1024, W2 = 4096, SR = 48000;
+const rev = new Uint32Array(N); for (let i = 0, j = 0; i < N; i++) { rev[i] = j; let b = N >> 1; while (j & b) { j ^= b; b >>= 1; } j |= b; }
+const cosT = new Float64Array(N / 2), sinT = new Float64Array(N / 2);
+for (let i = 0; i < N / 2; i++) { cosT[i] = Math.cos((2 * Math.PI * i) / N); sinT[i] = -Math.sin((2 * Math.PI * i) / N); }
+const hann = (w) => Float64Array.from({ length: w }, (_, i) => 0.5 - 0.5 * Math.cos((2 * Math.PI * i) / (w - 1)));
+const H1 = hann(W1), H2 = hann(W2);
+const re = new Float64Array(N), im = new Float64Array(N), mag = new Float64Array(N / 2);
+function fftMag(x, off, w, h) {
+  re.fill(0); im.fill(0);
+  for (let i = 0; i < w; i++) re[rev[i]] = x[off + i] * h[i];
+  for (let size = 2; size <= N; size <<= 1) {
+    const half = size >> 1, step = N / size;
+    for (let i = 0; i < N; i += size) for (let j = 0; j < half; j++) {
+      const k = j * step, a = i + j, b = a + half;
+      const tr = re[b] * cosT[k] - im[b] * sinT[k], ti = re[b] * sinT[k] + im[b] * cosT[k];
+      re[b] = re[a] - tr; im[b] = im[a] - ti; re[a] += tr; im[a] += ti;
+    }
+  }
+  for (let i = 0; i < N / 2; i++) mag[i] = re[i] * re[i] + im[i] * im[i];
+  return mag;
+}
+const binHz = SR / N;
+function peak(m, lo, hi) {
+  const a = Math.ceil(lo / binHz), b = Math.floor(hi / binHz); let k = a;
+  for (let i = a; i <= b; i++) if (m[i] > m[k]) k = i;
+  const l = Math.log(m[k - 1] + 1e-20), c = Math.log(m[k] + 1e-20), r = Math.log(m[k + 1] + 1e-20);
+  const d = 0.5 * (l - r) / (l - 2 * c + r);
+  const band = []; for (let i = a; i <= b; i += 4) band.push(m[i]); band.sort((x, y) => x - y);
+  return { hz: (k + d) * binHz, snr: 10 * Math.log10(m[k] / (band[band.length >> 1] + 1e-20)) };
+}
+
+C4X.FRESH = {}; // remoteKey -> [{tP, tS, age}]
+C4X.lastFresh = {}; // remoteKey -> latest valid sample
+C4X.attachRemote = async (key, mediaStreamTrack) => {
+  const a = await C4X.initAudio();
+  const ms = new MediaStream([mediaStreamTrack]);
+  const el = document.createElement('audio'); el.srcObject = ms; el.autoplay = true; document.body.appendChild(el);
+  el.play().catch(() => {});
+  const src = a.ctx.createMediaStreamSource(ms);
+  const cap = new AudioWorkletNode(a.ctx, 'c4-cap', { numberOfInputs: 1, numberOfOutputs: 1, outputChannelCount: [1] });
+  src.connect(cap); cap.connect(a.ctx.destination);
+  const ring = new Float32Array(W2 * 2); let ringF0 = -1, filled = 0, sinceDecode = 0;
+  C4X.FRESH[key] = C4X.FRESH[key] || [];
+  C4X.log('remote_attached', { key, trackId: mediaStreamTrack.id });
+  cap.port.onmessage = (e) => {
+    const { f0, d } = e.data;
+    ring.copyWithin(0, d.length); ring.set(d, ring.length - d.length); ringF0 = f0 + d.length - ring.length; filled = Math.min(ring.length, filled + d.length);
+    sinceDecode += d.length;
+    if (filled < W2 || sinceDecode < 4800) return; // decode every ~100 ms
+    sinceDecode = 0;
+    const off2 = ring.length - W2, off1 = off2 + (W2 - W1) / 2;
+    const pf = peak(fftMag(ring, off1, W1, H1), FINE.f0 - 30, FINE.f0 + FINE.bw + 30);
+    const pc = peak(fftMag(ring, off2, W2, H2), COARSE.f0 - 20, COARSE.f0 + COARSE.bw + 20);
+    const centerFrame = ringF0 + off2 + W2 / 2;
+    const tP = (centerFrame / SR) * 1000 + a.offMs; // presented (entered graph), receiver epoch
+    if (!(pf.snr > 25 && pc.snr > 25)) return;
+    const tf = ((pf.hz - FINE.f0) / FINE.bw) * FINE.period;
+    const tc = ((pc.hz - COARSE.f0) / COARSE.bw) * COARSE.period;
+    let tm = tf + FINE.period * Math.round((tc - tf) / FINE.period); tm = ((tm % 64) + 64) % 64;
+    const resid = Math.abs((((tc - tm + 32) % 64) + 64) % 64 - 32);
+    if (resid > 0.25 || tf < 0.012 || tf > FINE.period - 0.012) return;
+    const nowS = tP / 1000; const k = Math.floor((nowS + 0.5 - tm) / 64); const tS = (tm + 64 * k) * 1000;
+    const s = { tP, tS, age: tP - tS };
+    // Corrected-decoder build (REGISTRATION-R4): reject a sample that is impossible for a played stream. F: its sender
+    // time is ahead of the receiver's clock (it would be recorded as an age of 32 s or more, the 64 s wrap). B: its sender
+    // time is 1.5 to 2.5 s (one period of the fine chirp) earlier than that of the last accepted sample of this stream,
+    // which was decoded less than 1 s before it. A rejected sample is logged and is not used or recorded as a sample.
+    const lastOk = C4X.lastFresh[key];
+    const why = s.age >= 32000 ? 'F' : (lastOk && tP - lastOk.tP < 1000 && lastOk.tS - tS >= 1500 && lastOk.tS - tS <= 2500) ? 'B' : null;
+    if (why) { C4X.log('decoder_reject', { key, why, tP, tS, age: s.age, lastTP: lastOk ? lastOk.tP : null, lastTS: lastOk ? lastOk.tS : null }); return; }
+    C4X.FRESH[key].push(s); C4X.lastFresh[key] = s;
+  };
+};
+/** Effective age of what `key` is presenting now: grows through silence (spec §1 P3). */
+C4X.effectiveAge = (key) => { const s = C4X.lastFresh[key]; return s ? C4X.now() - s.tS : Infinity; };

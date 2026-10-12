@@ -32,6 +32,8 @@ function wwwSources() {
   const www = path.join(ROOT, 'client/www'); const early = path.join(ROOT, 'logs/study/janus-early');
   const src = Object.fromEntries(['common.js', 'lkproto.js', 'lk.js', 'janus.js', 'driver.js'].map((f) => [f, path.join(www, f)]));
   if (process.env.C4_CLIENT_BUILD === 'pre-sampler') { src['common.js'] = path.join(early, 'common.js.before-stats'); src['driver.js'] = path.join(early, 'driver.js.before-stats'); }
+  // corrected-decoder: the pre-sampler build with the decoder correction of REGISTRATION-R4 in common.js; same driver.js
+  if (process.env.C4_CLIENT_BUILD === 'corrected-decoder') { src['common.js'] = path.join(ROOT, 'client/builds/common.js.corrected-decoder'); src['driver.js'] = path.join(early, 'driver.js.before-stats'); }
   if (CONTROL) src['control-arm.js'] = path.join(www, 'control-arm.js');
   return src;
 }
@@ -251,7 +253,7 @@ function abort(trialId, stack, pre) {
 let seq = 0;
 async function trial(stack, test, arm, opt = {}) {
   const stamp = nowIso().replace(/[-:]/g, '').replace(/\..*/, '');
-  const id = test === 'isolation' ? `${stack}-iso-${opt.mode}-${opt.durS}s-${arm}-${opt.mediaAgeMs ? `T${opt.mediaAgeMs / 1000}-` : ''}${opt.wsTimeoutMs ? `W${opt.wsTimeoutMs / 1000}-` : ''}${stamp}-${++seq}` : `${stack}-${test}-${arm}-${stamp}-${++seq}`;
+  const id = test === 'isolation' ? `${stack}-iso-${opt.mode}-${opt.durS}s-${arm}-${opt.mediaAgeMs ? `T${opt.mediaAgeMs / 1000}-` : ''}${opt.wsTimeoutMs ? `W${opt.wsTimeoutMs / 1000}-` : ''}${opt.r4 ? 'R4-' : ''}${stamp}-${++seq}` : `${stack}-${test}-${arm}-${stamp}-${++seq}`;
   const pre = preconditions(stack);
   if (!pre.ok) { abort(id, stack, pre); return { id, aborted: true, failed: pre.failed, stop: pre.stop }; }
   const s = sfu(stack);
@@ -407,6 +409,11 @@ async function trial(stack, test, arm, opt = {}) {
     const acts = dumps.S && dumps.S.driver ? dumps.S.driver.actions.filter((x) => x.kind === 'transport_restart' && x.result && x.result.ok === false && !x.result.refused && x.tEnd != null) : [];
     control = { registration: 'REGISTRATION-R3-attempt-timeout.md', arm: `W${opt.wsTimeoutMs / 1000}`, wsTimeoutMs: opt.wsTimeoutMs, wsTimeoutMsInSubjectRecord: inForce, unansweredAttemptLifetimesMs: acts.map((x) => Math.round(x.tEnd - x.tStart)), build: pre.build, nodeInfo: pre.nodeInfo, clientKernel: pre.clientKernel };
   }
+  if (opt.r4) {
+    const rej = (w) => (dumps[w] ? dumps[w].log.filter((l) => l.type === 'decoder_reject').length : null);
+    if (!pre.build || pre.build.name !== 'corrected-decoder') invalid.push(`client build is ${pre.build && pre.build.name}, not corrected-decoder`);
+    control = { registration: 'REGISTRATION-R4-corrected-decoder.md', arm: 'R4', decoderRejects: { S: rej('S'), O1: rej('O1'), O2: rej('O2') }, build: pre.build, nodeInfo: pre.nodeInfo, clientKernel: pre.clientKernel };
+  }
   if (['h1', 'h2'].includes(test) && !(dumps.B && dumps.B.log.some((l) => (l.type === 'driver_state' && l.state === 'left') || l.type === 'ctl_bystander_left'))) invalid.push('bystander did not leave (no left state in its dump)');
   if (CONTROL_TESTS.includes(test)) {
     // The same arm label is NOT the same condition on the two stacks: each record names its own condition.
@@ -551,6 +558,24 @@ else if (cmd === 'study') {
     fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried, remaining: queue.length }));
   }
   log('timeout', stack, 'done', JSON.stringify(have));
+} else if (cmd === 'replication') {
+  // R4 (REGISTRATION-R4-corrected-decoder.md): the corrected-decoder build in the two conditions whose outcome the decoder
+  // defect changed in the study. One cell per stack: LiveKit full isolation 17 s, Janus full isolation 5 s; ten valid each.
+  const stack = a[0]; const CELL = { livekit: 17, janus: 5 }[stack];
+  if (!CELL || !CONTROL || process.env.C4_CLIENT_BUILD !== 'corrected-decoder') { console.error('replication: livekit or janus, with C4_CONTROL=1 and C4_CLIENT_BUILD=corrected-decoder'); process.exit(2); }
+  const n = Number(process.env.C4_PER_CELL || 10); const dirT = path.join(ROOT, TRIALS); fs.mkdirSync(dirT, { recursive: true });
+  let have = 0, tried = 0;
+  for (const d of fs.readdirSync(dirT)) { const f = path.join(dirT, d, 'result.json'); if (!fs.existsSync(f)) continue; const r = JSON.parse(fs.readFileSync(f, 'utf8')); if (!r.iso || !r.control || r.control.arm !== 'R4' || r.stack !== stack) continue; tried++; if (r.valid) have++; }
+  log('replication', stack, `planned ${Math.max(0, n - have)} trials at ${CELL} s`);
+  let aborts = 0;
+  while (have < n && tried < n + 3) { // replace an invalid trial, at most 3 extra attempts
+    const r = await trial(stack, 'isolation', 'O', { mode: 'all', durS: CELL, r4: true });
+    if (r && r.aborted && r.stop) { log('replication', `STOP: ${r.failed.join(' | ')}`); process.exit(5); }
+    if (r && r.aborted) { aborts++; if (aborts > 10) { log('replication', 'too many precondition aborts: stopping'); process.exit(3); } await sleep(30000); continue; }
+    tried++; if (r && r.valid) have++;
+    fs.writeFileSync(path.join(dirT, `progress-${stack}.json`), JSON.stringify({ t: nowIso(), have, tried }));
+  }
+  log('replication', stack, 'done', JSON.stringify({ have, tried }));
 } else if (cmd === 'shakedown') {
   // STAGE-A-SPEC §4.2: 2 arms x 2 modes x {10 s, 30 s} x 3 reps = 24 trials per stack, reps interleaved.
   const stack = a[0]; const reps = Number(a[1] || 3);
