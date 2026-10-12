@@ -1,0 +1,24 @@
+
+== study (215): 215 trials or sessions | 1290 streams | 956225 samples | 39.2 stream-hours
+   rejected: F (sender time ahead of the clock) 41 | B (sender time one fine period back, within 1 s) 36 | per million samples 81
+   B: how far back, ms: 1817.75–1956.60
+   (the unused broad rule would have rejected 185 for stepping back over 0.5 s, 149 of them by more than 2.5 s)
+   where the rejected samples fall: {"within 1 s after onset":42,"within 3 s after a gap over 300 ms":0,"other":35}
+   subject's detection, 215 isolation trials: recorded by the driver 0.19–2.19 s (215 with a detection) | replay on the raw samples minus recorded: -0.22–0.03 s (215)
+   recorded detection before 1.5 s: 6 trials | their replayed detection with the correction: 1.90, 1.90, 1.90, 1.95, 1.95, 1.95
+   all other trials with a detection in the replay window (209): corrected minus raw replay 0.00–0.00 s | changed by more than 0.05 s: 0
+
+== control (healthy sessions): 80 trials or sessions | 552 streams | 827844 samples | 30.0 stream-hours
+   rejected: F (sender time ahead of the clock) 12 | B (sender time one fine period back, within 1 s) 0 | per million samples 14
+   B: how far back, ms: –
+   (the unused broad rule would have rejected 0 for stepping back over 0.5 s, 0 of them by more than 2.5 s)
+   where the rejected samples fall: {"within 1 s after onset":0,"within 3 s after a gap over 300 ms":0,"other":12}
+
+== R3 (timeout): 100 trials or sessions | 600 streams | 508193 samples | 19.3 stream-hours
+   rejected: F (sender time ahead of the clock) 21 | B (sender time one fine period back, within 1 s) 14 | per million samples 69
+   B: how far back, ms: 1866.71–1923.99
+   (the unused broad rule would have rejected 203 for stepping back over 0.5 s, 189 of them by more than 2.5 s)
+   where the rejected samples fall: {"within 1 s after onset":16,"within 3 s after a gap over 300 ms":0,"other":19}
+   subject's detection, 100 isolation trials: recorded by the driver 0.23–2.17 s (100 with a detection) | replay on the raw samples minus recorded: -0.19–0.05 s (100)
+   recorded detection before 1.5 s: 5 trials | their replayed detection with the correction: 2.00, 1.85, 1.90, 1.95, 1.90
+   all other trials with a detection in the replay window (95): corrected minus raw replay 0.00–0.00 s | changed by more than 0.05 s: 0
