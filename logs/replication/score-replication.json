@@ -1,0 +1,382 @@
+[
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T024616-1",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 1.96268212890625,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4186,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T024839-2",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 2.000695556640625,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4167,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T025103-3",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 2.04986376953125,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4240,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T025329-4",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 1.979165283203125,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4245,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T025556-5",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 2.010057373046875,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4215,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T025821-6",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 2.039762939453125,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4303,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T030047-7",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 1.914301025390625,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4301,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T030313-8",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 2.011325439453125,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4156,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T030535-9",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 2.0688408203125,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4181,
+  "wrapped": 0
+ },
+ {
+  "id": "janus-iso-all-5s-O-R4-20261012T030758-10",
+  "stack": "janus",
+  "D": 5,
+  "build": "corrected-decoder",
+  "detect": 2.02720751953125,
+  "firstAction": null,
+  "open": null,
+  "outcome": "ride-out",
+  "actions": [],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4210,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T021610-1",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 2.029662841796875,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.029662841796875,
+   "ok": true
+  },
+  "open": 7.285262939453125,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.03:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4456,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T021848-2",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 1.970781494140625,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 6.970781494140625,
+   "ok": true
+  },
+  "open": 7.224781494140625,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@6.97:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4389,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T022127-3",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 2.146224853515625,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.146425048828125,
+   "ok": true
+  },
+  "open": 7.400324951171875,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.15:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4285,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T022401-4",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 2.02348095703125,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.02348095703125,
+   "ok": true
+  },
+  "open": 7.2780810546875,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.02:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4324,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T022634-5",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 1.944099609375,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 6.944199462890625,
+   "ok": true
+  },
+  "open": 7.19899951171875,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@6.94:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4273,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T022906-6",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 1.962013671875,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.162013671875,
+   "ok": true
+  },
+  "open": 7.416813720703125,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.16:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4272,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T023140-7",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 2.046937255859375,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.04713720703125,
+   "ok": true
+  },
+  "open": 7.300437255859375,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.05:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4317,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T023412-8",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 2.049616455078125,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.049716552734375,
+   "ok": true
+  },
+  "open": 7.303316650390625,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.05:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4295,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T023643-9",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 2.0958310546875,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.097031005859375,
+   "ok": true
+  },
+  "open": 7.35193115234375,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.10:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4243,
+  "wrapped": 0
+ },
+ {
+  "id": "livekit-iso-all-17s-O-R4-20261012T023914-10",
+  "stack": "livekit",
+  "D": 17,
+  "build": "corrected-decoder",
+  "detect": 2.0942646484375,
+  "firstAction": {
+   "kind": "transport_restart",
+   "t": 7.094364501953125,
+   "ok": true
+  },
+  "open": 7.34866455078125,
+  "outcome": "restart",
+  "actions": [
+   "transport_restart@7.09:ok"
+  ],
+  "inBand": true,
+  "rejects": [],
+  "rejectAtSOnset": 0,
+  "samples": 4455,
+  "wrapped": 0
+ }
+]
