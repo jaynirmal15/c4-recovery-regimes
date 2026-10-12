@@ -39,7 +39,21 @@ Rate, stated plainly: 5 of 100 trials here began their first attempt before 6.5 
 | livekit-iso-all-18s-O-W25-20261010T052915-95 | W25-18 | O1: 62.15 s at 0.11 s | wrapped (sender time ahead; read as about 62 s) | 3 | F | YES |
 | livekit-iso-all-19s-O-W25-20261010T034806-57 | W25-19 | O2: 62.21 s at 0.18 s | wrapped (sender time ahead; read as about 62 s) | 2 | F | no |
 
-Crossing the two lists: of the 3 early trials that deviate from their cell's prediction, 1 show the form committed before this run (the R2 registration's 1.5 to 2.5 s step) and 2 show the wrapped form, which no committed file described before this run. Explaining those 2 by the known defect therefore stands on weaker ground than the registration's sentence implies: it rests on reading the wrapped form as the same one-period slip in the other direction, an identification made after the run. In every early trial the slipped reading persisted for the samples that followed until decoding stopped, so the R2 wording "exceeding the samples either side" is met against the preceding sample and not against the one immediately after.
+Crossing the two lists: of the 3 early trials that deviate from their cell's prediction, 1 show the form committed before this run (the R2 registration's "age exceeding the samples either side of it by 1.5–2.5 s") and 2 were recorded with an age of about 62 s.
+
+The wrap undone (an identification made after the run, labelled as one). The decoder takes sender time modulo the 64 s period of the coarse chirp (common.js: `tm = ((tm % 64) + 64) % 64`, then the nearest 64 s multiple at or before the clock plus 0.5 s), so a sender time ahead of the receiver's clock is recorded 64.000 s older than it is. Subtracting 64.000 s:
+
+| Early trial | Stream | Recorded age (s) | Minus 64 s | Step from the preceding sample (s) | Inside 1.5–2.5 s in size | Direction |
+|---|---|---|---|---|---|---|
+| livekit-iso-all-14s-O-W10-20261010T053432-97 | O1 | 62.19 | -1.81 | -1.88 | yes | younger (sender time ahead) |
+| livekit-iso-all-16s-O-W10-20261010T022442-31 | O1 | 2.19 | 2.19 | +2.12 | yes | older (the committed direction) |
+| livekit-iso-all-16s-O-W10-20261010T022442-31 | O2 | 2.19 | 2.19 | +2.12 | yes | older (the committed direction) |
+| livekit-iso-all-17s-O-W10-20261010T012941-12 | O1 | 2.26 | 2.26 | +2.17 | yes | older (the committed direction) |
+| livekit-iso-all-18s-O-W25-20261010T052915-95 | O1 | 62.15 | -1.85 | -1.92 | yes | younger (sender time ahead) |
+| livekit-iso-all-19s-O-W25-20261010T034806-57 | O2 | 62.21 | -1.79 | -1.74 | yes | younger (sender time ahead) |
+
+Every one of the 5 early trials is a step of 1.5–2.5 s, one period of the fine chirp. The readings near 62 s are that step in the younger direction read through the 64 s wraparound; they are not a second form of unknown size. What the committed text did not cover is the direction: it names a sample whose age exceeds its neighbours', and these 2 read younger, with sender time ahead of the clock. So for those 2 the explanation is "the known one-period slip, opposite sign, wrap arithmetic undone", which is a narrower gap than "a form we had not documented" and is still a post-run identification. A search by value of every file committed before the run (the tree at acfef63, 2026-10-09) for a sample age of 59.5 to 63.9 s found none outside the raw trial records: the first search was for phrases and digits ("59.5", "wraps to", "sender time ahead", an age threshold of 32000) and the second for any number in that range in documents, analysis outputs and scripts.
+In every early trial the slipped reading persisted for the samples that followed until decoding stopped, so the R2 wording "either side" is met against the preceding sample and not against the one immediately after.
 Of these, the trials that are a deviation from their cell's predicted response or outcome: livekit-iso-all-14s-O-W10-20261010T053432-97 (W10-14); livekit-iso-all-17s-O-W10-20261010T012941-12 (W10-17); livekit-iso-all-18s-O-W25-20261010T052915-95 (W25-18). Every deviation from a predicted response or outcome in a determined cell, early or not: livekit-iso-all-14s-O-W10-20261010T053432-97 (W10-14, early); livekit-iso-all-17s-O-W10-20261010T012941-12 (W10-17, early); livekit-iso-all-18s-O-W25-20261010T052915-95 (W25-18, early).
 
 ## Secondary rule M: per-trial timing

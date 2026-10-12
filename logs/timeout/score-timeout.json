@@ -307,6 +307,18 @@
    "begin": 20.51,
    "result": "accepted"
   },
+  "sig": [
+   {
+    "stream": "O1",
+    "at": 0.15,
+    "age": 62.19,
+    "unwrapped": -1.81,
+    "stepVsPreceding": -1.88,
+    "form": "wrapped (sender time ahead; read as about 62 s)",
+    "clause": "F",
+    "run": 3
+   }
+  ],
   "lifetimesMs": [
    10005
   ],
@@ -830,6 +842,28 @@
    "begin": 20.48,
    "result": "accepted"
   },
+  "sig": [
+   {
+    "stream": "O1",
+    "at": 0.17,
+    "age": 2.19,
+    "unwrapped": 2.19,
+    "stepVsPreceding": 2.12,
+    "form": "the committed form (age up by 1.5 to 2.5 s)",
+    "clause": "B",
+    "run": 3
+   },
+   {
+    "stream": "O2",
+    "at": 0.17,
+    "age": 2.19,
+    "unwrapped": 2.19,
+    "stepVsPreceding": 2.12,
+    "form": "the committed form (age up by 1.5 to 2.5 s)",
+    "clause": "B",
+    "run": 3
+   }
+  ],
   "lifetimesMs": [
    10006
   ],
@@ -1073,6 +1107,18 @@
    "begin": 20.53,
    "result": "accepted"
   },
+  "sig": [
+   {
+    "stream": "O1",
+    "at": 0.21,
+    "age": 2.26,
+    "unwrapped": 2.26,
+    "stepVsPreceding": 2.17,
+    "form": "the committed form (age up by 1.5 to 2.5 s)",
+    "clause": "B",
+    "run": 2
+   }
+  ],
   "lifetimesMs": [
    10005
   ],
@@ -1917,6 +1963,18 @@
   "outcome": "rebuild",
   "rebuildDone": 26.0625322265625,
   "second": null,
+  "sig": [
+   {
+    "stream": "O1",
+    "at": 0.11,
+    "age": 62.15,
+    "unwrapped": -1.85,
+    "stepVsPreceding": -1.92,
+    "form": "wrapped (sender time ahead; read as about 62 s)",
+    "clause": "F",
+    "run": 3
+   }
+  ],
   "lifetimesMs": [],
   "ice": {
    "usable": true,
@@ -2445,6 +2503,18 @@
   "outcome": "rebuild",
   "rebuildDone": 26.159560791015625,
   "second": null,
+  "sig": [
+   {
+    "stream": "O2",
+    "at": 0.18,
+    "age": 62.21,
+    "unwrapped": -1.79,
+    "stepVsPreceding": -1.74,
+    "form": "wrapped (sender time ahead; read as about 62 s)",
+    "clause": "F",
+    "run": 2
+   }
+  ],
   "lifetimesMs": [],
   "ice": {
    "usable": true,

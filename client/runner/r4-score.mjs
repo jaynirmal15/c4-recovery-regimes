@@ -21,6 +21,7 @@ for (const name of fs.readdirSync(dir).sort()) { const d = path.join(dir, name);
     inBand: det ? rel(det.t) >= BAND[0] && rel(det.t) <= BAND[1] : false, rejects, rejectAtSOnset: rejects.filter((x) => x.at === 'S' && x.where === 'onset').length, samples, wrapped }); }
 const out = []; const say = (s = '') => out.push(s);
 say(`# R4 score (${dir}/)`); say(); say(`Valid trials scored: ${rows.length}. Invalid, listed and not scored: ${invalid.length}${invalid.length ? ' (' + invalid.map((x) => `${x.id}: ${JSON.stringify(x.why)}`).join('; ') + ')' : ''}.`);
+say('Design intent (REGISTRATION-R4-NOTE-1.md, written after the run had begun and not part of the registration): the run is powered for the primary question, whether a corrected instrument reproduces ten restarts and ten ride-outs. Whether the correction catches the defect live is answered only by informative trials, expected in a little under half of runs like this one.');
 say(`Build recorded in every scored trial: ${[...new Set(rows.map((x) => x.build))].join(', ') || '–'}.`);
 for (const [stack, D, want] of [['livekit', 17, 'restart'], ['janus', 5, 'ride-out']]) { const g = rows.filter((x) => x.stack === stack && x.D === D); say(); say(`## ${stack}, full isolation, ${D} s`); say();
   say('| Trial | Detection (s) | In band | First action | Connection opened (s) | Outcome | Rejected at S within 1 s of onset | All rejections |'); say('|---|---|---|---|---|---|---|---|');
