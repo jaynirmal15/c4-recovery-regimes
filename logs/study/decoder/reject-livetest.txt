@@ -1,0 +1,40 @@
+build: client/builds/common.js.corrected-decoder sha256 add42677c450cbcccbbda8dbced9716818a186eab1ec9872b02de975254c98c3
+browser: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36 | context sample rate 48000
+The slip is synthetic (a step in the generator's encoded sender time, or that time held constant). Times are seconds after the test began.
+A sample's time is the centre of its analysis window, about 0.1 s before it is decoded, so a sample can fall just before the phase that produced it.
+
+phase | from–to | samples accepted | their age, ms (min–max) | rejected by clause F | by clause B | age of rejected samples, ms
+normal (warm-up) | 0.00–3.00 | 23 | 21–21 | 0 | 0 | –
+back 2 s, 0.6 s | 3.00–3.60 | 3 | 21–2021 | 0 | 2 | 2021, 2021
+normal | 3.60–6.11 | 19 | 21–21 | 0 | 0 | –
+forward 2 s, 0.6 s | 6.11–6.71 | 0 | – | 4 | 0 | 62021, 62021, 62021, 62021
+normal | 6.71–9.21 | 18 | 21–21 | 0 | 0 | –
+back 2 s, held 3 s | 9.21–12.21 | 20 | 2021–2021 | 0 | 3 | 2021, 2021, 2021
+normal | 12.21–14.72 | 18 | 21–21 | 0 | 0 | –
+frozen 2 s back, 0.6 s | 14.72–15.32 | 0 | – | 0 | 5 | 2085, 2213, 2341, 2469, 2597
+normal | 15.32–17.82 | 19 | 21–21 | 0 | 1 | 2053
+frozen 2 s back, held 3 s | 17.82–20.82 | 17 | 2949–4997 | 0 | 6 | 2181, 2309, 2437, 2565, 2693, 2821
+normal | 20.82–23.33 | 19 | 21–21 | 0 | 0 | –
+
+totals: accepted 156 | rejected F 4 | rejected B 17 | accepted samples aged 32 s or more: 0 | accepted samples aged 1.5 to 2.5 s: 22
+  reject B at 3.09 s: age 2021 ms; last accepted 256 ms earlier, sender time 1744 ms later
+  reject B at 3.22 s: age 2021 ms; last accepted 384 ms earlier, sender time 1616 ms later
+  reject F at 6.16 s: age 62021 ms; last accepted 128 ms earlier, sender time 61872 ms later
+  reject F at 6.29 s: age 62021 ms; last accepted 256 ms earlier, sender time 61744 ms later
+  reject F at 6.42 s: age 62021 ms; last accepted 384 ms earlier, sender time 61616 ms later
+  reject F at 6.55 s: age 62021 ms; last accepted 512 ms earlier, sender time 61488 ms later
+  reject B at 9.24 s: age 2021 ms; last accepted 128 ms earlier, sender time 1872 ms later
+  reject B at 9.36 s: age 2021 ms; last accepted 256 ms earlier, sender time 1744 ms later
+  reject B at 9.49 s: age 2021 ms; last accepted 384 ms earlier, sender time 1616 ms later
+  reject B at 14.74 s: age 2085 ms; last accepted 128 ms earlier, sender time 1937 ms later
+  reject B at 14.87 s: age 2213 ms; last accepted 256 ms earlier, sender time 1937 ms later
+  reject B at 15.00 s: age 2341 ms; last accepted 384 ms earlier, sender time 1937 ms later
+  reject B at 15.12 s: age 2469 ms; last accepted 512 ms earlier, sender time 1937 ms later
+  reject B at 15.25 s: age 2597 ms; last accepted 640 ms earlier, sender time 1937 ms later
+  reject B at 17.81 s: age 2053 ms; last accepted 128 ms earlier, sender time 1905 ms later
+  reject B at 17.94 s: age 2181 ms; last accepted 256 ms earlier, sender time 1905 ms later
+  reject B at 18.07 s: age 2309 ms; last accepted 384 ms earlier, sender time 1905 ms later
+  reject B at 18.20 s: age 2437 ms; last accepted 512 ms earlier, sender time 1905 ms later
+  reject B at 18.32 s: age 2565 ms; last accepted 640 ms earlier, sender time 1905 ms later
+  reject B at 18.45 s: age 2693 ms; last accepted 768 ms earlier, sender time 1905 ms later
+  reject B at 18.58 s: age 2821 ms; last accepted 896 ms earlier, sender time 1905 ms later
