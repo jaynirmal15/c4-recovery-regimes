@@ -5,8 +5,16 @@ The plotted values are constants in this file, transcribed from two committed tr
 c4-recovery-regimes repository:
   before: study/livekit-iso-media-23s-O-20261002T053228-4      (run 1, superseded)
   after : study-r2/livekit-iso-media-23s-O-20261002T161609-20  (run 2)
-from result.json (isolation), S.json (driver actions) and logs/study/divergence-{all,r2}.json
-(server reports, receiver audio). Times are seconds after isolation onset.
+from result.json (isolation), S.json (driver actions), logs/study/divergence-{all,r2}.json
+(server reports, receiver audio) and logs/study/fig1-quality-states.json (the quality states,
+decoded from the observers' signalling frames by client/runner/fig1-quality.mjs). Times are
+seconds after isolation onset.
+
+The "Quality signal" row spans the interval from the first update in which S's quality is
+not excellent to the first later update reporting excellent, split into the states actually
+reported. In (a) that is one continuous "lost" state, ended by the rebuilt session's first
+"excellent". In (b) it is "lost", then "poor", then "good", returning to excellent at
+40.47 s, beyond the plotted range.
 
 When this script is run from the repository (paper/fig1_reversal.py), it first re-derives
 the plotted times from those records and stops if any differs from the constants by more
@@ -43,10 +51,10 @@ BLUE, ORANGE, INK, MUTED, GREY, LIGHT = "#2a78d6", "#eb6834", "#1a1a19", "#5f5e5
 T = dict(
     before=dict(title="(a) Before: resume request dropped  →  rebuild",
         outage=(0, 23.14), attempts=[(7.05, 9.07, "ok"), (14.25, 16.27, "ok"), (21.45, 23.47, "fail"), (28.65, 28.66, "refused")],
-        rebuild=(28.85, 29.28), request=22.08, left=27.09, joined=29.20, quality=(10.04, 29.27), stale=(0.42, 29.41), wait=(23.47, 28.65)),
+        rebuild=(28.85, 29.28), request=22.08, left=27.09, joined=29.20, quality=(10.04, 29.27), qstates=[(10.04, "lost")], stale=(0.42, 29.41), wait=(23.47, 28.65)),
     after=dict(title="(b) After: request held and honoured  →  restart",
         outage=(0, 23.12), attempts=[(7.05, 9.07, "ok"), (14.25, 16.27, "ok"), (21.45, 23.47, "fail"), (23.65, 25.67, "ok")],
-        rebuild=None, request=22.08, left=None, joined=None, quality=(10.47, 40.47), stale=(0.43, 27.19), wait=None),
+        rebuild=None, request=22.08, left=None, joined=None, quality=(10.47, 40.47), qstates=[(10.47, "lost"), (25.47, "poor"), (30.47, "good")], stale=(0.43, 27.19), wait=None),
 )
 
 
@@ -77,6 +85,13 @@ def verify():
         chk(f"{key} resume request", L["B_subject"]["down"], d["request"])
         chk(f"{key} membership left", L["A_membership"]["down"], d["left"]); chk(f"{key} membership joined", L["A_membership"]["up"], d["joined"])
         chk(f"{key} quality onset", L["B_obs_quality"]["down"], d["quality"][0]); chk(f"{key} quality clear", L["B_obs_quality"]["up"], d["quality"][1])
+        qs = json.load(open(os.path.join(root, "logs/study/fig1-quality-states.json")))[key]["observers"]
+        for w in ("O1", "O2"):
+            got = [(u["t"], u["quality"].lower()) for u in qs[w] if u["quality"] != "EXCELLENT"]
+            if len(got) != len(d["qstates"]): bad.append(f"{key} {w} quality states: records {got} vs constants {d['qstates']}"); continue
+            for (gt, gq), (ct, cq) in zip(got, d["qstates"]):
+                chk(f"{key} {w} quality state time", gt, ct)
+                if gq != cq: bad.append(f"{key} {w} quality state: records {gq} vs constant {cq}")
         chk(f"{key} stale from", row["truth"]["down"], d["stale"][0]); chk(f"{key} fresh at", row["truth"]["up"], d["stale"][1])
     if bad: raise SystemExit("constants differ from the committed records:\n  " + "\n  ".join(bad))
     print("constants match the committed records")
@@ -110,8 +125,13 @@ for ax, key in zip(axes, ["before", "after"]):
         ax.text(d["joined"] + 0.6, y["Membership"], "joined", ha="left", va="center", color=INK, fontsize=5.5)
     else:
         ax.text(XMAX / 2, y["Membership"], "no report", ha="center", va="center", color=MUTED, fontsize=5.5, style="italic")
-    bar("Quality signal", *d["quality"], color="white", edgecolor=ORANGE, linewidth=0.8)
-    ax.text(d["quality"][0] + 0.5, y["Quality signal"], "“lost”" + ("  (continues to 40.5 s)" if d["quality"][1] > XMAX else ""), ha="left", va="center", color=INK, fontsize=5.5)
+    # the quality interval, first non-excellent update to return to excellent, split into the reported states
+    edges = [t for t, _ in d["qstates"]] + [d["quality"][1]]
+    for (ts, name), te in zip(d["qstates"], edges[1:]):
+        bar("Quality signal", ts, te, color="white", edgecolor=ORANGE, linewidth=0.8)
+        ax.text((ts + min(te, XMAX)) / 2, y["Quality signal"], name, ha="center", va="center", color=INK, fontsize=5.5)
+    if d["quality"][1] > XMAX:
+        ax.text(XMAX, y["Quality signal"] - 0.4, "excellent again at %.1f s" % d["quality"][1], ha="right", va="center", color=MUTED, fontsize=5.2, style="italic")
     bar("Observer audio", *d["stale"], color=LIGHT, edgecolor=MUTED, linewidth=0.5)
     ax.text(sum(d["stale"]) / 2, y["Observer audio"], f"stale until {d['stale'][1]:.1f} s", ha="center", va="center", color=INK, fontsize=5.5)
     ax.axvline(d["outage"][1], color=MUTED, lw=0.5, ls=":", zorder=0)

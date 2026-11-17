@@ -1,8 +1,8 @@
 # What two WebRTC media servers report when a participant's session is disrupted and recovers
 
-**Review packet: claim, evidence and limits.** Version 3, 2026-10-06, revised after external
-review, one further investigation and one follow-up measurement (§4.3). Author: Jay Suresh
-Nirmal.
+**Review packet: claim, evidence and limits.** Version 4, 2026-10-07, revised after external
+review, one further investigation, one follow-up measurement (§4.3) and a second review
+that found a defect in the measuring instrument (§0, §6.4). Author: Jay Suresh Nirmal.
 
 **What we are asking the reviewer:** (a) is the claim in §1 supported by the data in §3–§5,
 and (b) is it novel? On (b): **no literature search has been done for this packet.** Nothing
@@ -60,7 +60,13 @@ The policy is held constant; the server is what is varied.
 >   loudspeaker; device output latency is not included.
 > - **Age.** Capture time at the receiver minus the sender time encoded in the audio.
 >   Samples are produced about every 100 ms from analysis windows of 21–85 ms; the clock
->   wraps at 64 s.
+>   wraps at 64 s, so ages are reported modulo 64 s and no decoded age can exceed 63.5 s.
+> - **Known defect of the clock (found 2026-10-07; §6.4).** At the moments a stream stops,
+>   starts or resumes, the decoder can emit samples that are wrong by one period of the fast
+>   chirp (2 s). A sample decoded 2 s "in the future" wraps to about 62 s; one decoded 2 s
+>   "in the past" reads as about 2.1 s. Mid-stream this is negligible (2 in 1.16 million
+>   samples). It affected the client's detection in 6 of the 215 trials. An earlier version
+>   of this packet said a clock artifact was excluded; that was wrong.
 > - **Stale.** No decodable sample for more than 300 ms, or age above 1 s.
 > - **Fresh again.** Age within 250 ms of that receiver's pre-outage baseline, continuously
 >   for 1 s. **The timestamp is the start of that validated one-second interval, not its
@@ -68,6 +74,14 @@ The policy is held constant; the server is what is varied.
 > - **Two endpoints.** "Fresh again" exists per observer. Where one number per trial is
 >   needed, we use **both observers fresh**, which is the slower of the two and a different
 >   endpoint from either alone. §3.2 reports each observer separately.
+> - **How LiveKit's quality signal is reduced to an interval.** The interval opens on the
+>   first update, to either observer, in which S's quality is anything other than
+>   `EXCELLENT` (that is `GOOD`, `POOR` or `LOST`). It closes on the first later update
+>   reporting `EXCELLENT` for any of S's session identifiers, including a new session after
+>   a rebuild. Only updates between isolation onset and 0.5 s before the trial's own
+>   teardown count. All 600 pre-onset updates for S, across the 150 LiveKit trials, were
+>   `EXCELLENT`. After a restart the server steps `LOST → POOR → GOOD → EXCELLENT` on 5 s
+>   ticks, so the time to "clear" is largely that staircase.
 > - **Outage.** First stale at either observer to both observers fresh.
 
 **How a notification is compared with the reference.** Each reporting layer is reduced to:
@@ -111,11 +125,21 @@ In support, each proxy against the reference:
 
 This is the most important limit on the claim and it applies throughout.
 
-1. **Our client restarted a working LiveKit connection after short outages.** After a 2 s
-   or 5 s outage the observers' audio stayed more than 2 s old, so the policy's
-   detect-and-wait rule fired and the client restarted a connection that had already
-   returned (20/20 trials). Those cells measure LiveKit plus this policy. We have not
-   established whether the restart shortened or lengthened the interruption.
+1. **Our client restarted a working LiveKit connection after short outages** (20/20 trials
+   at 2 s and 5 s). *Corrected in version 4:* earlier versions said the observers' audio
+   stayed more than 2 s old and that this fired the detection rule. Both parts were wrong.
+   From S's own record:
+   - detection was **S's own received-audio age** crossing 2 s, in 20 of 20, with ICE and
+     signalling healthy at detection in 20 of 20;
+   - S's inbound audio never had one healthy second between restore and the restart, in 20
+     of 20: it was 2.5–3.1 s old at the restart in the 2 s cells and about 2.7–7.0 s old in
+     the 5 s cells;
+   - ICE *disconnected* appeared before the restart in 7 of 20, all at 5 s, always after
+     detection;
+   - the observers' audio from S was only 0.6–1.3 s old at the restart in the 2 s cells
+     (1.5–4.3 s in the 5 s cells).
+   Those cells measure LiveKit plus this policy. We have not established whether the
+   restart shortened or lengthened the interruption.
 2. **Where a session survives or is rebuilt depends on client timing.** One result
    reversed when a client defect was fixed (§6.1).
 3. **The Janus reception-versus-playout gap is produced on the client and receiver side.**
@@ -339,12 +363,24 @@ backlog is therefore held in S's browser, before the point where sent packets ar
 **D2. Janus forwards the burst in full.** The sent-packet counters on both observers'
 subscriptions rise by the same amount in the same interval, in all 20 trials with a backlog.
 
-**D3. The receivers get all of it and discard most of it.** In the follow-up trials each
-observer's receive statistics show the whole burst arriving in a single 250 ms sample with
-**zero packets lost**, and the **packets-discarded counter rising in that same sample by
-exactly 400 (16 s cell) or 600 (20 s cell)**, in 10 of 10 observer measurements. The
-discard is at the receiver's jitter buffer, in whole multiples of 200 packets (4.0 s of
-20 ms audio).
+**D3. The receivers get the burst and discard most of it.** In the follow-up trials each
+observer's receive statistics show the received-packet counter rising by the burst within
+one or two 250 ms samples (in one sample in 8 of 10 observer measurements; split across two
+in the other 2), **no reported loss** in that interval, and the **packets-discarded counter
+rising in a single sample by exactly 400 (16 s cell) or 600 (20 s cell)**, in 10 of 10.
+Those ten increments are the only non-zero discard increments in any of the 60 inbound
+streams recorded (about 21,000 sample intervals). A discard of exactly 200 was never
+observed. Received counts include retransmissions and the loss counter is an estimate, so
+"all of it" means matching counter increments, not a packet-by-packet account.
+
+**The quantum is 4.0 s (200 packets), identified jointly, not by the counters alone.**
+- The counters establish that the quantum divides 200 packets: 600 is not a multiple of
+  400, which excludes 8 s. They do not exclude 2.0 s (100 packets).
+- The inferred study residuals exclude 2.0 s: it predicts residuals of 0.8–1.2 s at 10 s
+  and 30 s, against 2.7–3.1 s and 2.4–3.0 s observed. At 16, 20 and 45 s the two quanta
+  predict the same residual.
+- Both steps assume the receiver discards a full quantum each time it fills. That it is
+  the receive buffer's capacity is an identification we did not measure.
 
 **D4. What remains is the burst less that discard,** and it predicts each trial:
 
@@ -424,8 +460,16 @@ reading; the receiver's internal policy was not examined.
   1.62.1), 20 ms audio packets, five backlog lengths. LiveKit has no equivalent packet
   counters in our records, so whether the same effect contributes to its 1.9–16.1 s of
   extra stale time was not examined.
-- **Clock artifact.** Excluded for the period: the discard is measured by the receiver's
-  own counter, independently of the audio clock.
+- **Clock artifact (rewritten in version 4).** The in-band clock does produce spurious
+  samples, off by 2 s, at stream discontinuities (§0, §6.4). The discard counter is
+  independent of the clock, so the 200-packet step does not depend on it. The residuals do
+  come from the clock, so every residual-bearing window was checked: in the 20 backlog
+  trials, from 0.3 s before reception resumed to 1 s after each observer was fresh (40
+  windows, 2,268 samples), there are **no** wrapped samples, **no** samples off by 2 s or
+  4 s from their neighbours, and **no** runs with a frozen sender time. The largest step
+  between consecutive samples is 0.19 s. Four samples are much older than the rest (40.48 s
+  three times, 13.01 s once); each equals its trial's backlog length within 0.08 s and is
+  audio from the head of the burst, not an artifact.
 
 ### 4.4 The proxies err in different directions
 
@@ -516,8 +560,9 @@ Each was found by tracing an unexpected result to its timeline before accepting 
 | 4 | LiveKit's resume request, arriving mid-restart, was dropped | "LiveKit rebuilds media-only outages of 23 s and above" | hold and honour the request; **result reversed** (§6.1) |
 
 Defects 1–3 were fixed before the 215 trials. Defect 4 was found in the first run and
-fixed for the second. A fifth of this kind may remain. The sender backlog in §4.3 is not a
-defect of this kind, but it arises in the browsers, not in Janus, and is flagged as such.
+fixed for the second. A fifth, in the measuring instrument, was found after the campaign and
+is reported, not corrected (§6.4). The sender backlog in §4.3 is not a defect of this kind,
+but it arises in the browsers, not in Janus, and is flagged as such.
 
 ### 6.3 What the study did not measure
 
@@ -526,7 +571,9 @@ defect of this kind, but it arises in the browsers, not in Janus, and is flagged
 - **Sample size:** n = 5 per cell (10 at nine).
 - **Split cells.** One cell split between survival and rebuild: LiveKit full 17 s (9
   restarts, 1 rebuild). One cell split between regimes without affecting survival: Janus
-  full 5 s (4 ride-outs, 1 restart). No transition proportion is estimated from either.
+  full 5 s (4 ride-outs, 1 restart). In both, the odd trial is one of the six in which a
+  spurious clock sample triggered detection early (§6.4). No transition proportion is
+  estimated from either.
 - **Regimes not observed:** no failed recovery on either stack; no ride-out on LiveKit
   (see §1, item 1). Janus rode the same short outages out (19/20), so the two stacks'
   short-outage numbers are not like for like.
@@ -535,6 +582,21 @@ defect of this kind, but it arises in the browsers, not in Janus, and is flagged
 - **What "fresh" covers:** audio at the receiver's processing graph (§0). Not loudspeaker
   output, and not perceptual quality. Recovery times include the receiver draining
   buffered audio; §4.3 measures how large that can be.
+- **Recovery in the reverse direction (future work).** "Fresh again" is defined on the
+  observers hearing S. The other direction, S hearing the observers, was not characterised.
+  A check on 2026-10-07 of the window after the observers were fresh and S's driver had
+  returned to healthy found, on LiveKit, S's received audio still delayed in 46
+  stream-windows (two per trial), all in transport restarts at 2, 5 and 10 s full
+  isolation and 2 and 5 s media-only: 0.54–1.51 s above baseline at the start of the
+  window (median 1.07 s), draining smoothly at about 0.29 s per second, for at most 35
+  consecutive samples (about 4.5 s). This is real delay, not the clock defect of §6.4:
+  none of the 1,073 out-of-band samples is within 0.15 s of 2.0 s or near 60 s, no step
+  between consecutive samples exceeds 0.5 s, and the two streams agree at the same instant
+  (median difference 0.09 s). The policy's healthy test is "under 2 s old", so the driver
+  behaved as specified. On Janus the same window has none (0 of 48,040 samples). The
+  remaining 15 out-of-band samples are isolated, 0.25–0.26 s below baseline. The §6.4
+  incidence figures are unaffected. Computed by an ad hoc script that is not in the
+  repository.
 - **Receiver and sender internals:** the 215 study trials recorded no browser statistics.
   The 10 follow-up trials did (§4.3); they are a separate, smaller sample at two durations
   on Janus only.
@@ -542,6 +604,67 @@ defect of this kind, but it arises in the browsers, not in Janus, and is flagged
   (§7).
 - **Hosted products:** only the self-hosted open-source servers were examined.
 - **Prior work:** not surveyed for this packet.
+
+### 6.4 A defect in the instrument: the in-band clock perturbed six trials
+
+Found on 2026-10-07, after both runs, while checking whether any decoded audio age could
+have exceeded the clock's 64 s range. That question cannot be answered from the ages (they
+are modulo 64 s; the largest is 63.07 s), and there is no evidence that any true age did:
+the longest backlog was 40.5 s, and after the rebuilds that followed the 65 s and 90 s
+outages the first decoded samples at both observers were at baseline (39–67 ms) in all ten
+trials, preceded in one trial by a single artifact sample. That is a bound from the records,
+not a property of the instrument.
+The check found something else.
+
+**What the decoder does.** At the moments a stream stops, starts or resumes, it can emit
+samples that are wrong by one period of the fast chirp, 2 s (occasionally two periods).
+
+**Incidence.**
+- 39 samples at 59.5–63.1 s in the study data (`study/`, `study-r2/`, `backlog-cell/`;
+  1.16 million samples). All are of this kind: at the first sample of a stream, in the
+  half-second after it stops, or at the first sample after it resumes.
+- Mid-stream: 2 isolated 2 s jumps in 1.16 million samples.
+- Across every trial directory: 66 samples above 60 s in 2.05 million.
+
+**Effect on the client.** The policy declares the media path dead when S's received audio
+is more than 2 s old. The "2 s in the past" variant, appearing in S's inbound audio just
+after onset, tripped that rule 0.19–0.35 s after onset in **6 of the 215 trials**. In the
+other 209, detection came at 1.85–2.19 s. Every one of the 215 detections was triggered by
+audio age, none by ICE or signalling.
+
+| Trial's condition | Outcome | What the early detection did |
+|---|---|---|
+| LiveKit full 17 s | **rebuild**, the only one of ten | restart began at 5.35 s, 1.77 s before the condition's median of 7.12 s, so its 15 s attempt expired before the network returned |
+| Janus full 5 s | **restart**, the only one of five | the client acted at 5.32 s; the other four rode out |
+| LiveKit full 19 s | rebuild, like the other nine | first action 1.92 s before the condition's median |
+| LiveKit media-only 2 s | restart, like the other four | first action 1.93 s before the condition's median |
+| LiveKit media-only 30 s (two trials) | restart, like the other three | first action 1.84 s and 1.69 s before the condition's median |
+
+**Both heterogeneous cells in the 34 conditions are accounted for by this.**
+
+**Effect on the reference.** An observer's first-stale time was set by a spurious sample,
+not by silence, in 8 of 430 observer measurements (4 trials). Removing every artifact
+sample and recomputing leaves all 430 first-stale times and all 430 fresh-again times
+unchanged. If the spurious samples were instead good audio decoded wrongly, first-stale in
+those 8 would be later by at most 0.5 s, the length of the longest artifact run.
+
+**Bounds, as far as the records give them.**
+- Client timing, derived per trial against the other trials in the same condition:
+  detection 1.67–1.84 s earlier than the condition's median (6 trials); first recovery
+  action 1.69–1.93 s earlier than the condition's median (5 trials; in the sixth, Janus
+  full 5 s, the other four took no action). For reference, the six acted at 5.19–5.35 s
+  and the 190 normally-detected trials that acted did so at 6.85–7.39 s (median 7.04 s),
+  which is why an unpaired subtraction gives the looser 1.5–2.2 s.
+- Reference: first-stale possibly up to 0.5 s early in 8 of 430 measurements; fresh-again
+  unaffected.
+- Outcome: changed in 2 of 215 trials.
+- Membership result: not disturbed. Those trials still survived or rebuilt, and membership
+  reporting still followed the outcome.
+- Backlog residuals: clean (§4.3, cautions).
+
+**The six trials are kept.** They are valid observations of what the system did given
+what the client saw, and an exclusion rule would be defined by the analysis that found
+them.
 
 ---
 
@@ -604,6 +727,13 @@ study.
   five count and wording errors corrected (nine n = 10 cells; 50 media-only trials at
   21–30 s; four classifier rows shown; both split cells named; retained/superseded
   wording); short-outage statement restricted to the 2 s cells (§2).
+- **Changes from version 3 (2026-10-07):** the statement that a clock artifact was excluded
+  is withdrawn; the artifact, its incidence and its effect on six trials are now §6.4 and
+  §0. §1's account of the LiveKit short-outage cells is corrected (the trigger was S's own
+  received-audio age; the observers' audio was not more than 2 s old in the 2 s cells).
+  §4.3 D3 no longer says the whole burst always arrived in one sample or that loss was
+  zero, and states how the 4.0 s quantum is identified. §0 now defines how the quality
+  signal is reduced to an interval. Both split cells are attributed to the artifact.
 - **Changes from version 2:** §4.3 rewritten. The buffer period is now measured (4.0 s,
   200 packets) from a follow-up cell of 10 trials with browser statistics; "a whole
   multiple of 4.0 s" in version 2 was not supported by the data it cited. The statement

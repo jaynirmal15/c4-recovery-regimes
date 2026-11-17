@@ -1,0 +1,90 @@
+{
+ "before": {
+  "trial": "study/livekit-iso-media-23s-O-20261002T053228-4",
+  "observers": {
+   "O1": [
+    {
+     "t": 10.04,
+     "quality": "LOST",
+     "newSession": false
+    },
+    {
+     "t": 29.27,
+     "quality": "EXCELLENT",
+     "newSession": true
+    },
+    {
+     "t": 30.04,
+     "quality": "EXCELLENT",
+     "newSession": true
+    }
+   ],
+   "O2": [
+    {
+     "t": 10.04,
+     "quality": "LOST",
+     "newSession": false
+    },
+    {
+     "t": 29.27,
+     "quality": "EXCELLENT",
+     "newSession": true
+    },
+    {
+     "t": 30.04,
+     "quality": "EXCELLENT",
+     "newSession": true
+    }
+   ]
+  }
+ },
+ "after": {
+  "trial": "study-r2/livekit-iso-media-23s-O-20261002T161609-20",
+  "observers": {
+   "O1": [
+    {
+     "t": 10.47,
+     "quality": "LOST",
+     "newSession": false
+    },
+    {
+     "t": 25.47,
+     "quality": "POOR",
+     "newSession": false
+    },
+    {
+     "t": 30.47,
+     "quality": "GOOD",
+     "newSession": false
+    },
+    {
+     "t": 40.47,
+     "quality": "EXCELLENT",
+     "newSession": false
+    }
+   ],
+   "O2": [
+    {
+     "t": 10.47,
+     "quality": "LOST",
+     "newSession": false
+    },
+    {
+     "t": 25.47,
+     "quality": "POOR",
+     "newSession": false
+    },
+    {
+     "t": 30.47,
+     "quality": "GOOD",
+     "newSession": false
+    },
+    {
+     "t": 40.47,
+     "quality": "EXCELLENT",
+     "newSession": false
+    }
+   ]
+  }
+ }
+}
