@@ -184,15 +184,25 @@ the servers, not to run the analysis.
 Copy each template to the absent file's name and fill in your own values.
 
 **About tokens in the logs.** The LiveKit server logs and webhook logs in the trial
-directories contain participant access tokens. Each expired on the day of its trial, and
-the API key that signed them was retired on 2026-10-06. They cannot be used.
+directories contain participant access tokens. Each was valid for two hours from issue. The
+key that signed those in the study records was retired on 2026-10-06; the key that signed
+those in the control-arm records (`control/`, `control-shakedown/`) was retired on
+2026-11-17, after the last lab session. Every token in this repository is therefore both
+expired and signed by a key that no longer authorises anything.
 
-**Scrubbed values.** In the job logs under `logs/`, four kinds of value have been replaced by
+**The per-room TURN credential.** Room objects in the LiveKit server logs carry a
+`turnPassword`. LiveKit's built-in TURN server was disabled for every run
+(`deploy/livekit/values.yaml`, `turn.enabled: false`), and every join response in the logs
+offers STUN servers only — no `turn:` or `turns:` URI appears anywhere in the records — so
+no service ever accepted that credential.
+
+**Scrubbed values.** In the job logs under `logs/`, five kinds of value have been replaced by
 placeholders so that the log format stays readable: the lab's AWS account identifier
 (`<aws-account-id>`), the cluster's API endpoint (`<eks-endpoint>`, and `<eks-endpoint-id>`
 where only its identifier appeared), the TURN load balancer's host name
-(`<coturn-host>`), and the public addresses of the cluster nodes in `kubectl get nodes`
-output (`<node-ip>`). No trial record was altered.
+(`<coturn-host>`), the public addresses of the cluster nodes in `kubectl get nodes`
+output (`<node-ip>`), and the Grafana administrator password printed by the cluster
+bring-up script (`<redacted>`). No trial record was altered.
 
 **Node addresses in the trial records.** The trial records under `study/`, `study-r2/` and
 the development runs contain node public addresses in LiveKit ICE candidates, from instances
